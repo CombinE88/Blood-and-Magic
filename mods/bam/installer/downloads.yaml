@@ -1,0 +1,5 @@
+base2: Base Game Files
+	MirrorList: http://www.kknd-game.com/packages/bam-base.txt
+	Extract:
+		^Content/bam/main.stf: MAIN.STF
+		^Content/bam/maps.stf: CINES.STF
