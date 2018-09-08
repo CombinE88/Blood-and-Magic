@@ -1,0 +1,30 @@
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	TechTree:
+	PlaceBuilding:
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+	ConquestVictoryConditions:
+	PowerManager:
+	AllyRepair:
+	PlayerResources:
+	DeveloperMode:
+		CheckboxDisplayOrder: 9
+	Shroud:
+		FogCheckboxDisplayOrder: 3
+	FrozenActorLayer:
+	BaseAttackNotifier:
+	PlayerStatistics:
+	PlaceBeacon:
+	GrantConditionOnPrerequisiteManager:
+	EnemyWatcher:
+	ResourceStorageWarning:
+	PlayerExperience:

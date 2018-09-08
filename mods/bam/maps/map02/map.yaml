@@ -1,0 +1,55 @@
+MapFormat: 11
+
+RequiresMod: bam
+
+Title: Name your map here
+
+Author: Your name here
+
+Tileset: PLATFORM
+
+MapSize: 130,130
+
+Bounds: 1,1,128,128
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Mage
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Mage
+		Enemies: Multi0, Multi1, Multi2
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: ACOLYTE
+		Owner: Neutral
+		Location: 85,71
+	Actor1: mpspawn
+		Owner: Neutral
+		Location: 66,65
+	Actor2: mpspawn
+		Owner: Neutral
+		Location: 70,55

@@ -1,0 +1,109 @@
+Palettes:
+	cursor: 11195.pal
+
+PaletteLoaders:
+	cursor: PaletteFromPal
+
+Cursors:
+	cursor_default.ani: cursor
+		default:
+			Start: 0
+			X: -15
+			Y: -15
+		generic-blocked:
+			Start: 0
+			X: -15
+			Y: -15
+
+		select:
+			Start: 0
+			X: -15
+			Y: -15
+
+		move:
+			Start: 0
+			X: -15
+			Y: -15
+		move-blocked:
+			Start: 0
+			X: -15
+			Y: -15
+
+		attack:
+			Start: 0
+			X: -15
+			Y: -15
+		attackoutsiderange:
+			Start: 0
+			X: -15
+			Y: -15
+		assaultmove:
+			Start: 0
+			X: -15
+			Y: -15
+		assaultmove-blocked:
+			Start: 0
+			X: -15
+			Y: -15
+		attackmove:
+			Start: 0
+			X: -15
+			Y: -15
+		attackmove-blocked:
+			Start: 0
+			X: -15
+			Y: -15
+			
+		joystick-all:
+			Start: 0
+			X: -15
+			Y: -15
+
+		scroll-t: # todo remove
+			Start: 0
+		scroll-r: # todo remove
+			Start: 0
+		scroll-b: # todo remove
+			Start: 0
+		scroll-l: # todo remove
+			Start: 0
+		scroll-tr: # todo remove
+			Start: 0
+		scroll-br: # todo remove
+			Start: 0
+		scroll-bl: # todo remove
+			Start: 0
+		scroll-tl: # todo remove
+			Start: 0
+		scroll-t-blocked: # todo remove
+			Start: 0
+		scroll-r-blocked: # todo remove
+			Start: 0
+		scroll-b-blocked: # todo remove
+			Start: 0
+		scroll-l-blocked: # todo remove
+			Start: 0
+		scroll-tr-blocked: # todo remove
+			Start: 0
+		scroll-br-blocked: # todo remove
+			Start: 0
+		scroll-bl-blocked: # todo remove
+			Start: 0
+		scroll-tl-blocked: # todo remove
+			Start: 0
+		joystick-t-blocked: # todo remove
+			Start: 0
+		joystick-r-blocked: # todo remove
+			Start: 0
+		joystick-b-blocked: # todo remove
+			Start: 0
+		joystick-l-blocked: # todo remove
+			Start: 0
+		joystick-tr-blocked: # todo remove
+			Start: 0
+		joystick-br-blocked: # todo remove
+			Start: 0
+		joystick-bl-blocked: # todo remove
+			Start: 0
+		joystick-tl-blocked: # todo remove
+			Start: 0

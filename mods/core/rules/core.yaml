@@ -1,0 +1,228 @@
+# Base for all actors.
+^CoreVisibleActor:
+	# All our actors are sprite based and need to render sprites.
+	RenderSprites:
+	# At default fog hides every actor.
+	HiddenUnderFog:
+	# Allow actors to rotate and use facings.
+	BodyOrientation: # TODO verify if we can remove this from constructions!
+	# Automatically detect the number of facings from the sequences.
+	QuantizeFacingsFromSequence: # TODO see BodyOrientation todo
+	# Required to see debug overlays.
+	CombatDebugOverlay:
+
+# Base for all movable units.
+^CoreUnit:
+	Inherits: ^CoreVisibleActor
+	# Default set which fits for most units: Occupy exactly 1 cell / 32x32 pixel tile.
+	HitShape:
+		Type: Circle
+			Radius: 512
+	# In general all units can be selected by using its full cell / tile.
+	Selectable:
+		Bounds: 32, 32
+		# Make the default priority higher, so units are prefered over constructions.
+		Priority: 20
+	# Units have a healthbar when selected or hovered.
+	SelectionDecorations:
+	# Enemy units must be destroyed to win a game.
+	MustBeDestroyed:
+	# Units sequences should always use facings.
+	WithFacingSpriteBody:
+	# Units are visible on the radar.
+	AppearsOnRadar:
+	# Allow units to use the AttackMove and AssaultMove commands.
+	AttackMove:
+	# Units should die when owner lost the game.
+	OwnerLostAction:
+		Action: Kill
+
+# Base for all buildings, towers and walls.
+^CoreConstruction:
+	Inherits: ^CoreVisibleActor
+	# As buildings have complexer states then just live / be dead, they require conditon support.
+	ConditionManager:
+	# Last seen state of a building will be rendered under fog, instead of using the default hiding behavior.
+	-HiddenUnderFog:
+	FrozenUnderFog:
+	# Applying "building"-damage to all actors based on this.
+	Armor:
+		Type: building
+	# Add building specific logic to Constructions.
+	Building:
+		TerrainTypes: Clear, Road, Path # TODO implement final ones, when tilesets are added!
+	# Constructions can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground
+	# In general all constructions can be selected.
+	Selectable:
+	# Constructions have sprites but do not use facing for them.
+	WithSpriteBody:
+	# Implement KKnD style construction logic.
+	SelfConstructing:
+		Condition: selfconstructing
+	# Also implement reverse deconstruction for selling.
+	DeconstructSellable:
+		Condition: deconstructing
+		RequiresCondition: !deconstructing
+	# Constructions are visible on the radar.
+	AppearsOnRadar:
+	# Constructions should explode when owner lost the game.
+	OwnerLostAction:
+		Action: Kill
+	# No projectiles can pass through a construction.
+	BlocksProjectiles:
+		RequiresCondition: !selfconstructing && !deconstructing
+
+# Base for all buildings.
+^CoreBuilding:
+	Inherits: ^CoreConstruction
+	# Require other actor nearby which provides buildable area in order to place a building.
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 4
+	# Grants buildable area for other buildings and defence structures.
+	GivesBuildableArea:
+		AreaTypes: building, defence
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Buildings have a bigger healthbar when selected or hovered.
+	SelectionDecorations:
+	# Enemy buildings  have to be destroyed to win, even when short game option is used.
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	# If a building is destroyed, it should play an animation...
+	Explodes:
+		Weapon: dieBuilding
+	# ... and Shake the screen.
+	ShakeOnDeath:
+		Intensity: 10
+	# Buildings can be repaired by technicians.
+	TechnicianRepairable:
+		RequiresCondition: !selfconstructing && !deconstructing
+	# The view radius of buildings.
+	RevealsShroud:
+		Range: 5c0
+	# Making buildings actualy buildable.
+	Buildable:
+		Queue: building
+		BuildDurationModifier: 100
+		BuildLimit: 4
+	# Group all buildings in the map editor.
+	EditorTilesetFilter:
+		Categories: Building
+	# Having at last one building, allows to build another HQ.
+	Production:
+		Produces: building
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Should not be auto attacked.
+	Targetable@NoAutoAttack:
+		TargetTypes: NoAutoAttack
+	# Make unit notify being attacked.
+	AttackNotification:
+		Notifications: BuildingUnderAttack
+	# Notify when building lost.
+	ActorLostNotification:
+		Notification: BuildingLost
+	# TODO remove this, if it works with hit shapes!
+	-BlocksProjectiles:
+
+# Base for all walls.
+^CoreWall:
+	Inherits: ^CoreConstruction
+	# A wall is always 1 tile in size.
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	# Correct Hitshape
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Selectable:
+		Bounds: 32, 32, 0, 0
+	# Walls do visualy connect with adjecent walls.
+	-WithSpriteBody:
+	WithWallSpriteBody:
+	# Walls will show an explosion when destroyed.
+	Explodes:
+		Weapon: dieWall
+	# Group all walls in the map editor.
+	EditorTilesetFilter:
+		Categories: Walls
+	# Make walls actually buildable.
+	Buildable:
+		Queue: wall
+		BuildDurationModifier: 100
+	# Require other actor nearby which provides buildable area in order to place a wall.
+	RequiresBuildableArea:
+		AreaTypes: defence
+		Adjacent: 4
+	# Walls will use line-build mode.
+	LineBuildNode: # TODO replace this by continuous placing implementation!
+	LineBuild:
+		Range: 5
+	# Wall will use the standard unit healthbar.
+	SelectionDecorations:
+	# Should not be auto attacked.
+	Targetable@NoAutoAttack:
+		TargetTypes: NoAutoAttack
+
+# Base for all infantry.
+^CoreInfantry:
+	Inherits: ^CoreUnit
+	# Applying "infantry"-damage to all actors based on this.
+	Armor:
+		Type: infantry
+	# Vehicles can kill infantry by driving over them.
+	Crushable:
+		CrushClasses: infantry
+	# Allow 5 infantry units to share a cell and set movement modifiers.
+	Mobile:
+		Locomotor: infantry
+	# Actor can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground
+	# Calculated size for infantry to match shared cells.
+	Selectable:
+		Bounds: 18,20,0,-6
+	# Infantry hitshape
+	HitShape:
+		Type: Circle
+			Radius: 128
+	# Infantry has an animation while moving: walking.
+	WithMoveAnimation:
+		MoveSequence: run
+	# Group all infantry in the map editor.
+	EditorTilesetFilter:
+		Categories: Infantry
+	# Making infantry actualy buildable.
+	Buildable:
+		Queue: infantry
+		BuildDurationModifier: 100
+	# Infantry has a smaller healthbar.
+	SelectionDecorations:
+	# Make infantry act like they live.
+	Living:
+	# If infantry is killed, it screams.
+	DeathSounds:
+
+# Add locomotor to world...
+^CoreWorld:
+	Locomotor@infantry:
+		Name: infantry
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Road: 100
+			Path: 100
+
+# Grouped traits for standard non-turreted behavior.
+^CoreArmedSelf:
+	# Units without a turret have to stop and aim at a target to shoot.
+	AttackFrontal:
+	# Specify the sequence to use when shooting.
+	WithAttackAnimation:
+		Sequence: shoot
+	# Specify the sequence to use when aiming.
+	WithAimAnimation:
+		Sequence: aim # TODO fix me!

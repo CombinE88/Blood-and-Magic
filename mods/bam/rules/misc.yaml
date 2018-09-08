@@ -1,0 +1,23 @@
+^fact.colorpicker:
+	Inherits: ACOLYTE.COLOR
+	RenderSprites:
+		Image: acolyte
+		Palette: colorpicker
+		
+ACOLYTE.COLOR:
+	Inherits@1: ^Walker
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Acolyte
+	Health:
+		HP: 35
+^CoreWorld:
+	ShroudRenderer:
+		Index: 0, 15, 3, 6, 12, 9, 11, 7, 14, 13, 1, 2, 4, 8, 5, 10
+	Faction@Random:
+		RandomFactionMembers: bam
+
+EditorWorld:
+	EditorSelectionLayer:
+		Palette: bam11195

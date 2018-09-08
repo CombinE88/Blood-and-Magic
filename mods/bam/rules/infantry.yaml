@@ -1,0 +1,11 @@
+ACOLYTE:
+	Inherits@1: ^Walker
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Basalt Golem
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition

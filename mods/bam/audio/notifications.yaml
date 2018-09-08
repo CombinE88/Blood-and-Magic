@@ -1,0 +1,11 @@
+Sounds:
+	DefaultVariant: .wav
+	Notifications:
+		ClickSound: bits/click.wav
+		ChatLine: bits/chat.wav
+
+Speech:
+	DefaultVariant: .wav
+	Prefixes:
+	Notifications:
+		StartGame:

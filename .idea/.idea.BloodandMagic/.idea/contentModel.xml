@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Andre Mohren\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Andre Mohren\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_BloodandMagic.-11697100.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Andre Mohren\Desktop\Blood-and-Magic" t="IncludeFlat">
+    <e p="C:\Users\Toilettenmän\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Toilettenmän\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_BloodandMagic.-1323813708.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Toilettenmän\Documents\Blood-and-Magic\Blood-and-Magic" t="IncludeFlat">
       <e p="BloodandMagic.sln" t="IncludeFlat" />
       <e p="engine" t="ExcludeRecursive">
         <e p="OpenRA.Game" t="IncludeRecursive">
@@ -28,7 +28,7 @@
           <e p="FieldLoader.cs" t="Include" />
           <e p="FieldSaver.cs" t="Include" />
           <e p="FileFormats" t="Include">
-            <e p="PngLoader.cs" t="Include" />
+            <e p="Png.cs" t="Include" />
             <e p="ReplayMetadata.cs" t="Include" />
           </e>
           <e p="FileSystem" t="Include">
@@ -548,6 +548,7 @@
           </e>
           <e p="ShroudExts.cs" t="Include" />
           <e p="SpriteLoaders" t="Include">
+            <e p="PngSheetLoader.cs" t="Include" />
             <e p="ShpD2Loader.cs" t="Include" />
             <e p="ShpTDLoader.cs" t="Include" />
             <e p="ShpTSLoader.cs" t="Include" />
@@ -612,7 +613,6 @@
               <e p="RallyPoint.cs" t="Include" />
               <e p="Refinery.cs" t="Include" />
               <e p="RepairableBuilding.cs" t="Include" />
-              <e p="RepairsUnits.cs" t="Include" />
               <e p="RequiresBuildableArea.cs" t="Include" />
               <e p="Reservable.cs" t="Include" />
             </e>
@@ -863,6 +863,7 @@
             <e p="Repairable.cs" t="Include" />
             <e p="RepairableNear.cs" t="Include" />
             <e p="RepairsBridges.cs" t="Include" />
+            <e p="RepairsUnits.cs" t="Include" />
             <e p="Replaceable.cs" t="Include" />
             <e p="Replacement.cs" t="Include" />
             <e p="RevealOnDeath.cs" t="Include" />
@@ -944,6 +945,7 @@
               <e p="PaletteFromGimpOrJascFile.cs" t="Include" />
               <e p="PaletteFromPaletteWithAlpha.cs" t="Include" />
               <e p="PaletteFromPlayerPaletteWithAlpha.cs" t="Include" />
+              <e p="PaletteFromPng.cs" t="Include" />
               <e p="PaletteFromRGBA.cs" t="Include" />
               <e p="PathFinder.cs" t="Include" />
               <e p="RadarPings.cs" t="Include" />
@@ -996,24 +998,26 @@
                 <e p="SplitGateFromBuilding.cs" t="Include" />
                 <e p="WarnAboutInfiltrateForTypes.cs" t="Include" />
               </e>
-              <e p="AddShakeToBridge.cs" t="Include" />
-              <e p="ChangeIntensityToDuration.cs" t="Include" />
-              <e p="DefineGroundCorpseDefault.cs" t="Include" />
-              <e p="DefineLocomotors.cs" t="Include" />
-              <e p="DefineOwnerLostAction.cs" t="Include" />
-              <e p="DefineSoundDefaults.cs" t="Include" />
-              <e p="DefineSquadExcludeHarvester.cs" t="Include" />
-              <e p="IgnoreAbstractActors.cs" t="Include" />
-              <e p="MoveHackyAISupportPowerDecisions.cs" t="Include" />
-              <e p="RemoveCanUndeployFromGrantConditionOnDeploy.cs" t="Include" />
-              <e p="RemovePaletteFromCurrentTileset.cs" t="Include" />
-              <e p="RemoveTerrainTypeIsWaterFlag.cs" t="Include" />
-              <e p="RemoveWeaponScanRadius.cs" t="Include" />
-              <e p="RemoveWithReloadingSpriteTurret.cs" t="Include" />
-              <e p="RenameEmitInfantryOnSell.cs" t="Include" />
-              <e p="RenameWormSpawner.cs" t="Include" />
-              <e p="SplitAimAnimations.cs" t="Include" />
-              <e p="SplitRepairDecoration.cs" t="Include" />
+              <e p="20180307" t="Include">
+                <e p="AddShakeToBridge.cs" t="Include" />
+                <e p="ChangeIntensityToDuration.cs" t="Include" />
+                <e p="DefineGroundCorpseDefault.cs" t="Include" />
+                <e p="DefineLocomotors.cs" t="Include" />
+                <e p="DefineOwnerLostAction.cs" t="Include" />
+                <e p="DefineSoundDefaults.cs" t="Include" />
+                <e p="DefineSquadExcludeHarvester.cs" t="Include" />
+                <e p="IgnoreAbstractActors.cs" t="Include" />
+                <e p="MoveHackyAISupportPowerDecisions.cs" t="Include" />
+                <e p="RemoveCanUndeployFromGrantConditionOnDeploy.cs" t="Include" />
+                <e p="RemovePaletteFromCurrentTileset.cs" t="Include" />
+                <e p="RemoveTerrainTypeIsWaterFlag.cs" t="Include" />
+                <e p="RemoveWeaponScanRadius.cs" t="Include" />
+                <e p="RemoveWithReloadingSpriteTurret.cs" t="Include" />
+                <e p="RenameEmitInfantryOnSell.cs" t="Include" />
+                <e p="RenameWormSpawner.cs" t="Include" />
+                <e p="SplitAimAnimations.cs" t="Include" />
+                <e p="SplitRepairDecoration.cs" t="Include" />
+              </e>
             </e>
             <e p="UpdatePath.cs" t="Include" />
             <e p="UpdateRule.cs" t="Include" />
@@ -1048,6 +1052,8 @@
             <e p="OutputResolvedRulesCommand.cs" t="Include" />
             <e p="OutputResolvedSequencesCommand.cs" t="Include" />
             <e p="OutputResolvedWeaponsCommand.cs" t="Include" />
+            <e p="PngSheetExportMetadataCommand.cs" t="Include" />
+            <e p="PngSheetImportMetadataCommand.cs" t="Include" />
             <e p="RemapShpCommand.cs" t="Include" />
             <e p="ReplayMetadataCommand.cs" t="Include" />
             <e p="ResizeMapCommand.cs" t="Include" />
@@ -1236,7 +1242,9 @@
           <e p="AniLoader.cs" t="Include" />
         </e>
         <e p="Traits" t="Include">
+          <e p="Living.cs" t="Include" />
           <e p="World" t="Include">
+            <e p="OverlayPlayerColorPalette.cs" t="Include" />
             <e p="PaletteFromPal.cs" t="Include" />
           </e>
         </e>

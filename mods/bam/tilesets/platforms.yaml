@@ -1,0 +1,1860 @@
+General:
+	Name: Platforms
+	Id: PLATFORM
+	EditorTemplateOrder: Terrain, FullPlatform, Walls and Stairs, Bridge, Buttons and Traps, ManaSpots
+	HeightDebugColors: AA0000
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Void
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 000000
+		RestrictPlayerColor: true
+	TerrainType@Plattform:
+		Type: Plattform
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 8F7C69
+		RestrictPlayerColor: true
+	TerrainType@Stairs:
+		Type: Stairs
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 726354
+		RestrictPlayerColor: true
+	TerrainType@Walls:
+		Type: Walls
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 473e34
+		RestrictPlayerColor: true
+	TerrainType@WoodBridge:
+		Type: WoodBridge
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: B66B40
+		RestrictPlayerColor: true
+	TerrainType@StoneBridge:
+		Type: StoneBridge
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 726354
+		RestrictPlayerColor: true
+	TerrainType@Button:
+		Type: Button
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 3DC65B
+		RestrictPlayerColor: true
+	TerrainType@ButtonActive:
+		Type: ButtonActive
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 3DC65B
+		RestrictPlayerColor: true
+	TerrainType@Trap:
+		Type: Trap
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: D23B39
+		RestrictPlayerColor: true
+	TerrainType@TrapActive:
+		Type: TrapActive
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: D23B39
+		RestrictPlayerColor: true
+	TerrainType@Mana:
+		Type: Manaspot
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 697C8F
+		RestrictPlayerColor: true
+
+Templates:
+	Template@0:
+		Id: 0
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Frames: 56
+		Categories: Terrain
+		Tiles:
+			0: Clear
+			
+	Template@1:
+		Id: 1
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 67
+		Tiles:
+			0: Plattform   
+	Template@2:
+		Id: 2
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 68, 86, 99
+		Tiles:
+			0: Plattform   
+			1: Plattform  
+			2: Plattform  
+			
+	Template@3:
+		Id: 3
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 94, 100, 114
+		Tiles:
+			0: Plattform  
+			1: Plattform  
+			2: Plattform  
+	Template@4:
+		Id: 4
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 70, 112, 113
+		Tiles:
+			0: Plattform  
+			1: Plattform  
+			2: Plattform 
+			
+	Template@5:
+		Id: 5
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 81
+		Tiles:
+			0: Plattform  
+	Template@6:
+		Id: 6
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 107
+		Tiles:
+			0: Plattform  
+	Template@7:
+		Id: 7
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 69
+		Tiles:
+			0: Plattform  
+	Template@8:
+		Id: 8
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 71
+		Tiles:
+			0: Plattform 
+			
+	Template@9:
+		Id: 9
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 82
+		Tiles:
+			0: Plattform  
+	Template@10:
+		Id: 10
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 84
+		Tiles:
+			0: Plattform  
+	Template@11:
+		Id: 11
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 108
+		Tiles:
+			0: Plattform  
+	Template@12:
+		Id: 12
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 110
+		Tiles:
+			0: Plattform 
+			
+	Template@13:
+		Id: 13
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 83
+		Tiles:
+			0: Plattform  
+	Template@14:
+		Id: 14
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 97
+		Tiles:
+			0: Plattform  
+	Template@15:
+		Id: 15
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 109
+		Tiles:
+			0: Plattform  
+	Template@16:
+		Id: 16
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 95
+		Tiles:
+			0: Plattform
+
+	Template@17:
+		Id: 17
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Frames: 96
+		Tiles:
+			0: Plattform 
+			
+	Template@18:
+		Id: 18
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 78
+		Tiles:
+			0: Plattform 
+    Template@22:
+		Id: 22
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 79
+		Tiles:
+			0: Plattform            
+	Template@19:
+		Id: 19
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 80
+		Tiles:
+			0: Plattform 
+	Template@25:
+		Id: 25
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 91
+		Tiles:
+			0: Plattform  
+	Template@26:
+		Id: 26
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 92
+		Tiles:
+			0: Plattform 
+	Template@23:
+		Id: 23
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 93
+		Tiles:
+			0: Plattform 
+	Template@21:
+		Id: 21
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 104
+		Tiles:
+			0: Plattform 
+	Template@24:
+		Id: 24
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 105
+		Tiles:
+			0: Plattform
+	Template@20:
+		Id: 20
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 106
+		Tiles:
+			0: Plattform
+
+	Template@27:
+		Id: 27
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 54
+		Tiles:
+			0: Stairs 
+			
+	Template@29:
+		Id: 29
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 10, 11
+		Tiles:
+			0: Walls  
+			1: Walls 
+    Template@29a:
+		Id: 290
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 64
+		Tiles:
+			0: Walls  
+    Template@29b:
+		Id: 291
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 90
+		Tiles:
+			0: Walls 
+    Template@29c:
+		Id: 292
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 102
+		Tiles:
+			0: Walls 
+	Template@31:
+		Id: 31
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 23, 24
+		Tiles:
+			0: Walls 
+			1: Walls
+	Template@31a:
+		Id: 310
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 77
+		Tiles:
+			0: Walls 
+	Template@31b:
+		Id: 311
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 103
+		Tiles:
+			0: Walls 
+	Template@31c:
+		Id: 312
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 101
+		Tiles:
+			0: Walls 
+
+    Template@28:
+		Id: 28
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 55
+		Tiles:
+			0: Stairs 
+    Template@640:
+		Id: 64000
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 136, 137, 135,122,148
+		Tiles:
+			0: Stairs  
+			1: Stairs
+			2: Stairs  
+			3: Stairs
+			4: Stairs
+	Template@59:
+		Id: 59
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 132, 133, 121,134,147
+		Tiles:
+			0: Stairs  
+			1: Stairs
+			2: Stairs  
+			3: Stairs
+			4: Stairs
+	Template@32:
+		Id: 32
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 85
+		Tiles:
+			0: Clear 
+	Template@32a:
+		Id: 320
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 141
+		Tiles:
+			0: Walls 
+	Template@32b:
+		Id: 3200
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 142
+		Tiles:
+			0: Walls 
+	Template@33:
+		Id: 33
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 98
+		Tiles:
+			0: WoodBridge 
+	Template@33a:
+		Id: 330
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 154
+		Tiles:
+			0: WoodBridge 
+	Template@33b:
+		Id: 3300
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 155
+		Tiles:
+			0: WoodBridge 
+	Template@34:
+		Id: 34
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 111
+		Tiles:
+			0: Clear 
+	Template@34a:
+		Id: 340
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 167
+		Tiles:
+			0: Walls 
+	Template@34b:
+		Id: 3400
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 168
+		Tiles:
+			0: Walls 
+	 
+	Template@35:
+		Id: 35
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 88
+		Tiles:
+			0: Clear 
+	Template@35a:
+		Id: 350
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 164
+		Tiles:
+			0: Walls 
+	Template@35b:
+		Id: 3500
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 127
+		Tiles:
+			0: Walls 
+	Template@36:
+		Id: 36
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 89
+		Tiles:
+			0: WoodBridge 
+	Template@36a:
+		Id: 360
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 160
+		Tiles:
+			0: WoodBridge 
+	Template@36b:
+		Id: 3600
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 160
+		Tiles:
+			0: WoodBridge
+	Template@37:
+		Id: 37
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 50
+		Tiles:
+			0: Clear
+	Template@37a:
+		Id: 370
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 126
+		Tiles:
+			0: Walls   
+	Template@37b:
+		Id: 3700
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 161
+		Tiles:
+			0: Walls  
+
+	Template@39:
+		Id: 39
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 74
+		Tiles:
+			0: WoodBridge 
+	Template@39a:
+		Id: 390
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 153
+		Tiles:
+			0: WoodBridge 
+	Template@40:
+		Id: 40
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 36
+		Tiles:
+			0: Clear 
+	Template@40a:
+		Id: 400
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 162
+		Tiles:
+			0: Walls 
+
+	Template@41:
+		Id: 41
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 87
+		Tiles:
+			0: WoodBridge 
+	Template@41a:
+		Id: 410
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 166
+		Tiles:
+			0: WoodBridge 
+	Template@42:
+		Id: 42
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 49
+		Tiles:
+			0: Clear
+	Template@42a:
+		Id: 420
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 125
+		Tiles:
+			0: Clear
+
+	Template@44:
+		Id: 44
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 50
+		Tiles:
+			0: Clear
+	Template@44a:
+		Id: 440
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 126
+		Tiles:
+			0: Clear
+	Template@44b:
+		Id: 4400
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 161
+		Tiles:
+			0: Clear
+	Template@45:
+		Id: 45
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 61
+		Tiles:
+			0: WoodBridge 
+	Template@45a:
+		Id: 450
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 140
+		Tiles:
+			0: WoodBridge 
+	Template@46:
+		Id: 46
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 37
+		Tiles:
+			0: Clear  
+	Template@46a:
+		Id: 460
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 163
+		Tiles:
+			0: Walls 
+	Template@46b:
+		Id: 4600
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 159
+		Tiles:
+			0: Walls
+
+	Template@47:
+		Id: 47
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 75
+		Tiles:
+			0: StoneBridge 
+	Template@47a:
+		Id: 470
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 151
+		Tiles:
+			0: StoneBridge
+	Template@48:
+		Id: 48
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 62
+		Tiles:
+			0: Clear  
+	Template@48a:
+		Id: 480
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 138
+		Tiles:
+			0: Walls
+
+	Template@49:
+		Id: 49
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 76
+		Tiles:
+			0: StoneBridge 
+	Template@49a:
+		Id: 490
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 152
+		Tiles:
+			0: StoneBridge 
+	Template@50:
+		Id: 50
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 63
+		Tiles:
+			0: Clear   
+	Template@50a:
+		Id: 500
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Bridge
+		Frames: 139
+		Tiles:
+			0: Walls 
+
+	Template@51:
+		Id: 51
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Buttons and Traps
+		Frames: 59
+		Tiles:
+			0: Button 
+	Template@52:
+		Id: 52
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Buttons and Traps
+		Frames: 60
+		Tiles:
+			0: ButtonActive   
+
+	Template@53:
+		Id: 53
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Buttons and Traps
+		Frames: 72
+		Tiles:
+			0: Button 
+	Template@54:
+		Id: 54
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Buttons and Traps
+		Frames: 73
+		Tiles:
+			0: ButtonActive   
+
+	Template@55:
+		Id: 55
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Buttons and Traps
+		Frames: 57
+		Tiles:
+			0: Trap 
+	Template@56:
+		Id: 56
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Buttons and Traps
+		Frames: 58
+		Tiles:
+			0: TrapActive	 
+
+	Template@57:
+		Id: 57
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 119
+		Tiles:
+			0: Walls 
+	Template@57a:
+		Id: 570
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 118
+		Tiles:
+			0: Walls 
+	Template@58:
+		Id: 58
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 120
+		Tiles:
+			0: Clear
+	Template@58a:
+		Id: 65000
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,2
+		PickAny: False
+		Categories: Walls and Stairs
+		Frames: 131, 144
+		Tiles:
+			0: Stairs 
+			1: Walls
+	Template@58b:
+		Id: 6500
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,2
+		PickAny: False
+		Categories: Walls and Stairs
+		Frames: 12, 25
+		Tiles:
+			0: Stairs 
+			1: Walls
+	Template@58c:
+		Id: 6501
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,2
+		PickAny: False
+		Categories: Walls and Stairs
+		Frames: 116, 129
+		Tiles:
+			0: Stairs 
+			1: Walls
+
+	Template@60:
+		Id: 60
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 145
+		Tiles:
+			0: Walls 
+			
+	Template@61:
+		Id: 61
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 123
+		Tiles:
+			0: Clear 
+	Template@61a:
+		Id: 610
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 117
+		Tiles:
+			0: Walls 
+	Template@62:
+		Id: 62
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 124
+		Tiles:
+			0: Clear
+	Template@62a:
+		Id: 66
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,2
+		PickAny: False
+		Categories: Walls and Stairs
+		Frames: 130, 143
+		Tiles:
+			0: Stairs 
+			1: Walls
+	Template@62b:
+		Id: 6600
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,2
+		PickAny: False
+		Categories: Walls and Stairs
+		Frames: 38, 51
+		Tiles:
+			0: Stairs 
+			1: Walls
+	Template@62c:
+		Id: 6601
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,2
+		PickAny: False
+		Categories: Walls and Stairs
+		Frames: 115, 128
+		Tiles:
+			0: Stairs 
+			1: Walls
+	Template@63:
+		Id: 63
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: Walls and Stairs
+		Frames: 150
+		Tiles:
+			0: Walls  
+	#FullPlatform Extension
+
+	Template@100:
+		Id: 100
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 247
+		Tiles:
+			0: Plattform  
+	Template@101:
+		Id: 101
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 248
+		Tiles:
+			0: Plattform  
+	Template@102:
+		Id: 102
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 249
+		Tiles:
+			0: Plattform
+	Template@103:
+		Id: 103
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 260
+		Tiles:
+			0: Plattform 
+			
+	Template@104:
+		Id: 104
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 261
+		Tiles:
+			0: Plattform  
+	Template@105:
+		Id: 105
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 262
+		Tiles:
+			0: Plattform  
+	Template@106:
+		Id: 106
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 273
+		Tiles:
+			0: Plattform
+	Template@107:
+		Id: 107
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 274
+		Tiles:
+			0: Plattform 
+			
+	Template@108:
+		Id: 108
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 275
+		Tiles:
+			0: Plattform 
+            
+	Template@109:
+		Id: 109
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 156
+		Tiles:
+			0: Plattform  
+	Template@110:
+		Id: 110
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 157
+		Tiles:
+			0: Plattform  
+	Template@111:
+		Id: 111
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 158
+		Tiles:
+			0: Plattform
+	Template@112:
+		Id: 112
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 169
+		Tiles:
+			0: Plattform 
+			
+	Template@113:
+		Id: 113
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 170
+		Tiles:
+			0: Plattform  
+	Template@114:
+		Id: 114
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 171
+		Tiles:
+			0: Plattform  
+	Template@115:
+		Id: 115
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 208
+		Tiles:
+			0: Plattform
+	Template@1116:
+		Id: 116
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 209
+		Tiles:
+			0: Plattform 		
+	Template@117:
+		Id: 117
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 210
+		Tiles:
+			0: Plattform 
+            
+	Template@118:
+		Id: 118
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 182
+		Tiles:
+			0: Plattform
+	Template@119:
+		Id: 119
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 183
+		Tiles:
+			0: Plattform 		
+	Template@120:
+		Id: 120
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 184
+		Tiles:
+			0: Plattform 
+            
+	Template@121:
+		Id: 121
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 195
+		Tiles:
+			0: Plattform
+	Template@122:
+		Id: 122
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 199
+		Tiles:
+			0: Plattform 		
+	Template@123:
+		Id: 123
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 197
+		Tiles:
+			0: Plattform 
+            
+	Template@124:
+		Id: 124
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 211
+		Tiles:
+			0: Plattform
+	Template@125:
+		Id: 125
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 212
+		Tiles:
+			0: Plattform 		
+	Template@126:
+		Id: 126
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 213
+		Tiles:
+			0: Plattform 
+            
+	Template@127:
+		Id: 127
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 221
+		Tiles:
+			0: Plattform
+	Template@128:
+		Id: 128
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 225
+		Tiles:
+			0: Plattform 		
+	Template@129:
+		Id: 129
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 223
+		Tiles:
+			0: Plattform 
+            
+	Template@130:
+		Id: 130
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 196
+		Tiles:
+			0: Plattform
+	Template@131:
+		Id: 131
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 227
+		Tiles:
+			0: Plattform 		
+	Template@132:
+		Id: 132
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 222
+		Tiles:
+			0: Plattform 
+            
+	Template@1310:
+		Id: 1310
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 236
+		Tiles:
+			0: Plattform
+	Template@1320:
+		Id: 1320
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 224
+		Tiles:
+			0: Plattform 		
+	Template@133:
+		Id: 133
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 172
+		Tiles:
+			0: Plattform 
+            
+	Template@134:
+		Id: 134
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 250
+		Tiles:
+			0: Plattform
+	Template@135:
+		Id: 135
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 238
+		Tiles:
+			0: Plattform 		
+	Template@136:
+		Id: 136
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 186
+		Tiles:
+			0: Plattform 
+            
+	Template@137:
+		Id: 137
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 226
+		Tiles:
+			0: Plattform
+	Template@138:
+		Id: 138
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 240
+		Tiles:
+			0: Plattform 		
+	Template@139:
+		Id: 139
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 185
+		Tiles:
+			0: Plattform 
+            
+	Template@140:
+		Id: 140
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 214
+		Tiles:
+			0: Plattform
+	Template@141:
+		Id: 141
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 228
+		Tiles:
+			0: Plattform 		
+	Template@142:
+		Id: 142
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 173
+		Tiles:
+			0: Plattform 
+            
+	Template@143:
+		Id: 143
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 187
+		Tiles:
+			0: Plattform
+	Template@144:
+		Id: 144
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 174
+		Tiles:
+			0: Plattform 		
+	Template@145:
+		Id: 145
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 175
+		Tiles:
+			0: Plattform 
+	Template@146:
+		Id: 146
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 188
+		Tiles:
+			0: Plattform 
+            
+	Template@147:
+		Id: 147
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 234
+		Tiles:
+			0: Plattform 
+	Template@148:
+		Id: 148
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 235
+		Tiles:
+			0: Plattform
+            
+	Template@149:
+		Id: 149
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 251
+		Tiles:
+			0: Plattform 
+	Template@150:
+		Id: 150
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 253
+		Tiles:
+			0: Plattform 
+	Template@151:
+		Id: 151
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 239
+		Tiles:
+			0: Plattform 
+	Template@152:
+		Id: 152
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: FullPlatform
+		Frames: 265
+		Tiles:
+			0: Plattform
+            
+	Template@153:
+		Id: 153
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 176
+		Tiles:
+			0: Manaspot
+	Template@154:
+		Id: 154
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 177
+		Tiles:
+			0: Manaspot
+	Template@155:
+		Id: 155
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 178
+		Tiles:
+			0: Manaspot
+	Template@156:
+		Id: 156
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 189
+		Tiles:
+			0: Manaspot
+	Template@157:
+		Id: 157
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 190
+		Tiles:
+			0: Manaspot
+	Template@158:
+		Id: 158
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 191
+		Tiles:
+			0: Manaspot
+	Template@159:
+		Id: 159
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 202
+		Tiles:
+			0: Manaspot
+	Template@160:
+		Id: 160
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 203
+		Tiles:
+			0: Manaspot
+	Template@161:
+		Id: 161
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 204
+		Tiles:
+			0: Manaspot
+            
+	Template@162:
+		Id: 162
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 181
+		Tiles:
+			0: Manaspot
+	Template@163:
+		Id: 163
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 193
+		Tiles:
+			0: Manaspot
+	Template@164:
+		Id: 164
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 194
+		Tiles:
+			0: Manaspot
+            
+	Template@165:
+		Id: 165
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 179
+		Tiles:
+			0: Manaspot
+	Template@166:
+		Id: 166
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 192
+		Tiles:
+			0: Manaspot
+	Template@167:
+		Id: 167
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 205
+		Tiles:
+			0: Manaspot
+	Template@168:
+		Id: 168
+		Images: bits/platformtiles.png
+		Palette: Platformtiles
+		Size: 1,1
+		PickAny: True
+		Categories: ManaSpots
+		Frames: 180
+		Tiles:
+			0: Manaspot

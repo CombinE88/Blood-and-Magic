@@ -1,0 +1,10 @@
+World:
+	Faction@bam:
+		Name: bam
+		InternalName: bam
+		Description: Diggnsack
+	MPStartUnits@bam:
+		Class: none
+		ClassName: bam
+		BaseActor: acolyte
+		Factions: bam

@@ -128,3 +128,41 @@
 	PaletteFromPal@bam11195:
 		Name: bam11195
 		Filename: 11195.pal
+	OverlayPlayerColorPalette@BamPlayer: # Used for all player-colored actors.
+		BasePalette: bam11195
+		BaseName: BamPlayer
+		RemapIndex: 192, 193, 194, 195, 196, 197, 198, 199
+	PaletteFromPng@platformtiles:
+		Name: Platformtiles
+		Tileset: PLATFORM
+		Filename: bits/platformtiles.png  
+	PaletteFromPal@banplayer:
+		Name: banplayer
+		Filename: 11195.pal
+	PaletteFromFile@terrain-platform:
+		Name: terrain
+		Tileset: PLATFORM
+		Filename: bits/platformtiles.png
+	PaletteFromPal@colorpicker: # TODO remove this
+		Name: colorpicker
+		Filename: 11195.pal
+		AllowModifiers: false
+	PaletteFromPal@chrome: # TODO remove this
+		Name: chrome
+		Filename: 11195.pal
+	PaletteFromPal@moveflash: # TODO remove this
+		Name: moveflash
+		Filename: 11195.pal
+	PaletteFromRGBA@highlight:
+		Name: highlight
+		R: 255
+		G: 255
+		B: 255
+		A: 128
+	PaletteFromPng@shroud:
+		Name: shroud
+		Filename: bits/shroud.png
+	PaletteFromPaletteWithAlpha@fog:
+		Name: fog
+		BasePalette: shroud
+		Alpha: 0.5

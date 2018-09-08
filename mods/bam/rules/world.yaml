@@ -1,0 +1,13 @@
+^CoreWorld:
+	Locomotor@FOOT:
+		Name: foot
+		TerrainSpeeds:
+			Plattform: 100
+			Stairs: 100
+			WoodBridge: 100
+			StoneBridge: 100
+			Button: 100
+			ButtonActive: 100
+			Trap: 100
+			TrapActive: 100
+			Manaspot: 100

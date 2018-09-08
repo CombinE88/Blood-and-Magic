@@ -1,0 +1,46 @@
+^default:
+	Defaults:
+		AddExtension: False
+
+acolyte:
+	Inherits: ^default
+	idle: acolyte_stand.ani
+		Facings: 8
+	stand: acolyte_stand.ani
+		Tick: 100
+		Facings: 8
+	run: acolyte_run.ani
+		Tick: 100
+		Length: 4
+		Facings: 8
+	attack: acolyte_attack.ani
+		Tick: 100
+		Length: 4
+		Facings: 8
+	damage: acolyte_damage.ani
+		Tick: 100
+		Length: 4
+		Facings: 4
+	transform: acolyte_transform.ani
+		Tick: 100
+		Length: *
+
+
+shroud:
+	shroud: bits/shroud.png
+		Length: 16
+	shroudfull: bits/shroud.png
+		Start: 1
+	fog: bits/shroud.png
+		Length: 16
+	fogfull: bits/shroud.png
+		Start: 1
+
+editor-overlay:
+	copy: bits/shroud.png
+		Start: 0
+	paste: bits/shroud.png
+		Start: 1
+
+moveflsh:
+	idle: bits/mpspawn.png

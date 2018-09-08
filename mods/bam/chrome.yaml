@@ -1,0 +1,1044 @@
+sidebar: uibits/chrome.png
+	background-top: 274,167,238,290
+	background-iconrow: 274,457,238,47
+	background-bottom: 274,504,238,8
+	background-supportoverlay: 64,75,64,48
+
+sidebar-button: uibits/chrome.png
+	background: 3,31,22,22
+	border-r: 25,31,3,22
+	border-l: 0,31,3,22
+	border-b: 3,53,22,3
+	border-t: 3,28,22,3
+	corner-tl: 0,28,3,3
+	corner-tr: 25,28,3,3
+	corner-bl: 0,53,3,3
+	corner-br: 25,53,3,3
+sidebar-button-hover: uibits/chrome.png
+	background: 3,3,22,22
+	border-r: 25,3,3,22
+	border-l: 0,3,3,22
+	border-b: 3,25,22,3
+	border-t: 3,0,22,3
+	corner-tl: 0,0,3,3
+	corner-tr: 25,0,3,3
+	corner-bl: 0,25,3,3
+	corner-br: 25,25,3,3
+sidebar-button-pressed: uibits/chrome.png
+	background: 3,31,22,22
+	border-r: 25,31,3,22
+	border-l: 0,31,3,22
+	border-b: 3,53,22,3
+	border-t: 3,28,22,3
+	corner-tl: 0,28,3,3
+	corner-tr: 25,28,3,3
+	corner-bl: 0,53,3,3
+	corner-br: 25,53,3,3
+sidebar-button-highlighted: uibits/chrome.png
+	background: 31,31,22,22
+	border-r: 53,31,3,22
+	border-l: 28,31,3,22
+	border-b: 31,53,22,3
+	border-t: 31,28,22,3
+	corner-tl: 28,28,3,3
+	corner-tr: 53,28,3,3
+	corner-bl: 28,53,3,3
+	corner-br: 53,53,3,3
+sidebar-button-highlighted-hover: uibits/chrome.png
+	background: 31,3,22,22
+	border-r: 53,3,3,22
+	border-l: 28,3,3,22
+	border-b: 31,25,22,3
+	border-t: 31,0,22,3
+	corner-tl: 28,0,3,3
+	corner-tr: 53,0,3,3
+	corner-bl: 28,25,3,3
+	corner-br: 53,25,3,3
+sidebar-button-highlighted-pressed: uibits/chrome.png
+	background: 31,31,22,22
+	border-r: 53,31,3,22
+	border-l: 28,31,3,22
+	border-b: 31,53,22,3
+	border-t: 31,28,22,3
+	corner-tl: 28,28,3,3
+	corner-tr: 53,28,3,3
+	corner-bl: 28,53,3,3
+	corner-br: 53,53,3,3
+sidebar-button-disabled: uibits/chrome.png
+	background: 171,3,22,22
+	border-r: 193,3,3,22
+	border-l: 168,3,3,22
+	border-b: 171,25,22,3
+	border-t: 171,0,22,3
+	corner-tl: 168,0,3,3
+	corner-tr: 193,0,3,3
+	corner-bl: 168,25,3,3
+	corner-br: 193,25,3,3
+sidebar-button-highlighted-disabled: uibits/chrome.png
+	background: 171,3,22,22
+	border-r: 193,3,3,22
+	border-l: 168,3,3,22
+	border-b: 171,25,22,3
+	border-t: 171,0,22,3
+	corner-tl: 168,0,3,3
+	corner-tr: 193,0,3,3
+	corner-bl: 168,25,3,3
+	corner-br: 193,25,3,3
+
+command-button: uibits/chrome.png
+	background: 3,31,22,22
+command-button-hover: uibits/chrome.png
+	background: 3,3,22,22
+command-button-pressed: uibits/chrome.png
+	background: 3,31,22,22
+command-button-highlighted: uibits/chrome.png
+	background: 31,31,22,22
+command-button-highlighted-hover: uibits/chrome.png
+	background: 31,3,22,22
+command-button-highlighted-pressed: uibits/chrome.png
+	background: 31,31,22,22
+command-button-disabled: uibits/chrome.png
+	background: 3,31,22,22
+command-button-highlighted-disabled: uibits/chrome.png
+	background: 31,31,22,22
+
+sidebar-bits: uibits/chrome.png
+	production-tooltip-time: 416, 80, 16, 16
+	production-tooltip-power: 432, 80, 16, 16
+	production-tooltip-cost: 448, 80, 16, 16
+	production-iconoverlay: 128,75,238,48
+	commandbar-background: 0,123,434,44
+
+power-icons: uibits/chrome.png
+	power-normal: 350,0,12,18
+	power-critical: 363,0,12,18
+
+production-icons: uibits/chrome.png
+	building: 384,0,16,16
+	building-disabled: 384,16,16,16
+	building-alert: 384,32,16,16
+	defense: 400,0,16,16
+	defense-disabled: 400,16,16,16
+	defense-alert: 400,32,16,16
+	infantry: 416,0,16,16
+	infantry-disabled: 416,16,16,16
+	infantry-alert: 416,32,16,16
+	vehicle: 432,0,16,16
+	vehicle-disabled: 432,16,16,16
+	vehicle-alert: 432,32,16,16
+	aircraft: 448,0,16,16
+	aircraft-disabled: 448,16,16,16
+	aircraft-alert: 448,32,16,16
+	ship: 496,48,16,16
+	ship-disabled: 496,64,16,16
+	ship-alert: 496,80,16,16
+
+order-icons: uibits/chrome.png
+	options: 480,0,16,16
+	options-disabled: 480,16,16,16
+	options-active: 480,32,16,16
+	debug: 351,48,16,16
+	debug-disabled: 351,64,16,16
+	debug-active: 351,80,16,16
+	diplomacy: 464,48,16,16
+	diplomacy-disabled: 464,64,16,16
+	diplomacy-active: 464,80,16,16
+	sell: 496,0,16,16
+	sell-disabled: 496,16,16,16
+	sell-active: 496,32,16,16
+	repair: 384,48,16,16
+	repair-disabled: 384,64,16,16
+	repair-active: 384,80,16,16
+	beacon: 400,48,16,16
+	beacon-disabled: 400,64,16,16
+	beacon-active: 400,80,16,16
+	power: 480,48,16,16
+	power-disabled: 480,64,16,16
+	power-active: 480,80,16,16
+	stats: 368,48,16,16
+	stats-disabled: 368,64,16,16
+	stats-active: 368,80,16,16
+
+command-icons: uibits/chrome.png
+	attack-move: 512,0,24,24
+	attack-move-disabled: 512,24,24,24
+	force-move: 536,0,24,24
+	force-move-disabled: 536,24,24,24
+	force-attack: 560,0,24,24
+	force-attack-disabled: 560,24,24,24
+	guard: 584,0,24,24
+	guard-disabled: 584,24,24,24
+	deploy: 608,0,24,24
+	deploy-disabled: 608,24,24,24
+	scatter: 632,0,24,24
+	scatter-disabled: 632,24,24,24
+	stop: 656,0,24,24
+	stop-disabled: 656,24,24,24
+	queue-orders: 680,0,24,24
+	queue-orders-disabled: 680,24,24,24
+
+stance-icons: uibits/chrome.png
+	attack-anything: 512,48,16,16
+	attack-anything-disabled: 528,48,16,16
+	attack-anything-active: 544,48,16,16
+	defend: 560,48,16,16
+	defend-disabled: 576,48,16,16
+	defend-active: 592,48,16,16
+	return-fire: 608,48,16,16
+	return-fire-disabled: 624,48,16,16
+	return-fire-active: 640,48,16,16
+	hold-fire: 656,48,16,16
+	hold-fire-disabled: 672,48,16,16
+	hold-fire-active: 688,48,16,16
+
+sidebar-observer: uibits/chrome.png
+	background: 512,167,238,287
+	replay-bottom: 512,454,238,40
+	observer-bottom: 512,495,238,8
+
+sidebar-button-observershroud: uibits/chrome.png
+sidebar-button-observershroud-pressed: uibits/chrome.png
+sidebar-button-observershroud-hover: uibits/chrome.png
+
+sidebar-button-observer: uibits/chrome.png
+	background: 117,33,18,18
+	border-r: 135,33,5,18
+	border-l: 112,33,5,18
+	border-b: 117,51,18,5
+	border-t: 117,28,18,5
+	corner-tl: 112,28,5,5
+	corner-tr: 135,28,5,5
+	corner-bl: 112,51,5,5
+	corner-br: 135,51,5,5
+sidebar-button-observer-hover: uibits/chrome.png
+	background: 117,5,18,18
+	border-r: 135,5,5,18
+	border-l: 112,5,5,18
+	border-b: 117,23,18,5
+	border-t: 117,0,18,5
+	corner-tl: 112,0,5,5
+	corner-tr: 135,0,5,5
+	corner-bl: 112,23,5,5
+	corner-br: 135,23,5,5
+sidebar-button-observer-pressed: uibits/chrome.png
+	background: 117,33,18,18
+	border-r: 135,33,5,18
+	border-l: 112,33,5,18
+	border-b: 117,51,18,5
+	border-t: 117,28,18,5
+	corner-tl: 112,28,5,5
+	corner-tr: 135,28,5,5
+	corner-bl: 112,51,5,5
+	corner-br: 135,51,5,5
+sidebar-button-observer-highlighted: uibits/chrome.png
+	background: 145,33,18,18
+	border-r: 163,33,5,18
+	border-l: 140,33,5,18
+	border-b: 145,51,18,5
+	border-t: 145,28,18,5
+	corner-tl: 140,28,5,5
+	corner-tr: 163,28,5,5
+	corner-bl: 140,51,5,5
+	corner-br: 163,51,5,5
+sidebar-button-observer-highlighted-hover: uibits/chrome.png
+	background: 145,5,18,18
+	border-r: 163,5,5,18
+	border-l: 140,5,5,18
+	border-b: 145,23,18,5
+	border-t: 145,0,18,5
+	corner-tl: 140,0,5,5
+	corner-tr: 163,0,5,5
+	corner-bl: 140,23,5,5
+	corner-br: 163,23,5,5
+sidebar-button-observer-highlighted-pressed: uibits/chrome.png
+	background: 33,33,18,18
+	border-r: 51,33,5,18
+	border-l: 28,33,5,18
+	border-b: 33,51,18,5
+	border-t: 33,28,18,5
+	corner-tl: 28,28,5,5
+	corner-tr: 51,28,5,5
+	corner-bl: 28,51,5,5
+	corner-br: 51,51,5,5
+sidebar-button-observer-disabled: uibits/chrome.png
+	background: 173,5,18,18
+	border-r: 191,5,5,18
+	border-l: 168,5,5,18
+	border-b: 173,23,18,5
+	border-t: 173,0,18,5
+	corner-tl: 168,0,5,5
+	corner-tr: 191,0,5,5
+	corner-bl: 168,23,5,5
+	corner-br: 191,23,5,5
+sidebar-button-observer-highlighted-disabled: uibits/chrome.png
+	background: 173,5,18,18
+	border-r: 191,5,5,18
+	border-l: 168,5,5,18
+	border-b: 173,23,18,5
+	border-t: 173,0,18,5
+	corner-tl: 168,0,5,5
+	corner-tr: 191,0,5,5
+	corner-bl: 168,23,5,5
+	corner-br: 191,23,5,5
+
+observer-scrollpanel-button: uibits/dialog.png
+	background: 769,257,126,126
+	border-r: 895,257,1,126
+	border-l: 768,257,1,126
+	border-b: 769,383,126,1
+	border-t: 769,256,126,1
+	corner-tl: 768,256,1,1
+	corner-tr: 895,256,1,1
+	corner-bl: 768,383,1,1
+	corner-br: 895,383,1,1
+
+observer-scrollpanel-button-hover: uibits/dialog.png
+	background: 769,257,126,126
+	border-r: 895,257,1,126
+	border-l: 768,257,1,126
+	border-b: 769,383,126,1
+	border-t: 769,256,126,1
+	corner-tl: 768,256,1,1
+	corner-tr: 895,256,1,1
+	corner-bl: 768,383,1,1
+	corner-br: 895,383,1,1
+
+observer-scrollpanel-button-pressed: uibits/dialog.png
+	background: 897,257,126,126
+	border-r: 1023,257,1,126
+	border-l: 896,257,1,126
+	border-b: 897,383,126,1
+	border-t: 897,256,126,1
+	corner-tl: 896,256,1,1
+	corner-tr: 1023,256,1,1
+	corner-bl: 896,383,1,1
+	corner-br: 1023,383,1,1
+
+observer-scrollpanel-button-disabled: uibits/dialog.png
+	background: 769,385,126,126
+	border-r: 895,385,1,126
+	border-l: 768,385,1,126
+	border-b: 769,511,126,1
+	border-t: 769,384,126,1
+	corner-tl: 768,384,1,1
+	corner-tr: 895,384,1,1
+	corner-bl: 768,511,1,1
+	corner-br: 895,511,1,1
+
+observer-scrollheader-selected: uibits/dialog.png
+	background: 769,385,126,126
+	border-r: 895,385,1,126
+	border-l: 768,385,1,126
+	border-b: 769,511,126,1
+	border-t: 769,384,126,1
+	corner-tl: 768,384,1,1
+	corner-tr: 895,384,1,1
+	corner-bl: 768,511,1,1
+	corner-br: 895,511,1,1
+
+observer-scrollitem-selected: uibits/dialog.png
+	background: 897,257,126,126
+	border-r: 1023,257,1,126
+	border-l: 896,257,1,126
+	border-b: 897,383,126,1
+	border-t: 897,256,126,1
+	corner-tl: 896,256,1,1
+	corner-tr: 1023,256,1,1
+	corner-bl: 896,383,1,1
+	corner-br: 1023,383,1,1
+
+observer-scrollitem-hover: uibits/dialog.png
+	background: 769,257,126,126
+	border-r: 895,257,1,126
+	border-l: 768,257,1,126
+	border-b: 769,383,126,1
+	border-t: 769,256,126,1
+	corner-tl: 768,256,1,1
+	corner-tr: 895,256,1,1
+	corner-bl: 768,383,1,1
+	corner-br: 895,383,1,1
+
+# Used for the main menu frame
+dialog: uibits/dialog.png
+	background: 40,21,360,223
+	border-r: 400,7,40,251
+	border-l: 0,7,40,251
+	border-b: 40,244,360,22
+	border-t: 40,0,360,21
+	corner-tl: 0,266,40,21
+	corner-tr: 40,266,40,21
+	corner-bl: 0,286,40,22
+	corner-br: 40,286,40,22
+
+# Used for Music and Map selection (normal button)
+dialog2: uibits/dialog.png
+	background: 516,3,13,11
+	border-t: 516,0,13,3
+	border-b: 516,14,13,3
+	border-l: 512,3,4,11
+	border-r: 529,3,4,11
+	corner-tl: 512,0,4,3
+	corner-tr: 529,0,4,3
+	corner-bl: 512,14,4,3
+	corner-br: 529,14,4,3
+
+# It's a Container, used in various places, like Hotkeys, ColorPicker, Asset Browser frames (looks like a pressed button)
+dialog3: uibits/dialog.png
+	background: 516,21,13,11
+	border-t: 516,18,13,3
+	border-b: 516,32,13,3
+	border-l: 512,21,4,11
+	border-r: 529,21,4,11
+	corner-tl: 512,18,4,3
+	corner-tr: 529,18,4,3
+	corner-bl: 512,32,4,3
+	corner-br: 529,32,4,3
+
+# Used for tooltips and the video player
+dialog4: uibits/dialog.png
+	background: 516,39,13,11
+	border-t: 516,36,13,3
+	border-b: 516,50,13,3
+	border-l: 512,39,4,11
+	border-r: 529,39,4,11
+	corner-tl: 512,36,4,3
+	corner-tr: 529,36,4,3
+	corner-bl: 512,50,4,3
+	corner-br: 529,50,4,3
+
+tooltip-separator: uibits/dialog.png
+	border-t: 517,387,54,1
+
+# completely black tile
+dialog5: uibits/dialog.png
+	background: 579,387,64,64
+	border-t: 579,387,64,1
+	border-b: 579,451,64,1
+	border-l: 579,387,1,64
+	border-r: 643,387,1,64
+	corner-tl: 579,387,1,1
+	corner-tr: 643,387,1,1
+	corner-bl: 579,446,1,1
+	corner-br: 643,446,1,1
+
+lobby-bits: uibits/buttons.png
+	spawn-unclaimed: 159,5,23,22
+	spawn-claimed: 127,5,23,22
+	admin: 187,5,7,5
+	colorpicker: 127,5,23,22
+	huepicker: 194,0,7,15
+	protected: 202,0,10,13
+	protected-disabled: 213,0,10,13
+	admin-registered: 224,0,16,16
+	admin-anonymous: 240,0,16,16
+	player-registered: 224,16,16,16
+	player-anonymous: 240,16,16,16
+
+reload-icon: uibits/chrome.png
+	enabled: 512,80,16,16
+	disabled-0: 512,64,16,16
+	disabled-1: 528,64,16,16
+	disabled-2: 544,64,16,16
+	disabled-3: 560,64,16,16
+	disabled-4: 576,64,16,16
+	disabled-5: 592,64,16,16
+	disabled-6: 608,64,16,16
+	disabled-7: 624,64,16,16
+	disabled-8: 640,64,16,16
+	disabled-9: 656,64,16,16
+	disabled-10: 672,64,16,16
+	disabled-11: 688,64,16,16
+
+strategic: uibits/buttons.png
+	unowned: 127,5,23,22
+	critical_unowned: 127,27,23,22
+	enemy_owned: 159,27,23,22
+	player_owned: 159,49,23,22
+
+flags: uibits/buttons.png
+	bam: 0,112,30,15
+	Random: 60,112,30,15
+	spectator: 60,112,30,15
+
+music: uibits/buttons.png
+	pause: 0,193,25,25
+	stop: 25,193,25,25
+	play: 55,193,25,25
+	next: 82,193,25,25
+	prev: 110,193,25,25
+	fastforward: 131,193,25,25
+	slowmo: 159,193,25,25
+
+scrollbar: uibits/buttons.png
+	down_arrow: 116,140,16,16
+	down_pressed: 116,140,16,16
+	up_arrow: 132,140,16,16
+	up_pressed: 132,140,16,16
+
+# A copy of dialog3 (pressed button)
+progressbar-bg: uibits/dialog.png
+	background: 641,1,126,126
+	border-r: 767,1,1,126
+	border-l: 640,1,1,126
+	border-b: 641,127,126,1
+	border-t: 641,0,126,1
+	corner-tl: 640,0,1,1
+	corner-tr: 767,0,1,1
+	corner-bl: 640,127,1,1
+	corner-br: 767,127,1,1
+
+# A copy of dialog2 (normal button)
+progressbar-thumb: uibits/dialog.png
+	background: 513,1,126,126
+	border-r: 639,1,1,126
+	border-l: 512,1,1,126
+	border-b: 513,127,126,1
+	border-t: 513,0,126,1
+	corner-tl: 512,0,1,1
+	corner-tr: 639,0,1,1
+	corner-bl: 512,127,1,1
+	corner-br: 639,127,1,1
+
+# A copy of dialog2 (normal button)
+button: uibits/dialog.png
+	background: 516,3,13,11
+	border-t: 516,0,13,3
+	border-b: 516,14,13,3
+	border-l: 512,3,4,11
+	border-r: 529,3,4,11
+	corner-tl: 512,0,4,3
+	corner-tr: 529,0,4,3
+	corner-bl: 512,14,4,3
+	corner-br: 529,14,4,3
+
+# 5% lighter than a normal button (mouseover)
+button-hover: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+	
+# A copy of dialog3 (pressed button)
+button-pressed: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# 50% grey (disabled button)
+button-disabled: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3 
+    
+# 10% darker than a normal button - Used in Settings when you select Display Audio Input or Advanced
+button-highlighted: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+# A copy of button-highlighted - Used in Settings when you select Display Audio Input or Advanced
+button-highlighted-hover: uibits/dialog.png
+	background: 569,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+#  Used in Settings when you select Display Audio Input or Advanced
+button-highlighted-pressed: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of button-highlighted - Used in Settings when you select Display Audio Input or Advanced
+button-highlighted-disabled: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+	
+# vivid red - Used for the Battlefields News button
+newsbutton: uibits/dialog.png
+	background: 516,21,13,11
+	border-t: 516,18,13,3
+	border-b: 516,32,13,3
+	border-l: 512,21,4,11
+	border-r: 529,21,4,11
+	corner-tl: 512,18,4,3
+	corner-tr: 529,18,4,3
+	corner-bl: 512,32,4,3
+	corner-br: 529,32,4,3
+
+newsbutton-hover: uibits/dialog.png
+	background: 560,21,13,11
+	border-t: 560,18,13,3
+	border-b: 560,32,13,3
+	border-l: 556,21,4,11
+	border-r: 573,21,4,11
+	corner-tl: 556,18,4,3
+	corner-tr: 573,18,4,3
+	corner-bl: 556,32,4,3
+	corner-br: 573,32,4,3
+	
+newsbutton-highlighted: uibits/dialog.png
+	background: 560,21,13,11
+	border-t: 560,18,13,3
+	border-b: 560,32,13,3
+	border-l: 556,21,4,11
+	border-r: 573,21,4,11
+	corner-tl: 556,18,4,3
+	corner-tr: 573,18,4,3
+	corner-bl: 556,32,4,3
+	corner-br: 573,32,4,3
+    
+newsbutton-highlighted-hover: uibits/dialog.png
+	background: 560,21,13,11
+	border-t: 560,18,13,3
+	border-b: 560,32,13,3
+	border-l: 556,21,4,11
+	border-r: 573,21,4,11
+	corner-tl: 556,18,4,3
+	corner-tr: 573,18,4,3
+	corner-bl: 556,32,4,3
+	corner-br: 573,32,4,3
+	
+newsbutton-highlighted-pressed: uibits/dialog.png
+	background: 538,21,13,11
+	border-t: 538,18,13,3
+	border-b: 538,32,13,3
+	border-l: 534,21,4,11
+	border-r: 551,21,4,11
+	corner-tl: 534,18,4,3
+	corner-tr: 551,18,4,3
+	corner-bl: 534,32,4,3
+	corner-br: 551,32,4,3 
+
+newsbutton-pressed: uibits/dialog.png
+	background: 538,21,13,11
+	border-t: 538,18,13,3
+	border-b: 538,32,13,3
+	border-l: 534,21,4,11
+	border-r: 551,21,4,11
+	corner-tl: 534,18,4,3
+	corner-tr: 551,18,4,3
+	corner-bl: 534,32,4,3
+	corner-br: 551,32,4,3 
+
+# A copy of dialog3 (pressed button)
+textfield: uibits/dialog.png
+	background: 538,39,13,11
+	border-t: 538,36,13,3
+	border-b: 538,50,13,3
+	border-l: 534,39,4,11
+	border-r: 551,39,4,11
+	corner-tl: 534,36,4,3
+	corner-tr: 551,36,4,3
+	corner-bl: 534,50,4,3
+	corner-br: 551,50,4,3
+
+# A copy of checkbox-hover
+textfield-hover: uibits/dialog.png
+	background: 516,39,13,11
+	border-t: 516,36,13,3
+	border-b: 516,50,13,3
+	border-l: 512,39,4,11
+	border-r: 529,39,4,11
+	corner-tl: 512,36,4,3
+	corner-tr: 529,36,4,3
+	corner-bl: 512,50,4,3
+	corner-br: 529,50,4,3
+
+# Same as button-disabled-pressed
+textfield-disabled: uibits/dialog.png
+	background: 538,39,13,11
+	border-t: 538,36,13,3
+	border-b: 538,50,13,3
+	border-l: 534,39,4,11
+	border-r: 551,39,4,11
+	corner-tl: 534,36,4,3
+	corner-tr: 551,36,4,3
+	corner-bl: 534,50,4,3
+	corner-br: 551,50,4,3
+
+# A copy of dialog3 (pressed button)
+textfield-focused: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog3 (pressed button)
+scrollpanel-bg: uibits/dialog.png
+	background: 516,3,13,11
+	border-t: 516,0,13,3
+	border-b: 516,14,13,3
+	border-l: 512,3,4,11
+	border-r: 529,3,4,11
+	corner-tl: 512,0,4,3
+	corner-tr: 529,0,4,3
+	corner-bl: 512,14,4,3
+	corner-br: 529,14,4,3
+
+
+# A copy of dialog2 (normal button)
+scrollpanel-button: uibits/dialog.png
+	background: 581,2,8,12
+	border-r: 579,2,2,12
+	border-l: 598,2,2,12
+	border-b: 581,14,8,2
+	border-t: 581,0,8,2
+	corner-tl: 579,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 579,14,2,2
+	corner-br: 589,14,2,2
+
+# A copy of button-hover
+scrollpanel-button-hover: uibits/dialog.png
+	background: 607,2,8,12
+	border-r: 615,2,2,12
+	border-l: 605,2,2,12
+	border-b: 607,14,8,2
+	border-t: 607,0,8,2
+	corner-tl: 605,0,2,2
+	corner-tr: 615,0,2,2
+	corner-bl: 605,14,2,2
+	corner-br: 615,14,2,2
+
+# A copy of dialog3 (pressed button)
+scrollpanel-button-pressed: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+# A copy of dialog2 (normal button)
+scrollpanel-button-disabled: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+slider: uibits/dialog.png
+	tick: 579,0,12,16
+
+# A copy of dialog3 (pressed button)
+slider-track: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+	
+# A copy of dialog2 (normal button)
+slider-thumb: uibits/dialog.png
+	background: 581,2,8,12
+	border-r: 579,2,2,12
+	border-l: 598,2,2,12
+	border-b: 581,14,8,2
+	border-t: 581,0,8,2
+	corner-tl: 579,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 579,14,2,2
+	corner-br: 589,14,2,2
+
+# A copy of button-hover
+slider-thumb-hover: uibits/dialog.png
+	background: 607,2,8,12
+	border-r: 615,2,2,12
+	border-l: 605,2,2,12
+	border-b: 607,14,8,2
+	border-t: 607,0,8,2
+	corner-tl: 605,0,2,2
+	corner-tr: 615,0,2,2
+	corner-bl: 605,14,2,2
+	corner-br: 615,14,2,2
+
+# A copy of dialog3 (pressed button)
+slider-thumb-pressed: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+# A copy of dialog2 (normal button)
+slider-thumb-disabled: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+# A copy of dialog3 (pressed button)
+checkbox: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+checkbox-bits: uibits/dialog.png
+	checked: 618,0,18,14
+	checked-disabled: 636,0,18,14
+	crossed: 654,0,17,16
+	crossed-disabled: 654,16,17,16
+
+checkbox-hover: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+# Same as button-disabled-pressed
+checkbox-disabled: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3 
+
+# Same as button-highlighted-pressed
+checkbox-highlighted: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog3 (pressed button)
+scrollitem-selected: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog2 (normal button)
+scrollitem-hover: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+# A copy of dialog2 (normal button)
+scrollheader-selected: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+logos: uibits/loadscreen.png
+	logo: 0,0,256,256
+
+mainmenu-border: uibits/dialog.png
+	border-r: 728,427,40,40
+	border-l: 648,427,40,40
+	border-b: 688,467,40,40
+	border-t: 688,387,40,40
+	corner-tl: 648,387,40,40
+	corner-tr: 728,387,40,40
+	corner-bl: 648,467,40,40
+	corner-br: 728,467,40,40
+
+dropdown: uibits/dialog.png
+    separator: 512,1,1,19
+    observer-separator: 768,256,1,19
+
+sidebar-bam: uibits/chrome.png
+	background: 26,252,159,251
+	border-l: 0,252,26,251
+	border-b: 26,504,159,8
+	border-t: 26,250,159,2
+	corner-tl: 0,250,26,2
+	corner-bl: 0,503,26,9
+
+bottombar-bam: uibits/chrome.png
+	background: 0,167,258,79
+	border-b: 0,246,258,4
+	border-t: 0,165,258,2
+
+button-bam-move: uibits/chromebam.png
+	empty: 140,469,70,63
+	aviable: 0,469,70,63
+	pressed: 70,469,70,63
+
+button-bam-attack: uibits/chromebam.png
+	empty: 140,532,70,63
+	aviable: 0,532,70,63
+	pressed: 70,532,70,63
+
+button-bam-stop: uibits/chromebam.png
+	empty: 0,633,140,38
+	aviable: 0,595,140,38
+	pressed: 140,595,140,38
+
+image-unit-tile: uibits/chromebam.png
+	frame: 384,952,80,72
+
+empty: uibits/dialog.png
+	background: 239,492,1,1
+empty-pressed: uibits/dialog.png
+	background: 239,492,1,1
+empty-highlited: uibits/dialog.png
+	background: 239,492,1,1
+empty-hover: uibits/dialog.png
+	background: 239,492,1,1
+
+minimapbg: uibits/chromebam.png
+	background: 594,24,128,120
+	border-r: 978,554,4,41
+	border-l: 426,553,4,41
+	border-b: 889,596,44,3
+	border-t: 891,272,47,4
+	corner-tl: 426,272,4,4
+	corner-tr: 978,272,4,4
+	corner-bl: 426,595,4,3
+	corner-br: 978,595,4,3
+
+button-bam-Research: uibits/chromebam.png
+	empty: 325,589,58,30
+	aviable: 116,671,58,30
+	pressed: 174,671,58,30
+
+button-bam-menue: uibits/chromebam.png
+	empty: 325,589,58,30
+	aviable: 232,671,58,30
+	pressed: 290,671,58,30
+
+button-bam-stift: uibits/chromebam.png
+	empty: 325,589,58,30
+	aviable: 0,671,58,30
+	pressed: 58,671,58,30
+
+bam-logo: uibits/chromebam.png
+	logo: 458,291,516,63
+
+bam-evolution: uibits/chromebam.png
+	panel: 98,956,244,68
+	phase1: 146,940,13,14
+	phase2: 172,940,12,14
+	phase3: 198,940,14,14
+	phase4: 224,940,16,14
+	phase5: 252,940,18,14
+	phasefinal: 47,966,50,57
+
+bam-upgrade: uibits/chromebam.png
+	panel: 0,968,46,56
+	phase1: 0,956,8,12
+	phase2: 8,956,8,12
+	phase3: 16,956,8,12
+	phase4: 24,956,10,12
+	phase6: 34,956,12,12
+	phase7: 0,917,14,12
+	phasefinal: 0,929,42,27
+
+stats-square: uibits/chromebam.png
+	black-square: 570,972,22,13
+	namefield: 570,954,148,14
+
+buff-icons: uibits/chromebam.png
+	speed: 538,24,10,12
+	speed-bonus: 538,37,10,12
+	speed-disabled: 538,50,10,12
+	armor: 549,24,10,12
+	armor-bonus: 549,37,10,12
+	armor-disabled: 549,50,10,12
+	atk: 560,24,10,12
+	atk-bonus: 560,37,10,12
+	atk-disabled: 560,50,10,12

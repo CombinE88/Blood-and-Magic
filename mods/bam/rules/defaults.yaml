@@ -1,0 +1,18 @@
+^Walker:
+	Inherits: ^CoreInfantry
+	#Inherits@2: ^CoreArmedSelf
+	RenderSprites:
+		PlayerPalette: BamPlayer
+	Selectable:
+		Bounds: 40,38,0,0
+		DecorationBounds: 40,38,0,0
+	Mobile:
+		Speed: 100
+		Locomotor: foot
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Tooltip:
+		GenericName: Guy
+	Targetable:
+		TargetTypes: Ground
+	#UpdatesPlayerStatistics:

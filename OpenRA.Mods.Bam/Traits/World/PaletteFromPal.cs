@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.FileFormats;
 using OpenRA.Mods.Common.Traits;
@@ -24,6 +26,19 @@ namespace OpenRA.Mods.Bam.Traits.World
 		public object Create(ActorInitializer init) { return new PaletteFromPal(init.World, this); }
 	}
 
+	class PaletteFromPalLoader : IPaletteLoader
+	{
+		public ImmutablePalette ReadPalette(Stream stream, int[] remap)
+		{
+
+			var palette = new PalPalette(stream).Colors;
+			palette[254] = 0;
+
+			return new ImmutablePalette(palette);
+		}
+	}
+
+
 	class PaletteFromPal : ILoadsPalettes, IProvidesAssetBrowserPalettes
 	{
 		readonly OpenRA.World world;
@@ -40,9 +55,7 @@ namespace OpenRA.Mods.Bam.Traits.World
 			if (info.Tileset != null && info.Tileset.ToLowerInvariant() != world.Map.Tileset.ToLowerInvariant())
 				return;
 
-			var palette = new PalPalette(world.Map.Open(info.Filename)).Colors;
-			palette[254] = 0;
-			wr.AddPalette(info.Name, new ImmutablePalette(palette), info.AllowModifiers);
+			wr.AddPalette(info.Name, new PaletteFromPalLoader().ReadPalette(world.Map.Open(info.Filename), new int[0]), info.AllowModifiers);
 		}
 
 		public IEnumerable<string> PaletteNames

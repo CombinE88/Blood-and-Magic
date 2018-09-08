@@ -1,0 +1,25 @@
+Metadata:
+	Title: Game Chooser
+	Version: closed_alpha
+	Hidden: true
+
+Packages:
+	~^Content/: content
+	$core: core
+	./mods/common: common
+
+Cursors:
+	core|cursors.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+
+LoadScreen: GameSelectLoadScreen
+
+Fonts:
+
+SpriteFormats: PngSheet
+
+SpriteSequenceFormat: DefaultSpriteSequence
+
+ModelSequenceFormat: PlaceholderModelSequence

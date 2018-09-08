@@ -70,10 +70,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="Eluant">
-      <HintPath>..\thirdparty\download\Eluant.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileFormats\AniAnimation.cs" />
@@ -81,6 +77,8 @@
     <Compile Include="FileFormats\StfContainer.cs" />
     <Compile Include="FileSystem\StfFile.cs" />
     <Compile Include="SpriteLoaders\AniLoader.cs" />
+    <Compile Include="Traits\Living.cs" />
+    <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
