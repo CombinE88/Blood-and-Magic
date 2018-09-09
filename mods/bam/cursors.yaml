@@ -29,6 +29,18 @@ Cursors:
 			X: -15
 			Y: -15
 
+	cursor_deploy.ani: cursor
+		deploy:
+			Start: 0
+			X: -15
+			Y: -15
+	cursor_deploy_blocked.ani: cursor
+		deploy-blocked:
+			Start: 0
+			X: -15
+			Y: -15
+
+	cursor_default.ani: cursor
 		attack:
 			Start: 0
 			X: -15

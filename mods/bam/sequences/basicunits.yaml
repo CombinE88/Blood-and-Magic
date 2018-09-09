@@ -1,6 +1,7 @@
 ^default:
 	Defaults:
 		AddExtension: False
+		Offset: 0,-10
 
 acolyte:
 	Inherits: ^default
@@ -17,6 +18,9 @@ acolyte:
 		Tick: 100
 		Length: 4
 		Facings: 8
+	die: acolyte_death.ani
+		Tick: 100
+		Length: *
 	damage: acolyte_damage.ani
 		Tick: 100
 		Length: 4
@@ -24,7 +28,19 @@ acolyte:
 	transform: acolyte_transform.ani
 		Tick: 100
 		Length: *
-
+	transform_reverse: acolyte_transform_rev.ani
+		Tick: 100
+		Length: *
+	transformed_stand: acolyte_transformed_stand.ani
+	mana: acoltye_transformed_mana.ani
+		Tick: 100
+		Length: *
+	transofrmed_die: acolyte_transofrmed_die.ani
+		Tick: 100
+		Length: *
+	transformed_damage: acolyte_transformed_damage.ani
+		Tick: 100
+		Length: *
 
 shroud:
 	shroud: bits/shroud.png
@@ -44,3 +60,25 @@ editor-overlay:
 
 moveflsh:
 	idle: bits/mpspawn.png
+
+pips:
+	groups: bits/shroud.png
+		Start: 1
+	medic: bits/shroud.png
+		Start: 1
+	#ready:
+	#	Start: 3
+	#hold:
+	#	Start: 4
+	pip-empty: bits/shroud.png
+		Start: 1
+	pip-green: bits/shroud.png
+		Start: 1
+	pip-yellow: bits/shroud.png
+		Start: 1
+	pip-gray: bits/shroud.png
+		Start: 1
+	pip-red: bits/shroud.png
+		Start: 1
+	pip-blue: bits/shroud.png
+		Start: 1

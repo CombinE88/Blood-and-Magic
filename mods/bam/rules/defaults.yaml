@@ -4,8 +4,8 @@
 	RenderSprites:
 		PlayerPalette: BamPlayer
 	Selectable:
-		Bounds: 40,38,0,0
-		DecorationBounds: 40,38,0,0
+		Bounds: 40,38,0,-5
+		DecorationBounds: 40,38,0,-5
 	Mobile:
 		Speed: 100
 		Locomotor: foot

@@ -34,7 +34,6 @@ Player:
 	ConquestVictoryConditions:
 	# Amount of selectable starting resources.
 	PlayerResources:
-		SelectableCash: 20
 	# Enable super weapons support.
 	SupportPowerManager: # TODO this is kknd1 specific!
 	# Manage build limits and pre-requisites.

@@ -13,9 +13,10 @@ Player:
 	ScriptTriggers:
 	MissionObjectives:
 	ConquestVictoryConditions:
-	PowerManager:
 	AllyRepair:
 	PlayerResources:
+		SelectableCash: 0, 20, 40, 100
+		DefaultCash: 20
 	DeveloperMode:
 		CheckboxDisplayOrder: 9
 	Shroud:

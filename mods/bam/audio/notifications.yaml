@@ -3,6 +3,9 @@ Sounds:
 	Notifications:
 		ClickSound: bits/click.wav
 		ChatLine: bits/chat.wav
+		ClickDisabledSound: bits/click.wav
+		CashTickUp:
+		CashTickDown:
 
 Speech:
 	DefaultVariant: .wav

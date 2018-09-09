@@ -1,0 +1,5 @@
+mainbase:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb.png
+		Frames: 0

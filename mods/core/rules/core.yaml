@@ -2,6 +2,7 @@
 ^CoreVisibleActor:
 	# All our actors are sprite based and need to render sprites.
 	RenderSprites:
+		PlayerPalette: BamPlayer
 	# At default fog hides every actor.
 	HiddenUnderFog:
 	# Allow actors to rotate and use facings.
@@ -58,73 +59,28 @@
 	Selectable:
 	# Constructions have sprites but do not use facing for them.
 	WithSpriteBody:
-	# Implement KKnD style construction logic.
-	SelfConstructing:
-		Condition: selfconstructing
-	# Also implement reverse deconstruction for selling.
-	DeconstructSellable:
-		Condition: deconstructing
-		RequiresCondition: !deconstructing
 	# Constructions are visible on the radar.
 	AppearsOnRadar:
-	# Constructions should explode when owner lost the game.
-	OwnerLostAction:
-		Action: Kill
-	# No projectiles can pass through a construction.
-	BlocksProjectiles:
-		RequiresCondition: !selfconstructing && !deconstructing
 
 # Base for all buildings.
 ^CoreBuilding:
 	Inherits: ^CoreConstruction
-	# Require other actor nearby which provides buildable area in order to place a building.
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 4
-	# Grants buildable area for other buildings and defence structures.
-	GivesBuildableArea:
-		AreaTypes: building, defence
-		RequiresCondition: !selfconstructing && !deconstructing
 	# Buildings have a bigger healthbar when selected or hovered.
 	SelectionDecorations:
 	# Enemy buildings  have to be destroyed to win, even when short game option is used.
 	MustBeDestroyed:
 		RequiredForShortGame: true
-	# If a building is destroyed, it should play an animation...
-	Explodes:
-		Weapon: dieBuilding
 	# ... and Shake the screen.
-	ShakeOnDeath:
-		Intensity: 10
-	# Buildings can be repaired by technicians.
-	TechnicianRepairable:
-		RequiresCondition: !selfconstructing && !deconstructing
-	# The view radius of buildings.
+	#ShakeOnDeath:
+	#	Intensity: 10# The view radius of buildings.
 	RevealsShroud:
-		Range: 5c0
-	# Making buildings actualy buildable.
-	Buildable:
-		Queue: building
-		BuildDurationModifier: 100
-		BuildLimit: 4
+		Range: 4c0
 	# Group all buildings in the map editor.
 	EditorTilesetFilter:
 		Categories: Building
-	# Having at last one building, allows to build another HQ.
-	Production:
-		Produces: building
-		RequiresCondition: !selfconstructing && !deconstructing
 	# Should not be auto attacked.
 	Targetable@NoAutoAttack:
 		TargetTypes: NoAutoAttack
-	# Make unit notify being attacked.
-	AttackNotification:
-		Notifications: BuildingUnderAttack
-	# Notify when building lost.
-	ActorLostNotification:
-		Notification: BuildingLost
-	# TODO remove this, if it works with hit shapes!
-	-BlocksProjectiles:
 
 # Base for all walls.
 ^CoreWall:

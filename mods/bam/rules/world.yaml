@@ -11,3 +11,7 @@
 			Trap: 100
 			TrapActive: 100
 			Manaspot: 100
+
+	Locomotor@NONE:
+		Name: none
+		TerrainSpeeds:

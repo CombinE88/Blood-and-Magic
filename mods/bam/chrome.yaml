@@ -1042,3 +1042,65 @@ buff-icons: uibits/chromebam.png
 	atk: 560,24,10,12
 	atk-bonus: 560,37,10,12
 	atk-disabled: 560,50,10,12
+
+bam_zier_button_square: uibits/chromebam.png
+	background: 0,214,76,68
+bam_zier_button_square-pressed: uibits/chromebam.png
+	background: 75,214,76,68
+bam_zier_button_square-disabled: uibits/chromebam.png
+	background: 75,214,76,68
+bam_zier_button_square-highlited: uibits/chromebam.png
+	background: 286,214,76,68
+
+bam_zier_button_long: uibits/chromebam.png
+	background: 0,316,180,34
+bam_zier_button_long-pressed: uibits/chromebam.png
+	background: 180,316,180,34
+bam_zier_button_long-disabled: uibits/chromebam.png
+	background: 180,350,180,34
+bam_zier_button_long-highlited: uibits/chromebam.png
+	background: 180,350,180,34
+
+bam_zier_leiste_long: uibits/chromebam.png
+	background: 410,214,451,14
+	border-r: 826,207,2,27
+	border-l: 384,207,26,27
+	border-t: 410,207,451,7
+	border-b: 410,227,451,7
+	corner-tl: 410,207,26,7
+	corner-tr: 826,207,2,7
+	corner-bl: 410,227,26,7
+	corner-br: 826,227,2,7
+
+bam_button_mana: uibits/chromebam.png
+	background: 152,819,180,34
+bam_button_mana-hover: uibits/chromebam.png
+	background: 152,819,180,34
+bam_button_mana-highlited: uibits/chromebam.png
+	background: 152,819,180,34
+bam_button_mana-disabled: uibits/chromebam.png
+	background: 152,853,180,34
+bam_button_mana-pressed: uibits/chromebam.png
+	background: 152,853,180,34
+
+bam_button_mensymbol: uibits/chromebam.png
+	background: 0,401,180,34
+bam_button_mensymbol-hover: uibits/chromebam.png
+	background: 0,401,180,34
+bam_button_mensymbol-highlited: uibits/chromebam.png
+	background: 0,401,180,34
+bam_button_mensymbol-disabled: uibits/chromebam.png
+	background: 180,401,180,34
+bam_button_mensymbol-pressed: uibits/chromebam.png
+	background: 180,401,180,34
+
+bam_button_handymbol: uibits/chromebam.png
+	background: 0,435,180,34
+bam_button_handymbol-hover: uibits/chromebam.png
+	background: 0,435,180,34
+bam_button_handymbol-highlited: uibits/chromebam.png
+	background: 0,435,180,34
+bam_button_handymbol-disabled: uibits/chromebam.png
+	background: 180,435,180,34
+bam_button_handymbol-pressed: uibits/chromebam.png
+	background: 180,435,180,34

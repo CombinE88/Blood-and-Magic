@@ -9,3 +9,81 @@ ACOLYTE:
 	RevealsShroud:
 		Range: 4c0
 		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Transforms:
+		IntoActor: pyramid
+		Voice: 
+	#DeployToConditionOnIdle:
+	Living:
+		BoredSequence: stand
+	TransformToConditionOnIdle:
+	WithMakeAnimation:
+		Sequence: transform_reverse
+	ManaShooter:
+		OnlyStores: true
+	Buildable:
+		Queue: Golem
+		BuildPaletteOrder: 130
+		Description: Golem
+		BuildDuration: 1
+	Valued:
+		Cost: 40
+
+PYRAMID:
+	Inherits@1: ^Walker
+	-WithMoveAnimation:
+	WithFacingSpriteBody:
+		Sequence: transformed_stand
+	RenderSprites:
+		Image: acolyte
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Basalt Golem
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	#WithSpriteBody:
+	#	Sequence: transformed_stand
+	Transforms:
+		IntoActor: acolyte
+		Voice: 
+	WithMakeAnimation:
+		Sequence: transform
+	TransformToConditionOnDamage:
+	TransformOnMove:
+	Mobile:
+		Speed: 1
+		Locomotor: none
+	ManaShooter:
+	WithManaAnimation:
+	-Living:
+
+MAINBASE
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+	Health:
+		HP: 100
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	RenderSprites:
+		PlayerPalette: PngPlayer
+	SpawnsAcolytes:
+	StoresResources:
+		Capacity: 400
+		 PipCount: 0
+	Production:
+		Produces: Golem
+	Exit@1:
+		SpawnOffset: -512,512,0
+		Facing: 160
+		ExitCell: -1,3
+		ProductionTypes: Golem

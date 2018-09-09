@@ -27,7 +27,11 @@ namespace OpenRA.Mods.Bam.FileSystem
             public string Name { get; private set; }
 
             private List<string> contents = new List<string>();
-            public IEnumerable<string> Contents { get { return contents; } }
+
+            public IEnumerable<string> Contents
+            {
+                get { return contents; }
+            }
 
             readonly Stream stream;
             readonly Dictionary<string, Entry> index;
@@ -96,7 +100,7 @@ namespace OpenRA.Mods.Bam.FileSystem
                                     newData[y * sourceFrame.Size.Width + sourceFrame.Size.Width - x - 1] = sourceFrame.Data[y * sourceFrame.Size.Width + x];
 
                                 sourceFrame.Data = newData;
-                                sourceFrame.Offset = new int2((int) (sourceFrame.Size.Width - sourceFrame.Offset.X - 1), (int) sourceFrame.Offset.Y);
+                                sourceFrame.Offset = new int2((int)(sourceFrame.Size.Width - sourceFrame.Offset.X - 1), (int)sourceFrame.Offset.Y);
                             }
 
                             targetFrames.Add(sourceFrame);
@@ -105,20 +109,24 @@ namespace OpenRA.Mods.Bam.FileSystem
 
                     var currentFrameOffset = 0;
                     var virtualStream = new MemoryStream();
-                    virtualStream.Write(BitConverter.GetBytes((ushort) targetFrames.Count), 0, 2);
+                    virtualStream.Write(BitConverter.GetBytes((ushort)targetFrames.Count), 0, 2);
                     virtualStream.Write(targetFrames.Count * 18);
                     virtualStream.Write(0);
-                    virtualStream.Write(BitConverter.GetBytes((ushort) 0xfefe), 0, 2);
+                    virtualStream.Write(BitConverter.GetBytes((ushort)0xfefe), 0, 2);
+
+                    //var i1 = 0;
 
                     foreach (var targetFrame in targetFrames)
                     {
-                        virtualStream.Write((int) (targetFrame.Offset.X / 2));
-                        virtualStream.Write((int) targetFrame.Offset.Y);
-                        virtualStream.Write(BitConverter.GetBytes((ushort) targetFrame.Size.Width / 2), 0, 2);
-                        virtualStream.Write(BitConverter.GetBytes((ushort) targetFrame.Size.Height), 0, 2);
-                        virtualStream.Write(BitConverter.GetBytes((ushort) 0), 0, 2); // priority
+                        virtualStream.Write((int)(targetFrame.Offset.X / 2));
+                        virtualStream.Write((int)targetFrame.Offset.Y);
+                        virtualStream.Write(BitConverter.GetBytes((ushort)targetFrame.Size.Width / 2), 0, 2);
+                        virtualStream.Write(BitConverter.GetBytes((ushort)targetFrame.Size.Height), 0, 2);
+                        virtualStream.Write(BitConverter.GetBytes((ushort)0), 0, 2); // priority
                         virtualStream.Write(currentFrameOffset);
                         currentFrameOffset += targetFrame.Data.Length / 2;
+
+                        //Log.Write("Debug",targetAni + " "+ (i1++) + " " + targetFrame.Offset.X + " " + targetFrame.Offset.Y);
                     }
 
                     foreach (var targetFrame in targetFrames)
@@ -147,7 +155,7 @@ namespace OpenRA.Mods.Bam.FileSystem
                 }
 
                 stream.Seek(entry.Offset, SeekOrigin.Begin);
-                return new MemoryStream(stream.ReadBytes((int) entry.Length));
+                return new MemoryStream(stream.ReadBytes((int)entry.Length));
             }
 
             public bool Contains(string filename)

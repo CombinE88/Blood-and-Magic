@@ -32,6 +32,7 @@ Rules:
 Sequences:
 	core|sequences/misc.yaml
 	bam|sequences/basicunits.yaml
+	bam|sequences/basicbuildings.yaml
 
 TileSets:
 	bam|tilesets/platforms.yaml

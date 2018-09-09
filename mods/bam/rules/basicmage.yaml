@@ -6,5 +6,8 @@ World:
 	MPStartUnits@bam:
 		Class: none
 		ClassName: bam
-		BaseActor: acolyte
+		BaseActor: mainbase
 		Factions: bam
+		SupportActors: acolyte,acolyte,acolyte
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5

@@ -136,6 +136,7 @@
 		Name: Platformtiles
 		Tileset: PLATFORM
 		Filename: bits/platformtiles.png  
+		ShadowIndex: 1
 	PaletteFromPal@banplayer:
 		Name: banplayer
 		Filename: 11195.pal
@@ -143,6 +144,7 @@
 		Name: terrain
 		Tileset: PLATFORM
 		Filename: bits/platformtiles.png
+		ShadowIndex: 1
 	PaletteFromPal@colorpicker: # TODO remove this
 		Name: colorpicker
 		Filename: 11195.pal
@@ -166,3 +168,7 @@
 		Name: fog
 		BasePalette: shroud
 		Alpha: 0.5
+	OverlayPlayerColorPalette@PNGPLAYER: # Used for all player-colored actors.
+		BasePalette: Platformtiles
+		BaseName: PngPlayer
+		RemapIndex: 37, 67, 68, 93, 116, 147, 156, 170, 174, 184, 189, 194, 195, 199, 204

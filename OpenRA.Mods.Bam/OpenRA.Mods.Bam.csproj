@@ -67,16 +67,27 @@
     </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Eluant, Version=1.0.5867.35197, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BamWidgets\BamLogic\ManaTransferButtonLogic.cs" />
+    <Compile Include="BamWidgets\ExtendetButton.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />
     <Compile Include="FileSystem\StfFile.cs" />
     <Compile Include="SpriteLoaders\AniLoader.cs" />
+    <Compile Include="Traits\ManaShooter.cs" />
+    <Compile Include="Traits\Render\WithManaAnimation.cs" />
+    <Compile Include="Traits\SpawnsAcolytes.cs" />
+    <Compile Include="Traits\TransformOnMove.cs" />
+    <Compile Include="Traits\TransformToConditionOnDamage.cs" />
+    <Compile Include="Traits\TransformToConditionOnIdle.cs" />
     <Compile Include="Traits\Living.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
