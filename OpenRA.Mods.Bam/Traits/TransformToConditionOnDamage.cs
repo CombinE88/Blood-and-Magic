@@ -4,7 +4,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits
 {
-    public class TransformToConditionOnDamageInfo: ITraitInfo, Requires<TransformsInfo>
+    public class TransformToConditionOnDamageInfo: ITraitInfo, Requires<AdvancedTransformsInfo>
     {
         public object Create(ActorInitializer init)
         {
@@ -14,11 +14,11 @@ namespace OpenRA.Mods.Bam.Traits
 
     public class TransformToConditionOnDamage: INotifyDamage
     {
-        readonly Transforms deploy;
+        readonly AdvancedTransforms deploy;
 
         public TransformToConditionOnDamage(ActorInitializer init, TransformToConditionOnDamageInfo info)
         {
-            deploy = init.Self.Trait<Transforms>();
+            deploy = init.Self.Trait<AdvancedTransforms>();
         }
 
         public void Damaged(Actor self, AttackInfo e)

@@ -8,6 +8,6 @@ World:
 		ClassName: bam
 		BaseActor: mainbase
 		Factions: bam
-		SupportActors: acolyte,acolyte,acolyte
-		InnerSupportRadius: 4
-		OuterSupportRadius: 5
+		SupportActors: acolyte,acolyte,acolyte,acolyte,acolyte
+		InnerSupportRadius: 2
+		OuterSupportRadius: 3

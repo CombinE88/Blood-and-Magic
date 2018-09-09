@@ -6,6 +6,7 @@ Sounds:
 		ClickDisabledSound: bits/click.wav
 		CashTickUp:
 		CashTickDown:
+		SilosNeeded:
 
 Speech:
 	DefaultVariant: .wav

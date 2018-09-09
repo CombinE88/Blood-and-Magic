@@ -16,7 +16,7 @@ Player:
 	AllyRepair:
 	PlayerResources:
 		SelectableCash: 0, 20, 40, 100
-		DefaultCash: 20
+		DefaultCash: 100
 	DeveloperMode:
 		CheckboxDisplayOrder: 9
 	Shroud:

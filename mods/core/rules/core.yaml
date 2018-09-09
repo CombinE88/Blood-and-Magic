@@ -34,9 +34,6 @@
 	AppearsOnRadar:
 	# Allow units to use the AttackMove and AssaultMove commands.
 	AttackMove:
-	# Units should die when owner lost the game.
-	OwnerLostAction:
-		Action: Kill
 
 # Base for all buildings, towers and walls.
 ^CoreConstruction:

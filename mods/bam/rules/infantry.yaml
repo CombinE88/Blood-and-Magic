@@ -12,10 +12,9 @@ ACOLYTE:
 	WithMoveAnimation:
 		MoveSequence: run
 	WithFacingSpriteBody:
-	Transforms:
+	AdvancedTransforms:
 		IntoActor: pyramid
 		Voice: 
-	#DeployToConditionOnIdle:
 	Living:
 		BoredSequence: stand
 	TransformToConditionOnIdle:
@@ -30,6 +29,8 @@ ACOLYTE:
 		BuildDuration: 1
 	Valued:
 		Cost: 40
+	TransformToBuilding:
+	ConvertAdjetant:
 
 PYRAMID:
 	Inherits@1: ^Walker
@@ -38,8 +39,6 @@ PYRAMID:
 		Sequence: transformed_stand
 	RenderSprites:
 		Image: acolyte
-	Valued:
-		Cost: 100
 	Tooltip:
 		Name: Basalt Golem
 	Health:
@@ -49,7 +48,7 @@ PYRAMID:
 		Type: CenterPosition
 	#WithSpriteBody:
 	#	Sequence: transformed_stand
-	Transforms:
+	AdvancedTransforms:
 		IntoActor: acolyte
 		Voice: 
 	WithMakeAnimation:
@@ -62,9 +61,13 @@ PYRAMID:
 	ManaShooter:
 	WithManaAnimation:
 	-Living:
+	TransformToBuilding:
+	ConvertAdjetant:
 
-MAINBASE
+MAINBASE:
 	Inherits@: ^CoreBuilding
+	Tooltip:
+		Name: Base
 	EditorTilesetFilter:
 		Categories: Building
 	Building:
@@ -81,11 +84,92 @@ MAINBASE
 	SpawnsAcolytes:
 	StoresResources:
 		Capacity: 400
-		 PipCount: 0
-	Production:
-		Produces: Golem
+		PipCount: 0
 	Exit@1:
 		SpawnOffset: -512,512,0
 		Facing: 160
 		ExitCell: -1,3
 		ProductionTypes: Golem
+
+PLATTFORMB:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		PlayerPalette: PngPlayer
+	Tooltip:
+		Name: Building Plattform
+	AllowTransfrom:
+
+BUILDING1:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 100
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		PlayerPalette: PngPlayer
+	Tooltip:
+		Name: Building Plattform
+	AllowConvert:
+
+CAPSULE.WARRIOR:
+	Inherits@1: ^capsule
+	RenderSprites:
+		Image: capsule.warrior
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Capsule(Warrior)
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	WithMakeAnimation:
+		Sequence: transform
+	TransformAfterTime:
+		IntoActor: warrior
+		Time: 50
+
+WARRIOR:
+	Inherits@1: ^Walker
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Warrior
+	Health:
+		HP: 40
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	Valued:
+		Cost: 40
+
+TRINKET.HEALSALVE:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinkethealsalve
+	Tooltip:
+		Name: Healing Salve

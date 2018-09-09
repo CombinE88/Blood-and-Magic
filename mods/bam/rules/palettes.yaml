@@ -171,4 +171,4 @@
 	OverlayPlayerColorPalette@PNGPLAYER: # Used for all player-colored actors.
 		BasePalette: Platformtiles
 		BaseName: PngPlayer
-		RemapIndex: 37, 67, 68, 93, 116, 147, 156, 170, 174, 184, 189, 194, 195, 199, 204
+		RemapIndex: 37, 67, 68, 93, 116, 147, 156, 170, 174, 180, 184, 189, 194, 195, 199, 204

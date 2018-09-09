@@ -4,8 +4,8 @@
 	RenderSprites:
 		PlayerPalette: BamPlayer
 	Selectable:
-		Bounds: 40,38,0,-5
-		DecorationBounds: 40,38,0,-5
+		Bounds: 40,38,0,-15
+		DecorationBounds: 40,38,0,-15
 	Mobile:
 		Speed: 100
 		Locomotor: foot
@@ -16,3 +16,42 @@
 	Targetable:
 		TargetTypes: Ground
 	#UpdatesPlayerStatistics:
+	CanHoldTrinket:
+
+^capsule:
+	Inherits@1: ^Walker
+	Mobile:
+		Speed: 1
+		Locomotor: none
+	Tooltip:
+		Name: Capsule
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	-WithMoveAnimation:
+	-WithFacingSpriteBody:
+	WithSpriteBody:
+	-Living:
+	RenderSprites:
+		Image: capsule
+	Valued:
+		Cost: 40
+
+^trinket:
+	Inherits: ^CoreUnit
+	Tooltip:
+		Name: Trinkets
+	-WithFacingSpriteBody:
+	WithSpriteBody:
+	RenderSprites:
+	EditorTilesetFilter:
+		Categories: Trinkets
+	Immobile:
+		OccupiesSpace: false
+	-AttackMove:
+	HiddenUnderFog:
+		Type: CenterPosition
+	IsTrinket:
+	-MustBeDestroyed:

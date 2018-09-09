@@ -19,7 +19,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             base.Draw();
 
-            if (Actor != null && !Actor.IsDead && Actor.IsInWorld)
+            if (Actor != null && !Actor.IsDead && Actor.IsInWorld && Actor.Info.HasTraitInfo<ManaShooterInfo>())
             {
                 var currentMana = Actor.Trait<ManaShooter>().CurrentStorage;
                 var maxMana = Actor.Info.TraitInfo<ManaShooterInfo>().MaxStorage;

@@ -1,0 +1,8 @@
+trinkethealsalve:
+	Inherits: ^default
+	idle: healsalve_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: healsalve_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16

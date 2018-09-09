@@ -33,6 +33,7 @@ Sequences:
 	core|sequences/misc.yaml
 	bam|sequences/basicunits.yaml
 	bam|sequences/basicbuildings.yaml
+	bam|sequences/basictrinkets.yaml
 
 TileSets:
 	bam|tilesets/platforms.yaml

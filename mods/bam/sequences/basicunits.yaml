@@ -40,6 +40,60 @@ acolyte:
 	transformed_damage: acolyte_transformed_damage.ani
 		Tick: 100
 		Length: *
+	icon: acolyte_icon.ani
+
+^capsule:
+	Inherits: ^default
+	idle: capsule_idle.ani
+	transform: capsule_make.ani
+		Tick: 100
+		Length: *
+	damage: capsule_damage.ani
+		Tick: 100
+		Length: *
+	die: capsule_die.ani
+		Tick: 100
+		Length: *
+
+capsule.warrior:
+	idle: capsule_idle.ani
+	transform: capsule_make.ani
+		Tick: 100
+		Length: *
+	damage: capsule_damage.ani
+		Tick: 100
+		Length: *
+	die: capsule_die.ani
+		Tick: 100
+		Length: *
+	icon: awarrior_icon.ani
+
+
+warrior:
+	Inherits: ^default
+	stand: warrior_idle.ani
+		Tick: 100
+		Facings: 8
+		Length: 4
+	idle: warrior_stand.ani
+		Tick: 100
+		Facings: 8
+	run: warrior_run.ani
+		Tick: 100
+		Length: 4
+		Facings: 8
+	attack: warrior_attack.ani
+		Tick: 100
+		Length: 4
+		Facings: 8
+	damage: warrior_damage.ani
+		Tick: 100
+		Length: 4
+		Facings: 4
+	die: warrior_die.ani
+		Tick: 100
+		Length: 7
+	icon: awarrior_icon.ani
 
 shroud:
 	shroud: bits/shroud.png

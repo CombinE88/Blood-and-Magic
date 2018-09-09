@@ -3,7 +3,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits
 {
-    public class TransformToConditionOnIdleInfo : ITraitInfo, Requires<TransformsInfo>
+    public class TransformToConditionOnIdleInfo : ITraitInfo, Requires<AdvancedTransformsInfo>
     {
         public object Create(ActorInitializer init)
         {
@@ -13,12 +13,12 @@ namespace OpenRA.Mods.Bam.Traits
 
     public class TransformToConditionOnIdle : ITick
     {
-        readonly Transforms deploy;
+        readonly AdvancedTransforms deploy;
         private int tick = 25;
 
         public TransformToConditionOnIdle(ActorInitializer init, TransformToConditionOnIdleInfo info)
         {
-            deploy = init.Self.Trait<Transforms>();
+            deploy = init.Self.Trait<AdvancedTransforms>();
         }
 
         public void Tick(Actor self)

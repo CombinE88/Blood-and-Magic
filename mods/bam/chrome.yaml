@@ -1052,6 +1052,20 @@ bam_zier_button_square-disabled: uibits/chromebam.png
 bam_zier_button_square-highlited: uibits/chromebam.png
 	background: 286,214,76,68
 
+bam_zier_button_smallsquare: uibits/dialog.png
+	background: 512,54,76,51
+bam_zier_button_smallsquare-pressed: uibits/dialog.png
+	background: 588,54,76,51
+bam_zier_button_smallsquare-disabled: uibits/dialog.png
+	background: 588,54,76,51
+bam_zier_button_smallsquare-highlited: uibits/dialog.png
+	background: 664,54,76,51
+bam_zier_button_smallsquare-hover: uibits/dialog.png
+	background: 664,54,76,51
+
+bam_zier_button_smallsquare_filler: uibits/chromebam.png
+	background: 178,774,76,17
+
 bam_zier_button_long: uibits/chromebam.png
 	background: 0,316,180,34
 bam_zier_button_long-pressed: uibits/chromebam.png
