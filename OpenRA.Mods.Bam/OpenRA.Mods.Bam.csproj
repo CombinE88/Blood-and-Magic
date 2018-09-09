@@ -75,9 +75,12 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BamWidgets\ActorActionsWidget.cs" />
     <Compile Include="BamWidgets\BamLogic\BamButtonLogic.cs" />
-    <Compile Include="BamWidgets\BamLogic\BamUIWidget.cs" />
+    <Compile Include="BamWidgets\BamUIWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\ManaSendButtonWidget.cs" />
     <Compile Include="BamWidgets\ExtendetButton.cs" />
+    <Compile Include="BamWidgets\ManaCounterWidget.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />

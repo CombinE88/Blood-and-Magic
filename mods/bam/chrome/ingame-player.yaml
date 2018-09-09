@@ -1,67 +1,12 @@
-BamUI@INGAME_UI:
+Container@PLAYER_WIDGETS:
+	Children:
+		# TODO for what?
+		LogicKeyListener@CONTROLGROUP_KEYHANDLER:
+			Logic: ControlGroupLogic
+		# TODO for what?
+		LogicTicker@SIDEBAR_TICKER:
 
-#Container@PLAYER_WIDGETS:
-#	Children:
-#		LogicTicker@SIDEBAR_TICKER:
-#		LogicKeyListener@CONTROLGROUP_KEYHANDLER:
-#			Logic: ControlGroupLogic
-#		Background@SIDE_BAR:
-#			X: WINDOW_RIGHT - 185
-#			Y: 0
-#			Background: sidebar-bam
-#			Width: 185
-#			Height: WINDOW_BOTTOM - 83
-#			Children:
-#				Background@MIMIMAP_BG:
-#					X: 30
-#					Y: 24
-#					Width: 130
-#					Height: 130
-#					Background: minimapbg
-#					Width: WINDOW_RIGHT
-#				Background@CASH_BACKGROUND:
-#					X: 35
-#					Y: 200
-#					Width: PARENT_RIGHT - 40
-#					Height: 25
-#					Background: bam_zier_leiste_long
-#					Children:
-#						LabelWithTooltip@CASH:
-#							Logic: IngameCashCounterLogic
-#							Y: 2
-#							X: 2
-#							Width: PARENT_RIGHT
-#							Height: 25
-#							Align: Center
-#							Font: Bold
-#							Text: ${0}
-#				MenuButton@OPTIONS_BUTTON:
-#					Key: escape
-#					X: 30
-#					Y: 240
-#					Width: 58
-#					Height: 30
-#					TooltipText: Menu
-#					TooltipContainer: TOOLTIP_CONTAINER
-#					DisableWorldSounds: true
-#					Background: empty
-#					Children:
-#						Image:
-#							ImageCollection: button-bam-menue
-#							ImageName: aviable
-#				MenuButton@OPTIONS_RESEARCH:
-#					X: 30
-#					Y: 240 + 58
-#					Width: 58
-#					Height: 30
-#					TooltipText: Research
-#					TooltipContainer: TOOLTIP_CONTAINER
-#					DisableWorldSounds: true
-#					Background: empty
-#					Children:
-#						Image:
-#							ImageCollection: button-bam-Research
-#							ImageName: aviable
+		BamUI@INGAME_UI:
 #		Background@BOTTOMBAR:
 #			X: 0
 #			Y: WINDOW_BOTTOM - 84
