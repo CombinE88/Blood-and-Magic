@@ -31,17 +31,17 @@ namespace OpenRA.Mods.Bam.Widgets.Logic
             {
                 if (mainbuildings.Any())
                 {
-                    var self = mainbuildings.First();
-                    if (self == null || self.IsDead || !self.IsInWorld)
-                        return;
-
-                    self.World.IssueOrder( new Order("SpawnAcolyte", self, false));
+                    foreach (var actor in mainbuildings)
+                    {
+                        if (actor != null && actor.IsInWorld && !actor.IsDead)
+                            actor.World.IssueOrder(new Order("SpawnAcolyte", actor, false));
+                    }
                 }
                 else if (unitselected.Any())
                     foreach (var actor in unitselected)
                     {
                         if (actor != null && actor.IsInWorld && !actor.IsDead)
-                            actor.World.IssueOrder( new Order("ShootMana", actor, false));
+                            actor.World.IssueOrder(new Order("ShootMana", actor, false));
                     }
             };
 

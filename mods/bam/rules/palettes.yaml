@@ -140,7 +140,7 @@
 	PaletteFromPal@banplayer:
 		Name: banplayer
 		Filename: 11195.pal
-	PaletteFromFile@terrain-platform:
+	PaletteFromPng@terrain-platform:
 		Name: terrain
 		Tileset: PLATFORM
 		Filename: bits/platformtiles.png

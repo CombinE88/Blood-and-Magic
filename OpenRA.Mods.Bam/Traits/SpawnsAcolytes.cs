@@ -1,3 +1,4 @@
+using System.Drawing;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
@@ -31,12 +32,13 @@ namespace OpenRA.Mods.Bam.Traits
             if (order.OrderString != "SpawnAcolyte")
                 return;
 
-            if (pr.TakeResources(self.World.Map.Rules.Actors[info.Actor].TraitInfo<ValuedInfo>().Cost))
+            if (pr.TakeCash(self.World.Map.Rules.Actors[info.Actor].TraitInfo<ValuedInfo>().Cost))
                 self.World.AddFrameEndTask(w =>
                 {
                     var init = new TypeDictionary
                     {
-                        new CenterPositionInit(new WPos(0, 0, 0) + self.Info.TraitInfo<ExitInfo>().SpawnOffset),
+                        new LocationInit(self.World.Map.CellContaining(self.CenterPosition + self.Info.TraitInfo<ExitInfo>().SpawnOffset)),
+                        new CenterPositionInit(self.CenterPosition + self.Info.TraitInfo<ExitInfo>().SpawnOffset),
                         new OwnerInit(self.Owner),
                         new FacingInit(250)
                     };
@@ -44,7 +46,7 @@ namespace OpenRA.Mods.Bam.Traits
                     if (a != null && !a.IsDead && a.IsInWorld)
                     {
                         var move = a.TraitOrDefault<IMove>();
-                        a.QueueActivity(move.MoveIntoWorld(a, CPos.Zero + self.Info.TraitInfo<ExitInfo>().ExitCell));
+                        a.QueueActivity(move.MoveIntoWorld(a, self.Location + self.Info.TraitInfo<ExitInfo>().ExitCell));
                     }
                 });
         }
