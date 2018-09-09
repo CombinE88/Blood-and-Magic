@@ -13,6 +13,7 @@ namespace OpenRA.Mods.Bam.SpriteLoaders
             public Size Size { get; private set; }
             public Size FrameSize { get; private set; }
             public float2 Offset { get; set; }
+            public int2 OffsetOrigin { get; set; }
             public byte[] Data { get; set; }
 
             public bool DisableExportPadding
@@ -24,12 +25,13 @@ namespace OpenRA.Mods.Bam.SpriteLoaders
             {
                 var width = aniFrame.Width;
                 var height = aniFrame.Height;
-                var x = (int)aniFrame.OriginX;
-                var y = (int)aniFrame.OriginY;
+                var x = aniFrame.OriginX;
+                var y = aniFrame.OriginY;
 
                 Size = new Size(width, height);
                 FrameSize = new Size(width, height);
-                Offset = new int2(0, y / -2);
+                Offset = new int2(width / 2 - x * 2, height / 2 - y);
+                OffsetOrigin = new int2(x, y);
                 Data = aniFrame.Pixels;
             }
         }

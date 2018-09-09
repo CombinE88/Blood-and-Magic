@@ -24,16 +24,16 @@ namespace OpenRA.Mods.Bam.FileFormats
 
 	public class AniFrame
 	{
-		public uint OriginX;
-		public uint OriginY;
+		public int OriginX;
+		public int OriginY;
 		public ushort Width;
 		public ushort Height;
 		public byte[] Pixels;
 
 		public AniFrame(Stream stream, long pixelsStart)
 		{
-			OriginX = stream.ReadUInt32() * 2;
-			OriginY = stream.ReadUInt32();
+			OriginX = stream.ReadInt32();
+			OriginY = stream.ReadInt32();
 
 			Width = (ushort) (stream.ReadUInt16() * 2);
 			Height = stream.ReadUInt16();

@@ -1,7 +1,6 @@
 ^default:
 	Defaults:
 		AddExtension: False
-		Offset: 0,-10
 
 acolyte:
 	Inherits: ^default
