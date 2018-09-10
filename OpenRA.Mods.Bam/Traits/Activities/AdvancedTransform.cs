@@ -30,6 +30,7 @@ namespace OpenRA.Mods.Bam.Activities
 		public string Notification = null;
 		public int ForceHealthPercentage = 0;
 		public bool SkipMakeAnims = false;
+		public bool SelfSkipMakeAnims = false;
 		public string Faction = null;
 		public Actor Trinket = null;
 
@@ -71,7 +72,7 @@ namespace OpenRA.Mods.Bam.Activities
 				nt.BeforeTransform(self);
 
 			var makeAnimation = self.TraitOrDefault<WithMakeAnimation>();
-			if (!SkipMakeAnims && makeAnimation != null)
+			if (!SelfSkipMakeAnims && makeAnimation != null)
 			{
 				// Once the make animation starts the activity must not be stopped anymore.
 				IsInterruptible = false;

@@ -13,12 +13,17 @@ acoltye_transformed_mana: 398:0-7
 acolyte_transofrmed_die: 380:0-7
 acolyte_transformed_damage: 378:0-3
 acolyte_icon: 2550:0
+acolyte_pyramid_icon: 2584:0
 
 
 capsule_idle: 342:3
 capsule_make: 342:0-3
 capsule_damage: 343:0-5
 capsule_die: 344:0-7
+capsule_icon: 2616:0
+
+
+mainbase_icon: 2714:0
 
 
 #Trinkets One ------------------------------------------
@@ -35,7 +40,10 @@ warrior_attack: 1614:0-3 1613:0-3! 1612:0-3! 1611:0-3! 1610:0-3 1611:0-3 1612:0-
 warrior_damage: 1626:0-3! 1625:0-3! 1626:0-3 1625:0-3
 warrior_die: 1630:0-7
 warrior_icon: 2598:0
+warrior_icon_disabled: 2598:0
 
+building1_icon: 2702:0
+plattform_icon: 2738:0
 
 #paladin_stand: 1320:3! 1320:3! 1320:3! 1320:3! 1320:3 1320:3 1320:3 1320:3
 #paladin_idle: 1320:0-3 1320:0-3!

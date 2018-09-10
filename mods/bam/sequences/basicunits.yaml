@@ -42,7 +42,11 @@ acolyte:
 		Length: *
 	icon: acolyte_icon.ani
 
-^capsule:
+acolyte.pyramid:
+	Inherits: acolyte
+	acolyte_pyramid_icon: acolyte_icon.ani
+
+capsule:
 	Inherits: ^default
 	idle: capsule_idle.ani
 	transform: capsule_make.ani
@@ -54,6 +58,7 @@ acolyte:
 	die: capsule_die.ani
 		Tick: 100
 		Length: *
+	icon: capsule_icon.ani
 
 capsule.warrior:
 	idle: capsule_idle.ani
@@ -66,8 +71,8 @@ capsule.warrior:
 	die: capsule_die.ani
 		Tick: 100
 		Length: *
-	icon: awarrior_icon.ani
-
+	icon: warrior_icon.ani
+	disabled-icon: warrior_icon_disabled.ani
 
 warrior:
 	Inherits: ^default
@@ -93,7 +98,8 @@ warrior:
 	die: warrior_die.ani
 		Tick: 100
 		Length: 7
-	icon: awarrior_icon.ani
+	icon: warrior_icon.ani
+	disabled-icon: warrior_icon_disabled.ani
 
 shroud:
 	shroud: bits/shroud.png

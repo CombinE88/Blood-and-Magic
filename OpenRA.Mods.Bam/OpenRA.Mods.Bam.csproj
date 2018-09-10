@@ -76,11 +76,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BamWidgets\ActorActionsWidget.cs" />
-    <Compile Include="BamWidgets\BamLogic\BamButtonLogic.cs" />
     <Compile Include="BamWidgets\BamUIWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\ConvertToButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ManaSendButtonWidget.cs" />
-    <Compile Include="BamWidgets\ExtendetButton.cs" />
+    <Compile Include="BamWidgets\Buttons\SpawnGolemButtonWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\TransformToBuildingButtonWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\TrinketDropButtonWidgetcs.cs" />
+    <Compile Include="BamWidgets\Buttons\TrinketsButtonsWidget.cs" />
+    <Compile Include="BamWidgets\DrawActorStatistics.cs" />
+    <Compile Include="BamWidgets\DrawTransformStatistics.cs" />
     <Compile Include="BamWidgets\ManaCounterWidget.cs" />
+    <Compile Include="BamWidgets\SideBarBackgroundWidget.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />
@@ -139,5 +145,8 @@ cd "$(SolutionDir)"</PostBuildEvent>
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BamWidgets\BamLogic" />
   </ItemGroup>
 </Project>

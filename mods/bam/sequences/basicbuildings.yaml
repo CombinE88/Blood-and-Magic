@@ -3,6 +3,7 @@ mainbase:
 		AddExtension: False
 	idle: bits/mainb.png
 		Frames: 0
+	icon: mainbase_icon.ani
 
 plattformb:
 	Defaults:
@@ -10,9 +11,11 @@ plattformb:
 	idle: bits/buildings.png
 		Frames: 5
 		ZOffset: -2048
+	icon: plattform_icon.ani
 
 building1:
 	Defaults:
 		AddExtension: False
 	idle: bits/buildings.png
 		Frames: 9
+	icon: building1_icon.ani

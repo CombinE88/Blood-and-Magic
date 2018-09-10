@@ -1,6 +1,8 @@
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using OpenRA.Mods.Bam.Activities;
+using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
@@ -25,6 +27,8 @@ namespace OpenRA.Mods.Bam.Traits
 
         [Desc("Notification to play when transforming.")]
         public readonly string TransformNotification = null;
+
+        public readonly bool SkipSelfAnimation = false;
 
 
         public object Create(ActorInitializer init)
@@ -66,9 +70,9 @@ namespace OpenRA.Mods.Bam.Traits
                 return;
 
             var orderCut = order.OrderString.Replace("Convert-", "");
-            foreach (var actorname in TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo)
+            foreach (var actorname in TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo.Keys)
             {
-                if (orderCut.Contains(actorname))
+                if (orderCut.Contains(actorname) && TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo[actorname])
                 {
                     DoTransform(self, orderCut);
                     break;
@@ -78,12 +82,14 @@ namespace OpenRA.Mods.Bam.Traits
 
         void DoTransform(Actor self, string into)
         {
-            self.QueueActivity(new Transform(self, into)
+            self.QueueActivity(new AdvancedTransform(self, into)
             {
                 Offset = info.Offset,
                 Facing = info.Facing,
                 Sounds = info.TransformSounds,
                 Notification = info.TransformNotification,
+                Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
+                SelfSkipMakeAnims = info.SkipSelfAnimation
             });
         }
     }

@@ -23,7 +23,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            Bounds = new Rectangle(0, 68, background.Bounds.Width, background.Bounds.Height);
+            Bounds = new Rectangle(0, 264, background.Bounds.Width, background.Bounds.Height);
         }
 
         public override bool HandleMouseInput(MouseInput mi)
@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 var actors = actorActions.ActorGroup.Where(a => a.Info.HasTraitInfo<ManaShooterInfo>()).ToArray();
 
                 foreach (var actor in actors)
-                    actor.Trait<ManaShooter>().ShootMana();
+                    actor.World.IssueOrder(new Order("ShootMana", actor, false));
 
                 pressed = true;
             }

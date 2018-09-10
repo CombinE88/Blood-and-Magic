@@ -7,7 +7,7 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class TransformAfterTimeInfo : ITraitInfo
     {
-        public readonly int Time = 200;
+        public readonly int Time = 1000;
 
         public readonly string IntoActor = null;
 

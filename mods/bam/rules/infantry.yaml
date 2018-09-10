@@ -6,6 +6,8 @@ ACOLYTE:
 		Name: Basalt Golem
 	Health:
 		HP: 20
+	RenderSprites:
+		Image: acolyte
 	RevealsShroud:
 		Range: 4c0
 		Type: CenterPosition
@@ -31,6 +33,7 @@ ACOLYTE:
 		Cost: 40
 	TransformToBuilding:
 	ConvertAdjetant:
+		SkipSelfAnimation: true
 
 PYRAMID:
 	Inherits@1: ^Walker
@@ -38,9 +41,9 @@ PYRAMID:
 	WithFacingSpriteBody:
 		Sequence: transformed_stand
 	RenderSprites:
-		Image: acolyte
+		Image: acolyte.pyramid
 	Tooltip:
-		Name: Basalt Golem
+		Name: Pyramid
 	Health:
 		HP: 20
 	RevealsShroud:
@@ -63,6 +66,7 @@ PYRAMID:
 	-Living:
 	TransformToBuilding:
 	ConvertAdjetant:
+		SkipSelfAnimation: true
 
 MAINBASE:
 	Inherits@: ^CoreBuilding
@@ -81,6 +85,7 @@ MAINBASE:
 			BottomRight: 1512, 1512
 	RenderSprites:
 		PlayerPalette: PngPlayer
+		Image: mainbase
 	SpawnsAcolytes:
 	StoresResources:
 		Capacity: 400
@@ -105,6 +110,7 @@ PLATTFORMB:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 1024
 	RenderSprites:
+		Image: plattformb
 		PlayerPalette: PngPlayer
 	Tooltip:
 		Name: Building Plattform
@@ -124,10 +130,14 @@ BUILDING1:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 1024
 	RenderSprites:
+		Image: building1
 		PlayerPalette: PngPlayer
 	Tooltip:
 		Name: Building Plattform
 	AllowConvert:
+		ConvertTo:
+			capsule.warrior: true
+			warrior: false
 
 CAPSULE.WARRIOR:
 	Inherits@1: ^capsule
@@ -146,7 +156,7 @@ CAPSULE.WARRIOR:
 		Sequence: transform
 	TransformAfterTime:
 		IntoActor: warrior
-		Time: 50
+		Time: 1000
 
 WARRIOR:
 	Inherits@1: ^Walker
@@ -166,6 +176,8 @@ WARRIOR:
 		BoredSequence: stand
 	Valued:
 		Cost: 40
+	RenderSprites:
+		Image: warrior
 
 TRINKET.HEALSALVE:
 	Inherits@: ^trinket

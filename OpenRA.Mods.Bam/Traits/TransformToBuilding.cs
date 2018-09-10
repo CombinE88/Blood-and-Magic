@@ -54,7 +54,8 @@ namespace OpenRA.Mods.Bam.Traits
                         new LocationInit(Buildingbelow.Location),
                         new OwnerInit(self.Owner)
                     };
-                    var a = w.CreateActor(info.IntoBuilding, init);
+
+                    w.CreateActor(info.IntoBuilding, init);
 
                     self.Dispose();
                 });
