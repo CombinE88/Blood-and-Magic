@@ -69,15 +69,15 @@ namespace OpenRA.Mods.Bam.BamWidgets
             var progress = 8 * transformAfterTime.Ticker / transformAfterTimeInfo.Time;
 
             if (progress > 1)
-                WidgetUtils.DrawRGBA(moonPhase2, new float2(RenderBounds.Left + 38, RenderBounds.Top + 266 + 7));
+                WidgetUtils.DrawRGBA(moonPhase2, new float2(RenderBounds.Left + 38, RenderBounds.Top + 266 + 8));
             if (progress > 2)
-                WidgetUtils.DrawRGBA(moonPhase3, new float2(RenderBounds.Left + 62, RenderBounds.Top + 266 + 7));
+                WidgetUtils.DrawRGBA(moonPhase3, new float2(RenderBounds.Left + 62, RenderBounds.Top + 266 + 8));
             if (progress > 3)
-                WidgetUtils.DrawRGBA(moonPhase4, new float2(RenderBounds.Left + 88, RenderBounds.Top + 266 + 7));
+                WidgetUtils.DrawRGBA(moonPhase4, new float2(RenderBounds.Left + 88, RenderBounds.Top + 266 + 8));
             if (progress > 5)
-                WidgetUtils.DrawRGBA(moonPhase5, new float2(RenderBounds.Left + 114, RenderBounds.Top + 266 + 7));
+                WidgetUtils.DrawRGBA(moonPhase5, new float2(RenderBounds.Left + 114, RenderBounds.Top + 266 + 8));
             if (progress > 6)
-                WidgetUtils.DrawRGBA(moonPhase6, new float2(RenderBounds.Left + 142, RenderBounds.Top + 266 + 7));
+                WidgetUtils.DrawRGBA(moonPhase6, new float2(RenderBounds.Left + 142, RenderBounds.Top + 266 + 8));
             if (progress > 7)
                 WidgetUtils.DrawRGBA(readyMen, new float2(RenderBounds.Left + 128, RenderBounds.Top + 298));
         }

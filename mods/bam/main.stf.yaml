@@ -26,6 +26,26 @@ capsule_icon: 2616:0
 mainbase_icon: 2714:0
 
 
+#UI Bits ------------------------------------------
+
+ui_armor_symbol: 134:0
+ui_armor_symbol_disabled: 134:4
+ui_armor_symbol_extra: 134:3
+ui_armor_symbol_none: 134:2
+
+ui_damage_symbol: 133:0
+ui_damage_symbol_disabled: 133:4
+ui_damage_symbol_extra: 133:3
+ui_damage_symbol_none: 133:2
+
+ui_speed_symbol: 135:0
+ui_speed_symbol_disabled: 135:4
+ui_speed_symbol_extra: 135:3
+ui_speed_symbol_none: 135:2
+
+ui_health_bar: 132:0
+
+
 #Trinkets One ------------------------------------------
 
 healsalve_trinket_ilde: 2514:0
@@ -40,7 +60,7 @@ warrior_attack: 1614:0-3 1613:0-3! 1612:0-3! 1611:0-3! 1610:0-3 1611:0-3 1612:0-
 warrior_damage: 1626:0-3! 1625:0-3! 1626:0-3 1625:0-3
 warrior_die: 1630:0-7
 warrior_icon: 2598:0
-warrior_icon_disabled: 2598:0
+warrior_icon_disabled: 2598:1
 
 building1_icon: 2702:0
 plattform_icon: 2738:0

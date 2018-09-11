@@ -7,38 +7,38 @@ acolyte:
 	idle: acolyte_stand.ani
 		Facings: 8
 	stand: acolyte_stand.ani
-		Tick: 100
+		Tick: 120
 		Facings: 8
 	run: acolyte_run.ani
-		Tick: 100
+		Tick: 120
 		Length: 4
 		Facings: 8
 	attack: acolyte_attack.ani
-		Tick: 100
+		Tick: 120
 		Length: 4
 		Facings: 8
 	die: acolyte_death.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	damage: acolyte_damage.ani
-		Tick: 100
+		Tick: 120
 		Length: 4
 		Facings: 4
 	transform: acolyte_transform.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	transform_reverse: acolyte_transform_rev.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	transformed_stand: acolyte_transformed_stand.ani
 	mana: acoltye_transformed_mana.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	transofrmed_die: acolyte_transofrmed_die.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	transformed_damage: acolyte_transformed_damage.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	icon: acolyte_icon.ani
 
@@ -50,26 +50,26 @@ capsule:
 	Inherits: ^default
 	idle: capsule_idle.ani
 	transform: capsule_make.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	damage: capsule_damage.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	die: capsule_die.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	icon: capsule_icon.ani
 
 capsule.warrior:
 	idle: capsule_idle.ani
 	transform: capsule_make.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	damage: capsule_damage.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	die: capsule_die.ani
-		Tick: 100
+		Tick: 120
 		Length: *
 	icon: warrior_icon.ani
 	disabled-icon: warrior_icon_disabled.ani
@@ -77,26 +77,26 @@ capsule.warrior:
 warrior:
 	Inherits: ^default
 	stand: warrior_idle.ani
-		Tick: 100
+		Tick: 120
 		Facings: 8
 		Length: 4
 	idle: warrior_stand.ani
-		Tick: 100
+		Tick: 120
 		Facings: 8
 	run: warrior_run.ani
-		Tick: 100
+		Tick: 120
 		Length: 4
 		Facings: 8
 	attack: warrior_attack.ani
-		Tick: 100
+		Tick: 120
 		Length: 4
 		Facings: 8
 	damage: warrior_damage.ani
-		Tick: 100
+		Tick: 120
 		Length: 4
 		Facings: 4
 	die: warrior_die.ani
-		Tick: 100
+		Tick: 120
 		Length: 7
 	icon: warrior_icon.ani
 	disabled-icon: warrior_icon_disabled.ani

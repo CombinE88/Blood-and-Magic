@@ -1,0 +1,18 @@
+basic_ui:
+	Inherits: ^default
+	damage: ui_damage_symbol.ani
+	damage_disabled: ui_damage_symbol_disabled.ani
+	damage_extra: ui_damage_symbol_extra.ani
+	damage_none: ui_damage_symbol_none.ani
+
+	armor: ui_armor_symbol.ani
+	armor_disabled: ui_armor_symbol_disabled.ani
+	armor_extra: ui_armor_symbol_extra.ani
+	armor_none: ui_damage_symbol_none.ani
+
+	speed: ui_speed_symbol.ani
+	speed_disabled: ui_speed_symbol_disabled.ani
+	speed_extra: ui_speed_symbol_extra.ani
+	speed_none: ui_damage_symbol_none.ani
+	
+	healthbar: ui_health_bar.ani

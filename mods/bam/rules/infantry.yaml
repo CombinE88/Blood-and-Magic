@@ -1,7 +1,5 @@
 ACOLYTE:
 	Inherits@1: ^Walker
-	Valued:
-		Cost: 100
 	Tooltip:
 		Name: Basalt Golem
 	Health:
@@ -34,6 +32,10 @@ ACOLYTE:
 	TransformToBuilding:
 	ConvertAdjetant:
 		SkipSelfAnimation: true
+	DungeonsAndDragonsStats:
+		Damage: 2
+		Armor: 2
+		Speed: 2
 
 PYRAMID:
 	Inherits@1: ^Walker
@@ -43,7 +45,7 @@ PYRAMID:
 	RenderSprites:
 		Image: acolyte.pyramid
 	Tooltip:
-		Name: Pyramid
+		Name: Obelisk
 	Health:
 		HP: 20
 	RevealsShroud:
@@ -67,6 +69,10 @@ PYRAMID:
 	TransformToBuilding:
 	ConvertAdjetant:
 		SkipSelfAnimation: true
+	DungeonsAndDragonsStats:
+		Damage: 0
+		Armor: 4
+		Speed: 0
 
 MAINBASE:
 	Inherits@: ^CoreBuilding
@@ -95,6 +101,11 @@ MAINBASE:
 		Facing: 160
 		ExitCell: -1,3
 		ProductionTypes: Golem
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 0
+		Armor: 4
+		Speed: 0
 
 PLATTFORMB:
 	Inherits@: ^CoreBuilding
@@ -138,6 +149,11 @@ BUILDING1:
 		ConvertTo:
 			capsule.warrior: true
 			warrior: false
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 0
+		Armor: 4
+		Speed: 0
 
 CAPSULE.WARRIOR:
 	Inherits@1: ^capsule
@@ -157,6 +173,10 @@ CAPSULE.WARRIOR:
 	TransformAfterTime:
 		IntoActor: warrior
 		Time: 1000
+	DungeonsAndDragonsStats:
+		Damage: 0
+		Armor: 2
+		Speed: 0
 
 WARRIOR:
 	Inherits@1: ^Walker

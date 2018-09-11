@@ -7,7 +7,7 @@
 		Bounds: 40,38,0,-15
 		DecorationBounds: 40,38,0,-15
 	Mobile:
-		Speed: 100
+		Speed: 50
 		Locomotor: foot
 	MustBeDestroyed:
 		RequiredForShortGame: true

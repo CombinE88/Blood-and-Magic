@@ -83,9 +83,12 @@
     <Compile Include="BamWidgets\Buttons\TransformToBuildingButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\TrinketDropButtonWidgetcs.cs" />
     <Compile Include="BamWidgets\Buttons\TrinketsButtonsWidget.cs" />
+    <Compile Include="BamWidgets\DrawValueStatisticsWidget.cs" />
     <Compile Include="BamWidgets\DrawActorStatistics.cs" />
     <Compile Include="BamWidgets\DrawTransformStatistics.cs" />
+    <Compile Include="BamWidgets\HealthBarUIWidget.cs" />
     <Compile Include="BamWidgets\ManaCounterWidget.cs" />
+    <Compile Include="BamWidgets\SelectionNameWidget.cs" />
     <Compile Include="BamWidgets\SideBarBackgroundWidget.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
@@ -96,6 +99,7 @@
     <Compile Include="Traits\AdvancedTransforms.cs" />
     <Compile Include="Traits\AllowConvert.cs" />
     <Compile Include="Traits\ConvertAdjetant.cs" />
+    <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
     <Compile Include="Traits\TransformAfterTime.cs" />
     <Compile Include="Traits\TransformToBuilding.cs" />
     <Compile Include="Traits\AllowTransfrom.cs" />
@@ -110,6 +114,7 @@
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
+    <Compile Include="Traits\World\TilesetStatistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

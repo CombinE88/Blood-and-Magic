@@ -11,6 +11,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public World World;
         public WorldRenderer WorldRenderer;
         public SpriteFont Font;
+        public SpriteFont FontLarge;
         public PaletteReference Palette;
 
         public Sheet Sheet;
@@ -22,13 +23,14 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             World = world;
             WorldRenderer = worldRenderer;
-            Game.Renderer.Fonts.TryGetValue("Bold", out Font);
+            Game.Renderer.Fonts.TryGetValue("Small", out Font);
+            Game.Renderer.Fonts.TryGetValue("MediumBold", out FontLarge);
             Palette = WorldRenderer.Palette("BamPlayer" + World.LocalPlayer.InternalName);
 
             Sheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/chromebam.png"));
 
             RightbarSheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/mainbar.png"));
-            rightBar = new Sprite(RightbarSheet, new Rectangle(0, 89, 180 + Border, 249), TextureChannel.RGBA);
+            rightBar = new Sprite(RightbarSheet, new Rectangle(0, 89, 200 + Border, 249), TextureChannel.RGBA);
 
             CreateBackground();
 
@@ -63,7 +65,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             //Background Minimap
             AddChild(new SideBarBackgroundWidget(this, 10, 20, 594, 24, 128, 120));
 
-            //Background Name Frame
+            //Background Health Frame
             AddChild(new SideBarBackgroundWidget(this, 0, 160, 4, 734, 152, 17));
 
             //Background IconFrame

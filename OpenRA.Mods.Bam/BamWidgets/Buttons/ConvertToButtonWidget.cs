@@ -1,6 +1,7 @@
 using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Widgets;
 
@@ -55,7 +56,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override bool HandleMouseInput(MouseInput mi)
         {
-            if (!EventBounds.Contains(mi.Location) && !disabled)
+            if (!EventBounds.Contains(mi.Location) || !disabled)
                 return false;
 
             if (mi.Button != MouseButton.Left)
@@ -84,7 +85,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (animation != null)
             {
-                animation.PlayFetchIndex(disabled ? "disabled-icon" : "icon", () => 0);
+                animation.PlayFetchIndex(!disabled ? "disabled-icon" : "icon", () => 0);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
             }
         }

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using OpenRA.Graphics;
 using OpenRA.Mods.Bam.BamWidgets.Buttons;
 using OpenRA.Mods.Bam.Traits;
+using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
-using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Traits;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets
@@ -24,6 +25,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private TrinketButtonsWidget TrinketButtons;
         private TrinketDropButtonWidget TrinketDropButton;
         private DrawTransformStatisticsWidget drawTransformStatistics;
+        private DrawValueStatisticsWidget DrawValueStatistics;
+        private HealthBarUIWidget HealthBarUI;
+        private SelectionNameWidget SelectionName;
 
         private List<ConvertToButtonWidget> ConvertToButtons = new List<ConvertToButtonWidget>();
 
@@ -38,6 +42,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             AddChild(DrawActorStatisticsW = new DrawActorStatisticsWidget(this) {Visible = false});
             AddChild(drawTransformStatistics = new DrawTransformStatisticsWidget(this) {Visible = false});
+            AddChild(DrawValueStatistics = new DrawValueStatisticsWidget(this) {Visible = false});
+            AddChild(HealthBarUI = new HealthBarUIWidget(this) {Visible = false});
+            AddChild(SelectionName = new SelectionNameWidget(this) {Visible = false});
+
+
 
             AddChild(TrinketButtons = new TrinketButtonsWidget(this) {Visible = false});
             AddChild(TrinketDropButton = new TrinketDropButtonWidget(this) {Visible = false});
@@ -60,6 +69,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             DrawActorStatisticsW.Visible = false;
             drawTransformStatistics.Visible = false;
+            DrawValueStatistics.Visible = false;
+            HealthBarUI.Visible = false;
+            SelectionName.Visible = false;
 
             // TODO hide all others here
 
@@ -115,7 +127,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (Actor.Info.HasTraitInfo<CanHoldTrinketInfo>() && Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
             {
                 TrinketButtons.Visible = true;
-                if(!Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
+                if (!Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
                     TrinketDropButton.Visible = true;
             }
 
@@ -156,6 +168,16 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             if (Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
                 drawTransformStatistics.Visible = true;
+
+            if (Actor.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>())
+                DrawValueStatistics.Visible = true;
+
+            if(Actor.TraitOrDefault<IHealth>() != null)
+                HealthBarUI.Visible = true;
+
+            if(Actor.Info.HasTraitInfo<TooltipInfo>())
+                SelectionName.Visible = true;
+
         }
     }
 }
