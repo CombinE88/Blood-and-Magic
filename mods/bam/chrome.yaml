@@ -1,0 +1,488 @@
+logos: uibits/loadscreen.png
+	logo: 0,0,256,256
+
+flags: uibits/buttons.png
+	faction: 0,112,30,15
+	Random: 60,112,30,15
+	spectator: 60,112,30,15
+
+# Used for the main menu frame
+dialog: uibits/dialog.png
+	background: 40,21,360,223
+	border-r: 400,7,40,251
+	border-l: 0,7,40,251
+	border-b: 40,244,360,22
+	border-t: 40,0,360,21
+	corner-tl: 0,266,40,21
+	corner-tr: 40,266,40,21
+	corner-bl: 0,286,40,22
+	corner-br: 40,286,40,22
+
+# Used for Music and Map selection (normal button)
+dialog2: uibits/dialog.png
+	background: 516,3,13,11
+	border-t: 516,0,13,3
+	border-b: 516,14,13,3
+	border-l: 512,3,4,11
+	border-r: 529,3,4,11
+	corner-tl: 512,0,4,3
+	corner-tr: 529,0,4,3
+	corner-bl: 512,14,4,3
+	corner-br: 529,14,4,3
+
+# It's a Container, used in various places, like Hotkeys, ColorPicker, Asset Browser frames (looks like a pressed button)
+dialog3: uibits/dialog.png
+	background: 516,21,13,11
+	border-t: 516,18,13,3
+	border-b: 516,32,13,3
+	border-l: 512,21,4,11
+	border-r: 529,21,4,11
+	corner-tl: 512,18,4,3
+	corner-tr: 529,18,4,3
+	corner-bl: 512,32,4,3
+	corner-br: 529,32,4,3
+
+# Used for tooltips and the video player
+dialog4: uibits/dialog.png
+	background: 516,39,13,11
+	border-t: 516,36,13,3
+	border-b: 516,50,13,3
+	border-l: 512,39,4,11
+	border-r: 529,39,4,11
+	corner-tl: 512,36,4,3
+	corner-tr: 529,36,4,3
+	corner-bl: 512,50,4,3
+	corner-br: 529,50,4,3
+
+lobby-bits: uibits/buttons.png
+	spawn-unclaimed: 159,5,23,22
+	spawn-claimed: 127,5,23,22
+	admin: 187,5,7,5
+	colorpicker: 127,5,23,22
+	huepicker: 194,0,7,15
+	protected: 202,0,10,13
+	protected-disabled: 213,0,10,13
+	admin-registered: 224,0,16,16
+	admin-anonymous: 240,0,16,16
+	player-registered: 224,16,16,16
+	player-anonymous: 240,16,16,16
+
+reload-icon: uibits/chrome.png
+	enabled: 512,80,16,16
+	disabled-0: 512,64,16,16
+	disabled-1: 528,64,16,16
+	disabled-2: 544,64,16,16
+	disabled-3: 560,64,16,16
+	disabled-4: 576,64,16,16
+	disabled-5: 592,64,16,16
+	disabled-6: 608,64,16,16
+	disabled-7: 624,64,16,16
+	disabled-8: 640,64,16,16
+	disabled-9: 656,64,16,16
+	disabled-10: 672,64,16,16
+	disabled-11: 688,64,16,16
+
+strategic: uibits/buttons.png
+	unowned: 127,5,23,22
+	critical_unowned: 127,27,23,22
+	enemy_owned: 159,27,23,22
+	player_owned: 159,49,23,22
+
+music: uibits/buttons.png
+	pause: 0,193,25,25
+	stop: 25,193,25,25
+	play: 55,193,25,25
+	next: 82,193,25,25
+	prev: 110,193,25,25
+	fastforward: 131,193,25,25
+	slowmo: 159,193,25,25
+
+scrollbar: uibits/buttons.png
+	down_arrow: 116,140,16,16
+	down_pressed: 116,140,16,16
+	up_arrow: 132,140,16,16
+	up_pressed: 132,140,16,16
+
+# A copy of dialog3 (pressed button)
+progressbar-bg: uibits/dialog.png
+	background: 641,1,126,126
+	border-r: 767,1,1,126
+	border-l: 640,1,1,126
+	border-b: 641,127,126,1
+	border-t: 641,0,126,1
+	corner-tl: 640,0,1,1
+	corner-tr: 767,0,1,1
+	corner-bl: 640,127,1,1
+	corner-br: 767,127,1,1
+
+# A copy of dialog2 (normal button)
+progressbar-thumb: uibits/dialog.png
+	background: 513,1,126,126
+	border-r: 639,1,1,126
+	border-l: 512,1,1,126
+	border-b: 513,127,126,1
+	border-t: 513,0,126,1
+	corner-tl: 512,0,1,1
+	corner-tr: 639,0,1,1
+	corner-bl: 512,127,1,1
+	corner-br: 639,127,1,1
+
+# A copy of dialog2 (normal button)
+button: uibits/dialog.png
+	background: 516,3,13,11
+	border-t: 516,0,13,3
+	border-b: 516,14,13,3
+	border-l: 512,3,4,11
+	border-r: 529,3,4,11
+	corner-tl: 512,0,4,3
+	corner-tr: 529,0,4,3
+	corner-bl: 512,14,4,3
+	corner-br: 529,14,4,3
+
+# 5% lighter than a normal button (mouseover)
+button-hover: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+	
+# A copy of dialog3 (pressed button)
+button-pressed: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# 50% grey (disabled button)
+button-disabled: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3 
+    
+# 10% darker than a normal button - Used in Settings when you select Display Audio Input or Advanced
+button-highlighted: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+# A copy of button-highlighted - Used in Settings when you select Display Audio Input or Advanced
+button-highlighted-hover: uibits/dialog.png
+	background: 569,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+#  Used in Settings when you select Display Audio Input or Advanced
+button-highlighted-pressed: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of button-highlighted - Used in Settings when you select Display Audio Input or Advanced
+button-highlighted-disabled: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog3 (pressed button)
+textfield: uibits/dialog.png
+	background: 538,39,13,11
+	border-t: 538,36,13,3
+	border-b: 538,50,13,3
+	border-l: 534,39,4,11
+	border-r: 551,39,4,11
+	corner-tl: 534,36,4,3
+	corner-tr: 551,36,4,3
+	corner-bl: 534,50,4,3
+	corner-br: 551,50,4,3
+
+# A copy of checkbox-hover
+textfield-hover: uibits/dialog.png
+	background: 516,39,13,11
+	border-t: 516,36,13,3
+	border-b: 516,50,13,3
+	border-l: 512,39,4,11
+	border-r: 529,39,4,11
+	corner-tl: 512,36,4,3
+	corner-tr: 529,36,4,3
+	corner-bl: 512,50,4,3
+	corner-br: 529,50,4,3
+
+# Same as button-disabled-pressed
+textfield-disabled: uibits/dialog.png
+	background: 538,39,13,11
+	border-t: 538,36,13,3
+	border-b: 538,50,13,3
+	border-l: 534,39,4,11
+	border-r: 551,39,4,11
+	corner-tl: 534,36,4,3
+	corner-tr: 551,36,4,3
+	corner-bl: 534,50,4,3
+	corner-br: 551,50,4,3
+
+# A copy of dialog3 (pressed button)
+textfield-focused: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog3 (pressed button)
+scrollpanel-bg: uibits/dialog.png
+	background: 516,3,13,11
+	border-t: 516,0,13,3
+	border-b: 516,14,13,3
+	border-l: 512,3,4,11
+	border-r: 529,3,4,11
+	corner-tl: 512,0,4,3
+	corner-tr: 529,0,4,3
+	corner-bl: 512,14,4,3
+	corner-br: 529,14,4,3
+
+# A copy of dialog2 (normal button)
+scrollpanel-button: uibits/dialog.png
+	background: 581,2,8,12
+	border-r: 579,2,2,12
+	border-l: 598,2,2,12
+	border-b: 581,14,8,2
+	border-t: 581,0,8,2
+	corner-tl: 579,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 579,14,2,2
+	corner-br: 589,14,2,2
+
+# A copy of button-hover
+scrollpanel-button-hover: uibits/dialog.png
+	background: 607,2,8,12
+	border-r: 615,2,2,12
+	border-l: 605,2,2,12
+	border-b: 607,14,8,2
+	border-t: 607,0,8,2
+	corner-tl: 605,0,2,2
+	corner-tr: 615,0,2,2
+	corner-bl: 605,14,2,2
+	corner-br: 615,14,2,2
+
+# A copy of dialog3 (pressed button)
+scrollpanel-button-pressed: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+# A copy of dialog2 (normal button)
+scrollpanel-button-disabled: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+slider: uibits/dialog.png
+	tick: 579,0,12,16
+
+# A copy of dialog3 (pressed button)
+slider-track: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+	
+# A copy of dialog2 (normal button)
+slider-thumb: uibits/dialog.png
+	background: 581,2,8,12
+	border-r: 579,2,2,12
+	border-l: 598,2,2,12
+	border-b: 581,14,8,2
+	border-t: 581,0,8,2
+	corner-tl: 579,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 579,14,2,2
+	corner-br: 589,14,2,2
+
+# A copy of button-hover
+slider-thumb-hover: uibits/dialog.png
+	background: 607,2,8,12
+	border-r: 615,2,2,12
+	border-l: 605,2,2,12
+	border-b: 607,14,8,2
+	border-t: 607,0,8,2
+	corner-tl: 605,0,2,2
+	corner-tr: 615,0,2,2
+	corner-bl: 605,14,2,2
+	corner-br: 615,14,2,2
+
+# A copy of dialog3 (pressed button)
+slider-thumb-pressed: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+# A copy of dialog2 (normal button)
+slider-thumb-disabled: uibits/dialog.png
+	background: 594,2,8,12
+	border-r: 593,2,2,12
+	border-l: 614,2,2,12
+	border-b: 594,14,8,2
+	border-t: 594,0,8,2
+	corner-tl: 614,0,2,2
+	corner-tr: 589,0,2,2
+	corner-bl: 592,14,2,2
+	corner-br: 614,14,2,2
+
+# A copy of dialog3 (pressed button)
+checkbox: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+checkbox-bits: uibits/dialog.png
+	checked: 618,0,18,14
+	checked-disabled: 636,0,18,14
+	crossed: 654,0,17,16
+	crossed-disabled: 654,16,17,16
+
+checkbox-hover: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+# Same as button-disabled-pressed
+checkbox-disabled: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3 
+
+# Same as button-highlighted-pressed
+checkbox-highlighted: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog3 (pressed button)
+scrollitem-selected: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+# A copy of dialog2 (normal button)
+scrollitem-hover: uibits/dialog.png
+	background: 560,3,13,11
+	border-t: 560,0,13,3
+	border-b: 560,14,13,3
+	border-l: 556,3,4,11
+	border-r: 573,3,4,11
+	corner-tl: 556,0,4,3
+	corner-tr: 573,0,4,3
+	corner-bl: 556,14,4,3
+	corner-br: 573,14,4,3
+
+# A copy of dialog2 (normal button)
+scrollheader-selected: uibits/dialog.png
+	background: 538,3,13,11
+	border-t: 538,0,13,3
+	border-b: 538,14,13,3
+	border-l: 534,3,4,11
+	border-r: 551,3,4,11
+	corner-tl: 534,0,4,3
+	corner-tr: 551,0,4,3
+	corner-bl: 534,14,4,3
+	corner-br: 551,14,4,3
+
+dropdown: uibits/dialog.png
+    separator: 512,1,1,19
+    observer-separator: 768,256,1,19

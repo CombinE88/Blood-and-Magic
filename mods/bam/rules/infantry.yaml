@@ -1,0 +1,54 @@
+basalgolem:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Basal Golem
+	Valued:
+		Cost: 40
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	Mobile:
+		Speed: 50
+	ManaStorage:
+	TransformOnIdle:
+		IntoActor: obelisk
+	Buildable:
+		Queue: keep
+	Armament:
+		Weapon: CloseCombat
+	TransformToBuilding:
+	TransformToUnit:
+
+capsule:
+	Inherits: ^CoreInfantry
+	TransformOnIdle:
+	-Mobile:
+	-WithMoveAnimation:
+	-AttackMove:
+	-Living:
+	-WithFacingSpriteBody:
+	WithSpriteBody:
+	Immobile:
+
+warrior:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Warrior
+	Valued:
+		Cost: 40
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	Mobile:
+		Speed: 50
+	Armament:
+		Weapon: CloseCombat
+	Buildable:
+		Queue: basalgolem, obelisk
+		BuildDuration: 40

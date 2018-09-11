@@ -1,0 +1,55 @@
+# Infantry
+
+basalgolem_idle: 534:0x 534:0x 534:0x 534:0x 534:0 534:0 534:0 534:0
+basalgolem_move: 504:0-3 503:0-3x 502:0-3x 501:0-3x 500:0-3 501:0-3 502:0-3 503:0-3
+basalgolem_attack: 514:0-3 513:0-3x 512:0-3x 511:0-3x 510:0-3 511:0-3 512:0-3 513:0-3
+basalgolem_damage: 526:0-3x 526:0-3x 525:0-3x 525:0-3x 525:0-3 525:0-3 526:0-3 526:0-3
+basalgolem_die: 530:0-7
+basalgolem_stone: 531:0
+basalgolem_transform: 534:0-7
+basalgolem_icon: 2550:0
+
+capsule_idle: 342:3
+capsule_before: 342:0-3
+capsule_after: 342:3-0
+capsule_damage: 343:0-5
+capsule_die: 344:0-7
+capsule_icon: 2616:0
+
+warrior_idle: 1620:0-3x 1620:0-3x 1620:0-3x 1620:0-3x 1620:0-3 1620:0-3 1620:0-3 1620:0-3
+warrior_move: 1604:0-3 1603:0-3x 1602:0-3x 1601:0-3x 1600:0-3 1601:0-3 1602:0-3 1603:0-3
+warrior_attack: 1614:0-3 1613:0-3x 1612:0-3x 1611:0-3x 1610:0-3 1611:0-3 1612:0-3 1613:0-3
+warrior_damage: 1626:0-3x 1626:0-3x 1625:0-3x 1625:0-3x 1626:0-3 1626:0-3 1625:0-3 1625:0-3
+warrior_die: 1630:0-7
+warrior_icon: 2598:0
+
+# Buildings
+
+keep_icon: 2714:0
+buildarea_icon: 2738:0
+barracks_icon: 2702:0
+
+obelisk_idle: 398:0
+obelisk_mana: 398:0-7
+obelisk_damage: 378:0-3
+obelisk_die: 380:0-7
+obelisk_transform: 534:7-0
+obelisk_icon: 2584:0
+
+# Trinkets
+
+healingsalve_ilde: 2514:0
+healingsalve_icon: 2514:1
+healingsalve_effect: 360:0-3
+
+# Mouse cursors.
+
+cursor_default: 9000:0
+cursor_move: 9000:1
+cursor_attack: 9000:2
+cursor_ability: 9000:3
+cursor_select: 9000:4
+cursor_help: 9000:5
+cursor_wait: 9000:6
+cursor_blocked: 9000:7
+cursor_deploy: 9000:9

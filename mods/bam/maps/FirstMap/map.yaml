@@ -1,0 +1,49 @@
+MapFormat: 11
+RequiresMod: bam
+Title: FirstMap
+Author: CombinE
+Tileset: platforms
+MapSize: 42,40
+Bounds: 1,1,40,38
+Visibility: Lobby
+Categories: Conquest
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: bam
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: bam
+		Enemies: Multi0, Multi1
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+Actors:
+	Actor0: mpspawn
+		Owner: Neutral
+		Location: 37,2
+	Actor1: mpspawn
+		Owner: Neutral
+		Location: 2,2
+	Actor2: buildarea
+		Owner: Neutral
+		Location: 7,2
+	Actor3: buildarea
+		Owner: Neutral
+		Location: 33,2
+	Actor4: healingsalve
+		Owner: Neutral
+		Location: 33,8
+	Actor5: healingsalve
+		Owner: Neutral
+		Location: 8,8

@@ -1,0 +1,8 @@
+Container@PLAYER_WIDGETS:
+	Children:
+		# TODO for what?
+		LogicKeyListener@CONTROLGROUP_KEYHANDLER:
+			Logic: ControlGroupLogic
+		# TODO for what?
+		LogicTicker@SIDEBAR_TICKER:
+		BamUI@INGAME_UI:

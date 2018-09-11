@@ -1,0 +1,182 @@
+# Shared palettes for all KKnD games.
+^Palettes:
+	# Palette to use for generated shadow. Its basicaly just half-transparent black.
+	PaletteFromRGBA@shadow:
+		Name: shadow
+		R: 0
+		G: 0
+		B: 0
+		A: 128
+	# Palette to use when highlighting actors.
+	PaletteFromRGBA@highlight:
+		Name: highlight
+		R: 255
+		G: 255
+		B: 255
+		A: 128
+	# Default palette for the mpspawn, as its not part of the KKnD assets.
+	PaletteFromPng@mpspawn:
+		Name: mpspawn
+		Filename: bits/mpspawn.png
+	# Shroud and fog.
+	PaletteFromPng@shroud:
+		Name: shroud
+		Filename: bits/shroud.png
+	PaletteFromPaletteWithAlpha@fog:
+		Name: fog
+		BasePalette: shroud
+		Alpha: 0.5
+
+	# Standard palette for all actors.
+	PaletteFromPal@bam11195:
+		Name: bam11195
+		Filename: 11195.pal
+	OverlayPlayerColorPalette@bam11195Player:
+		BasePalette: bam11195
+		BaseName: bam11195Player
+		RemapIndex: 192, 193, 194, 195, 196, 197, 198, 199
+
+	PaletteFromPal@colorpicker: # TODO remove this
+		Name: colorpicker
+		Filename: 11195.pal
+		AllowModifiers: false
+	PaletteFromPal@chrome: # TODO remove this
+		Name: chrome
+		Filename: 11195.pal
+	PaletteFromPal@moveflash: # TODO remove this
+		Name: moveflash
+		Filename: 11195.pal
+
+	# Tileset palettes
+	PaletteFromPng@platforms:
+		Name: platforms
+		Tileset: platforms
+		Filename: bits/platforms.png
+
+# Palettes used for various stuff for reference. Remove when not needed.
+#	PaletteFromPal@bam32:
+#		Name: bam32
+#		Filename: 32.pal
+#	PaletteFromPal@bam33:
+#		Name: bam33
+#		Filename: 33.pal
+#	PaletteFromPal@bam100:
+#		Name: bam100
+#		Filename: 100.pal
+#	PaletteFromPal@bam190:
+#		Name: bam190
+#		Filename: 190.pal
+#	PaletteFromPal@bam195:
+#		Name: bam195
+#		Filename: 195.pal
+#	PaletteFromPal@bam666:
+#		Name: bam666
+#		Filename: 666.pal
+#	PaletteFromPal@bam3535:
+#		Name: bam3535
+#		Filename: 3535.pal
+#	PaletteFromPal@bam3560:
+#		Name: bam3560
+#		Filename: 3560.pal
+#	PaletteFromPal@bam3602:
+#		Name: bam3602
+#		Filename: 3602.pal
+#	PaletteFromPal@bam3620:
+#		Name: bam3620
+#		Filename: 3620.pal
+#	PaletteFromPal@bam3660:
+#		Name: bam3660
+#		Filename: 3660.pal
+#	PaletteFromPal@bam3678:
+#		Name: bam3678
+#		Filename: 3678.pal
+#	PaletteFromPal@bam3710:
+#		Name: bam3710
+#		Filename: 3710.pal
+#	PaletteFromPal@bam3730:
+#		Name: bam3730
+#		Filename: 3730.pal
+#	PaletteFromPal@bam3770:
+#		Name: bam3770
+#		Filename: 3770.pal
+#	PaletteFromPal@bam3795:
+#		Name: bam3795
+#		Filename: 3795.pal
+#	PaletteFromPal@bam3820:
+#		Name: bam3820
+#		Filename: 3820.pal
+#	PaletteFromPal@bam8000:
+#		Name: bam8000
+#		Filename: 8000.pal
+#	PaletteFromPal@bam8050:
+#		Name: bam8050
+#		Filename: 8050.pal
+#	PaletteFromPal@bam8150:
+#		Name: bam8150
+#		Filename: 8150.pal
+#	PaletteFromPal@bam8200:
+#		Name: bam8200
+#		Filename: 8200.pal
+#	PaletteFromPal@bam9020:
+#		Name: bam9020
+#		Filename: 9020.pal
+#	PaletteFromPal@bam9100:
+#		Name: bam9100
+#		Filename: 9100.pal
+#	PaletteFromPal@bam9101:
+#		Name: bam9101
+#		Filename: 9101.pal
+#	PaletteFromPal@bam9120:
+#		Name: bam9120
+#		Filename: 9120.pal
+#	PaletteFromPal@bam9140:
+#		Name: bam9140
+#		Filename: 9140.pal
+#	PaletteFromPal@bam9160:
+#		Name: bam9160
+#		Filename: 9160.pal
+#	PaletteFromPal@bam9180:
+#		Name: bam9180
+#		Filename: 9180.pal
+#	PaletteFromPal@bam9200:
+#		Name: bam9200
+#		Filename: 9200.pal
+#	PaletteFromPal@bam9220:
+#		Name: bam9220
+#		Filename: 9220.pal
+#	PaletteFromPal@bam9240:
+#		Name: bam9240
+#		Filename: 9240.pal
+#	PaletteFromPal@bam9260:
+#		Name: bam9260
+#		Filename: 9260.pal
+#	PaletteFromPal@bam9280:
+#		Name: bam9280
+#		Filename: 9280.pal
+#	PaletteFromPal@bam9300:
+#		Name: bam9300
+#		Filename: 9300.pal
+#	PaletteFromPal@bam9320:
+#		Name: bam9320
+#		Filename: 9320.pal
+#	PaletteFromPal@bam9340:
+#		Name: bam9340
+#		Filename: 9340.pal
+#	PaletteFromPal@bam9360:
+#		Name: bam9360
+#		Filename: 9360.pal
+#	PaletteFromPal@bam9380:
+#		Name: bam9380
+#		Filename: 9380.pal
+#	PaletteFromPal@bam9400:
+#		Name: bam9400
+#		Filename: 9400.pal
+#	PaletteFromPal@bam9420:
+#		Name: bam9420
+#		Filename: 9420.pal
+#	PaletteFromPal@bam9998:
+#		Name: bam9998
+#		Filename: 9998.pal
+#	PaletteFromPal@bam9999:
+#		Name: bam9999
+#		Filename: 9999.pal

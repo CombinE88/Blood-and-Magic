@@ -1,0 +1,207 @@
+Metadata:
+	Title: Bood And Magic
+	Version: {DEV_VERSION}
+
+PackageFormats: StfFile
+
+Packages:
+	~^Content/bam/
+	.
+	$bam: bam
+	./mods/common: common
+	~maps.stf
+	~main.stf
+
+MapFolders:
+	bam|maps: System
+	~^maps/bam/{DEV_VERSION}: User
+
+Rules:
+	bam|rules/palettes.yaml
+	bam|rules/core.yaml
+	bam|rules/misc.yaml
+	bam|rules/infantry.yaml
+	bam|rules/buildings.yaml
+	bam|rules/trinkets.yaml
+
+Sequences:
+	bam|sequences/misc.yaml
+	bam|sequences/infantry.yaml
+	bam|sequences/buildings.yaml
+	bam|sequences/trinkets.yaml
+
+TileSets:
+	bam|tilesets/platforms.yaml
+
+Cursors:
+	bam|cursors.yaml
+
+Chrome:
+	bam|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	bam|OpenRA.Mods.Bam.dll
+
+ChromeLayout:
+	common|chrome/ingame.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame-info.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-menu.yaml
+	common|chrome/ingame-observer.yaml
+	common|chrome/ingame-observerstats.yaml
+	bam|chrome/ingame-player.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-infochat.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-players.yaml
+	common|chrome/lobby-options.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-servers.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-browserpanels.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	bam|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/editor.yaml
+	common|chrome/playerprofile.yaml
+
+Weapons:
+	bam|weapons/misc.yaml
+	
+Voices:
+	bam|audio/voices.yaml
+
+Notifications:
+	bam|audio/notifications.yaml
+
+Music:
+	bam|audio/music.yaml
+
+Translations:
+
+Hotkeys:
+	common|hotkeys/game.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: bam|uibits/loadscreen.png
+	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+
+ChromeMetrics:
+	common|metrics.yaml
+	bam|metrics.yaml
+
+Fonts:
+	Tiny:
+		Font: common|FreeSans.ttf
+		Size: 10
+	TinyBold:
+		Font: common|FreeSansBold.ttf
+		Size: 10
+	Small:
+		Font: common|FreeSans.ttf
+		Size: 12
+	Regular:
+		Font: common|FreeSans.ttf
+		Size: 14
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size: 14
+	MediumBold:
+		Font: common|FreeSansBold.ttf
+		Size: 18
+	BigBold:
+		Font: common|FreeSansBold.ttf
+		Size: 24
+	Title:
+		Font: common|FreeSans.ttf
+		Size: 48
+
+Missions:
+
+MapGrid:
+	TileSize: 40,38
+	Type: Rectangular
+
+SupportsMapsFrom: bam
+
+SoundFormats: Wav
+
+SpriteFormats: Ani, Tlb, PngSheet
+
+SpriteSequenceFormat: DefaultSpriteSequence
+
+ModelSequenceFormat: PlaceholderModelSequence
+
+GameSpeeds:
+	slowest:
+		Name: Slowest
+		Timestep: 80
+		OrderLatency: 2
+	slower:
+		Name: Slower
+		Timestep: 50
+		OrderLatency: 3
+	default:
+		Name: Normal
+		Timestep: 40
+		OrderLatency: 3
+	fast:
+		Name: Fast
+		Timestep: 35
+		OrderLatency: 4
+	faster:
+		Name: Faster
+		Timestep: 30
+		OrderLatency: 4
+	fastest:
+		Name: Fastest
+		Timestep: 20
+		OrderLatency: 6
+
+ColorValidator:
+	TeamColorPresets: ffc9ca, f50606, 98331f, f57606, f7bb06, f861a4, da06f3, ddb8ff, 06f739, cef7b2, 200738, 280df6, 2f86f2, 76d2f8, 34ba93, 000000
+
+ModContent:
+	InstallPromptMessage: Red Alert requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
+	QuickDownload: quickinstall
+	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
+	Packages:
+		base: Base Game Files
+			TestFiles: ^Content/bam/main.stf, ^Content/bam/maps.stf
+			Sources:
+			Required: true
+			Download: base
+	Downloads:
+		bam|installer/downloads.yaml
+	Sources:

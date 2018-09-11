@@ -1,0 +1,4 @@
+healingsalve:
+	Inherits@: ^CoreTrinket
+	Tooltip:
+		Name: Healing Salve

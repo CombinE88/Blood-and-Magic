@@ -1,0 +1,10 @@
+healingsalve:
+	idle: healingsalve_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	effect: healingsalve_effect.ani
+		Length: 4
+		Tick: 100
+	icon: healingsalve_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16

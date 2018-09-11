@@ -1,0 +1,100 @@
+using System.Drawing;
+using OpenRA.Graphics;
+using OpenRA.Mods.Bam.BamWidgets;
+using OpenRA.Widgets;
+
+namespace OpenRA.Mods.Bam.Widgets
+{
+	public class BamUIWidget : Widget
+	{
+		public World World;
+		public WorldRenderer WorldRenderer;
+		public SpriteFont Font;
+		public SpriteFont FontLarge;
+		public PaletteReference Palette;
+		public Sheet Sheet;
+
+		private Sprite border;
+		private Sprite background;
+
+		[ObjectCreator.UseCtor]
+		public BamUIWidget(World world, WorldRenderer worldRenderer)
+		{
+			World = world;
+			WorldRenderer = worldRenderer;
+			Game.Renderer.Fonts.TryGetValue("Small", out Font);
+			Game.Renderer.Fonts.TryGetValue("MediumBold", out FontLarge);
+			Palette = WorldRenderer.Palette("bam11195Player" + World.LocalPlayer.InternalName);
+
+			Sheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/chromebam.png"));
+
+			var sidebarSheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/mainbar.png"));
+			border = new Sprite(sidebarSheet, new Rectangle(0, 89, 26, 249), TextureChannel.RGBA);
+			background = new Sprite(sidebarSheet, new Rectangle(26, 89, 200, 249), TextureChannel.RGBA);
+
+			CreateBackground();
+
+			AddChild(new ManaCounterWidget(this));
+			AddChild(new ActorActionsWidget(this));
+		}
+
+		public override bool HandleMouseInput(MouseInput mi)
+		{
+			return new Rectangle(RenderBounds.X - border.Bounds.Width, RenderBounds.Y, RenderBounds.Width + border.Bounds.Width, RenderBounds.Height).Contains(mi.Location);
+		}
+
+		public override void Tick()
+		{
+			Bounds = new Rectangle(Game.Renderer.Resolution.Width - background.Bounds.Width, 0, background.Bounds.Width, Game.Renderer.Resolution.Height);
+		}
+
+		public override void Draw()
+		{
+			for (var y = 0; y < RenderBounds.Height; y += background.Bounds.Height)
+			{
+				WidgetUtils.DrawRGBA(border, new float2(RenderBounds.X - border.Bounds.Width, y));
+				WidgetUtils.DrawRGBA(background, new float2(RenderBounds.X, y));
+			}
+		}
+
+		private void CreateBackground()
+		{
+			// TODO this does not belong here! Move backgrounds to container widgets
+			//Example
+			//AddChild(new SideBarBackgroundWidget(this,Position X,Position Y,PicturePosition X,PicturePosition Y,PicturePosition X End,PicturePosition Y End));
+
+			//Background Minimap
+			AddChild(new SideBarBackgroundWidget(this, 10, 20, 594, 24, 128, 120));
+
+			//Background Health Frame
+			AddChild(new SideBarBackgroundWidget(this, 0, 160, 4, 734, 152, 17));
+
+			//Background IconFrame
+			AddChild(new SideBarBackgroundWidget(this, 0, 180, 848, 0, 84, 74));
+			//Background Icon
+			AddChild(new SideBarBackgroundWidget(this, 4, 183, 0, 214, 76, 68));
+
+			//Background Armor Numbers
+			AddChild(new SideBarBackgroundWidget(this, 85, 183, 5, 754, 25, 47));
+
+			//Background MainButton
+			AddChild(new SideBarBackgroundWidget(this, 0, 264, 0, 316, 180, 34));
+
+			//Background SecondButton
+			AddChild(new SideBarBackgroundWidget(this, 0, 298, 0, 316, 180, 34));
+
+			//Background Trinket
+			AddChild(new SideBarBackgroundWidget(this, 0, 352, 0, 350, 76, 51));
+
+			//Background Trinket Drop Button
+			AddChild(new SideBarBackgroundWidget(this, 0, 403, 178, 774, 76, 17));
+
+			//Background Convert Buttons
+			for (var i = 0; i < 4; i++)
+			{
+				AddChild(new SideBarBackgroundWidget(this, 10, 450 + 68 * i, 0, 214, 75, 68));
+				AddChild(new SideBarBackgroundWidget(this, 85, 450 + 68 * i, 0, 214, 75, 68));
+			}
+		}
+	}
+}

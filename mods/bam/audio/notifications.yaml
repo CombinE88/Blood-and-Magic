@@ -1,0 +1,15 @@
+Sounds:
+	DefaultVariant: .wav
+	Notifications:
+		ClickSound: bits/empty.wav
+		ChatLine: bits/empty.wav
+		ClickDisabledSound: bits/empty.wav
+		CashTickUp: # TODO remove
+		CashTickDown: # TODO remove
+		SilosNeeded: # TODO remove
+
+Speech:
+	DefaultVariant: .wav
+	Prefixes:
+	Notifications:
+		StartGame: # TODO remove

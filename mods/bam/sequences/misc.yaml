@@ -1,0 +1,46 @@
+mpspawn:
+	idle: bits/mpspawn.png
+
+moveflsh:
+	idle: bits/mpspawn.png # TODO use proper flash or implement transparent png for this!
+
+shroud:
+	shroud: bits/shroud.png
+		Length: 16
+	shroudfull: bits/shroud.png
+		Start: 1
+	fog: bits/shroud.png
+		Length: 16
+	fogfull: bits/shroud.png
+		Start: 1
+
+basic_ui:
+	damage: ui_damage_symbol.ani
+	damage_disabled: ui_damage_symbol_disabled.ani
+	damage_extra: ui_damage_symbol_extra.ani
+	damage_none: ui_damage_symbol_none.ani
+
+	armor: ui_armor_symbol.ani
+	armor_disabled: ui_armor_symbol_disabled.ani
+	armor_extra: ui_armor_symbol_extra.ani
+	armor_none: ui_damage_symbol_none.ani
+
+	speed: ui_speed_symbol.ani
+	speed_disabled: ui_speed_symbol_disabled.ani
+	speed_extra: ui_speed_symbol_extra.ani
+	speed_none: ui_damage_symbol_none.ani
+	
+	healthbar: ui_health_bar.ani
+	
+	resbutton: ui_research_button.ani
+	resbutton_pressed: ui_research_button.ani
+		Start: 1
+
+	ui_research_bar: ui_research_bar.ani
+		Length: 6
+		
+	ui_tooltipbar: ui_tooltipbar.ani
+	
+	ui_Ability_button: ui_ability_button.ani
+	ui_Ability_button_disabled: ui_ability_button.ani
+		Start: 1

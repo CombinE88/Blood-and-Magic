@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{4E5B38F7-4E99-4C92-BB39-9100CC7F3829}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenRA.Mods.Bam</RootNamespace>
+    <AssemblyName>OpenRA.Mods.Bam</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Eluant">
+      <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\AdvancedTransform.cs" />
+    <Compile Include="Effect\AdvancedSpriteEffect.cs" />
+    <Compile Include="FileFormats\AniAnimation.cs" />
+    <Compile Include="FileFormats\PalPalette.cs" />
+    <Compile Include="FileFormats\StfContainer.cs" />
+    <Compile Include="FileFormats\TlbTileLibrary.cs" />
+    <Compile Include="FileSystem\StfFile.cs" />
+    <Compile Include="SpriteLoaders\AniLoader.cs" />
+    <Compile Include="SpriteLoaders\TlbLoader.cs" />
+    <Compile Include="Traits\Mana\ManaGenerator.cs" />
+    <Compile Include="Traits\Mana\ManaStorage.cs" />
+    <Compile Include="Traits\SpawnActor.cs" />
+    <Compile Include="Traits\Living.cs" />
+    <Compile Include="Traits\Transform\TransformOnDamage.cs" />
+    <Compile Include="Traits\Transform\TransformOnIdle.cs" />
+    <Compile Include="Traits\Transform\TransformOnMove.cs" />
+    <Compile Include="Traits\Transform\TransformToBuilding.cs" />
+    <Compile Include="Traits\Transform\TransformToUnit.cs" />
+    <Compile Include="Traits\Trinkets\CanHoldTrinket.cs" />
+    <Compile Include="Traits\Trinkets\Trinket.cs" />
+    <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
+    <Compile Include="Traits\World\PaletteFromPal.cs" />
+    <Compile Include="Widgets\ActorActionsWidget.cs" />
+    <Compile Include="Widgets\BamUIWidget.cs" />
+    <Compile Include="Widgets\Buttons\ConvertToButtonWidget.cs" />
+    <Compile Include="Widgets\Buttons\ManaSendButtonWidget.cs" />
+    <Compile Include="Widgets\Buttons\SpawnGolemButtonWidget.cs" />
+    <Compile Include="Widgets\Buttons\TransformToBuildingButtonWidget.cs" />
+    <Compile Include="Widgets\Buttons\TrinketDropButtonWidgetcs.cs" />
+    <Compile Include="Widgets\Buttons\TrinketsButtonsWidget.cs" />
+    <Compile Include="Widgets\DrawActorStatistics.cs" />
+    <Compile Include="Widgets\DrawTransformStatistics.cs" />
+    <Compile Include="Widgets\DrawValueStatisticsWidget.cs" />
+    <Compile Include="Widgets\HealthBarUIWidget.cs" />
+    <Compile Include="Widgets\ManaCounterWidget.cs" />
+    <Compile Include="Widgets\SelectionNameWidget.cs" />
+    <Compile Include="Widgets\SideBarBackgroundWidget.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
+      <Project>{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}</Project>
+      <Name>OpenRA.Mods.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
+      <Project>{0DFB103F-2962-400F-8C6D-E2C28CCBA633}</Project>
+      <Name>OpenRA.Game</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <MakeDir Directories="$(SolutionDir)mods/bam/" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)mods/bam/" />
+    <!--
+        We need to copy OpenRA.Mods.Cnc.pdb (not `.dll.pdb`). This is only necessary on Windows.
+        Mono outputs a `.dll.mdb` so we can just append `.mdb` directly.
+    -->
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)mods/bam/" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+    <Copy SourceFiles="$(TargetPath).mdb" DestinationFolder="$(SolutionDir)mods/bam/" Condition="Exists('$(TargetPath).mdb')" />
+    <!-- Uncomment these lines when debugging or adding to this target
+    <Message Text="DEBUG OS:                     $(OS)"/>
+    <Message Text="DEBUG SolutionDir:            $(SolutionDir)"/>
+    <Message Text="DEBUG TargetPath:             $(TargetPath)"/>
+    <Message Text="DEBUG TargetDir:              $(TargetDir)"/>
+    <Message Text="DEBUG TargetName:             $(TargetName)"/>
+	-->
+  </Target>
+</Project>

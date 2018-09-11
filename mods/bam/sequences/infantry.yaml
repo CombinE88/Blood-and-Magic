@@ -1,0 +1,56 @@
+basalgolem:
+	idle: basalgolem_idle.ani
+		Facings: 8
+	bored: basalgolem_idle.ani # Either remove bored, or set animation
+		Facings: 8
+	move: basalgolem_move.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	attack: basalgolem_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: basalgolem_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: basalgolem_death.ani
+		Tick: 160
+		Length: 8
+	transform: basalgolem_transform.ani
+		Tick: 160
+		Length: 8
+	icon: basalgolem_icon.ani
+
+capsule:
+	idle: capsule_idle.ani
+	before: capsule_before.ani
+		Tick: 160
+		Length: 4
+	after: capsule_after.ani
+		Tick: 160
+		Length: 4
+	icon: capsule_icon.ani
+
+warrior:
+	idle: warrior_idle.ani
+		Facings: 8
+	bored: warrior_idle.ani # Either remove bored, or set animation
+		Facings: 8
+	move: warrior_move.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	attack: warrior_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: warrior_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: warrior_death.ani
+		Tick: 160
+		Length: 8
+	icon: warrior_icon.ani

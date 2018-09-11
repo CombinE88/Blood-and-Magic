@@ -1,0 +1,9 @@
+^default:
+	Defaults:
+		AddExtension: False
+
+editor-overlay:
+	copy: bits/shroud.png
+		Start: 0
+	paste: bits/shroud.png
+		Start: 1

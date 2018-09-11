@@ -1,0 +1,9 @@
+CloseCombat:
+	ReloadDelay: 25
+	Range: 1c512
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Delay: 5
+		Damage: 1
+		DamageTypes: Death

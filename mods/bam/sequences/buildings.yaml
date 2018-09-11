@@ -1,0 +1,30 @@
+keep:
+	idle: bits/keep.png
+	icon: keep_icon.ani
+
+obelisk:
+	idle: obelisk_idle.ani
+	mana: obelisk_mana.ani
+		Tick: 160
+		Length: 8
+	damage: obelisk_damage.ani
+		Tick: 160
+		Length: 4
+	die: obelisk_die.ani
+		Tick: 160
+		Length: 8
+	transform: obelisk_transform.ani
+		Tick: 160
+		Length: 8
+	icon: obelisk_icon.ani
+
+buildarea:
+	idle: bits/buildings.png
+		Frames: 5
+		ZOffset: -2048
+	icon: buildarea_icon.ani
+
+barracks:
+	idle: bits/buildings.png
+		Frames: 9
+	icon: barracks_icon.ani

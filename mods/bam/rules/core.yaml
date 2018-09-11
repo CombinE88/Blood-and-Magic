@@ -1,0 +1,170 @@
+# Base for all actors.
+^CoreVisibleActor:
+	# All our actors are sprite based and need to render sprites.
+	RenderSprites:
+		PlayerPalette: bam11195Player
+	# At default fog hides every actor.
+	HiddenUnderFog:
+	# Allow actors to rotate and use facings.
+	BodyOrientation: # TODO verify if we can remove this from constructions!
+	# Automatically detect the number of facings from the sequences.
+	QuantizeFacingsFromSequence: # TODO see BodyOrientation todo
+	# Required to see debug overlays.
+	CombatDebugOverlay:
+
+# Base for all movable units.
+^CoreUnit:
+	Inherits: ^CoreVisibleActor
+	# Default set which fits for most units: Occupy exactly 1 cell / 32x32 pixel tile.
+	HitShape:
+		Type: Circle
+			Radius: 512
+	# In general all units can be selected by using its full cell / tile.
+	Selectable:
+		Bounds: 32, 32
+		# Make the default priority higher, so units are prefered over constructions.
+		Priority: 20
+	# Units have a healthbar when selected or hovered.
+	SelectionDecorations:
+	# Enemy units must be destroyed to win a game.
+	MustBeDestroyed:
+	# Units sequences should always use facings.
+	WithFacingSpriteBody:
+	# Units are visible on the radar.
+	AppearsOnRadar:
+	# Allow units to use the AttackMove and AssaultMove commands.
+	AttackMove:
+
+# Base for all buildings, towers and walls.
+^CoreConstruction:
+	Inherits: ^CoreVisibleActor
+	# As buildings have complexer states then just live / be dead, they require conditon support.
+	ConditionManager:
+	# Last seen state of a building will be rendered under fog, instead of using the default hiding behavior.
+	-HiddenUnderFog:
+	FrozenUnderFog:
+	# Constructions can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground
+	# In general all constructions can be selected.
+	Selectable:
+	# Constructions have sprites but do not use facing for them.
+	WithSpriteBody:
+	# Constructions are visible on the radar.
+	AppearsOnRadar:
+
+# Base for all buildings.
+^CoreBuilding:
+	Inherits: ^CoreConstruction
+	# Buildings have a bigger healthbar when selected or hovered.
+	SelectionDecorations:
+	# Enemy buildings  have to be destroyed to win, even when short game option is used.
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	#	Intensity: 10# The view radius of buildings.
+	RevealsShroud:
+		Range: 4c0
+	# Group all buildings in the map editor.
+	EditorTilesetFilter:
+		Categories: Building
+	# Should not be auto attacked.
+	Targetable@NoAutoAttack:
+		TargetTypes: NoAutoAttack
+
+# Base for all walls.
+^CoreWall:
+	Inherits: ^CoreConstruction
+	# A wall is always 1 tile in size.
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	# Correct Hitshape
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Selectable:
+		Bounds: 32, 32, 0, 0
+	# Walls do visualy connect with adjecent walls.
+	-WithSpriteBody:
+	WithWallSpriteBody:
+	# Group all walls in the map editor.
+	EditorTilesetFilter:
+		Categories: Walls
+	# Wall will use the standard unit healthbar.
+	SelectionDecorations:
+
+# Base for all infantry.
+^CoreInfantry:
+	Inherits: ^CoreUnit
+	# Allow 5 infantry units to share a cell and set movement modifiers.
+	Mobile:
+		Locomotor: infantry
+	# Actor can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground
+	# Calculated size for infantry to match shared cells.
+	Selectable:
+		Bounds: 40,38,0,-10
+		DecorationBounds: 40,38,0,-10
+	# Infantry hitshape
+	HitShape:
+		Type: Circle
+			Radius: 128
+	# Infantry has an animation while moving: walking.
+	WithMoveAnimation:
+	# Infantry has death animation.
+	WithDeathAnimation:
+	# Animation when receiving damage.
+	#WithImpactAnimation: # TODO refactor me!
+	# Group all infantry in the map editor.
+	EditorTilesetFilter:
+		Categories: Infantry
+	# Infantry has a smaller healthbar.
+	SelectionDecorations:
+	# Make infantry act like they live.
+	Living:
+	# If infantry is killed, it screams.
+	DeathSounds:
+	# Infantry may pickup and hold a trinket.
+	CanHoldTrinket:
+
+# Add locomotor to world...
+^CoreWorld:
+	Locomotor@infantry:
+		Name: infantry
+		TerrainSpeeds:
+			Plattform: 100
+			Stairs: 100
+			WoodBridge: 100
+			StoneBridge: 100
+			Button: 100
+			ButtonActive: 100
+			Trap: 100
+			TrapActive: 100
+			Manaspot: 100
+
+# Generic trinket.
+^CoreTrinket:
+	Inherits: ^CoreVisibleActor
+	# Ofcourse a trinket needs a visible sprite.
+	WithSpriteBody:
+	# Trinked editor category.
+	EditorTilesetFilter:
+		Categories: Trinkets
+	# A trinked does not block anything.
+	Immobile:
+		OccupiesSpace: false
+	# Not selectable, but show tooltip when hovering.
+	Interactable:
+		Bounds: 32, 32
+	# A trinket is.. obviously a trinket!
+	Trinket:
+
+# Grouped traits for standard non-turreted behavior.
+^CoreArmedSelf:
+	# Units without a turret have to stop and aim at a target to shoot.
+	AttackFrontal:
+	# Specify the sequence to use when attacking.
+	WithAttackAnimation:
+		Sequence: attack

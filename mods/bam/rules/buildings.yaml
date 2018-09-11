@@ -1,0 +1,65 @@
+keep:
+	Inherits: ^CoreBuilding
+	Tooltip:
+		Name: Keep
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	Exit:
+		SpawnOffset: -512,512,0
+		Facing: 160
+		ExitCell: -1,3
+	SpawnActor:
+		Actor: basalgolem
+
+obelisk:
+	Inherits: ^CoreBuilding
+	Tooltip:
+		Name: Obelisk
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Selectable:
+		Priority: 10
+	CanHoldTrinket:
+	ManaStorage:
+	ManaGenerator:
+	TransformOnMove:
+		IntoActor: basalgolem
+	TransformOnDamage:
+		IntoActor: basalgolem
+	TransformToBuilding:
+	TransformToUnit:
+
+buildarea:
+	Inherits: ^CoreBuilding
+	Building:
+		Dimensions: 2,2
+		Footprint: == ==
+
+barracks:
+	Inherits: ^CoreBuilding
+	Tooltip:
+		Name: Barracks
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	Buildable:
