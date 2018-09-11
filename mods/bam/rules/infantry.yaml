@@ -1,5 +1,6 @@
 ACOLYTE:
 	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
 	Tooltip:
 		Name: Basalt Golem
 	Health:
@@ -36,6 +37,9 @@ ACOLYTE:
 		Damage: 2
 		Armor: 2
 		Speed: 2
+	WithImpactAnimation:
+	Armament:
+		Weapon: CloseCombat
 
 PYRAMID:
 	Inherits@1: ^Walker
@@ -73,6 +77,7 @@ PYRAMID:
 		Damage: 0
 		Armor: 4
 		Speed: 0
+	WithImpactAnimation:
 
 MAINBASE:
 	Inherits@: ^CoreBuilding
@@ -86,6 +91,7 @@ MAINBASE:
 	Health:
 		HP: 100
 	HitShape:
+		UseTargetableCellsOffsets: true
 		Type: Rectangle
 			TopLeft: -1512, -1512
 			BottomRight: 1512, 1512
@@ -137,6 +143,7 @@ BUILDING1:
 	Health:
 		HP: 100
 	HitShape:
+		UseTargetableCellsOffsets: true
 		Type: Rectangle
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 1024
@@ -177,9 +184,11 @@ CAPSULE.WARRIOR:
 		Damage: 0
 		Armor: 2
 		Speed: 0
+	WithImpactAnimation:
 
 WARRIOR:
 	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -198,6 +207,13 @@ WARRIOR:
 		Cost: 40
 	RenderSprites:
 		Image: warrior
+	Armament:
+		Weapon: CloseCombat
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 4
+		Armor: 2
+		Speed: 2
 
 TRINKET.HEALSALVE:
 	Inherits@: ^trinket
@@ -205,3 +221,4 @@ TRINKET.HEALSALVE:
 		Image: trinkethealsalve
 	Tooltip:
 		Name: Healing Salve
+	WithImpactAnimation:

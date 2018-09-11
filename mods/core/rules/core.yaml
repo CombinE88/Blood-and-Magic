@@ -175,7 +175,7 @@
 	AttackFrontal:
 	# Specify the sequence to use when shooting.
 	WithAttackAnimation:
-		Sequence: shoot
+		Sequence: attack
 	# Specify the sequence to use when aiming.
 	WithAimAnimation:
 		Sequence: aim # TODO fix me!

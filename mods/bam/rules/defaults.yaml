@@ -17,6 +17,9 @@
 		TargetTypes: Ground
 	#UpdatesPlayerStatistics:
 	CanHoldTrinket:
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: BamPlayer
 
 ^capsule:
 	Inherits@1: ^Walker

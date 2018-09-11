@@ -93,6 +93,7 @@ ChromeLayout:
 	common|chrome/playerprofile.yaml
 
 Weapons:
+	bam|weapons/bamweapons.yaml
 	
 Voices:
 	bam|audio/voices.yaml

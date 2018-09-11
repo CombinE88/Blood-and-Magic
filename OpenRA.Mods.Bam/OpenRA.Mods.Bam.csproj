@@ -90,6 +90,7 @@
     <Compile Include="BamWidgets\ManaCounterWidget.cs" />
     <Compile Include="BamWidgets\SelectionNameWidget.cs" />
     <Compile Include="BamWidgets\SideBarBackgroundWidget.cs" />
+    <Compile Include="BamWidgets\Warhead\DandDSpreadDamageWarhead.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Traits\AdvancedTransforms.cs" />
     <Compile Include="Traits\AllowConvert.cs" />
     <Compile Include="Traits\ConvertAdjetant.cs" />
+    <Compile Include="Traits\Render\WithImpactAnimation.cs" />
     <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
     <Compile Include="Traits\TransformAfterTime.cs" />
     <Compile Include="Traits\TransformToBuilding.cs" />

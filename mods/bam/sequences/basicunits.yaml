@@ -14,14 +14,16 @@ acolyte:
 		Length: 4
 		Facings: 8
 	attack: acolyte_attack.ani
-		Tick: 120
+		Tick: 160
 		Length: 4
+		Facings: 8
+	aim: acolyte_aim.ani
 		Facings: 8
 	die: acolyte_death.ani
 		Tick: 120
 		Length: *
 	damage: acolyte_damage.ani
-		Tick: 120
+		Tick: 160
 		Length: 4
 		Facings: 4
 	transform: acolyte_transform.ani
@@ -44,7 +46,11 @@ acolyte:
 
 acolyte.pyramid:
 	Inherits: acolyte
-	acolyte_pyramid_icon: acolyte_icon.ani
+	icon: acolyte_pyramid_icon.ani
+	damage: acolyte_damage.ani
+		Tick: 120
+		Length: 4
+		Facings: 4
 
 capsule:
 	Inherits: ^default
@@ -88,11 +94,13 @@ warrior:
 		Length: 4
 		Facings: 8
 	attack: warrior_attack.ani
-		Tick: 120
+		Tick: 160
 		Length: 4
 		Facings: 8
+	aim: warrior_aim.ani
+		Facings: 8
 	damage: warrior_damage.ani
-		Tick: 120
+		Tick: 160
 		Length: 4
 		Facings: 4
 	die: warrior_die.ani

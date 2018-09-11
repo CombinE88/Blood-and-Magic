@@ -19,10 +19,5 @@
 	TilesetStatistics:
 		TilesetInformations@Plattform:
 			Tilename: Plattform
-			Armor: 2
-			Damage: 1
-			Speed: -1
 		TilesetInformations@Manaspot:
 			Tilename: Manaspot
-			Armor: -1
-			Damage: -1
