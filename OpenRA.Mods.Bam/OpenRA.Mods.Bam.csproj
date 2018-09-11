@@ -79,6 +79,8 @@
     <Compile Include="BamWidgets\BamUIWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ManaSendButtonWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\ResearchButtonWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\ShowResearchButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\SpawnGolemButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\TransformToBuildingButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\TrinketDropButtonWidgetcs.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
+    <Compile Include="Traits\World\Research.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

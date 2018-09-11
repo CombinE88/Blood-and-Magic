@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -5,6 +6,7 @@ using OpenRA.Mods.Bam.BamWidgets.Buttons;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
+using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using OpenRA.Widgets;
@@ -31,6 +33,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         private List<ConvertToButtonWidget> ConvertToButtons = new List<ConvertToButtonWidget>();
 
+        private ShowResearchButtonWidget ResearchEnabler;
+
         public ActorActionsWidget(BamUIWidget bamUi)
         {
             BamUi = bamUi;
@@ -46,7 +50,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AddChild(HealthBarUI = new HealthBarUIWidget(this) {Visible = false});
             AddChild(SelectionName = new SelectionNameWidget(this) {Visible = false});
 
-
+            AddChild(ResearchEnabler = new ShowResearchButtonWidget(this) {Visible = true});
 
             AddChild(TrinketButtons = new TrinketButtonsWidget(this) {Visible = false});
             AddChild(TrinketDropButton = new TrinketDropButtonWidget(this) {Visible = false});
@@ -90,6 +94,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 SpawnGolem.Visible = true;
 
             var ca = Actor.TraitOrDefault<ConvertAdjetant>();
+
             if (Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && ca.AllowTransform && ca.TransformEnabler != null)
                 if (!ConvertToButtons.Any())
                 {
@@ -102,6 +107,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         widget.Visible = true;
                     }
                 }
+
             else if (ConvertToButtons.Any())
             {
                 RemoveSpawnmenu();
@@ -139,7 +145,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             var transformable = Actor.Trait<ConvertAdjetant>().TransformEnabler.Trait<AllowConvert>().Transformable;
             for (int i = 0; i < transformable.Count; i++)
             {
-                var con = new ConvertToButtonWidget(this, 0, 430 + 68 * i, transformable[i].Item2, transformable[i].Item1, transformable[i].Item1) {Visible = false};
+                var con = new ConvertToButtonWidget(this, 10 + i % 2 * 75, 450 + 68 * (i / 2), transformable[i].Item2, transformable[i].Item1, transformable[i].Item1)
+                    {Visible = false};
                 ConvertToButtons.Add(con);
             }
 
@@ -165,19 +172,14 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             // Draw Picture
             DrawActorStatisticsW.Visible = true;
-
             if (Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
                 drawTransformStatistics.Visible = true;
-
             if (Actor.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>())
                 DrawValueStatistics.Visible = true;
-
-            if(Actor.TraitOrDefault<IHealth>() != null)
+            if (Actor.TraitOrDefault<IHealth>() != null)
                 HealthBarUI.Visible = true;
-
-            if(Actor.Info.HasTraitInfo<TooltipInfo>())
+            if (Actor.Info.HasTraitInfo<TooltipInfo>())
                 SelectionName.Visible = true;
-
         }
     }
 }

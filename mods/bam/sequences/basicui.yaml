@@ -16,3 +16,10 @@ basic_ui:
 	speed_none: ui_damage_symbol_none.ani
 	
 	healthbar: ui_health_bar.ani
+
+	resbutton: ui_research_button.ani
+	resbutton_pressed: ui_research_button.ani
+		Start: 1
+
+	ui_research_bar: ui_research_bar.ani
+		Length: 6

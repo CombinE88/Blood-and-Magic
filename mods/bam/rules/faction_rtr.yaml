@@ -1,0 +1,49 @@
+World:
+	Faction@bam:
+		Name: Rathgar the Raider
+		InternalName: rtr
+		Description: Rathgar the Raider
+	MPStartUnits@bam:
+		Class: none
+		ClassName: rtr
+		BaseActor: mainbase
+		Factions: rtr
+		SupportActors: acolyte,acolyte,acolyte
+		InnerSupportRadius: 1
+		OuterSupportRadius: 2
+Player:
+	Research@rtr:
+		Faction: rtr
+		Researchable:
+			warrior: 2000
+
+BUILDING1:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: building1
+		PlayerPalette: PngPlayer
+	Tooltip:
+		Name: Building Plattform
+	AllowConvert:
+		ConvertTo:
+			capsule.warrior: true
+			warrior: false
+			pyramid: true
+			acolyte: true
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 0
+		Armor: 4
+		Speed: 0
+	Health:
+		HP: 100

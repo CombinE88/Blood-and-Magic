@@ -1,4 +1,5 @@
 ^CoreWorld:
+	PlayerExperience:
 	Locomotor@FOOT:
 		Name: foot
 		TerrainSpeeds:

@@ -91,8 +91,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             //Background Convert Buttons
             for (int i = 0; i < 4; i++)
             {
-                AddChild(new SideBarBackgroundWidget(this, 0, 430 + 68*i, 0, 214, 75, 68));
-                AddChild(new SideBarBackgroundWidget(this, 75, 430 + 68*i, 0, 214, 75, 68));
+                AddChild(new SideBarBackgroundWidget(this, 10, 450 + 68*i, 0, 214, 75, 68));
+                AddChild(new SideBarBackgroundWidget(this, 85, 450 + 68*i, 0, 214, 75, 68));
             }
         }
     }

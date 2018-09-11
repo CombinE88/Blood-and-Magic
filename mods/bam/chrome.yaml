@@ -456,7 +456,7 @@ strategic: uibits/buttons.png
 	player_owned: 159,49,23,22
 
 flags: uibits/buttons.png
-	bam: 0,112,30,15
+	rtr: 0,112,30,15
 	Random: 60,112,30,15
 	spectator: 60,112,30,15
 

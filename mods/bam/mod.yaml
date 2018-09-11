@@ -21,13 +21,15 @@ Rules:
 	core|rules/palettes.yaml
 	core|rules/core.yaml
 	core|rules/misc.yaml
-	bam|rules/basicmage.yaml
 	bam|rules/palettes.yaml
 	bam|rules/world.yaml
 	bam|rules/defaults.yaml
-	bam|rules/infantry.yaml
 	bam|rules/player.yaml
 	bam|rules/misc.yaml
+
+	bam|rules/infantry_misc.yaml
+	bam|rules/buildings_misc.yaml
+	bam|rules/faction_rtr.yaml
 
 Sequences:
 	core|sequences/misc.yaml

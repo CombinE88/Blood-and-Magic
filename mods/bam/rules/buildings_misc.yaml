@@ -1,0 +1,53 @@
+MAINBASE:
+	Inherits@: ^CoreBuilding
+	Tooltip:
+		Name: Base
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 100
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	RenderSprites:
+		PlayerPalette: PngPlayer
+		Image: mainbase
+	SpawnsAcolytes:
+	StoresResources:
+		Capacity: 400
+		PipCount: 0
+	Exit@1:
+		SpawnOffset: -512,512,0
+		Facing: 160
+		ExitCell: -1,3
+		ProductionTypes: Golem
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 0
+		Armor: 4
+		Speed: 0
+
+PLATTFORMB:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: plattformb
+		PlayerPalette: PngPlayer
+	Tooltip:
+		Name: Building Plattform
+	AllowTransfrom:

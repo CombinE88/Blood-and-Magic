@@ -37,8 +37,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     actorActions.Actor.Owner.Faction.Name
                 ));
 
-            var x = pressed ?  1 : 0;
-            var y = pressed ? 430 + 1 : 430;
+            var x = pressed ? 11 : 10;
+            var y = pressed ? 450 + 1 : 450;
             Bounds = new Rectangle(x, y, 75, 68);
         }
 
