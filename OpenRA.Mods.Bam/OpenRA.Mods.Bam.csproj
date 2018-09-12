@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BamWidgets\ActorActionsWidget.cs" />
+    <Compile Include="BamWidgets\BamToolTipWidget.cs" />
     <Compile Include="BamWidgets\BamUIWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ManaSendButtonWidget.cs" />
@@ -102,7 +103,11 @@
     <Compile Include="Traits\AdvancedTransforms.cs" />
     <Compile Include="Traits\AllowConvert.cs" />
     <Compile Include="Traits\ConvertAdjetant.cs" />
+    <Compile Include="Traits\GeneratesExperience.cs" />
+    <Compile Include="Traits\Player\DungeonsAndDragonsExperience.cs" />
+    <Compile Include="Traits\Player\Research.cs" />
     <Compile Include="Traits\Render\WithImpactAnimation.cs" />
+    <Compile Include="Traits\Researched.cs" />
     <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
     <Compile Include="Traits\TransformAfterTime.cs" />
     <Compile Include="Traits\TransformToBuilding.cs" />
@@ -118,7 +123,6 @@
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
-    <Compile Include="Traits\World\Research.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -31,6 +31,7 @@ namespace OpenRA.Mods.Bam.Activities
 		public int ForceHealthPercentage = 0;
 		public bool SkipMakeAnims = false;
 		public bool SelfSkipMakeAnims = false;
+		public bool NotifyBuildComplete = false;
 		public string Faction = null;
 		public Actor Trinket = null;
 
@@ -131,6 +132,10 @@ namespace OpenRA.Mods.Bam.Activities
 					var newHP = ForceHealthPercentage > 0 ? ForceHealthPercentage : (int)(health.HP * 100L / health.MaxHP);
 					init.Add(new HealthInit(newHP));
 				}
+
+				if (NotifyBuildComplete)
+					foreach (var t in self.TraitsImplementing<INotifyBuildComplete>())
+						t.BuildingComplete(self);
 
 				foreach (var modifier in self.TraitsImplementing<ITransformActorInitModifier>())
 					modifier.ModifyTransformActorInit(self, init);

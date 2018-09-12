@@ -7,24 +7,18 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class AllowConvertInfo : ITraitInfo
     {
-        public readonly Dictionary<string, bool> ConvertTo = new Dictionary<string, bool>();
+        public readonly string[] ConvertTo;
 
         public object Create(ActorInitializer init)
         {
-            return new AllowConvert(init, this);
+            return new AllowConvert(init);
         }
     }
 
     public class AllowConvert
     {
-        public List<Tuple<string, bool>> Transformable = new List<Tuple<string, bool>>();
-
-        public AllowConvert(ActorInitializer init, AllowConvertInfo info)
+        public AllowConvert(ActorInitializer init)
         {
-            foreach (var keypair in info.ConvertTo)
-            {
-                Transformable.Add(new Tuple<string, bool>(keypair.Key, keypair.Value));
-            }
         }
     }
 }

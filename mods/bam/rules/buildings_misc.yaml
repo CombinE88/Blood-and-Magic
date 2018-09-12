@@ -8,7 +8,7 @@ MAINBASE:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Health:
-		HP: 100
+		HP: 999
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -26,11 +26,6 @@ MAINBASE:
 		Facing: 160
 		ExitCell: -1,3
 		ProductionTypes: Golem
-	DungeonsAndDragonsStats:
-		CanbeModified: false
-		Damage: 0
-		Armor: 4
-		Speed: 0
 
 PLATTFORMB:
 	Inherits@: ^CoreBuilding

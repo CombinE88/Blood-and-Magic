@@ -1,0 +1,136 @@
+barracks:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildings.png
+		Frames: 0
+	icon: barracks_icon.ani
+
+capsule.warrior:
+	Inherits: ^default
+	idle: capsule_idle.ani
+	transform: capsule_make.ani
+		Tick: 120
+		Length: *
+	damage: capsule_damage.ani
+		Tick: 120
+		Length: *
+	die: capsule_die.ani
+		Tick: 120
+		Length: *
+	icon: warrior_icon.ani
+	disabled-icon: warrior_icon_disabled.ani
+
+warrior:
+	Inherits: ^default
+	stand: warrior_idle.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	idle: warrior_stand.ani
+		Tick: 120
+		Facings: 8
+	run: warrior_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: warrior_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: warrior_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: warrior_die.ani
+		Tick: 120
+		Length: 7
+	icon: warrior_icon.ani
+	disabled-icon: warrior_icon_disabled.ani
+
+capsule.ranger:
+	Inherits: ^default
+	idle: capsule_idle.ani
+	transform: capsule_make.ani
+		Tick: 120
+		Length: *
+	damage: capsule_damage.ani
+		Tick: 120
+		Length: *
+	die: capsule_die.ani
+		Tick: 120
+		Length: *
+	icon: ranger_icon.ani
+	disabled-icon: ranger_icon_disabled.ani
+
+ranger:
+	Inherits: ^default
+	stand: ranger_idle.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	idle: ranger_stand.ani
+		Tick: 120
+		Facings: 8
+	run: ranger_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: ranger_attackranged.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: ranger_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: ranger_die.ani
+		Tick: 120
+		Length: 7
+	icon: ranger_icon.ani
+	disabled-icon: ranger_icon_disabled.ani
+
+ranger_projectile:
+	idle: ranger_arrow.ani
+		Facings: 8
+
+capsule.paladin:
+	Inherits: ^default
+	idle: capsule_idle.ani
+	transform: capsule_make.ani
+		Tick: 120
+		Length: *
+	damage: capsule_damage.ani
+		Tick: 120
+		Length: *
+	die: capsule_die.ani
+		Tick: 120
+		Length: *
+	icon: paladin_icon.ani
+	disabled-icon: paladin_icon_disabled.ani
+
+paladin:
+	Inherits: ^default
+	stand: paladin_idle.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	idle: paladin_stand.ani
+		Tick: 120
+		Facings: 8
+	run: paladin_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: paladin_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: paladin_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: paladin_die.ani
+		Tick: 120
+		Length: 7
+	icon: paladin_icon.ani
+	disabled-icon: paladin_icon_disabled.ani

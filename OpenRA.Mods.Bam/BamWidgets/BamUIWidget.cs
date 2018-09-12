@@ -61,7 +61,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
             //Example
             //AddChild(new SideBarBackgroundWidget(this,Position X,Position Y,PicturePosition X,PicturePosition Y,PicturePosition X End,PicturePosition Y End));
 
-
             //Background Minimap
             AddChild(new SideBarBackgroundWidget(this, 10, 20, 594, 24, 128, 120));
 
@@ -70,6 +69,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             //Background IconFrame
             AddChild(new SideBarBackgroundWidget(this, 0, 180, 848, 0, 84, 74));
+
             //Background Icon
             AddChild(new SideBarBackgroundWidget(this, 4, 183, 0, 214, 76, 68));
 
@@ -91,8 +91,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             //Background Convert Buttons
             for (int i = 0; i < 4; i++)
             {
-                AddChild(new SideBarBackgroundWidget(this, 10, 450 + 68*i, 0, 214, 75, 68));
-                AddChild(new SideBarBackgroundWidget(this, 85, 450 + 68*i, 0, 214, 75, 68));
+                AddChild(new SideBarBackgroundWidget(this, 10, 450 + 68 * i, 0, 214, 75, 68));
+                AddChild(new SideBarBackgroundWidget(this, 85, 450 + 68 * i, 0, 214, 75, 68));
             }
         }
     }

@@ -14,8 +14,6 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class ConvertAdjetantInfo : ITraitInfo
     {
-        public readonly string[] AdjetantActors = {"building1"};
-
         [Desc("Offset to spawn the transformed actor relative to the current cell.")]
         public readonly CVec Offset = CVec.Zero;
 
@@ -70,11 +68,12 @@ namespace OpenRA.Mods.Bam.Traits
                 return;
 
             var orderCut = order.OrderString.Replace("Convert-", "");
-            foreach (var actorname in TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo.Keys)
+            foreach (var actorname in TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo)
             {
-                if (orderCut.Contains(actorname) && TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo[actorname])
+                if (orderCut.Contains(actorname))
                 {
-                    DoTransform(self, orderCut);
+                    if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[orderCut].TraitInfo<ValuedInfo>().Cost))
+                        DoTransform(self, orderCut);
                     break;
                 }
             }

@@ -2,7 +2,7 @@ ACOLYTE:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf
 	Tooltip:
-		Name: Basalt Golem
+		Name: Basal Golem
 	Health:
 		HP: 20
 	RenderSprites:
@@ -31,6 +31,7 @@ ACOLYTE:
 	Valued:
 		Cost: 40
 	TransformToBuilding:
+		IntoBuilding: barracks
 	ConvertAdjetant:
 		SkipSelfAnimation: true
 	DungeonsAndDragonsStats:
@@ -77,60 +78,6 @@ PYRAMID:
 		Damage: 0
 		Armor: 4
 		Speed: 0
-	WithImpactAnimation:
-
-CAPSULE.WARRIOR:
-	Inherits@1: ^capsule
-	RenderSprites:
-		Image: capsule.warrior
-	Valued:
-		Cost: 100
-	Tooltip:
-		Name: Capsule(Warrior)
-	Health:
-		HP: 20
-	RevealsShroud:
-		Range: 2c0
-		Type: CenterPosition
-	WithMakeAnimation:
-		Sequence: transform
-	TransformAfterTime:
-		IntoActor: warrior
-		Time: 1000
-	DungeonsAndDragonsStats:
-		Damage: 0
-		Armor: 2
-		Speed: 0
-	WithImpactAnimation:
-
-WARRIOR:
-	Inherits@1: ^Walker
-	Inherits@2: ^CoreArmedSelf
-	Valued:
-		Cost: 100
-	Tooltip:
-		Name: Warrior
-	Health:
-		HP: 40
-	RevealsShroud:
-		Range: 4c0
-		Type: CenterPosition
-	WithMoveAnimation:
-		MoveSequence: run
-	WithFacingSpriteBody:
-	Living:
-		BoredSequence: stand
-	Valued:
-		Cost: 40
-	RenderSprites:
-		Image: warrior
-	Armament:
-		Weapon: CloseCombat
-	DungeonsAndDragonsStats:
-		CanbeModified: false
-		Damage: 4
-		Armor: 2
-		Speed: 2
 	WithImpactAnimation:
 
 TRINKET.HEALSALVE:

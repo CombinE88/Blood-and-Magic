@@ -10,9 +10,9 @@ namespace OpenRA.Mods.Bam.Traits
     {
         public readonly int MaxStorage = 10;
 
-        public readonly int Interval = 75;
+        public readonly int Interval = 100;
 
-        public readonly int OverWait = 75;
+        public readonly int OverWait = 100;
 
         public bool OnlyStores = false;
 

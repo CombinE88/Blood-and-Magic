@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
+using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Widgets;
@@ -73,9 +74,10 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 {
                     for (var i = 0; i < research.Researchable.Count; i++)
                     {
-                        if (research.Researchable[i].Item1 == ResearchItem)
+                        var list = research.Info.Researchable.ToList();
+                        if (list[i].Key == ResearchItem)
                         {
-                            research.Researchable[i] = new Tuple<string, bool>(ResearchItem, true);
+                            research.Researchable[i] = ResearchItem;
                             Researching = false;
                             ResearchItem = "";
                             currentResearchTime = 0;
@@ -104,8 +106,9 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 new float2(RenderBounds.X + RenderBounds.Width / 2 - ActorActions.BamUi.Font.Measure(text).X / 2,
                     RenderBounds.Y + RenderBounds.Height / 2 - ActorActions.BamUi.Font.Measure(text).Y / 2), Color.White, Color.DarkSlateGray, 1);
 
-            var worldActor = ActorActions.BamUi.World.WorldActor;
-            var text2 = worldActor.Info.HasTraitInfo<PlayerExperienceInfo>() ? worldActor.Trait<PlayerExperience>().Experience.ToString() : "0";
+            var text2 = ActorActions.BamUi.World.LocalPlayer.PlayerActor.Info.HasTraitInfo<DungeonsAndDragonsExperienceInfo>()
+                ? ActorActions.BamUi.World.LocalPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience.ToString()
+                : "0";
 
             ActorActions.BamUi.Font.DrawTextWithShadow(text2,
                 new float2(RenderBounds.X - 76 + RenderBounds.Width / 2 - ActorActions.BamUi.Font.Measure(text2).X / 2,
@@ -118,7 +121,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 animation.PlayFetchIndex("ui_research_bar", () => progress);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X - 76 + 20, RenderBounds.Y + 316), ActorActions.BamUi.Palette);
 
-                Game.AddChatLine(Color.White, currentResearchTime+"", "" + progress);
+                Game.AddChatLine(Color.White, currentResearchTime + "", "" + progress);
             }
         }
 
@@ -127,15 +130,24 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (research == null)
                 return;
 
-            for (int i = 0; i < research.Researchable.Count; i++)
+            List<string> alreadyRes = new List<string>();
+            foreach (var dict in research.Info.PreResearched)
+            {
+                alreadyRes.Add(dict);
+            }
+
+            var list = research.Info.Researchable.ToList();
+
+            for (int i = 0; i < list.Count; i++)
             {
                 var con = new ResearchButtonWidget
                 (
                     this,
                     -76 + i % 2 * 75, 24 + 68 * (i / 2),
-                    research.Researchable[i].Item1,
-                    !research.Researchable[i].Item2 && !Researching && research.Researchable[i].Item1 != ResearchItem,
-                    research.Info.Researchable[research.Researchable[i].Item1]
+                    list[i].Key,
+                    alreadyRes.Contains(list[i].Key) && Researching && list[i].Key != ResearchItem,
+                    list[i].Value * research.Info.TimePerCost,
+                    list[i].Value
                 );
                 ResearchButtons.Add(con);
             }

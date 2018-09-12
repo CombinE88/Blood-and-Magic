@@ -47,6 +47,9 @@ namespace OpenRA.Mods.Bam.Traits
                     {
                         var move = a.TraitOrDefault<IMove>();
                         a.QueueActivity(move.MoveIntoWorld(a, self.Location + self.Info.TraitInfo<ExitInfo>().ExitCell));
+
+                        foreach (var t in a.TraitsImplementing<INotifyBuildComplete>())
+                            t.BuildingComplete(a);
                     }
                 });
         }

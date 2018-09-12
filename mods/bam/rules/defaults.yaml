@@ -20,6 +20,7 @@
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 		DeathSequencePalette: BamPlayer
+	GeneratesExperience:
 
 ^capsule:
 	Inherits@1: ^Walker

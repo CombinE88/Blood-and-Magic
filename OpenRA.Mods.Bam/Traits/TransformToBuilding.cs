@@ -10,7 +10,7 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class TransformToBuildingInfo : ITraitInfo
     {
-        public readonly string IntoBuilding = "building1";
+        public readonly string IntoBuilding = "barracks";
 
         public object Create(ActorInitializer init)
         {

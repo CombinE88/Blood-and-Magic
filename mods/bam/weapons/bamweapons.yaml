@@ -1,8 +1,20 @@
 CloseCombat:
-	ReloadDelay: 50
+	ReloadDelay: 25
 	Range: 1c512
 	Projectile: Bullet
 		Speed: 1c682
+	Warhead@1Dam: DandDSpreadDamage
+		Delay: 5
+		Damage: 1
+		DamageTypes: Death
+
+RangedCombat:
+	ReloadDelay: 25
+	Range: 3c512
+	Projectile: Bullet
+		Speed: 0c125
+		Image: ranger_projectile
+		Palette: bam11195
 	Warhead@1Dam: DandDSpreadDamage
 		Delay: 5
 		Damage: 1

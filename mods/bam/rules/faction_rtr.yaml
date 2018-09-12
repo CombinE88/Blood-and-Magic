@@ -13,11 +13,15 @@ World:
 		OuterSupportRadius: 2
 Player:
 	Research@rtr:
+		PreResearched: warrior, test
 		Faction: rtr
 		Researchable:
-			warrior: 2000
+			warrior: 500
+			ranger: 1500
+			paladin: 3000
+		TimePerCost: 3
 
-BUILDING1:
+BARRACKS:
 	Inherits@: ^CoreBuilding
 	EditorTilesetFilter:
 		Categories: Building
@@ -30,20 +34,161 @@ BUILDING1:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 1024
 	RenderSprites:
-		Image: building1
+		Image: barracks
 		PlayerPalette: PngPlayer
 	Tooltip:
 		Name: Building Plattform
 	AllowConvert:
-		ConvertTo:
-			capsule.warrior: true
-			warrior: false
-			pyramid: true
-			acolyte: true
+		ConvertTo: capsule.warrior, capsule.ranger,	capsule.paladin
+	Health:
+		HP: 400
+
+CAPSULE.WARRIOR:
+	Inherits@1: ^capsule
+	RenderSprites:
+		Image: capsule.warrior
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Capsule(Warrior)
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	WithMakeAnimation:
+		Sequence: transform
+	TransformAfterTime:
+		IntoActor: warrior
+		Time: 1000
+	DungeonsAndDragonsStats:
+		Damage: 0
+		Armor: 2
+		Speed: 0
+	WithImpactAnimation:
+
+CAPSULE.RANGER:
+	Inherits@1: ^capsule
+	RenderSprites:
+		Image: capsule.ranger
+	Valued:
+		Cost: 25
+	Tooltip:
+		Name: Capsule(Ranger)
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	WithMakeAnimation:
+		Sequence: transform
+	TransformAfterTime:
+		IntoActor: ranger
+		Time: 1250
+	Researched:
+		Class: ranger
+
+CAPSULE.PALADIN:
+	Inherits@1: ^capsule
+	RenderSprites:
+		Image: capsule.paladin
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Capsule(Paladin)
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	WithMakeAnimation:
+		Sequence: transform
+	TransformAfterTime:
+		IntoActor: paladin
+		Time: 1500
+	Researched:
+		Class: paladin
+
+WARRIOR:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Warrior
+	Health:
+		HP: 40
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	Valued:
+		Cost: 40
+	RenderSprites:
+		Image: warrior
+	Armament:
+		Weapon: CloseCombat
 	DungeonsAndDragonsStats:
 		CanbeModified: false
-		Damage: 0
-		Armor: 4
-		Speed: 0
+		Damage: 4
+		Armor: 2
+		Speed: 2
+	WithImpactAnimation:
+
+RANGER:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 25
+	Tooltip:
+		Name: Ranger
 	Health:
-		HP: 100
+		HP: 25
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: ranger
+	Armament:
+		Weapon: RangedCombat
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 4
+		Armor: 2
+		Speed: 3
+
+PALADIN:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Paladin
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: paladin
+	Armament:
+		Weapon: CloseCombat
+	DungeonsAndDragonsStats:
+		CanbeModified: false
+		Damage: 5
+		Armor: 4
+		Speed: 2

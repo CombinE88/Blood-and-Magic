@@ -12,10 +12,3 @@ plattformb:
 		Frames: 5
 		ZOffset: -2048
 	icon: plattform_icon.ani
-
-building1:
-	Defaults:
-		AddExtension: False
-	idle: bits/buildings.png
-		Frames: 9
-	icon: building1_icon.ani

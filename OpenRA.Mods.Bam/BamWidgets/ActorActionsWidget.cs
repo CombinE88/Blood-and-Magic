@@ -142,10 +142,17 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         void CreateSpawnMenu()
         {
-            var transformable = Actor.Trait<ConvertAdjetant>().TransformEnabler.Trait<AllowConvert>().Transformable;
+            var playertrait = BamUi.World.RenderPlayer.PlayerActor.Trait<Research>().Researchable;
+            var transformable = Actor.Trait<ConvertAdjetant>().TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo.ToList();
             for (int i = 0; i < transformable.Count; i++)
             {
-                var con = new ConvertToButtonWidget(this, 10 + i % 2 * 75, 450 + 68 * (i / 2), transformable[i].Item2, transformable[i].Item1, transformable[i].Item1)
+                var con = new ConvertToButtonWidget(
+                        this,
+                        10 + i % 2 * 75,
+                        450 + 68 * (i / 2),
+                        !playertrait.Contains(transformable[i].Replace("capsule.", "")),
+                        transformable[i],
+                        transformable[i])
                     {Visible = false};
                 ConvertToButtons.Add(con);
             }

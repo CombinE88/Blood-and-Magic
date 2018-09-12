@@ -23,3 +23,5 @@ basic_ui:
 
 	ui_research_bar: ui_research_bar.ani
 		Length: 6
+
+	ui_tooltipbar: ui_tooltipbar.ani

@@ -37,6 +37,7 @@ Sequences:
 	bam|sequences/basicbuildings.yaml
 	bam|sequences/basictrinkets.yaml
 	bam|sequences/basicui.yaml
+	bam|sequences/faction_sequences_rtr.yaml
 
 TileSets:
 	bam|tilesets/platforms.yaml

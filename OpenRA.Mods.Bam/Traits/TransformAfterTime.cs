@@ -23,6 +23,8 @@ namespace OpenRA.Mods.Bam.Traits
         [Desc("Notification to play when transforming.")]
         public readonly string TransformNotification = null;
 
+        public readonly bool NotifyBuildComplete = true;
+
         public object Create(ActorInitializer init)
         {
             return new TransformAfterTime(init, this);
@@ -53,6 +55,7 @@ namespace OpenRA.Mods.Bam.Traits
                     Facing = info.Facing,
                     Sounds = info.TransformSounds,
                     Notification = info.TransformNotification,
+                    NotifyBuildComplete = info.NotifyBuildComplete,
                     Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
                 });
             }

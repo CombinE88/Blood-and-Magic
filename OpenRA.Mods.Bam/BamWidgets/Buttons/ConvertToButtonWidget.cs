@@ -1,7 +1,10 @@
 using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
+using OpenRA.Mods.Bam.Traits.RPGTraits;
+using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Widgets;
 
@@ -18,6 +21,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private int posy;
         private string animationString;
         private string actorString;
+        private BamToolTipWidget tooltip;
 
 
         public ConvertToButtonWidget(ActorActionsWidget actorActions, int posx, int posy, bool disabled, string animationString, string actorString)
@@ -28,14 +32,40 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             this.disabled = disabled;
             this.animationString = animationString;
             this.actorString = actorString;
+
+            AddChild(tooltip = new BamToolTipWidget
+            (
+                this.actorActions,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<TooltipInfo>().Name,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<ValuedInfo>().Cost,
+                0,
+                0,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<DungeonsAndDragonsStatsInfo>().Damage,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<DungeonsAndDragonsStatsInfo>().Armor,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<DungeonsAndDragonsStatsInfo>().Speed,
+                false,
+                true
+            ) {Visible = false});
         }
 
         public override void Tick()
         {
             if (actorActions.Actor == null)
+            {
+                tooltip.Visible = false;
                 return;
+            }
 
-            string actorString = null;
+            var traitrules = actorActions.BamUi.World.Map.Rules.Actors[actorString];
+            if (traitrules != null && traitrules.HasTraitInfo<ResearchedInfo>() && traitrules.TraitInfo<ResearchedInfo>().Class != null)
+            {
+                var actors = traitrules.TraitInfo<ResearchedInfo>().Class;
+                var player = actorActions.BamUi.World.LocalPlayer.PlayerActor;
+                if (player.Info.HasTraitInfo<ResearchInfo>() && !player.Trait<Research>().Researchable.Contains(actors))
+                    disabled = true;
+            }
+
+            actorString = null;
             if (actorActions.Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && actorActions.Actor.TraitOrDefault<ConvertAdjetant>().TransformEnabler != null)
                 actorString = animationString;
 
@@ -56,13 +86,23 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override bool HandleMouseInput(MouseInput mi)
         {
-            if (!EventBounds.Contains(mi.Location) || !disabled)
+            if (!EventBounds.Contains(mi.Location))
+            {
+                tooltip.Visible = false;
+                return false;
+            }
+
+            tooltip.Visible = true;
+
+            if (disabled)
                 return false;
 
             if (mi.Button != MouseButton.Left)
                 return true;
 
-            if (mi.Event == MouseInputEvent.Down)
+            var pr = actorActions.BamUi.World.LocalPlayer.PlayerActor.Trait<PlayerResources>();
+
+            if (mi.Event == MouseInputEvent.Down && pr.Cash + pr.Resources >= actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost)
             {
                 actorActions.Actor.World.IssueOrder(new Order("Convert-" + actorString, actorActions.Actor, false));
                 pressed = true;
@@ -76,6 +116,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         public override void MouseExited()
         {
             pressed = false;
+            tooltip.Visible = false;
         }
 
         public override void Draw()
@@ -85,7 +126,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (animation != null)
             {
-                animation.PlayFetchIndex(!disabled ? "disabled-icon" : "icon", () => 0);
+                animation.PlayFetchIndex(disabled ? "disabled-icon" : "icon", () => 0);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
             }
         }

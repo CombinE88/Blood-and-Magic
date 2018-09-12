@@ -2,6 +2,20 @@
 	Defaults:
 		AddExtension: False
 
+^capsule:
+	Inherits: ^default
+	idle: capsule_idle.ani
+	transform: capsule_make.ani
+		Tick: 120
+		Length: *
+	damage: capsule_damage.ani
+		Tick: 120
+		Length: *
+	die: capsule_die.ani
+		Tick: 120
+		Length: *
+	icon: capsule_icon.ani
+	
 acolyte:
 	Inherits: ^default
 	idle: acolyte_stand.ani
@@ -16,8 +30,6 @@ acolyte:
 	attack: acolyte_attack.ani
 		Tick: 160
 		Length: 4
-		Facings: 8
-	aim: acolyte_aim.ani
 		Facings: 8
 	die: acolyte_death.ani
 		Tick: 120
@@ -51,63 +63,6 @@ acolyte.pyramid:
 		Tick: 120
 		Length: 4
 		Facings: 4
-
-capsule:
-	Inherits: ^default
-	idle: capsule_idle.ani
-	transform: capsule_make.ani
-		Tick: 120
-		Length: *
-	damage: capsule_damage.ani
-		Tick: 120
-		Length: *
-	die: capsule_die.ani
-		Tick: 120
-		Length: *
-	icon: capsule_icon.ani
-
-capsule.warrior:
-	idle: capsule_idle.ani
-	transform: capsule_make.ani
-		Tick: 120
-		Length: *
-	damage: capsule_damage.ani
-		Tick: 120
-		Length: *
-	die: capsule_die.ani
-		Tick: 120
-		Length: *
-	icon: warrior_icon.ani
-	disabled-icon: warrior_icon_disabled.ani
-
-warrior:
-	Inherits: ^default
-	stand: warrior_idle.ani
-		Tick: 120
-		Facings: 8
-		Length: 4
-	idle: warrior_stand.ani
-		Tick: 120
-		Facings: 8
-	run: warrior_run.ani
-		Tick: 120
-		Length: 4
-		Facings: 8
-	attack: warrior_attack.ani
-		Tick: 160
-		Length: 4
-		Facings: 8
-	aim: warrior_aim.ani
-		Facings: 8
-	damage: warrior_damage.ani
-		Tick: 160
-		Length: 4
-		Facings: 4
-	die: warrior_die.ani
-		Tick: 120
-		Length: 7
-	icon: warrior_icon.ani
-	disabled-icon: warrior_icon_disabled.ani
 
 shroud:
 	shroud: bits/shroud.png

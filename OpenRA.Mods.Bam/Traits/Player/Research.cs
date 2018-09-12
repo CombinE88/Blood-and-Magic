@@ -9,9 +9,11 @@ namespace OpenRA.Mods.Bam.Traits.World
     {
         public readonly string Faction = "";
 
+        public readonly int TimePerCost = 5;
+
         public readonly Dictionary<string, int> Researchable;
 
-        public readonly Dictionary<string, bool> PreResearched = new Dictionary<string, bool>();
+        public readonly string[] PreResearched = {};
 
         public object Create(ActorInitializer init)
         {
@@ -21,17 +23,16 @@ namespace OpenRA.Mods.Bam.Traits.World
 
     public class Research
     {
-        public List<Tuple<string, bool>> Researchable = new List<Tuple<string, bool>>();
+        public List<string> Researchable = new List<string>();
 
         public ResearchInfo Info;
 
         public Research(ActorInitializer init, ResearchInfo info)
         {
             Info = info;
-            foreach (var key in info.Researchable.Keys)
+            foreach (var key in info.PreResearched)
             {
-                var boolean = Info.PreResearched.Any() && Info.PreResearched.ContainsKey(key) && Info.PreResearched[key];
-                Researchable.Add(new Tuple<string, bool>(key, boolean));
+                Researchable.Add(key);
             }
         }
     }
