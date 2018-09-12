@@ -11,6 +11,7 @@
 
 using System.Linq;
 using OpenRA.Activities;
+using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
@@ -133,16 +134,22 @@ namespace OpenRA.Mods.Bam.Activities
 					init.Add(new HealthInit(newHP));
 				}
 
-				if (NotifyBuildComplete)
-					foreach (var t in self.TraitsImplementing<INotifyBuildComplete>())
-						t.BuildingComplete(self);
-
 				foreach (var modifier in self.TraitsImplementing<ITransformActorInitModifier>())
 					modifier.ModifyTransformActorInit(self, init);
 
 				var a = w.CreateActor(ToActor, init);
 				foreach (var nt in self.TraitsImplementing<INotifyTransform>())
 					nt.AfterTransform(a);
+
+				if (NotifyBuildComplete)
+				{
+					var exp = a.Owner.PlayerActor.TraitOrDefault<DungeonsAndDragonsExperience>();
+					if (exp != null)
+					{
+						if (a.Info.HasTraitInfo<ValuedInfo>())
+							exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost);
+					}
+				}
 
 				if (Trinket != null && a.Info.HasTraitInfo<CanHoldTrinketInfo>())
 					a.Trait<CanHoldTrinket>().HoldsTrinket = Trinket;

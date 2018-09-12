@@ -177,3 +177,4 @@
 	WithAttackAnimation:
 		Sequence: attack
 	# Specify the sequence to use when aiming.
+	AutoTarget:

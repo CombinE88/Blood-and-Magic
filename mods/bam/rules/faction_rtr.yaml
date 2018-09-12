@@ -126,8 +126,6 @@ WARRIOR:
 	WithFacingSpriteBody:
 	Living:
 		BoredSequence: stand
-	Valued:
-		Cost: 40
 	RenderSprites:
 		Image: warrior
 	Armament:

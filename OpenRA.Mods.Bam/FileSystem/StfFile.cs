@@ -58,16 +58,11 @@ namespace OpenRA.Mods.Bam.FileSystem
 
                     foreach (var set in entry.Value.Value.Split(' '))
                     {
-                        var sourceParts = set.Split(':');
+                        var flipX = set.Contains("x");
+                        var flipY = set.Contains("y");
+                        var sourceParts = set.Replace("x", "").Replace("y", "").Split(':');
                         ISpriteFrame[] sourceFrames;
                         aniLoader.TryParseSprite(GetStream(sourceParts[0] + ".ani"), out sourceFrames);
-                        var flip = false;
-
-                        if (sourceParts[1].EndsWith("!"))
-                        {
-                            sourceParts[1] = sourceParts[1].Substring(0, sourceParts[1].Length - 1);
-                            flip = true;
-                        }
 
                         var targetFramesList = new List<int>();
 
@@ -91,7 +86,7 @@ namespace OpenRA.Mods.Bam.FileSystem
                         {
                             var sourceFrame = sourceFrames[frameId] as AniLoader.AniSpriteFrame;
 
-                            if (flip)
+                            if (flipX)
                             {
                                 var newData = new byte[sourceFrame.Data.Length];
 
@@ -101,6 +96,18 @@ namespace OpenRA.Mods.Bam.FileSystem
 
                                 sourceFrame.Data = newData;
                                 sourceFrame.OffsetOrigin = new int2((sourceFrame.Size.Width - sourceFrame.OffsetOrigin.X * 2 - 1) / 2, sourceFrame.OffsetOrigin.Y);
+                            }
+
+                            if (flipY)
+                            {
+                                var newData = new byte[sourceFrame.Data.Length];
+
+                                for (var y = 0; y < sourceFrame.Size.Height; y++)
+                                for (var x = 0; x < sourceFrame.Size.Width; x++)
+                                    newData[(sourceFrame.Size.Height - y - 1) * sourceFrame.Size.Width + x] = sourceFrame.Data[y * sourceFrame.Size.Width + x];
+
+                                sourceFrame.Data = newData;
+                                sourceFrame.OffsetOrigin = new int2(sourceFrame.OffsetOrigin.X, sourceFrame.Size.Height - sourceFrame.OffsetOrigin.Y - 1);
                             }
 
                             targetFrames.Add(sourceFrame);
@@ -114,8 +121,6 @@ namespace OpenRA.Mods.Bam.FileSystem
                     virtualStream.Write(0);
                     virtualStream.Write(BitConverter.GetBytes((ushort)0xfefe), 0, 2);
 
-                    var var1 = 0;
-
                     foreach (var targetFrame in targetFrames)
                     {
                         virtualStream.Write(targetFrame.OffsetOrigin.X);
@@ -125,8 +130,6 @@ namespace OpenRA.Mods.Bam.FileSystem
                         virtualStream.Write(BitConverter.GetBytes((ushort)0), 0, 2); // priority
                         virtualStream.Write(currentFrameOffset);
                         currentFrameOffset += targetFrame.Data.Length / 2;
-
-                        Log.Write("debug", targetAni + " " + (var1++) + " " + (targetFrame.OffsetOrigin.X * 2) + " " + targetFrame.OffsetOrigin.Y);
                     }
 
                     foreach (var targetFrame in targetFrames)
@@ -155,7 +158,9 @@ namespace OpenRA.Mods.Bam.FileSystem
                 }
 
                 stream.Seek(entry.Offset, SeekOrigin.Begin);
-                return new MemoryStream(stream.ReadBytes((int)entry.Length));
+                var bytes = stream.ReadBytes((int) entry.Length);
+
+                return new MemoryStream(bytes);
             }
 
             public bool Contains(string filename)

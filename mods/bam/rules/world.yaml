@@ -22,3 +22,28 @@
 			Tilename: Plattform
 		TilesetInformations@Manaspot:
 			Tilename: Manaspot
+		TilesetInformations@Stairs:
+			Tilename: Stairs
+			Damage: 0
+			Armor: -1
+			Speed: -1
+		TilesetInformations@WoodBridge:
+			Tilename: WoodBridge
+			Damage: 0
+			Armor: -1
+			Speed: -1
+		TilesetInformations@StoneBridge:
+			Tilename: StoneBridge
+			Damage: 0
+			Armor: -1
+			Speed: 0
+		TilesetInformations@Button:
+			Tilename: Button
+			Damage: -1
+			Armor: -1
+			Speed: 0
+		TilesetInformations@Trap:
+			Tilename: Trap
+			Damage: -2
+			Armor: -1
+			Speed: 0

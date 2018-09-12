@@ -15,7 +15,7 @@
 		Tick: 120
 		Length: *
 	icon: capsule_icon.ani
-	
+
 acolyte:
 	Inherits: ^default
 	idle: acolyte_stand.ani
@@ -81,7 +81,9 @@ editor-overlay:
 		Start: 1
 
 moveflsh:
-	idle: bits/mpspawn.png
+	idle: effect_moveorder.ani
+		Length: 5
+		Tick: 50
 
 pips:
 	groups: bits/shroud.png

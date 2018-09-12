@@ -26,7 +26,7 @@ namespace OpenRA.Mods.Bam.Traits.Player
 
         public void AddCash(int num)
         {
-            Experience += num;
+            Experience = Experience + num;
         }
     }
 }

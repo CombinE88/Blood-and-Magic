@@ -1,4 +1,5 @@
 using System.Drawing;
+using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
@@ -48,8 +49,12 @@ namespace OpenRA.Mods.Bam.Traits
                         var move = a.TraitOrDefault<IMove>();
                         a.QueueActivity(move.MoveIntoWorld(a, self.Location + self.Info.TraitInfo<ExitInfo>().ExitCell));
 
-                        foreach (var t in a.TraitsImplementing<INotifyBuildComplete>())
-                            t.BuildingComplete(a);
+                        var exp = a.Owner.PlayerActor.TraitOrDefault<DungeonsAndDragonsExperience>();
+                        if (exp != null)
+                        {
+                            if (a.Info.HasTraitInfo<ValuedInfo>())
+                                exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost);
+                        }
                     }
                 });
         }

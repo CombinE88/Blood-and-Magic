@@ -8,14 +8,20 @@ Cursors:
 	cursor_default.ani: cursor
 		default:
 			Start: 0
+
+	cursor_deploy_blocked.ani: cursor
 		generic-blocked:
 			Start: 0
 
+	cursor_select.ani: cursor
 		select:
 			Start: 0
 
+	cursor_default.ani: cursor
 		move:
 			Start: 0
+			
+	cursor_move_blocked.ani: cursor
 		move-blocked:
 			Start: 0
 
@@ -26,8 +32,8 @@ Cursors:
 		deploy-blocked:
 			Start: 0
 
-	cursor_default.ani: cursor
-		attack:
+	cursor_attack.ani: cursor
+		attack: 
 			Start: 0
 		attackoutsiderange:
 			Start: 0

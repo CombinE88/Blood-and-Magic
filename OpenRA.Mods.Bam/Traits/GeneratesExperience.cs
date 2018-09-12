@@ -12,7 +12,7 @@ namespace OpenRA.Mods.Bam.Traits
         }
     }
 
-    public class GeneratesExperience : INotifyDamage, INotifyAttack, INotifyBuildComplete, INotifyKilled
+    public class GeneratesExperience : INotifyDamage, INotifyKilled
     {
         private DungeonsAndDragonsExperience exp;
 
@@ -23,30 +23,8 @@ namespace OpenRA.Mods.Bam.Traits
 
         public void Damaged(Actor self, AttackInfo e)
         {
-            if (!self.IsDead)
+            if (exp != null && !self.IsDead)
                 exp.AddCash(e.Damage.Value / 2);
-        }
-
-        public void BuildingComplete(Actor self)
-        {
-            if (exp != null)
-            {
-                if (self.Info.HasTraitInfo<ValuedInfo>())
-                    exp.AddCash(self.Info.TraitInfo<ValuedInfo>().Cost / 2);
-            }
-        }
-
-        public void Attacking(Actor self, Target target, Armament a, Barrel barrel)
-        {
-            if (exp != null && target.Actor != null && !self.Owner.IsAlliedWith(target.Actor.Owner))
-            {
-                if (self.Info.HasTraitInfo<ValuedInfo>())
-                    exp.AddCash(self.Info.TraitInfo<ValuedInfo>().Cost / 2);
-            }
-        }
-
-        public void PreparingAttack(Actor self, Target target, Armament a, Barrel barrel)
-        {
         }
 
         public void Killed(Actor self, AttackInfo e)

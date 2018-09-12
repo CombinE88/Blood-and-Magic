@@ -41,6 +41,8 @@ namespace OpenRA.Mods.Common.Warheads
 
             foreach (var victim in hitActors)
             {
+                if (victim == null || victim.IsDead || !victim.IsInWorld)
+                    continue;
                 // Cannot be damaged without a Health trait
                 var healthInfo = victim.Info.TraitInfoOrDefault<HealthInfo>();
                 if (healthInfo == null)
@@ -57,10 +59,14 @@ namespace OpenRA.Mods.Common.Warheads
 
         public override void DoImpact(WPos pos, Actor firedBy, IEnumerable<int> damageModifiers)
         {
+            return;
         }
 
         protected virtual void DoImpact(Actor victim, Actor firedBy)
         {
+            if (victim == null || victim.IsDead || !victim.IsInWorld)
+                return;
+
             if (!IsValidAgainst(victim, firedBy))
                 return;
 
