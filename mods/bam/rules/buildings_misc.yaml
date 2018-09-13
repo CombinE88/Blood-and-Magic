@@ -26,6 +26,8 @@ MAINBASE:
 		Facing: 160
 		ExitCell: -1,3
 		ProductionTypes: Golem
+	Targetable:
+		TargetTypes: Default
 
 PLATTFORMB:
 	Inherits@: ^CoreBuilding

@@ -18,6 +18,7 @@ acolyte_pyramid_icon: 2584:0
 
 capsule_idle: 342:3
 capsule_make: 342:0-3
+capsule_make_rev: 342:3 342:2 342:1 342:0
 capsule_damage: 343:0-5
 capsule_die: 344:0-7
 capsule_icon: 2616:0
@@ -55,6 +56,7 @@ ui_tooltipbar: 116:5
 
 healsalve_trinket_ilde: 2514:0
 healsalve_trinket_icon: 2514:1
+healsalve_trinket_effect: 360:0-3
 
 #Faction One ------------------------------------------
 
@@ -73,15 +75,15 @@ warrior_icon_disabled: 2598:1
 
 ranger_stand: 1370:3x 1370:3x 1370:3x 1370:3x 1370:3 1370:3 1370:3 1370:3
 ranger_idle: 1370:0-3x 1370:0-3x 1370:0-3x 1370:0-3x 1370:0-3 1370:0-3 1370:0-3 1370:0-3
-ranger_run: 1350:0-3 1351:0-3x 1352:0-3x 1353:0-3x 1350:0-3 1351:0-3 1352:0-3 1353:0-3
-ranger_attack: 1360:0-3 1361:0-3x 1362:0-3x 1363:0-3x 1360:0-3 1361:0-3 1362:0-3 1363:0-3
+ranger_run: 1354:0-3 1353:0-3x 1352:0-3x 1351:0-3x 1350:0-3 1351:0-3 1352:0-3 1353:0-3
+ranger_attack: 1364:0-3 1363:0-3x 1362:0-3x 1361:0-3x 1360:0-3 1361:0-3 1362:0-3 1363:0-3
 ranger_attackranged: 1394:0-3 1393:0-3x 1392:0-3x 1391:0-3x 1390:0-3 1391:0-3 1392:0-3 1393:0-3
 ranger_damage: 1376:0-3x 1375:0-3x 1375:0-3 1376:0-3
 ranger_die: 1380:0-7
 ranger_icon: 2588:0
 ranger_icon_disabled: 2588:1
 
-ranger_arrow: 1382:0y 1383:0xy 1384:0x 1383:0x 1382:0 1383:0 1384:0 1383:0
+ranger_arrow: 1382:0y 1383:0xy 1384:0x 1383:0x 1382:0 1383:0 1384:0 1383:0y
 
 paladin_stand: 1320:3x 1320:3x 1320:3x 1320:3x 1320:3 1320:3 1320:3 1320:3
 paladin_idle: 1320:0-3x 1320:0-3x 1320:0-3x 1320:0-3x 1320:0-3 1320:0-3 1320:0-3 1320:0-3

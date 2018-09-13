@@ -5,19 +5,21 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits.World
 {
-    public class ResearchedInfo : ITraitInfo
+    public class ResearchableInfo : ITraitInfo
     {
         public readonly string Class = "";
 
+        public readonly int TransformTime = 10;
+
         public object Create(ActorInitializer init)
         {
-            return new Researched(init);
+            return new Researchable(init);
         }
     }
 
-    public class Researched
+    public class Researchable
     {
-        public Researched(ActorInitializer init)
+        public Researchable(ActorInitializer init)
         {
         }
     }

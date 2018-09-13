@@ -24,11 +24,14 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            var ddtrait = actorActions.Actor.TraitOrDefault<DungeonsAndDragonsStats>();
+            var ddtrait = actorActions.AllActor.TraitOrDefault<DungeonsAndDragonsStats>();
 
-            DrawDamage(ddtrait);
-            DrawArmor(ddtrait);
-            DrawSpeed(ddtrait);
+            if (ddtrait != null)
+            {
+                DrawDamage(ddtrait);
+                DrawArmor(ddtrait);
+                DrawSpeed(ddtrait);
+            }
         }
 
         void DrawDamage(DungeonsAndDragonsStats ddtrait)
@@ -52,7 +55,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         damage.PlayFetchIndex("damage", () => 0);
                     }
 
-                    WidgetUtils.DrawSHPCentered(damage.Image, new float2(RenderBounds.X + 30 + i * 12, RenderBounds.Y + 2), actorActions.BamUi.Palette);
+                    WidgetUtils.DrawSHPCentered(damage.Image, new float2(RenderBounds.X + 30 + i * 10, RenderBounds.Y + 2), actorActions.BamUi.Palette);
                 }
 
                 actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedDamage + "", new float2(RenderBounds.X + 2, RenderBounds.Y), Color.Azure, Color.DarkSlateGray, 1);
@@ -85,7 +88,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         armor.PlayFetchIndex("armor", () => 0);
                     }
 
-                    WidgetUtils.DrawSHPCentered(armor.Image, new float2(RenderBounds.X + 30 + i * 12, RenderBounds.Y + 2 + 15), actorActions.BamUi.Palette);
+                    WidgetUtils.DrawSHPCentered(armor.Image, new float2(RenderBounds.X + 30 + i * 10, RenderBounds.Y + 2 + 15), actorActions.BamUi.Palette);
                 }
 
                 actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedArmor + "", new float2(RenderBounds.X + 2, RenderBounds.Y + 16), Color.Azure, Color.DarkSlateGray, 1);
@@ -118,7 +121,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         speed.PlayFetchIndex("speed", () => 0);
                     }
 
-                    WidgetUtils.DrawSHPCentered(speed.Image, new float2(RenderBounds.X + 30 + i * 12, RenderBounds.Y + 2 + 30), actorActions.BamUi.Palette);
+                    WidgetUtils.DrawSHPCentered(speed.Image, new float2(RenderBounds.X + 30 + i * 10, RenderBounds.Y + 2 + 30), actorActions.BamUi.Palette);
                 }
 
                 actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedSpeed + "", new float2(RenderBounds.X + 2, RenderBounds.Y + 32), Color.Azure, Color.DarkSlateGray, 1);

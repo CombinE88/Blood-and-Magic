@@ -21,27 +21,8 @@
 		UseDeathTypeSuffix: false
 		DeathSequencePalette: BamPlayer
 	GeneratesExperience:
-
-^capsule:
-	Inherits@1: ^Walker
-	Mobile:
-		Speed: 1
-		Locomotor: none
-	Tooltip:
-		Name: Capsule
-	Health:
-		HP: 20
-	RevealsShroud:
-		Range: 4c0
-		Type: CenterPosition
-	-WithMoveAnimation:
-	-WithFacingSpriteBody:
-	WithSpriteBody:
-	-Living:
-	RenderSprites:
-		Image: capsule
-	Valued:
-		Cost: 40
+	Targetable:
+		TargetTypes: Default
 
 ^trinket:
 	Inherits: ^CoreUnit

@@ -10,23 +10,30 @@ namespace OpenRA.Mods.Bam.Traits.Player
         }
     }
 
-    public class DungeonsAndDragonsExperience : ISync
+    public class DungeonsAndDragonsExperience : ISync, IResolveOrder
     {
-        [Sync] public int Experience;
+        [Sync] public int Experience = 9999;
 
-        public bool TakeCash(int num)
+        void TakeCash(int num)
         {
-            if (Experience < num)
-                return false;
-
             Experience -= num;
-
-            return true;
         }
 
         public void AddCash(int num)
         {
             Experience = Experience + num;
+        }
+
+        void IResolveOrder.ResolveOrder(Actor self, Order order)
+        {
+            if (!order.OrderString.Contains("ExpRemove-"))
+                return;
+
+            int number;
+            if (int.TryParse(order.OrderString.Replace("ExpRemove-", ""), out number))
+                return;
+
+            TakeCash(number);
         }
     }
 }

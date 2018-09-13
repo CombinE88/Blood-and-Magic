@@ -22,3 +22,15 @@ ACOLYTE.COLOR:
 EditorWorld:
 	EditorSelectionLayer:
 		Palette: bam11195
+
+# Trinkets -----
+
+
+TRINKET.HEALSALVE:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinkethealsalve
+	Tooltip:
+		Name: Healing Salve
+	IsTrinket:
+		TrinketType: healsalve

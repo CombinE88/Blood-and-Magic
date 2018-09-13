@@ -4,12 +4,66 @@ Sounds:
 		ClickSound: bits/click.wav
 		ChatLine: bits/chat.wav
 		ClickDisabledSound: bits/click.wav
-		CashTickUp:
-		CashTickDown:
 		SilosNeeded:
+		Leave:
+		Appear: 
+		Beacon: 
+		Beepy2: 
+		Beepy3: 
+		Beepy6: 
+		CashTickDown: 
+		CashTickUp: 
+		Cloak: 
+		Clock: 
+		Construction: 
+		Country1: 
+		Country4: 
+		DisablePower: 
+		EnablePower: 
+		HeavyDoor: 
+		Keystroke: 
+		LevelUp: 
+		NewTarget: 
+		RadarDown: 
+		RadarUp: 
+		Sell: 
+		SignalFlare: 
+		SignalFlareEast: 
+		SignalFlareNorth: 
+		SignalFlareSouth: 
+		SignalFlareWest: 
+		TabClick: 
+		Target1: 
+		Target2: 
+		Target3: 
+		Text: 
+		World: 
+
 
 Speech:
 	DefaultVariant: .wav
 	Prefixes:
 	Notifications:
+		BaseAttack: 
+		ConstructionComplete: 
+		EnemyUnitsApproaching: 
+		EnemyStructureDestroyed: 
+		InsufficientPower: 
+		Leave: 
+		Lose: 
+		LowPower: 
+		MissionAccomplished: 
+		MissionFailed: 
+		NewOptions: 
+		NoBuild: 
+		OnHold: 
+		Reinforce: 
+		Repairing: 
+		SelectTarget: 
+		SilosNeeded: 
 		StartGame:
+		Training: 
+		UnitDestroyed: 
+		UnitLost: 
+		UnitReady: 
+		Win: 

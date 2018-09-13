@@ -39,75 +39,11 @@ BARRACKS:
 	Tooltip:
 		Name: Building Plattform
 	AllowConvert:
-		ConvertTo: capsule.warrior, capsule.ranger,	capsule.paladin
+		ConvertTo: warrior, ranger,	paladin
 	Health:
 		HP: 400
-
-CAPSULE.WARRIOR:
-	Inherits@1: ^capsule
-	RenderSprites:
-		Image: capsule.warrior
-	Valued:
-		Cost: 20
-	Tooltip:
-		Name: Capsule(Warrior)
-	Health:
-		HP: 20
-	RevealsShroud:
-		Range: 2c0
-		Type: CenterPosition
-	WithMakeAnimation:
-		Sequence: transform
-	TransformAfterTime:
-		IntoActor: warrior
-		Time: 1000
-	DungeonsAndDragonsStats:
-		Damage: 0
-		Armor: 2
-		Speed: 0
-	WithImpactAnimation:
-
-CAPSULE.RANGER:
-	Inherits@1: ^capsule
-	RenderSprites:
-		Image: capsule.ranger
-	Valued:
-		Cost: 25
-	Tooltip:
-		Name: Capsule(Ranger)
-	Health:
-		HP: 20
-	RevealsShroud:
-		Range: 2c0
-		Type: CenterPosition
-	WithMakeAnimation:
-		Sequence: transform
-	TransformAfterTime:
-		IntoActor: ranger
-		Time: 1250
-	Researched:
-		Class: ranger
-
-CAPSULE.PALADIN:
-	Inherits@1: ^capsule
-	RenderSprites:
-		Image: capsule.paladin
-	Valued:
-		Cost: 30
-	Tooltip:
-		Name: Capsule(Paladin)
-	Health:
-		HP: 20
-	RevealsShroud:
-		Range: 2c0
-		Type: CenterPosition
-	WithMakeAnimation:
-		Sequence: transform
-	TransformAfterTime:
-		IntoActor: paladin
-		Time: 1500
-	Researched:
-		Class: paladin
+	Targetable:
+		TargetTypes: Default
 
 WARRIOR:
 	Inherits@1: ^Walker
@@ -131,11 +67,13 @@ WARRIOR:
 	Armament:
 		Weapon: CloseCombat
 	DungeonsAndDragonsStats:
-		CanbeModified: false
 		Damage: 4
 		Armor: 2
 		Speed: 2
 	WithImpactAnimation:
+	Researchable:
+		Class: paladin
+		TransformTime: 30
 
 RANGER:
 	Inherits@1: ^Walker
@@ -158,11 +96,15 @@ RANGER:
 		Image: ranger
 	Armament:
 		Weapon: RangedCombat
+		LocalOffset: 0,0,555
+		FireDelay: 5
 	DungeonsAndDragonsStats:
-		CanbeModified: false
 		Damage: 4
 		Armor: 2
 		Speed: 3
+	Researchable:
+		Class: ranger
+		TransformTime: 35
 
 PALADIN:
 	Inherits@1: ^Walker
@@ -186,7 +128,9 @@ PALADIN:
 	Armament:
 		Weapon: CloseCombat
 	DungeonsAndDragonsStats:
-		CanbeModified: false
 		Damage: 5
 		Armor: 4
 		Speed: 2
+	Researchable:
+		Class: paladin
+		TransformTime: 40

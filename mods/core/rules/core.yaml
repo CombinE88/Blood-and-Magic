@@ -148,10 +148,6 @@
 	# Group all infantry in the map editor.
 	EditorTilesetFilter:
 		Categories: Infantry
-	# Making infantry actualy buildable.
-	Buildable:
-		Queue: infantry
-		BuildDurationModifier: 100
 	# Infantry has a smaller healthbar.
 	SelectionDecorations:
 	# Make infantry act like they live.
@@ -178,3 +174,6 @@
 		Sequence: attack
 	# Specify the sequence to use when aiming.
 	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Default
+		InvalidTargets: NoAutoTarget

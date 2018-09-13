@@ -62,7 +62,18 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             WidgetUtils.DrawRGBA(pressed ? backgroundDown : background, new float2(RenderBounds.X, RenderBounds.Y));
             WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 26, RenderBounds.Y + 18, progress, 10), Color.RoyalBlue);
-            actorActions.BamUi.Font.DrawText("Transferer", new float2(RenderBounds.X + 10, RenderBounds.Y + 4), Color.Chocolate);
+
+
+            var text = "Transferer";
+            actorActions.BamUi.Font.DrawTextWithContrast(text,
+                new float2(RenderBounds.X + RenderBounds.Width / 4 - actorActions.BamUi.Font.Measure(text).X / 2, RenderBounds.Y + 2), Color.White, Color.Black, 1);
+
+            var text2 = "Mana: " + currentMana;
+            actorActions.BamUi.Font.DrawTextWithContrast(text2,
+                new float2(RenderBounds.X + RenderBounds.Width / 2 - actorActions.BamUi.Font.Measure(text2).X / 2,
+                    RenderBounds.Y + 5 + RenderBounds.Height / 2 - actorActions.BamUi.Font.Measure(text2).Y / 2), Color.White,
+                Color.DarkBlue, 1);
+            ;
         }
     }
 }

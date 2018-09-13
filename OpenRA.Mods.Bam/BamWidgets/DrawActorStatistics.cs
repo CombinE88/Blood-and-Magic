@@ -22,11 +22,12 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            if (actorActions.Actor != null)
+            if (actorActions.AllActor != null)
             {
-                var animation = new Animation(actorActions.BamUi.World, actorActions.Actor.Trait<RenderSprites>().GetImage(actorActions.Actor));
+                var palette = actorActions.BamUi.WorldRenderer.Palette("BamPlayer" + actorActions.AllActor.Owner.InternalName);
+                var animation = new Animation(actorActions.BamUi.World, actorActions.AllActor.Trait<RenderSprites>().GetImage(actorActions.AllActor));
                 animation.PlayFetchIndex("icon", () => 0);
-                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
+                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), palette);
             }
         }
     }

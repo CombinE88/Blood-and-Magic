@@ -3,6 +3,7 @@ using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.Player;
+using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
@@ -15,7 +16,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private ShowResearchButtonWidget showResearch;
         private bool pressed;
         private Animation animation;
-        private bool disabled;
+        private bool disabled = true;
         private int posx;
         private int posy;
         private string researchItem;
@@ -23,13 +24,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private int ResearchCost;
         private BamToolTipWidget tooltip;
 
-        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, bool disabled, int ResearchTime, int ResearchCost)
+        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, int ResearchTime, int ResearchCost)
         {
             this.showResearch = showResearch;
             this.posx = posx;
             this.posy = posy;
             this.researchItem = researchItem;
-            this.disabled = disabled;
             researchTime = ResearchTime;
             this.ResearchCost = ResearchCost;
 
@@ -50,6 +50,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
+            var playertrait = showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.TraitOrDefault<Research>().Researchable;
+            if (playertrait != null && !playertrait.Contains(researchItem))
+                disabled = false;
+            else
+                disabled = true;
+
             animation = new Animation(showResearch.ActorActions.BamUi.World, researchItem);
 
             var x = pressed ? posx + 1 : posx;
@@ -75,8 +81,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                if (!showResearch.Researching && showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().TakeCash(ResearchCost))
+                if (!showResearch.Researching && showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience >= ResearchCost)
                 {
+                    showResearch.ActorActions.BamUi.World.IssueOrder(new Order("ExpRemove-" + ResearchCost, showResearch.ActorActions.BamUi.World.LocalPlayer.PlayerActor, false));
+                    pressed = true;
+
                     showResearch.ResearchItem = researchItem;
                     showResearch.MaxResearchTime = researchTime;
                     showResearch.Researching = true;

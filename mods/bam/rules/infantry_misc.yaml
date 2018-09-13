@@ -19,10 +19,10 @@ ACOLYTE:
 	Living:
 		BoredSequence: stand
 	TransformToConditionOnIdle:
-	WithMakeAnimation:
-		Sequence: transform_reverse
 	ManaShooter:
 		OnlyStores: true
+		Modifier:
+			Manaspot: 66
 	Buildable:
 		Queue: Golem
 		BuildPaletteOrder: 130
@@ -80,9 +80,37 @@ PYRAMID:
 		Speed: 0
 	WithImpactAnimation:
 
-TRINKET.HEALSALVE:
-	Inherits@: ^trinket
+CAPSULE:
+	Inherits@1: ^Walker
+	-WithMoveAnimation:
+	-WithFacingSpriteBody:
+	-Living:
 	RenderSprites:
-		Image: trinkethealsalve
+		Image: capsule
+	Valued:
+		Cost: 5
 	Tooltip:
-		Name: Healing Salve
+		Name: Metapod
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	TransformAfterTime:
+	DungeonsAndDragonsStats:
+		Damage: 0
+		Armor: 2
+		Speed: 0
+	WithImpactAnimation:
+	Mobile:
+		Speed: 1
+		Locomotor: none
+	Tooltip:
+		Name: Capsule
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	WithSpriteBody:
+	CanHoldTrinket:

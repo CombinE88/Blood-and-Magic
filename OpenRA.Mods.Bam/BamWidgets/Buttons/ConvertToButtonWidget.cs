@@ -24,12 +24,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private BamToolTipWidget tooltip;
 
 
-        public ConvertToButtonWidget(ActorActionsWidget actorActions, int posx, int posy, bool disabled, string animationString, string actorString)
+        public ConvertToButtonWidget(ActorActionsWidget actorActions, int posx, int posy, string animationString, string actorString)
         {
             this.actorActions = actorActions;
             this.posx = posx;
             this.posy = posy;
-            this.disabled = disabled;
             this.animationString = animationString;
             this.actorString = actorString;
 
@@ -37,12 +36,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             (
                 this.actorActions,
                 actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<TooltipInfo>().Name,
-                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<ValuedInfo>().Cost,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<ValuedInfo>().Cost,
                 0,
                 0,
-                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<DungeonsAndDragonsStatsInfo>().Damage,
-                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<DungeonsAndDragonsStatsInfo>().Armor,
-                actorActions.BamUi.World.Map.Rules.Actors[this.actorString.Replace("capsule.", "")].TraitInfo<DungeonsAndDragonsStatsInfo>().Speed,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<DungeonsAndDragonsStatsInfo>().Damage,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<DungeonsAndDragonsStatsInfo>().Armor,
+                actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<DungeonsAndDragonsStatsInfo>().Speed,
                 false,
                 true
             ) {Visible = false});
@@ -56,21 +55,18 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 return;
             }
 
-            var traitrules = actorActions.BamUi.World.Map.Rules.Actors[actorString];
-            if (traitrules != null && traitrules.HasTraitInfo<ResearchedInfo>() && traitrules.TraitInfo<ResearchedInfo>().Class != null)
-            {
-                var actors = traitrules.TraitInfo<ResearchedInfo>().Class;
-                var player = actorActions.BamUi.World.LocalPlayer.PlayerActor;
-                if (player.Info.HasTraitInfo<ResearchInfo>() && !player.Trait<Research>().Researchable.Contains(actors))
-                    disabled = true;
-            }
+            var playertrait = actorActions.BamUi.World.RenderPlayer.PlayerActor.TraitOrDefault<Research>().Researchable;
+            if (playertrait != null && !playertrait.Contains(actorString))
+                disabled = true;
+            else
+                disabled = false;
+
 
             actorString = null;
             if (actorActions.Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && actorActions.Actor.TraitOrDefault<ConvertAdjetant>().TransformEnabler != null)
                 actorString = animationString;
 
             actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
-
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
                 animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage
                 (
@@ -93,15 +89,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             }
 
             tooltip.Visible = true;
-
             if (disabled)
                 return false;
-
             if (mi.Button != MouseButton.Left)
                 return true;
-
             var pr = actorActions.BamUi.World.LocalPlayer.PlayerActor.Trait<PlayerResources>();
-
             if (mi.Event == MouseInputEvent.Down && pr.Cash + pr.Resources >= actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost)
             {
                 actorActions.Actor.World.IssueOrder(new Order("Convert-" + actorString, actorActions.Actor, false));
@@ -123,7 +115,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         {
             if (actorActions.Actor == null)
                 return;
-
             if (animation != null)
             {
                 animation.PlayFetchIndex(disabled ? "disabled-icon" : "icon", () => 0);

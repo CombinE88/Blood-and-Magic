@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Drawing;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
@@ -10,9 +11,11 @@ namespace OpenRA.Mods.Bam.Traits
     {
         public readonly int MaxStorage = 10;
 
-        public readonly int Interval = 100;
+        public readonly int Interval = 175;
 
         public readonly int OverWait = 100;
+
+        public readonly Dictionary<string,int> Modifier = new Dictionary<string, int>();
 
         public bool OnlyStores = false;
 
@@ -48,7 +51,9 @@ namespace OpenRA.Mods.Bam.Traits
 
             if (CurrentStorage < info.MaxStorage)
             {
-                if (tick++ >= Info.Interval)
+                var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
+                var modifier = Info.Modifier.ContainsKey(ground) ? Info.Modifier[ground] : 100;
+                if (tick++ >= Info.Interval * modifier / 100)
                 {
                     CurrentStorage++;
                     tick = 0;
@@ -56,7 +61,7 @@ namespace OpenRA.Mods.Bam.Traits
             }
             else if (CurrentStorage == info.MaxStorage)
             {
-                if (overTick++ >= Info.Interval)
+                if (overTick++ >= Info.OverWait)
                 {
                     ShootMana();
                 }

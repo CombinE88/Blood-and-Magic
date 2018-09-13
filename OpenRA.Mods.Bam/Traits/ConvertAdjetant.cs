@@ -1,10 +1,13 @@
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
+using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
@@ -19,6 +22,9 @@ namespace OpenRA.Mods.Bam.Traits
 
         [Desc("Facing that the actor must face before transforming.")]
         public readonly int Facing = 96;
+
+        [Desc("Sounds to play when transforming.")]
+        public readonly string Capsule = "capsule";
 
         [Desc("Sounds to play when transforming.")]
         public readonly string[] TransformSounds = { };
@@ -40,6 +46,8 @@ namespace OpenRA.Mods.Bam.Traits
         private ConvertAdjetantInfo info;
         public bool AllowTransform;
         public Actor TransformEnabler;
+
+        private string orderCut;
 
         public ConvertAdjetant(ActorInitializer init, ConvertAdjetantInfo info)
         {
@@ -67,13 +75,16 @@ namespace OpenRA.Mods.Bam.Traits
             if (!order.OrderString.Contains("Convert-"))
                 return;
 
-            var orderCut = order.OrderString.Replace("Convert-", "");
+            orderCut = order.OrderString.Replace("Convert-", "");
             foreach (var actorname in TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo)
             {
                 if (orderCut.Contains(actorname))
                 {
                     if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[orderCut].TraitInfo<ValuedInfo>().Cost))
-                        DoTransform(self, orderCut);
+                    {
+                        DoTransform(self, info.Capsule);
+                    }
+
                     break;
                 }
             }
@@ -81,8 +92,20 @@ namespace OpenRA.Mods.Bam.Traits
 
         void DoTransform(Actor self, string into)
         {
+            self.World.AddFrameEndTask(w =>
+                w.Add(new SpriteEffect(
+                    self.CenterPosition,
+                    w,
+                    self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().Image,
+                    "transform",
+                    self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette+self.Owner.InternalName)));
+
+            self.QueueActivity(new Wait(5));
             self.QueueActivity(new AdvancedTransform(self, into)
             {
+                Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime*25,
+                CapsuleInto = orderCut,
+
                 Offset = info.Offset,
                 Facing = info.Facing,
                 Sounds = info.TransformSounds,

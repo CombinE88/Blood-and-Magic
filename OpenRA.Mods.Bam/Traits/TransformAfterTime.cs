@@ -1,16 +1,14 @@
 using OpenRA.Mods.Bam.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits
 {
     public class TransformAfterTimeInfo : ITraitInfo
     {
-        public readonly int Time = 1000;
-
-        public readonly string IntoActor = null;
-
         [Desc("Offset to spawn the transformed actor relative to the current cell.")]
         public readonly CVec Offset = CVec.Zero;
 
@@ -35,7 +33,9 @@ namespace OpenRA.Mods.Bam.Traits
     {
         private TransformAfterTimeInfo info;
 
-        private bool transforming = false;
+        public bool Transforming = false;
+        public string IntoActor;
+        public int Time;
 
         public int Ticker;
 
@@ -46,10 +46,17 @@ namespace OpenRA.Mods.Bam.Traits
 
         void ITick.Tick(Actor self)
         {
-            if (!transforming && Ticker++ >= info.Time)
+            if (Transforming && Ticker++ >= Time)
             {
-                transforming = true;
-                self.QueueActivity(new AdvancedTransform(self, info.IntoActor)
+                self.World.AddFrameEndTask(w =>
+                    w.Add(new SpriteEffect(
+                        self.CenterPosition,
+                        w,
+                        self.Info.TraitInfo<RenderSpritesInfo>().Image,
+                        "transform_reverse",
+                        self.Info.TraitInfo<RenderSpritesInfo>().PlayerPalette+self.Owner.InternalName)));
+
+                self.QueueActivity(new AdvancedTransform(self, IntoActor)
                 {
                     Offset = info.Offset,
                     Facing = info.Facing,
@@ -58,6 +65,8 @@ namespace OpenRA.Mods.Bam.Traits
                     NotifyBuildComplete = info.NotifyBuildComplete,
                     Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
                 });
+
+                Transforming = false;
             }
         }
     }

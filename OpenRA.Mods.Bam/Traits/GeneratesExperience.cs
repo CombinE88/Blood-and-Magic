@@ -1,4 +1,5 @@
 using OpenRA.Mods.Bam.Traits.Player;
+using OpenRA.Mods.Common.Scripting;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
@@ -12,19 +13,13 @@ namespace OpenRA.Mods.Bam.Traits
         }
     }
 
-    public class GeneratesExperience : INotifyDamage, INotifyKilled
+    public class GeneratesExperience : INotifyKilled, INotifyDamage
     {
         private DungeonsAndDragonsExperience exp;
 
         public GeneratesExperience(ActorInitializer init)
         {
             exp = init.Self.Info.HasTraitInfo<DungeonsAndDragonsExperienceInfo>() ? exp = init.Self.Trait<DungeonsAndDragonsExperience>() : null;
-        }
-
-        public void Damaged(Actor self, AttackInfo e)
-        {
-            if (exp != null && !self.IsDead)
-                exp.AddCash(e.Damage.Value / 2);
         }
 
         public void Killed(Actor self, AttackInfo e)
@@ -34,6 +29,15 @@ namespace OpenRA.Mods.Bam.Traits
                 if (self.Info.HasTraitInfo<ValuedInfo>())
                     e.Attacker.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(self.Info.TraitInfo<ValuedInfo>().Cost * 2);
             }
+        }
+
+        public void Damaged(Actor self, AttackInfo e)
+        {
+            if (e.Attacker != null
+                && !e.Attacker.IsDead
+                && e.Attacker.Owner.PlayerActor.Info.HasTraitInfo<DungeonsAndDragonsExperienceInfo>()
+                && !e.Attacker.Owner.IsAlliedWith(self.Owner))
+                e.Attacker.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(e.Damage.Value > 0 ? e.Damage.Value : 0);
         }
     }
 }

@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 ));
 
             var x = pressed ? 1 : 0;
-            var y = pressed ? 369 + 1 : 369;
+            var y = pressed ? 352 + 1 : 352;
             Bounds = new Rectangle(x, y, 76, 51);
         }
 
@@ -53,6 +53,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
+                actorActions.Actor.World.IssueOrder(new Order("UseTrinket", actorActions.Actor, false));
                 pressed = true;
             }
 
@@ -77,7 +78,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (animation != null)
             {
                 animation.PlayFetchIndex("icon", () => 0);
-                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
+                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y + 17), actorActions.BamUi.Palette);
             }
         }
     }

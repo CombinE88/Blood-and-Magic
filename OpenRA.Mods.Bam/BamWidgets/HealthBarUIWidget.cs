@@ -23,11 +23,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Tick()
         {
-            if (actorActions.Actor == null)
+            if (actorActions.AllActor == null)
                 return;
 
-            currentHP = actorActions.Actor.Trait<Health>().HP;
-            maxHP = actorActions.Actor.Trait<Health>().MaxHP;
+            currentHP = actorActions.AllActor.Trait<Health>().HP;
+            maxHP = actorActions.AllActor.Trait<Health>().MaxHP;
 
             progress = 144 * currentHP / maxHP;
             Bounds = new Rectangle(4, 163, 144, 10);

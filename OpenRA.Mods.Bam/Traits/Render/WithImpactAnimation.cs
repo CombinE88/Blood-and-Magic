@@ -43,8 +43,10 @@ namespace OpenRA.Mods.Common.Traits.Render
             if (IsTraitDisabled)
                 return;
 
-            if (wsb.DefaultAnimation.Name == wsb.Info.Sequence)
+            if (wsb.DefaultAnimation.CurrentSequence.Name == "idle" || wsb.DefaultAnimation.CurrentSequence.Name == "stand" || wsb.DefaultAnimation.CurrentSequence.Name == "run")
+            {
                 wsb.PlayCustomAnimation(self, info.Sequence, () => { });
+            }
         }
 
         void INotifyCreated.Created(Actor self)

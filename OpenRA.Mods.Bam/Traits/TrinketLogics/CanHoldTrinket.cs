@@ -1,5 +1,8 @@
 using System.Linq;
 using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -9,7 +12,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
     {
         public object Create(ActorInitializer init)
         {
-            return new CanHoldTrinket();
+            return new CanHoldTrinket(init, this);
         }
     }
 
@@ -17,6 +20,12 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
     {
         public Actor HoldsTrinket;
         private Actor ignoreTrinket;
+        private Actor self;
+
+        public CanHoldTrinket(ActorInitializer init, CanHoldTrinketInfo info)
+        {
+            self = init.Self;
+        }
 
         void DropTrinket(Actor self)
         {
@@ -42,10 +51,18 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         public void ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "dropItem")
+            if (order.OrderString != "dropItem" && order.OrderString != "UseTrinket")
                 return;
 
-            DropTrinket(self);
+            switch (order.OrderString)
+            {
+                case "DropItem":
+                    DropTrinket(self);
+                    break;
+                case "UseTrinket":
+                    StartEffect();
+                    break;
+            }
         }
 
         void ITick.Tick(Actor self)
@@ -63,6 +80,37 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             HoldsTrinket = newTrinket;
             self.World.Remove(newTrinket);
+        }
+
+
+        public void StartEffect()
+        {
+            var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
+            switch (trinketinfo.TrinketType)
+            {
+                case "healsalve":
+
+                    if (!self.IsDead && self.IsInWorld && self.Info.HasTraitInfo<HealthInfo>())
+                    {
+                        self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP)));
+                        var trinket = HoldsTrinket;
+                        HoldsTrinket = null;
+                        ignoreTrinket = null;
+
+                        self.World.AddFrameEndTask(w =>
+                            w.Add(new SpriteEffect(
+                                self.CenterPosition,
+                                w,
+                                trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                trinketinfo.EffectSequence,
+                                trinketinfo.EffectPalette)));
+
+                        if (trinketinfo.OneTimeUse)
+                            trinket.Dispose();
+                    }
+
+                    break;
+            }
         }
     }
 }

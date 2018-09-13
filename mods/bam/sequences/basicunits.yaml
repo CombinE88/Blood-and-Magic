@@ -2,10 +2,13 @@
 	Defaults:
 		AddExtension: False
 
-^capsule:
+capsule:
 	Inherits: ^default
 	idle: capsule_idle.ani
 	transform: capsule_make.ani
+		Tick: 120
+		Length: *
+	transform_reverse: capsule_make_rev.ani
 		Tick: 120
 		Length: *
 	damage: capsule_damage.ani
@@ -38,12 +41,6 @@ acolyte:
 		Tick: 160
 		Length: 4
 		Facings: 4
-	transform: acolyte_transform.ani
-		Tick: 120
-		Length: *
-	transform_reverse: acolyte_transform_rev.ani
-		Tick: 120
-		Length: *
 	transformed_stand: acolyte_transformed_stand.ani
 	mana: acoltye_transformed_mana.ani
 		Tick: 120
@@ -63,6 +60,12 @@ acolyte.pyramid:
 		Tick: 120
 		Length: 4
 		Facings: 4
+	transform: acolyte_transform.ani
+		Tick: 120
+		Length: *
+	transform_reverse: acolyte_transform_rev.ani
+		Tick: 120
+		Length: *
 
 shroud:
 	shroud: bits/shroud.png

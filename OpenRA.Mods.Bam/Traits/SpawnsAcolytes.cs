@@ -53,7 +53,7 @@ namespace OpenRA.Mods.Bam.Traits
                         if (exp != null)
                         {
                             if (a.Info.HasTraitInfo<ValuedInfo>())
-                                exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost);
+                                exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost/2);
                         }
                     }
                 });

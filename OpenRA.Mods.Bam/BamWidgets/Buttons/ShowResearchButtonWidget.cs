@@ -121,7 +121,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 animation.PlayFetchIndex("ui_research_bar", () => progress);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X - 76 + 20, RenderBounds.Y + 316), ActorActions.BamUi.Palette);
 
-                Game.AddChatLine(Color.White, currentResearchTime + "", "" + progress);
+                //Game.AddChatLine(Color.White, currentResearchTime + "", "" + progress);
             }
         }
 
@@ -145,7 +145,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     this,
                     -76 + i % 2 * 75, 24 + 68 * (i / 2),
                     list[i].Key,
-                    alreadyRes.Contains(list[i].Key) && Researching && list[i].Key != ResearchItem,
                     list[i].Value * research.Info.TimePerCost,
                     list[i].Value
                 );

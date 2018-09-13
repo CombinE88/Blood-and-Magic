@@ -1,9 +1,13 @@
 CloseCombat:
 	ReloadDelay: 25
 	Range: 1c512
+	ValidTargets: Default
 	Projectile: Bullet
 		Speed: 1c682
-	Warhead@1Dam: DandDSpreadDamage
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
 		DamageTypes: Death
@@ -11,11 +15,15 @@ CloseCombat:
 RangedCombat:
 	ReloadDelay: 25
 	Range: 3c512
+	ValidTargets: Default
 	Projectile: Bullet
 		Speed: 0c125
 		Image: ranger_projectile
 		Palette: bam11195
-	Warhead@1Dam: DandDSpreadDamage
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
 		DamageTypes: Death

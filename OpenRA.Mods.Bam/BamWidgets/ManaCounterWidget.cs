@@ -22,7 +22,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Tick()
         {
-            Bounds = new Rectangle(0, 30, background.Bounds.Width, background.Bounds.Height);
+            Bounds = new Rectangle(0, 5, background.Bounds.Width, background.Bounds.Height);
         }
 
         public override void Draw()
@@ -34,7 +34,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
             WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 8, RenderBounds.Y + 3, value, 10), Color.CornflowerBlue);
 
             var text = "Mana: " + (playerResources.Resources + playerResources.Cash);
-            bamUi.Font.DrawTextWithContrast(text, new float2( RenderBounds.X + RenderBounds.Width / 2 - bamUi.Font.Measure(text).X / 2, RenderBounds.Y + RenderBounds.Height / 2 - bamUi.Font.Measure(text).Y / 2), Color.White,
+            bamUi.Font.DrawTextWithContrast(text,
+                new float2(RenderBounds.X + RenderBounds.Width / 2 - bamUi.Font.Measure(text).X / 2, RenderBounds.Y + RenderBounds.Height / 2 - bamUi.Font.Measure(text).Y / 2),
+                Color.White,
                 Color.DarkBlue, 1);
         }
     }

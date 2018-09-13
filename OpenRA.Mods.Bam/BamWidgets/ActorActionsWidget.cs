@@ -17,6 +17,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
     {
         public BamUIWidget BamUi;
         public Actor Actor;
+        public Actor AllActor;
         public Actor[] ActorGroup;
 
         private ManaSendButtonWidget manaSend;
@@ -81,11 +82,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             ActorGroup = BamUi.World.Selection.Actors.Where(a => !a.IsDead && a.IsInWorld && a.Owner == BamUi.World.LocalPlayer).ToArray();
             Actor = ActorGroup.FirstOrDefault(a => !a.IsDead && a.IsInWorld && a.Owner == BamUi.World.LocalPlayer);
+            AllActor = BamUi.World.Selection.Actors.FirstOrDefault(a => !a.IsDead && a.IsInWorld);
+
+            if (AllActor != null)
+                DrawActorStatistics();
 
             if (Actor == null)
                 return;
-
-            DrawActorStatistics();
 
             if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && !Actor.Info.TraitInfo<ManaShooterInfo>().OnlyStores)
                 manaSend.Visible = true;
@@ -142,7 +145,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         void CreateSpawnMenu()
         {
-            var playertrait = BamUi.World.RenderPlayer.PlayerActor.Trait<Research>().Researchable;
             var transformable = Actor.Trait<ConvertAdjetant>().TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo.ToList();
             for (int i = 0; i < transformable.Count; i++)
             {
@@ -150,7 +152,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         this,
                         10 + i % 2 * 75,
                         450 + 68 * (i / 2),
-                        !playertrait.Contains(transformable[i].Replace("capsule.", "")),
                         transformable[i],
                         transformable[i])
                     {Visible = false};
@@ -179,13 +180,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             // Draw Picture
             DrawActorStatisticsW.Visible = true;
-            if (Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
+            if (AllActor.Info.HasTraitInfo<TransformAfterTimeInfo>())
                 drawTransformStatistics.Visible = true;
-            if (Actor.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>())
+            if (AllActor.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>())
                 DrawValueStatistics.Visible = true;
-            if (Actor.TraitOrDefault<IHealth>() != null)
+            if (AllActor.TraitOrDefault<IHealth>() != null)
                 HealthBarUI.Visible = true;
-            if (Actor.Info.HasTraitInfo<TooltipInfo>())
+            if (AllActor.Info.HasTraitInfo<TooltipInfo>())
                 SelectionName.Visible = true;
         }
     }

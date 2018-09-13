@@ -3,6 +3,9 @@ trinkethealsalve:
 	idle: healsalve_trinket_ilde.ani
 		ZOffset: -1024
 		Offset: 0,-16
+	effect: healsalve_trinket_effect.ani
+		Length: 4
+		Tick: 100
 	icon: healsalve_trinket_icon.ani
 		ZOffset: -1024
 		Offset: 0,-16

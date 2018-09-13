@@ -11,6 +11,7 @@
 
 using System.Linq;
 using OpenRA.Activities;
+using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
@@ -35,6 +36,9 @@ namespace OpenRA.Mods.Bam.Activities
 		public bool NotifyBuildComplete = false;
 		public string Faction = null;
 		public Actor Trinket = null;
+
+		public int Time = 250;
+		public string CapsuleInto = null;
 
 		public AdvancedTransform(Actor self, string toActor)
 		{
@@ -149,6 +153,14 @@ namespace OpenRA.Mods.Bam.Activities
 						if (a.Info.HasTraitInfo<ValuedInfo>())
 							exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost);
 					}
+				}
+
+				if (a.Info.HasTraitInfo<TransformAfterTimeInfo>() && CapsuleInto != null)
+				{
+					var trait = a.Trait<TransformAfterTime>();
+					trait.Time = Time;
+					trait.IntoActor = CapsuleInto;
+					trait.Transforming = true;
 				}
 
 				if (Trinket != null && a.Info.HasTraitInfo<CanHoldTrinketInfo>())

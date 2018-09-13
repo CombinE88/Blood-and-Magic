@@ -17,7 +17,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private Sprite emptyMen;
 
         private TransformAfterTime transformAfterTime;
-        private TransformAfterTimeInfo transformAfterTimeInfo;
 
         private Sprite readyMen;
         private Sprite moonPhase2;
@@ -56,7 +55,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 return;
 
             transformAfterTime = actorActions.Actor.TraitOrDefault<TransformAfterTime>();
-            transformAfterTimeInfo = actorActions.Actor.Info.TraitInfoOrDefault<TransformAfterTimeInfo>();
 
             //hide
             WidgetUtils.DrawRGBA(background2, new float2(RenderBounds.Left + 0, RenderBounds.Top + 298));
@@ -66,7 +64,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             WidgetUtils.DrawRGBA(emptyMoons, new float2(RenderBounds.Left + 4, RenderBounds.Top + 266));
             WidgetUtils.DrawRGBA(emptyMen, new float2(RenderBounds.Left + 124, RenderBounds.Top + 298));
 
-            var progress = 8 * transformAfterTime.Ticker / transformAfterTimeInfo.Time;
+            var progress = 8 * transformAfterTime.Ticker / transformAfterTime.Time;
 
             if (progress > 1)
                 WidgetUtils.DrawRGBA(moonPhase2, new float2(RenderBounds.Left + 38, RenderBounds.Top + 266 + 8));
