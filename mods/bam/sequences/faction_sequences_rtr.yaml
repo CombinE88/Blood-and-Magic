@@ -5,21 +5,6 @@ barracks:
 		Frames: 0
 	icon: barracks_icon.ani
 
-capsule.warrior:
-	Inherits: ^default
-	idle: capsule_idle.ani
-	transform: capsule_make.ani
-		Tick: 120
-		Length: *
-	damage: capsule_damage.ani
-		Tick: 120
-		Length: *
-	die: capsule_die.ani
-		Tick: 120
-		Length: *
-	icon: warrior_icon.ani
-	disabled-icon: warrior_icon_disabled.ani
-
 warrior:
 	Inherits: ^default
 	stand: warrior_idle.ani
@@ -46,21 +31,6 @@ warrior:
 		Length: 7
 	icon: warrior_icon.ani
 	disabled-icon: warrior_icon_disabled.ani
-
-capsule.ranger:
-	Inherits: ^default
-	idle: capsule_idle.ani
-	transform: capsule_make.ani
-		Tick: 120
-		Length: *
-	damage: capsule_damage.ani
-		Tick: 120
-		Length: *
-	die: capsule_die.ani
-		Tick: 120
-		Length: *
-	icon: ranger_icon.ani
-	disabled-icon: ranger_icon_disabled.ani
 
 ranger:
 	Inherits: ^default
@@ -92,21 +62,6 @@ ranger:
 ranger_projectile:
 	idle: ranger_arrow.ani
 		Facings: 8
-
-capsule.paladin:
-	Inherits: ^default
-	idle: capsule_idle.ani
-	transform: capsule_make.ani
-		Tick: 120
-		Length: *
-	damage: capsule_damage.ani
-		Tick: 120
-		Length: *
-	die: capsule_die.ani
-		Tick: 120
-		Length: *
-	icon: paladin_icon.ani
-	disabled-icon: paladin_icon_disabled.ani
 
 paladin:
 	Inherits: ^default

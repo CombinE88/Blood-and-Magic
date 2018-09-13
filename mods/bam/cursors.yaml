@@ -32,6 +32,13 @@ Cursors:
 		deploy-blocked:
 			Start: 0
 
+	cursor_ability.ani: cursor
+		ability:
+			Start: 0
+	cursor_ability_blocked.ani: cursor
+		ability-blocked:
+			Start: 0
+
 	cursor_attack.ani: cursor
 		attack: 
 			Start: 0

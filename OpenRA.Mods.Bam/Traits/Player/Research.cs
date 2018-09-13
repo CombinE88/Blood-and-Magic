@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Bam.Traits.World
         public Research(ActorInitializer init, ResearchInfo info)
         {
             Info = info;
-            foreach (var key in info.PreResearched)
+            foreach (var key in info.PreResearched.ToArray())
             {
                 Researchable.Add(key);
             }

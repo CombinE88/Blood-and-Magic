@@ -13,13 +13,16 @@ World:
 		OuterSupportRadius: 2
 Player:
 	Research@rtr:
-		PreResearched: warrior, test
+		PreResearched: warrior, paladin
 		Faction: rtr
 		Researchable:
 			warrior: 500
 			ranger: 1500
 			paladin: 3000
 		TimePerCost: 3
+
+#ranger: 1500
+#paladin : 3000
 
 BARRACKS:
 	Inherits@: ^CoreBuilding
@@ -41,7 +44,7 @@ BARRACKS:
 	AllowConvert:
 		ConvertTo: warrior, ranger,	paladin
 	Health:
-		HP: 400
+		HP: 360
 	Targetable:
 		TargetTypes: Default
 
@@ -134,3 +137,4 @@ PALADIN:
 	Researchable:
 		Class: paladin
 		TransformTime: 40
+	HealTargetAbility:

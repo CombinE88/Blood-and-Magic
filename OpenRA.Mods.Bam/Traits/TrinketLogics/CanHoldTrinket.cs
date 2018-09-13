@@ -1,4 +1,5 @@
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
@@ -60,7 +61,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                     DropTrinket(self);
                     break;
                 case "UseTrinket":
-                    StartEffect();
+                    EffectClick();
                     break;
             }
         }
@@ -80,10 +81,15 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             HoldsTrinket = newTrinket;
             self.World.Remove(newTrinket);
+            if (HoldsTrinket.Info.TraitInfo<IsTrinketInfo>().EffectOnPickup)
+                EffectOnPickup();
+
+            if (HoldsTrinket.Info.TraitInfo<IsTrinketInfo>().ContiniusEffect)
+                ContiniusEffect();
         }
 
 
-        public void StartEffect()
+        public void EffectClick()
         {
             var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
             switch (trinketinfo.TrinketType)
@@ -109,6 +115,37 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                             trinket.Dispose();
                     }
 
+                    break;
+                case "masonmix":
+
+                    break;
+            }
+        }
+
+        public void EffectOnPickup()
+        {
+            var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
+            switch (trinketinfo.TrinketType)
+            {
+                case "manaorb":
+
+                    self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(60);
+                    var trinket = HoldsTrinket;
+                    HoldsTrinket = null;
+                    ignoreTrinket = null;
+                    trinket.Dispose();
+                    break;
+            }
+        }
+
+        public void ContiniusEffect()
+        {
+            var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
+            switch (trinketinfo.TrinketType)
+            {
+                case "mightmantle":
+
+                    self.Trait<DungeonsAndDragonsStats>().ModifiedArmor += 1;
                     break;
             }
         }

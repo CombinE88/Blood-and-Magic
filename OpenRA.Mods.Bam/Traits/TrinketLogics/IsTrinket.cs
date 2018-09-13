@@ -8,6 +8,8 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         public readonly bool OneTimeUse = true;
 
+        public readonly bool ContiniusEffect = false;
+
         public readonly string TrinketType = "";
 
         public readonly int DropChance = 50;

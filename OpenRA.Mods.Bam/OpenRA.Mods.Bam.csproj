@@ -121,6 +121,7 @@
     <Compile Include="Traits\Living.cs" />
     <Compile Include="Traits\TrinketLogics\CanHoldTrinket.cs" />
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
+    <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />
@@ -162,6 +163,5 @@ cd "$(SolutionDir)"</PostBuildEvent>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BamWidgets\BamLogic" />
-    <Folder Include="Traits\UnitAbilities" />
   </ItemGroup>
 </Project>

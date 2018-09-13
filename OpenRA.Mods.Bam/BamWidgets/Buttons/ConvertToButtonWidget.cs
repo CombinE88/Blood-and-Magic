@@ -94,7 +94,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (mi.Button != MouseButton.Left)
                 return true;
             var pr = actorActions.BamUi.World.LocalPlayer.PlayerActor.Trait<PlayerResources>();
-            if (mi.Event == MouseInputEvent.Down && pr.Cash + pr.Resources >= actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost)
+            if (actorActions.Actor != null && mi.Event == MouseInputEvent.Down && pr.Cash + pr.Resources >= actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost)
             {
                 actorActions.Actor.World.IssueOrder(new Order("Convert-" + actorString, actorActions.Actor, false));
                 pressed = true;

@@ -56,7 +56,8 @@ ui_tooltipbar: 116:5
 
 healsalve_trinket_ilde: 2514:0
 healsalve_trinket_icon: 2514:1
-healsalve_trinket_effect: 360:0-3
+
+# effects -------------------- 
 
 #Faction One ------------------------------------------
 
@@ -97,6 +98,7 @@ paladin_icon_disabled: 2586:1
 #Animations / Effects ------------------------------
 
 effect_moveorder: 8998:0-4
+healsalve_trinket_effect: 360:0-3
 
 #paladin_stand: 1320:3x 1320:3x 1320:3x 1320:3x 1320:3 1320:3 1320:3 1320:3
 #paladin_idle: 1320:0-3 1320:0-3x
@@ -260,3 +262,5 @@ cursor_move_blocked: 9000:7
 cursor_deploy: 9000:9
 cursor_deploy_blocked: 9000:7
 cursor_select: 9000:4
+cursor_ability: 9000:3
+cursor_ability_blocked: 9000:7

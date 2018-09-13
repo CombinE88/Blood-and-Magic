@@ -72,18 +72,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             {
                 if (research != null && currentResearchTime++ >= MaxResearchTime)
                 {
-                    for (var i = 0; i < research.Researchable.Count; i++)
-                    {
-                        var list = research.Info.Researchable.ToList();
-                        if (list[i].Key == ResearchItem)
-                        {
-                            research.Researchable[i] = ResearchItem;
-                            Researching = false;
-                            ResearchItem = "";
-                            currentResearchTime = 0;
-                            break;
-                        }
-                    }
+                    var list = research.Researchable;
+                    list.Add(ResearchItem);
+                    Researching = false;
+                    ResearchItem = "";
+                    currentResearchTime = 0;
                 }
             }
 
