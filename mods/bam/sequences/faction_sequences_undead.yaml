@@ -1,0 +1,131 @@
+
+zombie:
+	Inherits: ^default
+	stand: zombie_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: zombie_stand.ani
+		Tick: 120
+		Facings: 8
+	run: zombie_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: zombie_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: zombie_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: zombie_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: zombie_die.ani
+		Tick: 120
+		Length: 7
+	icon: zombie_icon.ani
+	disabled-icon: zombie_icon_disabled.ani
+
+goblin:
+	Inherits: ^default
+	stand: goblin_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: goblin_stand.ani
+		Tick: 120
+		Facings: 8
+	run: goblin_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: goblin_attackranged.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: goblin_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: goblin_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: goblin_die.ani
+		Tick: 120
+		Length: 7
+	icon: goblin_icon.ani
+	disabled-icon: goblin_icon_disabled.ani
+
+goblin_projectile:
+	idle: goblin_arrow.ani
+		Facings: 8
+
+ghoul:
+	Inherits: ^default
+	stand: ghoul_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: ghoul_stand.ani
+		Tick: 120
+		Facings: 8
+	run: ghoul_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: ghoul_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: ghoul_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: ghoul_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: ghoul_die.ani
+		Tick: 120
+		Length: 7
+	icon: ghoul_icon.ani
+	disabled-icon: ghoul_icon_disabled.ani
+
+gargoyle:
+	Inherits: ^default
+	stand: gargoyle_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+		Offset: 0, -20
+	idle: gargoyle_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+		Offset: 0, -20
+	run: gargoyle_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+		Offset: 0, -20
+	attack: gargoyle_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+		Offset: 0, -20
+	aim: gargoyle_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: gargoyle_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+		Offset: 0, -20
+	die: gargoyle_die.ani
+		Tick: 120
+		Length: 8
+		Offset: 0, -20
+	icon: gargoyle_icon.ani
+	disabled-icon: gargoyle_icon_disabled.ani

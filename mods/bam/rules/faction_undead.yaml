@@ -1,0 +1,134 @@
+
+ZOMBIE:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Zombie
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: zombie
+	Armament:
+		Weapon: CloseCombatSword
+	DungeonsAndDragonsStats:
+		Damage: 5
+		Armor: 2
+		Speed: 2
+        Attributes: evil
+	WithImpactAnimation:
+	Researchable:
+		Class: zombie
+		TransformTime: 30
+
+GOBLIN:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Goblin
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: goblin
+	Armament:
+		Weapon: RangedCombatGoblin
+		LocalOffset: 1024,0,555
+		FireDelay: 5
+	DungeonsAndDragonsStats:
+		Damage: 4
+		Armor: 3
+		Speed: 2
+        Attributes: evil, alive, humaniod
+	Researchable:
+		Class: goblin
+		TransformTime: 35
+
+GHOUL:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Ghoul
+	Health:
+		HP: 25
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: ghoul
+	Armament:
+		Weapon: CloseCombatClaw
+	DungeonsAndDragonsStats:
+		Damage: 4
+		Armor: 2
+		Speed: 3
+        Attributes: evil, humanoid
+	WithImpactAnimation:
+	Researchable:
+		Class: ghoul
+		TransformTime: 30
+	GhoulLeechLive:
+
+GARGOYLE:
+	Inherits@1: ^Flyer
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 25
+	Tooltip:
+		Name: Gargoyle
+	Health:
+		HP: 25
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: gargoyle
+	Armament:
+		Weapon: CloseCombatClaw
+	DungeonsAndDragonsStats:
+		Damage: 4
+		Armor: 2
+		Speed: 3
+        Attributes: evil, humanoid, alive
+	Researchable:
+		Class: gargoyle
+		TransformTime: 45
+	WithShadow:
+		Offset: 0,0,-512
+	Selectable:
+		Bounds: 40,38,0,-20
+		DecorationBounds: 40,38,0,-20
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7314.wav
+	CanHoldTrinket:

@@ -77,6 +77,13 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     Researching = false;
                     ResearchItem = "";
                     currentResearchTime = 0;
+                    Game.Sound.PlayNotification(
+                        ActorActions.BamUi.World.Map.Rules,
+                        ActorActions.BamUi.World.LocalPlayer,
+                        "Speech",
+                        "ResearchComplete",
+                        ActorActions.BamUi.World.LocalPlayer.Faction.InternalName
+                    );
                 }
             }
 

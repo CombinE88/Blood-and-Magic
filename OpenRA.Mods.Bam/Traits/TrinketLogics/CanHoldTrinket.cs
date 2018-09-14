@@ -111,7 +111,12 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             {
                 case "healsalve":
 
-                    if (!self.IsDead && self.IsInWorld && self.Info.HasTraitInfo<HealthInfo>())
+                    if (
+                        !self.IsDead
+                        && self.IsInWorld
+                        && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                        && self.TraitOrDefault<DungeonsAndDragonsStats>() != null
+                        && self.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive"))
                     {
                         self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP)));
                         var trinket = HoldsTrinket;

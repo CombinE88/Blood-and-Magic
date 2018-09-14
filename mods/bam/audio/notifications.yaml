@@ -70,4 +70,5 @@ Speech:
 		UnitLost: 55615
 		UnitReady: 55620
 		Win: 7218
+		ResearchComplete: 55614
 		AlreadyResearched: 55621

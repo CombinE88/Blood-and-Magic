@@ -101,6 +101,27 @@ RangedCombat:
 		Explosions: spark_effect
 		ExplosionPalette: bam11195
 
+RangedCombatGoblin:
+	ReloadDelay: 35
+	Range: 3c512
+	Report: 7318.wav
+	ValidTargets: Default
+	Projectile: Bullet
+		Speed: 0c125
+		Image: goblin_projectile
+		Palette: bam11195
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7274.wav
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
+
 CloseCombatGolem:
 	ReloadDelay: 30
 	Range: 1c512

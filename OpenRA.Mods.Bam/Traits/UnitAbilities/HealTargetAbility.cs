@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -109,6 +110,8 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.TraitOrDefault<Health>().HP < a.TraitOrDefault<Health>().MaxHP
                 && a.Owner.IsAlliedWith(self.Owner)
                 && pr.Cash + pr.Resources >= info.Ammount
+                && a.TraitOrDefault<DungeonsAndDragonsStats>() != null
+                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
             );
             if (allowed.Any())
             {
@@ -142,7 +145,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || (target.Location - self.Location).Length > range
                 || !(hp.HP < hp.MaxHP)
                 || !target.Owner.IsAlliedWith(self.Owner)
-                || pr.Cash + pr.Resources < ammount)
+                || pr.Cash + pr.Resources < ammount
+                || target.TraitOrDefault<DungeonsAndDragonsStats>() == null
+                || !target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive"))
                 return false;
 
             return true;

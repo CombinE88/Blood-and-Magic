@@ -13,6 +13,9 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         public readonly int Damage = 0;
         public readonly int Speed = 0;
 
+        [Desc("What is this. possibilities are: humanoid, alive, nature, holy, evil")]
+        public readonly string[] Attributes = {"alive", "humanoid"};
+
         public readonly bool CanbeModified = true;
 
         public object Create(ActorInitializer init)
@@ -76,7 +79,6 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
                 ModifiedDamage += trinketTrati.ExtraDamage;
                 ModifiedSpeed += trinketTrati.ExtraSpeed;
             }
-
         }
 
         public int GetFirepowerModifier()
@@ -86,7 +88,7 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
 
         public int GetSpeedModifier()
         {
-            return 100 + ModifiedSpeed*15;
+            return 100 + ModifiedSpeed * 15;
         }
     }
 }

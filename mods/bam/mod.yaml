@@ -30,6 +30,7 @@ Rules:
 	bam|rules/infantry_misc.yaml
 	bam|rules/buildings_misc.yaml
 	bam|rules/faction_rtr.yaml
+	bam|rules/faction_undead.yaml
 
 Sequences:
 	core|sequences/misc.yaml
@@ -38,6 +39,7 @@ Sequences:
 	bam|sequences/basictrinkets.yaml
 	bam|sequences/basicui.yaml
 	bam|sequences/faction_sequences_rtr.yaml
+	bam|sequences/faction_sequences_undead.yaml
 
 TileSets:
 	bam|tilesets/platforms.yaml
