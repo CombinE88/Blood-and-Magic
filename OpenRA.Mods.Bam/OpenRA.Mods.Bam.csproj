@@ -75,6 +75,7 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BamWidgets\AbilityButtonWidget.cs" />
     <Compile Include="BamWidgets\ActorActionsWidget.cs" />
     <Compile Include="BamWidgets\BamToolTipWidget.cs" />
     <Compile Include="BamWidgets\BamUIWidget.cs" />
@@ -93,7 +94,6 @@
     <Compile Include="BamWidgets\ManaCounterWidget.cs" />
     <Compile Include="BamWidgets\SelectionNameWidget.cs" />
     <Compile Include="BamWidgets\SideBarBackgroundWidget.cs" />
-    <Compile Include="BamWidgets\Warhead\SpecialWarhead.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />
@@ -125,6 +125,7 @@
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />
+    <Compile Include="Warhead\SpecialWarhead.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

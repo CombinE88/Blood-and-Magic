@@ -52,10 +52,25 @@ ui_research_button: 120:0-1
 
 ui_tooltipbar: 116:5
 
+ui_ability_button: 108:0-1
+
 #Trinkets One ------------------------------------------
 
 healsalve_trinket_ilde: 2514:0
 healsalve_trinket_icon: 2514:1
+
+manaorb_trinket_ilde: 2542:0
+manaorb_trinket_icon: 2542:1
+
+boots_trinket_ilde: 2504:0
+boots_trinket_icon: 2504:1
+
+gauntlet_trinket_ilde: 2528:0
+gauntlet_trinket_icon: 2528:1
+
+mantle_trinket_ilde: 2520:0
+mantle_trinket_icon: 2520:1
+
 
 # effects -------------------- 
 

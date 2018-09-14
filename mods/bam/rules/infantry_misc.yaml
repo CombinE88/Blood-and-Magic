@@ -21,8 +21,6 @@ ACOLYTE:
 	TransformToConditionOnIdle:
 	ManaShooter:
 		OnlyStores: true
-		Modifier:
-			Manaspot: 66
 	Buildable:
 		Queue: Golem
 		BuildPaletteOrder: 130
@@ -69,6 +67,8 @@ PYRAMID:
 		Speed: 1
 		Locomotor: none
 	ManaShooter:
+		Modifier:
+			Manaspot: 45
 	WithManaAnimation:
 	-Living:
 	TransformToBuilding:

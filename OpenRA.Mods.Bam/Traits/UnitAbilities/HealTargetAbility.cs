@@ -13,7 +13,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public readonly string Cursor = "ability";
 
-        public readonly int Delay = 50;
+        public readonly string AbilityString = "Heal target by 10";
+
+        public readonly int Delay = 200;
 
         public readonly string Image = "trinkethealsalve";
         public readonly string EffectSequence = "effect";
@@ -28,7 +30,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
     public class HealTargetAbility : IIssueOrder, IResolveOrder, ITick
     {
         readonly HealTargetAbilityInfo info;
-        private int tick;
+        public int CurrentDelay;
 
         public HealTargetAbility(ActorInitializer init, HealTargetAbilityInfo info)
         {
@@ -50,13 +52,13 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public void ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "HealTarget" || !(tick >= info.Delay))
+            if (order.OrderString != "HealTarget" || !(CurrentDelay >= info.Delay))
                 return;
 
             if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(10))
             {
                 order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-10));
-                tick = 0;
+                CurrentDelay = 0;
                 self.World.AddFrameEndTask(w =>
                     w.Add(new SpriteEffect(
                         order.Target.Actor.CenterPosition,
@@ -69,8 +71,8 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public void Tick(Actor self)
         {
-            if (tick < info.Delay)
-                tick++;
+            if (CurrentDelay < info.Delay)
+                CurrentDelay++;
         }
     }
 

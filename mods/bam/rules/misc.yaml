@@ -34,3 +34,46 @@ TRINKET.HEALSALVE:
 		Name: Healing Salve
 	IsTrinket:
 		TrinketType: healsalve
+
+TRINKET.MANAORB:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketmanaorb
+	Tooltip:
+		Name: Mana Orb
+	IsTrinket:
+		TrinketType: manaorb
+		EffectOnPickup: true
+
+TRINKET.BOOTS:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketboots
+	Tooltip:
+		Name: Boots of Wind
+	IsTrinket:
+		TrinketType: boots
+		OneTimeUse: false
+		ContiniusEffect: true
+
+TRINKET.MANTLE:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketmantle
+	Tooltip:
+		Name: Mantle of Might
+	IsTrinket:
+		TrinketType: mantle
+		OneTimeUse: false
+		ContiniusEffect: true
+
+TRINKET.GAUNTLET:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketgauntlet
+	Tooltip:
+		Name: Gauntlet of Power
+	IsTrinket:
+		TrinketType: gauntlet
+		OneTimeUse: false
+		ContiniusEffect: true

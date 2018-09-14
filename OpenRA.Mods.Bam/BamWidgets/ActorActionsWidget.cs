@@ -6,8 +6,10 @@ using OpenRA.Mods.Bam.BamWidgets.Buttons;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
+using OpenRA.Mods.Bam.Traits.UnitAbilities;
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Warheads;
 using OpenRA.Traits;
 using OpenRA.Widgets;
 
@@ -31,6 +33,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private DrawValueStatisticsWidget DrawValueStatistics;
         private HealthBarUIWidget HealthBarUI;
         private SelectionNameWidget SelectionName;
+        private AbilityButtonWidget AbilityButton;
 
         private List<ConvertToButtonWidget> ConvertToButtons = new List<ConvertToButtonWidget>();
 
@@ -50,6 +53,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AddChild(DrawValueStatistics = new DrawValueStatisticsWidget(this) {Visible = false});
             AddChild(HealthBarUI = new HealthBarUIWidget(this) {Visible = false});
             AddChild(SelectionName = new SelectionNameWidget(this) {Visible = false});
+            AddChild(AbilityButton = new AbilityButtonWidget(this) {Visible = false});
 
             AddChild(ResearchEnabler = new ShowResearchButtonWidget(this) {Visible = true});
 
@@ -77,6 +81,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             DrawValueStatistics.Visible = false;
             HealthBarUI.Visible = false;
             SelectionName.Visible = false;
+            AbilityButton.Visible = false;
 
             // TODO hide all others here
 
@@ -89,6 +94,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             if (Actor == null)
                 return;
+
+            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>())
+                AbilityButton.Visible = true;
 
             if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && !Actor.Info.TraitInfo<ManaShooterInfo>().OnlyStores)
                 manaSend.Visible = true;

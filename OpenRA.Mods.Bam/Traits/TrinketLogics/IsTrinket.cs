@@ -12,9 +12,9 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         public readonly string TrinketType = "";
 
-        public readonly int DropChance = 50;
-
         public readonly string EffectSequence = "effect";
+
+        public readonly bool ShowEffect = true;
 
         public readonly string EffectPalette = "bam11195";
 

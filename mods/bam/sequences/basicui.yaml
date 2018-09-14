@@ -25,3 +25,8 @@ basic_ui:
 		Length: 6
 
 	ui_tooltipbar: ui_tooltipbar.ani
+	ui_Ability_button: ui_ability_button.ani
+	ui_Ability_button_disabled: ui_ability_button.ani
+		Start: 1
+
+		

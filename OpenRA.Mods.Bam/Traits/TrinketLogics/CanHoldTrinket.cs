@@ -22,6 +22,9 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         public Actor HoldsTrinket;
         private Actor ignoreTrinket;
         private Actor self;
+        public int ExtraDamage;
+        public int ExtraArmor;
+        public int ExtraSpeed;
 
         public CanHoldTrinket(ActorInitializer init, CanHoldTrinketInfo info)
         {
@@ -52,12 +55,12 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         public void ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "dropItem" && order.OrderString != "UseTrinket")
+            if (order.OrderString != "DropTrinket" && order.OrderString != "UseTrinket")
                 return;
 
             switch (order.OrderString)
             {
-                case "DropItem":
+                case "DropTrinket":
                     DropTrinket(self);
                     break;
                 case "UseTrinket":
@@ -77,15 +80,23 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 ignoreTrinket = null;
 
             if (newTrinket == null || HoldsTrinket != null || newTrinket == ignoreTrinket)
+            {
+                ExtraArmor = 0;
+                ExtraDamage = 0;
+                ExtraSpeed = 0;
                 return;
+            }
 
             HoldsTrinket = newTrinket;
             self.World.Remove(newTrinket);
-            if (HoldsTrinket.Info.TraitInfo<IsTrinketInfo>().EffectOnPickup)
-                EffectOnPickup();
 
-            if (HoldsTrinket.Info.TraitInfo<IsTrinketInfo>().ContiniusEffect)
-                ContiniusEffect();
+            var trinketInfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
+
+            if (trinketInfo != null && trinketInfo.EffectOnPickup)
+                EffectOnPickup(trinketInfo);
+
+            if (trinketInfo != null && trinketInfo.ContiniusEffect)
+                ContiniusEffect(trinketInfo);
         }
 
 
@@ -122,10 +133,9 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             }
         }
 
-        public void EffectOnPickup()
+        public void EffectOnPickup(IsTrinketInfo trinketInfo)
         {
-            var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
-            switch (trinketinfo.TrinketType)
+            switch (trinketInfo.TrinketType)
             {
                 case "manaorb":
 
@@ -133,19 +143,37 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                     var trinket = HoldsTrinket;
                     HoldsTrinket = null;
                     ignoreTrinket = null;
-                    trinket.Dispose();
+
+                    if (trinketInfo.ShowEffect)
+                        self.World.AddFrameEndTask(w =>
+                            w.Add(new SpriteEffect(
+                                self.CenterPosition,
+                                w,
+                                trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                trinketInfo.EffectSequence,
+                                trinketInfo.EffectPalette)));
+
+                    if (trinketInfo.OneTimeUse)
+                        trinket.Dispose();
+
                     break;
             }
         }
 
-        public void ContiniusEffect()
+        public void ContiniusEffect(IsTrinketInfo trinketInfo)
         {
-            var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
-            switch (trinketinfo.TrinketType)
+            switch (trinketInfo.TrinketType)
             {
-                case "mightmantle":
+                case "mantle":
+                    ExtraArmor = 1;
+                    break;
 
-                    self.Trait<DungeonsAndDragonsStats>().ModifiedArmor += 1;
+                case "boots":
+                    ExtraSpeed = 1;
+                    break;
+
+                case "gauntlet":
+                    ExtraDamage = 1;
                     break;
             }
         }

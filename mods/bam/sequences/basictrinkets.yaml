@@ -9,3 +9,42 @@ trinkethealsalve:
 	icon: healsalve_trinket_icon.ani
 		ZOffset: -1024
 		Offset: 0,-16
+
+trinketmanaorb:
+	Inherits: ^default
+	idle: manaorb_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	effect: healsalve_trinket_effect.ani
+		Length: 4
+		Tick: 100
+	icon: manaorb_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16
+		
+trinketboots:
+	Inherits: ^default
+	idle: boots_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: boots_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16
+
+trinketgauntlet:
+	Inherits: ^default
+	idle: gauntlet_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: gauntlet_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16
+
+trinketmantle:
+	Inherits: ^default
+	idle: mantle_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: mantle_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16

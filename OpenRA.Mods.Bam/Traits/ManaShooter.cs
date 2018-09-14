@@ -11,11 +11,11 @@ namespace OpenRA.Mods.Bam.Traits
     {
         public readonly int MaxStorage = 10;
 
-        public readonly int Interval = 175;
+        public readonly int Interval = 250;
 
         public readonly int OverWait = 100;
 
-        public readonly Dictionary<string,int> Modifier = new Dictionary<string, int>();
+        public readonly Dictionary<string, int> Modifier = new Dictionary<string, int>();
 
         public bool OnlyStores = false;
 
@@ -53,7 +53,8 @@ namespace OpenRA.Mods.Bam.Traits
             {
                 var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
                 var modifier = Info.Modifier.ContainsKey(ground) ? Info.Modifier[ground] : 100;
-                if (tick++ >= Info.Interval * modifier / 100)
+                var max = Info.Interval * modifier;
+                if (tick++ >= max / 100)
                 {
                     CurrentStorage++;
                     tick = 0;

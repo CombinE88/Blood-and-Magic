@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
@@ -67,6 +68,15 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
             ModifiedArmor = Armor + tilesetInformations.Armor;
             ModifiedDamage = Damage + tilesetInformations.Damage;
             ModifiedSpeed = Speed + tilesetInformations.Speed;
+
+            var trinketTrati = self.TraitOrDefault<CanHoldTrinket>();
+            if (trinketTrati != null)
+            {
+                ModifiedArmor += trinketTrati.ExtraArmor;
+                ModifiedDamage += trinketTrati.ExtraDamage;
+                ModifiedSpeed += trinketTrati.ExtraSpeed;
+            }
+
         }
 
         public int GetFirepowerModifier()
