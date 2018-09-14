@@ -1,4 +1,4 @@
-CloseCombat:
+CloseCombatFist:
 	ReloadDelay: 25
 	Range: 1c512
 	ValidTargets: Default
@@ -11,6 +11,43 @@ CloseCombat:
 		Delay: 5
 		Damage: 1
 		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7256.wav
+		ValidTargets: Default
+
+CloseCombatSword:
+	ReloadDelay: 25
+	Range: 1c512
+	ValidTargets: Default
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
+		Delay: 5
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7260.wav
+		ValidTargets: Default
+
+CloseCombatClaw:
+	ReloadDelay: 25
+	Range: 1c512
+	ValidTargets: Default
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
+		Delay: 5
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7258.wav
+		ValidTargets: Default
 
 RangedCombat:
 	ReloadDelay: 25

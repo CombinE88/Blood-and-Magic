@@ -83,7 +83,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             {
                 if (!showResearch.Researching && showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience >= ResearchCost)
                 {
-                    showResearch.ActorActions.BamUi.World.IssueOrder(new Order("ExpRemove-" + ResearchCost, showResearch.ActorActions.BamUi.World.LocalPlayer.PlayerActor, false));
+                    showResearch.ActorActions.BamUi.World.IssueOrder(new Order("ExpRemove-" + researchItem, showResearch.ActorActions.BamUi.World.LocalPlayer.PlayerActor, false));
                     pressed = true;
 
                     showResearch.ResearchItem = researchItem;

@@ -79,11 +79,15 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             if (newTrinket == null && ignoreTrinket != null)
                 ignoreTrinket = null;
 
-            if (newTrinket == null || HoldsTrinket != null || newTrinket == ignoreTrinket)
+            if (HoldsTrinket == null)
             {
                 ExtraArmor = 0;
                 ExtraDamage = 0;
                 ExtraSpeed = 0;
+            }
+
+            if (newTrinket == null || HoldsTrinket != null || newTrinket == ignoreTrinket)
+            {
                 return;
             }
 

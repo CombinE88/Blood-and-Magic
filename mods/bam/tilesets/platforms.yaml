@@ -10,67 +10,61 @@ Terrain:
 		TargetTypes: Void
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 000000
-		RestrictPlayerColor: true
 	TerrainType@Plattform:
 		Type: Plattform
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 8F7C69
-		RestrictPlayerColor: true
 	TerrainType@Stairs:
 		Type: Stairs
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 726354
-		RestrictPlayerColor: true
 	TerrainType@Walls:
 		Type: Walls
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 473e34
-		RestrictPlayerColor: true
 	TerrainType@WoodBridge:
 		Type: WoodBridge
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: B66B40
-		RestrictPlayerColor: true
 	TerrainType@StoneBridge:
 		Type: StoneBridge
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 726354
-		RestrictPlayerColor: true
 	TerrainType@Button:
 		Type: Button
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 3DC65B
-		RestrictPlayerColor: true
 	TerrainType@ButtonActive:
 		Type: ButtonActive
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 3DC65B
-		RestrictPlayerColor: true
 	TerrainType@Trap:
 		Type: Trap
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: D23B39
-		RestrictPlayerColor: true
 	TerrainType@TrapActive:
 		Type: TrapActive
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: D23B39
-		RestrictPlayerColor: true
 	TerrainType@Mana:
 		Type: Manaspot
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 697C8F
-		RestrictPlayerColor: true
+	TerrainType@Rubble:
+		Type: Rubble
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 4c4640
 
 Templates:
 	Template@0:

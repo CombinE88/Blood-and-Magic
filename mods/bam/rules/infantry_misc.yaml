@@ -8,7 +8,7 @@ ACOLYTE:
 	RenderSprites:
 		Image: acolyte
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
@@ -52,7 +52,7 @@ PYRAMID:
 	Health:
 		HP: 20
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c0
 		Type: CenterPosition
 	#WithSpriteBody:
 	#	Sequence: transformed_stand

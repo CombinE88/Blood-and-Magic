@@ -1,6 +1,5 @@
 ^Walker:
 	Inherits: ^CoreInfantry
-	#Inherits@2: ^CoreArmedSelf
 	RenderSprites:
 		PlayerPalette: BamPlayer
 	Selectable:
@@ -13,10 +12,20 @@
 		RequiredForShortGame: true
 	Tooltip:
 		GenericName: Guy
-	Targetable:
-		TargetTypes: Ground
-	#UpdatesPlayerStatistics:
 	CanHoldTrinket:
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: BamPlayer
+	GeneratesExperience:
+	Targetable:
+		TargetTypes: Default
+
+^Flyer:
+	Inherits: ^Walker
+	Mobile:
+		Locomotor: flying
+	Tooltip:
+		GenericName: Guy
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 		DeathSequencePalette: BamPlayer
@@ -40,3 +49,48 @@
 		Type: CenterPosition
 	IsTrinket:
 	-MustBeDestroyed:
+
+^prop:
+	Inherits: ^CoreConstruction
+	Tooltip:
+		Name: Monument
+	Targetable:
+		TargetTypes: Default
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Health:
+		HP: 45
+	RenderSprites:
+		Palette: bam11195
+	EditorTilesetFilter:
+		Categories: Monuments
+	DropTrinketOnDeath:
+
+^prop.rubble:
+	Inherits: ^CoreUnit
+	HiddenUnderFog:
+		Type: CenterPosition
+	AppearsOnRadar:
+	Tooltip:
+		Name: Rubbish
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	RenderSprites:
+		Palette: bam11195
+	WithSpriteBody:
+		Sequence: rubble
+	EditorTilesetFilter:
+		Categories:
+	Interactable:
+	Immobile:
+		OccupiesSpace: false
+	ChangesTerrain:
+		TerrainType: Rubble
+	-MustBeDestroyed:
+	-AttackMove:
+	-WithFacingSpriteBody:
+	-SelectionDecorations:

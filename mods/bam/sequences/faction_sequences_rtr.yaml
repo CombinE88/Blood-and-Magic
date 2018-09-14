@@ -1,15 +1,22 @@
 barracks:
 	Defaults:
 		AddExtension: False
-	idle: bits/buildings.png
-		Frames: 0
+	idle: bits/2x2buildings.png
+		Frames: 5
 	icon: barracks_icon.ani
+
+armorlidge:
+	Defaults:
+		AddExtension: False
+	idle: bits/2x2buildings.png
+		Frames: 7
+	icon: armorLodge_icon.ani
 
 warrior:
 	Inherits: ^default
 	stand: warrior_idle.ani
 		Tick: 120
-		Facings: 8
+		Facings: 2
 		Length: 4
 	idle: warrior_stand.ani
 		Tick: 120
@@ -36,7 +43,7 @@ ranger:
 	Inherits: ^default
 	stand: ranger_idle.ani
 		Tick: 120
-		Facings: 8
+		Facings: 2
 		Length: 4
 	idle: ranger_stand.ani
 		Tick: 120
@@ -63,12 +70,39 @@ ranger_projectile:
 	idle: ranger_arrow.ani
 		Facings: 8
 
+cleric:
+	Inherits: ^default
+	stand: cleric_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: cleric_stand.ani
+		Tick: 120
+		Facings: 8
+	run: cleric_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: cleric_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: cleric_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: cleric_die.ani
+		Tick: 120
+		Length: 7
+	icon: cleric_icon.ani
+	disabled-icon: cleric_icon_disabled.ani
+
 paladin:
 	Inherits: ^default
 	stand: paladin_idle.ani
 		Tick: 120
-		Facings: 8
-		Length: 4
+		Facings: 2
+		Length: 2
 	idle: paladin_stand.ani
 		Tick: 120
 		Facings: 8
@@ -89,3 +123,30 @@ paladin:
 		Length: 7
 	icon: paladin_icon.ani
 	disabled-icon: paladin_icon_disabled.ani
+
+griffin:
+	Inherits: ^default
+	stand: griffin_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: griffin_stand.ani
+		Tick: 120
+		Facings: 8
+	run: griffin_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: griffin_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	damage: griffin_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: griffin_die.ani
+		Tick: 120
+		Length: 7
+	icon: griffin_icon.ani
+	disabled-icon: griffin_icon_disabled.ani

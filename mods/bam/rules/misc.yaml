@@ -23,6 +23,69 @@ EditorWorld:
 	EditorSelectionLayer:
 		Palette: bam11195
 
+# Props -------
+
+
+STATUE1:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE1.
+
+STATUE2:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE2.PROP
+
+STATUE3:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE3.PROP
+
+STATUE4:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE4.PROP
+
+STATUE5:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE5.PROP
+
+STATUE6:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE6.PROP
+
+STATUE1.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue1
+
+STATUE2.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue2
+
+STATUE3.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue3
+
+STATUE4.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue4
+
+STATUE5.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue5
+
+STATUE6.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue6
+
 # Trinkets -----
 
 

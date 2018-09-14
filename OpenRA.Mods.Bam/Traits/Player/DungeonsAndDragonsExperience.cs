@@ -1,3 +1,4 @@
+using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits.Player
@@ -12,7 +13,7 @@ namespace OpenRA.Mods.Bam.Traits.Player
 
     public class DungeonsAndDragonsExperience : ISync, IResolveOrder
     {
-        [Sync] public int Experience = 9999;
+        [Sync] public int Experience;
 
         void TakeCash(int num)
         {
@@ -29,11 +30,9 @@ namespace OpenRA.Mods.Bam.Traits.Player
             if (!order.OrderString.Contains("ExpRemove-"))
                 return;
 
-            int number;
-            if (int.TryParse(order.OrderString.Replace("ExpRemove-", ""), out number))
-                return;
+            var researchItem = order.OrderString.Replace("ExpRemove-", "");
 
-            TakeCash(number);
+            TakeCash(self.Owner.PlayerActor.Info.TraitInfo<ResearchInfo>().Researchable[researchItem]);
         }
     }
 }

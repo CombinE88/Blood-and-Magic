@@ -56,7 +56,7 @@ namespace OpenRA.Mods.Common.Traits.Render
 
         public void Damaged(Actor self, AttackInfo e)
         {
-            if (!self.IsDead && self.IsInWorld)
+            if (!self.IsDead && self.IsInWorld && !e.Damage.DamageTypes.Contains("Healing"))
             {
                 self.Trait<Mobile>().Facing = (self.World.Map.CenterOfCell(e.Attacker.Location) - self.CenterPosition).Yaw.Facing;
                 PlayManaAnimation(self);

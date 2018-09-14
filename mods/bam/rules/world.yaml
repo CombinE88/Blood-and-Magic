@@ -12,6 +12,23 @@
 			Trap: 100
 			TrapActive: 100
 			Manaspot: 100
+			Rubble: 100
+
+	Locomotor@FLYING:
+		Name: flying
+		TerrainSpeeds:
+			Plattform: 100
+			Stairs: 100
+			WoodBridge: 100
+			StoneBridge: 100
+			Button: 100
+			ButtonActive: 100
+			Trap: 100
+			TrapActive: 100
+			Manaspot: 100
+			Rubble: 100
+			Clear: 100
+			Walls: 100
 
 	Locomotor@NONE:
 		Name: none
@@ -47,3 +64,8 @@
 			Damage: -2
 			Armor: -1
 			Speed: 0
+		TilesetInformations@Rubble:
+			Tilename: Rubble
+			Damage: -1
+			Armor: 1
+			Speed: -1

@@ -13,16 +13,15 @@ World:
 		OuterSupportRadius: 2
 Player:
 	Research@rtr:
-		PreResearched: warrior, paladin
+		PreResearched: warrior, cleric
 		Faction: rtr
 		Researchable:
 			warrior: 500
-			ranger: 1500
-			paladin: 3000
+			cleric: 500
+			ranger: 1125
+			griffin: 1800
+			paladin: 3150
 		TimePerCost: 3
-
-#ranger: 1500
-#paladin : 3000
 
 BARRACKS:
 	Inherits@: ^CoreBuilding
@@ -38,11 +37,11 @@ BARRACKS:
 			BottomRight: 1024, 1024
 	RenderSprites:
 		Image: barracks
-		PlayerPalette: PngPlayer
+		PlayerPalette: BamPlayer
 	Tooltip:
 		Name: Building Plattform
 	AllowConvert:
-		ConvertTo: warrior, ranger,	paladin
+		ConvertTo: warrior, cleric, ranger, griffin, paladin
 	Health:
 		HP: 360
 	Targetable:
@@ -109,6 +108,41 @@ RANGER:
 		Class: ranger
 		TransformTime: 35
 
+CLERIC:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 25
+	Tooltip:
+		Name: Cleric
+	Health:
+		HP: 25
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: cleric
+	Armament:
+		Weapon: CloseCombat
+	DungeonsAndDragonsStats:
+		Damage: 2
+		Armor: 1
+		Speed: 3
+	Researchable:
+		Class: cleric
+		TransformTime: 40
+	HealTargetAbility:
+		Ammount: 5
+		Delay: 100
+		AbilityString: Heal taget by 5
+		Range: 6
+		AutoTarget: true
+
 PALADIN:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf
@@ -138,3 +172,34 @@ PALADIN:
 		Class: paladin
 		TransformTime: 40
 	HealTargetAbility:
+		Delay: 250
+		Range: 3
+
+GRIFFIN:
+	Inherits@1: ^Flyer
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Griffin
+	Health:
+		HP: 35
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: griffin
+	Armament:
+		Weapon: CloseCombat
+	DungeonsAndDragonsStats:
+		Damage: 5
+		Armor: 3
+		Speed: 2
+	Researchable:
+		Class: griffin
+		TransformTime: 40

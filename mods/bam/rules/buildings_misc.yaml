@@ -44,7 +44,7 @@ PLATTFORMB:
 			BottomRight: 1024, 1024
 	RenderSprites:
 		Image: plattformb
-		PlayerPalette: PngPlayer
+		Palette: bam11195
 	Tooltip:
 		Name: Building Plattform
 	AllowTransfrom:

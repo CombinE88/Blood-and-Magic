@@ -9,6 +9,8 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class TransformAfterTimeInfo : ITraitInfo
     {
+        public readonly string Notification = "UnitReady";
+
         [Desc("Offset to spawn the transformed actor relative to the current cell.")]
         public readonly CVec Offset = CVec.Zero;
 
@@ -65,6 +67,9 @@ namespace OpenRA.Mods.Bam.Traits
                     NotifyBuildComplete = info.NotifyBuildComplete,
                     Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
                 });
+
+                var player =self.World.LocalPlayer;
+                Game.Sound.PlayNotification(self.World.Map.Rules, player, "Speech", info.Notification, self.Owner.Faction.InternalName);
 
                 Transforming = false;
             }

@@ -8,7 +8,111 @@ mainbase:
 plattformb:
 	Defaults:
 		AddExtension: False
-	idle: bits/buildings.png
-		Frames: 5
+	idle: bits/2x2buildings.png
+		Frames: 20
 		ZOffset: -2048
 	icon: plattform_icon.ani
+
+statue1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 0
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 1
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue2:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 2
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 3
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue3:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 4
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 5
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue4:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 6
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 7
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue5:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 8
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 9
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue6:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 10
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 11
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+
+barrels1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 12
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels2:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 13
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels3:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 14
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 15
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani

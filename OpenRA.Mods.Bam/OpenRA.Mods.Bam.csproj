@@ -120,6 +120,7 @@
     <Compile Include="Traits\TransformToConditionOnIdle.cs" />
     <Compile Include="Traits\Living.cs" />
     <Compile Include="Traits\TrinketLogics\CanHoldTrinket.cs" />
+    <Compile Include="Traits\TrinketLogics\DropTrinketOnDeath.cs" />
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
     <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />

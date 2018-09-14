@@ -3,6 +3,7 @@ using System.Linq;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits.UnitAbilities
@@ -15,11 +16,17 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public readonly string AbilityString = "Heal target by 10";
 
+        public readonly int Ammount = 10;
+
         public readonly int Delay = 200;
 
         public readonly string Image = "trinkethealsalve";
         public readonly string EffectSequence = "effect";
         public readonly string EffectPalette = "bam11195";
+
+        public readonly string HealSound = "Heal";
+
+        public readonly bool AutoTarget = false;
 
         public object Create(ActorInitializer init)
         {
@@ -39,7 +46,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public IEnumerable<IOrderTargeter> Orders
         {
-            get { yield return new HealTargetAbilityOrderTargeter(info.Cursor, info.Range); }
+            get { yield return new HealTargetAbilityOrderTargeter(info.Cursor, info.Range, info.Ammount); }
         }
 
         public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
@@ -55,9 +62,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (order.OrderString != "HealTarget" || !(CurrentDelay >= info.Delay))
                 return;
 
-            if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(10))
+            if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount))
             {
-                order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-10));
+                order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
                 CurrentDelay = 0;
                 self.World.AddFrameEndTask(w =>
                     w.Add(new SpriteEffect(
@@ -73,17 +80,40 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         {
             if (CurrentDelay < info.Delay)
                 CurrentDelay++;
+
+            if (!info.AutoTarget)
+                return;
+
+            var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
+
+            var targets = self.World.FindActorsInCircle(self.CenterPosition, WDist.FromCells(info.Range)).ToArray();
+            var allowed = targets.Where(a =>
+                a.IsInWorld
+                && !a.IsDead
+                && a.TraitOrDefault<Building>() == null
+                && a.TraitOrDefault<Health>() != null
+                && (a.Location - self.Location).LengthSquared <= info.Range*1024
+                && a.TraitOrDefault<Health>().HP < a.TraitOrDefault<Health>().MaxHP
+                && a.Owner.IsAlliedWith(self.Owner)
+                && pr.Cash + pr.Resources >= info.Ammount
+            );
+            if (allowed.Any())
+            {
+                self.World.IssueOrder(new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
+            }
         }
     }
 
     class HealTargetAbilityOrderTargeter : UnitOrderTargeter
     {
         private int range;
+        private int ammount;
 
-        public HealTargetAbilityOrderTargeter(string cursor, int range)
+        public HealTargetAbilityOrderTargeter(string cursor, int range, int ammount)
             : base("HealTarget", 6, cursor, false, true)
         {
             this.range = range;
+            this.ammount = ammount;
         }
 
         public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
@@ -96,10 +126,10 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || target.IsDead
                 || target.Info.HasTraitInfo<BuildingInfo>()
                 || hp == null
-                || (target.Location - self.Location).LengthSquared > range
+                || (target.Location - self.Location).LengthSquared <= range*1024
                 || !(hp.HP < hp.MaxHP)
                 || !target.Owner.IsAlliedWith(self.Owner)
-                || pr.Cash + pr.Resources < 10)
+                || pr.Cash + pr.Resources < ammount)
                 return false;
 
             return true;
