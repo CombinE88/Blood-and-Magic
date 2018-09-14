@@ -29,6 +29,9 @@ warrior:
 		Tick: 160
 		Length: 4
 		Facings: 8
+	aim: warrior_aim.ani
+		Tick: 160
+		Facings: 8
 	damage: warrior_damage.ani
 		Tick: 160
 		Length: 4
@@ -55,6 +58,9 @@ ranger:
 	attack: ranger_attackranged.ani
 		Tick: 160
 		Length: 4
+		Facings: 8
+	aim: ranger_aim.ani
+		Tick: 160
 		Facings: 8
 	damage: ranger_damage.ani
 		Tick: 160
@@ -87,6 +93,9 @@ cleric:
 		Tick: 160
 		Length: 4
 		Facings: 8
+	aim: cleric_aim.ani
+		Tick: 160
+		Facings: 8
 	damage: cleric_damage.ani
 		Tick: 160
 		Length: 4
@@ -113,6 +122,9 @@ paladin:
 	attack: paladin_attack.ani
 		Tick: 160
 		Length: 4
+		Facings: 8
+	aim: paladin_aim.ani
+		Tick: 160
 		Facings: 8
 	damage: paladin_damage.ani
 		Tick: 160
@@ -146,6 +158,9 @@ griffin:
 		Length: 4
 		Facings: 8
 		Offset: 0, -20
+	aim: griffin_aim.ani
+		Tick: 160
+		Facings: 8
 	damage: griffin_damage.ani
 		Tick: 160
 		Length: 4
@@ -153,7 +168,44 @@ griffin:
 		Offset: 0, -20
 	die: griffin_die.ani
 		Tick: 120
-		Length: 7
+		Length: 8
 		Offset: 0, -20
 	icon: griffin_icon.ani
 	disabled-icon: griffin_icon_disabled.ani
+
+wizard:
+	Inherits: ^default
+	stand: wizard_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: wizard_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	run: wizard_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: wizard_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: wizard_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: wizard_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: wizard_die.ani
+		Tick: 120
+		Length: 9
+	icon: wizard_icon.ani
+	disabled-icon: ranger_icon_disabled.ani
+
+wizard_projectile:
+	idle: wizard_projectile.ani
+		Facings: 8
+		Length: 4
+		Tick: 100

@@ -35,7 +35,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             if (self.World.SharedRandom.Next(0, 100) >= info.Probability)
                 return;
 
-            var allItems = self.World.Map.Rules.Actors.Where(a => a.Value.TraitInfoOrDefault<IsTrinketInfo>() != null).ToArray();
+            var allItems = self.World.Map.Rules.Actors.Where(a => a.Value.TraitInfoOrDefault<IsTrinketInfo>() != null).ToList();
 
             if (!allItems.Any())
                 return;
@@ -52,8 +52,8 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             foreach (var item in allItems)
             {
-                totalChance -= item.Value.TraitInfo<IsTrinketInfo>().DropChance;
-                if (totalChance <= 0)
+                choosRandom -= item.Value.TraitInfo<IsTrinketInfo>().DropChance;
+                if (choosRandom <= 0)
                 {
                     itemToDrop = item.Value.Name;
                     break;

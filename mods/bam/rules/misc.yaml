@@ -29,7 +29,7 @@ EditorWorld:
 STATUE1:
 	Inherits@1: ^prop
 	SpawnActorOnDeath: 
-		Actor: STATUE1.
+		Actor: STATUE1.PROP
 
 STATUE2:
 	Inherits@1: ^prop
@@ -97,6 +97,8 @@ TRINKET.HEALSALVE:
 		Name: Healing Salve
 	IsTrinket:
 		TrinketType: healsalve
+		Sound: 7206.wav
+		DropChance: 90
 
 TRINKET.MANAORB:
 	Inherits@: ^trinket
@@ -107,6 +109,8 @@ TRINKET.MANAORB:
 	IsTrinket:
 		TrinketType: manaorb
 		EffectOnPickup: true
+		Sound: 7286.wav
+		DropChance: 45
 
 TRINKET.BOOTS:
 	Inherits@: ^trinket
@@ -118,6 +122,7 @@ TRINKET.BOOTS:
 		TrinketType: boots
 		OneTimeUse: false
 		ContiniusEffect: true
+		DropChance: 25
 
 TRINKET.MANTLE:
 	Inherits@: ^trinket
@@ -129,6 +134,7 @@ TRINKET.MANTLE:
 		TrinketType: mantle
 		OneTimeUse: false
 		ContiniusEffect: true
+		DropChance: 15
 
 TRINKET.GAUNTLET:
 	Inherits@: ^trinket
@@ -140,3 +146,4 @@ TRINKET.GAUNTLET:
 		TrinketType: gauntlet
 		OneTimeUse: false
 		ContiniusEffect: true
+		DropChance: 15

@@ -19,10 +19,21 @@
 	GeneratesExperience:
 	Targetable:
 		TargetTypes: Default
-	DeathSounds:
+	SimpleDeathSounds:
 		DeathTypes: Death
+		Sound: 7300.wav
 	AttackNotification:
 		Notifications: UnitUnderAttack
+
+^Building:
+	Inherits: ^CoreBuilding
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7210.wav
 
 ^Flyer:
 	Inherits: ^Walker
@@ -71,6 +82,14 @@
 	EditorTilesetFilter:
 		Categories: Monuments
 	DropTrinketOnDeath:
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7310.wav
+
 
 ^prop.rubble:
 	Inherits: ^CoreUnit

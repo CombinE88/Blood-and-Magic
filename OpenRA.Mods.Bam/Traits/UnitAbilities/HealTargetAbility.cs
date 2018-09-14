@@ -3,6 +3,7 @@ using System.Linq;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -27,6 +28,8 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         public readonly string HealSound = "Heal";
 
         public readonly bool AutoTarget = false;
+
+        public readonly string Sound = "7206.wav";
 
         public object Create(ActorInitializer init)
         {
@@ -62,12 +65,22 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (order.OrderString != "HealTarget" || !(CurrentDelay >= info.Delay))
                 return;
 
+            var actor = order.Target.Actor;
+            if (actor == null || actor.IsDead || !actor.IsInWorld)
+                return;
+
             if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount))
             {
                 order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
                 CurrentDelay = 0;
 
-                Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.HealSound, self.Owner.Faction.InternalName);
+                foreach (var trait in self.TraitsImplementing<WithAbilityAnimation>())
+                {
+                    if (!trait.IsTraitDisabled)
+                        trait.PlayManaAnimation(self);
+                }
+
+                Game.Sound.Play(SoundType.World, info.Sound, self.CenterPosition);
 
                 self.World.AddFrameEndTask(w =>
                     w.Add(new SpriteEffect(
@@ -81,10 +94,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public void Tick(Actor self)
         {
-            if (CurrentDelay < info.Delay)
-                CurrentDelay++;
-
-            if (!info.AutoTarget && !self.IsIdle)
+            if (CurrentDelay++ < info.Delay || !info.AutoTarget || !self.IsIdle)
                 return;
 
             var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
@@ -95,7 +105,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && !a.IsDead
                 && a.TraitOrDefault<Building>() == null
                 && a.TraitOrDefault<Health>() != null
-                && (a.Location - self.Location).LengthSquared <= info.Range * 1024
+                && (a.Location - self.Location).Length < info.Range
                 && a.TraitOrDefault<Health>().HP < a.TraitOrDefault<Health>().MaxHP
                 && a.Owner.IsAlliedWith(self.Owner)
                 && pr.Cash + pr.Resources >= info.Ammount
@@ -129,7 +139,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || target.IsDead
                 || target.Info.HasTraitInfo<BuildingInfo>()
                 || hp == null
-                || (target.Location - self.Location).LengthSquared <= range * 1024
+                || (target.Location - self.Location).Length > range
                 || !(hp.HP < hp.MaxHP)
                 || !target.Owner.IsAlliedWith(self.Owner)
                 || pr.Cash + pr.Resources < ammount)

@@ -29,4 +29,16 @@ basic_ui:
 	ui_Ability_button_disabled: ui_ability_button.ani
 		Start: 1
 
-		
+explosion:
+	Defaults:
+		Length: *
+		ZOffset: 2047
+		Tick: 100
+ 	building_collapse_effect: building_collapse_effect.ani
+	explode_fireball_effect: explode_fireball_effect.ani
+	rainbow_sphere_effect: rainbow_sphere_effect.ani
+	spark_effect: spark_effect.ani
+	smokecloud_effect: smokecloud_effect.ani
+	dust_splash_effect: dust_splash_effect.ani
+	electric_sphere_effect: electric_sphere_effect.ani
+	teleport_effect: teleport_effect.ani

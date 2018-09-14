@@ -1,5 +1,11 @@
+BuildingExplode:
+	Warhead@1Eff: CreateEffect
+		Explosions: building_collapse_effect
+		ExplosionPalette: bam11195
+		ImpactActors: false
+
 CloseCombatFist:
-	ReloadDelay: 25
+	ReloadDelay: 30
 	Range: 1c512
 	ValidTargets: Default
 	Projectile: Bullet
@@ -13,10 +19,12 @@ CloseCombatFist:
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: 7256.wav
-		ValidTargets: Default
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
 
 CloseCombatSword:
-	ReloadDelay: 25
+	ReloadDelay: 30
 	Range: 1c512
 	ValidTargets: Default
 	Projectile: Bullet
@@ -30,10 +38,12 @@ CloseCombatSword:
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: 7260.wav
-		ValidTargets: Default
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
 
 CloseCombatClub:
-	ReloadDelay: 25
+	ReloadDelay: 30
 	Range: 1c512
 	ValidTargets: Default
 	Projectile: Bullet
@@ -47,10 +57,12 @@ CloseCombatClub:
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: 7318.wav
-		ValidTargets: Default
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
 
 CloseCombatClaw:
-	ReloadDelay: 25
+	ReloadDelay: 30
 	Range: 1c512
 	ValidTargets: Default
 	Projectile: Bullet
@@ -64,12 +76,14 @@ CloseCombatClaw:
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: 7258.wav
-		ValidTargets: Default
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
 
 RangedCombat:
-	ReloadDelay: 25
+	ReloadDelay: 35
 	Range: 3c512
-	Report: 7272.wav
+	Report: 7318.wav
 	ValidTargets: Default
 	Projectile: Bullet
 		Speed: 0c125
@@ -83,4 +97,46 @@ RangedCombat:
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: 7274.wav
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
+
+CloseCombatGolem:
+	ReloadDelay: 30
+	Range: 1c512
+	ValidTargets: Default
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: Special
 		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
+		Delay: 5
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7248.wav
+		ValidTargets: Default, Ground
+		Explosions: spark_effect
+		ExplosionPalette: bam11195
+
+RangedCombatWizard:
+	ReloadDelay: 35
+	Range: 2c512
+	Report: 7262.wav
+	ValidTargets: Default
+	Projectile: Bullet
+		Speed: 0c125
+		Image: wizard_projectile
+		Palette: bam11195
+	Warhead@1Dam: WizardSpecial
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7226.wav
+		ValidTargets: Default, Ground
+		Explosions: explode_fireball_effect
+		ExplosionPalette: bam11195

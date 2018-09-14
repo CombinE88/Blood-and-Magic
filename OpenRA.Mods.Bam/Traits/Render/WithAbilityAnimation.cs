@@ -4,7 +4,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Common.Traits.Render
 {
-    public class WithImpactAnimationInfo : ConditionalTraitInfo
+    public class WithAbilityAnimationInfo : ConditionalTraitInfo
     {
         [Desc("Displayed while attacking.")] [SequenceReference]
         public readonly string Sequence = "damage";
@@ -13,7 +13,7 @@ namespace OpenRA.Mods.Common.Traits.Render
 
         public override object Create(ActorInitializer init)
         {
-            return new WithImpactAnimation(init, this);
+            return new WithAbilityAnimation(init, this);
         }
 
         public override void RulesetLoaded(Ruleset rules, ActorInfo ai)
@@ -26,13 +26,13 @@ namespace OpenRA.Mods.Common.Traits.Render
         }
     }
 
-    public class WithImpactAnimation : ConditionalTrait<WithImpactAnimationInfo>, INotifyDamage, INotifyCreated
+    public class WithAbilityAnimation : ConditionalTrait<WithAbilityAnimationInfo>, INotifyCreated
     {
         private WithSpriteBody wsb;
-        private WithImpactAnimationInfo info;
+        private WithAbilityAnimationInfo info;
         private Actor self;
 
-        public WithImpactAnimation(ActorInitializer init, WithImpactAnimationInfo info) : base(info)
+        public WithAbilityAnimation(ActorInitializer init, WithAbilityAnimationInfo info) : base(info)
         {
             this.info = info;
             self = init.Self;
@@ -52,15 +52,6 @@ namespace OpenRA.Mods.Common.Traits.Render
         void INotifyCreated.Created(Actor self)
         {
             wsb = self.TraitsImplementing<WithSpriteBody>().Single(w => w.Info.Name == Info.Body);
-        }
-
-        public void Damaged(Actor self, AttackInfo e)
-        {
-            if (!self.IsDead && self.IsInWorld && !e.Damage.DamageTypes.Contains("Healing"))
-            {
-                self.Trait<Mobile>().Facing = (self.World.Map.CenterOfCell(e.Attacker.Location) - self.CenterPosition).Yaw.Facing;
-                PlayManaAnimation(self);
-            }
         }
     }
 }

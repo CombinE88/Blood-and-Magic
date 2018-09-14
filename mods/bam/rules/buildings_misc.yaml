@@ -1,7 +1,7 @@
 MAINBASE:
-	Inherits@: ^CoreBuilding
+	Inherits@: ^Building
 	Tooltip:
-		Name: Base
+		Name: Keep
 	EditorTilesetFilter:
 		Categories: Building
 	Building:

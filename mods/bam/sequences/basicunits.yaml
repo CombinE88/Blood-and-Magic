@@ -34,6 +34,9 @@ acolyte:
 		Tick: 160
 		Length: 4
 		Facings: 8
+	aim: acolyte_aim.ani
+		Tick: 160
+		Facings: 8
 	die: acolyte_death.ani
 		Tick: 120
 		Length: *
@@ -67,6 +70,67 @@ acolyte.pyramid:
 		Tick: 120
 		Length: *
 
+stonegolem:
+	Inherits: ^default
+	stand: stonegolem_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: stonegolem_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	run: stonegolem_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: stonegolem_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: stonegolem_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: stonegolem_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: stonegolem_die.ani
+		Tick: 120
+		Length: 7
+	icon: stonegolem_icon.ani
+	disabled-icon: stonegolem_icon_disabled.ani
+
+wolf:
+	Inherits: ^default
+	stand: wolf_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: wolf_stand.ani
+		Tick: 120
+		Facings: 8
+	run: wolf_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: wolf_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: wolf_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: wolf_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: wolf_die.ani
+		Tick: 120
+		Length: 7
+	icon: wolf_icon.ani
+	disabled-icon: wolf_icon_disabled.ani
+	
 shroud:
 	shroud: bits/shroud.png
 		Length: 16

@@ -24,11 +24,15 @@ namespace OpenRA.Mods.Bam.Traits
         public void Tick(Actor self)
         {
             if (!self.IsDead && self.IsInWorld && self.IsIdle)
+            {
                 if (tick-- <= 0)
                 {
                     deploy.DeployTransform(false);
                     tick = 75;
                 }
+            }
+            else
+                tick = 75;
         }
     }
 }

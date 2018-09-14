@@ -8,7 +8,7 @@ World:
 		ClassName: rtr
 		BaseActor: mainbase
 		Factions: rtr
-		SupportActors: acolyte,acolyte,acolyte
+		SupportActors: cleric,paladin, wizard
 		InnerSupportRadius: 1
 		OuterSupportRadius: 2
 Player:
@@ -19,12 +19,13 @@ Player:
 			warrior: 500
 			cleric: 500
 			ranger: 1125
+			wizard: 1450
 			griffin: 1800
 			paladin: 3150
 		TimePerCost: 3
 
 BARRACKS:
-	Inherits@: ^CoreBuilding
+	Inherits@: ^Building
 	EditorTilesetFilter:
 		Categories: Building
 	Building:
@@ -41,7 +42,7 @@ BARRACKS:
 	Tooltip:
 		Name: Building Plattform
 	AllowConvert:
-		ConvertTo: warrior, cleric
+		ConvertTo: warrior, cleric, ranger, wizard, paladin, griffin
 	Health:
 		HP: 360
 	Targetable:
@@ -98,7 +99,7 @@ RANGER:
 		Image: ranger
 	Armament:
 		Weapon: RangedCombat
-		LocalOffset: 0,0,555
+		LocalOffset: 1024,0,555
 		FireDelay: 5
 	DungeonsAndDragonsStats:
 		Damage: 4
@@ -135,13 +136,15 @@ CLERIC:
 		Speed: 3
 	Researchable:
 		Class: cleric
-		TransformTime: 40
+		TransformTime: 35
 	HealTargetAbility:
 		Ammount: 5
 		Delay: 100
 		AbilityString: Heal taget by 5
 		Range: 3
 		AutoTarget: true
+	WithAbilityAnimation:
+		Sequence: stand
 
 PALADIN:
 	Inherits@1: ^Walker
@@ -202,9 +205,43 @@ GRIFFIN:
 		Speed: 2
 	Researchable:
 		Class: griffin
-		TransformTime: 40
+		TransformTime: 45
 	WithShadow:
 		Offset: 0,0,-512
 	Selectable:
 		Bounds: 40,38,0,-20
 		DecorationBounds: 40,38,0,-20
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7314.wav
+
+WIZARD:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Wizard
+	Health:
+		HP: 25
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: wizard
+	Armament:
+		Weapon: RangedCombatWizard
+		LocalOffset: 724,0,555
+		FireDelay: 5
+	DungeonsAndDragonsStats:
+		Damage: 2
+		Armor: 2
+		Speed: 3
+	Researchable:
+		Class: wizard
+		TransformTime: 30

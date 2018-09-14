@@ -136,7 +136,7 @@
 		Name: Platformtiles
 		Tileset: PLATFORM
 		Filename: bits/platformtiles.png  
-		ShadowIndex: 1
+		ShadowIndex: 253
 	PaletteFromPal@banplayer:
 		Name: banplayer
 		Filename: 11195.pal

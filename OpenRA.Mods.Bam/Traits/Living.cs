@@ -8,10 +8,10 @@ namespace OpenRA.Mods.Bam.Traits
     class LivingInfo : ITraitInfo, Requires<MobileInfo>, Requires<WithSpriteBodyInfo>
     {
         [Desc("Chance per tick the actor rotates to a random direction.")]
-        public readonly int RotationChance = 1000;
+        public readonly int RotationChance = 500;
 
         [Desc("Chance per tick the actor triggers its bored sequence.")]
-        public readonly int BoredChance = 5000;
+        public readonly int BoredChance = 500;
 
         [Desc("Sequence to play when idle.")]
         public readonly string BoredSequence = "bored";

@@ -114,3 +114,66 @@ CAPSULE:
 		Type: CenterPosition
 	WithSpriteBody:
 	CanHoldTrinket:
+
+STONEGOLEM:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Stonegolem
+	Health:
+		HP: 35
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: stonegolem
+	Armament:
+		Weapon: CloseCombatGolem
+	DungeonsAndDragonsStats:
+		Damage: 6
+		Armor: 5
+		Speed: 1
+		CanbeModified: false
+	WithImpactAnimation:
+	AttackWander:
+		WanderMoveRadius: 2
+		MinMoveDelay: 100
+		MaxMoveDelay: 400
+
+WOLF:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 15
+	Tooltip:
+		Name: Wolf
+	Health:
+		HP: 25
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: wolf
+	Armament:
+		Weapon: CloseCombatClaw
+	DungeonsAndDragonsStats:
+		Damage: 3
+		Armor: 1
+		Speed: 4
+	WithImpactAnimation:
+	AttackWander:
+		WanderMoveRadius: 3
+		MinMoveDelay: 100
+		MaxMoveDelay: 400

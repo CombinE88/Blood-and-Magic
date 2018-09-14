@@ -20,6 +20,8 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         public readonly string EffectPalette = "bam11195";
 
+        public readonly string Sound = null;
+
         public object Create(ActorInitializer init)
         {
             return new IsTrinket();

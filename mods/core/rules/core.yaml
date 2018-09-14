@@ -179,3 +179,5 @@
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Default
 		InvalidTargets: NoAutoTarget
+	WithAimAnimation:
+		Sequence: aim
