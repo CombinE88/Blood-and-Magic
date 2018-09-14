@@ -93,6 +93,26 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     showResearch.ShowResearch = false;
                     pressed = true;
                 }
+                else if (showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<Research>().Researchable.Contains(researchItem) || showResearch.Researching)
+                {
+                    Game.Sound.PlayNotification(
+                        showResearch.ActorActions.BamUi.World.Map.Rules,
+                        showResearch.ActorActions.BamUi.World.LocalPlayer,
+                        "Speech",
+                        "AlreadyResearched",
+                        showResearch.ActorActions.BamUi.World.LocalPlayer.Faction.InternalName
+                    );
+                }
+                else if (showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience < ResearchCost)
+                {
+                    Game.Sound.PlayNotification(
+                        showResearch.ActorActions.BamUi.World.Map.Rules,
+                        showResearch.ActorActions.BamUi.World.LocalPlayer,
+                        "Speech",
+                        "LowExp",
+                        showResearch.ActorActions.BamUi.World.LocalPlayer.Faction.InternalName
+                    );
+                }
             }
             else if (mi.Event == MouseInputEvent.Up)
                 pressed = false;

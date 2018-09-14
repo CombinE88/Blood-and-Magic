@@ -32,6 +32,23 @@ CloseCombatSword:
 		ImpactSounds: 7260.wav
 		ValidTargets: Default
 
+CloseCombatClub:
+	ReloadDelay: 25
+	Range: 1c512
+	ValidTargets: Default
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 32
+		Falloff: 100, 0
+		Delay: 5
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7318.wav
+		ValidTargets: Default
+
 CloseCombatClaw:
 	ReloadDelay: 25
 	Range: 1c512
@@ -52,6 +69,7 @@ CloseCombatClaw:
 RangedCombat:
 	ReloadDelay: 25
 	Range: 3c512
+	Report: 7272.wav
 	ValidTargets: Default
 	Projectile: Bullet
 		Speed: 0c125
@@ -61,6 +79,8 @@ RangedCombat:
 		ValidTargets: Default
 		Spread: 32
 		Falloff: 100, 0
-		Delay: 5
 		Damage: 1
 		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7274.wav
+		ValidTargets: Default

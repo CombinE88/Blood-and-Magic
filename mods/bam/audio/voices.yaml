@@ -1,0 +1,12 @@
+GenericVoice:
+	Variants:
+	Voices:
+		Select: 
+		Action: 
+		Die: 7300.wav
+GriffinVoice:
+	Variants:
+	Voices:
+		Select: 
+		Action: 
+		Die: 7314.wav

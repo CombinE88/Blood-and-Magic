@@ -41,7 +41,7 @@ BARRACKS:
 	Tooltip:
 		Name: Building Plattform
 	AllowConvert:
-		ConvertTo: warrior, cleric, ranger, griffin, paladin
+		ConvertTo: warrior, cleric
 	Health:
 		HP: 360
 	Targetable:
@@ -67,7 +67,7 @@ WARRIOR:
 	RenderSprites:
 		Image: warrior
 	Armament:
-		Weapon: CloseCombat
+		Weapon: CloseCombatSword
 	DungeonsAndDragonsStats:
 		Damage: 4
 		Armor: 2
@@ -128,7 +128,7 @@ CLERIC:
 	RenderSprites:
 		Image: cleric
 	Armament:
-		Weapon: CloseCombat
+		Weapon: CloseCombatClub
 	DungeonsAndDragonsStats:
 		Damage: 2
 		Armor: 1
@@ -140,7 +140,7 @@ CLERIC:
 		Ammount: 5
 		Delay: 100
 		AbilityString: Heal taget by 5
-		Range: 6
+		Range: 3
 		AutoTarget: true
 
 PALADIN:
@@ -163,7 +163,7 @@ PALADIN:
 	RenderSprites:
 		Image: paladin
 	Armament:
-		Weapon: CloseCombat
+		Weapon: CloseCombatSword
 	DungeonsAndDragonsStats:
 		Damage: 5
 		Armor: 4
@@ -173,7 +173,7 @@ PALADIN:
 		TransformTime: 40
 	HealTargetAbility:
 		Delay: 250
-		Range: 3
+		Range: 2
 
 GRIFFIN:
 	Inherits@1: ^Flyer
@@ -195,7 +195,7 @@ GRIFFIN:
 	RenderSprites:
 		Image: griffin
 	Armament:
-		Weapon: CloseCombat
+		Weapon: CloseCombatClaw
 	DungeonsAndDragonsStats:
 		Damage: 5
 		Armor: 3
@@ -203,3 +203,8 @@ GRIFFIN:
 	Researchable:
 		Class: griffin
 		TransformTime: 40
+	WithShadow:
+		Offset: 0,0,-512
+	Selectable:
+		Bounds: 40,38,0,-20
+		DecorationBounds: 40,38,0,-20

@@ -38,7 +38,7 @@ ACOLYTE:
 		Speed: 2
 	WithImpactAnimation:
 	Armament:
-		Weapon: CloseCombat
+		Weapon: CloseCombatFist
 
 PYRAMID:
 	Inherits@1: ^Walker

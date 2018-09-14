@@ -126,6 +126,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                                 trinketinfo.EffectSequence,
                                 trinketinfo.EffectPalette)));
 
+                        Game.Sound.Play(SoundType.World, "Heal", self.CenterPosition);
                         if (trinketinfo.OneTimeUse)
                             trinket.Dispose();
                     }

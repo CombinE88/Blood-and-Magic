@@ -22,7 +22,6 @@ Player:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
 	FrozenActorLayer:
-	BaseAttackNotifier:
 	PlayerStatistics:
 	PlaceBeacon:
 	GrantConditionOnPrerequisiteManager:
@@ -30,3 +29,4 @@ Player:
 	ResourceStorageWarning:
 	PlayerExperience:
 	DungeonsAndDragonsExperience:
+	AdvancedAttackNotifier:

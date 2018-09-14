@@ -66,6 +66,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             {
                 order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
                 CurrentDelay = 0;
+
+                Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.HealSound, self.Owner.Faction.InternalName);
+
                 self.World.AddFrameEndTask(w =>
                     w.Add(new SpriteEffect(
                         order.Target.Actor.CenterPosition,
@@ -81,7 +84,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (CurrentDelay < info.Delay)
                 CurrentDelay++;
 
-            if (!info.AutoTarget)
+            if (!info.AutoTarget && !self.IsIdle)
                 return;
 
             var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
@@ -92,7 +95,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && !a.IsDead
                 && a.TraitOrDefault<Building>() == null
                 && a.TraitOrDefault<Health>() != null
-                && (a.Location - self.Location).LengthSquared <= info.Range*1024
+                && (a.Location - self.Location).LengthSquared <= info.Range * 1024
                 && a.TraitOrDefault<Health>().HP < a.TraitOrDefault<Health>().MaxHP
                 && a.Owner.IsAlliedWith(self.Owner)
                 && pr.Cash + pr.Resources >= info.Ammount
@@ -126,7 +129,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || target.IsDead
                 || target.Info.HasTraitInfo<BuildingInfo>()
                 || hp == null
-                || (target.Location - self.Location).LengthSquared <= range*1024
+                || (target.Location - self.Location).LengthSquared <= range * 1024
                 || !(hp.HP < hp.MaxHP)
                 || !target.Owner.IsAlliedWith(self.Owner)
                 || pr.Cash + pr.Resources < ammount)

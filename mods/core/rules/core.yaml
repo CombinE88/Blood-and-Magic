@@ -78,6 +78,8 @@
 	# Should not be auto attacked.
 	Targetable@NoAutoAttack:
 		TargetTypes: NoAutoAttack
+	AttackNotification:
+		Notifications: BuildingUnderAttack
 
 # Base for all walls.
 ^CoreWall:

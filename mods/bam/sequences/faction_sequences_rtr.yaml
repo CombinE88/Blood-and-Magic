@@ -130,23 +130,30 @@ griffin:
 		Tick: 120
 		Facings: 2
 		Length: 4
+		Offset: 0, -20
 	idle: griffin_stand.ani
 		Tick: 120
 		Facings: 8
+		Length: 4
+		Offset: 0, -20
 	run: griffin_run.ani
 		Tick: 120
 		Length: 4
 		Facings: 8
+		Offset: 0, -20
 	attack: griffin_attack.ani
 		Tick: 160
 		Length: 4
 		Facings: 8
+		Offset: 0, -20
 	damage: griffin_damage.ani
 		Tick: 160
 		Length: 4
 		Facings: 4
+		Offset: 0, -20
 	die: griffin_die.ani
 		Tick: 120
 		Length: 7
+		Offset: 0, -20
 	icon: griffin_icon.ani
 	disabled-icon: griffin_icon_disabled.ani

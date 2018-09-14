@@ -19,6 +19,10 @@
 	GeneratesExperience:
 	Targetable:
 		TargetTypes: Default
+	DeathSounds:
+		DeathTypes: Death
+	AttackNotification:
+		Notifications: UnitUnderAttack
 
 ^Flyer:
 	Inherits: ^Walker

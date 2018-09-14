@@ -102,8 +102,10 @@
     <Compile Include="Traits\Activities\AdvancedTransform.cs" />
     <Compile Include="Traits\AdvancedTransforms.cs" />
     <Compile Include="Traits\AllowConvert.cs" />
+    <Compile Include="Traits\AttackNotification.cs" />
     <Compile Include="Traits\ConvertAdjetant.cs" />
     <Compile Include="Traits\GeneratesExperience.cs" />
+    <Compile Include="Traits\Player\AdvancedAttackNotifier.cs" />
     <Compile Include="Traits\Player\DungeonsAndDragonsExperience.cs" />
     <Compile Include="Traits\Player\Research.cs" />
     <Compile Include="Traits\Render\WithImpactAnimation.cs" />

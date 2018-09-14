@@ -57,6 +57,16 @@ namespace OpenRA.Mods.Bam.Traits
                         }
                     }
                 });
+            else if (pr.Cash + pr.Resources < self.World.Map.Rules.Actors[info.Actor].TraitInfo<ValuedInfo>().Cost)
+            {
+                Game.Sound.PlayNotification(
+                    self.World.Map.Rules,
+                    self.World.LocalPlayer,
+                    "Speech",
+                    "LowMana",
+                    self.World.LocalPlayer.Faction.InternalName
+                );
+            }
         }
 
         public void Created(Actor self)

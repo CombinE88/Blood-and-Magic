@@ -1,10 +1,10 @@
 Sounds:
 	DefaultVariant: .wav
 	Notifications:
-		ClickSound: bits/click.wav
-		ChatLine: bits/chat.wav
-		ClickDisabledSound: bits/click.wav
-		SilosNeeded: 55595.wav
+		ClickSound: bits/click
+		ChatLine: bits/chat
+		ClickDisabledSound: bits/click
+		SilosNeeded: 55595
 		Leave:
 		Appear: 
 		Beacon: 
@@ -38,7 +38,7 @@ Sounds:
 		Target3: 
 		Text: 
 		World: 
-		Heal: 7286.wav
+		Heal: 7286
 
 
 Speech:
@@ -49,9 +49,9 @@ Speech:
 		ConstructionComplete: 
 		EnemyUnitsApproaching: 
 		EnemyStructureDestroyed: 
-		InsufficientPower: 
+		InsufficientPower: 55622
 		Leave: 
-		Lose: 7236.wav
+		Lose: 7236
 		LowPower: 
 		MissionAccomplished: 
 		MissionFailed: 
@@ -65,6 +65,12 @@ Speech:
 		StartGame:
 		Training: 
 		UnitDestroyed: 
-		UnitLost: 55615.wav
-		UnitReady: 55620.wav
-		Win: 7218.wav
+		LowExp: 55622
+		LowMana: 55595
+		BuildingUnderAttack: 55628
+		UnitUnderAttack: 55629
+		UnitLost: 55615
+		UnitReady: 55620
+		Win: 7218
+		AlreadyResearched: 55621
+		Heal: 7286
