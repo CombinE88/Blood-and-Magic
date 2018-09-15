@@ -456,9 +456,10 @@ strategic: uibits/buttons.png
 	player_owned: 159,49,23,22
 
 flags: uibits/buttons.png
-	rtr: 0,112,30,15
-	Random: 60,112,30,15
-	spectator: 60,112,30,15
+	Random: 218,120,38,34
+	spectator: 218,154,38,34
+	evil: 218,222,38,34
+	good: 218,188,38,34
 
 music: uibits/buttons.png
 	pause: 0,193,25,25

@@ -28,8 +28,12 @@ ACOLYTE:
 		BuildDuration: 1
 	Valued:
 		Cost: 40
-	TransformToBuilding:
+	TransformToBuilding@good:
 		IntoBuilding: barracks
+		Factions: good
+	TransformToBuilding@evil:
+		IntoBuilding: crypt
+		Factions: evil
 	ConvertAdjetant:
 		SkipSelfAnimation: true
 	DungeonsAndDragonsStats:
@@ -71,7 +75,12 @@ PYRAMID:
 			Manaspot: 45
 	WithManaAnimation:
 	-Living:
-	TransformToBuilding:
+	TransformToBuilding@good:
+		IntoBuilding: barracks
+		Factions: good
+	TransformToBuilding@evil:
+		IntoBuilding: crypt
+		Factions: evil
 	ConvertAdjetant:
 		SkipSelfAnimation: true
 	DungeonsAndDragonsStats:

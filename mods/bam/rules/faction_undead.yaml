@@ -1,3 +1,50 @@
+World:
+	Faction@evil:
+		Name: Evil
+		InternalName: evil
+		Description: Evil
+	MPStartUnits@evil:
+		Class: none
+		ClassName: evil
+		BaseActor: mainbase
+		Factions: evil
+		SupportActors: acolyte, acolyte, acolyte
+		InnerSupportRadius: 1
+		OuterSupportRadius: 2
+Player:
+	Research@evil:
+		PreResearched: zombie, ghoul
+		Faction: evil
+		Researchable:
+			zombie: 500
+			ghoul: 500
+			goblin: 1125
+			gargoyle: 1450
+		TimePerCost: 3
+
+CRYPT:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: crypt
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Crypt
+	AllowConvert:
+		ConvertTo: zombie, ghoul, goblin, gargoyle
+	Health:
+		HP: 360
+	Targetable:
+		TargetTypes: Default
 
 ZOMBIE:
 	Inherits@1: ^Walker

@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Bam.Traits
 
     public class ConvertAdjetant : ITick, IResolveOrder
     {
-        private ConvertAdjetantInfo info;
+        private ConvertAdjetantInfo Info;
         public bool AllowTransform;
         public Actor TransformEnabler;
 
@@ -50,7 +50,7 @@ namespace OpenRA.Mods.Bam.Traits
 
         public ConvertAdjetant(ActorInitializer init, ConvertAdjetantInfo info)
         {
-            this.info = info;
+            this.Info = info;
         }
 
         void ITick.Tick(Actor self)
@@ -81,7 +81,7 @@ namespace OpenRA.Mods.Bam.Traits
                 {
                     if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[orderCut].TraitInfo<ValuedInfo>().Cost))
                     {
-                        DoTransform(self, info.Capsule);
+                        DoTransform(self, Info.Capsule);
                     }
 
                     break;
@@ -105,12 +105,12 @@ namespace OpenRA.Mods.Bam.Traits
                 Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime * 25,
                 CapsuleInto = orderCut,
 
-                Offset = info.Offset,
-                Facing = info.Facing,
-                Sounds = info.TransformSounds,
-                Notification = info.TransformNotification,
+                Offset = Info.Offset,
+                Facing = Info.Facing,
+                Sounds = Info.TransformSounds,
+                Notification = Info.TransformNotification,
                 Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
-                SelfSkipMakeAnims = info.SkipSelfAnimation
+                SelfSkipMakeAnims = Info.SkipSelfAnimation
             });
         }
     }

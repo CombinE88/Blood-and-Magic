@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             var resProperty = ActorActions.BamUi.World.LocalPlayer.PlayerActor.TraitsImplementing<Research>().ToArray();
             var faction = ActorActions.BamUi.World.RenderPlayer.Faction.InternalName;
             var setfaction = resProperty.Where(r => r.Info.Faction == faction);
-            Research = setfaction.FirstOrDefault();
+            Research = setfaction.First();
         }
 
         public override bool HandleMouseInput(MouseInput mi)
@@ -142,7 +142,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     -76 + i % 2 * 75, 24 + 68 * (i / 2),
                     list[i].Key,
                     list[i].Value * Research.Info.TimePerCost,
-                    list[i].Value);
+                    list[i].Value,
+                    Research);
                 researchButtons.Add(con);
             }
 

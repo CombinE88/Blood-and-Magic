@@ -52,8 +52,17 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 return;
             }
 
-            var playertrait = actorActions.BamUi.World.RenderPlayer.PlayerActor.TraitOrDefault<Research>().Researchable;
-            if (playertrait != null && !playertrait.Contains(actorString))
+            var playertraits = actorActions.BamUi.World.RenderPlayer.PlayerActor.TraitsImplementing<Research>();
+            var contains = false;
+            foreach (var trait in playertraits)
+            {
+                if(trait.Researchable.Contains(actorString))
+                {
+                    contains = true;
+                    break;
+                }
+            }
+            if (!contains)
                 disabled = true;
             else
                 disabled = false;

@@ -12,6 +12,8 @@ namespace OpenRA.Mods.Bam.Traits
     {
         public readonly string IntoBuilding = "barracks";
 
+        public readonly string[] Factions = { "good" };
+
         public object Create(ActorInitializer init)
         {
             return new TransformToBuilding(init, this);
@@ -22,11 +24,11 @@ namespace OpenRA.Mods.Bam.Traits
     {
         public Actor Buildingbelow;
         public bool StandsOnBuilding = false;
-        private TransformToBuildingInfo info;
+        public TransformToBuildingInfo Info;
 
         public TransformToBuilding(ActorInitializer init, TransformToBuildingInfo info)
         {
-            this.info = info;
+            Info = info;
         }
 
         void ITick.Tick(Actor self)
@@ -55,12 +57,10 @@ namespace OpenRA.Mods.Bam.Traits
                         new OwnerInit(self.Owner)
                     };
 
-                    w.CreateActor(info.IntoBuilding, init);
-
-                    self.Dispose();
+                    w.CreateActor(Info.IntoBuilding, init);
                 });
-            else if (order.OrderString != "RemoveSelf")
-                self.Dispose();
+
+            self.Dispose();
         }
     }
 }

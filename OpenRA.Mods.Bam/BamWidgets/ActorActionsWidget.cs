@@ -7,7 +7,6 @@ using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Bam.Traits.UnitAbilities;
-using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Warheads;
 using OpenRA.Traits;
@@ -24,7 +23,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         private ManaSendButtonWidget manaSend;
         private SpawnGolemWidget spawnGolem;
-        private TransformToBuildingButtonWidget transformToBuilding;
 
         private DrawActorStatisticsWidget drawActorStatisticsW;
         private TrinketButtonsWidget trinketButtons;
@@ -36,6 +34,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private AbilityButtonWidget abilityButton;
 
         private List<ConvertToButtonWidget> convertToButtons = new List<ConvertToButtonWidget>();
+        private List<TransformToBuildingButtonWidget> transformToButtons = new List<TransformToBuildingButtonWidget>();
+
 
         private ShowResearchButtonWidget researchEnabler;
 
@@ -45,8 +45,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             AddChild(manaSend = new ManaSendButtonWidget(this) { Visible = false });
             AddChild(spawnGolem = new SpawnGolemWidget(this) { Visible = false });
-
-            AddChild(transformToBuilding = new TransformToBuildingButtonWidget(this) { Visible = false });
 
             AddChild(drawActorStatisticsW = new DrawActorStatisticsWidget(this) { Visible = false });
             AddChild(drawTransformStatistics = new DrawTransformStatisticsWidget(this) { Visible = false });
@@ -70,7 +68,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             manaSend.Visible = false;
             spawnGolem.Visible = false;
-            transformToBuilding.Visible = false;
             trinketButtons.Visible = false;
             trinketDropButton.Visible = false;
 
@@ -121,36 +118,56 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 RemoveSpawnmenu();
             }
 
-            if (Actor.Info.HasTraitInfo<TransformToBuildingInfo>() && Actor.Trait<TransformToBuilding>().StandsOnBuilding)
-            {
-                var selectedValidActors = ActorGroup
-                    .Where(a =>
-                        a.Info.HasTraitInfo<TransformToBuildingInfo>()
-                        && a.Trait<TransformToBuilding>().StandsOnBuilding
-                        && a.Trait<TransformToBuilding>().Buildingbelow == Actor.Trait<TransformToBuilding>().Buildingbelow
-                        && a.IsIdle);
+            var traits = Actor.TraitsImplementing<TransformToBuilding>().Where(t => t.StandsOnBuilding && t.Info.Factions.Contains(Actor.Owner.Faction.InternalName)).ToList();
 
-                if (selectedValidActors.Count() >= 4)
+            if (traits.Any() && !transformToButtons.Any())
+            {
+                var i = 0;
+
+                foreach (var trait in traits)
                 {
-                    transformToBuilding.SelectedValidActors = selectedValidActors.ToHashSet();
-                    transformToBuilding.Visible = true;
+                    var selectedValidActors = ActorGroup
+                        .Where(a =>
+                            a.TraitsImplementing<TransformToBuilding>().FirstOrDefault(t => t.Buildingbelow == trait.Buildingbelow) != null
+                            && a.IsIdle).ToHashSet();
+
+                    if (selectedValidActors.Count >= 4)
+                    {
+                        var con = new TransformToBuildingButtonWidget(
+                            this,
+                            10 + i % 2 * 75,
+                            450 + 68 * (i / 2),
+                            trait.Info.IntoBuilding,
+                            trait,
+                            selectedValidActors) { Visible = true };
+                        transformToButtons.Add(con);
+
+                        AddChild(con);
+                        i += 1;
+                    }
                 }
             }
-
-            if (Actor.Info.HasTraitInfo<CanHoldTrinketInfo>() && Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
+            else if (traits.Any() && transformToButtons.Any())
             {
-                trinketButtons.Visible = true;
-                if (!Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
-                    trinketDropButton.Visible = true;
+                foreach (var widget in transformToButtons)
+                {
+                    widget.Visible = true;
+                }
             }
-
-            //// TODO add new buttons here
+            else if (transformToButtons.Any())
+            {
+                RemoveTransformmenu();
+            }
         }
+
+//// TODO add new buttons here
 
         void CreateSpawnMenu()
         {
             var transformable = Actor.Trait<ConvertAdjetant>().TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo.ToList();
-            for (int i = 0; i < transformable.Count; i++)
+            for (int i = 0;
+                i < transformable.Count;
+                i++)
             {
                 var con = new ConvertToButtonWidget(
                         this,
@@ -169,6 +186,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         }
 
         void RemoveSpawnmenu()
+
         {
             if (convertToButtons.Any())
                 foreach (var button in convertToButtons)
@@ -178,6 +196,18 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 }
 
             convertToButtons = new List<ConvertToButtonWidget>();
+        }
+
+        void RemoveTransformmenu()
+        {
+            if (transformToButtons.Any())
+                foreach (var button in transformToButtons)
+                {
+                    RemoveChild(button);
+                    button.Removed();
+                }
+
+            transformToButtons = new List<TransformToBuildingButtonWidget>();
         }
 
         void DrawActorStatistics()

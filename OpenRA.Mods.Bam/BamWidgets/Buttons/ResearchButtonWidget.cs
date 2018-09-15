@@ -23,8 +23,9 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private int researchTime;
         private int researchCost;
         private BamToolTipWidget tooltip;
+        private Research research;
 
-        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, int researchTime, int researchCost)
+        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, int researchTime, int researchCost, Research research)
         {
             this.showResearch = showResearch;
             this.posx = posx;
@@ -32,6 +33,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             this.researchItem = researchItem;
             this.researchTime = researchTime;
             this.researchCost = researchCost;
+            this.research = research;
 
             AddChild(tooltip = new BamToolTipWidget(
                 this.showResearch.ActorActions,
@@ -47,7 +49,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            var playertrait = showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.TraitOrDefault<Research>().Researchable;
+            var playertrait = research.Researchable;
             if (playertrait != null && !playertrait.Contains(researchItem))
                 disabled = false;
             else
@@ -90,7 +92,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     showResearch.ShowResearch = false;
                     pressed = true;
                 }
-                else if (showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<Research>().Researchable.Contains(researchItem) || showResearch.Researching)
+                else if (research.Researchable.Contains(researchItem) || showResearch.Researching)
                 {
                     Game.Sound.PlayNotification(
                         showResearch.ActorActions.BamUi.World.Map.Rules,

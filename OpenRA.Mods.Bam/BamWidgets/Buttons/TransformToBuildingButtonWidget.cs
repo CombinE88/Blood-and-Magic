@@ -14,39 +14,38 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private ActorActionsWidget actorActions;
         private bool pressed;
         private Animation animation;
-        private ActorInfo actorInfo;
-        public HashSet<Actor> SelectedValidActors = new HashSet<Actor>();
+        public List<Actor> selectedValidActors = new List<Actor>();
+        private int posx;
+        private int posy;
+        private string animationString;
+        private TransformToBuilding transformToBuilding;
 
-        public TransformToBuildingButtonWidget(ActorActionsWidget actorActions)
+        public TransformToBuildingButtonWidget(ActorActionsWidget actorActions, int posx, int posy, string animationString,
+            TransformToBuilding transformToBuilding, HashSet<Actor> selectedValidActors)
         {
             this.actorActions = actorActions;
+            this.posx = posx;
+            this.posy = posy;
+            this.animationString = animationString;
+            this.transformToBuilding = transformToBuilding;
+            this.selectedValidActors = selectedValidActors.ToList();
         }
 
         public override void Tick()
         {
+            animation = new Animation(actorActions.BamUi.World, animationString);
+
             if (actorActions.Actor == null)
                 return;
 
-            string actorString = null;
-            if (actorActions.Actor.Trait<TransformToBuilding>().StandsOnBuilding)
-                actorString = actorActions.Actor.Info.TraitInfo<TransformToBuildingInfo>().IntoBuilding;
-
-            actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
-
-            var seq = actorActions.BamUi.World.Map.Rules.Sequences;
-            var name = actorActions.Actor.Owner.Faction.Name;
-
-            if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
-                animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, seq, name));
-
-            var x = pressed ? 11 : 10;
-            var y = pressed ? 450 + 1 : 450;
+            var x = pressed ? posx + 1 : posx;
+            var y = pressed ? posy + 1 : posy;
             Bounds = new Rectangle(x, y, 75, 68);
         }
 
         public override bool HandleMouseInput(MouseInput mi)
         {
-            if (!EventBounds.Contains(mi.Location) || SelectedValidActors.Count < 4)
+            if (!EventBounds.Contains(mi.Location) || selectedValidActors.Count < 4)
                 return false;
 
             if (mi.Button != MouseButton.Left)
@@ -54,11 +53,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                SelectedValidActors.First().World.IssueOrder(new Order("TransformTo", actorActions.Actor, false));
-                foreach (var actor in SelectedValidActors)
+                for (int i = 0; i < selectedValidActors.Count - 1; i++)
                 {
-                    actor.World.IssueOrder(new Order("RemoveSelf", actor, false));
+                    selectedValidActors[i].World.IssueOrder(new Order("RemoveSelf", selectedValidActors[i], false));
                 }
+
+                selectedValidActors[selectedValidActors.Count].World.IssueOrder(new Order("TransformTo", actorActions.Actor, false));
 
                 pressed = true;
             }

@@ -1,20 +1,20 @@
 World:
 	Faction@bam:
-		Name: Rathgar the Raider
-		InternalName: rtr
-		Description: Rathgar the Raider
-	MPStartUnits@bam:
+		Name: Good
+		InternalName: good
+		Description: Good
+	MPStartUnits@good:
 		Class: none
-		ClassName: rtr
+		ClassName: good
 		BaseActor: mainbase
-		Factions: rtr
-		SupportActors: cleric,paladin, wizard
+		Factions: good
+		SupportActors: acolyte, acolyte, acolyte
 		InnerSupportRadius: 1
 		OuterSupportRadius: 2
 Player:
-	Research@rtr:
+	Research@good:
 		PreResearched: warrior, cleric
-		Faction: rtr
+		Faction: good
 		Researchable:
 			warrior: 500
 			cleric: 500
@@ -40,7 +40,7 @@ BARRACKS:
 		Image: barracks
 		PlayerPalette: BamPlayer
 	Tooltip:
-		Name: Building Plattform
+		Name: Barracks
 	AllowConvert:
 		ConvertTo: warrior, cleric, ranger, wizard, paladin, griffin
 	Health:
