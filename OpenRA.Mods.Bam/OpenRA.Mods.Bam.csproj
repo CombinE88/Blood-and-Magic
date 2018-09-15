@@ -70,6 +70,12 @@
     <Reference Include="Eluant, Version=1.0.5867.35197, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
     </Reference>
+    <Reference Include="FuzzyLogicLibrary, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\engine\thirdparty\download\FuzzyLogicLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="rix0rrr.BeaconLib, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\engine\rix0rrr.BeaconLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
