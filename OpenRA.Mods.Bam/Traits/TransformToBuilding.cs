@@ -10,9 +10,9 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class TransformToBuildingInfo : ITraitInfo
     {
-        public readonly string IntoBuilding = "barracks";
-
         public readonly string[] Factions = { "good" };
+
+        public readonly string IntoBuilding = "barracks";
 
         public object Create(ActorInitializer init)
         {
@@ -45,22 +45,29 @@ namespace OpenRA.Mods.Bam.Traits
 
         void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "TransformTo" && order.OrderString != "RemoveSelf")
+            if (order.OrderString != "TransformTo-" + Info.IntoBuilding && order.OrderString != "RemoveSelf")
                 return;
 
-            if (order.OrderString != "TransformTo")
+            if (order.OrderString == "RemoveSelf")
+                self.Dispose();
+
+            if (order.OrderString.Contains("TransformTo-" + Info.IntoBuilding))
+            {
+                var location = Buildingbelow.Location;
+                var ownerSelf = self.Owner;
+                self.Dispose();
+
                 self.World.AddFrameEndTask(w =>
                 {
                     var init = new TypeDictionary
                     {
-                        new LocationInit(Buildingbelow.Location),
-                        new OwnerInit(self.Owner)
+                        new LocationInit(location),
+                        new OwnerInit(ownerSelf)
                     };
 
                     w.CreateActor(Info.IntoBuilding, init);
                 });
-
-            self.Dispose();
+            }
         }
     }
 }

@@ -17,12 +17,15 @@ namespace OpenRA.Mods.Common.Warheads
         {
             this.actorActions = actorActions;
             anim = new Animation(actorActions.BamUi.World, "basic_ui");
-            Bounds = new Rectangle(1, 265, 180, 34);
+            Bounds = new Rectangle(3, 266, 180, 34);
         }
 
         public override void Tick()
         {
-            text = actorActions.Actor.Info.TraitInfoOrDefault<HealTargetAbilityInfo>().AbilityString;
+            if (actorActions.Actor.TraitOrDefault<HealTargetAbility>() != null)
+                text = actorActions.Actor.Info.TraitInfoOrDefault<HealTargetAbilityInfo>().AbilityString;
+            else if (actorActions.Actor.TraitOrDefault<StealEnemyAbility>() != null)
+                text = actorActions.Actor.Info.TraitInfoOrDefault<StealEnemyAbilityInfo>().AbilityString;
         }
 
         public override void Draw()
@@ -30,7 +33,13 @@ namespace OpenRA.Mods.Common.Warheads
             if (text == null)
                 return;
 
-            var disabled = !(actorActions.Actor.Trait<HealTargetAbility>().CurrentDelay >= actorActions.Actor.Info.TraitInfoOrDefault<HealTargetAbilityInfo>().Delay);
+            var disabled = false;
+
+            if (actorActions.Actor.TraitOrDefault<HealTargetAbility>() != null)
+                disabled = !(actorActions.Actor.Trait<HealTargetAbility>().CurrentDelay >= actorActions.Actor.Info.TraitInfoOrDefault<HealTargetAbilityInfo>().Delay);
+
+            else if (actorActions.Actor.TraitOrDefault<StealEnemyAbility>() != null)
+                disabled = !(actorActions.Actor.Trait<StealEnemyAbility>().CurrentDelay >= actorActions.Actor.Info.TraitInfoOrDefault<StealEnemyAbilityInfo>().Delay);
 
             anim.PlayFetchIndex(disabled ? "ui_Ability_button_disabled" : "ui_Ability_button", () => 0);
             WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);

@@ -71,6 +71,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             {
                 animation.PlayFetchIndex("icon", () => 0);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
+
+                var text = "40";
+                actorActions.BamUi.FontLarge.DrawTextWithShadow(text,
+                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(text).X - 1,
+                        RenderBounds.Y + RenderBounds.Height - actorActions.BamUi.FontLarge.Measure(text).Y - 1),
+                    Color.White, Color.DarkBlue, 1);
             }
         }
     }

@@ -68,7 +68,7 @@ namespace OpenRA.Mods.Bam.Traits
                     Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
                 });
 
-                var player = self.World.LocalPlayer;
+                var player = self.Owner;
                 Game.Sound.PlayNotification(self.World.Map.Rules, player, "Speech", info.Notification, self.Owner.Faction.InternalName);
 
                 Transforming = false;

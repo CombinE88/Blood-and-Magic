@@ -2,12 +2,12 @@ Sounds:
 	DefaultVariant: .wav
 	Notifications:
 		ClickSound: 
-		ChatLine: 7284
+		ChatLine: 
 		ClickDisabledSound: bits/click
 		SilosNeeded: 
 		Leave:
 		Appear: 
-		Beacon: 
+		Beacon: 7322
 		Beepy2: 
 		Beepy3: 
 		Beepy6: 

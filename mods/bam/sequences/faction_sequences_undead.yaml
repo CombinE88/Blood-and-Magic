@@ -1,6 +1,5 @@
 crypt:
-	Defaults:
-		AddExtension: False
+	Inherits: ^default
 	idle: bits/2x2buildings.png
 		Frames: 8
 	icon: crypt_icon.ani
@@ -48,7 +47,7 @@ goblin:
 		Tick: 120
 		Length: 4
 		Facings: 8
-	attack: goblin_attackranged.ani
+	attack: goblin_attack.ani
 		Tick: 160
 		Length: 4
 		Facings: 8
@@ -135,3 +134,63 @@ gargoyle:
 		Offset: 0, -20
 	icon: gargoyle_icon.ani
 	disabled-icon: gargoyle_icon_disabled.ani
+
+druid:
+	Inherits: ^default
+	stand: druid_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: druid_stand.ani
+		Tick: 120
+		Facings: 8
+	run: druid_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: druid_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: druid_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: druid_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: druid_die.ani
+		Tick: 120
+		Length: 7
+	icon: druid_icon.ani
+	disabled-icon: druid_icon_disabled.ani
+
+gnome:
+	Inherits: ^default
+	stand: gnome_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: gnome_stand.ani
+		Tick: 120
+		Facings: 8
+	run: gnome_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: gnome_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: gnome_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: gnome_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: gnome_die.ani
+		Tick: 120
+		Length: 7
+	icon: gnome_icon.ani
+	disabled-icon: gnome_icon_disabled.ani

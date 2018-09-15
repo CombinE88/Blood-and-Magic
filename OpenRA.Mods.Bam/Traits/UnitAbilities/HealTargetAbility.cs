@@ -20,7 +20,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public readonly int Ammount = 10;
 
-        public readonly int Delay = 200;
+        public readonly int Delay = 275;
 
         public readonly string Image = "trinkethealsalve";
         public readonly string EffectSequence = "effect";
@@ -40,6 +40,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
     {
         readonly HealTargetAbilityInfo info;
         public int CurrentDelay;
+        private int autoRetry;
 
         public HealTargetAbility(HealTargetAbilityInfo info)
         {
@@ -61,44 +62,46 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public void ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "HealTarget" || !(CurrentDelay >= info.Delay))
+            if (order.OrderString != "HealTarget")
                 return;
 
             var actor = order.Target.Actor;
-            if (actor == null || actor.IsDead || !actor.IsInWorld)
+            if (actor == null || actor.IsDead || !actor.IsInWorld || CurrentDelay < info.Delay)
                 return;
 
-            if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount))
+            CurrentDelay = 0;
+
+            order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
+
+            foreach (var trait in self.TraitsImplementing<WithAbilityAnimation>())
             {
-                order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
-                CurrentDelay = 0;
-
-                foreach (var trait in self.TraitsImplementing<WithAbilityAnimation>())
-                {
-                    if (!trait.IsTraitDisabled)
-                        trait.PlayManaAnimation(self);
-                }
-
-                Game.Sound.Play(SoundType.World, info.Sound, self.CenterPosition);
-
-                self.World.AddFrameEndTask(w =>
-                    w.Add(new SpriteEffect(
-                        order.Target.Actor.CenterPosition,
-                        w,
-                        info.Image,
-                        info.EffectSequence,
-                        info.EffectPalette)));
+                if (!trait.IsTraitDisabled)
+                    trait.PlayManaAnimation(self);
             }
+
+            Game.Sound.Play(SoundType.World, info.Sound, self.CenterPosition);
+
+            self.World.AddFrameEndTask(w =>
+                w.Add(new SpriteEffect(
+                    order.Target.Actor.CenterPosition,
+                    w,
+                    info.Image,
+                    info.EffectSequence,
+                    info.EffectPalette)));
         }
 
         void ITick.Tick(Actor self)
         {
-            if (CurrentDelay++ < info.Delay || !info.AutoTarget || !self.IsIdle)
+            if (CurrentDelay++ < info.Delay || !self.IsIdle || (!info.AutoTarget && self.Owner.PlayerName != "creeps"))
+                return;
+
+            if (autoRetry++ < 10)
                 return;
 
             var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
 
             var targets = self.World.FindActorsInCircle(self.CenterPosition, WDist.FromCells(info.Range)).ToArray();
+
             var allowed = targets.Where(a =>
                 a.IsInWorld
                 && !a.IsDead
@@ -109,11 +112,15 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.Owner.IsAlliedWith(self.Owner)
                 && pr.Cash + pr.Resources >= info.Ammount
                 && a.TraitOrDefault<DungeonsAndDragonsStats>() != null
-                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive"));
-            if (allowed.Any())
+                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
+                && CurrentDelay >= info.Delay);
+
+            if (allowed.Any() && self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount))
             {
                 self.World.IssueOrder(new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
             }
+
+            autoRetry = 0;
         }
     }
 

@@ -42,3 +42,18 @@ explosion:
 	dust_splash_effect: dust_splash_effect.ani
 	electric_sphere_effect: electric_sphere_effect.ani
 	teleport_effect: teleport_effect.ani
+
+beacon:
+	Inherits: ^default
+	Defaults:
+		ZOffset: 2535
+	arrow: arrow.ani
+		Length: *
+		Tick: 200
+		ZOffset: 3047
+		Offset: -38,-28
+	circles: beacon.ani
+		Length: *
+		Tick: 200
+		ZOffset: 2047
+		Offset: -38,-28

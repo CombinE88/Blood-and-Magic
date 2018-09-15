@@ -32,7 +32,15 @@ namespace OpenRA.Mods.Bam.Traits.Player
 
             var researchItem = order.OrderString.Replace("ExpRemove-", "");
 
-            TakeCash(self.Owner.PlayerActor.Info.TraitInfo<ResearchInfo>().Researchable[researchItem]);
+            foreach (var trait in self.Owner.PlayerActor.TraitsImplementing<Research>())
+            {
+                if (trait.Info.Researchable.ContainsKey(researchItem))
+                {
+                    TakeCash(trait.Info.Researchable[researchItem]);
+                    break;
+                }
+            }
+
         }
     }
 }

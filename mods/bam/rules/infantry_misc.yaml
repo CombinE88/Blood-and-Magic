@@ -72,7 +72,7 @@ PYRAMID:
 		Locomotor: none
 	ManaShooter:
 		Modifier:
-			Manaspot: 45
+			Manaspot: 36
 	WithManaAnimation:
 	-Living:
 	TransformToBuilding@good:
@@ -155,6 +155,7 @@ STONEGOLEM:
 		WanderMoveRadius: 2
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
+	-CanHoldTrinket:
 
 WOLF:
 	Inherits@1: ^Walker
@@ -186,3 +187,4 @@ WOLF:
 		WanderMoveRadius: 3
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
+	-CanHoldTrinket:

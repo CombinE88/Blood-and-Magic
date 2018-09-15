@@ -61,7 +61,7 @@ namespace OpenRA.Mods.Bam.Traits
             {
                 Game.Sound.PlayNotification(
                     self.World.Map.Rules,
-                    self.World.LocalPlayer,
+                    self.Owner,
                     "Speech",
                     "LowMana",
                     self.World.LocalPlayer.Faction.InternalName);

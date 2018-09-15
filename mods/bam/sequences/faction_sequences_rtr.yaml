@@ -1,6 +1,5 @@
 barracks:
-	Defaults:
-		AddExtension: False
+	Inherits: ^default
 	idle: bits/2x2buildings.png
 		Frames: 5
 	icon: barracks_icon.ani

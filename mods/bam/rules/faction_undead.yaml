@@ -5,7 +5,7 @@ World:
 		Description: Evil
 	MPStartUnits@evil:
 		Class: none
-		ClassName: evil
+		ClassName: 3 Basal Golems
 		BaseActor: mainbase
 		Factions: evil
 		SupportActors: acolyte, acolyte, acolyte
@@ -20,6 +20,8 @@ Player:
 			ghoul: 500
 			goblin: 1125
 			gargoyle: 1450
+			druid: 2560
+			gnome: 3150
 		TimePerCost: 3
 
 CRYPT:
@@ -40,7 +42,7 @@ CRYPT:
 	Tooltip:
 		Name: Crypt
 	AllowConvert:
-		ConvertTo: zombie, ghoul, goblin, gargoyle
+		ConvertTo: zombie, ghoul, goblin, gargoyle, druid, gnome
 	Health:
 		HP: 360
 	Targetable:
@@ -104,7 +106,7 @@ GOBLIN:
 		Damage: 4
 		Armor: 3
 		Speed: 2
-        Attributes: evil, alive, humaniod
+        Attributes: evil, alive, humanoid
 	Researchable:
 		Class: goblin
 		TransformTime: 35
@@ -132,7 +134,7 @@ GHOUL:
 		Weapon: CloseCombatClaw
 	DungeonsAndDragonsStats:
 		Damage: 4
-		Armor: 2
+		Armor: 1
 		Speed: 3
         Attributes: evil, humanoid
 	WithImpactAnimation:
@@ -179,3 +181,73 @@ GARGOYLE:
 		DeathTypes: Death
 		Sound: 7314.wav
 	CanHoldTrinket:
+
+DRUID:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 30
+	Tooltip:
+		Name: Druid
+	Health:
+		HP: 35
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: druid
+	Armament:
+		Weapon: CloseCombatClaw
+	DungeonsAndDragonsStats:
+		Damage: 5
+		Armor: 5
+		Speed: 3
+        Attributes: evil, alive, humanoid
+	WithImpactAnimation:
+	Researchable:
+		Class: druid
+		TransformTime: 35
+	SelfHealing:
+		Step: 1
+		Delay: 75
+		HealIfBelow: 100
+		DamageCooldown: 150
+		DamageTypes: Healing
+
+GNOME:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 35
+	Tooltip:
+		Name: Gnome
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: gnome
+	Armament:
+		Weapon: CloseCombatClub
+	DungeonsAndDragonsStats:
+		Damage: 1
+		Armor: 2
+		Speed: 2
+        Attributes: evil, alive, humanoid
+	Researchable:
+		Class: gnome
+		TransformTime: 45
+	StealEnemyAbility:
+	WithAbilityAnimation:
+		Sequence: stand

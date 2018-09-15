@@ -110,7 +110,7 @@ TRINKET.MANAORB:
 		TrinketType: manaorb
 		EffectOnPickup: true
 		Sound: 7286.wav
-		DropChance: 45
+		DropChance: 25
 
 TRINKET.BOOTS:
 	Inherits@: ^trinket

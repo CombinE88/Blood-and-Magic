@@ -5,7 +5,7 @@ World:
 		Description: Good
 	MPStartUnits@good:
 		Class: none
-		ClassName: good
+		ClassName: 3 Basal Golems
 		BaseActor: mainbase
 		Factions: good
 		SupportActors: acolyte, acolyte, acolyte
@@ -214,6 +214,7 @@ GRIFFIN:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7314.wav
+	-CanHoldTrinket:
 
 WIZARD:
 	Inherits@1: ^Walker

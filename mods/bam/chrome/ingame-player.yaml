@@ -23,6 +23,7 @@ Container@PLAYER_WIDGETS:
 							Logic: BeaconOrderButtonLogic
 							Width: 0
 							Height: 0
+							Key: PlaceBeacon
 							TooltipText: Place Beacon
 							TooltipContainer: TOOLTIP_CONTAINER
 							VisualHeight: 0

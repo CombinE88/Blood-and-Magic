@@ -24,7 +24,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            if (actorActions.Actor == null)
+            if (actorActions.Actor == null || actorActions.Actor.TraitOrDefault<CanHoldTrinket>() == null || actorActions.Actor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
 
             string actorString = null;
@@ -70,7 +70,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Draw()
         {
-            if (actorActions.Actor == null)
+            if (actorActions.Actor == null || actorActions.Actor.Trait<CanHoldTrinket>() == null || actorActions.Actor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
 
             if (animation != null)

@@ -45,7 +45,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override bool HandleMouseInput(MouseInput mi)
         {
-            if (!EventBounds.Contains(mi.Location) || selectedValidActors.Count < 4)
+            if (!EventBounds.Contains(mi.Location))
                 return false;
 
             if (mi.Button != MouseButton.Left)
@@ -53,12 +53,15 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                for (int i = 0; i < selectedValidActors.Count - 1; i++)
-                {
-                    selectedValidActors[i].World.IssueOrder(new Order("RemoveSelf", selectedValidActors[i], false));
-                }
+                Visible = false;
+                actorActions.RemoveTransformmenu();
 
-                selectedValidActors[selectedValidActors.Count].World.IssueOrder(new Order("TransformTo", actorActions.Actor, false));
+                actorActions.BamUi.World.IssueOrder(new Order("TransformTo-" + animationString, selectedValidActors.Last(), false));
+
+                for (int i = 0; i < 3; i++)
+                {
+                    actorActions.BamUi.World.IssueOrder(new Order("RemoveSelf", selectedValidActors[i], false));
+                }
 
                 pressed = true;
             }

@@ -90,7 +90,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (Actor == null)
                 return;
 
-            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>())
+            if (Actor.TraitOrDefault<CanHoldTrinket>() != null && Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
+            {
+                trinketButtons.Visible = true;
+                trinketDropButton.Visible = true;
+            }
+
+            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>() || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>())
                 abilityButton.Visible = true;
 
             if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && !Actor.Info.TraitInfo<ManaShooterInfo>().OnlyStores)
@@ -126,6 +132,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
                 foreach (var trait in traits)
                 {
+                    if(!trait.Info.Factions.Contains(Actor.Owner.Faction.InternalName))
+                        continue;
+
                     var selectedValidActors = ActorGroup
                         .Where(a =>
                             a.TraitsImplementing<TransformToBuilding>().FirstOrDefault(t => t.Buildingbelow == trait.Buildingbelow) != null
@@ -198,7 +207,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             convertToButtons = new List<ConvertToButtonWidget>();
         }
 
-        void RemoveTransformmenu()
+        public void RemoveTransformmenu()
         {
             if (transformToButtons.Any())
                 foreach (var button in transformToButtons)

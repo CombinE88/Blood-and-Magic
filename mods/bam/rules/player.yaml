@@ -23,10 +23,11 @@ Player:
 		FogCheckboxDisplayOrder: 3
 	FrozenActorLayer:
 	PlayerStatistics:
-	PlaceBeacon:
 	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
 	ResourceStorageWarning:
 	PlayerExperience:
 	DungeonsAndDragonsExperience:
 	AdvancedAttackNotifier:
+	PlaceBeacon:
+		Palette: BamPlayer

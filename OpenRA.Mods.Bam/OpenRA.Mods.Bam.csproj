@@ -134,6 +134,7 @@
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
     <Compile Include="Traits\UnitAbilities\GhoulLeechLive.cs" />
     <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
+    <Compile Include="Traits\UnitAbilities\StealEnemyAbility.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />
