@@ -23,42 +23,42 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public Actor[] ActorGroup;
 
         private ManaSendButtonWidget manaSend;
-        private SpawnGolemWidget SpawnGolem;
-        private TransformToBuildingButtonWidget TransformToBuilding;
+        private SpawnGolemWidget spawnGolem;
+        private TransformToBuildingButtonWidget transformToBuilding;
 
-        private DrawActorStatisticsWidget DrawActorStatisticsW;
-        private TrinketButtonsWidget TrinketButtons;
-        private TrinketDropButtonWidget TrinketDropButton;
+        private DrawActorStatisticsWidget drawActorStatisticsW;
+        private TrinketButtonsWidget trinketButtons;
+        private TrinketDropButtonWidget trinketDropButton;
         private DrawTransformStatisticsWidget drawTransformStatistics;
-        private DrawValueStatisticsWidget DrawValueStatistics;
-        private HealthBarUIWidget HealthBarUI;
-        private SelectionNameWidget SelectionName;
-        private AbilityButtonWidget AbilityButton;
+        private DrawValueStatisticsWidget drawValueStatistics;
+        private HealthBarUIWidget healthBarUI;
+        private SelectionNameWidget selectionName;
+        private AbilityButtonWidget abilityButton;
 
-        private List<ConvertToButtonWidget> ConvertToButtons = new List<ConvertToButtonWidget>();
+        private List<ConvertToButtonWidget> convertToButtons = new List<ConvertToButtonWidget>();
 
-        private ShowResearchButtonWidget ResearchEnabler;
+        private ShowResearchButtonWidget researchEnabler;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
             BamUi = bamUi;
 
-            AddChild(manaSend = new ManaSendButtonWidget(this) {Visible = false});
-            AddChild(SpawnGolem = new SpawnGolemWidget(this) {Visible = false});
+            AddChild(manaSend = new ManaSendButtonWidget(this) { Visible = false });
+            AddChild(spawnGolem = new SpawnGolemWidget(this) { Visible = false });
 
-            AddChild(TransformToBuilding = new TransformToBuildingButtonWidget(this) {Visible = false});
+            AddChild(transformToBuilding = new TransformToBuildingButtonWidget(this) { Visible = false });
 
-            AddChild(DrawActorStatisticsW = new DrawActorStatisticsWidget(this) {Visible = false});
-            AddChild(drawTransformStatistics = new DrawTransformStatisticsWidget(this) {Visible = false});
-            AddChild(DrawValueStatistics = new DrawValueStatisticsWidget(this) {Visible = false});
-            AddChild(HealthBarUI = new HealthBarUIWidget(this) {Visible = false});
-            AddChild(SelectionName = new SelectionNameWidget(this) {Visible = false});
-            AddChild(AbilityButton = new AbilityButtonWidget(this) {Visible = false});
+            AddChild(drawActorStatisticsW = new DrawActorStatisticsWidget(this) { Visible = false });
+            AddChild(drawTransformStatistics = new DrawTransformStatisticsWidget(this) { Visible = false });
+            AddChild(drawValueStatistics = new DrawValueStatisticsWidget(this) { Visible = false });
+            AddChild(healthBarUI = new HealthBarUIWidget(this) { Visible = false });
+            AddChild(selectionName = new SelectionNameWidget(this) { Visible = false });
+            AddChild(abilityButton = new AbilityButtonWidget(this) { Visible = false });
 
-            AddChild(ResearchEnabler = new ShowResearchButtonWidget(this) {Visible = true});
+            AddChild(researchEnabler = new ShowResearchButtonWidget(this) { Visible = true });
 
-            AddChild(TrinketButtons = new TrinketButtonsWidget(this) {Visible = false});
-            AddChild(TrinketDropButton = new TrinketDropButtonWidget(this) {Visible = false});
+            AddChild(trinketButtons = new TrinketButtonsWidget(this) { Visible = false });
+            AddChild(trinketDropButton = new TrinketDropButtonWidget(this) { Visible = false });
         }
 
         public override void Tick()
@@ -68,22 +68,20 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            //WidgetUtils.FillRectWithColor(RenderBounds, Color.Pink);
-
             manaSend.Visible = false;
-            SpawnGolem.Visible = false;
-            TransformToBuilding.Visible = false;
-            TrinketButtons.Visible = false;
-            TrinketDropButton.Visible = false;
+            spawnGolem.Visible = false;
+            transformToBuilding.Visible = false;
+            trinketButtons.Visible = false;
+            trinketDropButton.Visible = false;
 
-            DrawActorStatisticsW.Visible = false;
+            drawActorStatisticsW.Visible = false;
             drawTransformStatistics.Visible = false;
-            DrawValueStatistics.Visible = false;
-            HealthBarUI.Visible = false;
-            SelectionName.Visible = false;
-            AbilityButton.Visible = false;
+            drawValueStatistics.Visible = false;
+            healthBarUI.Visible = false;
+            selectionName.Visible = false;
+            abilityButton.Visible = false;
 
-            // TODO hide all others here
+            //// TODO hide all others here
 
             ActorGroup = BamUi.World.Selection.Actors.Where(a => !a.IsDead && a.IsInWorld && a.Owner == BamUi.World.LocalPlayer).ToArray();
             Actor = ActorGroup.FirstOrDefault(a => !a.IsDead && a.IsInWorld && a.Owner == BamUi.World.LocalPlayer);
@@ -96,30 +94,29 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 return;
 
             if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>())
-                AbilityButton.Visible = true;
+                abilityButton.Visible = true;
 
             if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && !Actor.Info.TraitInfo<ManaShooterInfo>().OnlyStores)
                 manaSend.Visible = true;
 
             if (Actor.Info.HasTraitInfo<SpawnsAcolytesInfo>())
-                SpawnGolem.Visible = true;
+                spawnGolem.Visible = true;
 
             var ca = Actor.TraitOrDefault<ConvertAdjetant>();
 
             if (Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && ca.AllowTransform && ca.TransformEnabler != null)
-                if (!ConvertToButtons.Any())
+                if (!convertToButtons.Any())
                 {
                     CreateSpawnMenu();
                 }
                 else
                 {
-                    foreach (var widget in ConvertToButtons)
+                    foreach (var widget in convertToButtons)
                     {
                         widget.Visible = true;
                     }
                 }
-
-            else if (ConvertToButtons.Any())
+            else if (convertToButtons.Any())
             {
                 RemoveSpawnmenu();
             }
@@ -131,24 +128,23 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         a.Info.HasTraitInfo<TransformToBuildingInfo>()
                         && a.Trait<TransformToBuilding>().StandsOnBuilding
                         && a.Trait<TransformToBuilding>().Buildingbelow == Actor.Trait<TransformToBuilding>().Buildingbelow
-                        && a.IsIdle
-                    );
+                        && a.IsIdle);
 
                 if (selectedValidActors.Count() >= 4)
                 {
-                    TransformToBuilding.SelectedValidActors = selectedValidActors.ToHashSet();
-                    TransformToBuilding.Visible = true;
+                    transformToBuilding.SelectedValidActors = selectedValidActors.ToHashSet();
+                    transformToBuilding.Visible = true;
                 }
             }
 
             if (Actor.Info.HasTraitInfo<CanHoldTrinketInfo>() && Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
             {
-                TrinketButtons.Visible = true;
+                trinketButtons.Visible = true;
                 if (!Actor.Info.HasTraitInfo<TransformAfterTimeInfo>())
-                    TrinketDropButton.Visible = true;
+                    trinketDropButton.Visible = true;
             }
 
-            // TODO add new buttons here
+            //// TODO add new buttons here
         }
 
         void CreateSpawnMenu()
@@ -162,11 +158,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         450 + 68 * (i / 2),
                         transformable[i],
                         transformable[i])
-                    {Visible = false};
-                ConvertToButtons.Add(con);
+                    { Visible = false };
+                convertToButtons.Add(con);
             }
 
-            foreach (var button in ConvertToButtons)
+            foreach (var button in convertToButtons)
             {
                 AddChild(button);
             }
@@ -174,28 +170,27 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         void RemoveSpawnmenu()
         {
-            if (ConvertToButtons.Any())
-                foreach (var button in ConvertToButtons)
+            if (convertToButtons.Any())
+                foreach (var button in convertToButtons)
                 {
                     RemoveChild(button);
                     button.Removed();
                 }
 
-            ConvertToButtons = new List<ConvertToButtonWidget>();
+            convertToButtons = new List<ConvertToButtonWidget>();
         }
 
         void DrawActorStatistics()
         {
-            // Draw Picture
-            DrawActorStatisticsW.Visible = true;
+            drawActorStatisticsW.Visible = true;
             if (AllActor.Info.HasTraitInfo<TransformAfterTimeInfo>())
                 drawTransformStatistics.Visible = true;
             if (AllActor.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>())
-                DrawValueStatistics.Visible = true;
+                drawValueStatistics.Visible = true;
             if (AllActor.TraitOrDefault<IHealth>() != null)
-                HealthBarUI.Visible = true;
+                healthBarUI.Visible = true;
             if (AllActor.Info.HasTraitInfo<TooltipInfo>())
-                SelectionName.Visible = true;
+                selectionName.Visible = true;
         }
     }
 }

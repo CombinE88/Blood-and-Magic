@@ -10,17 +10,13 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
     {
         public object Create(ActorInitializer init)
         {
-            return new GhoulLeechLive(init.Self, this);
+            return new GhoulLeechLive();
         }
     }
 
     public class GhoulLeechLive : INotifyAppliedDamage
     {
-        public GhoulLeechLive(Actor initSelf, GhoulLeechLiveInfo info)
-        {
-        }
-
-        public void AppliedDamage(Actor self, Actor damaged, AttackInfo e)
+        void INotifyAppliedDamage.AppliedDamage(Actor self, Actor damaged, AttackInfo e)
         {
             if (damaged != null
                 && damaged.TraitOrDefault<DungeonsAndDragonsStats>() != null

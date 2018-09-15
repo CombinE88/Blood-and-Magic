@@ -53,7 +53,7 @@ namespace OpenRA.Mods.Bam.Traits
                         if (exp != null)
                         {
                             if (a.Info.HasTraitInfo<ValuedInfo>())
-                                exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost/2);
+                                exp.AddCash(a.Info.TraitInfo<ValuedInfo>().Cost / 2);
                         }
                     }
                 });
@@ -64,12 +64,11 @@ namespace OpenRA.Mods.Bam.Traits
                     self.World.LocalPlayer,
                     "Speech",
                     "LowMana",
-                    self.World.LocalPlayer.Faction.InternalName
-                );
+                    self.World.LocalPlayer.Faction.InternalName);
             }
         }
 
-        public void Created(Actor self)
+        void INotifyCreated.Created(Actor self)
         {
             pr = self.Owner.PlayerActor.Trait<PlayerResources>();
         }

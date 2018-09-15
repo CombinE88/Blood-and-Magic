@@ -56,7 +56,7 @@ namespace OpenRA.Mods.Bam.Traits
                         w,
                         self.Info.TraitInfo<RenderSpritesInfo>().Image,
                         "transform_reverse",
-                        self.Info.TraitInfo<RenderSpritesInfo>().PlayerPalette+self.Owner.InternalName)));
+                        self.Info.TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
 
                 self.QueueActivity(new AdvancedTransform(self, IntoActor)
                 {
@@ -68,7 +68,7 @@ namespace OpenRA.Mods.Bam.Traits
                     Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
                 });
 
-                var player =self.World.LocalPlayer;
+                var player = self.World.LocalPlayer;
                 Game.Sound.PlayNotification(self.World.Map.Rules, player, "Speech", info.Notification, self.Owner.Faction.InternalName);
 
                 Transforming = false;

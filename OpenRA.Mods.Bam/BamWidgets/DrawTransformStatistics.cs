@@ -56,7 +56,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             transformAfterTime = actorActions.Actor.TraitOrDefault<TransformAfterTime>();
 
-            //hide
+            // hide
             WidgetUtils.DrawRGBA(background2, new float2(RenderBounds.Left + 0, RenderBounds.Top + 298));
             WidgetUtils.DrawRGBA(background3, new float2(RenderBounds.Left + 90, RenderBounds.Top + 298));
 

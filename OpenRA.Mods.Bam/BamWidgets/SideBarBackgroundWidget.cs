@@ -18,7 +18,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public int BoundsXMax = 0;
         public int BoundsYMax = 0;
 
-
         public SideBarBackgroundWidget(BamUIWidget bamUi, int posX, int posy, int boundsx, int boundsy, int boundsxmax, int boundsymax)
         {
             this.bamUi = bamUi;

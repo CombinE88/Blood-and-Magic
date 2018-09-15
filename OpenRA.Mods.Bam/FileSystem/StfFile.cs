@@ -158,7 +158,7 @@ namespace OpenRA.Mods.Bam.FileSystem
                 }
 
                 stream.Seek(entry.Offset, SeekOrigin.Begin);
-                var bytes = stream.ReadBytes((int) entry.Length);
+                var bytes = stream.ReadBytes((int)entry.Length);
 
                 return new MemoryStream(bytes);
             }

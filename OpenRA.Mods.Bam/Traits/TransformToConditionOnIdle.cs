@@ -21,7 +21,7 @@ namespace OpenRA.Mods.Bam.Traits
             deploy = init.Self.Trait<AdvancedTransforms>();
         }
 
-        public void Tick(Actor self)
+        void ITick.Tick(Actor self)
         {
             if (!self.IsDead && self.IsInWorld && self.IsIdle)
             {

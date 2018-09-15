@@ -18,7 +18,6 @@ namespace OpenRA.Mods.Common.Warheads
             this.actorActions = actorActions;
             anim = new Animation(actorActions.BamUi.World, "basic_ui");
             Bounds = new Rectangle(1, 265, 180, 34);
-            //0, 264
         }
 
         public override void Tick()

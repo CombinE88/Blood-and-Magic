@@ -33,13 +33,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
 
+            var seq = actorActions.BamUi.World.Map.Rules.Sequences;
+            var name = actorActions.Actor.Owner.Faction.Name;
+
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
-                animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage
-                (
-                    actorInfo,
-                    actorActions.BamUi.World.Map.Rules.Sequences,
-                    actorActions.Actor.Owner.Faction.Name
-                ));
+                animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, seq, name));
 
             var x = pressed ? 11 : 10;
             var y = pressed ? 450 + 1 : 450;

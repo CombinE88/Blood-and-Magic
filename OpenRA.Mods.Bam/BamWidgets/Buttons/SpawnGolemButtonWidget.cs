@@ -30,12 +30,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
 
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
-                animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage
-                (
-                    actorInfo,
-                    actorActions.BamUi.World.Map.Rules.Sequences,
-                    actorActions.Actor.Owner.Faction.Name
-                ));
+                animation = new Animation(actorActions.BamUi.World,
+                    actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, actorActions.BamUi.World.Map.Rules.Sequences, actorActions.Actor.Owner.Faction.Name));
 
             var x = pressed ? 11 : 10;
             var y = pressed ? 450 + 1 : 450;

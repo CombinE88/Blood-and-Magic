@@ -103,7 +103,6 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 ContiniusEffect(trinketInfo);
         }
 
-
         public void EffectClick()
         {
             var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();

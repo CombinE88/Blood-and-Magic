@@ -47,7 +47,6 @@ namespace OpenRA.Mods.Common.Traits.Render
         private Actor self;
         private WithManaAnimationInfo info;
 
-
         public WithManaAnimation(ActorInitializer init, WithManaAnimationInfo info)
             : base(info)
         {

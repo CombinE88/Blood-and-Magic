@@ -43,7 +43,10 @@ namespace OpenRA.Mods.Common.Traits.Render
             if (IsTraitDisabled)
                 return;
 
-            if (wsb.DefaultAnimation.CurrentSequence.Name == "idle" || wsb.DefaultAnimation.CurrentSequence.Name == "stand" || wsb.DefaultAnimation.CurrentSequence.Name == "run" || wsb.DefaultAnimation.CurrentSequence.Name == "aim")
+            if (wsb.DefaultAnimation.CurrentSequence.Name == "idle"
+                || wsb.DefaultAnimation.CurrentSequence.Name == "stand"
+                || wsb.DefaultAnimation.CurrentSequence.Name == "run"
+                || wsb.DefaultAnimation.CurrentSequence.Name == "aim")
             {
                 wsb.PlayCustomAnimation(self, info.Sequence, () => { });
             }
@@ -54,7 +57,7 @@ namespace OpenRA.Mods.Common.Traits.Render
             wsb = self.TraitsImplementing<WithSpriteBody>().Single(w => w.Info.Name == Info.Body);
         }
 
-        public void Damaged(Actor self, AttackInfo e)
+        void INotifyDamage.Damaged(Actor self, AttackInfo e)
         {
             if (!self.IsDead && self.IsInWorld && !e.Damage.DamageTypes.Contains("Healing"))
             {

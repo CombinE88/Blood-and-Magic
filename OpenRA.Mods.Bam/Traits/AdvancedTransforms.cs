@@ -130,8 +130,6 @@ namespace OpenRA.Mods.Bam.Traits
 			if (!queued)
 				self.CancelActivity();
 
-
-
 			self.QueueActivity(new AdvancedTransform(self, Info.IntoActor)
 			{
 				Offset = Info.Offset,

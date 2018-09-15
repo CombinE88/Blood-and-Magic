@@ -13,7 +13,7 @@ namespace OpenRA.Mods.Bam.Traits.World
 
         public readonly Dictionary<string, int> Researchable;
 
-        public readonly string[] PreResearched = {};
+        public readonly string[] PreResearched = { };
 
         public object Create(ActorInitializer init)
         {

@@ -19,8 +19,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private Animation anim;
         private int xWidth;
 
-        public BamToolTipWidget
-        (
+        public BamToolTipWidget(
             ActorActionsWidget actorActions,
             string name = "",
             int cost = 0,
@@ -30,8 +29,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             int armor = 0,
             int speed = 0,
             bool showRes = false,
-            bool showStats = false
-        )
+            bool showStats = false)
         {
             this.actorActions = actorActions;
             this.name = name;

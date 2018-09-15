@@ -44,7 +44,7 @@ namespace OpenRA.Mods.Bam.Traits
             pr = init.Self.Owner.PlayerActor.TraitOrDefault<PlayerResources>();
         }
 
-        public void Tick(Actor self)
+        void ITick.Tick(Actor self)
         {
             if (IsTraitDisabled || info.OnlyStores || delivering)
                 return;

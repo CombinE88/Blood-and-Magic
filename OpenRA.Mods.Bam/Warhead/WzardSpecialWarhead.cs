@@ -76,7 +76,6 @@ namespace OpenRA.Mods.Common.Warheads
             if (!IsValidAgainst(victim, firedBy))
                 return;
 
-
             var extra = 0;
             if (firedBy != null && !firedBy.IsDead && firedBy.IsInWorld)
             {

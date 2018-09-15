@@ -14,7 +14,7 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         public readonly int Speed = 0;
 
         [Desc("What is this. possibilities are: humanoid, alive, nature, holy, evil")]
-        public readonly string[] Attributes = {"alive", "humanoid"};
+        public readonly string[] Attributes = { "alive", "humanoid" };
 
         public readonly bool CanbeModified = true;
 
@@ -47,13 +47,12 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
             this.info = info;
         }
 
-        public void Tick(Actor self)
+        void ITick.Tick(Actor self)
         {
             if (!self.IsInWorld || self.IsDead || !info.CanbeModified)
                 return;
 
             var getTileBelow = self.World.Map.GetTerrainInfo(self.Location).Type;
-
 
             var getModifiersInfo = self.World.WorldActor.Info.TraitInfo<TilesetStatisticsInfo>();
 
@@ -81,12 +80,12 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
             }
         }
 
-        public int GetFirepowerModifier()
+        int IFirepowerModifier.GetFirepowerModifier()
         {
             return 100 * ModifiedDamage;
         }
 
-        public int GetSpeedModifier()
+        int ISpeedModifier.GetSpeedModifier()
         {
             return 100 + ModifiedSpeed * 15;
         }

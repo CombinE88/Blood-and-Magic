@@ -29,7 +29,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             WidgetUtils.DrawRGBA(background, new float2(RenderBounds.X, RenderBounds.Y));
 
-
             var value = 144 * (playerResources.Resources + playerResources.Cash) / 400;
             WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 8, RenderBounds.Y + 3, value, 10), Color.CornflowerBlue);
 

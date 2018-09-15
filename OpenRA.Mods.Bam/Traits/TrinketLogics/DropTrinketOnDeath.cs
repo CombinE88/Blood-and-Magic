@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             self = init.Self;
         }
 
-        public void Killed(Actor self, AttackInfo e)
+        void INotifyKilled.Killed(Actor self, AttackInfo e)
         {
             if (self.World.SharedRandom.Next(0, 100) >= info.Probability)
                 return;

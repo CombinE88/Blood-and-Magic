@@ -33,6 +33,5 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         public IsTrinket()
         {
         }
-
     }
 }

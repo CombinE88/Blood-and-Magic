@@ -23,7 +23,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private string actorString;
         private BamToolTipWidget tooltip;
 
-
         public ConvertToButtonWidget(ActorActionsWidget actorActions, int posx, int posy, string animationString, string actorString)
         {
             this.actorActions = actorActions;
@@ -32,8 +31,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             this.animationString = animationString;
             this.actorString = actorString;
 
-            AddChild(tooltip = new BamToolTipWidget
-            (
+            AddChild(tooltip = new BamToolTipWidget(
                 this.actorActions,
                 actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<TooltipInfo>().Name,
                 actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<ValuedInfo>().Cost,
@@ -43,8 +41,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<DungeonsAndDragonsStatsInfo>().Armor,
                 actorActions.BamUi.World.Map.Rules.Actors[this.actorString].TraitInfo<DungeonsAndDragonsStatsInfo>().Speed,
                 false,
-                true
-            ) {Visible = false});
+                true) { Visible = false });
         }
 
         public override void Tick()
@@ -61,19 +58,14 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             else
                 disabled = false;
 
-
             actorString = null;
             if (actorActions.Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && actorActions.Actor.TraitOrDefault<ConvertAdjetant>().TransformEnabler != null)
                 actorString = animationString;
 
             actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
-                animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage
-                (
-                    actorInfo,
-                    actorActions.BamUi.World.Map.Rules.Sequences,
-                    actorActions.Actor.Owner.Faction.Name
-                ));
+                animation = new Animation(actorActions.BamUi.World,
+                    actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, actorActions.BamUi.World.Map.Rules.Sequences, actorActions.Actor.Owner.Faction.Name));
 
             var x = pressed ? posx + 1 : posx;
             var y = pressed ? posy + 1 : posy;
@@ -94,7 +86,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (mi.Button != MouseButton.Left)
                 return true;
             var pr = actorActions.BamUi.World.LocalPlayer.PlayerActor.Trait<PlayerResources>();
-            if (actorActions.Actor != null && mi.Event == MouseInputEvent.Down && pr.Cash + pr.Resources >= actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost)
+            if (actorActions.Actor != null && mi.Event == MouseInputEvent.Down &&
+                pr.Cash + pr.Resources >= actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost)
             {
                 actorActions.Actor.World.IssueOrder(new Order("Convert-" + actorString, actorActions.Actor, false));
                 pressed = true;

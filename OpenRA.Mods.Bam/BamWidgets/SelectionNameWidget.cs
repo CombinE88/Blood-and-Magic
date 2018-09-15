@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            actorActions.BamUi.FontLarge.DrawTextWithShadow(text, new float2(RenderBounds.X, RenderBounds.Y), Color.White, Color.Gray,1);
+            actorActions.BamUi.FontLarge.DrawTextWithShadow(text, new float2(RenderBounds.X, RenderBounds.Y), Color.White, Color.Gray, 1);
         }
     }
 }

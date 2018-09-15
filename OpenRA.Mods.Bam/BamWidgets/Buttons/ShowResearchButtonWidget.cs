@@ -17,14 +17,13 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private bool pressed;
         public bool ShowResearch;
 
-        public Research research;
+        public Research Research;
         public bool Researching = false;
-        public int currentResearchTime = 0;
+        public int CurrentResearchTime = 0;
         public int MaxResearchTime;
         public string ResearchItem;
 
-
-        private List<ResearchButtonWidget> ResearchButtons = new List<ResearchButtonWidget>();
+        private List<ResearchButtonWidget> researchButtons = new List<ResearchButtonWidget>();
 
         public ShowResearchButtonWidget(ActorActionsWidget actorActions)
         {
@@ -33,7 +32,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             var resProperty = ActorActions.BamUi.World.LocalPlayer.PlayerActor.TraitsImplementing<Research>().ToArray();
             var faction = ActorActions.BamUi.World.RenderPlayer.Faction.InternalName;
             var setfaction = resProperty.Where(r => r.Info.Faction == faction);
-            research = setfaction.FirstOrDefault();
+            Research = setfaction.FirstOrDefault();
         }
 
         public override bool HandleMouseInput(MouseInput mi)
@@ -48,9 +47,9 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             {
                 ShowResearch = !ShowResearch;
 
-                if (ShowResearch && !ResearchButtons.Any())
+                if (ShowResearch && !researchButtons.Any())
                     CreateResearchMenu();
-                else if (!ShowResearch && ResearchButtons.Any())
+                else if (!ShowResearch && researchButtons.Any())
                     RemoveResearchMenu();
 
                 pressed = true;
@@ -70,20 +69,19 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         {
             if (Researching)
             {
-                if (research != null && currentResearchTime++ >= MaxResearchTime)
+                if (Research != null && CurrentResearchTime++ >= MaxResearchTime)
                 {
-                    var list = research.Researchable;
+                    var list = Research.Researchable;
                     list.Add(ResearchItem);
                     Researching = false;
                     ResearchItem = "";
-                    currentResearchTime = 0;
+                    CurrentResearchTime = 0;
                     Game.Sound.PlayNotification(
                         ActorActions.BamUi.World.Map.Rules,
                         ActorActions.BamUi.World.LocalPlayer,
                         "Speech",
                         "ResearchComplete",
-                        ActorActions.BamUi.World.LocalPlayer.Faction.InternalName
-                    );
+                        ActorActions.BamUi.World.LocalPlayer.Faction.InternalName);
                 }
             }
 
@@ -92,7 +90,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Draw()
         {
-            //120.0-1 76x24
             var animation = new Animation(ActorActions.BamUi.World, "basic_ui");
 
             animation.PlayFetchIndex(pressed ? "resbutton_pressed" : "resbutton", () => 0);
@@ -116,42 +113,40 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (Researching)
             {
-                var progress = Math.Min(6 * currentResearchTime / MaxResearchTime, 5);
+                var progress = Math.Min(6 * CurrentResearchTime / MaxResearchTime, 5);
 
                 animation.PlayFetchIndex("ui_research_bar", () => progress);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X - 76 + 20, RenderBounds.Y + 316), ActorActions.BamUi.Palette);
 
-                //Game.AddChatLine(Color.White, currentResearchTime + "", "" + progress);
+                // Game.AddChatLine(Color.White, currentResearchTime + "", "" + progress);
             }
         }
 
         public void CreateResearchMenu()
         {
-            if (research == null)
+            if (Research == null)
                 return;
 
             List<string> alreadyRes = new List<string>();
-            foreach (var dict in research.Info.PreResearched)
+            foreach (var dict in Research.Info.PreResearched)
             {
                 alreadyRes.Add(dict);
             }
 
-            var list = research.Info.Researchable.ToList();
+            var list = Research.Info.Researchable.ToList();
 
             for (int i = 0; i < list.Count; i++)
             {
-                var con = new ResearchButtonWidget
-                (
+                var con = new ResearchButtonWidget(
                     this,
                     -76 + i % 2 * 75, 24 + 68 * (i / 2),
                     list[i].Key,
-                    list[i].Value * research.Info.TimePerCost,
-                    list[i].Value
-                );
-                ResearchButtons.Add(con);
+                    list[i].Value * Research.Info.TimePerCost,
+                    list[i].Value);
+                researchButtons.Add(con);
             }
 
-            foreach (var button in ResearchButtons)
+            foreach (var button in researchButtons)
             {
                 AddChild(button);
             }
@@ -159,14 +154,14 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public void RemoveResearchMenu()
         {
-            if (ResearchButtons.Any())
-                foreach (var button in ResearchButtons)
+            if (researchButtons.Any())
+                foreach (var button in researchButtons)
                 {
                     RemoveChild(button);
                     button.Removed();
                 }
 
-            ResearchButtons = new List<ResearchButtonWidget>();
+            researchButtons = new List<ResearchButtonWidget>();
         }
     }
 }

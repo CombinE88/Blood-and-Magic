@@ -21,31 +21,28 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private int posy;
         private string researchItem;
         private int researchTime;
-        private int ResearchCost;
+        private int researchCost;
         private BamToolTipWidget tooltip;
 
-        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, int ResearchTime, int ResearchCost)
+        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, int researchTime, int researchCost)
         {
             this.showResearch = showResearch;
             this.posx = posx;
             this.posy = posy;
             this.researchItem = researchItem;
-            researchTime = ResearchTime;
-            this.ResearchCost = ResearchCost;
+            this.researchTime = researchTime;
+            this.researchCost = researchCost;
 
-            AddChild(tooltip = new BamToolTipWidget
-            (
+            AddChild(tooltip = new BamToolTipWidget(
                 this.showResearch.ActorActions,
                 this.showResearch.ActorActions.BamUi.World.Map.Rules.Actors[researchItem].TraitInfo<TooltipInfo>().Name,
                 0,
-                ResearchCost,
-                researchTime,
+                researchCost,
+                this.researchTime,
                 0,
                 0,
                 0,
-                true,
-                false
-            ) {Visible = false});
+                true) { Visible = false });
         }
 
         public override void Tick()
@@ -81,7 +78,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                if (!showResearch.Researching && showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience >= ResearchCost)
+                if (!showResearch.Researching && showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience >= researchCost)
                 {
                     showResearch.ActorActions.BamUi.World.IssueOrder(new Order("ExpRemove-" + researchItem, showResearch.ActorActions.BamUi.World.LocalPlayer.PlayerActor, false));
                     pressed = true;
@@ -100,23 +97,20 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                         showResearch.ActorActions.BamUi.World.LocalPlayer,
                         "Speech",
                         "AlreadyResearched",
-                        showResearch.ActorActions.BamUi.World.LocalPlayer.Faction.InternalName
-                    );
+                        showResearch.ActorActions.BamUi.World.LocalPlayer.Faction.InternalName);
                 }
-                else if (showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience < ResearchCost)
+                else if (showResearch.ActorActions.BamUi.World.RenderPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience < researchCost)
                 {
                     Game.Sound.PlayNotification(
                         showResearch.ActorActions.BamUi.World.Map.Rules,
                         showResearch.ActorActions.BamUi.World.LocalPlayer,
                         "Speech",
                         "LowExp",
-                        showResearch.ActorActions.BamUi.World.LocalPlayer.Faction.InternalName
-                    );
+                        showResearch.ActorActions.BamUi.World.LocalPlayer.Faction.InternalName);
                 }
             }
             else if (mi.Event == MouseInputEvent.Up)
                 pressed = false;
-
 
             return true;
         }

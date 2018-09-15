@@ -34,7 +34,6 @@ namespace OpenRA.Mods.Bam.Traits
 
         public readonly bool SkipSelfAnimation = false;
 
-
         public object Create(ActorInitializer init)
         {
             return new ConvertAdjetant(init, this);
@@ -64,8 +63,8 @@ namespace OpenRA.Mods.Bam.Traits
                 .Where(a =>
                     a != null
                     && a.Owner == self.Owner
-                    && a.Info.HasTraitInfo<AllowConvertInfo>()
-                );
+                    && a.Info.HasTraitInfo<AllowConvertInfo>());
+
             AllowTransform = sorrundingActors.Any();
             TransformEnabler = AllowTransform ? sorrundingActors.FirstOrDefault() : null;
         }
@@ -98,12 +97,12 @@ namespace OpenRA.Mods.Bam.Traits
                     w,
                     self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().Image,
                     "transform",
-                    self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette+self.Owner.InternalName)));
+                    self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
 
             self.QueueActivity(new Wait(5));
             self.QueueActivity(new AdvancedTransform(self, into)
             {
-                Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime*25,
+                Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime * 25,
                 CapsuleInto = orderCut,
 
                 Offset = info.Offset,

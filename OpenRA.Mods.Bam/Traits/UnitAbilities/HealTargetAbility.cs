@@ -26,15 +26,13 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         public readonly string EffectSequence = "effect";
         public readonly string EffectPalette = "bam11195";
 
-        public readonly string HealSound = "Heal";
-
         public readonly bool AutoTarget = false;
 
         public readonly string Sound = "7206.wav";
 
         public object Create(ActorInitializer init)
         {
-            return new HealTargetAbility(init, this);
+            return new HealTargetAbility(this);
         }
     }
 
@@ -43,7 +41,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         readonly HealTargetAbilityInfo info;
         public int CurrentDelay;
 
-        public HealTargetAbility(ActorInitializer init, HealTargetAbilityInfo info)
+        public HealTargetAbility(HealTargetAbilityInfo info)
         {
             this.info = info;
         }
@@ -93,7 +91,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             }
         }
 
-        public void Tick(Actor self)
+        void ITick.Tick(Actor self)
         {
             if (CurrentDelay++ < info.Delay || !info.AutoTarget || !self.IsIdle)
                 return;
@@ -111,8 +109,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.Owner.IsAlliedWith(self.Owner)
                 && pr.Cash + pr.Resources >= info.Ammount
                 && a.TraitOrDefault<DungeonsAndDragonsStats>() != null
-                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
-            );
+                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive"));
             if (allowed.Any())
             {
                 self.World.IssueOrder(new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
@@ -136,6 +133,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         {
             var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
             var hp = target.TraitOrDefault<Health>();
+
             // Obey force moving onto bridges
             if (target == null
                 || !target.IsInWorld

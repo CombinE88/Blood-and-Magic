@@ -30,14 +30,12 @@ namespace OpenRA.Mods.Bam.Traits.World
 	{
 		public ImmutablePalette ReadPalette(Stream stream, int[] remap)
 		{
-
 			var palette = new PalPalette(stream).Colors;
 			palette[254] = 0;
 
 			return new ImmutablePalette(palette);
 		}
 	}
-
 
 	class PaletteFromPal : ILoadsPalettes, IProvidesAssetBrowserPalettes
 	{
