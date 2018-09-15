@@ -2,7 +2,7 @@ crypt:
 	Defaults:
 		AddExtension: False
 	idle: bits/2x2buildings.png
-		Frames: 5
+		Frames: 8
 	icon: crypt_icon.ani
 
 zombie:

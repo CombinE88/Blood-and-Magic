@@ -5,13 +5,6 @@ barracks:
 		Frames: 5
 	icon: barracks_icon.ani
 
-armorlidge:
-	Defaults:
-		AddExtension: False
-	idle: bits/2x2buildings.png
-		Frames: 7
-	icon: armorLodge_icon.ani
-
 warrior:
 	Inherits: ^default
 	stand: warrior_idle.ani
