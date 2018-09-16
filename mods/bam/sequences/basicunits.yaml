@@ -57,12 +57,10 @@ acolyte:
 	icon: acolyte_icon.ani
 
 acolyte.pyramid:
-	Inherits: acolyte
-	icon: acolyte_pyramid_icon.ani
+	Inherits: ^default
 	damage: acolyte_damage.ani
 		Tick: 120
 		Length: 4
-		Facings: 4
 	transform: acolyte_transform.ani
 		Tick: 120
 		Length: *
@@ -78,6 +76,17 @@ acolyte.pyramid:
 	die: acolyte_transofrmed_die.ani
 		Tick: 120
 		Length: *
+	mana: acoltye_transformed_mana.ani
+		Tick: 120
+		Length: *
+	transofrmed_die: acolyte_transofrmed_die.ani
+		Tick: 120
+		Length: *
+	transformed_damage: acolyte_transformed_damage.ani
+		Tick: 120
+		Length: *
+	transformed_stand: acolyte_transformed_stand.ani
+	icon: acolyte_pyramid_icon.ani
 
 stonegolem:
 	Inherits: ^default

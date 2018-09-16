@@ -102,7 +102,7 @@ namespace OpenRA.Mods.Bam.Traits.TileActivities
                 set = true;
             }
 
-            standsOn = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.TraitOrDefault<Mobile>() != null);
+            standsOn = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.TraitOrDefault<Mobile>() != null && !a.IsDead && a.IsInWorld);
             Active = standsOn != null;
             if (Active)
                 Enable(self);

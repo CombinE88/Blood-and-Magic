@@ -220,11 +220,11 @@ DRUID:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf
 	Valued:
-		Cost: 30
+		Cost: 35
 	Tooltip:
 		Name: Druid
 	Health:
-		HP: 35
+		HP: 30
 	RevealsShroud:
 		Range: 3c0
 		Type: CenterPosition
@@ -238,8 +238,8 @@ DRUID:
 	Armament:
 		Weapon: CloseCombatClaw
 	DungeonsAndDragonsStats:
-		Damage: 5
-		Armor: 5
+		Damage: 4
+		Armor: 4
 		Speed: 3
         Attributes: evil, alive, humanoid
 	WithImpactAnimation:

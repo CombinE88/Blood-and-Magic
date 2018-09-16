@@ -64,6 +64,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (order.OrderString != "StealTarget")
                 return;
 
+            if (CurrentDelay < info.Delay)
+                return;
+
             var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
 
             if (!pr.TakeCash(info.Ammount))

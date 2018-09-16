@@ -205,7 +205,7 @@ PALADIN:
 		Class: paladin
 		TransformTime: 40
 	HealTargetAbility:
-		Delay: 250
+		Delay: 275
 		Range: 2
 
 GRIFFIN:

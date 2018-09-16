@@ -99,7 +99,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         void ITick.Tick(Actor self)
         {
-            if (CurrentDelay++ < info.Delay || !self.IsIdle || (!info.AutoTarget && self.Owner.PlayerName != "Creeps"))
+            if (CurrentDelay++ < info.Delay || !self.IsIdle || !info.AutoTarget && self.Owner.PlayerName != "Creeps")
                 return;
 
             if (autoRetry++ < 10)

@@ -867,7 +867,7 @@ Templates:
 		Categories: Buttons and Traps
 		Frames: 138
 		Tiles:
-			0: Walls
+			0: Clear
 
 	Template@49:
 		Id: 49
@@ -908,7 +908,7 @@ Templates:
 		Categories: Buttons and Traps
 		Frames: 139
 		Tiles:
-			0: Walls 
+			0: Clear 
 
 	Template@51:
 		Id: 51

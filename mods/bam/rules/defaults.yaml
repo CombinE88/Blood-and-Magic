@@ -32,6 +32,9 @@
 		DamageTypes: Death
 		Damage: 100
 		Delay: 0
+	OwnerLostAction:
+		Action: ChangeOwner
+		Owner: Creep
 
 ^Building:
 	Inherits: ^CoreBuilding
@@ -42,6 +45,9 @@
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7210.wav
+	OwnerLostAction:
+		Action: ChangeOwner
+		Owner: Creep
 
 ^Flyer:
 	Inherits: ^CoreInfantry
@@ -69,6 +75,9 @@
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 		DeathSequencePalette: BamPlayer
+	OwnerLostAction:
+		Action: ChangeOwner
+		Owner: Creep
 
 ^trinket:
 	Inherits: ^CoreUnit
