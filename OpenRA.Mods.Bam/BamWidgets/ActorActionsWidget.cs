@@ -87,12 +87,14 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (AllActor != null)
                 DrawActorStatistics();
 
+            if (AllActor != null && AllActor.TraitOrDefault<CanHoldTrinket>() != null && AllActor.Trait<CanHoldTrinket>().HoldsTrinket != null)
+                trinketButtons.Visible = true;
+
             if (Actor == null)
                 return;
 
             if (Actor.TraitOrDefault<CanHoldTrinket>() != null && Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
             {
-                trinketButtons.Visible = true;
                 trinketDropButton.Visible = true;
             }
 
@@ -132,7 +134,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
                 foreach (var trait in traits)
                 {
-                    if(!trait.Info.Factions.Contains(Actor.Owner.Faction.InternalName))
+                    if (!trait.Info.Factions.Contains(Actor.Owner.Faction.InternalName))
                         continue;
 
                     var selectedValidActors = ActorGroup

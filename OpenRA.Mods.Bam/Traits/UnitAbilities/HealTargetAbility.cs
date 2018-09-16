@@ -52,7 +52,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             get { yield return new HealTargetAbilityOrderTargeter(info.Cursor, info.Range, info.Ammount); }
         }
 
-        public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+        Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
         {
             if (order.OrderID != "HealTarget")
                 return null;
@@ -60,7 +60,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             return new Order(order.OrderID, self, target, queued);
         }
 
-        public void ResolveOrder(Actor self, Order order)
+        void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
             if (order.OrderString != "HealTarget")
                 return;
@@ -69,6 +69,11 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (actor == null || actor.IsDead || !actor.IsInWorld || CurrentDelay < info.Delay)
                 return;
 
+            HealTarget(self, order);
+        }
+
+        void HealTarget(Actor self, Order order)
+        {
             CurrentDelay = 0;
 
             order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
@@ -92,7 +97,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         void ITick.Tick(Actor self)
         {
-            if (CurrentDelay++ < info.Delay || !self.IsIdle || (!info.AutoTarget && self.Owner.PlayerName != "creeps"))
+            if (CurrentDelay++ < info.Delay || !self.IsIdle || (!info.AutoTarget && self.Owner.PlayerName != "Creeps"))
                 return;
 
             if (autoRetry++ < 10)
@@ -117,7 +122,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
             if (allowed.Any() && self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount))
             {
-                self.World.IssueOrder(new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
+                HealTarget(self, new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
             }
 
             autoRetry = 0;

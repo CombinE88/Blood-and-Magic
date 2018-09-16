@@ -23,6 +23,28 @@ EditorWorld:
 	EditorSelectionLayer:
 		Palette: bam11195
 
+BRIDGE:
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Palette: bam11195
+	EditorTilesetFilter:
+		Categories: System
+	TileBridge:
+
+BUTTON:
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Palette: bam11195
+	EditorTilesetFilter:
+		Categories: System
+	TileButton:
+
 # Props -------
 
 

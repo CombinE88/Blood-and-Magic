@@ -382,6 +382,17 @@ dialog2: uibits/dialog.png
 	corner-bl: 512,14,4,3
 	corner-br: 529,14,4,3
 
+background: uibits/dialog.png
+	background: 516,21,13,11
+	border-t: 516,18,13,3
+	border-b: 516,32,13,3
+	border-l: 512,21,4,11
+	border-r: 529,21,4,11
+	corner-tl: 512,18,4,3
+	corner-tr: 529,18,4,3
+	corner-bl: 512,32,4,3
+	corner-br: 529,32,4,3
+	
 # It's a Container, used in various places, like Hotkeys, ColorPicker, Asset Browser frames (looks like a pressed button)
 dialog3: uibits/dialog.png
 	background: 516,21,13,11

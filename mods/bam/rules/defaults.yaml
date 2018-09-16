@@ -24,6 +24,14 @@
 		Sound: 7300.wav
 	AttackNotification:
 		Notifications: UnitUnderAttack
+	DamagedByTraps@Traps:
+		TerrainTypes: TrapActive
+		DamageTypes: Death
+	DamagedByTraps@Pits:
+		TerrainTypes: Clear
+		DamageTypes: Death
+		Damage: 100
+		Delay: 0
 
 ^Building:
 	Inherits: ^CoreBuilding
@@ -36,17 +44,31 @@
 		Sound: 7210.wav
 
 ^Flyer:
-	Inherits: ^Walker
-	Mobile:
-		Locomotor: flying
+	Inherits: ^CoreInfantry
+	RenderSprites:
+		PlayerPalette: BamPlayer
+	Selectable:
+		Bounds: 40,38,0,-10
+		DecorationBounds: 40,38,0,-10
+	MustBeDestroyed:
+		RequiredForShortGame: true
 	Tooltip:
 		GenericName: Guy
-	WithDeathAnimation:
-		UseDeathTypeSuffix: false
-		DeathSequencePalette: BamPlayer
+	CanHoldTrinket:
 	GeneratesExperience:
 	Targetable:
 		TargetTypes: Default
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7300.wav
+	AttackNotification:
+		Notifications: UnitUnderAttack
+	Mobile:
+		Locomotor: flying
+		Speed: 50
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: BamPlayer
 
 ^trinket:
 	Inherits: ^CoreUnit

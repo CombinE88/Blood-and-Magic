@@ -21,18 +21,19 @@ ACOLYTE:
 	TransformToConditionOnIdle:
 	ManaShooter:
 		OnlyStores: true
-	Buildable:
-		Queue: Golem
-		BuildPaletteOrder: 130
-		Description: Golem
-		BuildDuration: 1
 	Valued:
 		Cost: 40
-	TransformToBuilding@good:
+	TransformToBuilding@barracks:
 		IntoBuilding: barracks
+		Factions: good
+	TransformToBuilding@runestone:
+		IntoBuilding: runestone
 		Factions: good
 	TransformToBuilding@evil:
 		IntoBuilding: crypt
+		Factions: evil
+	TransformToBuilding@arborlodge:
+		IntoBuilding: arborlodge
 		Factions: evil
 	ConvertAdjetant:
 		SkipSelfAnimation: true
@@ -75,11 +76,17 @@ PYRAMID:
 			Manaspot: 36
 	WithManaAnimation:
 	-Living:
-	TransformToBuilding@good:
+	TransformToBuilding@barracks:
 		IntoBuilding: barracks
+		Factions: good
+	TransformToBuilding@runestone:
+		IntoBuilding: runestone
 		Factions: good
 	TransformToBuilding@evil:
 		IntoBuilding: crypt
+		Factions: evil
+	TransformToBuilding@arborlodge:
+		IntoBuilding: arborlodge
 		Factions: evil
 	ConvertAdjetant:
 		SkipSelfAnimation: true
@@ -114,8 +121,6 @@ CAPSULE:
 	Mobile:
 		Speed: 1
 		Locomotor: none
-	Tooltip:
-		Name: Capsule
 	Health:
 		HP: 20
 	RevealsShroud:

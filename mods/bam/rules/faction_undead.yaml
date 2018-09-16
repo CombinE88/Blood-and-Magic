@@ -42,9 +42,33 @@ CRYPT:
 	Tooltip:
 		Name: Crypt
 	AllowConvert:
-		ConvertTo: zombie, ghoul, goblin, gargoyle, druid, gnome
+		ConvertTo: zombie, goblin, gargoyle
 	Health:
-		HP: 360
+		HP: 300
+	Targetable:
+		TargetTypes: Default
+
+ARBORLODGE:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: arborlodge
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Arborlodge
+	AllowConvert:
+		ConvertTo: ghoul, gargoyle, druid
+	Health:
+		HP: 240
 	Targetable:
 		TargetTypes: Default
 
@@ -78,6 +102,8 @@ ZOMBIE:
 	Researchable:
 		Class: zombie
 		TransformTime: 30
+	CanHoldTrinket:
+		CannotUse: healsalve
 
 GOBLIN:
 	Inherits@1: ^Walker
@@ -142,6 +168,8 @@ GHOUL:
 		Class: ghoul
 		TransformTime: 30
 	GhoulLeechLive:
+	CanHoldTrinket:
+		CannotUse: healsalve
 
 GARGOYLE:
 	Inherits@1: ^Flyer

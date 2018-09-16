@@ -4,6 +4,12 @@ barracks:
 		Frames: 5
 	icon: barracks_icon.ani
 
+runestone:
+	Inherits: ^default
+	idle: bits/2x2buildings.png
+		Frames: 9
+	icon: runestone_icon.ani
+
 warrior:
 	Inherits: ^default
 	stand: warrior_idle.ani

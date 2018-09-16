@@ -49,13 +49,17 @@ namespace OpenRA.Mods.Bam.Traits
                 return;
 
             if (order.OrderString == "RemoveSelf")
-                self.Dispose();
+            {
+                self.CancelActivity();
+                self.QueueActivity(new RemoveSelf());
+            }
 
             if (order.OrderString.Contains("TransformTo-" + Info.IntoBuilding))
             {
                 var location = Buildingbelow.Location;
                 var ownerSelf = self.Owner;
-                self.Dispose();
+                self.CancelActivity();
+                self.QueueActivity(new RemoveSelf());
 
                 self.World.AddFrameEndTask(w =>
                 {

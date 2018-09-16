@@ -11,13 +11,15 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 {
     public class CanHoldTrinketInfo : ITraitInfo
     {
+        public readonly string[] CannotUse = { };
+
         public object Create(ActorInitializer init)
         {
             return new CanHoldTrinket(init, this);
         }
     }
 
-    public class CanHoldTrinket : IResolveOrder, ITick
+    public class CanHoldTrinket : IResolveOrder, ITick, INotifyKilled
     {
         public Actor HoldsTrinket;
         private Actor ignoreTrinket;
@@ -25,10 +27,12 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         public int ExtraDamage;
         public int ExtraArmor;
         public int ExtraSpeed;
+        private CanHoldTrinketInfo info;
 
         public CanHoldTrinket(ActorInitializer init, CanHoldTrinketInfo info)
         {
             self = init.Self;
+            this.info = info;
         }
 
         void DropTrinket(Actor self)
@@ -86,6 +90,9 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 ExtraSpeed = 0;
             }
 
+            if (newTrinket != null && newTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>().EffectOnPickup)
+                EffectOnPickup(newTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>());
+
             if (newTrinket == null || HoldsTrinket != null || newTrinket == ignoreTrinket)
             {
                 return;
@@ -96,9 +103,6 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             var trinketInfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
 
-            if (trinketInfo != null && trinketInfo.EffectOnPickup)
-                EffectOnPickup(trinketInfo);
-
             if (trinketInfo != null && trinketInfo.ContiniusEffect)
                 ContiniusEffect(trinketInfo);
         }
@@ -106,88 +110,96 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         public void EffectClick()
         {
             var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
-            switch (trinketinfo.TrinketType)
-            {
-                case "healsalve":
+            if (!info.CannotUse.Contains(trinketinfo.TrinketType))
+                switch (trinketinfo.TrinketType)
+                {
+                    case "healsalve":
 
-                    if (
-                        !self.IsDead
-                        && self.IsInWorld
-                        && self.Info.TraitInfoOrDefault<HealthInfo>() != null
-                        && self.TraitOrDefault<DungeonsAndDragonsStats>() != null
-                        && self.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive"))
-                    {
-                        self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP)));
-                        var trinket = HoldsTrinket;
-                        HoldsTrinket = null;
-                        ignoreTrinket = null;
+                        if (
+                            !self.IsDead
+                            && self.IsInWorld
+                            && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                            && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
+                        {
+                            self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP)));
+                            var trinket = HoldsTrinket;
+                            HoldsTrinket = null;
+                            ignoreTrinket = null;
 
-                        self.World.AddFrameEndTask(w =>
-                            w.Add(new SpriteEffect(
-                                self.CenterPosition,
-                                w,
-                                trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
-                                trinketinfo.EffectSequence,
-                                trinketinfo.EffectPalette)));
+                            self.World.AddFrameEndTask(w =>
+                                w.Add(new SpriteEffect(
+                                    self.CenterPosition,
+                                    w,
+                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                    trinketinfo.EffectSequence,
+                                    trinketinfo.EffectPalette)));
 
-                        Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
 
-                        if (trinketinfo.OneTimeUse)
-                            trinket.Dispose();
-                    }
+                            if (trinketinfo.OneTimeUse)
+                                trinket.Dispose();
+                        }
 
-                    break;
-                case "masonmix":
+                        break;
+                    case "masonmix":
 
-                    break;
-            }
+                        break;
+                }
         }
 
         public void EffectOnPickup(IsTrinketInfo trinketInfo)
         {
-            switch (trinketInfo.TrinketType)
-            {
-                case "manaorb":
+            if (!info.CannotUse.Contains(trinketInfo.TrinketType))
+                switch (trinketInfo.TrinketType)
+                {
+                    case "manaorb":
 
-                    self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(60);
-                    var trinket = HoldsTrinket;
-                    HoldsTrinket = null;
-                    ignoreTrinket = null;
+                        self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(60);
+                        var trinket = HoldsTrinket;
+                        HoldsTrinket = null;
+                        ignoreTrinket = null;
 
-                    Game.Sound.Play(SoundType.World, trinketInfo.Sound, self.CenterPosition);
+                        Game.Sound.Play(SoundType.World, trinketInfo.Sound, self.CenterPosition);
 
-                    if (trinketInfo.ShowEffect)
-                        self.World.AddFrameEndTask(w =>
-                            w.Add(new SpriteEffect(
-                                self.CenterPosition,
-                                w,
-                                trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
-                                trinketInfo.EffectSequence,
-                                trinketInfo.EffectPalette)));
+                        if (trinketInfo.ShowEffect)
+                            self.World.AddFrameEndTask(w =>
+                                w.Add(new SpriteEffect(
+                                    self.CenterPosition,
+                                    w,
+                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                    trinketInfo.EffectSequence,
+                                    trinketInfo.EffectPalette)));
 
-                    if (trinketInfo.OneTimeUse)
-                        trinket.Dispose();
+                        if (trinketInfo.OneTimeUse)
+                            trinket.Dispose();
 
-                    break;
-            }
+                        break;
+                }
         }
 
         public void ContiniusEffect(IsTrinketInfo trinketInfo)
         {
-            switch (trinketInfo.TrinketType)
-            {
-                case "mantle":
-                    ExtraArmor = 1;
-                    break;
+            if (!info.CannotUse.Contains(trinketInfo.TrinketType))
 
-                case "boots":
-                    ExtraSpeed = 1;
-                    break;
+                switch (trinketInfo.TrinketType)
+                {
+                    case "mantle":
+                        ExtraArmor = 1;
+                        break;
 
-                case "gauntlet":
-                    ExtraDamage = 1;
-                    break;
-            }
+                    case "boots":
+                        ExtraSpeed = 1;
+                        break;
+
+                    case "gauntlet":
+                        ExtraDamage = 1;
+                        break;
+                }
+        }
+
+        void INotifyKilled.Killed(Actor self, AttackInfo e)
+        {
+            DropTrinket(self);
         }
     }
 }

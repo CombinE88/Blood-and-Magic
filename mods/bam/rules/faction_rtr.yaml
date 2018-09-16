@@ -42,9 +42,33 @@ BARRACKS:
 	Tooltip:
 		Name: Barracks
 	AllowConvert:
-		ConvertTo: warrior, cleric, ranger, wizard, paladin, griffin
+		ConvertTo: warrior, ranger, griffin
 	Health:
 		HP: 360
+	Targetable:
+		TargetTypes: 
+
+RUNESTONE:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: runestone
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Runestone
+	AllowConvert:
+		ConvertTo: cleric, wizard, paladin
+	Health:
+		HP: 300
 	Targetable:
 		TargetTypes: Default
 
@@ -246,3 +270,5 @@ WIZARD:
 	Researchable:
 		Class: wizard
 		TransformTime: 30
+	CanHoldTrinket:
+		CannotUse: trinketgauntlet

@@ -1,2 +1,14 @@
 mpspawn:
 	idle: bits/mpspawn.png
+
+trap:
+	idle: bits/1x1buildings.png
+		Start: 19
+
+button:
+	idle: bits/1x1buildings.png
+		Start: 18
+
+bridge:
+	idle: bits/1x1buildings.png
+		Start: 17

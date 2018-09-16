@@ -46,26 +46,24 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            if (actorActions.Actor == null)
+            if (actorActions.Actor == null || actorActions.Actor.Trait<ConvertAdjetant>() == null)
             {
                 tooltip.Visible = false;
                 return;
             }
 
-            var playertraits = actorActions.BamUi.World.RenderPlayer.PlayerActor.TraitsImplementing<Research>();
+            var playertraits = actorActions.BamUi.World.LocalPlayer.PlayerActor.TraitsImplementing<Research>();
             var contains = false;
             foreach (var trait in playertraits)
             {
-                if(trait.Researchable.Contains(actorString))
+                if (trait.Researchable.Contains(actorString))
                 {
                     contains = true;
                     break;
                 }
             }
-            if (!contains)
-                disabled = true;
-            else
-                disabled = false;
+
+            disabled = !contains;
 
             actorString = null;
             if (actorActions.Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && actorActions.Actor.TraitOrDefault<ConvertAdjetant>().TransformEnabler != null)
@@ -121,6 +119,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             {
                 animation.PlayFetchIndex(disabled ? "disabled-icon" : "icon", () => 0);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
+
+                var text = actorActions.BamUi.World.Map.Rules.Actors[actorString].TraitInfo<ValuedInfo>().Cost.ToString();
+                actorActions.BamUi.FontLarge.DrawTextWithShadow(text,
+                    new float2(RenderBounds.X + 4,
+                        RenderBounds.Y + RenderBounds.Height - actorActions.BamUi.FontLarge.Measure(text).Y - 2),
+                    Color.CornflowerBlue, Color.DarkBlue, 2);
             }
         }
     }

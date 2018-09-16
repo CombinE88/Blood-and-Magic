@@ -74,9 +74,9 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
                 var text = "40";
                 actorActions.BamUi.FontLarge.DrawTextWithShadow(text,
-                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(text).X - 1,
-                        RenderBounds.Y + RenderBounds.Height - actorActions.BamUi.FontLarge.Measure(text).Y - 1),
-                    Color.White, Color.DarkBlue, 1);
+                    new float2(RenderBounds.X + 4,
+                        RenderBounds.Y + RenderBounds.Height - actorActions.BamUi.FontLarge.Measure(text).Y - 2),
+                    Color.CornflowerBlue, Color.DarkBlue, 2);
             }
         }
     }

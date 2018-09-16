@@ -21,10 +21,10 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Tick()
         {
-            if (actorActions.Actor == null)
+            if (actorActions.AllActor == null)
                 return;
 
-            text = actorActions.Actor.Info.TraitInfo<TooltipInfo>().Name;
+            text = actorActions.AllActor.Info.TraitInfo<TooltipInfo>().Name;
             Bounds = new Rectangle(4, 138, 100, 20);
         }
 

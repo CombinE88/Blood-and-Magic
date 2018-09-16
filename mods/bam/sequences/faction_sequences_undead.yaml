@@ -4,6 +4,12 @@ crypt:
 		Frames: 8
 	icon: crypt_icon.ani
 
+arborlodge:
+	Inherits: ^default
+	idle: bits/2x2buildings.png
+		Frames: 7
+	icon: arborlodge_icon.ani
+
 zombie:
 	Inherits: ^default
 	stand: zombie_idle.ani

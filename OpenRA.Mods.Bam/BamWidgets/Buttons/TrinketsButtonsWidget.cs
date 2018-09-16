@@ -24,17 +24,17 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            if (actorActions.Actor == null || actorActions.Actor.TraitOrDefault<CanHoldTrinket>() == null || actorActions.Actor.Trait<CanHoldTrinket>().HoldsTrinket == null)
+            if (actorActions.AllActor == null || actorActions.AllActor.TraitOrDefault<CanHoldTrinket>() == null || actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
 
             string actorString = null;
-            if (actorActions.Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
-                actorString = actorActions.Actor.Trait<CanHoldTrinket>().HoldsTrinket.Info.Name;
+            if (actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket != null)
+                actorString = actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket.Info.Name;
 
             actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
 
             var seq = actorActions.BamUi.World.Map.Rules.Sequences;
-            var name = actorActions.Actor.Owner.Faction.Name;
+            var name = actorActions.AllActor.Owner.Faction.Name;
 
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
                 animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, seq, name));
@@ -46,12 +46,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override bool HandleMouseInput(MouseInput mi)
         {
-            if (mi.Button != MouseButton.Left)
+            if (mi.Button != MouseButton.Left || actorActions.AllActor.Owner != actorActions.BamUi.World.LocalPlayer)
                 return true;
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                actorActions.Actor.World.IssueOrder(new Order("UseTrinket", actorActions.Actor, false));
+                actorActions.AllActor.World.IssueOrder(new Order("UseTrinket", actorActions.AllActor, false));
                 pressed = true;
             }
 
@@ -70,7 +70,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Draw()
         {
-            if (actorActions.Actor == null || actorActions.Actor.Trait<CanHoldTrinket>() == null || actorActions.Actor.Trait<CanHoldTrinket>().HoldsTrinket == null)
+            if (actorActions.AllActor == null || actorActions.AllActor.Trait<CanHoldTrinket>() == null || actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
 
             if (animation != null)
