@@ -98,7 +98,7 @@ locket_trinket_icon: 2532:1
 #Faction One Human ------------------------------------------
 
 barracks_icon: 2702:0
-runestone_icon: 2700:0
+runestone_icon: 2716:0
 
 warrior_stand: 1620:3x 1620:3x 1620:3x 1620:3x 1620:3 1620:3 1620:3 1620:3
 warrior_idle: 1620:0-3x 1620:0-3
@@ -266,8 +266,14 @@ smokecloud_effect: 358:0-5
 dust_splash_effect: 366:0-4
 electric_sphere_effect: 386:0-7
 teleport_effect: 388:0-7
+
+
 beacon: 2900:0
 arrow: 2854:0
+
+
+flag: 205:2
+circle: 4:1
 
 #Cursorss ------------------------------
 

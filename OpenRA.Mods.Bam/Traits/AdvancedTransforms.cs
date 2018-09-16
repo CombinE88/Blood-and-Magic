@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2018 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -7,144 +8,151 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Collections.Generic;
 using OpenRA.Mods.Bam.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits
 {
-	[Desc("Actor becomes a specified actor type when this trait is triggered.")]
-	public class AdvancedTransformsInfo : PausableConditionalTraitInfo
-	{
-		[Desc("Actor to transform into."), ActorReference, FieldLoader.Require]
-		public readonly string IntoActor = null;
+    [Desc("Actor becomes a specified actor type when this trait is triggered.")]
+    public class AdvancedTransformsInfo : PausableConditionalTraitInfo
+    {
+        [Desc("Actor to transform into."), ActorReference, FieldLoader.Require]
+        public readonly string IntoActor = null;
 
-		[Desc("Offset to spawn the transformed actor relative to the current cell.")]
-		public readonly CVec Offset = CVec.Zero;
+        [Desc("Offset to spawn the transformed actor relative to the current cell.")]
+        public readonly CVec Offset = CVec.Zero;
 
-		[Desc("Facing that the actor must face before transforming.")]
-		public readonly int Facing = 96;
+        [Desc("Facing that the actor must face before transforming.")]
+        public readonly int Facing = 96;
 
-		[Desc("Sounds to play when transforming.")]
-		public readonly string[] TransformSounds = { };
+        [Desc("Sounds to play when transforming.")]
+        public readonly string[] TransformSounds = { };
 
-		[Desc("Sounds to play when the transformation is blocked.")]
-		public readonly string[] NoTransformSounds = { };
+        [Desc("Sounds to play when the transformation is blocked.")]
+        public readonly string[] NoTransformSounds = { };
 
-		[Desc("Notification to play when transforming.")]
-		public readonly string TransformNotification = null;
+        [Desc("Notification to play when transforming.")]
+        public readonly string TransformNotification = null;
 
-		[Desc("Notification to play when the transformation is blocked.")]
-		public readonly string NoTransformNotification = null;
+        [Desc("Notification to play when the transformation is blocked.")]
+        public readonly string NoTransformNotification = null;
 
-		[Desc("Cursor to display when able to (un)deploy the actor.")]
-		public readonly string DeployCursor = "deploy";
+        [Desc("Cursor to display when able to (un)deploy the actor.")]
+        public readonly string DeployCursor = "deploy";
 
-		[Desc("Cursor to display when unable to (un)deploy the actor.")]
-		public readonly string DeployBlockedCursor = "deploy-blocked";
+        [Desc("Cursor to display when unable to (un)deploy the actor.")]
+        public readonly string DeployBlockedCursor = "deploy-blocked";
 
-		[VoiceReference] public readonly string Voice = "Action";
+        [VoiceReference] public readonly string Voice = "Action";
 
-		public override object Create(ActorInitializer init) { return new AdvancedTransforms(init, this); }
-	}
+        public override object Create(ActorInitializer init)
+        {
+            return new AdvancedTransforms(init, this);
+        }
+    }
 
-	public class AdvancedTransforms : PausableConditionalTrait<AdvancedTransformsInfo>, IIssueOrder, IResolveOrder, IOrderVoice, IIssueDeployOrder
-	{
-		readonly Actor self;
-		readonly ActorInfo actorInfo;
-		readonly BuildingInfo buildingInfo;
-		readonly string faction;
+    public class AdvancedTransforms : PausableConditionalTrait<AdvancedTransformsInfo>, IIssueOrder, IResolveOrder, IOrderVoice, IIssueDeployOrder
+    {
+        readonly Actor self;
+        readonly ActorInfo actorInfo;
+        readonly BuildingInfo buildingInfo;
+        readonly string faction;
 
-		public AdvancedTransforms(ActorInitializer init, AdvancedTransformsInfo info)
-			: base(info)
-		{
-			self = init.Self;
-			actorInfo = self.World.Map.Rules.Actors[info.IntoActor];
-			buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
-			faction = init.Contains<FactionInit>() ? init.Get<FactionInit, string>() : self.Owner.Faction.InternalName;
-		}
+        public AdvancedTransforms(ActorInitializer init, AdvancedTransformsInfo info)
+            : base(info)
+        {
+            self = init.Self;
+            actorInfo = self.World.Map.Rules.Actors[info.IntoActor];
+            buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
+            faction = init.Contains<FactionInit>() ? init.Get<FactionInit, string>() : self.Owner.Faction.InternalName;
+        }
 
-		public string VoicePhraseForOrder(Actor self, Order order)
-		{
-			return (order.OrderString == "DeployTransform") ? Info.Voice : null;
-		}
+        public string VoicePhraseForOrder(Actor self, Order order)
+        {
+            return (order.OrderString == "DeployTransform") ? Info.Voice : null;
+        }
 
-		public bool CanDeploy()
-		{
-			if (IsTraitPaused || IsTraitDisabled)
-				return false;
+        public bool CanDeploy()
+        {
+            if (IsTraitPaused || IsTraitDisabled)
+                return false;
 
-			var building = self.TraitOrDefault<Building>();
-			if (building != null && building.Locked)
-				return false;
+            var building = self.TraitOrDefault<Building>();
+            if (building != null && building.Locked)
+                return false;
 
-			return buildingInfo == null || self.World.CanPlaceBuilding(self.Location + Info.Offset, actorInfo, buildingInfo, self);
-		}
+            return buildingInfo == null || self.World.CanPlaceBuilding(self.Location + Info.Offset, actorInfo, buildingInfo, self);
+        }
 
-		public IEnumerable<IOrderTargeter> Orders
-		{
-			get
-			{
-				if (!IsTraitDisabled)
-					yield return new DeployOrderTargeter("DeployTransform", 5,
-						() => CanDeploy() ? Info.DeployCursor : Info.DeployBlockedCursor);
-			}
-		}
+        public IEnumerable<IOrderTargeter> Orders
+        {
+            get
+            {
+                if (!IsTraitDisabled)
+                    yield return new DeployOrderTargeter("DeployTransform", 5,
+                        () => CanDeploy() ? Info.DeployCursor : Info.DeployBlockedCursor);
+            }
+        }
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
-		{
-			if (order.OrderID == "DeployTransform")
-				return new Order(order.OrderID, self, queued);
+        public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+        {
+            if (order.OrderID == "DeployTransform")
+                return new Order(order.OrderID, self, queued);
 
-			return null;
-		}
+            return null;
+        }
 
-		Order IIssueDeployOrder.IssueDeployOrder(Actor self)
-		{
-			return new Order("DeployTransform", self, false);
-		}
+        Order IIssueDeployOrder.IssueDeployOrder(Actor self)
+        {
+            return new Order("DeployTransform", self, false);
+        }
 
-		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return !IsTraitPaused && !IsTraitDisabled; }
+        bool IIssueDeployOrder.CanIssueDeployOrder(Actor self)
+        {
+            return !IsTraitPaused && !IsTraitDisabled;
+        }
 
-		public void DeployTransform(bool queued)
-		{
-			if (!queued && !CanDeploy())
-			{
-				// Only play the "Cannot deploy here" audio
-				// for non-queued orders
-				foreach (var s in Info.NoTransformSounds)
-					Game.Sound.PlayToPlayer(SoundType.World, self.Owner, s);
+        public void DeployTransform(bool queued)
+        {
+            if (!queued && !CanDeploy())
+            {
+                // Only play the "Cannot deploy here" audio
+                // for non-queued orders
+                foreach (var s in Info.NoTransformSounds)
+                    Game.Sound.PlayToPlayer(SoundType.World, self.Owner, s);
 
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NoTransformNotification, self.Owner.Faction.InternalName);
+                Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NoTransformNotification, self.Owner.Faction.InternalName);
 
-				return;
-			}
+                return;
+            }
 
-			if (!queued)
-				self.CancelActivity();
+            if (!queued)
+                self.CancelActivity();
 
-			self.QueueActivity(new AdvancedTransform(self, Info.IntoActor)
-			{
-				Offset = Info.Offset,
-				Facing = Info.Facing,
-				Sounds = Info.TransformSounds,
-				Notification = Info.TransformNotification,
-				Faction = faction,
-				Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
-			});
-		}
+            self.QueueActivity(new AdvancedTransform(self, Info.IntoActor)
+            {
+                Offset = Info.Offset,
+                Facing = Info.Facing,
+                Sounds = Info.TransformSounds,
+                Notification = Info.TransformNotification,
+                Faction = faction,
+                Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
+                IgnoreTrinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().IgnoreTrinket : null
+            });
+        }
 
-		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString == "DeployTransform" && !IsTraitPaused && !IsTraitDisabled)
-				DeployTransform(order.Queued);
-		}
-	}
+        public void ResolveOrder(Actor self, Order order)
+        {
+            if (order.OrderString == "DeployTransform" && !IsTraitPaused && !IsTraitDisabled)
+                DeployTransform(order.Queued);
+        }
+    }
 }

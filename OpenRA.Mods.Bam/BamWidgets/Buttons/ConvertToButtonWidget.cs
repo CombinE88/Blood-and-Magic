@@ -44,6 +44,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 true) { Visible = false });
         }
 
+        public override void MouseEntered()
+        {
+            tooltip.Visible = true;
+        }
+
         public override void Tick()
         {
             if (actorActions.Actor == null || actorActions.Actor.Trait<ConvertAdjetant>() == null)

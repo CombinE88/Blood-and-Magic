@@ -12,7 +12,7 @@ CloseCombatFist:
 		Speed: 1c682
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
@@ -31,7 +31,7 @@ CloseCombatSword:
 		Speed: 1c682
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
@@ -50,7 +50,7 @@ CloseCombatClub:
 		Speed: 1c682
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
@@ -69,7 +69,7 @@ CloseCombatClaw:
 		Speed: 1c682
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
@@ -91,7 +91,7 @@ RangedCombat:
 		Palette: bam11195
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Damage: 1
 		DamageTypes: Death
@@ -112,7 +112,7 @@ RangedCombatGoblin:
 		Palette: bam11195
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Damage: 1
 		DamageTypes: Death
@@ -130,7 +130,7 @@ CloseCombatGolem:
 		Speed: 1c682
 	Warhead@1Dam: Special
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Delay: 5
 		Damage: 1
@@ -152,7 +152,7 @@ RangedCombatWizard:
 		Palette: bam11195
 	Warhead@1Dam: WizardSpecial
 		ValidTargets: Default
-		Spread: 32
+		Spread: 265
 		Falloff: 100, 0
 		Damage: 1
 		DamageTypes: Death

@@ -65,15 +65,17 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (order.OrderString != "HealTarget")
                 return;
 
-            var actor = order.Target.Actor;
-            if (actor == null || actor.IsDead || !actor.IsInWorld || CurrentDelay < info.Delay)
-                return;
-
             HealTarget(self, order);
         }
 
         void HealTarget(Actor self, Order order)
         {
+            var actor = order.Target.Actor;
+            if (actor == null || actor.IsDead || !actor.IsInWorld || CurrentDelay < info.Delay)
+                return;
+
+            var pos = actor.CenterPosition;
+
             CurrentDelay = 0;
 
             order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
@@ -88,7 +90,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
             self.World.AddFrameEndTask(w =>
                 w.Add(new SpriteEffect(
-                    order.Target.Actor.CenterPosition,
+                    pos,
                     w,
                     info.Image,
                     info.EffectSequence,

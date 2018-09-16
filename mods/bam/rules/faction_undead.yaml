@@ -47,6 +47,9 @@ CRYPT:
 		HP: 300
 	Targetable:
 		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
 
 ARBORLODGE:
 	Inherits@: ^Building
@@ -71,6 +74,9 @@ ARBORLODGE:
 		HP: 240
 	Targetable:
 		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
 
 ZOMBIE:
 	Inherits@1: ^Walker
@@ -103,7 +109,7 @@ ZOMBIE:
 		Class: zombie
 		TransformTime: 30
 	CanHoldTrinket:
-		CannotUse: healsalve
+		CannotUse: healsalve, water
 
 GOBLIN:
 	Inherits@1: ^Walker
@@ -145,7 +151,7 @@ GHOUL:
 	Tooltip:
 		Name: Ghoul
 	Health:
-		HP: 25
+		HP: 20
 	RevealsShroud:
 		Range: 3c0
 		Type: CenterPosition
@@ -169,7 +175,7 @@ GHOUL:
 		TransformTime: 30
 	GhoulLeechLive:
 	CanHoldTrinket:
-		CannotUse: healsalve
+		CannotUse: healsalve, water
 
 GARGOYLE:
 	Inherits@1: ^Flyer

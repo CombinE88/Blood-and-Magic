@@ -120,7 +120,7 @@ TRINKET.HEALSALVE:
 	IsTrinket:
 		TrinketType: healsalve
 		Sound: 7206.wav
-		DropChance: 90
+		DropChance: 40
 
 TRINKET.MANAORB:
 	Inherits@: ^trinket
@@ -156,7 +156,7 @@ TRINKET.MANTLE:
 		TrinketType: mantle
 		OneTimeUse: false
 		ContiniusEffect: true
-		DropChance: 15
+		DropChance: 5
 
 TRINKET.GAUNTLET:
 	Inherits@: ^trinket
@@ -169,3 +169,39 @@ TRINKET.GAUNTLET:
 		OneTimeUse: false
 		ContiniusEffect: true
 		DropChance: 15
+
+TRINKET.THOME:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketthome
+	Tooltip:
+		Name: Foliant
+	IsTrinket:
+		TrinketType: thome
+		OneTimeUse: true
+		ContiniusEffect: false
+		EffectOnPickup: true
+		DropChance: 20
+
+TRINKET.DRINK:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketdrink
+	Tooltip:
+		Name: Water
+	IsTrinket:
+		TrinketType: water
+		Sound: 7206.wav
+		DropChance: 70
+
+TRINKET.COAT:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketcoat
+	Tooltip:
+		Name: Coat
+	IsTrinket:
+		TrinketType: coat
+		OneTimeUse: false
+		ContiniusEffect: true
+		DropChance: 20

@@ -47,6 +47,9 @@ BARRACKS:
 		HP: 360
 	Targetable:
 		TargetTypes: 
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
 
 RUNESTONE:
 	Inherits@: ^Building
@@ -71,6 +74,9 @@ RUNESTONE:
 		HP: 300
 	Targetable:
 		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
 
 WARRIOR:
 	Inherits@1: ^Walker

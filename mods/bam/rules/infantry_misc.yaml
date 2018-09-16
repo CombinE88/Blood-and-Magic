@@ -23,18 +23,6 @@ ACOLYTE:
 		OnlyStores: true
 	Valued:
 		Cost: 40
-	TransformToBuilding@barracks:
-		IntoBuilding: barracks
-		Factions: good
-	TransformToBuilding@runestone:
-		IntoBuilding: runestone
-		Factions: good
-	TransformToBuilding@evil:
-		IntoBuilding: crypt
-		Factions: evil
-	TransformToBuilding@arborlodge:
-		IntoBuilding: arborlodge
-		Factions: evil
 	ConvertAdjetant:
 		SkipSelfAnimation: true
 	DungeonsAndDragonsStats:

@@ -48,3 +48,36 @@ trinketmantle:
 	icon: mantle_trinket_icon.ani
 		ZOffset: -1024
 		Offset: 0,-16
+
+trinketthome:
+	Inherits: ^default
+	idle: thome_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: thome_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	effect: teleport_effect.ani
+		Length: 8
+		Tick: 100
+
+trinketdrink:
+	Inherits: ^default
+	idle: drink_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: drink_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	effect: healsalve_trinket_effect.ani
+		Length: 4
+		Tick: 100
+
+trinketcoat:
+	Inherits: ^default
+	idle: coat_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: coat_trinket_icon.ani
+		ZOffset: -1024
+		Offset: 0,-16

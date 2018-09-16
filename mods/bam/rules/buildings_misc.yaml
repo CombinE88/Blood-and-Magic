@@ -28,6 +28,9 @@ MAINBASE:
 		ProductionTypes: Golem
 	Targetable:
 		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 3
 
 PLATTFORMB:
 	Inherits@: ^CoreBuilding

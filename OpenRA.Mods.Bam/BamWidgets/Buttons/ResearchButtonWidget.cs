@@ -62,15 +62,18 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             Bounds = new Rectangle(x, y, 75, 68);
         }
 
+        public override void MouseEntered()
+        {
+            tooltip.Visible = true;
+        }
+
         public override bool HandleMouseInput(MouseInput mi)
         {
             if (!EventBounds.Contains(mi.Location))
             {
-                tooltip.Visible = false;
+                tooltip.Visible = true;
                 return false;
             }
-
-            tooltip.Visible = true;
 
             if (disabled)
                 return false;

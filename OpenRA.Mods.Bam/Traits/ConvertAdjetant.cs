@@ -110,7 +110,9 @@ namespace OpenRA.Mods.Bam.Traits
                 Sounds = Info.TransformSounds,
                 Notification = Info.TransformNotification,
                 Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
-                SelfSkipMakeAnims = Info.SkipSelfAnimation
+                SelfSkipMakeAnims = Info.SkipSelfAnimation,
+                RallyPointActor = TransformEnabler,
+                UseRallyPoint = true
             });
         }
     }

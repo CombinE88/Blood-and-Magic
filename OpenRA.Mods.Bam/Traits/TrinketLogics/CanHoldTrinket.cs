@@ -1,4 +1,5 @@
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Effects;
@@ -22,7 +23,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
     public class CanHoldTrinket : IResolveOrder, ITick, INotifyKilled
     {
         public Actor HoldsTrinket;
-        private Actor ignoreTrinket;
+        public Actor IgnoreTrinket;
         private Actor self;
         public int ExtraDamage;
         public int ExtraArmor;
@@ -35,23 +36,36 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             this.info = info;
         }
 
-        void DropTrinket(Actor self)
+        public void DropTrinket(Actor self)
         {
             if (HoldsTrinket == null)
                 return;
 
             var trinketInfo = HoldsTrinket.Info.Name;
 
-            self.World.AddFrameEndTask(w =>
-            {
-                ignoreTrinket = w.CreateActor(trinketInfo, new TypeDictionary
+
+            var build = self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(self.Location);
+            var newTrinket = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.Info.HasTraitInfo<IsTrinketInfo>());
+
+            var findPos = self.World.Map.FindTilesInCircle(self.Location, 2, false).ToArray();
+            var findEmpty = findPos.Where(c => self.World.Map.GetTerrainInfo(c).Type != "Clear" && self.World.Map.GetTerrainInfo(c).Type != "Wall").ToArray();
+            var findEmptyActor = findEmpty.Where(c =>
+                self.World.FindActorsInCircle(self.World.Map.CenterOfCell(c), new WDist(265)).All(a => a.TraitOrDefault<IsTrinket>() == null)
+                && self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == null).ToArray();
+
+            var position = build == null && newTrinket == null ? self.Location : self.ClosestCell(findEmptyActor);
+
+            if (position != null)
+                self.World.AddFrameEndTask(w =>
                 {
-                    new LocationInit(self.World.Map.CellContaining(self.CenterPosition)),
-                    new CenterPositionInit(self.CenterPosition),
-                    new OwnerInit("Neutral"),
-                    new FacingInit(255)
+                    IgnoreTrinket = w.CreateActor(trinketInfo, new TypeDictionary
+                    {
+                        new LocationInit(position),
+                        new CenterPositionInit(self.World.Map.CenterOfCell(position)),
+                        new OwnerInit("Neutral"),
+                        new FacingInit(255)
+                    });
                 });
-            });
 
             HoldsTrinket.Dispose();
             HoldsTrinket = null;
@@ -80,8 +94,8 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             var newTrinket = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.Info.HasTraitInfo<IsTrinketInfo>());
 
-            if (newTrinket == null && ignoreTrinket != null)
-                ignoreTrinket = null;
+            if (newTrinket == null && IgnoreTrinket != null)
+                IgnoreTrinket = null;
 
             if (HoldsTrinket == null)
             {
@@ -90,10 +104,16 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 ExtraSpeed = 0;
             }
 
-            if (newTrinket != null && newTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>().EffectOnPickup)
-                EffectOnPickup(newTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>());
 
-            if (newTrinket == null || HoldsTrinket != null || newTrinket == ignoreTrinket)
+            if (newTrinket == null)
+            {
+                return;
+            }
+
+            if (newTrinket.Trait<IsTrinket>() != null && newTrinket.Info.TraitInfo<IsTrinketInfo>().EffectOnPickup)
+                EffectOnPickup(newTrinket.Info.TraitInfo<IsTrinketInfo>(), newTrinket);
+
+            if (newTrinket == IgnoreTrinket || HoldsTrinket != null)
             {
                 return;
             }
@@ -107,7 +127,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 ContiniusEffect(trinketInfo);
         }
 
-        public void EffectClick()
+        void EffectClick()
         {
             var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
             if (!info.CannotUse.Contains(trinketinfo.TrinketType))
@@ -124,7 +144,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                             self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP)));
                             var trinket = HoldsTrinket;
                             HoldsTrinket = null;
-                            ignoreTrinket = null;
+                            IgnoreTrinket = null;
 
                             self.World.AddFrameEndTask(w =>
                                 w.Add(new SpriteEffect(
@@ -141,23 +161,47 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                         }
 
                         break;
-                    case "masonmix":
+
+                    case "water":
+
+                        if (
+                            !self.IsDead
+                            && self.IsInWorld
+                            && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                            && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
+                        {
+                            self.InflictDamage(self, new Damage(-1 * 10));
+                            var trinket = HoldsTrinket;
+                            HoldsTrinket = null;
+                            IgnoreTrinket = null;
+
+                            self.World.AddFrameEndTask(w =>
+                                w.Add(new SpriteEffect(
+                                    self.CenterPosition,
+                                    w,
+                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                    trinketinfo.EffectSequence,
+                                    trinketinfo.EffectPalette)));
+
+                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                            if (trinketinfo.OneTimeUse)
+                                trinket.Dispose();
+                        }
 
                         break;
                 }
         }
 
-        public void EffectOnPickup(IsTrinketInfo trinketInfo)
+        void EffectOnPickup(IsTrinketInfo trinketInfo, Actor trinket)
         {
             if (!info.CannotUse.Contains(trinketInfo.TrinketType))
+            {
                 switch (trinketInfo.TrinketType)
                 {
                     case "manaorb":
 
                         self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(60);
-                        var trinket = HoldsTrinket;
-                        HoldsTrinket = null;
-                        ignoreTrinket = null;
 
                         Game.Sound.Play(SoundType.World, trinketInfo.Sound, self.CenterPosition);
 
@@ -172,19 +216,38 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
                         if (trinketInfo.OneTimeUse)
                             trinket.Dispose();
+                        break;
 
+                    case "thome":
+
+                        self.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(150);
+
+                        Game.Sound.Play(SoundType.World, trinketInfo.Sound, self.CenterPosition);
+
+                        if (trinketInfo.ShowEffect)
+                            self.World.AddFrameEndTask(w =>
+                                w.Add(new SpriteEffect(
+                                    self.CenterPosition,
+                                    w,
+                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                    trinketInfo.EffectSequence,
+                                    trinketInfo.EffectPalette)));
+
+                        if (trinketInfo.OneTimeUse)
+                            trinket.Dispose();
                         break;
                 }
+            }
         }
 
-        public void ContiniusEffect(IsTrinketInfo trinketInfo)
+        void ContiniusEffect(IsTrinketInfo trinketInfo)
         {
             if (!info.CannotUse.Contains(trinketInfo.TrinketType))
 
                 switch (trinketInfo.TrinketType)
                 {
                     case "mantle":
-                        ExtraArmor = 1;
+                        ExtraArmor = 2;
                         break;
 
                     case "boots":
@@ -193,6 +256,10 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
                     case "gauntlet":
                         ExtraDamage = 1;
+                        break;
+
+                    case "coat":
+                        ExtraArmor = 1;
                         break;
                 }
         }

@@ -2,6 +2,7 @@ using System.Drawing;
 using System.Linq;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -13,6 +14,11 @@ namespace OpenRA.Mods.Bam.Traits
         public readonly string[] Factions = { "good" };
 
         public readonly string IntoBuilding = "barracks";
+
+
+        public readonly string Image = "explosion";
+        public readonly string EffectSequence = "smokecloud_effect";
+        public readonly string EffectPalette = "bam11195";
 
         public object Create(ActorInitializer init)
         {
@@ -69,7 +75,17 @@ namespace OpenRA.Mods.Bam.Traits
                         new OwnerInit(ownerSelf)
                     };
 
-                    w.CreateActor(Info.IntoBuilding, init);
+                    var actor = w.CreateActor(Info.IntoBuilding, init);
+
+                    foreach (var cell in actor.Info.TraitInfo<BuildingInfo>().Tiles(actor.Location))
+                    {
+                        w.Add(new SpriteEffect(
+                            actor.World.Map.CenterOfCell(cell),
+                            w,
+                            Info.Image,
+                            Info.EffectSequence,
+                            Info.EffectPalette));
+                    }
                 });
             }
         }

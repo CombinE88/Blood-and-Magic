@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits.TileActivities
@@ -21,50 +23,51 @@ namespace OpenRA.Mods.Bam.Traits.TileActivities
         private ushort enabledBridge;
 
         private bool active;
-
+        private int tick;
+        private int random;
 
         public TileBridge(ActorInitializer init, TileBridgeInfo tileTrapInfo)
         {
             var tileUshot = init.Self.World.Map.Rules.TileSet.Templates[init.Self.World.Map.Tiles[init.Self.Location].Type];
             if (tileUshot.Id == 47)
             {
-                enabledBridge = 47;
-                disabledBridge = 48;
-            }
-            else if (tileUshot.Id == 48)
-            {
                 enabledBridge = 48;
                 disabledBridge = 47;
             }
-            else if (tileUshot.Id == 480)
+            else if (tileUshot.Id == 48)
             {
-                enabledBridge = 480;
-                disabledBridge = 470;
+                enabledBridge = 47;
+                disabledBridge = 48;
             }
-            else if (tileUshot.Id == 470)
+            else if (tileUshot.Id == 480)
             {
                 enabledBridge = 470;
                 disabledBridge = 480;
             }
-            else if (tileUshot.Id == 94)
+            else if (tileUshot.Id == 470)
             {
-                enabledBridge = 49;
-                disabledBridge = 50;
+                enabledBridge = 480;
+                disabledBridge = 470;
             }
-            else if (tileUshot.Id == 50)
+            else if (tileUshot.Id == 49)
             {
                 enabledBridge = 50;
                 disabledBridge = 49;
             }
-            else if (tileUshot.Id == 490)
+            else if (tileUshot.Id == 50)
             {
-                enabledBridge = 490;
-                disabledBridge = 500;
+                enabledBridge = 49;
+                disabledBridge = 50;
             }
-            else if (tileUshot.Id == 500)
+            else if (tileUshot.Id == 490)
             {
                 enabledBridge = 500;
                 disabledBridge = 490;
+            }
+            else if (tileUshot.Id == 500)
+            {
+                enabledBridge = 490;
+                disabledBridge = 500;
             }
             else if (tileUshot.Id == 55)
             {
@@ -78,6 +81,8 @@ namespace OpenRA.Mods.Bam.Traits.TileActivities
             }
             else
                 init.Self.Dispose();
+
+            random = init.Self.World.SharedRandom.Next(25, 100);
         }
 
         void ITick.Tick(Actor self)
@@ -87,6 +92,20 @@ namespace OpenRA.Mods.Bam.Traits.TileActivities
                 Enable(self);
             else
                 Dissable(self);
+
+            var tileUshot = self.World.Map.Rules.TileSet.Templates[self.World.Map.Tiles[self.Location].Type];
+            if (tileUshot.Id == 56 && tick++ >= random)
+            {
+                tick = 0;
+                random = self.World.SharedRandom.Next(25, 100);
+                self.World.AddFrameEndTask(w =>
+                    w.Add(new SpriteEffect(
+                        self.CenterPosition,
+                        w,
+                        "explosion",
+                        "explode_fireball_effect",
+                        "bam11195")));
+            }
         }
 
         void HandleActivation()

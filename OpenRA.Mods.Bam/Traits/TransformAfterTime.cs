@@ -38,6 +38,8 @@ namespace OpenRA.Mods.Bam.Traits
         public bool Transforming = false;
         public string IntoActor;
         public int Time;
+        public Actor RallyPointActor = null;
+        public bool UseRallyPoint;
 
         public int Ticker;
 
@@ -65,7 +67,9 @@ namespace OpenRA.Mods.Bam.Traits
                     Sounds = info.TransformSounds,
                     Notification = info.TransformNotification,
                     NotifyBuildComplete = info.NotifyBuildComplete,
-                    Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null
+                    Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
+                    RallyPointActor = RallyPointActor,
+                    UseRallyPoint = UseRallyPoint
                 });
 
                 var player = self.Owner;

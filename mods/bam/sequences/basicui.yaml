@@ -57,3 +57,10 @@ beacon:
 		Tick: 200
 		ZOffset: 2047
 		Offset: -38,-28
+
+rallypoint:
+	flag: flag.ani
+		Offset: 0,-5
+		ZOffset: 2535
+	circles: circle.ani
+		ZOffset: 2047
