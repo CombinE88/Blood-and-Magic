@@ -74,6 +74,27 @@ gauntlet_trinket_icon: 2528:1
 mantle_trinket_ilde: 2520:0
 mantle_trinket_icon: 2520:1
 
+drink_trinket_ilde: 2500:0
+drink_trinket_icon: 2500:1
+
+treassure_trinket_ilde: 2508:0
+treassure_trinket_icon: 2508:1
+
+thome_trinket_ilde: 2530:0
+thome_trinket_icon: 2530:1
+
+coat_trinket_ilde: 2512:0
+coat_trinket_icon: 2512:1
+
+wand_trinket_ilde: 2538:0
+wand_trinket_icon: 2538:1
+
+kit_trinket_ilde: 2540:0
+kit_trinket_icon: 2540:1
+
+locket_trinket_ilde: 2532:0
+locket_trinket_icon: 2532:1
+
 #Faction One Human ------------------------------------------
 
 barracks_icon: 2702:0
