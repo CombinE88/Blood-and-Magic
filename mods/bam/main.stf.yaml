@@ -16,7 +16,6 @@ acolyte_transformed_damage: 378:0-3
 acolyte_icon: 2550:0
 acolyte_pyramid_icon: 2584:0
 
-
 capsule_idle: 342:3
 capsule_make: 342:0-3
 capsule_make_rev: 342:3 342:2 342:1 342:0
@@ -267,10 +266,8 @@ dust_splash_effect: 366:0-4
 electric_sphere_effect: 386:0-7
 teleport_effect: 388:0-7
 
-
 beacon: 2900:0
 arrow: 2854:0
-
 
 flag: 205:2
 circle: 4:1

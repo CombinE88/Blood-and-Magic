@@ -69,6 +69,15 @@ acolyte.pyramid:
 	transform_reverse: acolyte_transform_rev.ani
 		Tick: 120
 		Length: *
+	idle: acolyte_transformed_stand.ani
+		Facings: 1
+		Length: 1
+	stand: acolyte_transformed_stand.ani
+		Facings: 1
+		Length: 1
+	die: acolyte_transofrmed_die.ani
+		Tick: 120
+		Length: *
 
 stonegolem:
 	Inherits: ^default

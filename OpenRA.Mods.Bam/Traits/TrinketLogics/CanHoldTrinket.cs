@@ -14,13 +14,15 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
     {
         public readonly string[] CannotUse = { };
 
+        [Desc("Which sprite body to modify.")] public readonly string Body = "body";
+
         public object Create(ActorInitializer init)
         {
             return new CanHoldTrinket(init, this);
         }
     }
 
-    public class CanHoldTrinket : IResolveOrder, ITick, INotifyKilled
+    public class CanHoldTrinket : IResolveOrder, ITick, INotifyKilled, INotifyCreated
     {
         public Actor HoldsTrinket;
         public Actor IgnoreTrinket;
@@ -29,11 +31,17 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         public int ExtraArmor;
         public int ExtraSpeed;
         private CanHoldTrinketInfo info;
+        private WithSpriteBody wsb;
 
         public CanHoldTrinket(ActorInitializer init, CanHoldTrinketInfo info)
         {
             self = init.Self;
             this.info = info;
+        }
+
+        void INotifyCreated.Created(Actor self)
+        {
+            wsb = self.TraitsImplementing<WithSpriteBody>().First(w => w.Info.Name == info.Body);
         }
 
         public void DropTrinket(Actor self)
@@ -42,7 +50,6 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 return;
 
             var trinketInfo = HoldsTrinket.Info.Name;
-
 
             var build = self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(self.Location);
             var newTrinket = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.Info.HasTraitInfo<IsTrinketInfo>());
@@ -79,8 +86,18 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             switch (order.OrderString)
             {
                 case "DropTrinket":
-                    DropTrinket(self);
+                {
+                    var wsb = this.self.Trait<WithSpriteBody>();
+                    if (wsb.DefaultAnimation.CurrentSequence.Name == "idle"
+                        || wsb.DefaultAnimation.CurrentSequence.Name == "stand"
+                        || wsb.DefaultAnimation.CurrentSequence.Name == "run"
+                        || wsb.DefaultAnimation.CurrentSequence.Name == "aim")
+                    {
+                        DropTrinket(self);
+                    }
+
                     break;
+                }
                 case "UseTrinket":
                     EffectClick();
                     break;
@@ -111,7 +128,10 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             }
 
             if (newTrinket.Trait<IsTrinket>() != null && newTrinket.Info.TraitInfo<IsTrinketInfo>().EffectOnPickup)
+            {
                 EffectOnPickup(newTrinket.Info.TraitInfo<IsTrinketInfo>(), newTrinket);
+                return;
+            }
 
             if (newTrinket == IgnoreTrinket || HoldsTrinket != null)
             {

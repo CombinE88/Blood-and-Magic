@@ -37,7 +37,7 @@ PYRAMID:
 	Inherits@1: ^Walker
 	-WithMoveAnimation:
 	WithFacingSpriteBody:
-		Sequence: transformed_stand
+		Sequence: stand
 	RenderSprites:
 		Image: acolyte.pyramid
 	Tooltip:
