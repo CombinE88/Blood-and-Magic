@@ -1,6 +1,6 @@
 Metadata:
 	Title: Bood And Magic
-	Version: -encodedCommand
+	Version: dev-version
 
 PackageFormats: StfFile
 
@@ -42,6 +42,7 @@ Sequences:
 	bam|sequences/faction_sequences_undead.yaml
 
 TileSets:
+	bam|tilesets/temperate.yaml
 	bam|tilesets/platforms.yaml
 
 Cursors:

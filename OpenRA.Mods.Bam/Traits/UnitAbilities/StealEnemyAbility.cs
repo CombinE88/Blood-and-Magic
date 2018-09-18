@@ -14,7 +14,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 {
     public class StealEnemyAbilityInfo : ITraitInfo
     {
-        public readonly int Range = 4;
+        public readonly int Range = 2;
 
         public readonly string Cursor = "ability";
 
@@ -101,8 +101,10 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         void ITick.Tick(Actor self)
         {
-            if (CurrentDelay++ < info.Delay)
-                return;
+            if (CurrentDelay < info.Delay)
+            {
+                CurrentDelay++;
+            }
         }
     }
 
@@ -131,7 +133,6 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || hp == null
                 || (target.Location - self.Location).Length > range
                 || target.Owner.IsAlliedWith(self.Owner)
-                || !target.Owner.PlayerReference.Enemies.Contains(self.Owner.InternalName)
                 || pr.Cash + pr.Resources < ammount)
                 return false;
 

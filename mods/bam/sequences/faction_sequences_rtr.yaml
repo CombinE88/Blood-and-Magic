@@ -1,3 +1,10 @@
+hq.good:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb.png
+		Frames: 0
+	icon: mainbase_icon.ani
+
 barracks:
 	Inherits: ^default
 	idle: bits/2x2buildings.png

@@ -1,0 +1,1291 @@
+General:
+	Name: Temperate
+	Id: TEMPERATE
+	EditorTemplateOrder: Terrain, Farmland, Road, Rough Ground, Swamp, Foliage, Canals, ManaSpots,
+	HeightDebugColors: 880000
+
+Terrain:
+	TerrainType@Dirt:
+		Type: Dirt
+		TargetTypes: Ground
+		Color: 7d562f
+	TerrainType@RoughGround:
+		Type: RoughGround
+		TargetTypes: Ground
+		Color: b57c44 
+	TerrainType@WoodBridge:
+		Type: WoodBridge
+		TargetTypes: Ground
+		Color: B66B40
+	TerrainType@Mana:
+		Type: Manaspot
+		TargetTypes: Ground
+		Color: 697C8F
+	TerrainType@Swamp:
+		Type: Swamp
+		TargetTypes: Ground
+		Color: 44b57c 
+	TerrainType@Farmland:
+		Type: Farmland
+		TargetTypes: Ground
+		Color: 567d2f 
+	TerrainType@Road:
+		Type: Road
+		TargetTypes: Ground
+		Color: 565c50  
+	TerrainType@Cobble:
+		Type: Cobble
+		TargetTypes: Ground
+		Color: 434369
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Ground
+		Color: 1b5691 
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Void
+		Color: 000000
+	TerrainType@Plattform:
+		Type: Plattform
+		TargetTypes: Ground
+		Color: 8F7C69
+	TerrainType@Stairs:
+		Type: Stairs
+		TargetTypes: Ground
+		Color: 726354
+	TerrainType@Walls:
+		Type: Walls
+		TargetTypes: Ground
+		Color: 473e34
+	TerrainType@StoneBridge:
+		Type: StoneBridge
+		TargetTypes: Ground
+		Color: 726354
+	TerrainType@Button:
+		Type: Button
+		TargetTypes: Ground
+		Color: 3DC65B
+	TerrainType@ButtonActive:
+		Type: ButtonActive
+		TargetTypes: Ground
+		Color: 3DC65B
+	TerrainType@Trap:
+		Type: Trap
+		TargetTypes: Ground
+		Color: D23B39
+	TerrainType@TrapActive:
+		Type: TrapActive
+		TargetTypes: Ground
+		Color: D23B39
+	TerrainType@Rubble:
+		Type: Rubble
+		TargetTypes: Ground
+		Color: 4c4640
+	TerrainType@Foliage:
+		Type: Foliage
+		TargetTypes: Ground
+		Color: 277218 
+	TerrainType@HighFoliage:
+		Type: HighFoliage
+		TargetTypes: Ground
+		Color: 072601 
+
+Templates:
+	Template@0:
+		Id: 0
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 0
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+	Template@2556:
+		Id: 2556
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 0
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+	Template@1234:
+		Id: 1234
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 0
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+	Template@2:
+		Id: 2
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 112
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+	Template@3:
+		Id: 3
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 102,103
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+			1: Cobble
+	Template@4:
+		Id: 4
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 113
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+	Template@5:
+		Id: 5
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 120,130
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+			1: Cobble
+	Template@6:
+		Id: 6
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 111,121
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+			1: Cobble
+	Template@7:
+		Id: 7
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 114,124
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+			1: Cobble
+	Template@8:
+		Id: 8
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 122
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+	Template@9:
+		Id: 9
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 142
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+	Template@10:
+		Id: 10
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 123
+		Categories: Terrain
+		Tiles:
+			0: Cobble
+
+	Template@11:
+		Id: 11
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 56
+		Categories: Rough Ground
+		Tiles:
+			0: RoughGround
+	Template@12:
+		Id: 12
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 87
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@13:
+		Id: 13
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 57
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@14:
+		Id: 14
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 76
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@15:
+		Id: 15
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 46,47
+		Categories: Rough Ground
+		Tiles:
+			0: RoughGround
+			1: RoughGround
+	Template@16:
+		Id: 16
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 77
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@17:
+		Id: 17
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 66
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@18:
+		Id: 18
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 86
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@19:
+		Id: 19
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 67
+		Categories: Rough Ground
+		Tiles:
+			0: Dirt
+	Template@20:
+		Id: 20
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 78
+		Categories: Rough Ground
+		Tiles:
+			0: RoughGround
+	Template@21:
+		Id: 21
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 79
+		Categories: Rough Ground
+		Tiles:
+			0: RoughGround
+	Template@22:
+		Id: 22
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 88
+		Categories: Rough Ground
+		Tiles:
+			0: RoughGround
+	Template@23:
+		Id: 23
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 89
+		Categories: Rough Ground
+		Tiles:
+			0: RoughGround
+	Template@24:
+		Id: 24
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 117
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@25:
+		Id: 25
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 107
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@26:
+		Id: 26
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 118
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@27:
+		Id: 27
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 125
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@28:
+		Id: 28
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 126,136
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+			1: Cobble
+	Template@29:
+		Id: 29
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 129
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@30:
+		Id: 30
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 127
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@31:
+		Id: 31
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 147
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+	Template@32:
+		Id: 32
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 128
+		Categories: Rough Ground
+		Tiles:
+			0: Cobble
+
+	Template@33:
+		Id: 33
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 20
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@34:
+		Id: 34
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 80
+		Categories: Road
+		Tiles:
+			0: Dirt
+	Template@35:
+		Id: 35
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 21
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@36:
+		Id: 36
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 90
+		Categories: Road
+		Tiles:
+			0: Dirt
+	Template@37:
+		Id: 37
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 60
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@38:
+		Id: 38
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 81
+		Categories: Road
+		Tiles:
+			0: Dirt
+	Template@39:
+		Id: 39
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 30
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@40:
+		Id: 40
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 91
+		Categories: Road
+		Tiles:
+			0: Dirt
+	Template@41:
+		Id: 41
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 31
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@42:
+		Id: 42
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 51
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@43:
+		Id: 43
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 50
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@44:
+		Id: 44
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 40
+		Categories: Road
+		Tiles:
+			0: Road
+	Template@45:
+		Id: 45
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 41
+		Categories: Road
+		Tiles:
+			0: Road
+
+	Template@46:
+		Id: 46
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 3
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@47:
+		Id: 47
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 4
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@48:
+		Id: 48
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 5
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@49:
+		Id: 49
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 12, 22
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland
+	Template@50:
+		Id: 50
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 13, 14
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland
+	Template@51:
+		Id: 51
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 15,25
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@52:
+		Id: 52
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 52
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@53:
+		Id: 53
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 53
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@54:
+		Id: 54
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 55
+		Categories: Framland
+		Tiles:
+			0: Farmland
+
+	Template@55:
+		Id: 55
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 152, 161
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland
+	Template@56:
+		Id: 56
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 153,154
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland			
+	Template@57:
+		Id: 57
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 157, 168
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland
+	Template@58:
+		Id: 58
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 171
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@59:
+		Id: 59
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 172,173
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland
+	Template@60:
+		Id: 60
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 178
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@61:
+		Id: 61
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 192
+		Categories: Framland
+		Tiles:
+			0: Farmland
+	Template@62:
+		Id: 62
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 193,194
+		Categories: Framland
+		Tiles:
+			0: Farmland
+			1: Farmland
+	Template@63:
+		Id: 63
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 197
+		Categories: Framland
+		Tiles:
+			0: Farmland
+
+	Template@64:
+		Id: 64
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 62
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@65:
+		Id: 65
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 93
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@66:
+		Id: 66
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 63
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@67:
+		Id: 67
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 82
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@68:
+		Id: 68
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 64, 74
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+			1: Swamp			
+	Template@69:
+		Id: 69
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 83
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@70:
+		Id: 70
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 72
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@71:
+		Id: 71
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 92
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@72:
+		Id: 72
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 73
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@73:
+		Id: 73
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 84
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@74:
+		Id: 74
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 85
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@75:
+		Id: 75
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 94
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@76:
+		Id: 76
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 95
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+
+	Template@77:
+		Id: 77
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 9
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@78:
+		Id: 78
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 18
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@79:
+		Id: 79
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 6
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@80:
+		Id: 80
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 7
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@81:
+		Id: 81
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 29
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@82:
+		Id: 82
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 17
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@83:
+		Id: 83
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 26
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@84:
+		Id: 84
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 28
+		Categories: Canals
+		Tiles:
+			0: Water
+	Template@85:
+		Id: 85
+		Images: bits/temperate.png
+		Size: 2,1
+		Frames: 38,39
+		Categories: Canals
+		Tiles:
+			0: Water
+			1: Water
+	Template@86:
+		Id: 86
+		Images: bits/temperate.png
+		Size: 2,1
+		Frames: 36,37
+		Categories: Canals
+		Tiles:
+			0: Water
+			1: Water
+	Template@87:
+		Id: 87
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 19
+		Categories: Canals
+		Tiles:
+			0: WoodBridge
+	Template@88:
+		Id: 88
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 27
+		Categories: Canals
+		Tiles:
+			0: WoodBridge
+
+	Template@89:
+		Id: 89
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 96
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@90:
+		Id: 90
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 97
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@91:
+		Id: 91
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 98
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@92:
+		Id: 92
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 99
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@93:
+		Id: 93
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 150
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@94:
+		Id: 94
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 160
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@95:
+		Id: 95
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 170
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@96:
+		Id: 96
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 180
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+	Template@97:
+		Id: 97
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 190
+		Categories: ManaSpots
+		Tiles:
+			0: Manaspot
+
+	Template@98:
+		Id: 98
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 200
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@99:
+		Id: 99
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 201,202
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+			1: Foliage
+	Template@100:
+		Id: 100
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 203
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@101:
+		Id: 101
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 210,230
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+			1: Foliage
+	Template@102:
+		Id: 102
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 211,212
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+			1: Foliage
+	Template@103:
+		Id: 103
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 213,223
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+			1: Foliage
+	Template@104:
+		Id: 104
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 230
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@105:
+		Id: 105
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 231,232
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+			1: Foliage
+	Template@106:
+		Id: 106
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 233
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+
+	Template@107:
+		Id: 107
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 204
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+	Template@108:
+		Id: 108
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 205,206
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+			1: HighFoliage
+	Template@109:
+		Id: 109
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 207
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+	Template@110:
+		Id: 110
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 214,224
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+			1: HighFoliage
+	Template@111:
+		Id: 111
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 215,216
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+			1: HighFoliage
+	Template@112:
+		Id: 112
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 217,227
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+			1: HighFoliage
+	Template@113:
+		Id: 113
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 234
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+	Template@114:
+		Id: 114
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 235,236
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+			1: HighFoliage
+	Template@115:
+		Id: 115
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 237
+		Categories: Foliage
+		Tiles:
+			0: HighFoliage
+
+
+	Template@116:
+		Id: 116
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 245, 246
+		Categories: Foliage
+		Tiles:
+			0: Road
+			1: Road
+	Template@117:
+		Id: 117
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 255, 256
+		Categories: Foliage
+		Tiles:
+			0: Road
+			1: Road
+	Template@118:
+		Id: 118
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 247
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@119:
+		Id: 119
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 243
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@120:
+		Id: 120
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 244
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@121:
+		Id: 121
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 257
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@122:
+		Id: 122
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 253
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@123:
+		Id: 123
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 254
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@124:
+		Id: 124
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 228
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@125:
+		Id: 125
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 248
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@126:
+		Id: 126
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 249
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@127:
+		Id: 127
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 229
+		Categories: Foliage
+		Tiles:
+			0: Road

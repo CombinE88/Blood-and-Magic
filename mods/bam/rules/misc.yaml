@@ -78,6 +78,16 @@ STATUE6:
 	SpawnActorOnDeath: 
 		Actor: STATUE6.PROP
 
+STATUE7:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE7.PROP
+
+STATUE8:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: STATUE8.PROP
+
 STATUE1.PROP:
 	Inherits@1: ^prop.rubble
 	RenderSprites:
@@ -107,6 +117,166 @@ STATUE6.PROP:
 	Inherits@1: ^prop.rubble
 	RenderSprites:
 		Image: statue6
+
+STATUE7.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue7
+
+STATUE8.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue8
+
+STATUE9.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: statue9
+
+
+BARRELS1:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: BARRELS1.PROP
+	Health:
+		HP: 25
+	DropTrinketOnDeath:
+		Probability: 40
+	Tooltip:
+		Name: Goods
+BARRELS1.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: barrels1
+BARRELS2:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: BARRELS2.PROP
+	Health:
+		HP: 25
+	DropTrinketOnDeath:
+		Probability: 40
+	Tooltip:
+		Name: Goods
+BARRELS2.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: barrels2
+BARRELS3:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: BARRELS3.PROP
+	Health:
+		HP: 25
+	DropTrinketOnDeath:
+		Probability: 40
+	Tooltip:
+		Name: Goods
+BARRELS3.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: barrels3
+BARRELS4:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: BARRELS4.PROP
+	Health:
+		HP: 25
+	DropTrinketOnDeath:
+		Probability: 40
+	Tooltip:
+		Name: Goods
+BARRELS4.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: barrels4
+
+
+GRAVESTON1:
+	Inherits@1: ^prop
+	Health:
+		HP: 30
+	DropTrinketOnDeath:
+		Probability: 25
+	Tooltip:
+		Name: Gravestone
+GRAVESTON2:
+	Inherits@1: ^prop
+	Health:
+		HP: 30
+	DropTrinketOnDeath:
+		Probability: 25
+	Tooltip:
+		Name: Gravestone
+GRAVESTON3:
+	Inherits@1: ^prop
+	Health:
+		HP: 30
+	DropTrinketOnDeath:
+		Probability: 25
+	Tooltip:
+		Name: Gravestone
+GRAVESTON4:
+	Inherits@1: ^prop
+	Health:
+		HP: 30
+	DropTrinketOnDeath:
+		Probability: 25
+	Tooltip:
+		Name: Gravestone
+
+GREEN1:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: GREEN1.PROP
+	Health:
+		HP: 25
+	-DropTrinketOnDeath:
+	Tooltip:
+		Name: Tree
+GREEN1.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: green1
+GREEN2:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: GREEN2.PROP
+	Health:
+		HP: 25
+	-DropTrinketOnDeath:
+	Tooltip:
+		Name: Bush
+GREEN2.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: green2
+GREEN3:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: GREEN3.PROP
+	Tooltip:
+		Name: Bush
+	Health:
+		HP: 25
+	-DropTrinketOnDeath:
+GREEN3.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: green3
+GREEN4:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: GREEN4.PROP
+	Tooltip:
+		Name: Bush
+	Health:
+		HP: 25
+	-DropTrinketOnDeath:
+GREEN4.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: green4
 
 # Trinkets -----
 

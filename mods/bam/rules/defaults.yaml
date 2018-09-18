@@ -6,7 +6,7 @@
 		Bounds: 40,38,0,-10
 		DecorationBounds: 40,38,0,-10
 	Mobile:
-		Speed: 50
+		Speed: 35
 		Locomotor: foot
 	MustBeDestroyed:
 		RequiredForShortGame: true
@@ -34,7 +34,12 @@
 		Delay: 0
 	OwnerLostAction:
 		Action: ChangeOwner
-		Owner: Creep
+		Owner: Creeps
+	WithWalkOnTerrainOverlay@Swamp:
+		TerrainTypes: Swamp, Water
+	WithWalkOnTerrainOverlay@Foilage:
+		Sequence: leaves
+		TerrainTypes: Foliage, HighFoliage
 
 ^Building:
 	Inherits: ^CoreBuilding
@@ -47,7 +52,60 @@
 		Sound: 7210.wav
 	OwnerLostAction:
 		Action: ChangeOwner
-		Owner: Creep
+		Owner: Creeps
+
+^CivilianHouse:
+	Inherits@: ^Building
+	Tooltip:
+		Name: House
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 250
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	Targetable:
+		TargetTypes: Default
+	EditorTilesetFilter:
+		Categories: Neutral Structures
+	RenderSprites:
+		Palette: bam11195
+	DropTrinketOnDeath@first:
+		Probability: 50
+	DropTrinketOnDeath@second:
+		Probability: 50
+	DropTrinketOnDeath@third:
+		Probability: 50
+
+^CivilianHouse3x2:
+	Inherits@: ^CivilianHouse
+	DropTrinketOnDeath@fourth:
+		Probability: 50
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1524, -1024
+			BottomRight: 1524, 1024
+
+^CivilianHouse2x3:
+	Inherits@: ^CivilianHouse
+	DropTrinketOnDeath@fourth:
+		Probability: 50
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2,3
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1524
+			BottomRight: 1024, 1524
 
 ^Flyer:
 	Inherits: ^CoreInfantry
@@ -71,13 +129,13 @@
 		Notifications: UnitUnderAttack
 	Mobile:
 		Locomotor: flying
-		Speed: 50
+		Speed: 35
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 		DeathSequencePalette: BamPlayer
 	OwnerLostAction:
 		Action: ChangeOwner
-		Owner: Creep
+		Owner: Creeps
 
 ^trinket:
 	Inherits: ^CoreUnit
@@ -123,10 +181,7 @@
 
 
 ^prop.rubble:
-	Inherits: ^CoreUnit
-	HiddenUnderFog:
-		Type: CenterPosition
-	AppearsOnRadar:
+	Inherits: ^CoreConstruction
 	Tooltip:
 		Name: Rubbish
 	HitShape:
@@ -139,12 +194,7 @@
 		Sequence: rubble
 	EditorTilesetFilter:
 		Categories:
-	Interactable:
-	Immobile:
-		OccupiesSpace: false
-	ChangesTerrain:
+	AdvancedChangesTerrain:
 		TerrainType: Rubble
-	-MustBeDestroyed:
-	-AttackMove:
-	-WithFacingSpriteBody:
-	-SelectionDecorations:
+	Building:
+		Footprint: _

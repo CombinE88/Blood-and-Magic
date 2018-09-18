@@ -1,3 +1,10 @@
+hq.evil:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb_b.png
+		Frames: 0
+	icon: mainbase_icon.ani
+
 crypt:
 	Inherits: ^default
 	idle: bits/2x2buildings.png

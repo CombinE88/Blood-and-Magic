@@ -1,10 +1,10 @@
-mainbase:
+plattforma:
 	Defaults:
 		AddExtension: False
-	idle: bits/mainb.png
-		Frames: 0
-	icon: mainbase_icon.ani
-
+	idle: bits/buildingsbam.png
+		Frames: 25
+		ZOffset: -2048
+	icon: plattform_icon.ani
 plattformb:
 	Defaults:
 		AddExtension: False
@@ -79,6 +79,103 @@ statue6:
 		ZOffset: -2048
 		Offset: 0, -10
 	icon: monument_icon.ani
+statue7:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 10
+		Offset: 0, -10
+	rubble: bits/props.png
+		Frames: 25
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue8:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 15
+		Offset: 0, -10
+	rubble: bits/props.png
+		Frames: 24
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+
+graveston1:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 16
+		Offset: 0, -10
+	icon: monument_icon.ani
+graveston2:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 17
+		Offset: 0, -10
+	icon: monument_icon.ani
+graveston3:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 18
+		Offset: 0, -10
+	icon: monument_icon.ani
+graveston4:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 19
+		Offset: 0, -10
+	icon: monument_icon.ani
+
+
+green1:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 11
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green2:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 12
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green3:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 13
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green4:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 14
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
 
 barrels1:
 	Defaults:
@@ -116,3 +213,291 @@ barrels1:
 		Frames: 16
 		ZOffset: -2048
 	icon: monument_icon.ani
+
+
+civbuild1:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 0
+	icon: building_icon.ani
+civbuild2:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 1
+	icon: building_icon.ani
+civbuild3:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 2
+	icon: building_icon.ani
+civbuild4:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 3
+	icon: building_icon.ani
+civbuild5:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 4
+	icon: building_icon.ani
+civbuild6:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 5
+	icon: building_icon.ani
+civbuild7:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 6
+	icon: building_icon.ani
+civbuild8:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 7
+	icon: building_icon.ani
+civbuild9:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 8
+	icon: building_icon.ani
+civbuild10:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 9
+	icon: building_icon.ani
+civbuild11:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 10
+	icon: building_icon.ani
+civbuild12:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 11
+	icon: building_icon.ani
+civbuild13:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 12
+	icon: building_icon.ani
+civbuild14:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 13
+	icon: building_icon.ani
+civbuild15:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 14
+	icon: building_icon.ani
+civbuild16:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 15
+	icon: building_icon.ani
+civbuild17:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 16
+	icon: building_icon.ani
+civbuild18:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 17
+	icon: building_icon.ani
+civbuild19:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 18
+	icon: building_icon.ani
+civbuild20:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 19
+	icon: building_icon.ani
+civbuild21:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 20
+	icon: building_icon.ani
+	Building:
+		Footprint: xx x_
+civbuild22:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 21
+	icon: building_icon.ani
+	Building:
+		Footprint: xx _x
+civbuild23:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 22
+	icon: building_icon.ani
+	Building:
+		Footprint: x_ xx
+civbuild24:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 23
+	icon: building_icon.ani
+	Building:
+		Footprint: _x xx
+civbuild25:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 24
+	icon: building_icon.aniv
+civbuild26:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 29
+	icon: building_icon.ani
+
+civbuild2x31:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 0
+	icon: building_icon.ani
+civbuild2x32:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 1
+	icon: building_icon.ani
+	Building:
+		Footprint: xxx xx_
+civbuild2x33:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 2
+	icon: building_icon.ani
+	Building:
+		Footprint: xxx _xx
+civbuild2x34:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 3
+	icon: building_icon.ani
+	Building:
+		Footprint: xxx xx_
+civbuild2x35:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 4
+	icon: building_icon.ani
+civbuild2x36:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 5
+	icon: building_icon.ani
+	Building:
+		Footprint: xxx xx_
+civbuild2x37:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 6
+	icon: building_icon.ani
+	Building:
+		Footprint: _xx xxx
+civbuild2x38:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam3x2buildings.png
+		Frames: 7
+	Building:
+		Footprint: xx_ xxx
+civbuild3x21:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam2x3buildings.png
+		Frames: 0
+	icon: building_icon.ani
+civbuild3x22:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam2x3buildings.png
+		Frames: 1
+	icon: building_icon.ani
+civbuild3x23:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam2x3buildings.png
+		Frames: 2
+	icon: building_icon.ani
+civbuild3x24:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/bam2x3buildings.png
+		Frames: 3
+	icon: building_icon.ani

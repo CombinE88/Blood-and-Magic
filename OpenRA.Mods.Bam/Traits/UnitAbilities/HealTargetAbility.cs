@@ -99,7 +99,13 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         void ITick.Tick(Actor self)
         {
-            if (CurrentDelay++ < info.Delay || !self.IsIdle || !info.AutoTarget && self.Owner.PlayerName != "Creeps")
+            if (CurrentDelay < info.Delay)
+            {
+                CurrentDelay++;
+                return;
+            }
+
+            if ((!self.IsIdle || !info.AutoTarget) && self.Owner.PlayerName != "Creeps")
                 return;
 
             if (autoRetry++ < 10)
@@ -122,7 +128,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
                 && CurrentDelay >= info.Delay);
 
-            if (allowed.Any() && self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount))
+            if (allowed.Any() && (self.Owner.PlayerName == "Creeps" || self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount)))
             {
                 HealTarget(self, new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
             }

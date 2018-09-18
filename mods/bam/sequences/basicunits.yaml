@@ -148,6 +148,36 @@ wolf:
 		Length: 7
 	icon: wolf_icon.ani
 	disabled-icon: wolf_icon_disabled.ani
+
+peasant:
+	Inherits: ^default
+	stand: peasant_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: peasant_stand.ani
+		Tick: 120
+		Facings: 8
+	run: peasant_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: peasant_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: peasant_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: peasant_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: peasant_die.ani
+		Tick: 120
+		Length: 7
+	icon: peasant_icon.ani
+	disabled-icon: peasant_icon_disabled.ani
 	
 shroud:
 	shroud: bits/shroud.png

@@ -6,7 +6,7 @@ World:
 	MPStartUnits@evil:
 		Class: none
 		ClassName: 3 Basal Golems
-		BaseActor: mainbase
+		BaseActor: hq.evil
 		Factions: evil
 		SupportActors: acolyte, acolyte, acolyte
 		InnerSupportRadius: 1
@@ -23,6 +23,40 @@ Player:
 			druid: 2560
 			gnome: 3150
 		TimePerCost: 3
+
+HQ.EVIL:
+	Inherits@: ^Building
+	Tooltip:
+		Name: Keep
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 999
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	RenderSprites:
+		PlayerPalette: BamPlayer
+		Image: hq.evil
+	SpawnsAcolytes:
+	StoresResources:
+		Capacity: 400
+		PipCount: 0
+	Exit@1:
+		SpawnOffset: 0,1224,0
+		Facing: 160
+		ExitCell: -1,3
+		ProductionTypes: Golem
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 1, 3
 
 CRYPT:
 	Inherits@: ^Building
@@ -42,7 +76,7 @@ CRYPT:
 	Tooltip:
 		Name: Crypt
 	AllowConvert:
-		ConvertTo: zombie, goblin, gargoyle
+		ConvertTo: zombie, goblin, gnome
 	Health:
 		HP: 300
 	Targetable:
@@ -86,7 +120,7 @@ ZOMBIE:
 	Tooltip:
 		Name: Zombie
 	Health:
-		HP: 30
+		HP: 35
 	RevealsShroud:
 		Range: 3c0
 		Type: CenterPosition
@@ -103,7 +137,18 @@ ZOMBIE:
 		Damage: 5
 		Armor: 2
 		Speed: 2
-        Attributes: evil
+		Attributes: evil
+		IgnoresNegativeTerrainEffects: Swamp
+		TerrainBonus@Swamp:
+			Tilename: Swamp
+			Damage: 0
+			Armor: 1
+			Speed: 0
+		TerrainBonus@Foliage:
+			Tilename: Foilage
+			Damage: 0
+			Armor: 1
+			Speed: 0
 	WithImpactAnimation:
 	Researchable:
 		Class: zombie
@@ -138,7 +183,18 @@ GOBLIN:
 		Damage: 4
 		Armor: 3
 		Speed: 2
-        Attributes: evil, alive, humanoid
+		Attributes: evil, alive, humanoid
+		IgnoresNegativeTerrainEffects: Swamp, Foliage
+		TerrainBonus@Swamp:
+			Tilename: Swamp
+			Damage: 0
+			Armor: 1
+			Speed: 0
+		TerrainBonus@Foliage:
+			Tilename: Foliage
+			Damage: 0
+			Armor: 1
+			Speed: 0
 	Researchable:
 		Class: goblin
 		TransformTime: 35
@@ -168,7 +224,18 @@ GHOUL:
 		Damage: 4
 		Armor: 1
 		Speed: 3
-        Attributes: evil, humanoid
+		Attributes: evil, humanoid
+		IgnoresNegativeTerrainEffects: Swamp, Foliage
+		TerrainBonus@Swamp:
+			Tilename: Swamp
+			Damage: 0
+			Armor: 1
+			Speed: 0
+		TerrainBonus@Foliage:
+			Tilename: Foliage
+			Damage: 0
+			Armor: 1
+			Speed: 0
 	WithImpactAnimation:
 	Researchable:
 		Class: ghoul
@@ -202,7 +269,7 @@ GARGOYLE:
 		Damage: 4
 		Armor: 2
 		Speed: 3
-        Attributes: evil, humanoid, alive
+		Attributes: evil, humanoid, alive
 	Researchable:
 		Class: gargoyle
 		TransformTime: 45
@@ -241,7 +308,18 @@ DRUID:
 		Damage: 4
 		Armor: 4
 		Speed: 3
-        Attributes: evil, alive, humanoid
+		Attributes: evil, alive, humanoid
+		IgnoresNegativeTerrainEffects: Foliage, HighFoliage
+		TerrainBonus@Foliage:
+			Tilename: Foliage
+			Damage: 0
+			Armor: 1
+			Speed: 0
+		TerrainBonus@HighFoliage:
+			Tilename: HighFoliage
+			Damage: 0
+			Armor: 1
+			Speed: 0
 	WithImpactAnimation:
 	Researchable:
 		Class: druid
@@ -278,10 +356,8 @@ GNOME:
 		Damage: 1
 		Armor: 2
 		Speed: 2
-        Attributes: evil, alive, humanoid
+		Attributes: evil, alive, humanoid
 	Researchable:
 		Class: gnome
 		TransformTime: 45
 	StealEnemyAbility:
-	WithAbilityAnimation:
-		Sequence: stand

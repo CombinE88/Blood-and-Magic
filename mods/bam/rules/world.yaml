@@ -13,6 +13,12 @@
 			TrapActive: 100
 			Manaspot: 100
 			Rubble: 100
+			Dirt: 100
+			RoughGround: 100
+			Swamp: 100
+			Farmland: 100
+			Road: 100
+			Cobble: 100
 
 	Locomotor@FLYING:
 		Name: flying
@@ -29,6 +35,13 @@
 			Rubble: 100
 			Clear: 100
 			Walls: 100
+			Dirt: 100
+			RoughGround: 100
+			Swamp: 100
+			Farmland: 100
+			Road: 100
+			Cobble: 100
+			Water: 100
 
 	Locomotor@NONE:
 		Name: none
@@ -69,3 +82,28 @@
 			Damage: -1
 			Armor: 1
 			Speed: -1
+		TilesetInformations@RoughGround:
+			Tilename: RoughGround
+			Damage: 0
+			Armor: 1
+			Speed: -1
+		TilesetInformations@Swamp:
+			Tilename: Swamp
+			Damage: 0
+			Armor: -2
+			Speed: -2
+		TilesetInformations@Farmland:
+			Tilename: Farmland
+			Damage: 0
+			Armor: 1
+			Speed: -1
+		TilesetInformations@Foliage:
+			Tilename: Foliage
+			Damage: 0
+			Armor: 1
+			Speed: -1
+		TilesetInformations@HighFoliage:
+			Tilename: HighFoliage
+			Damage: 0
+			Armor: -1
+			Speed: -2

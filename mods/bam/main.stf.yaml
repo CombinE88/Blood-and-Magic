@@ -28,6 +28,10 @@ mainbase_icon: 2714:0
 plattform_icon: 2738:0
 
 monument_icon: 2720:0
+building_icon: 2720:0
+trees_icon: 2686:0
+
+all_player_wall: 9100:542 9100:537 9100:534 9100:542 9100:538 9100:539 9100:540 9100:544 9100:535 9100:543 9100:536 9100:547 9100:541 9100:546 9100:545 9100:548
 
 #UI Bits ------------------------------------------
 
@@ -253,6 +257,15 @@ wolf_die: 1730:0-7
 wolf_icon: 2602:0
 wolf_icon_disabled: 2602:0
 
+peasant_stand: 770:3x 770:3x 770:3x 770:3x 770:3 770:3 770:3 770:3
+peasant_idle: 770:0-3x 770:0-3
+peasant_run: 754:0-3 753:0-3x 752:0-3x 751:0-3x 750:0-3 751:0-3 752:0-3 753:0-3
+peasant_attack: 764:0-3 763:0-3x 762:0-3x 761:0-3x 760:0-3 761:0-3 762:0-3 763:0-3
+peasant_aim: 764:3 763:3x 762:3x 761:3x 760:3 761:3 762:3 763:3
+peasant_damage: 776:0-3x 775:0-3x 775:0-3 776:0-3
+peasant_die: 780:0-7
+peasant_icon: 2560:0
+peasant_icon_disabled: 2560:0
 #Animations / Effects ------------------------------
 
 effect_moveorder: 8998:0-4
@@ -283,3 +296,6 @@ cursor_deploy_blocked: 9000:7
 cursor_select: 9000:4
 cursor_ability: 9000:3
 cursor_ability_blocked: 9000:7
+
+effect_leaves: 350:0-3
+effect_water: 356:0-3

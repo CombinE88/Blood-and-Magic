@@ -149,6 +149,7 @@ STONEGOLEM:
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
 	-CanHoldTrinket:
+		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 
 WOLF:
 	Inherits@1: ^Walker
@@ -181,3 +182,36 @@ WOLF:
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
 	-CanHoldTrinket:
+
+PAESANT:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Paesant
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: peasant
+	Armament:
+		Weapon: CloseCombatFist
+	DungeonsAndDragonsStats:
+		Damage: 2
+		Armor: 1
+		Speed: 3
+	WithImpactAnimation:
+	Wanders:
+		WanderMoveRadius: 7
+		MinMoveDelay: 100
+		MaxMoveDelay: 200
+	DropTrinketOnDeath:
+		Probability: 35

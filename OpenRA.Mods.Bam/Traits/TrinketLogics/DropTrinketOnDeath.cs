@@ -13,6 +13,8 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
     {
         public readonly int Probability = 80;
 
+        public readonly string[] IgnoreTerrain = { "Clear", "Water", "Walls" };
+
         public object Create(ActorInitializer init)
         {
             return new DropTrinketOnDeath(init, this);
@@ -60,16 +62,31 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 }
             }
 
-            var td = new TypeDictionary
+            self.World.AddFrameEndTask(w =>
             {
-                new ParentActorInit(self),
-                new LocationInit(self.Location),
-                new CenterPositionInit(self.CenterPosition),
-                new OwnerInit(self.Owner)
-            };
+                var build = self.World.FindActorsInCircle(self.CenterPosition, new WDist(265))
+                    .FirstOrDefault(a => !a.Equals(self) && a.Trait<Building>() != null && a.Info.TraitInfo<BuildingInfo>().UnpathableTiles(self.Location).Any());
+                var newTrinket = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.Info.HasTraitInfo<IsTrinketInfo>());
 
-            if (itemToDrop != null)
-                self.World.AddFrameEndTask(w => w.CreateActor(itemToDrop, td));
+                var findPos = self.World.Map.FindTilesInCircle(self.Location, 2, false).ToArray();
+                var findEmpty = findPos.Where(c => info.IgnoreTerrain.Contains(self.World.Map.GetTerrainInfo(c).Type)).ToArray();
+                var findEmptyActor = findEmpty.Where(c =>
+                    self.World.FindActorsInCircle(self.World.Map.CenterOfCell(c), new WDist(265)).All(a => a.TraitOrDefault<IsTrinket>() == null)
+                    && self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == null).ToArray();
+
+                var position = build == null && newTrinket == null ? self.Location : self.ClosestCell(findEmptyActor);
+
+                var td = new TypeDictionary
+                {
+                    new ParentActorInit(self),
+                    new LocationInit(position),
+                    new CenterPositionInit(w.Map.CenterOfCell(position)),
+                    new OwnerInit(self.Owner)
+                };
+
+                if (itemToDrop != null && position != null)
+                    w.CreateActor(itemToDrop, td);
+            });
         }
     }
 }

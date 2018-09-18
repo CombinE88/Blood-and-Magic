@@ -70,7 +70,6 @@ Templates:
 	Template@0:
 		Id: 0
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Frames: 56
@@ -81,17 +80,15 @@ Templates:
 	Template@1:
 		Id: 1
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
 		Frames: 67
 		Tiles:
-			0: Plattform   
+			0: Plattform
 	Template@2:
 		Id: 2
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -104,7 +101,6 @@ Templates:
 	Template@3:
 		Id: 3
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -116,7 +112,6 @@ Templates:
 	Template@4:
 		Id: 4
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -129,7 +124,6 @@ Templates:
 	Template@5:
 		Id: 5
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -139,7 +133,6 @@ Templates:
 	Template@6:
 		Id: 6
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -149,7 +142,6 @@ Templates:
 	Template@7:
 		Id: 7
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -159,7 +151,6 @@ Templates:
 	Template@8:
 		Id: 8
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -170,7 +161,6 @@ Templates:
 	Template@9:
 		Id: 9
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -180,7 +170,6 @@ Templates:
 	Template@10:
 		Id: 10
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -190,7 +179,6 @@ Templates:
 	Template@11:
 		Id: 11
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -200,7 +188,6 @@ Templates:
 	Template@12:
 		Id: 12
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -211,7 +198,6 @@ Templates:
 	Template@13:
 		Id: 13
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -221,7 +207,6 @@ Templates:
 	Template@14:
 		Id: 14
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -231,7 +216,6 @@ Templates:
 	Template@15:
 		Id: 15
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -241,7 +225,6 @@ Templates:
 	Template@16:
 		Id: 16
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -252,7 +235,6 @@ Templates:
 	Template@17:
 		Id: 17
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -263,7 +245,6 @@ Templates:
 	Template@18:
 		Id: 18
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -273,7 +254,6 @@ Templates:
     Template@22:
 		Id: 22
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -283,7 +263,6 @@ Templates:
 	Template@19:
 		Id: 19
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -293,7 +272,6 @@ Templates:
 	Template@25:
 		Id: 25
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -303,7 +281,6 @@ Templates:
 	Template@26:
 		Id: 26
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -313,7 +290,6 @@ Templates:
 	Template@23:
 		Id: 23
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -323,7 +299,6 @@ Templates:
 	Template@21:
 		Id: 21
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -333,7 +308,6 @@ Templates:
 	Template@24:
 		Id: 24
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -343,7 +317,6 @@ Templates:
 	Template@20:
 		Id: 20
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -354,7 +327,6 @@ Templates:
 	Template@27:
 		Id: 27
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -365,7 +337,6 @@ Templates:
 	Template@29:
 		Id: 29
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -376,7 +347,6 @@ Templates:
     Template@29a:
 		Id: 290
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -386,7 +356,6 @@ Templates:
     Template@29b:
 		Id: 291
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -396,7 +365,6 @@ Templates:
     Template@29c:
 		Id: 292
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -406,7 +374,6 @@ Templates:
 	Template@31:
 		Id: 31
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -417,7 +384,6 @@ Templates:
 	Template@31a:
 		Id: 310
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -427,7 +393,6 @@ Templates:
 	Template@31b:
 		Id: 311
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -437,7 +402,6 @@ Templates:
 	Template@31c:
 		Id: 312
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -448,7 +412,6 @@ Templates:
     Template@28:
 		Id: 28
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -458,7 +421,6 @@ Templates:
     Template@640:
 		Id: 64000
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -472,7 +434,6 @@ Templates:
 	Template@59:
 		Id: 59
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -486,7 +447,6 @@ Templates:
 	Template@32:
 		Id: 32
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -496,7 +456,6 @@ Templates:
 	Template@32a:
 		Id: 320
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -506,7 +465,6 @@ Templates:
 	Template@32b:
 		Id: 3200
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -516,7 +474,6 @@ Templates:
 	Template@33:
 		Id: 33
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -526,7 +483,6 @@ Templates:
 	Template@33a:
 		Id: 330
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -536,7 +492,6 @@ Templates:
 	Template@33b:
 		Id: 3300
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -546,7 +501,6 @@ Templates:
 	Template@34:
 		Id: 34
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -556,7 +510,6 @@ Templates:
 	Template@34a:
 		Id: 340
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -566,7 +519,6 @@ Templates:
 	Template@34b:
 		Id: 3400
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -577,7 +529,6 @@ Templates:
 	Template@35:
 		Id: 35
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -587,7 +538,6 @@ Templates:
 	Template@35a:
 		Id: 350
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -597,7 +547,6 @@ Templates:
 	Template@35b:
 		Id: 3500
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -607,7 +556,6 @@ Templates:
 	Template@36:
 		Id: 36
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -617,7 +565,6 @@ Templates:
 	Template@36a:
 		Id: 360
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -627,7 +574,6 @@ Templates:
 	Template@36b:
 		Id: 3600
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -637,7 +583,6 @@ Templates:
 	Template@37:
 		Id: 37
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -647,7 +592,6 @@ Templates:
 	Template@37a:
 		Id: 370
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -657,7 +601,6 @@ Templates:
 	Template@37b:
 		Id: 3700
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -668,7 +611,6 @@ Templates:
 	Template@39:
 		Id: 39
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -678,7 +620,6 @@ Templates:
 	Template@39a:
 		Id: 390
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -688,7 +629,6 @@ Templates:
 	Template@40:
 		Id: 40
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -698,7 +638,6 @@ Templates:
 	Template@40a:
 		Id: 400
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -709,7 +648,6 @@ Templates:
 	Template@41:
 		Id: 41
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -719,7 +657,6 @@ Templates:
 	Template@41a:
 		Id: 410
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -729,7 +666,6 @@ Templates:
 	Template@42:
 		Id: 42
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -739,7 +675,6 @@ Templates:
 	Template@42a:
 		Id: 420
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -750,7 +685,6 @@ Templates:
 	Template@44:
 		Id: 44
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -760,7 +694,6 @@ Templates:
 	Template@44a:
 		Id: 440
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -770,7 +703,6 @@ Templates:
 	Template@44b:
 		Id: 4400
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -780,7 +712,6 @@ Templates:
 	Template@45:
 		Id: 45
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -790,7 +721,6 @@ Templates:
 	Template@45a:
 		Id: 450
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -800,7 +730,6 @@ Templates:
 	Template@46:
 		Id: 46
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -810,7 +739,6 @@ Templates:
 	Template@46a:
 		Id: 460
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -820,7 +748,6 @@ Templates:
 	Template@46b:
 		Id: 4600
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Bridge
@@ -831,7 +758,6 @@ Templates:
 	Template@47:
 		Id: 47
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -841,7 +767,6 @@ Templates:
 	Template@47a:
 		Id: 470
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -851,7 +776,6 @@ Templates:
 	Template@48:
 		Id: 48
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -861,7 +785,6 @@ Templates:
 	Template@48a:
 		Id: 480
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -872,7 +795,6 @@ Templates:
 	Template@49:
 		Id: 49
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -882,7 +804,6 @@ Templates:
 	Template@49a:
 		Id: 490
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -892,7 +813,6 @@ Templates:
 	Template@50:
 		Id: 50
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -902,7 +822,6 @@ Templates:
 	Template@50a:
 		Id: 500
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -913,7 +832,6 @@ Templates:
 	Template@51:
 		Id: 51
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -923,7 +841,6 @@ Templates:
 	Template@52:
 		Id: 52
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -934,7 +851,6 @@ Templates:
 	Template@53:
 		Id: 53
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -944,7 +860,6 @@ Templates:
 	Template@54:
 		Id: 54
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -955,7 +870,6 @@ Templates:
 	Template@55:
 		Id: 55
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -965,7 +879,6 @@ Templates:
 	Template@56:
 		Id: 56
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Buttons and Traps
@@ -976,7 +889,6 @@ Templates:
 	Template@57:
 		Id: 57
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -986,7 +898,6 @@ Templates:
 	Template@57a:
 		Id: 570
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -996,7 +907,6 @@ Templates:
 	Template@58:
 		Id: 58
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -1006,7 +916,6 @@ Templates:
 	Template@58a:
 		Id: 65000
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,2
 		PickAny: False
 		Categories: Walls and Stairs
@@ -1017,7 +926,6 @@ Templates:
 	Template@58b:
 		Id: 6500
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,2
 		PickAny: False
 		Categories: Walls and Stairs
@@ -1028,7 +936,6 @@ Templates:
 	Template@58c:
 		Id: 6501
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,2
 		PickAny: False
 		Categories: Walls and Stairs
@@ -1040,7 +947,6 @@ Templates:
 	Template@60:
 		Id: 60
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -1051,7 +957,6 @@ Templates:
 	Template@61:
 		Id: 61
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -1061,7 +966,6 @@ Templates:
 	Template@61a:
 		Id: 610
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -1071,7 +975,6 @@ Templates:
 	Template@62:
 		Id: 62
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -1081,7 +984,6 @@ Templates:
 	Template@62a:
 		Id: 66
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,2
 		PickAny: False
 		Categories: Walls and Stairs
@@ -1092,7 +994,6 @@ Templates:
 	Template@62b:
 		Id: 6600
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,2
 		PickAny: False
 		Categories: Walls and Stairs
@@ -1103,7 +1004,6 @@ Templates:
 	Template@62c:
 		Id: 6601
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,2
 		PickAny: False
 		Categories: Walls and Stairs
@@ -1114,7 +1014,6 @@ Templates:
 	Template@63:
 		Id: 63
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: Walls and Stairs
@@ -1126,7 +1025,6 @@ Templates:
 	Template@100:
 		Id: 100
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1136,7 +1034,6 @@ Templates:
 	Template@101:
 		Id: 101
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1146,7 +1043,6 @@ Templates:
 	Template@102:
 		Id: 102
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1156,7 +1052,6 @@ Templates:
 	Template@103:
 		Id: 103
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1167,7 +1062,6 @@ Templates:
 	Template@104:
 		Id: 104
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1177,7 +1071,6 @@ Templates:
 	Template@105:
 		Id: 105
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1187,7 +1080,6 @@ Templates:
 	Template@106:
 		Id: 106
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1197,7 +1089,6 @@ Templates:
 	Template@107:
 		Id: 107
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1208,7 +1099,6 @@ Templates:
 	Template@108:
 		Id: 108
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1219,7 +1109,6 @@ Templates:
 	Template@109:
 		Id: 109
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1229,7 +1118,6 @@ Templates:
 	Template@110:
 		Id: 110
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1239,7 +1127,6 @@ Templates:
 	Template@111:
 		Id: 111
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1249,7 +1136,6 @@ Templates:
 	Template@112:
 		Id: 112
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1260,7 +1146,6 @@ Templates:
 	Template@113:
 		Id: 113
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1270,7 +1155,6 @@ Templates:
 	Template@114:
 		Id: 114
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1280,7 +1164,6 @@ Templates:
 	Template@115:
 		Id: 115
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1290,7 +1173,6 @@ Templates:
 	Template@1116:
 		Id: 116
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1300,7 +1182,6 @@ Templates:
 	Template@117:
 		Id: 117
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1311,7 +1192,6 @@ Templates:
 	Template@118:
 		Id: 118
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1321,7 +1201,6 @@ Templates:
 	Template@119:
 		Id: 119
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1331,7 +1210,6 @@ Templates:
 	Template@120:
 		Id: 120
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1342,7 +1220,6 @@ Templates:
 	Template@121:
 		Id: 121
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1352,7 +1229,6 @@ Templates:
 	Template@122:
 		Id: 122
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1362,7 +1238,6 @@ Templates:
 	Template@123:
 		Id: 123
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1373,7 +1248,6 @@ Templates:
 	Template@124:
 		Id: 124
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1383,7 +1257,6 @@ Templates:
 	Template@125:
 		Id: 125
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1393,7 +1266,6 @@ Templates:
 	Template@126:
 		Id: 126
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1404,7 +1276,6 @@ Templates:
 	Template@127:
 		Id: 127
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1414,7 +1285,6 @@ Templates:
 	Template@128:
 		Id: 128
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1424,7 +1294,6 @@ Templates:
 	Template@129:
 		Id: 129
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1435,7 +1304,6 @@ Templates:
 	Template@130:
 		Id: 130
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1445,7 +1313,6 @@ Templates:
 	Template@131:
 		Id: 131
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1455,7 +1322,6 @@ Templates:
 	Template@132:
 		Id: 132
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1466,7 +1332,6 @@ Templates:
 	Template@1310:
 		Id: 1310
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1476,7 +1341,6 @@ Templates:
 	Template@1320:
 		Id: 1320
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1486,7 +1350,6 @@ Templates:
 	Template@133:
 		Id: 133
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1497,7 +1360,6 @@ Templates:
 	Template@134:
 		Id: 134
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1507,7 +1369,6 @@ Templates:
 	Template@135:
 		Id: 135
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1517,7 +1378,6 @@ Templates:
 	Template@136:
 		Id: 136
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1528,7 +1388,6 @@ Templates:
 	Template@137:
 		Id: 137
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1538,7 +1397,6 @@ Templates:
 	Template@138:
 		Id: 138
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1548,7 +1406,6 @@ Templates:
 	Template@139:
 		Id: 139
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1559,7 +1416,6 @@ Templates:
 	Template@140:
 		Id: 140
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1569,7 +1425,6 @@ Templates:
 	Template@141:
 		Id: 141
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1579,7 +1434,6 @@ Templates:
 	Template@142:
 		Id: 142
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1590,7 +1444,6 @@ Templates:
 	Template@143:
 		Id: 143
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1600,7 +1453,6 @@ Templates:
 	Template@144:
 		Id: 144
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1610,7 +1462,6 @@ Templates:
 	Template@145:
 		Id: 145
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1620,7 +1471,6 @@ Templates:
 	Template@146:
 		Id: 146
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1631,7 +1481,6 @@ Templates:
 	Template@147:
 		Id: 147
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1641,7 +1490,6 @@ Templates:
 	Template@148:
 		Id: 148
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1652,7 +1500,6 @@ Templates:
 	Template@149:
 		Id: 149
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1662,7 +1509,6 @@ Templates:
 	Template@150:
 		Id: 150
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1672,7 +1518,6 @@ Templates:
 	Template@151:
 		Id: 151
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1682,7 +1527,6 @@ Templates:
 	Template@152:
 		Id: 152
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: FullPlatform
@@ -1693,7 +1537,6 @@ Templates:
 	Template@153:
 		Id: 153
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1703,7 +1546,6 @@ Templates:
 	Template@154:
 		Id: 154
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1713,7 +1555,6 @@ Templates:
 	Template@155:
 		Id: 155
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1723,7 +1564,6 @@ Templates:
 	Template@156:
 		Id: 156
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1733,7 +1573,6 @@ Templates:
 	Template@157:
 		Id: 157
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1743,7 +1582,6 @@ Templates:
 	Template@158:
 		Id: 158
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1753,7 +1591,6 @@ Templates:
 	Template@159:
 		Id: 159
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1763,7 +1600,6 @@ Templates:
 	Template@160:
 		Id: 160
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1773,7 +1609,6 @@ Templates:
 	Template@161:
 		Id: 161
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1784,7 +1619,6 @@ Templates:
 	Template@162:
 		Id: 162
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1794,7 +1628,6 @@ Templates:
 	Template@163:
 		Id: 163
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1804,7 +1637,6 @@ Templates:
 	Template@164:
 		Id: 164
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1815,7 +1647,6 @@ Templates:
 	Template@165:
 		Id: 165
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1825,7 +1656,6 @@ Templates:
 	Template@166:
 		Id: 166
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1835,7 +1665,6 @@ Templates:
 	Template@167:
 		Id: 167
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots
@@ -1845,7 +1674,6 @@ Templates:
 	Template@168:
 		Id: 168
 		Images: bits/platformtiles.png
-		Palette: Platformtiles
 		Size: 1,1
 		PickAny: True
 		Categories: ManaSpots

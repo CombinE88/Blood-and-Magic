@@ -1,37 +1,3 @@
-MAINBASE:
-	Inherits@: ^Building
-	Tooltip:
-		Name: Keep
-	EditorTilesetFilter:
-		Categories: Building
-	Building:
-		Footprint: xxx xxx xxx
-		Dimensions: 3,3
-	Health:
-		HP: 999
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -1512, -1512
-			BottomRight: 1512, 1512
-	RenderSprites:
-		PlayerPalette: PngPlayer
-		Image: mainbase
-	SpawnsAcolytes:
-	StoresResources:
-		Capacity: 400
-		PipCount: 0
-	Exit@1:
-		SpawnOffset: -512,512,0
-		Facing: 160
-		ExitCell: -1,3
-		ProductionTypes: Golem
-	Targetable:
-		TargetTypes: Default
-	RallyPoint:
-		Palette: BamPlayer
-		Offset: 0, 3
-
 PLATTFORMB:
 	Inherits@: ^CoreBuilding
 	EditorTilesetFilter:
@@ -51,3 +17,100 @@ PLATTFORMB:
 	Tooltip:
 		Name: Building Plattform
 	AllowTransfrom:
+
+PLATTFORMA:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: plattforma
+		Palette: bam11195
+	Tooltip:
+		Name: Building Plattform
+	AllowTransfrom:
+
+CIVBUILD1:
+	Inherits@: ^CivilianHouse
+CIVBUILD2:
+	Inherits@: ^CivilianHouse
+CIVBUILD3:
+	Inherits@: ^CivilianHouse
+CIVBUILD4:
+	Inherits@: ^CivilianHouse
+CIVBUILD5:
+	Inherits@: ^CivilianHouse
+CIVBUILD6:
+	Inherits@: ^CivilianHouse
+CIVBUILD7:
+	Inherits@: ^CivilianHouse
+CIVBUILD8:
+	Inherits@: ^CivilianHouse
+CIVBUILD9:
+	Inherits@: ^CivilianHouse
+CIVBUILD10:
+	Inherits@: ^CivilianHouse
+CIVBUILD11:
+	Inherits@: ^CivilianHouse
+CIVBUILD12:
+	Inherits@: ^CivilianHouse
+CIVBUILD13:
+	Inherits@: ^CivilianHouse
+CIVBUILD14:
+	Inherits@: ^CivilianHouse
+CIVBUILD15:
+	Inherits@: ^CivilianHouse
+CIVBUILD16:
+	Inherits@: ^CivilianHouse
+CIVBUILD17:
+	Inherits@: ^CivilianHouse
+CIVBUILD18:
+	Inherits@: ^CivilianHouse
+CIVBUILD19:
+	Inherits@: ^CivilianHouse
+CIVBUILD20:
+	Inherits@: ^CivilianHouse
+CIVBUILD21:
+	Inherits@: ^CivilianHouse
+CIVBUILD22:
+	Inherits@: ^CivilianHouse
+CIVBUILD23:
+	Inherits@: ^CivilianHouse
+CIVBUILD24:
+	Inherits@: ^CivilianHouse
+CIVBUILD25:
+	Inherits@: ^CivilianHouse
+CIVBUILD26:
+	Inherits@: ^CivilianHouse
+CIVBUILD2X31:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X32:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X33:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X34:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X35:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X36:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X37:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD2X38:
+	Inherits@: ^CivilianHouse3x2
+CIVBUILD3X21:
+	Inherits@: ^CivilianHouse2x3
+CIVBUILD3X22:
+	Inherits@: ^CivilianHouse2x3
+CIVBUILD3X23:
+	Inherits@: ^CivilianHouse2x3
+CIVBUILD3X24:
+	Inherits@: ^CivilianHouse2x3

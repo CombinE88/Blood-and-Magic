@@ -6,7 +6,7 @@ World:
 	MPStartUnits@good:
 		Class: none
 		ClassName: 3 Basal Golems
-		BaseActor: mainbase
+		BaseActor: hq.good
 		Factions: good
 		SupportActors: acolyte, acolyte, acolyte
 		InnerSupportRadius: 1
@@ -23,6 +23,40 @@ Player:
 			griffin: 1800
 			paladin: 3150
 		TimePerCost: 3
+
+HQ.GOOD:
+	Inherits@: ^Building
+	Tooltip:
+		Name: Keep
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 999
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	RenderSprites:
+		PlayerPalette: BamPlayer
+		Image: hq.good
+	SpawnsAcolytes:
+	StoresResources:
+		Capacity: 400
+		PipCount: 0
+	Exit@1:
+		SpawnOffset: -512,512,0
+		Facing: 160
+		ExitCell: -1,3
+		ProductionTypes: Golem
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 3
 
 BARRACKS:
 	Inherits@: ^Building
@@ -42,7 +76,7 @@ BARRACKS:
 	Tooltip:
 		Name: Barracks
 	AllowConvert:
-		ConvertTo: warrior, ranger, griffin
+		ConvertTo: warrior, ranger, paladin
 	Health:
 		HP: 360
 	Targetable:
@@ -69,7 +103,7 @@ RUNESTONE:
 	Tooltip:
 		Name: Runestone
 	AllowConvert:
-		ConvertTo: cleric, wizard, paladin
+		ConvertTo: cleric, wizard, griffin
 	Health:
 		HP: 300
 	Targetable:
