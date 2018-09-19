@@ -19,6 +19,8 @@
 			Farmland: 100
 			Road: 100
 			Cobble: 100
+			HighFoliage: 100
+			Foliage: 100
 
 	Locomotor@FLYING:
 		Name: flying
@@ -42,6 +44,8 @@
 			Road: 100
 			Cobble: 100
 			Water: 100
+			HighFoliage: 100
+			Foliage: 100
 
 	Locomotor@NONE:
 		Name: none
@@ -50,60 +54,100 @@
 	TilesetStatistics:
 		TilesetInformations@Plattform:
 			Tilename: Plattform
+			IconSequence: landscape_platform
+		TilesetInformations@Dirt:
+			Tilename: Dirt
+			IconSequence: landscape_dirt
+		TilesetInformations@Road:
+			Tilename: Road
+			IconSequence: landscape_road
+		TilesetInformations@Cobble:
+			Tilename: Cobble
+			IconSequence: landscape_road
+		TilesetInformations@Clear:
+			Tilename: Clear
+			IconSequence: landscape_platform
+		TilesetInformations@Walls:
+			Tilename: Walls
+			IconSequence: landscape_walls
+		TilesetInformations@ButtonActive:
+			Tilename: ButtonActive
+			Damage: -1
+			Armor: -1
+			Speed: 0
+			IconSequence: landscape_button
+		TilesetInformations@TrapActive:
+			Tilename: TrapActive
+			IconSequence: TrapActive
+			Damage: -2
+			Armor: -1
+			Speed: 0
 		TilesetInformations@Manaspot:
 			Tilename: Manaspot
+			IconSequence: landscape_manaspot
 		TilesetInformations@Stairs:
 			Tilename: Stairs
 			Damage: 0
 			Armor: -1
 			Speed: -1
+			IconSequence: landscape_platform
 		TilesetInformations@WoodBridge:
 			Tilename: WoodBridge
 			Damage: 0
 			Armor: -1
 			Speed: -1
+			IconSequence: landscape_bridge
 		TilesetInformations@StoneBridge:
 			Tilename: StoneBridge
 			Damage: 0
 			Armor: -1
 			Speed: 0
+			IconSequence: landscape_bridge
 		TilesetInformations@Button:
 			Tilename: Button
 			Damage: -1
 			Armor: -1
 			Speed: 0
+			IconSequence: landscape_button
 		TilesetInformations@Trap:
 			Tilename: Trap
 			Damage: -2
 			Armor: -1
 			Speed: 0
+			IconSequence: landscap_trap
 		TilesetInformations@Rubble:
 			Tilename: Rubble
 			Damage: -1
 			Armor: 1
 			Speed: -1
+			IconSequence: landscape_rubble
 		TilesetInformations@RoughGround:
 			Tilename: RoughGround
 			Damage: 0
 			Armor: 1
 			Speed: -1
+			IconSequence: landscape_roughland
 		TilesetInformations@Swamp:
 			Tilename: Swamp
 			Damage: 0
 			Armor: -2
 			Speed: -2
+			IconSequence: landscape_swamp
 		TilesetInformations@Farmland:
 			Tilename: Farmland
 			Damage: 0
 			Armor: 1
 			Speed: -1
+			IconSequence: landscape_roughland
 		TilesetInformations@Foliage:
 			Tilename: Foliage
 			Damage: 0
 			Armor: 1
 			Speed: -1
+			IconSequence: landscape_foilage
 		TilesetInformations@HighFoliage:
 			Tilename: HighFoliage
 			Damage: 0
 			Armor: -1
 			Speed: -2
+			IconSequence: landscape_highfoilage

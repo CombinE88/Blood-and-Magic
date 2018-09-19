@@ -8,7 +8,7 @@ World:
 		ClassName: 3 Basal Golems
 		BaseActor: hq.good
 		Factions: good
-		SupportActors: acolyte, acolyte, acolyte
+		SupportActors: acolyte, acolyte, acolyte, Wall
 		InnerSupportRadius: 1
 		OuterSupportRadius: 2
 Player:

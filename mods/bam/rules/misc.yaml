@@ -23,6 +23,28 @@ EditorWorld:
 	EditorSelectionLayer:
 		Palette: bam11195
 
+MANASPOT:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 0c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: effects
+		Palette: bam11195
+	WithSpriteBody:
+		Sequence: mana
+	BodyOrientation:
+		QuantizedFacings: 1
+	HiddenUnderFog:
+		Type: CenterPosition
+	Interactable:
+	Tooltip:
+		Name: Manaspot
+		ShowOwnerRow: false
+	EditorTilesetFilter:
+		Categories:
+
 BRIDGE:
 	AlwaysVisible:
 	Immobile:
@@ -225,59 +247,167 @@ GRAVESTON4:
 	Tooltip:
 		Name: Gravestone
 
-GREEN1:
+GREEN01:
 	Inherits@1: ^prop
-	SpawnActorOnDeath: 
-		Actor: GREEN1.PROP
 	Health:
-		HP: 25
+		HP: 45
 	-DropTrinketOnDeath:
 	Tooltip:
 		Name: Tree
-GREEN1.PROP:
-	Inherits@1: ^prop.rubble
-	RenderSprites:
-		Image: green1
-GREEN2:
+GREEN02:
 	Inherits@1: ^prop
-	SpawnActorOnDeath: 
-		Actor: GREEN2.PROP
 	Health:
 		HP: 25
 	-DropTrinketOnDeath:
 	Tooltip:
 		Name: Bush
-GREEN2.PROP:
-	Inherits@1: ^prop.rubble
-	RenderSprites:
-		Image: green2
-GREEN3:
+GREEN03:
 	Inherits@1: ^prop
-	SpawnActorOnDeath: 
-		Actor: GREEN3.PROP
 	Tooltip:
 		Name: Bush
 	Health:
 		HP: 25
 	-DropTrinketOnDeath:
-GREEN3.PROP:
-	Inherits@1: ^prop.rubble
-	RenderSprites:
-		Image: green3
-GREEN4:
+GREEN04:
 	Inherits@1: ^prop
-	SpawnActorOnDeath: 
-		Actor: GREEN4.PROP
 	Tooltip:
 		Name: Bush
 	Health:
 		HP: 25
 	-DropTrinketOnDeath:
-GREEN4.PROP:
+GREEN05:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
+GREEN06:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
+GREEN07:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
+GREEN08:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
+GREEN09:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
+GREEN10:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
+GREEN11:
 	Inherits@1: ^prop.rubble
-	RenderSprites:
-		Image: green4
+	Tooltip:
+		Name: Shrub
+	AdvancedChangesTerrain:
+		TerrainType: Foliage
+	EditorTilesetFilter:
+		Categories: Monuments
+	WithSpriteBody:
+		Sequence: idle
+GREEN12:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Shrub
+	AdvancedChangesTerrain:
+		TerrainType: Foliage
+	EditorTilesetFilter:
+		Categories: Monuments
+	WithSpriteBody:
+		Sequence: idle
+GREEN13:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Shrub
+	AdvancedChangesTerrain:
+		TerrainType: Foliage
+	EditorTilesetFilter:
+		Categories: Monuments
+	WithSpriteBody:
+		Sequence: idle
+GREEN14:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Shrub
+	AdvancedChangesTerrain:
+		TerrainType: Foliage
+	EditorTilesetFilter:
+		Categories: Monuments
+	WithSpriteBody:
+		Sequence: idle
+GREEN15:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Tree
+	Health:
+		HP: 45
+	-DropTrinketOnDeath:
 
+
+ROCK1:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+ROCK2:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+ROCK3:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+ROCK4:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+ROCK5:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+ROCK6:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
 # Trinkets -----
 
 

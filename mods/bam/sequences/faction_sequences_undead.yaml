@@ -1,7 +1,7 @@
 hq.evil:
 	Defaults:
 		AddExtension: False
-	idle: bits/mainb_b.png
+	idle: bits/mainb_c.png
 		Frames: 0
 	icon: mainbase_icon.ani
 

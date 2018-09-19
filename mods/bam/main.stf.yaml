@@ -30,8 +30,9 @@ plattform_icon: 2738:0
 monument_icon: 2720:0
 building_icon: 2720:0
 trees_icon: 2686:0
+rocks_icon: 2684:0
 
-all_player_wall: 9100:542 9100:537 9100:534 9100:542 9100:538 9100:539 9100:540 9100:544 9100:535 9100:543 9100:536 9100:547 9100:541 9100:546 9100:545 9100:548
+manaspot: 338:0 338:1 338:2 338:3 338:3x 338:2x 338:1x 338:0x
 
 #UI Bits ------------------------------------------
 
@@ -59,6 +60,24 @@ ui_research_button: 120:0-1
 ui_tooltipbar: 116:5
 
 ui_ability_button: 108:0-1
+
+ui_selectionframe_landscape: 9002:0
+ui_selectionframe_unit: 9002:1
+
+landscape_bridge: 2740:0
+landscape_rubble: 2676:0
+landscape_dirt: 2672:0
+landscape_roughland: 2660:0
+landscape_foilage: 2658:0
+landscape_highfoilage: 2678:0
+landscape_swamp: 2664:0
+landscape_road: 2670:0
+landscape_manaspot: 2674:0
+landscape_button: 2748:0
+landscap_trap: 2746:0
+landscape_platform: 2732:0
+landscape_walls: 2730:0
+
 
 #Trinkets One ------------------------------------------
 

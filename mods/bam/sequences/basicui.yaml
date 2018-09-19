@@ -50,6 +50,9 @@ effects:
 	water: effect_water.ani
 		Length: *
 		Tick: 160
+	mana: manaspot.ani
+		Length: *
+		Tick: 160
 
 beacon:
 	Inherits: ^default
@@ -72,3 +75,18 @@ rallypoint:
 		ZOffset: 2535
 	circles: circle.ani
 		ZOffset: 2047
+
+tileseticons:
+	landscape_bridge: landscape_bridge.ani
+	landscape_rubble: landscape_rubble.ani
+	landscape_dirt: landscape_dirt.ani
+	landscape_roughland: landscape_roughland.ani
+	landscape_foilage: landscape_foilage.ani
+	landscape_highfoilage: landscape_highfoilage.ani
+	landscape_swamp: landscape_swamp.ani
+	landscape_road: landscape_road.ani
+	landscape_manaspot: landscape_manaspot.ani
+	landscape_button: landscape_button.ani
+	landscap_trap: landscap_trap.ani
+	landscape_platform: landscape_platform.ani
+	landscape_walls: landscape_walls.ani

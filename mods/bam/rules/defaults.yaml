@@ -77,16 +77,16 @@
 	RenderSprites:
 		Palette: bam11195
 	DropTrinketOnDeath@first:
-		Probability: 50
+		Probability: 33
 	DropTrinketOnDeath@second:
-		Probability: 50
+		Probability: 25
 	DropTrinketOnDeath@third:
-		Probability: 50
+		Probability: 20
 
 ^CivilianHouse3x2:
 	Inherits@: ^CivilianHouse
 	DropTrinketOnDeath@fourth:
-		Probability: 50
+		Probability: 15
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -98,7 +98,7 @@
 ^CivilianHouse2x3:
 	Inherits@: ^CivilianHouse
 	DropTrinketOnDeath@fourth:
-		Probability: 50
+		Probability: 10
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3

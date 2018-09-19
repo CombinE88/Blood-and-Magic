@@ -169,7 +169,7 @@ SupportsMapsFrom: bam
 
 SoundFormats: Wav
 
-SpriteFormats: Ani, PngSheet
+SpriteFormats: Ani, Tlb, PngSheet
 
 SpriteSequenceFormat: DefaultSpriteSequence
 

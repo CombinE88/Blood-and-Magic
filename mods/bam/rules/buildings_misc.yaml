@@ -38,6 +38,22 @@ PLATTFORMA:
 		Name: Building Plattform
 	AllowTransfrom:
 
+Wall:
+	Inherits@: ^CoreWall
+	RenderSprites:
+		Image: wall
+		PlayerPalette: BamPlayer
+	Health:
+		HP: 550
+
+NeutralWall:
+	Inherits@: ^CoreWall
+	RenderSprites:
+		Image: nwall
+		Palette: bam11195
+	Health:
+		HP: 550
+
 CIVBUILD1:
 	Inherits@: ^CivilianHouse
 CIVBUILD2:

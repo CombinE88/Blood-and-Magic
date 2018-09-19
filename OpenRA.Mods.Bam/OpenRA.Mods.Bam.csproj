@@ -104,8 +104,10 @@
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />
+    <Compile Include="FileFormats\TlbTileLibrary.cs" />
     <Compile Include="FileSystem\StfFile.cs" />
     <Compile Include="SpriteLoaders\AniLoader.cs" />
+    <Compile Include="SpriteLoaders\TlbLoader.cs" />
     <Compile Include="Traits\Activities\AdvancedTransform.cs" />
     <Compile Include="Traits\AdvancedChangesTerrain.cs" />
     <Compile Include="Traits\AdvancedTransforms.cs" />

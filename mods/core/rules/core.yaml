@@ -98,29 +98,14 @@
 	# Walls do visualy connect with adjecent walls.
 	-WithSpriteBody:
 	WithWallSpriteBody:
-	# Walls will show an explosion when destroyed.
-	Explodes:
-		Weapon: dieWall
 	# Group all walls in the map editor.
 	EditorTilesetFilter:
 		Categories: Walls
-	# Make walls actually buildable.
-	Buildable:
-		Queue: wall
-		BuildDurationModifier: 100
-	# Require other actor nearby which provides buildable area in order to place a wall.
-	RequiresBuildableArea:
-		AreaTypes: defence
-		Adjacent: 4
-	# Walls will use line-build mode.
-	LineBuildNode: # TODO replace this by continuous placing implementation!
-	LineBuild:
-		Range: 5
 	# Wall will use the standard unit healthbar.
 	SelectionDecorations:
 	# Should not be auto attacked.
 	Targetable@NoAutoAttack:
-		TargetTypes: NoAutoAttack
+		TargetTypes: Default
 
 # Base for all infantry.
 ^CoreInfantry:

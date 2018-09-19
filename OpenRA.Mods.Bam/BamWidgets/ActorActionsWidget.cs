@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using OpenRA.Graphics;
 using OpenRA.Mods.Bam.BamWidgets.Buttons;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
@@ -20,6 +21,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public Actor Actor;
         public Actor AllActor;
         public Actor[] ActorGroup;
+        public CPos Location = new CPos(10,10);
 
         private ManaSendButtonWidget manaSend;
         private SpawnGolemWidget spawnGolem;
@@ -35,7 +37,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         private List<ConvertToButtonWidget> convertToButtons = new List<ConvertToButtonWidget>();
         private List<TransformToBuildingButtonWidget> transformToButtons = new List<TransformToBuildingButtonWidget>();
-
 
         private ShowResearchButtonWidget researchEnabler;
 
@@ -85,7 +86,12 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AllActor = BamUi.World.Selection.Actors.FirstOrDefault(a => !a.IsDead && a.IsInWorld);
 
             if (AllActor != null)
+            {
                 DrawActorStatistics();
+                // Location = CPos.Zero;
+                // terrainstatistics.Visible = false;
+                // terrainIcon.Visible = false;
+            }
 
             if (AllActor != null && AllActor.TraitOrDefault<CanHoldTrinket>() != null && AllActor.Trait<CanHoldTrinket>().HoldsTrinket != null)
                 trinketButtons.Visible = true;

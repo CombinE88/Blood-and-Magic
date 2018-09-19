@@ -1,3 +1,12 @@
+wall:
+	idle: 9100.Tlb
+		Frames: 542,537,534,542,538,539,540,544,535,543,536,547,541,546,545,548
+		Length: *
+nwall:
+	idle: bits/props.png
+		Frames: 6,4,0,6,5,3,7,7,1,6,2,6,7,7,7,7
+		Length: 16
+
 plattforma:
 	Defaults:
 		AddExtension: False
@@ -132,7 +141,7 @@ graveston4:
 	icon: monument_icon.ani
 
 
-green1:
+green01:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
@@ -143,7 +152,7 @@ green1:
 		Frames: 26
 		ZOffset: -2048
 		Offset: 0, -10
-green2:
+green02:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
@@ -154,7 +163,7 @@ green2:
 		Frames: 26
 		ZOffset: -2048
 		Offset: 0, -10
-green3:
+green03:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
@@ -165,7 +174,7 @@ green3:
 		Frames: 26
 		ZOffset: -2048
 		Offset: 0, -10
-green4:
+green04:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
@@ -176,6 +185,124 @@ green4:
 		Frames: 26
 		ZOffset: -2048
 		Offset: 0, -10
+green05:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 3
+		Offset: 0, -10
+	icon: trees_icon.ani
+green06:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 4
+		Offset: 0, -10
+	icon: trees_icon.ani
+green07:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 9
+		Offset: 0, -10
+	icon: trees_icon.ani
+green08:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 19
+		Offset: 0, -10
+	icon: trees_icon.ani
+green09:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 29
+		Offset: 0, -10
+	icon: trees_icon.ani
+green10:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 39
+		Offset: 0, -10
+	icon: trees_icon.ani
+
+green11:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 15
+		Offset: 0, -10
+	icon: trees_icon.ani
+green12:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 16
+	icon: trees_icon.ani
+green13:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 17
+	icon: trees_icon.ani
+green14:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 27
+	icon: trees_icon.ani
+green15:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 0
+		Offset: 0, -10
+	icon: trees_icon.ani
+
+rock1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 5
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock2:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 18
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock3:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 25
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock4:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 26
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock5:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 28
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock6:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 38
+		Offset: 0, -10
+	icon: rocks_icon.ani
 
 barrels1:
 	Defaults:
