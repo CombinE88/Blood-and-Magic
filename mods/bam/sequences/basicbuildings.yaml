@@ -1,7 +1,7 @@
 wall:
 	idle: 9100.Tlb
 		Frames: 542,537,534,542,538,539,540,544,535,543,536,547,541,546,545,548
-		Length: *
+		Length: 16
 nwall:
 	idle: bits/props.png
 		Frames: 6,4,0,6,5,3,7,7,1,6,2,6,7,7,7,7

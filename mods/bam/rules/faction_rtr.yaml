@@ -8,7 +8,7 @@ World:
 		ClassName: 3 Basal Golems
 		BaseActor: hq.good
 		Factions: good
-		SupportActors: acolyte, acolyte, acolyte, Wall
+		SupportActors: acolyte, acolyte, acolyte
 		InnerSupportRadius: 1
 		OuterSupportRadius: 2
 Player:
@@ -220,7 +220,7 @@ PALADIN:
 	Health:
 		HP: 30
 	RevealsShroud:
-		Range: 3c0
+		Range: 5c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run

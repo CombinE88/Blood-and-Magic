@@ -122,7 +122,7 @@ ZOMBIE:
 	Health:
 		HP: 35
 	RevealsShroud:
-		Range: 3c0
+		Range: 4c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
@@ -254,7 +254,7 @@ GARGOYLE:
 	Health:
 		HP: 25
 	RevealsShroud:
-		Range: 4c0
+		Range: 3c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
@@ -293,7 +293,7 @@ DRUID:
 	Health:
 		HP: 30
 	RevealsShroud:
-		Range: 3c0
+		Range: 5c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
@@ -341,7 +341,7 @@ GNOME:
 	Health:
 		HP: 20
 	RevealsShroud:
-		Range: 3c0
+		Range: 2c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run

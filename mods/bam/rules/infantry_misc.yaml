@@ -45,7 +45,7 @@ PYRAMID:
 	Health:
 		HP: 20
 	RevealsShroud:
-		Range: 3c0
+		Range: 2c0
 		Type: CenterPosition
 	#WithSpriteBody:
 	#	Sequence: transformed_stand
@@ -61,7 +61,7 @@ PYRAMID:
 		Locomotor: none
 	ManaShooter:
 		Modifier:
-			Manaspot: 36
+			Manaspot: 50
 	WithManaAnimation:
 	-Living:
 	TransformToBuilding@barracks:
@@ -127,7 +127,7 @@ STONEGOLEM:
 	Health:
 		HP: 35
 	RevealsShroud:
-		Range: 4c0
+		Range: 5c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
@@ -161,7 +161,7 @@ WOLF:
 	Health:
 		HP: 25
 	RevealsShroud:
-		Range: 3c0
+		Range: 5c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
@@ -193,7 +193,7 @@ PAESANT:
 	Health:
 		HP: 20
 	RevealsShroud:
-		Range: 2c0
+		Range: 3c0
 		Type: CenterPosition
 	WithMoveAnimation:
 		MoveSequence: run
