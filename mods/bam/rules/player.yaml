@@ -15,8 +15,8 @@ Player:
 	ConquestVictoryConditions:
 	AllyRepair:
 	PlayerResources:
-		SelectableCash: 0, 20, 40, 100
-		DefaultCash: 100
+		SelectableCash: 120, 160, 200, 300, 400
+		DefaultCash: 160
 	DeveloperMode:
 		CheckboxDisplayOrder: 9
 	Shroud:

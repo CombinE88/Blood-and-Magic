@@ -83,25 +83,28 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             if (order.OrderString != "DropTrinket" && order.OrderString != "UseTrinket")
                 return;
 
-            switch (order.OrderString)
-            {
-                case "DropTrinket":
-                {
-                    var wsb = this.self.Trait<WithSpriteBody>();
-                    if (wsb.DefaultAnimation.CurrentSequence.Name == "idle"
-                        || wsb.DefaultAnimation.CurrentSequence.Name == "stand"
-                        || wsb.DefaultAnimation.CurrentSequence.Name == "run"
-                        || wsb.DefaultAnimation.CurrentSequence.Name == "aim")
-                    {
-                        DropTrinket(self);
-                    }
+            if (self == null || self.IsDead || !self.IsInWorld)
+                return;
 
-                    break;
+                switch (order.OrderString)
+                {
+                    case "DropTrinket":
+                    {
+                        var wsb = this.self.Trait<WithSpriteBody>();
+                        if (wsb.DefaultAnimation.CurrentSequence.Name == "idle"
+                            || wsb.DefaultAnimation.CurrentSequence.Name == "stand"
+                            || wsb.DefaultAnimation.CurrentSequence.Name == "run"
+                            || wsb.DefaultAnimation.CurrentSequence.Name == "aim")
+                        {
+                            DropTrinket(self);
+                        }
+
+                        break;
+                    }
+                    case "UseTrinket":
+                        EffectClick();
+                        break;
                 }
-                case "UseTrinket":
-                    EffectClick();
-                    break;
-            }
         }
 
         void ITick.Tick(Actor self)

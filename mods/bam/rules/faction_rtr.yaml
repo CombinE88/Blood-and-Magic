@@ -8,25 +8,6 @@ World:
 		ClassName: 3 Basal Golems
 		BaseActor: hq.good
 		Factions: good
-		SupportActors: acolyte, acolyte, acolyte
-		InnerSupportRadius: 0
-		OuterSupportRadius: 1
-	MPStartUnits@good2:
-		Class: 6golems
-		ClassName: 6 Basal Golems
-		BaseActor: hq.good
-		Factions: good
-		SupportActors: acolyte, acolyte, acolyte, acolyte, acolyte, acolyte
-		InnerSupportRadius: 0
-		OuterSupportRadius: 1
-	MPStartUnits@good3:
-		Class: force
-		ClassName: Starting Squad
-		BaseActor: hq.good
-		Factions: good
-		SupportActors: acolyte, acolyte, acolyte, acolyte, warrior, cleric
-		InnerSupportRadius: 0
-		OuterSupportRadius: 1
 Player:
 	Research@good:
 		PreResearched: warrior, cleric

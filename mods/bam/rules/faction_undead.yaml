@@ -9,24 +9,24 @@ World:
 		BaseActor: hq.evil
 		Factions: evil
 		SupportActors: acolyte, acolyte, acolyte
-		InnerSupportRadius: 1
-		OuterSupportRadius: 2
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
 	MPStartUnits@evil2:
 		Class: 6golems
 		ClassName: 6 Basal Golems
 		BaseActor: hq.evil
 		Factions: evil
 		SupportActors: acolyte, acolyte, acolyte, acolyte, acolyte, acolyte
-		InnerSupportRadius: 1
-		OuterSupportRadius: 2
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
 	MPStartUnits@evil3:
 		Class: force
 		ClassName: Starting Squad
 		BaseActor: hq.evil
 		Factions: evil
 		SupportActors: acolyte, acolyte, acolyte, acolyte, zombie, ghoul
-		InnerSupportRadius: 1
-		OuterSupportRadius: 2
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
 Player:
 	Research@evil:
 		PreResearched: zombie, ghoul
