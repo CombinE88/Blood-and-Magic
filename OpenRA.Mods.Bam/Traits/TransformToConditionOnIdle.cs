@@ -14,7 +14,7 @@ namespace OpenRA.Mods.Bam.Traits
     public class TransformToConditionOnIdle : ITick
     {
         readonly AdvancedTransforms deploy;
-        private int tick = 75;
+        private int tick = 25;
 
         public TransformToConditionOnIdle(ActorInitializer init, TransformToConditionOnIdleInfo info)
         {

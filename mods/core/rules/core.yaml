@@ -161,6 +161,7 @@
 		Sequence: attack
 	# Specify the sequence to use when aiming.
 	AutoTarget:
+		AllowMovement: false
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Default
 		InvalidTargets: NoAutoTarget

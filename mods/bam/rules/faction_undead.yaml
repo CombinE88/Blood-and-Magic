@@ -11,6 +11,22 @@ World:
 		SupportActors: acolyte, acolyte, acolyte
 		InnerSupportRadius: 1
 		OuterSupportRadius: 2
+	MPStartUnits@evil2:
+		Class: 6golems
+		ClassName: 6 Basal Golems
+		BaseActor: hq.evil
+		Factions: evil
+		SupportActors: acolyte, acolyte, acolyte, acolyte, acolyte, acolyte
+		InnerSupportRadius: 1
+		OuterSupportRadius: 2
+	MPStartUnits@evil3:
+		Class: force
+		ClassName: Starting Squad
+		BaseActor: hq.evil
+		Factions: evil
+		SupportActors: acolyte, acolyte, acolyte, acolyte, zombie, ghoul
+		InnerSupportRadius: 1
+		OuterSupportRadius: 2
 Player:
 	Research@evil:
 		PreResearched: zombie, ghoul
@@ -48,15 +64,15 @@ HQ.EVIL:
 		Capacity: 400
 		PipCount: 0
 	Exit@1:
-		SpawnOffset: 0,1224,0
+		SpawnOffset: -512,512,0
 		Facing: 160
-		ExitCell: 1,3
+		ExitCell: -1,3
 		ProductionTypes: Golem
 	Targetable:
 		TargetTypes: Default
 	RallyPoint:
 		Palette: BamPlayer
-		Offset: 1, 3
+		Offset: 0, 3
 
 CRYPT:
 	Inherits@: ^Building

@@ -49,9 +49,6 @@ namespace OpenRA.Mods.Bam.Traits
             if (IsTraitDisabled || info.OnlyStores || delivering)
                 return;
 
-            if (!Info.Modifier.ContainsKey(self.World.Map.GetTerrainInfo(self.Location).Type))
-                return;
-
             if (CurrentStorage < info.MaxStorage)
             {
                 var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
