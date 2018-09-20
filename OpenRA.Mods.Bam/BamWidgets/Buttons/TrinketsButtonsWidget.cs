@@ -16,6 +16,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private bool pressed;
         private Animation animation;
         private ActorInfo actorInfo;
+        private string text;
+        private bool show;
 
         public TrinketButtonsWidget(ActorActionsWidget actorActions)
         {
@@ -66,17 +68,40 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         public override void MouseExited()
         {
             pressed = false;
+            show = false;
+        }
+
+        public override void MouseEntered()
+        {
+            show = true;
         }
 
         public override void Draw()
         {
-            if (actorActions.AllActor == null || actorActions.AllActor.Trait<CanHoldTrinket>() == null || actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
+
+            if (actorActions.AllActor == null || actorActions.AllActor.TraitOrDefault<CanHoldTrinket>() == null || actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
+
+            var trinket = actorActions.AllActor.TraitOrDefault<CanHoldTrinket>().HoldsTrinket;
 
             if (animation != null)
             {
                 animation.PlayFetchIndex("icon", () => 0);
                 WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y + 17), actorActions.BamUi.Palette);
+            }
+
+            if (!show)
+                return;
+
+            var traitInfo = trinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
+            if (traitInfo != null)
+            {
+                text = traitInfo.Description.Replace("\\n", "\n");
+                var textSize = actorActions.BamUi.Font.Measure(text);
+
+                actorActions.BamUi.Font.DrawTextWithShadow(text,
+                    new float2(RenderBounds.X + -textSize.X - 35, RenderBounds.Y + RenderBounds.Height - textSize.Y - 2),
+                    Color.White, Color.Black, 2);
             }
         }
     }

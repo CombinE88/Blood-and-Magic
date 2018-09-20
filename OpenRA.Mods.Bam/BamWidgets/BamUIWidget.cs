@@ -1,5 +1,8 @@
 using System.Drawing;
 using OpenRA.Graphics;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Widgets;
+using OpenRA.Mods.Kknd.Widgets.Ingame;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets
@@ -14,6 +17,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public SpriteFont FontLarge;
         public PaletteReference Palette;
 
+        public readonly RadarPings RadarPings;
+
         public Sheet Sheet;
         private Sprite rightBar;
         public Sheet RightbarSheet;
@@ -23,6 +28,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             World = world;
             WorldRenderer = worldRenderer;
+            RadarPings = world.WorldActor.Trait<RadarPings>();
+
             Game.Renderer.Fonts.TryGetValue("Small", out Font);
             Game.Renderer.Fonts.TryGetValue("MediumBold", out FontLarge);
             Palette = WorldRenderer.Palette("BamPlayer" + World.LocalPlayer.InternalName);
@@ -57,7 +64,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public void CreateBackground()
         {
             // Background Minimap
-            AddChild(new SideBarBackgroundWidget(this, 10, 20, 594, 24, 128, 120));
+            var radar = new BamRadarWidget(this);
+
+            AddChild(radar);
 
             // Background Health Frame
             AddChild(new SideBarBackgroundWidget(this, 0, 160, 4, 734, 152, 17));

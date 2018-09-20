@@ -13,8 +13,7 @@ ACOLYTE:
 	WithMoveAnimation:
 		MoveSequence: run
 	WithFacingSpriteBody:
-	Living:
-		BoredSequence: stand
+	-Living:
 	ManaShooter:
 		Modifier:
 			Manaspot: 50
@@ -32,6 +31,18 @@ ACOLYTE:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7220.wav
+	TransformToBuilding@barracks:
+		IntoBuilding: barracks
+		Factions: good
+	TransformToBuilding@runestone:
+		IntoBuilding: runestone
+		Factions: good
+	TransformToBuilding@evil:
+		IntoBuilding: crypt
+		Factions: evil
+	TransformToBuilding@arborlodge:
+		IntoBuilding: arborlodge
+		Factions: evil
 
 CAPSULE:
 	Inherits@1: ^Walker
@@ -54,6 +65,7 @@ CAPSULE:
 		Damage: 0
 		Armor: 4
 		Speed: 0
+		Attributes: Alive
 	WithImpactAnimation:
 	Mobile:
 		Speed: 1
@@ -95,6 +107,7 @@ STONEGOLEM:
 		Armor: 5
 		Speed: 1
 		CanbeModified: false
+		Attributes: Elemental
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 2
@@ -124,6 +137,7 @@ WOLF:
 		Image: wolf
 	Armament:
 		Weapon: CloseCombatClaw
+		Attributes: Alive, Animal
 	DungeonsAndDragonsStats:
 		Damage: 3
 		Armor: 1

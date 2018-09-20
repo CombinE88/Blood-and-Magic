@@ -7,22 +7,6 @@ Container@PLAYER_WIDGETS:
 		LogicTicker@SIDEBAR_TICKER:
 
 		BamUI@INGAME_UI:
-			Children:
-				Radar@RADAR_MINIMAP:
-					Logic: IngameRadarDisplayLogic
-					X: 128
-					Y: 120
-					Width: 100
-					Height: 100
-					WorldInteractionController: INTERACTION_CONTROLLER
-					Children:
-						LogicTicker@RADAR_TICKER:
-				VqaPlayer@PLAYER:
-					X: 1
-					Y: 1
-					Width: PARENT_RIGHT - 2
-					Height: PARENT_BOTTOM - 2
-					Skippable: false
 		Background@SIDEBAR_BACKGROUND_TOP:
 			X: 10
 			Y: 10

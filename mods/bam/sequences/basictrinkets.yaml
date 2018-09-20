@@ -82,3 +82,13 @@ trinketmap:
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: map_trinket_icon.ani
+
+trinketkit:
+	Inherits: ^default
+	idle: kit_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: kit_trinket_icon.ani
+	effect: healsalve_trinket_effect.ani
+		Length: 4
+		Tick: 160

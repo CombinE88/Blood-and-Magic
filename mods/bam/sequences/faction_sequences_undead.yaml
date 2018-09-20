@@ -9,12 +9,20 @@ crypt:
 	Inherits: ^default
 	idle: bits/2x2buildings.png
 		Frames: 8
+	platforms-idle: bits/2x2buildings.png
+		Frames: 8
+	temperate-idle: bits/2x2buildings.png
+		Frames: 10
 	icon: crypt_icon.ani
 
 arborlodge:
 	Inherits: ^default
 	idle: bits/2x2buildings.png
 		Frames: 7
+	platforms-idle: bits/2x2buildings.png
+		Frames: 7
+	temperate-idle: bits/2x2buildings.png
+		Frames: 14
 	icon: arborlodge_icon.ani
 
 zombie:

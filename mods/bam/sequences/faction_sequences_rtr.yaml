@@ -9,12 +9,20 @@ barracks:
 	Inherits: ^default
 	idle: bits/2x2buildings.png
 		Frames: 5
+	platforms-idle: bits/2x2buildings.png
+		Frames: 5
+	temperate-idle: bits/2x2buildings.png
+		Frames: 13
 	icon: barracks_icon.ani
 
 runestone:
 	Inherits: ^default
 	idle: bits/2x2buildings.png
 		Frames: 9
+	platforms-idle: bits/2x2buildings.png
+		Frames: 9
+	temperate-idle: bits/2x2buildings.png
+		Frames: 12
 	icon: runestone_icon.ani
 
 warrior:

@@ -29,7 +29,7 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         public readonly int Speed = 0;
 
         [Desc("What is this. possibilities are: humanoid, alive, nature, holy, evil")]
-        public readonly string[] Attributes = { "alive", "humanoid" };
+        public readonly string[] Attributes = { "Alive", "Humanoid" };
 
         public readonly string[] IgnoresNegativeTerrainEffects = { "" };
 

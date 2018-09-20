@@ -54,7 +54,6 @@ HQ.EVIL:
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 3
-	ProvidesRadar:
 
 CRYPT:
 	Inherits@: ^Building
@@ -82,6 +81,7 @@ CRYPT:
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 0
+	ChangeImageOnTheatre:
 
 ARBORLODGE:
 	Inherits@: ^Building
@@ -109,6 +109,7 @@ ARBORLODGE:
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 0
+	ChangeImageOnTheatre:
 
 ZOMBIE:
 	Inherits@1: ^Walker
@@ -135,7 +136,7 @@ ZOMBIE:
 		Damage: 5
 		Armor: 2
 		Speed: 2
-		Attributes: evil
+		Attributes: Evil
 		IgnoresNegativeTerrainEffects: Swamp
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -181,7 +182,7 @@ GOBLIN:
 		Damage: 4
 		Armor: 3
 		Speed: 2
-		Attributes: evil, alive, humanoid
+		Attributes: Evil, Alive, Humanoid
 		IgnoresNegativeTerrainEffects: Swamp, Foliage
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -224,7 +225,7 @@ GHOUL:
 		Damage: 3
 		Armor: 2
 		Speed: 3
-		Attributes: evil, humanoid
+		Attributes: Evil, Humanoid
 		IgnoresNegativeTerrainEffects: Swamp, Foliage
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -269,7 +270,7 @@ GARGOYLE:
 		Damage: 4
 		Armor: 2
 		Speed: 3
-		Attributes: evil, humanoid, alive
+		Attributes: Evil, Flying, Alive
 	Researchable:
 		Class: gargoyle
 		TransformTime: 45
@@ -308,7 +309,7 @@ DRUID:
 		Damage: 4
 		Armor: 4
 		Speed: 3
-		Attributes: evil, alive, humanoid
+		Attributes: Evil, Alive, Humanoid, Nature
 		IgnoresNegativeTerrainEffects: Foliage, HighFoliage
 		TerrainBonus@Foliage:
 			Tilename: Foliage
@@ -356,7 +357,7 @@ GNOME:
 		Damage: 1
 		Armor: 2
 		Speed: 2
-		Attributes: evil, alive, humanoid
+		Attributes: Evil, Alive, Humanoid
 	Researchable:
 		Class: gnome
 		TransformTime: 45

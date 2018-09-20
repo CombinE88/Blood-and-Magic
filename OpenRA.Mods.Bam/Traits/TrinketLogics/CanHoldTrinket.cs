@@ -236,6 +236,47 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                         }
 
                         break;
+
+                    case "kit":
+
+                        var actors = self.World.FindActorsInCircle(self.CenterPosition, WDist.FromCells(4))
+                            .Where(a =>
+                                !a.IsDead
+                                && a.IsInWorld
+                                && a.Owner.IsAlliedWith(self.Owner)
+                                && a.Info.TraitInfoOrDefault<BuildingInfo>() != null
+                                && a.TraitOrDefault<Health>() != null
+                                && a.Trait<Health>().HP < a.Trait<Health>().MaxHP);
+
+                        Actor closest = null;
+                        if (actors.Any())
+                        {
+                            closest = actors.First();
+
+                            closest.InflictDamage(self, new Damage(-1 * 100));
+
+                            var trinket = HoldsTrinket;
+                            HoldsTrinket = null;
+                            IgnoreTrinket = null;
+
+                            foreach (var cell in closest.Trait<Building>().OccupiedCells())
+                            {
+                                self.World.AddFrameEndTask(w =>
+                                    w.Add(new SpriteEffect(
+                                        self.World.Map.CenterOfCell(cell.First),
+                                        w,
+                                        trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                        trinketinfo.EffectSequence,
+                                        trinketinfo.EffectPalette)));
+                            }
+
+                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                            if (trinketinfo.OneTimeUse)
+                                trinket.Dispose();
+                        }
+
+                        break;
                 }
         }
 
@@ -248,9 +289,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                     case "manaorb":
 
                         self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(60);
-
                         Game.Sound.Play(SoundType.World, trinketInfo.Sound, self.CenterPosition);
-
                         if (trinketInfo.ShowEffect)
                             self.World.AddFrameEndTask(w =>
                                 w.Add(new SpriteEffect(
@@ -259,17 +298,12 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                                     trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
                                     trinketInfo.EffectSequence,
                                     trinketInfo.EffectPalette)));
-
                         if (trinketInfo.OneTimeUse)
                             trinket.Dispose();
                         break;
-
                     case "thome":
-
                         self.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(150);
-
                         Game.Sound.Play(SoundType.World, trinketInfo.Sound, self.CenterPosition);
-
                         if (trinketInfo.ShowEffect)
                             self.World.AddFrameEndTask(w =>
                                 w.Add(new SpriteEffect(
@@ -278,27 +312,20 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                                     trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
                                     trinketInfo.EffectSequence,
                                     trinketInfo.EffectPalette)));
-
                         if (trinketInfo.OneTimeUse)
                             trinket.Dispose();
                         break;
-
                     case "map":
-
                         var random = new CPos(self.World.SharedRandom.Next(1, self.World.Map.Bounds.Size.Width),
                             self.World.SharedRandom.Next(1, self.World.Map.Bounds.Size.Height));
-
                         var td = new TypeDictionary
                         {
                             new LocationInit(random),
-
                             new OwnerInit(self.Owner),
                             new FacingInit(255)
                         };
-
                         self.World.AddFrameEndTask(w =>
                             w.CreateActor("camera", td));
-
                         if (trinketInfo.OneTimeUse)
                             trinket.Dispose();
                         break;
@@ -309,21 +336,17 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         void ContiniusEffect(IsTrinketInfo trinketInfo)
         {
             if (!info.CannotUse.Contains(trinketInfo.TrinketType))
-
                 switch (trinketInfo.TrinketType)
                 {
                     case "mantle":
                         ExtraArmor = 2;
                         break;
-
                     case "boots":
                         ExtraSpeed = 1;
                         break;
-
                     case "gauntlet":
                         ExtraDamage = 1;
                         break;
-
                     case "coat":
                         ExtraArmor = 1;
                         break;

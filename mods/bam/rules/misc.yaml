@@ -482,6 +482,7 @@ TRINKET.HEALSALVE:
 		TrinketType: healsalve
 		Sound: 7206.wav
 		DropChance: 40
+		Description: Living followers can consume\nto restore up to full health.
 
 TRINKET.MANAORB:
 	Inherits@: ^trinket
@@ -494,6 +495,7 @@ TRINKET.MANAORB:
 		EffectOnPickup: true
 		Sound: 7286.wav
 		DropChance: 25
+		Description: Consumes on pickup.\nGrants 60 Mana.
 
 TRINKET.BOOTS:
 	Inherits@: ^trinket
@@ -506,6 +508,7 @@ TRINKET.BOOTS:
 		OneTimeUse: false
 		ContiniusEffect: true
 		DropChance: 25
+		Description: Grants 1 extra speedpoint upon\nthe wearer.
 
 TRINKET.MANTLE:
 	Inherits@: ^trinket
@@ -518,6 +521,7 @@ TRINKET.MANTLE:
 		OneTimeUse: false
 		ContiniusEffect: true
 		DropChance: 5
+		Description: Grants 2 extra armorpoints upon\nthe wearer.
 
 TRINKET.GAUNTLET:
 	Inherits@: ^trinket
@@ -530,6 +534,7 @@ TRINKET.GAUNTLET:
 		OneTimeUse: false
 		ContiniusEffect: true
 		DropChance: 15
+		Description: Grants 1 extra damagpoint upon\nthe wearer.
 
 TRINKET.THOME:
 	Inherits@: ^trinket
@@ -543,6 +548,7 @@ TRINKET.THOME:
 		ContiniusEffect: false
 		EffectOnPickup: true
 		DropChance: 20
+		Description: Consumes on pickup.\nGrants 150 experience.
 
 TRINKET.DRINK:
 	Inherits@: ^trinket
@@ -554,6 +560,7 @@ TRINKET.DRINK:
 		TrinketType: water
 		Sound: 7206.wav
 		DropChance: 70
+		Description: Living followers can consume\nto restore up to 10 hitpoints.
 
 TRINKET.COAT:
 	Inherits@: ^trinket
@@ -566,6 +573,7 @@ TRINKET.COAT:
 		OneTimeUse: false
 		ContiniusEffect: true
 		DropChance: 20
+		Description: Grants 1 extra armorpoint upon\nthe wearer.
 
 TRINKET.MEAT:
 	Inherits@: ^trinket
@@ -577,6 +585,7 @@ TRINKET.MEAT:
 		TrinketType: meat
 		Sound: 7228.wav
 		DropChance: 40
+		Description: Non-living followers can consume\nto restore up to 15 hitpoints.
 
 TRINKET.MAP:
 	Inherits@: ^trinket
@@ -590,3 +599,16 @@ TRINKET.MAP:
 		ContiniusEffect: false
 		EffectOnPickup: true
 		DropChance: 35
+		Description: Reveals a random area\nof the map.
+
+TRINKET.KIT:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketkit
+	Tooltip:
+		Name: Repair Kit
+	IsTrinket:
+		TrinketType: kit
+		Sound: 7206.wav
+		DropChance: 55
+		Description: Repairs a nearby building\nby up to 100 hitpoints.

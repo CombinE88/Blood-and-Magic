@@ -170,7 +170,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || !target.Owner.IsAlliedWith(self.Owner)
                 || pr.Cash + pr.Resources < ammount
                 || target.TraitOrDefault<DungeonsAndDragonsStats>() == null
-                || !target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive"))
+                || !target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Alive"))
                 return false;
 
             return true;

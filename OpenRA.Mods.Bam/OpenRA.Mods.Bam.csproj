@@ -99,6 +99,7 @@
     <Compile Include="BamWidgets\DrawTransformStatistics.cs" />
     <Compile Include="BamWidgets\HealthBarUIWidget.cs" />
     <Compile Include="BamWidgets\ManaCounterWidget.cs" />
+    <Compile Include="BamWidgets\RadarWidget.cs" />
     <Compile Include="BamWidgets\SelectionNameWidget.cs" />
     <Compile Include="BamWidgets\SideBarBackgroundWidget.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Traits\Player\AdvancedAttackNotifier.cs" />
     <Compile Include="Traits\Player\DungeonsAndDragonsExperience.cs" />
     <Compile Include="Traits\Player\Research.cs" />
+    <Compile Include="Traits\Render\ChangeImageOnTheatre.cs" />
     <Compile Include="Traits\Render\WithImpactAnimation.cs" />
     <Compile Include="Traits\Render\WithAbilityAnimation.cs" />
     <Compile Include="Traits\Render\WithRangerAttackAnimation.cs" />
@@ -141,6 +143,7 @@
     <Compile Include="Traits\UnitAbilities\GhoulLeechLive.cs" />
     <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
     <Compile Include="Traits\UnitAbilities\StealEnemyAbility.cs" />
+    <Compile Include="Traits\World\CreateManaSpots.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />

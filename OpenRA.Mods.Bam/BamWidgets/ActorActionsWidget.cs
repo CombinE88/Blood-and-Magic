@@ -21,7 +21,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public Actor Actor;
         public Actor AllActor;
         public Actor[] ActorGroup;
-        public CPos Location = new CPos(10,10);
+        public CPos Location = new CPos(10, 10);
 
         private ManaSendButtonWidget manaSend;
         private SpawnGolemWidget spawnGolem;
@@ -145,8 +145,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
                     var selectedValidActors = ActorGroup
                         .Where(a =>
-                            a.TraitsImplementing<TransformToBuilding>().FirstOrDefault(t => t.Buildingbelow == trait.Buildingbelow) != null
-                            && a.IsIdle).ToHashSet();
+                            a.TraitsImplementing<TransformToBuilding>().FirstOrDefault(t => t.Buildingbelow == trait.Buildingbelow) != null).ToHashSet();
 
                     if (selectedValidActors.Count >= 4)
                     {

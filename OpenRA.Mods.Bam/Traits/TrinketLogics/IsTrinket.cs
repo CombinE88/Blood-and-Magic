@@ -22,6 +22,9 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         public readonly string Sound = null;
 
+        [Desc("Text shown in the production tooltip.")]
+        [Translate] public readonly string Description = "";
+
         public object Create(ActorInitializer init)
         {
             return new IsTrinket();

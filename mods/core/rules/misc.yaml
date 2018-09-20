@@ -130,6 +130,7 @@ World:
 		MaxMultiplier: 10,0
 	# Used to manage beacons.
 	RadarPings:
+	CreateManaSpots:
 
 # Map editor specific world setup.
 EditorWorld:

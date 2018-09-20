@@ -237,24 +237,28 @@ green11:
 	idle: bits/1x1props.png
 		Frames: 15
 		Offset: 0, -10
+		ZOffset: -1024
 	icon: trees_icon.ani
 green12:
 	Defaults:
 		AddExtension: False
 	idle: bits/1x1props.png
 		Frames: 16
+		ZOffset: -1024
 	icon: trees_icon.ani
 green13:
 	Defaults:
 		AddExtension: False
 	idle: bits/1x1props.png
 		Frames: 17
+		ZOffset: -1024
 	icon: trees_icon.ani
 green14:
 	Defaults:
 		AddExtension: False
 	idle: bits/1x1props.png
 		Frames: 27
+		ZOffset: -1024
 	icon: trees_icon.ani
 green15:
 	Defaults:
