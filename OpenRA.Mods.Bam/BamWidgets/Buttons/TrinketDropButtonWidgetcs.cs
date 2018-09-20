@@ -31,7 +31,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (actorActions.Actor == null)
                 return;
 
-            Bounds = new Rectangle(0, 403, background.Bounds.Width, background.Bounds.Height);
+            Bounds = new Rectangle(0, 443, background.Bounds.Width, background.Bounds.Height);
         }
 
         public override bool HandleMouseInput(MouseInput mi)

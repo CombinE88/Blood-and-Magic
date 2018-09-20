@@ -27,7 +27,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 return;
 
             text = actorActions.AllActor.Info.TraitInfo<TooltipInfo>().Name;
-            Bounds = new Rectangle(4, 138, 100, 20);
+            Bounds = new Rectangle(0, 178, 100, 20);
         }
 
         public override void Draw()

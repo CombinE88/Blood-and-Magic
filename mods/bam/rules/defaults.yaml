@@ -40,6 +40,7 @@
 	WithWalkOnTerrainOverlay@Foilage:
 		Sequence: leaves
 		TerrainTypes: Foliage, HighFoliage
+	Terminate:
 
 ^Building:
 	Inherits: ^CoreBuilding
@@ -51,8 +52,7 @@
 		DeathTypes: Death
 		Sound: 7210.wav
 	OwnerLostAction:
-		Action: ChangeOwner
-		Owner: Creeps
+		Action: Kill
 
 ^CivilianHouse:
 	Inherits@: ^Building
@@ -215,6 +215,7 @@
 	OwnerLostAction:
 		Action: ChangeOwner
 		Owner: Creeps
+	Terminate:
 
 ^trinket:
 	Inherits: ^CoreUnit

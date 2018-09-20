@@ -130,8 +130,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.Owner.IsAlliedWith(self.Owner)
                 && pr.Cash + pr.Resources >= info.Ammount
                 && a.TraitOrDefault<DungeonsAndDragonsStats>() != null
-                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
-                && CurrentDelay >= info.Delay);
+                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Alive"));
 
             if (allowed != null)
             {

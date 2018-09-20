@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, seq, name));
 
             var x = pressed ? 1 : 0;
-            var y = pressed ? 336 + 1 : 336;
+            var y = pressed ? 376 + 1 : 376;
             Bounds = new Rectangle(x, y, 76, 51);
         }
 

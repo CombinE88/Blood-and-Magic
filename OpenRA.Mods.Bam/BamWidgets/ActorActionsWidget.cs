@@ -10,6 +10,7 @@ using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Bam.Traits.UnitAbilities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Warheads;
+using OpenRA.Mods.Kknd.Widgets.Ingame;
 using OpenRA.Traits;
 using OpenRA.Widgets;
 
@@ -40,10 +41,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         private ShowResearchButtonWidget researchEnabler;
         private ConvertToWallButtonWidget wallbutton;
+        private KillSelfWidget terminate;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
             BamUi = bamUi;
+
+            CreateBackground();
 
             AddChild(manaSend = new ManaSendButtonWidget(this) { Visible = false });
             AddChild(spawnGolem = new SpawnGolemWidget(this) { Visible = false });
@@ -60,12 +64,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AddChild(trinketButtons = new TrinketButtonsWidget(this) { Visible = false });
             AddChild(trinketDropButton = new TrinketDropButtonWidget(this) { Visible = false });
 
-            AddChild(wallbutton = new ConvertToWallButtonWidget(this, 10, 450) { Visible = false });
+            AddChild(wallbutton = new ConvertToWallButtonWidget(this, 0, 490) { Visible = false });
+            AddChild(terminate = new KillSelfWidget(this) { Visible = false });
         }
 
         public override void Tick()
         {
-            Bounds = new Rectangle(0, 0, Parent.Bounds.Width, Parent.Bounds.Height);
+            Bounds = new Rectangle(5, 0, Parent.Bounds.Width, Parent.Bounds.Height);
         }
 
         public override void Draw()
@@ -104,6 +109,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (Actor == null)
                 return;
 
+            if (Actor.TraitOrDefault<Terminate>() != null)
+                terminate.Visible = true;
+
             if (Actor.TraitOrDefault<CanHoldTrinket>() != null && Actor.Trait<CanHoldTrinket>().HoldsTrinket != null)
             {
                 trinketDropButton.Visible = true;
@@ -138,10 +146,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 RemoveSpawnmenu();
                 wallbutton.Visible = true;
             }
-            else if (ca != null)
-            {
-                wallbutton.Visible = true;
-            }
 
             var traits = Actor.TraitsImplementing<TransformToBuilding>().Where(t => t.StandsOnBuilding && t.Info.Factions.Contains(Actor.Owner.Faction.InternalName)).ToList();
 
@@ -162,8 +166,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
                     {
                         var con = new TransformToBuildingButtonWidget(
                             this,
-                            10 + i % 2 * 75,
-                            450 + 68 * (i / 2),
+                            i % 2 * 75,
+                            490 + 68 * (i / 2),
                             trait.Info.IntoBuilding,
                             trait,
                             selectedValidActors) { Visible = true };
@@ -179,11 +183,18 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 foreach (var widget in transformToButtons)
                 {
                     widget.Visible = true;
+                    wallbutton.Visible = false;
                 }
             }
             else if (transformToButtons.Any())
             {
                 RemoveTransformmenu();
+            }
+
+
+            else if (ca != null && !transformToButtons.Any())
+            {
+                wallbutton.Visible = true;
             }
         }
 
@@ -198,8 +209,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             {
                 var con = new ConvertToButtonWidget(
                         this,
-                        10 + i % 2 * 75,
-                        450 + 68 * (i / 2),
+                        i % 2 * 75,
+                        490 + 68 * (i / 2),
                         transformable[i],
                         transformable[i])
                     { Visible = false };
@@ -248,6 +259,45 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 healthBarUI.Visible = true;
             if (AllActor.Info.HasTraitInfo<TooltipInfo>())
                 selectionName.Visible = true;
+        }
+
+        public void CreateBackground()
+        {
+            // Background Minimap
+            var radar = new BamRadarWidget(BamUi);
+
+            AddChild(radar);
+
+            // Background Health Frame
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 200, 4, 734, 152, 17));
+
+            // Background IconFrame
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 220, 848, 0, 84, 74));
+
+            // Background Icon
+            AddChild(new SideBarBackgroundWidget(BamUi, 4, 223, 0, 214, 76, 68));
+
+            // Background Armor Numbers
+            AddChild(new SideBarBackgroundWidget(BamUi, 85, 223, 5, 754, 25, 47));
+
+            // Background MainButton
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 304, 0, 316, 180, 34));
+
+            // Background SecondButton
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 338, 0, 316, 180, 34));
+
+            // Background Trinket
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 392, 0, 350, 76, 51));
+
+            // Background Trinket Drop Button
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 443, 178, 774, 76, 17));
+
+            // Background Convert Buttons
+            for (int i = 0; i < 4; i++)
+            {
+                AddChild(new SideBarBackgroundWidget(BamUi, 0, 490 + 68 * i, 0, 214, 75, 68));
+                AddChild(new SideBarBackgroundWidget(BamUi, 75, 490 + 68 * i, 0, 214, 75, 68));
+            }
         }
     }
 }

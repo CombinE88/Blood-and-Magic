@@ -151,138 +151,141 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
         void EffectClick()
         {
-            var trinketinfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
-            if (trinketinfo != null && !info.CannotUse.Contains(trinketinfo.TrinketType))
-                switch (trinketinfo.TrinketType)
-                {
-                    case "healsalve":
+            if (HoldsTrinket != null)
+            {
+                var trinketinfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
+                if (trinketinfo != null && !info.CannotUse.Contains(trinketinfo.TrinketType))
+                    switch (trinketinfo.TrinketType)
+                    {
+                        case "healsalve":
 
-                        if (
-                            !self.IsDead
-                            && self.IsInWorld
-                            && self.Info.TraitInfoOrDefault<HealthInfo>() != null
-                            && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
-                        {
-                            self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP), new BitSet<DamageType>("Healing")));
-                            var trinket = HoldsTrinket;
-                            HoldsTrinket = null;
-                            IgnoreTrinket = null;
-
-                            self.World.AddFrameEndTask(w =>
-                                w.Add(new SpriteEffect(
-                                    self.CenterPosition,
-                                    w,
-                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
-                                    trinketinfo.EffectSequence,
-                                    trinketinfo.EffectPalette)));
-
-                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
-
-                            if (trinketinfo.OneTimeUse)
-                                trinket.Dispose();
-                        }
-
-                        break;
-
-                    case "water":
-
-                        if (
-                            !self.IsDead
-                            && self.IsInWorld
-                            && self.Info.TraitInfoOrDefault<HealthInfo>() != null
-                            && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
-                        {
-                            self.InflictDamage(self, new Damage(-1 * 10, new BitSet<DamageType>("Healing")));
-                            var trinket = HoldsTrinket;
-                            HoldsTrinket = null;
-                            IgnoreTrinket = null;
-
-                            self.World.AddFrameEndTask(w =>
-                                w.Add(new SpriteEffect(
-                                    self.CenterPosition,
-                                    w,
-                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
-                                    trinketinfo.EffectSequence,
-                                    trinketinfo.EffectPalette)));
-
-                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
-
-                            if (trinketinfo.OneTimeUse)
-                                trinket.Dispose();
-                        }
-
-                        break;
-
-                    case "meat":
-
-                        if (
-                            !self.IsDead
-                            && self.IsInWorld
-                            && self.Info.TraitInfoOrDefault<HealthInfo>() != null
-                            && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
-                        {
-                            self.InflictDamage(self, new Damage(-1 * 15,new BitSet<DamageType>("Healing")));
-                            var trinket = HoldsTrinket;
-                            HoldsTrinket = null;
-                            IgnoreTrinket = null;
-
-                            self.World.AddFrameEndTask(w =>
-                                w.Add(new SpriteEffect(
-                                    self.CenterPosition,
-                                    w,
-                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
-                                    trinketinfo.EffectSequence,
-                                    trinketinfo.EffectPalette)));
-
-                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
-
-                            if (trinketinfo.OneTimeUse)
-                                trinket.Dispose();
-                        }
-
-                        break;
-
-                    case "kit":
-
-                        var actors = self.World.FindActorsInCircle(self.CenterPosition, WDist.FromCells(4))
-                            .Where(a =>
-                                !a.IsDead
-                                && a.IsInWorld
-                                && a.Owner.IsAlliedWith(self.Owner)
-                                && a.Info.TraitInfoOrDefault<BuildingInfo>() != null
-                                && a.TraitOrDefault<Health>() != null
-                                && a.Trait<Health>().HP < a.Trait<Health>().MaxHP);
-
-                        Actor closest = null;
-                        if (actors.Any())
-                        {
-                            closest = actors.First();
-
-                            closest.InflictDamage(self, new Damage(-1 * 100,new BitSet<DamageType>("Healing")));
-
-                            var trinket = HoldsTrinket;
-                            HoldsTrinket = null;
-                            IgnoreTrinket = null;
-
-                            foreach (var cell in closest.Trait<Building>().OccupiedCells())
+                            if (
+                                !self.IsDead
+                                && self.IsInWorld
+                                && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                                && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
                             {
+                                self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP), new BitSet<DamageType>("Healing")));
+                                var trinket = HoldsTrinket;
+                                HoldsTrinket = null;
+                                IgnoreTrinket = null;
+
                                 self.World.AddFrameEndTask(w =>
                                     w.Add(new SpriteEffect(
-                                        self.World.Map.CenterOfCell(cell.First),
+                                        self.CenterPosition,
                                         w,
                                         trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
                                         trinketinfo.EffectSequence,
                                         trinketinfo.EffectPalette)));
+
+                                Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                                if (trinketinfo.OneTimeUse)
+                                    trinket.Dispose();
                             }
 
-                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+                            break;
 
-                            if (trinketinfo.OneTimeUse)
-                                trinket.Dispose();
-                        }
+                        case "water":
 
-                        break;
-                }
+                            if (
+                                !self.IsDead
+                                && self.IsInWorld
+                                && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                                && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
+                            {
+                                self.InflictDamage(self, new Damage(-1 * 10, new BitSet<DamageType>("Healing")));
+                                var trinket = HoldsTrinket;
+                                HoldsTrinket = null;
+                                IgnoreTrinket = null;
+
+                                self.World.AddFrameEndTask(w =>
+                                    w.Add(new SpriteEffect(
+                                        self.CenterPosition,
+                                        w,
+                                        trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                        trinketinfo.EffectSequence,
+                                        trinketinfo.EffectPalette)));
+
+                                Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                                if (trinketinfo.OneTimeUse)
+                                    trinket.Dispose();
+                            }
+
+                            break;
+
+                        case "meat":
+
+                            if (
+                                !self.IsDead
+                                && self.IsInWorld
+                                && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                                && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
+                            {
+                                self.InflictDamage(self, new Damage(-1 * 15, new BitSet<DamageType>("Healing")));
+                                var trinket = HoldsTrinket;
+                                HoldsTrinket = null;
+                                IgnoreTrinket = null;
+
+                                self.World.AddFrameEndTask(w =>
+                                    w.Add(new SpriteEffect(
+                                        self.CenterPosition,
+                                        w,
+                                        trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                        trinketinfo.EffectSequence,
+                                        trinketinfo.EffectPalette)));
+
+                                Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                                if (trinketinfo.OneTimeUse)
+                                    trinket.Dispose();
+                            }
+
+                            break;
+
+                        case "kit":
+
+                            var actors = self.World.FindActorsInCircle(self.CenterPosition, WDist.FromCells(4))
+                                .Where(a =>
+                                    !a.IsDead
+                                    && a.IsInWorld
+                                    && a.Owner.IsAlliedWith(self.Owner)
+                                    && a.Info.TraitInfoOrDefault<BuildingInfo>() != null
+                                    && a.TraitOrDefault<Health>() != null
+                                    && a.Trait<Health>().HP < a.Trait<Health>().MaxHP);
+
+                            Actor closest = null;
+                            if (actors.Any())
+                            {
+                                closest = actors.First();
+
+                                closest.InflictDamage(self, new Damage(-1 * 100, new BitSet<DamageType>("Healing")));
+
+                                var trinket = HoldsTrinket;
+                                HoldsTrinket = null;
+                                IgnoreTrinket = null;
+
+                                foreach (var cell in closest.Trait<Building>().OccupiedCells())
+                                {
+                                    self.World.AddFrameEndTask(w =>
+                                        w.Add(new SpriteEffect(
+                                            self.World.Map.CenterOfCell(cell.First),
+                                            w,
+                                            trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                            trinketinfo.EffectSequence,
+                                            trinketinfo.EffectPalette)));
+                                }
+
+                                Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                                if (trinketinfo.OneTimeUse)
+                                    trinket.Dispose();
+                            }
+
+                            break;
+                    }
+            }
         }
 
         void EffectOnPickup(IsTrinketInfo trinketInfo, Actor trinket)

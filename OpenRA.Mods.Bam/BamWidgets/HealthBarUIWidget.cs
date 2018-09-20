@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             maxHP = actorActions.AllActor.Trait<Health>().MaxHP;
 
             progress = 144 * currentHP / maxHP;
-            Bounds = new Rectangle(4, 163, 144, 10);
+            Bounds = new Rectangle(3, 203, 144, 10);
         }
 
         public override void Draw()

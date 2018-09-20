@@ -29,6 +29,12 @@ basic_ui:
 	ui_Ability_button_disabled: ui_ability_button.ani
 		Start: 1
 
+	ui_terminate: ui_terminate.ani
+	ui_terminate_pressed: ui_terminate.ani
+		Start: 1
+	ui_terminate_empty: ui_terminate.ani
+		Start: 2
+
 explosion:
 	Defaults:
 		Length: *

@@ -2,6 +2,7 @@ wall:
 	idle: 9100.tlb
 		Frames: 452,537,534,542,538,539,540,544,535,543,536,547,541,546,545,548
 		Length: 16
+		ZOffset: -1024
 	icon: transform_wall_icon.ani
 	disabled-icon: transform_wall_icon.ani
 		Start: 1
@@ -10,6 +11,7 @@ nwall:
 	idle: bits/props.png
 		Frames: 6,4,0,6,5,3,7,7,1,6,2,6,7,7,7,7
 		Length: 16
+		ZOffset: -1024
 	icon: wall_icon.ani
 
 plattforma:
@@ -609,6 +611,7 @@ civbuild2x38:
 		Frames: 7
 	Building:
 		Footprint: xx_ xxx
+	icon: building_icon.ani
 civbuild3x21:
 	Defaults:
 		Offset: 0, -5

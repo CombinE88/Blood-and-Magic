@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Tick()
         {
-            Bounds = new Rectangle(4, 183, 75, 68);
+            Bounds = new Rectangle(0, 223, 75, 68);
         }
 
         public override void Draw()
@@ -40,7 +40,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 var palette = actorActions.BamUi.WorldRenderer.Palette("BamPlayer" + actorActions.AllActor.Owner.InternalName);
                 var animation = new Animation(actorActions.BamUi.World, actorActions.AllActor.Trait<RenderSprites>().GetImage(actorActions.AllActor));
                 animation.PlayFetchIndex("icon", () => 0);
-                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), palette);
+                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X + 4, RenderBounds.Y), palette);
 
                 if (!show)
                     return;

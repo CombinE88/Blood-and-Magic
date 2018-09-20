@@ -20,7 +20,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         {
             if (damaged != null
                 && damaged.TraitOrDefault<DungeonsAndDragonsStats>() != null
-                && damaged.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
+                && damaged.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Alive")
                 && !self.IsDead
                 && self.IsInWorld)
                 self.InflictDamage(self, new Damage(-e.Damage.Value, new BitSet<DamageType>("Healing")));

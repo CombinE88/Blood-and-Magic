@@ -54,6 +54,9 @@ HQ.GOOD:
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 3
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+
 
 BARRACKS:
 	Inherits@: ^Building
@@ -77,11 +80,12 @@ BARRACKS:
 	Health:
 		HP: 360
 	Targetable:
-		TargetTypes: 
+		TargetTypes: Default
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 0
 	ChangeImageOnTheatre:
+	Terminate:
 
 RUNESTONE:
 	Inherits@: ^Building
@@ -110,6 +114,7 @@ RUNESTONE:
 		Palette: BamPlayer
 		Offset: 0, 0
 	ChangeImageOnTheatre:
+	Terminate:
 
 WARRIOR:
 	Inherits@1: ^Walker

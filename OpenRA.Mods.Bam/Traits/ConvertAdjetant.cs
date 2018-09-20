@@ -103,11 +103,7 @@ namespace OpenRA.Mods.Bam.Traits
             {
                 if (orderCut.Contains(actorname))
                 {
-                    if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[orderCut].TraitInfo<ValuedInfo>().Cost))
-                    {
-                        DoTransform(self, Info.Capsule);
-                    }
-
+                    DoTransform(self, Info.Capsule);
                     break;
                 }
             }
@@ -152,31 +148,36 @@ namespace OpenRA.Mods.Bam.Traits
 
         void DoTransform(Actor self, string into)
         {
+            self.CancelActivity();
             self.QueueActivity(new CallFunc(() =>
             {
-                self.World.AddFrameEndTask(w =>
-                    w.Add(new SpriteEffect(
-                        self.CenterPosition,
-                        w,
-                        self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().Image,
-                        "transform",
-                        self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
-            }));
-            self.QueueActivity(new Wait(5));
-            self.QueueActivity(new AdvancedTransform(self, into)
-            {
-                Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime * 25,
-                CapsuleInto = orderCut,
+                if (self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[orderCut].TraitInfo<ValuedInfo>().Cost))
+                {
+                    self.World.AddFrameEndTask(w =>
+                        w.Add(new SpriteEffect(
+                            self.CenterPosition,
+                            w,
+                            self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().Image,
+                            "transform",
+                            self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
 
-                Offset = Info.Offset,
-                Facing = Info.Facing,
-                Sounds = Info.TransformSounds,
-                Notification = Info.TransformNotification,
-                Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
-                SelfSkipMakeAnims = Info.SkipSelfAnimation,
-                RallyPointActor = TransformEnabler,
-                UseRallyPoint = true
-            });
+                    self.QueueActivity(new Wait(5));
+                    self.QueueActivity(new AdvancedTransform(self, into)
+                    {
+                        Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime * 25,
+                        CapsuleInto = orderCut,
+
+                        Offset = Info.Offset,
+                        Facing = Info.Facing,
+                        Sounds = Info.TransformSounds,
+                        Notification = Info.TransformNotification,
+                        Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
+                        SelfSkipMakeAnims = Info.SkipSelfAnimation,
+                        RallyPointActor = TransformEnabler,
+                        UseRallyPoint = true
+                    });
+                }
+            }, false));
         }
     }
 }

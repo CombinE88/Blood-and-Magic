@@ -80,6 +80,8 @@ landscap_trap: 2746:0
 landscape_platform: 2732:0
 landscape_walls: 2730:0
 
+ui_terminate: 122:0-2
+
 
 #Trinkets One ------------------------------------------
 

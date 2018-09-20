@@ -23,7 +23,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            Bounds = new Rectangle(0, 264, background.Bounds.Width, background.Bounds.Height);
+            Bounds = new Rectangle(0, 304, background.Bounds.Width, background.Bounds.Height);
         }
 
         public override bool HandleMouseInput(MouseInput mi)

@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             var x = pressed ? posx + 1 : posx;
             var y = pressed ? posy + 1 : posy;
-            Bounds = new Rectangle(x, y, 75, 68);
+            Bounds = new Rectangle(x, y, 75, 108);
         }
 
         public override void MouseEntered()

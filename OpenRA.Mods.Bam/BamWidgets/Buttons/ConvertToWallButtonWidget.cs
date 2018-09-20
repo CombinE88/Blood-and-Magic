@@ -90,7 +90,10 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Draw()
         {
-            if (actorActions.Actor == null || convadjInfo == null)
+
+            var info = actorActions.Actor.Info.TraitInfoOrDefault<ConvertAdjetantInfo>();
+
+            if (actorActions.Actor == null || info == null)
                 return;
 
             if (animation != null)

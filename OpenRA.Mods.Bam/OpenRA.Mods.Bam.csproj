@@ -88,6 +88,7 @@
     <Compile Include="BamWidgets\BamUIWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToWallButtonWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\KillSelf.cs" />
     <Compile Include="BamWidgets\Buttons\ManaSendButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ResearchButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ShowResearchButtonWidget.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Traits\UnitAbilities\GhoulLeechLive.cs" />
     <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
     <Compile Include="Traits\UnitAbilities\StealEnemyAbility.cs" />
+    <Compile Include="Traits\UnitAbilities\Terminate.cs" />
     <Compile Include="Traits\World\CreateManaSpots.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />

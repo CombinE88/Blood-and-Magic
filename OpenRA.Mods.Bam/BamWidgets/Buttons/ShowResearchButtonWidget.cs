@@ -85,7 +85,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 }
             }
 
-            Bounds = new Rectangle(85, 426, 76, 24);
+            Bounds = new Rectangle(76, 466, 76, 24);
         }
 
         public override void Draw()

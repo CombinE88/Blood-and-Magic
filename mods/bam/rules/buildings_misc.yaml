@@ -49,6 +49,11 @@ PlayerWall:
 		Cost: 20
 	Tooltip:
 		Name: Wall
+	Terminate:
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
 
 NeutralWall:
 	Inherits@: ^CoreWall
@@ -57,6 +62,10 @@ NeutralWall:
 		Palette: bam11195
 	Health:
 		HP: 550
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
 
 CIVBUILD1:
 	Inherits@: ^CivilianHouse

@@ -46,7 +46,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Tick()
         {
-            Bounds = new Rectangle(0, 0, Parent.Bounds.Width, Parent.Bounds.Height);
+            Bounds = new Rectangle(0, 40, Parent.Bounds.Width, Parent.Bounds.Height);
         }
 
         public override void Draw()
