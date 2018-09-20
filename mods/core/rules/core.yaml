@@ -93,8 +93,8 @@
 		Type: Rectangle
 			TopLeft: -512, -512
 			BottomRight: 512, 512
-	Selectable:
-		Bounds: 32, 32, 0, 0
+	Interactable:
+		Bounds: 40, 38, 0, 0
 	# Walls do visualy connect with adjecent walls.
 	-WithSpriteBody:
 	WithWallSpriteBody:

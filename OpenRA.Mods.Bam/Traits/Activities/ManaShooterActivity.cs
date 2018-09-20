@@ -1,3 +1,4 @@
+using Eluant;
 using OpenRA.Activities;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
@@ -48,7 +49,8 @@ namespace OpenRA.Mods.Bam.Activities
             {
                 var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
                 var modifier = shooterInfo.Modifier.ContainsKey(ground) ? shooterInfo.Modifier[ground] : 100;
-                var max = shooterInfo.Interval * modifier;
+                var modifier2 = self.Trait<ManaShooter>().ExtraModifier / 100;
+                var max = shooterInfo.Interval * modifier * modifier2;
 
                 if (tick++ >= max / 100)
                 {
@@ -98,6 +100,7 @@ namespace OpenRA.Mods.Bam.Activities
                     if (self != null && !self.IsDead && self.IsInWorld)
                     {
                         wsb.DefaultAnimation.ReplaceAnim(shooterInfo.ObeliskSequence);
+
                         CurrentStorage = 0;
                         shooter.CurrentStorage = CurrentStorage;
                         overTick = 0;

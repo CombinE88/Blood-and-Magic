@@ -33,6 +33,12 @@ namespace OpenRA.Mods.Bam.Traits
         [Desc("Notification to play when transforming.")]
         public readonly string TransformNotification = null;
 
+        public readonly string WallActor = "playerwall";
+
+        public readonly string Image = "explosion";
+        public readonly string EffectSequence = "smokecloud_effect";
+        public readonly string EffectPalette = "bam11195";
+
         public readonly bool SkipSelfAnimation = false;
 
         public object Create(ActorInitializer init)
@@ -48,16 +54,20 @@ namespace OpenRA.Mods.Bam.Traits
         public Actor TransformEnabler;
 
         private string orderCut;
+        public bool Disabled;
 
         public ConvertAdjetant(ActorInitializer init, ConvertAdjetantInfo info)
         {
-            this.Info = info;
+            Info = info;
         }
 
         void ITick.Tick(Actor self)
         {
             if (self == null || self.IsDead || !self.IsInWorld)
                 return;
+
+            Disabled = self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(self.Location) != null
+                       || self.World.Map.GetTerrainInfo(self.Location).Type == "Manaspot";
 
             var cellstandingOn = self.Location;
             var sorrundingActors = self.World.FindActorsInCircle(self.World.Map.CenterOfCell(cellstandingOn), new WDist(2560))
@@ -72,8 +82,19 @@ namespace OpenRA.Mods.Bam.Traits
 
         void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
-            if (!order.OrderString.Contains("Convert-"))
+            if (!order.OrderString.Contains("Convert-") && order.OrderString != "QuickWall")
                 return;
+
+
+            if (order.OrderString == "QuickWall" && !self.IsDead && self.IsInWorld)
+            {
+                if (!Disabled && self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[Info.WallActor].TraitInfo<ValuedInfo>().Cost))
+                {
+                    TurnIntoWall(self);
+                }
+
+                return;
+            }
 
             orderCut = order.OrderString.Replace("Convert-", "");
 
@@ -90,6 +111,43 @@ namespace OpenRA.Mods.Bam.Traits
                     break;
                 }
             }
+        }
+
+        void TurnIntoWall(Actor self)
+        {
+            var location = self.Location;
+            var ownerSelf = self.Owner;
+            var health = self.TraitOrDefault<Health>();
+
+            self.Dispose();
+
+            self.World.AddFrameEndTask(w =>
+            {
+                var init = new TypeDictionary
+                {
+                    new LocationInit(location),
+                    new OwnerInit(ownerSelf)
+                };
+
+                if (health != null)
+                {
+                    // Cast to long to avoid overflow when multiplying by the health
+                    var newHP = (int)(health.HP * 100L / health.MaxHP);
+                    init.Add(new HealthInit(newHP));
+                }
+
+                var actor = w.CreateActor(Info.WallActor, init);
+
+                foreach (var cell in actor.Info.TraitInfo<BuildingInfo>().Tiles(actor.Location))
+                {
+                    w.Add(new SpriteEffect(
+                        actor.World.Map.CenterOfCell(cell),
+                        w,
+                        Info.Image,
+                        Info.EffectSequence,
+                        Info.EffectPalette));
+                }
+            });
         }
 
         void DoTransform(Actor self, string into)

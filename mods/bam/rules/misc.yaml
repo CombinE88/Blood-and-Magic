@@ -634,3 +634,18 @@ TRINKET.KIT:
 		Sound: 7206.wav
 		DropChance: 55
 		Description: Repairs a nearby building\nby up to 100 hitpoints.
+
+TRINKET.LOCKET:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketlocket
+	Tooltip:
+		Name: Locket
+	IsTrinket:
+		TrinketType: locket
+		OneTimeUse: false
+		ContiniusEffect: true
+		DropChance: 5
+		Description: A basal golem wearing this locket\ngenerates mana much faster. 
+
+

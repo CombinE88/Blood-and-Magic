@@ -39,6 +39,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private List<TransformToBuildingButtonWidget> transformToButtons = new List<TransformToBuildingButtonWidget>();
 
         private ShowResearchButtonWidget researchEnabler;
+        private ConvertToWallButtonWidget wallbutton;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
@@ -58,6 +59,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             AddChild(trinketButtons = new TrinketButtonsWidget(this) { Visible = false });
             AddChild(trinketDropButton = new TrinketDropButtonWidget(this) { Visible = false });
+
+            AddChild(wallbutton = new ConvertToWallButtonWidget(this, 10, 450) { Visible = false });
         }
 
         public override void Tick()
@@ -78,6 +81,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             healthBarUI.Visible = false;
             selectionName.Visible = false;
             abilityButton.Visible = false;
+
+            wallbutton.Visible = false;
 
             //// TODO hide all others here
 
@@ -119,6 +124,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 if (!convertToButtons.Any())
                 {
                     CreateSpawnMenu();
+                    wallbutton.Visible = false;
                 }
                 else
                 {
@@ -130,6 +136,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
             else if (convertToButtons.Any())
             {
                 RemoveSpawnmenu();
+                wallbutton.Visible = true;
+            }
+            else if (ca != null)
+            {
+                wallbutton.Visible = true;
             }
 
             var traits = Actor.TraitsImplementing<TransformToBuilding>().Where(t => t.StandsOnBuilding && t.Info.Factions.Contains(Actor.Owner.Faction.InternalName)).ToList();

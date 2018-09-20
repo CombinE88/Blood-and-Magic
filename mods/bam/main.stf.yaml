@@ -33,6 +33,8 @@ trees_icon: 2686:0
 rocks_icon: 2684:0
 wall_icon: 2722:0
 
+transform_wall_icon: 2724:0-1
+
 manaspot: 338:0 338:1 338:2 338:3 338:3x 338:2x 338:1x 338:0x
 #UI Bits ------------------------------------------
 

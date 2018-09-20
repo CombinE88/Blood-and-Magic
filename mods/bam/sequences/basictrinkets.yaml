@@ -92,3 +92,10 @@ trinketkit:
 	effect: healsalve_trinket_effect.ani
 		Length: 4
 		Tick: 160
+
+trinketlocket:
+	Inherits: ^default
+	idle: locket_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: locket_trinket_icon.ani

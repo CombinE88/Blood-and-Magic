@@ -87,6 +87,7 @@
     <Compile Include="BamWidgets\BamToolTipWidget.cs" />
     <Compile Include="BamWidgets\BamUIWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToButtonWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\ConvertToWallButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ManaSendButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ResearchButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ShowResearchButtonWidget.cs" />

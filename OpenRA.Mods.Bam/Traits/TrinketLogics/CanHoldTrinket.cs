@@ -96,8 +96,8 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                     break;
 
                 case "UseTrinket":
-                    if(!self.IsDead && self.IsInWorld)
-                    EffectClick();
+                    if (!self.IsDead && self.IsInWorld)
+                        EffectClick();
                     break;
             }
         }
@@ -117,6 +117,10 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 ExtraArmor = 0;
                 ExtraDamage = 0;
                 ExtraSpeed = 0;
+
+                var manaShotoer = self.TraitOrDefault<ManaShooter>();
+                if (manaShotoer != null)
+                    manaShotoer.ExtraModifier = 100;
             }
 
 
@@ -159,7 +163,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                             && self.Info.TraitInfoOrDefault<HealthInfo>() != null
                             && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
                         {
-                            self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP)));
+                            self.InflictDamage(self, new Damage(-1 * (self.Trait<Health>().MaxHP - self.Trait<Health>().HP), new BitSet<DamageType>("Healing")));
                             var trinket = HoldsTrinket;
                             HoldsTrinket = null;
                             IgnoreTrinket = null;
@@ -188,7 +192,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                             && self.Info.TraitInfoOrDefault<HealthInfo>() != null
                             && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
                         {
-                            self.InflictDamage(self, new Damage(-1 * 10));
+                            self.InflictDamage(self, new Damage(-1 * 10, new BitSet<DamageType>("Healing")));
                             var trinket = HoldsTrinket;
                             HoldsTrinket = null;
                             IgnoreTrinket = null;
@@ -217,7 +221,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                             && self.Info.TraitInfoOrDefault<HealthInfo>() != null
                             && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
                         {
-                            self.InflictDamage(self, new Damage(-1 * 15));
+                            self.InflictDamage(self, new Damage(-1 * 15,new BitSet<DamageType>("Healing")));
                             var trinket = HoldsTrinket;
                             HoldsTrinket = null;
                             IgnoreTrinket = null;
@@ -254,7 +258,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                         {
                             closest = actors.First();
 
-                            closest.InflictDamage(self, new Damage(-1 * 100));
+                            closest.InflictDamage(self, new Damage(-1 * 100,new BitSet<DamageType>("Healing")));
 
                             var trinket = HoldsTrinket;
                             HoldsTrinket = null;
@@ -350,6 +354,11 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                         break;
                     case "coat":
                         ExtraArmor = 1;
+                        break;
+                    case "locket":
+                        var manaShotoer = self.TraitOrDefault<ManaShooter>();
+                        if (manaShotoer != null)
+                            manaShotoer.ExtraModifier = 66;
                         break;
                 }
         }

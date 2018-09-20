@@ -38,13 +38,17 @@ PLATTFORMA:
 		Name: Building Plattform
 	AllowTransfrom:
 
-Wall:
+PlayerWall:
 	Inherits@: ^CoreWall
 	RenderSprites:
 		Image: wall
 		PlayerPalette: BamPlayer
 	Health:
 		HP: 550
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Wall
 
 NeutralWall:
 	Inherits@: ^CoreWall

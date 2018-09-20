@@ -44,6 +44,8 @@ namespace OpenRA.Mods.Bam.Traits
         public int CurrentStorage;
         private int tick;
 
+        public int ExtraModifier = 100;
+
         private PlayerResources pr;
         WithSpriteBody wsb;
 
