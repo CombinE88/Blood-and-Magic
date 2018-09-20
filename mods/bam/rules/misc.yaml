@@ -252,6 +252,9 @@ GREEN01:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 	Tooltip:
 		Name: Tree
 GREEN02:
@@ -259,6 +262,9 @@ GREEN02:
 	Health:
 		HP: 25
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 	Tooltip:
 		Name: Bush
 GREEN03:
@@ -268,6 +274,9 @@ GREEN03:
 	Health:
 		HP: 25
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN04:
 	Inherits@1: ^prop
 	Tooltip:
@@ -275,6 +284,9 @@ GREEN04:
 	Health:
 		HP: 25
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN05:
 	Inherits@1: ^prop
 	Tooltip:
@@ -282,6 +294,9 @@ GREEN05:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN06:
 	Inherits@1: ^prop
 	Tooltip:
@@ -289,6 +304,9 @@ GREEN06:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN07:
 	Inherits@1: ^prop
 	Tooltip:
@@ -296,6 +314,9 @@ GREEN07:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN08:
 	Inherits@1: ^prop
 	Tooltip:
@@ -303,6 +324,9 @@ GREEN08:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN09:
 	Inherits@1: ^prop
 	Tooltip:
@@ -310,6 +334,9 @@ GREEN09:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN10:
 	Inherits@1: ^prop
 	Tooltip:
@@ -317,6 +344,9 @@ GREEN10:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN11:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -327,6 +357,9 @@ GREEN11:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN12:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -337,6 +370,9 @@ GREEN12:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN13:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -347,6 +383,9 @@ GREEN13:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN14:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -357,6 +396,9 @@ GREEN14:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 GREEN15:
 	Inherits@1: ^prop
 	Tooltip:
@@ -364,8 +406,9 @@ GREEN15:
 	Health:
 		HP: 45
 	-DropTrinketOnDeath:
-
-
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7296.wav
 ROCK1:
 	Inherits@1: ^prop
 	Tooltip:
@@ -373,6 +416,9 @@ ROCK1:
 	Health:
 		HP: 75
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
 ROCK2:
 	Inherits@1: ^prop
 	Tooltip:
@@ -380,6 +426,9 @@ ROCK2:
 	Health:
 		HP: 75
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
 ROCK3:
 	Inherits@1: ^prop
 	Tooltip:
@@ -387,6 +436,9 @@ ROCK3:
 	Health:
 		HP: 75
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
 ROCK4:
 	Inherits@1: ^prop
 	Tooltip:
@@ -394,6 +446,9 @@ ROCK4:
 	Health:
 		HP: 75
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
 ROCK5:
 	Inherits@1: ^prop
 	Tooltip:
@@ -401,6 +456,9 @@ ROCK5:
 	Health:
 		HP: 75
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
 ROCK6:
 	Inherits@1: ^prop
 	Tooltip:
@@ -408,6 +466,9 @@ ROCK6:
 	Health:
 		HP: 75
 	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
 # Trinkets -----
 
 
@@ -505,3 +566,27 @@ TRINKET.COAT:
 		OneTimeUse: false
 		ContiniusEffect: true
 		DropChance: 20
+
+TRINKET.MEAT:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketmeat
+	Tooltip:
+		Name: Meat
+	IsTrinket:
+		TrinketType: meat
+		Sound: 7228.wav
+		DropChance: 40
+
+TRINKET.MAP:
+	Inherits@: ^trinket
+	RenderSprites:
+		Image: trinketmap
+	Tooltip:
+		Name: Map
+	IsTrinket:
+		TrinketType: map
+		OneTimeUse: true
+		ContiniusEffect: false
+		EffectOnPickup: true
+		DropChance: 35

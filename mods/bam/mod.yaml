@@ -36,6 +36,7 @@ Sequences:
 	core|sequences/misc.yaml
 	bam|sequences/basicunits.yaml
 	bam|sequences/basicbuildings.yaml
+	bam|sequences/basicbuildings_ruins.yaml
 	bam|sequences/basictrinkets.yaml
 	bam|sequences/basicui.yaml
 	bam|sequences/faction_sequences_rtr.yaml

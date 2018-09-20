@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (mi.Button != MouseButton.Left)
                 return true;
 
-            if (mi.Event == MouseInputEvent.Down && actorActions.Actor.IsIdle)
+            if (mi.Event == MouseInputEvent.Down)
             {
                 actorActions.BamUi.World.IssueOrder(new Order("DropTrinket", actorActions.Actor, false));
                 pressed = true;

@@ -26,7 +26,7 @@ namespace OpenRA.Mods.Bam.Traits
             if (exp != null && e.Attacker != null && !self.Owner.IsAlliedWith(e.Attacker.Owner))
             {
                 if (self.Info.HasTraitInfo<ValuedInfo>())
-                    e.Attacker.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(self.Info.TraitInfo<ValuedInfo>().Cost * 2);
+                    e.Attacker.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(self.Info.TraitInfo<ValuedInfo>().Cost * 3);
             }
         }
 
@@ -36,7 +36,7 @@ namespace OpenRA.Mods.Bam.Traits
                 && !e.Attacker.IsDead
                 && e.Attacker.Owner.PlayerActor.Info.HasTraitInfo<DungeonsAndDragonsExperienceInfo>()
                 && !e.Attacker.Owner.IsAlliedWith(self.Owner))
-                e.Attacker.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(e.Damage.Value > 0 ? e.Damage.Value * 3 : 0);
+                e.Attacker.Owner.PlayerActor.Trait<DungeonsAndDragonsExperience>().AddCash(e.Damage.Value > 0 ? e.Damage.Value * 5 : 0);
         }
     }
 }

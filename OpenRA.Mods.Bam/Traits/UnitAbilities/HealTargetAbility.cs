@@ -65,20 +65,25 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (order.OrderString != "HealTarget")
                 return;
 
-            HealTarget(self, order);
+            {
+                HealTarget(self, order.Target.Actor);
+            }
         }
 
-        void HealTarget(Actor self, Order order)
+        void HealTarget(Actor self, Actor target)
         {
-            var actor = order.Target.Actor;
+            var actor = target;
             if (actor == null || actor.IsDead || !actor.IsInWorld || CurrentDelay < info.Delay)
+                return;
+
+            if (!self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount) && self.Owner.PlayerName != "Creeps")
                 return;
 
             var pos = actor.CenterPosition;
 
             CurrentDelay = 0;
 
-            order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
+            target.InflictDamage(target, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
 
             foreach (var trait in self.TraitsImplementing<WithAbilityAnimation>())
             {
@@ -115,7 +120,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
             var targets = self.World.FindActorsInCircle(self.CenterPosition, WDist.FromCells(info.Range)).ToArray();
 
-            var allowed = targets.Where(a =>
+            var allowed = targets.FirstOrDefault(a =>
                 a.IsInWorld
                 && !a.IsDead
                 && a.TraitOrDefault<Building>() == null
@@ -128,9 +133,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("alive")
                 && CurrentDelay >= info.Delay);
 
-            if (allowed.Any() && (self.Owner.PlayerName == "Creeps" || self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(info.Ammount)))
+            if (allowed != null)
             {
-                HealTarget(self, new Order("HealTarget", self, Target.FromActor(allowed.ClosestTo(self)), false));
+                HealTarget(self, allowed);
             }
 
             autoRetry = 0;

@@ -109,6 +109,7 @@
     <Compile Include="SpriteLoaders\AniLoader.cs" />
     <Compile Include="SpriteLoaders\TlbLoader.cs" />
     <Compile Include="Traits\Activities\AdvancedTransform.cs" />
+    <Compile Include="Traits\Activities\ManaShooterActivity.cs" />
     <Compile Include="Traits\AdvancedChangesTerrain.cs" />
     <Compile Include="Traits\AdvancedTransforms.cs" />
     <Compile Include="Traits\AllowConvert.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Traits\Player\Research.cs" />
     <Compile Include="Traits\Render\WithImpactAnimation.cs" />
     <Compile Include="Traits\Render\WithAbilityAnimation.cs" />
+    <Compile Include="Traits\Render\WithRangerAttackAnimation.cs" />
     <Compile Include="Traits\Render\WithWalkOnTerrainOverlay.cs" />
     <Compile Include="Traits\Researched.cs" />
     <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
@@ -131,11 +133,7 @@
     <Compile Include="Traits\TransformToBuilding.cs" />
     <Compile Include="Traits\AllowTransfrom.cs" />
     <Compile Include="Traits\ManaShooter.cs" />
-    <Compile Include="Traits\Render\WithManaAnimation.cs" />
     <Compile Include="Traits\SpawnsAcolytes.cs" />
-    <Compile Include="Traits\TransformOnMove.cs" />
-    <Compile Include="Traits\TransformToConditionOnDamage.cs" />
-    <Compile Include="Traits\TransformToConditionOnIdle.cs" />
     <Compile Include="Traits\Living.cs" />
     <Compile Include="Traits\TrinketLogics\CanHoldTrinket.cs" />
     <Compile Include="Traits\TrinketLogics\DropTrinketOnDeath.cs" />

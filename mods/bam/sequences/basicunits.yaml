@@ -44,49 +44,16 @@ acolyte:
 		Tick: 160
 		Length: 4
 		Facings: 4
-	transformed_stand: acolyte_transformed_stand.ani
-	mana: acoltye_transformed_mana.ani
-		Tick: 120
-		Length: *
-	transofrmed_die: acolyte_transofrmed_die.ani
-		Tick: 120
-		Length: *
-	transformed_damage: acolyte_transformed_damage.ani
-		Tick: 120
-		Length: *
-	icon: acolyte_icon.ani
-
-acolyte.pyramid:
-	Inherits: ^default
-	damage: acolyte_damage.ani
-		Tick: 120
-		Length: 4
 	transform: acolyte_transform.ani
 		Tick: 120
 		Length: *
-	transform_reverse: acolyte_transform_rev.ani
-		Tick: 120
-		Length: *
-	idle: acolyte_transformed_stand.ani
+	transform_idle: acolyte_transformed_stand.ani
 		Facings: 1
 		Length: 1
-	stand: acolyte_transformed_stand.ani
-		Facings: 1
-		Length: 1
-	die: acolyte_transofrmed_die.ani
-		Tick: 120
-		Length: *
 	mana: acoltye_transformed_mana.ani
 		Tick: 120
 		Length: *
-	transofrmed_die: acolyte_transofrmed_die.ani
-		Tick: 120
-		Length: *
-	transformed_damage: acolyte_transformed_damage.ani
-		Tick: 120
-		Length: *
-	transformed_stand: acolyte_transformed_stand.ani
-	icon: acolyte_pyramid_icon.ani
+	icon: acolyte_icon.ani
 
 stonegolem:
 	Inherits: ^default

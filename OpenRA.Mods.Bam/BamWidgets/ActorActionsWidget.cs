@@ -107,7 +107,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>() || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>())
                 abilityButton.Visible = true;
 
-            if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && !Actor.Info.TraitInfo<ManaShooterInfo>().OnlyStores)
+            if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && Actor.Trait<ManaShooter>().CanShoot)
                 manaSend.Visible = true;
 
             if (Actor.Info.HasTraitInfo<SpawnsAcolytesInfo>())

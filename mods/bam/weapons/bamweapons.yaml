@@ -146,10 +146,16 @@ RangedCombatWizard:
 	Range: 2c512
 	Report: 7262.wav
 	ValidTargets: Default
-	Projectile: Bullet
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 0
 		Speed: 0c125
 		Image: wizard_projectile
 		Palette: bam11195
+		HorizontalRateOfTurn: 15
+		Speed: 298
+		RangeLimit: 5c0
 	Warhead@1Dam: WizardSpecial
 		ValidTargets: Default
 		Spread: 265

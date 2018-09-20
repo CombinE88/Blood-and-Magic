@@ -13,14 +13,11 @@ ACOLYTE:
 	WithMoveAnimation:
 		MoveSequence: run
 	WithFacingSpriteBody:
-	AdvancedTransforms:
-		IntoActor: pyramid
-		Voice: 
 	Living:
 		BoredSequence: stand
-	TransformToConditionOnIdle:
 	ManaShooter:
-		OnlyStores: true
+		Modifier:
+			Manaspot: 50
 	Valued:
 		Cost: 40
 	ConvertAdjetant:
@@ -32,57 +29,9 @@ ACOLYTE:
 	WithImpactAnimation:
 	Armament:
 		Weapon: CloseCombatFist
-
-PYRAMID:
-	Inherits@1: ^Walker
-	-WithMoveAnimation:
-	WithFacingSpriteBody:
-		Sequence: stand
-	RenderSprites:
-		Image: acolyte.pyramid
-	Tooltip:
-		Name: Obelisk
-	Health:
-		HP: 20
-	RevealsShroud:
-		Range: 2c0
-		Type: CenterPosition
-	#WithSpriteBody:
-	#	Sequence: transformed_stand
-	AdvancedTransforms:
-		IntoActor: acolyte
-		Voice: 
-	WithMakeAnimation:
-		Sequence: transform
-	TransformToConditionOnDamage:
-	TransformOnMove:
-	Mobile:
-		Speed: 1
-		Locomotor: none
-	ManaShooter:
-		Modifier:
-			Manaspot: 50
-	WithManaAnimation:
-	-Living:
-	TransformToBuilding@barracks:
-		IntoBuilding: barracks
-		Factions: good
-	TransformToBuilding@runestone:
-		IntoBuilding: runestone
-		Factions: good
-	TransformToBuilding@evil:
-		IntoBuilding: crypt
-		Factions: evil
-	TransformToBuilding@arborlodge:
-		IntoBuilding: arborlodge
-		Factions: evil
-	ConvertAdjetant:
-		SkipSelfAnimation: true
-	DungeonsAndDragonsStats:
-		Damage: 0
-		Armor: 4
-		Speed: 0
-	WithImpactAnimation:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7220.wav
 
 CAPSULE:
 	Inherits@1: ^Walker
@@ -103,7 +52,7 @@ CAPSULE:
 	TransformAfterTime:
 	DungeonsAndDragonsStats:
 		Damage: 0
-		Armor: 2
+		Armor: 4
 		Speed: 0
 	WithImpactAnimation:
 	Mobile:
@@ -116,6 +65,9 @@ CAPSULE:
 		Type: CenterPosition
 	WithSpriteBody:
 	CanHoldTrinket:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7240.wav
 
 STONEGOLEM:
 	Inherits@1: ^Walker
@@ -182,6 +134,9 @@ WOLF:
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
 	-CanHoldTrinket:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7228.wav
 
 PAESANT:
 	Inherits@1: ^Walker
@@ -215,3 +170,6 @@ PAESANT:
 		MaxMoveDelay: 200
 	DropTrinketOnDeath:
 		Probability: 35
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7220.wav

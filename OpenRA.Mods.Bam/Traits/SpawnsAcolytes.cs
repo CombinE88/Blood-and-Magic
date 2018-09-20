@@ -70,7 +70,7 @@ namespace OpenRA.Mods.Bam.Traits
                             info.EffectSequence,
                             info.EffectPalette));
 
-                        Game.Sound.Play(SoundType.World, "7226.wav", self.CenterPosition);
+                        Game.Sound.Play(SoundType.World, "7226.wav", self.CenterPosition, 0.3f);
 
                         var move = a.TraitOrDefault<IMove>();
                         a.QueueActivity(move.MoveIntoWorld(a, self.Location + self.Info.TraitInfo<ExitInfo>().ExitCell));

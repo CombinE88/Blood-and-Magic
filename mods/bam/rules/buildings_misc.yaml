@@ -130,3 +130,135 @@ CIVBUILD3X23:
 	Inherits@: ^CivilianHouse2x3
 CIVBUILD3X24:
 	Inherits@: ^CivilianHouse2x3
+
+RUINS1x11:
+	Inherits@: ^Civilianruins1x1
+RUINS1x12:
+	Inherits@: ^Civilianruins1x1
+RUINS1x13:
+	Inherits@: ^Civilianruins1x1
+RUINS1x14:
+	Inherits@: ^Civilianruins1x1
+RUINS1x15:
+	Inherits@: ^Civilianruins1x1
+RUINS1x16:
+	Inherits@: ^Civilianruins1x1
+RUINS1x17:
+	Inherits@: ^Civilianruins1x1
+
+RUINS2x11:
+	Inherits@: ^Civilianruins2x1
+RUINS2x12:
+	Inherits@: ^Civilianruins2x1
+RUINS2x13:
+	Inherits@: ^Civilianruins2x1
+RUINS2x14:
+	Inherits@: ^Civilianruins2x1
+RUINS2x15:
+	Inherits@: ^Civilianruins2x1
+RUINS2x16:
+	Inherits@: ^Civilianruins2x1
+RUINS2x17:
+	Inherits@: ^Civilianruins2x1
+RUINS2x18:
+	Inherits@: ^Civilianruins2x1
+RUINS2x19:
+	Inherits@: ^Civilianruins2x1
+RUINS2x110:
+	Inherits@: ^Civilianruins2x1
+RUINS2x111:
+	Inherits@: ^Civilianruins2x1
+RUINS2x112:
+	Inherits@: ^Civilianruins2x1
+RUINS2x113:
+	Inherits@: ^Civilianruins2x1
+
+RUINS1x21:
+	Inherits@: ^Civilianruins1x2
+RUINS1x22:
+	Inherits@: ^Civilianruins1x2
+RUINS1x23:
+	Inherits@: ^Civilianruins1x2
+RUINS1x24:
+	Inherits@: ^Civilianruins1x2
+RUINS1x25:
+	Inherits@: ^Civilianruins1x2
+RUINS1x26:
+	Inherits@: ^Civilianruins1x2
+
+RUINS2x21:
+	Inherits@: ^Civilianruins2x2
+RUINS2x22:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx _x
+RUINS2x23:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: _x xx
+RUINS2x24:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx _x
+RUINS2x25:
+	Inherits@: ^Civilianruins2x2
+RUINS2x26:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: x_ xx
+RUINS2x27:
+	Inherits@: ^Civilianruins2x2
+RUINS2x28:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx _x
+RUINS2x29:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: x_ xx
+RUINS2x210:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx x_
+RUINS2x211:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx x_
+RUINS2x212:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx _x
+RUINS2x213:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: _x xx
+RUINS2x214:
+	Inherits@: ^Civilianruins2x2
+RUINS2x215:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: _x xx
+RUINS2x216:
+	Inherits@: ^Civilianruins2x2
+RUINS2x217:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: _x xx
+RUINS2x218:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: x_ xx
+RUINS2x219:
+	Inherits@: ^Civilianruins2x2
+RUINS2x220:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx x_
+RUINS2x221:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: xx x_
+RUINS2x222:
+	Inherits@: ^Civilianruins2x2
+	Building:
+		Footprint: x_ xx

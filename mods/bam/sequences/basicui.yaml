@@ -42,6 +42,7 @@ explosion:
 	dust_splash_effect: dust_splash_effect.ani
 	electric_sphere_effect: electric_sphere_effect.ani
 	teleport_effect: teleport_effect.ani
+	blood_effect: blood_effect.ani
 
 effects:
 	leaves: effect_leaves.ani

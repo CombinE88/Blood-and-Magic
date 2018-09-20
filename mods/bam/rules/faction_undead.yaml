@@ -5,28 +5,9 @@ World:
 		Description: Evil
 	MPStartUnits@evil:
 		Class: none
-		ClassName: 3 Basal Golems
+		ClassName: Keep
 		BaseActor: hq.evil
 		Factions: evil
-		SupportActors: acolyte, acolyte, acolyte
-		InnerSupportRadius: 4
-		OuterSupportRadius: 5
-	MPStartUnits@evil2:
-		Class: 6golems
-		ClassName: 6 Basal Golems
-		BaseActor: hq.evil
-		Factions: evil
-		SupportActors: acolyte, acolyte, acolyte, acolyte, acolyte, acolyte
-		InnerSupportRadius: 4
-		OuterSupportRadius: 5
-	MPStartUnits@evil3:
-		Class: force
-		ClassName: Starting Squad
-		BaseActor: hq.evil
-		Factions: evil
-		SupportActors: acolyte, acolyte, acolyte, acolyte, zombie, ghoul
-		InnerSupportRadius: 4
-		OuterSupportRadius: 5
 Player:
 	Research@evil:
 		PreResearched: zombie, ghoul
@@ -73,6 +54,7 @@ HQ.EVIL:
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 3
+	ProvidesRadar:
 
 CRYPT:
 	Inherits@: ^Building
@@ -214,6 +196,8 @@ GOBLIN:
 	Researchable:
 		Class: goblin
 		TransformTime: 35
+	CanHoldTrinket:
+		CannotUse: meat
 
 GHOUL:
 	Inherits@1: ^Walker
@@ -237,8 +221,8 @@ GHOUL:
 	Armament:
 		Weapon: CloseCombatClaw
 	DungeonsAndDragonsStats:
-		Damage: 4
-		Armor: 1
+		Damage: 3
+		Armor: 2
 		Speed: 3
 		Attributes: evil, humanoid
 		IgnoresNegativeTerrainEffects: Swamp, Foliage
@@ -377,3 +361,5 @@ GNOME:
 		Class: gnome
 		TransformTime: 45
 	StealEnemyAbility:
+	CanHoldTrinket:
+		CannotUse: meat

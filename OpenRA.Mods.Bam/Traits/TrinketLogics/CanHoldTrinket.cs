@@ -1,8 +1,11 @@
+using System.Drawing;
 using System.Linq;
 using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Commands;
 using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.SpriteLoaders;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
@@ -86,25 +89,16 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             if (self == null || self.IsDead || !self.IsInWorld)
                 return;
 
-                switch (order.OrderString)
-                {
-                    case "DropTrinket":
-                    {
-                        var wsb = this.self.Trait<WithSpriteBody>();
-                        if (wsb.DefaultAnimation.CurrentSequence.Name == "idle"
-                            || wsb.DefaultAnimation.CurrentSequence.Name == "stand"
-                            || wsb.DefaultAnimation.CurrentSequence.Name == "run"
-                            || wsb.DefaultAnimation.CurrentSequence.Name == "aim")
-                        {
-                            DropTrinket(self);
-                        }
+            switch (order.OrderString)
+            {
+                case "DropTrinket":
+                    DropTrinket(self);
+                    break;
 
-                        break;
-                    }
-                    case "UseTrinket":
-                        EffectClick();
-                        break;
-                }
+                case "UseTrinket":
+                    EffectClick();
+                    break;
+            }
         }
 
         void ITick.Tick(Actor self)
@@ -213,6 +207,35 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                         }
 
                         break;
+
+                    case "meat":
+
+                        if (
+                            !self.IsDead
+                            && self.IsInWorld
+                            && self.Info.TraitInfoOrDefault<HealthInfo>() != null
+                            && self.TraitOrDefault<DungeonsAndDragonsStats>() != null)
+                        {
+                            self.InflictDamage(self, new Damage(-1 * 15));
+                            var trinket = HoldsTrinket;
+                            HoldsTrinket = null;
+                            IgnoreTrinket = null;
+
+                            self.World.AddFrameEndTask(w =>
+                                w.Add(new SpriteEffect(
+                                    self.CenterPosition,
+                                    w,
+                                    trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
+                                    trinketinfo.EffectSequence,
+                                    trinketinfo.EffectPalette)));
+
+                            Game.Sound.Play(SoundType.World, trinketinfo.Sound, self.CenterPosition);
+
+                            if (trinketinfo.OneTimeUse)
+                                trinket.Dispose();
+                        }
+
+                        break;
                 }
         }
 
@@ -255,6 +278,26 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                                     trinket.Info.TraitInfo<RenderSpritesInfo>().Image,
                                     trinketInfo.EffectSequence,
                                     trinketInfo.EffectPalette)));
+
+                        if (trinketInfo.OneTimeUse)
+                            trinket.Dispose();
+                        break;
+
+                    case "map":
+
+                        var random = new CPos(self.World.SharedRandom.Next(1, self.World.Map.Bounds.Size.Width),
+                            self.World.SharedRandom.Next(1, self.World.Map.Bounds.Size.Height));
+
+                        var td = new TypeDictionary
+                        {
+                            new LocationInit(random),
+
+                            new OwnerInit(self.Owner),
+                            new FacingInit(255)
+                        };
+
+                        self.World.AddFrameEndTask(w =>
+                            w.CreateActor("camera", td));
 
                         if (trinketInfo.OneTimeUse)
                             trinket.Dispose();

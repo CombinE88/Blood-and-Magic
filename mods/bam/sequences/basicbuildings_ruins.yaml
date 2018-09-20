@@ -1,0 +1,348 @@
+
+ruins1x11:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 0
+	icon: building_icon.ani
+ruins1x12:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 1
+	icon: building_icon.ani
+ruins1x13:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 2
+	icon: building_icon.ani
+ruins1x14:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 3
+	icon: building_icon.ani
+ruins1x15:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 4
+	icon: building_icon.ani
+ruins1x16:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 5
+	icon: building_icon.ani
+ruins1x17:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x1.png
+		Frames: 6
+	icon: building_icon.ani
+
+ruins2x11:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 0
+	icon: building_icon.ani
+ruins2x12:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 1
+	icon: building_icon.ani
+ruins2x13:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 2
+	icon: building_icon.ani
+ruins2x14:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 3
+	icon: building_icon.ani
+ruins2x15:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 4
+	icon: building_icon.ani
+ruins2x16:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 5
+	icon: building_icon.ani
+ruins2x17:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 6
+	icon: building_icon.ani
+ruins2x18:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 7
+	icon: building_icon.ani
+ruins2x19:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 8
+	icon: building_icon.ani
+ruins2x110:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 9
+	icon: building_icon.ani
+ruins2x111:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 10
+	icon: building_icon.ani
+ruins2x112:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 11
+	icon: building_icon.ani
+ruins2x113:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x1.png
+		Frames: 12
+	icon: building_icon.ani
+
+ruins1x21:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x2.png
+		Frames: 0
+	icon: building_icon.ani
+ruins1x22:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x2.png
+		Frames: 1
+	icon: building_icon.ani
+ruins1x23:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x2.png
+		Frames: 2
+	icon: building_icon.ani
+ruins1x24:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x2.png
+		Frames: 3
+	icon: building_icon.ani
+ruins1x25:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn1x2.png
+		Frames: 4
+	icon: building_icon.ani
+
+ruins2x21:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 0
+	icon: building_icon.ani
+ruins2x22:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 1
+	icon: building_icon.ani
+ruins2x23:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 2
+	icon: building_icon.ani
+ruins2x24:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 3
+	icon: building_icon.ani
+ruins2x25:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 4
+	icon: building_icon.ani
+ruins2x26:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 5
+	icon: building_icon.ani
+ruins2x27:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 6
+	icon: building_icon.ani
+ruins2x28:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 7
+	icon: building_icon.ani
+ruins2x29:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 8
+	icon: building_icon.ani
+ruins2x210:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 9
+	icon: building_icon.ani
+ruins2x211:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 10
+	icon: building_icon.ani
+ruins2x212:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 11
+	icon: building_icon.ani
+ruins2x213:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 12
+	icon: building_icon.ani
+ruins2x214:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 13
+	icon: building_icon.ani
+ruins2x215:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 14
+	icon: building_icon.ani
+ruins2x216:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 15
+	icon: building_icon.ani
+ruins2x217:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 16
+	icon: building_icon.ani
+ruins2x218:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 17
+	icon: building_icon.ani
+ruins2x219:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 18
+	icon: building_icon.ani
+ruins2x220:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 19
+	icon: building_icon.ani
+ruins2x221:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 20
+	icon: building_icon.ani
+ruins2x222:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn2x2.png
+		Frames: 21
+	icon: building_icon.ani
+
+ruins3x221:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn3x2.png
+		Frames: 0
+	icon: building_icon.ani
+ruins3x222:
+	Defaults:
+		Offset: 0, -5
+		AddExtension: False
+	idle: bits/swampbldgn3x2.png
+		Frames: 1
+	icon: building_icon.ani

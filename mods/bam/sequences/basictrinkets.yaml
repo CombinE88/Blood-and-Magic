@@ -7,8 +7,6 @@ trinkethealsalve:
 		Length: 4
 		Tick: 100
 	icon: healsalve_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
 
 trinketmanaorb:
 	Inherits: ^default
@@ -19,17 +17,13 @@ trinketmanaorb:
 		Length: 4
 		Tick: 100
 	icon: manaorb_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
-		
+
 trinketboots:
 	Inherits: ^default
 	idle: boots_trinket_ilde.ani
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: boots_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
 
 trinketgauntlet:
 	Inherits: ^default
@@ -37,8 +31,6 @@ trinketgauntlet:
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: gauntlet_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
 
 trinketmantle:
 	Inherits: ^default
@@ -46,8 +38,6 @@ trinketmantle:
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: mantle_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
 
 trinketthome:
 	Inherits: ^default
@@ -55,8 +45,6 @@ trinketthome:
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: thome_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
 	effect: teleport_effect.ani
 		Length: 8
 		Tick: 100
@@ -67,8 +55,6 @@ trinketdrink:
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: drink_trinket_icon.ani
-		ZOffset: -1024
-		Offset: 0,-16
 	effect: healsalve_trinket_effect.ani
 		Length: 4
 		Tick: 100
@@ -79,5 +65,20 @@ trinketcoat:
 		ZOffset: -1024
 		Offset: 0,-16
 	icon: coat_trinket_icon.ani
+
+trinketmeat:
+	Inherits: ^default
+	idle: meat_trinket_ilde.ani
 		ZOffset: -1024
 		Offset: 0,-16
+	icon: meat_trinket_icon.ani
+	effect: blood_effect.ani
+		Length: 4
+		Tick: 160
+
+trinketmap:
+	Inherits: ^default
+	idle: map_trinket_ilde.ani
+		ZOffset: -1024
+		Offset: 0,-16
+	icon: map_trinket_icon.ani

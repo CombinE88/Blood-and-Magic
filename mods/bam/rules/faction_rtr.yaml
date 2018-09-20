@@ -5,7 +5,7 @@ World:
 		Description: Good
 	MPStartUnits@good:
 		Class: none
-		ClassName: 3 Basal Golems
+		ClassName: Keep
 		BaseActor: hq.good
 		Factions: good
 Player:
@@ -54,6 +54,7 @@ HQ.GOOD:
 	RallyPoint:
 		Palette: BamPlayer
 		Offset: 0, 3
+	ProvidesRadar:
 
 BARRACKS:
 	Inherits@: ^Building
@@ -117,7 +118,7 @@ WARRIOR:
 	Tooltip:
 		Name: Warrior
 	Health:
-		HP: 40
+		HP: 25
 	RevealsShroud:
 		Range: 4c0
 		Type: CenterPosition
@@ -138,6 +139,8 @@ WARRIOR:
 	Researchable:
 		Class: paladin
 		TransformTime: 30
+	CanHoldTrinket:
+		CannotUse: meat
 
 RANGER:
 	Inherits@1: ^Walker
@@ -169,6 +172,12 @@ RANGER:
 	Researchable:
 		Class: ranger
 		TransformTime: 35
+	-WithAttackAnimation:
+	WithRangerAttackAnimation:
+		RangedSequence: attack
+		CloseCombatSequence: attackclose
+	CanHoldTrinket:
+		CannotUse: meat
 
 CLERIC:
 	Inherits@1: ^Walker
@@ -206,6 +215,8 @@ CLERIC:
 		AutoTarget: true
 	WithAbilityAnimation:
 		Sequence: stand
+	CanHoldTrinket:
+		CannotUse: meat
 
 PALADIN:
 	Inherits@1: ^Walker
@@ -238,6 +249,8 @@ PALADIN:
 	HealTargetAbility:
 		Delay: 275
 		Range: 2
+	CanHoldTrinket:
+		CannotUse: meat
 
 GRIFFIN:
 	Inherits@1: ^Flyer
@@ -308,4 +321,4 @@ WIZARD:
 		Class: wizard
 		TransformTime: 30
 	CanHoldTrinket:
-		CannotUse: trinketgauntlet
+		CannotUse: trinketgauntlet, meat

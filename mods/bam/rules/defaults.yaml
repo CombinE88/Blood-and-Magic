@@ -107,6 +107,81 @@
 			TopLeft: -1024, -1524
 			BottomRight: 1024, 1524
 
+^Civilianruins1x1:
+	Inherits@: ^Building
+	Tooltip:
+		Name: Ruin
+	Health:
+		HP: 150
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 1524
+	Targetable:
+		TargetTypes: Default
+	EditorTilesetFilter:
+		Categories: Neutral Structures
+	RenderSprites:
+		Palette: bam11195
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	DropTrinketOnDeath@first:
+		Probability: 33
+	EditorTilesetFilter:
+		Categories: Ruins
+
+^Civilianruins2x1:
+	Inherits@: ^Civilianruins1x1
+	Health:
+		HP: 200
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 512
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	DropTrinketOnDeath@second:
+		Probability: 25
+	EditorTilesetFilter:
+		Categories: Ruins
+
+^Civilianruins1x2:
+	Inherits@: ^Civilianruins1x1
+	Health:
+		HP: 200
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -1024
+			BottomRight: 512, 1024
+	Building:
+		Footprint: x x
+		Dimensions: 1,2
+	DropTrinketOnDeath@second:
+		Probability: 25
+	EditorTilesetFilter:
+		Categories: Ruins
+
+^Civilianruins2x2:
+	Inherits@: ^Civilianruins1x1
+	Health:
+		HP: 250
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	DropTrinketOnDeath@second:
+		Probability: 25
+	DropTrinketOnDeath@third:
+		Probability: 15
+	EditorTilesetFilter:
+		Categories: Ruins
+
 ^Flyer:
 	Inherits: ^CoreInfantry
 	RenderSprites:
@@ -178,7 +253,6 @@
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7310.wav
-
 
 ^prop.rubble:
 	Inherits: ^CoreConstruction

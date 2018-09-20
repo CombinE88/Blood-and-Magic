@@ -31,6 +31,7 @@ monument_icon: 2720:0
 building_icon: 2720:0
 trees_icon: 2686:0
 rocks_icon: 2684:0
+wall_icon: 2722:0
 
 manaspot: 338:0 338:1 338:2 338:3 338:3x 338:2x 338:1x 338:0x
 
@@ -116,6 +117,12 @@ kit_trinket_icon: 2540:1
 
 locket_trinket_ilde: 2532:0
 locket_trinket_icon: 2532:1
+
+meat_trinket_ilde: 2502:0
+meat_trinket_icon: 2502:1
+
+map_trinket_ilde: 2518:0
+map_trinket_icon: 2518:1
 
 #Faction One Human ------------------------------------------
 
@@ -297,6 +304,7 @@ smokecloud_effect: 358:0-5
 dust_splash_effect: 366:0-4
 electric_sphere_effect: 386:0-7
 teleport_effect: 388:0-7
+blood_effect: 368:0-3
 
 beacon: 2900:0
 arrow: 2854:0

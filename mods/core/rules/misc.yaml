@@ -14,6 +14,33 @@ mpspawn:
 	EditorTilesetFilter:
 		Categories: System
 
+# The spawnpoint for player actors.
+camera:
+	Inherits: mpspawn
+	# This actor is not affected by shroud or fog.
+	AlwaysVisible:
+	# Required for the mpspawn to have an location in the world, but not occupy it for anything.
+	Immobile:
+		OccupiesSpace: false
+	# Use simple sprite based marker in editor.
+	WithSpriteBody:
+	# Prevent the spawnpoint to be seen ingame.
+	RenderSpritesEditorOnly:
+		Palette: mpspawn
+		Image: mpspawn
+	# Move spawnpoint in special system category in editor.
+	EditorTilesetFilter:
+		Categories: System
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	BodyOrientation:
+		QuantizedFacings: 1
+
+
 # Shared player setup.
 ^CorePlayer:
 	# This actor is not affected by shroud or fog.

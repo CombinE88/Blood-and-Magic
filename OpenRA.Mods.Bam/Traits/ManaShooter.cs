@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using OpenRA.Activities;
+using OpenRA.Mods.Bam.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
@@ -7,7 +10,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits
 {
-    public class ManaShooterInfo : ConditionalTraitInfo
+    public class ManaShooterInfo : ITraitInfo
     {
         public readonly int MaxStorage = 10;
 
@@ -17,27 +20,37 @@ namespace OpenRA.Mods.Bam.Traits
 
         public readonly Dictionary<string, int> Modifier = new Dictionary<string, int>();
 
-        public bool OnlyStores = false;
+        [SequenceReference] public readonly string StartObeliskSequence = "transform";
 
-        public override object Create(ActorInitializer init)
+        [SequenceReference] public readonly string EndObeliskSequence = "transform";
+
+        [SequenceReference] public readonly string ProduceManaSequence = "mana";
+
+        [SequenceReference] public readonly string ObeliskSequence = "transform_idle";
+
+        [Desc("Which sprite body to modify.")] public readonly string Body = "body";
+
+
+        public object Create(ActorInitializer init)
         {
             return new ManaShooter(init, this);
         }
     }
 
-    public class ManaShooter : ConditionalTrait<ManaShooterInfo>, ITick, INotifyTransform, IResolveOrder
+    public class ManaShooter : ITick, INotifyCreated, IResolveOrder, INotifyDamage
     {
-        private int tick;
-        private int overTick;
-        public int CurrentStorage;
         private Actor self;
-        private bool delivering = false;
-
         private ManaShooterInfo info;
+        public int CurrentStorage;
+        private int tick;
 
         private PlayerResources pr;
+        WithSpriteBody wsb;
 
-        public ManaShooter(ActorInitializer init, ManaShooterInfo info) : base(info)
+        public bool CanShoot = false;
+        public bool SendMana = false;
+
+        public ManaShooter(ActorInitializer init, ManaShooterInfo info)
         {
             self = init.Self;
             this.info = info;
@@ -46,81 +59,36 @@ namespace OpenRA.Mods.Bam.Traits
 
         void ITick.Tick(Actor self)
         {
-            if (IsTraitDisabled || info.OnlyStores || delivering)
+            if (!self.IsIdle)
                 return;
 
-            if (CurrentStorage < info.MaxStorage)
+            if (tick++ >= 25)
             {
-                var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
-                var modifier = Info.Modifier.ContainsKey(ground) ? Info.Modifier[ground] : 100;
-                var max = Info.Interval * modifier;
-
-                if (tick++ >= max / 100)
-                {
-                    CurrentStorage++;
-                    tick = 0;
-                }
+                self.QueueActivity(new ToObelisk(self, info, this, wsb));
+                tick = 0;
             }
-            else if (CurrentStorage == info.MaxStorage)
-            {
-                if (overTick++ >= Info.OverWait)
-                {
-                    ShootMana();
-                }
-            }
+
         }
 
-        public void ShootMana()
+        void INotifyCreated.Created(Actor self)
         {
-            if (CurrentStorage > 0 && pr.CanGiveResources(CurrentStorage) && !info.OnlyStores)
-            {
-                delivering = true;
-
-                if (self.Info.HasTraitInfo<WithManaAnimationInfo>())
-                {
-                    self.Trait<WithManaAnimation>().PlayManaAnimation(self, () =>
-                    {
-                        pr.GiveResources(CurrentStorage);
-                        if (self != null && !self.IsDead && self.IsInWorld)
-                        {
-                            CurrentStorage = 0;
-                            overTick = 0;
-                            tick = 0;
-                            delivering = false;
-                        }
-                    });
-                }
-                else
-                {
-                    pr.GiveResources(CurrentStorage);
-                    CurrentStorage = 0;
-                    overTick = 0;
-                    tick = 0;
-                    delivering = false;
-                }
-            }
+            wsb = self.TraitsImplementing<WithSpriteBody>().Single(w => w.Info.Name == info.Body);
         }
 
-        public void BeforeTransform(Actor self)
-        {
-        }
 
-        public void OnTransform(Actor self)
-        {
-        }
-
-        public void AfterTransform(Actor toActor)
-        {
-            if (toActor != null && toActor.IsInWorld && !toActor.IsDead && toActor.Info.HasTraitInfo<ManaShooterInfo>() && !delivering)
-                toActor.Trait<ManaShooter>().CurrentStorage = CurrentStorage;
-        }
-
-        public void ResolveOrder(Actor self, Order order)
+        void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
             if (order.OrderString != "ShootMana")
                 return;
 
-            ShootMana();
+            SendMana = true;
+        }
+
+        void INotifyDamage.Damaged(Actor self, AttackInfo e)
+        {
+            var auto = self.TraitOrDefault<AutoTarget>();
+            if( auto != null)
+                auto.ScanAndAttack(this.self, false);
         }
     }
 }
