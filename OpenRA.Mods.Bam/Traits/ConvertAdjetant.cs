@@ -1,6 +1,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using OpenRA.Activities;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
@@ -75,7 +76,9 @@ namespace OpenRA.Mods.Bam.Traits
                 return;
 
             orderCut = order.OrderString.Replace("Convert-", "");
-            foreach (var actorname in TransformEnabler.Info.TraitInfo<AllowConvertInfo>().ConvertTo)
+
+            self.CancelActivity();
+            foreach (var actorname in TransformEnabler.Info.TraitInfoOrDefault<AllowConvertInfo>().ConvertTo)
             {
                 if (orderCut.Contains(actorname))
                 {
@@ -91,14 +94,16 @@ namespace OpenRA.Mods.Bam.Traits
 
         void DoTransform(Actor self, string into)
         {
-            self.World.AddFrameEndTask(w =>
-                w.Add(new SpriteEffect(
-                    self.CenterPosition,
-                    w,
-                    self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().Image,
-                    "transform",
-                    self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
-
+            self.QueueActivity(new CallFunc(() =>
+            {
+                self.World.AddFrameEndTask(w =>
+                    w.Add(new SpriteEffect(
+                        self.CenterPosition,
+                        w,
+                        self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().Image,
+                        "transform",
+                        self.World.Map.Rules.Actors[into].TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
+            }));
             self.QueueActivity(new Wait(5));
             self.QueueActivity(new AdvancedTransform(self, into)
             {

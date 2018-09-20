@@ -357,9 +357,6 @@ GREEN11:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
-	SimpleDeathSounds:
-		DeathTypes: Death
-		Sound: 7296.wav
 GREEN12:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -370,9 +367,6 @@ GREEN12:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
-	SimpleDeathSounds:
-		DeathTypes: Death
-		Sound: 7296.wav
 GREEN13:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -383,9 +377,6 @@ GREEN13:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
-	SimpleDeathSounds:
-		DeathTypes: Death
-		Sound: 7296.wav
 GREEN14:
 	Inherits@1: ^prop.rubble
 	Tooltip:
@@ -396,9 +387,6 @@ GREEN14:
 		Categories: Monuments
 	WithSpriteBody:
 		Sequence: idle
-	SimpleDeathSounds:
-		DeathTypes: Death
-		Sound: 7296.wav
 GREEN15:
 	Inherits@1: ^prop
 	Tooltip:
@@ -409,6 +397,40 @@ GREEN15:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7296.wav
+
+BLDGN.RUBBLE1:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Destroyed Land
+	AdvancedChangesTerrain:
+		TerrainType: Rubble
+	EditorTilesetFilter:
+		Categories: Rubble
+BLDGN.RUBBLE2:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Destroyed Land
+	AdvancedChangesTerrain:
+		TerrainType: Rubble
+	EditorTilesetFilter:
+		Categories: Rubble
+BLDGN.RUBBLE3:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Destroyed Land
+	AdvancedChangesTerrain:
+		TerrainType: Rubble
+	EditorTilesetFilter:
+		Categories: Rubble
+BLDGN.RUBBLE4:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Destroyed Land
+	AdvancedChangesTerrain:
+		TerrainType: Rubble
+	EditorTilesetFilter:
+		Categories: Rubble
+
 ROCK1:
 	Inherits@1: ^prop
 	Tooltip:

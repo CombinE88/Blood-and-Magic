@@ -160,7 +160,7 @@ namespace OpenRA.Mods.Bam.FileSystem
                 stream.Seek(entry.Offset, SeekOrigin.Begin);
                 var bytes = stream.ReadBytes((int)entry.Length);
 
-                return new MemoryStream(bytes);
+                return filename.EndsWith(".tlb") ? new TlbMemoryStream(bytes) : new MemoryStream(bytes);
             }
 
             public bool Contains(string filename)

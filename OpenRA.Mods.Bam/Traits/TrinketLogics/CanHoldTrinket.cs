@@ -96,6 +96,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                     break;
 
                 case "UseTrinket":
+                    if(!self.IsDead && self.IsInWorld)
                     EffectClick();
                     break;
             }
@@ -140,14 +141,14 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             var trinketInfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
 
-            if (trinketInfo != null && trinketInfo.ContiniusEffect)
+            if (trinketInfo != null && trinketInfo.ContiniusEffect && !info.CannotUse.Contains(trinketInfo.TrinketType))
                 ContiniusEffect(trinketInfo);
         }
 
         void EffectClick()
         {
-            var trinketinfo = HoldsTrinket.Info.TraitInfo<IsTrinketInfo>();
-            if (!info.CannotUse.Contains(trinketinfo.TrinketType))
+            var trinketinfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
+            if (trinketinfo != null && !info.CannotUse.Contains(trinketinfo.TrinketType))
                 switch (trinketinfo.TrinketType)
                 {
                     case "healsalve":

@@ -86,7 +86,14 @@ namespace OpenRA.Mods.Bam.Traits
 
         void INotifyDamage.Damaged(Actor self, AttackInfo e)
         {
+            var activeAttackBases = self.TraitsImplementing<AttackBase>().ToArray().Where(Exts.IsTraitEnabled);
             var auto = self.TraitOrDefault<AutoTarget>();
+            foreach (var ab in activeAttackBases)
+            {
+                if (ab.IsAiming)
+                    return;
+            }
+
             if( auto != null)
                 auto.ScanAndAttack(this.self, false);
         }

@@ -238,28 +238,28 @@ green11:
 		Frames: 15
 		Offset: 0, -10
 		ZOffset: -1024
-	icon: trees_icon.ani
+	icon: 2658.ani
 green12:
 	Defaults:
 		AddExtension: False
 	idle: bits/1x1props.png
 		Frames: 16
 		ZOffset: -1024
-	icon: trees_icon.ani
+	icon: 2658.ani
 green13:
 	Defaults:
 		AddExtension: False
 	idle: bits/1x1props.png
 		Frames: 17
 		ZOffset: -1024
-	icon: trees_icon.ani
+	icon: 2658.ani
 green14:
 	Defaults:
 		AddExtension: False
 	idle: bits/1x1props.png
 		Frames: 27
 		ZOffset: -1024
-	icon: trees_icon.ani
+	icon: 2658.ani
 green15:
 	Defaults:
 		AddExtension: False
@@ -635,3 +635,45 @@ civbuild3x24:
 	idle: bits/bam2x3buildings.png
 		Frames: 3
 	icon: building_icon.ani
+
+
+bldgn.rubble1:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 36
+		ZOffset: -1024
+	rubble: bits/props.png
+		Frames: 36
+		ZOffset: -1024
+	icon: landscape_rubble.ani
+bldgn.rubble2:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 37
+		ZOffset: -1024
+	rubble: bits/props.png
+		Frames: 37
+		ZOffset: -1024
+	icon: landscape_rubble.ani
+bldgn.rubble3:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 38
+		ZOffset: -1024
+	rubble: bits/props.png
+		Frames: 38
+		ZOffset: -1024
+	icon: landscape_rubble.ani
+bldgn.rubble4:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 39
+		ZOffset: -1024
+	rubble: bits/props.png
+		Frames: 39
+		ZOffset: -1024
+	icon: landscape_rubble.ani

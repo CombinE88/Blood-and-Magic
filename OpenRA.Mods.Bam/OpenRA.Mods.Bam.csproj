@@ -115,6 +115,7 @@
     <Compile Include="Traits\AdvancedTransforms.cs" />
     <Compile Include="Traits\AllowConvert.cs" />
     <Compile Include="Traits\AttackNotification.cs" />
+    <Compile Include="Traits\BuildingSpawnRubble.cs" />
     <Compile Include="Traits\ConvertAdjetant.cs" />
     <Compile Include="Traits\GeneratesExperience.cs" />
     <Compile Include="Traits\Player\AdvancedAttackNotifier.cs" />

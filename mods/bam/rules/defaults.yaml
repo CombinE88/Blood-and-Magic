@@ -82,6 +82,8 @@
 		Probability: 25
 	DropTrinketOnDeath@third:
 		Probability: 20
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 
 ^CivilianHouse3x2:
 	Inherits@: ^CivilianHouse
@@ -131,6 +133,8 @@
 		Probability: 33
 	EditorTilesetFilter:
 		Categories: Ruins
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 
 ^Civilianruins2x1:
 	Inherits@: ^Civilianruins1x1
