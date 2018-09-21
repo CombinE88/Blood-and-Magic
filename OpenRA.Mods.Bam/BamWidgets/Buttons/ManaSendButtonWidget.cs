@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Widgets;

@@ -1,12 +1,8 @@
-using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using OpenRA.Activities;
-using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Bam.Traits.World;
-using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;

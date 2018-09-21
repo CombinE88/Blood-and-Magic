@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Widgets;
 
@@ -12,7 +13,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
     {
         public ActorActionsWidget ActorActions;
         private bool pressed;
-        public bool ShowResearch;
 
         public Research Research;
         public bool Researching = false;
@@ -42,12 +42,10 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                ShowResearch = !ShowResearch;
-
-                if (ShowResearch && !researchButtons.Any() && !Researching)
+                if (!researchButtons.Any())
                     CreateResearchMenu();
-                else if (!ShowResearch && researchButtons.Any() && !Researching)
-                    RemoveResearchMenu();
+                else if (!Researching)
+                    SwitchResearchMenue();
 
                 pressed = true;
             }
@@ -138,7 +136,10 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                         list[i].Value,
                         Research,
                         i * 2,
-                        100);
+                        100)
+                    {
+                        Visible = true
+                    };
                     researchButtons.Add(con);
                 }
             else
@@ -153,7 +154,10 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                         list[i].Value,
                         Research,
                         i * 2,
-                        200);
+                        200)
+                    {
+                        Visible = true
+                    };
                     researchButtons.Add(con);
                 }
 
@@ -163,15 +167,16 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             }
         }
 
-        public void RemoveResearchMenu()
+
+        public void SwitchResearchMenue()
         {
             if (researchButtons.Any())
+            {
                 foreach (var button in researchButtons)
                 {
-                    button.StartRemoving();
+                    button.Removing = !button.Removing;
                 }
-
-            researchButtons = new List<ResearchButtonWidget>();
+            }
         }
     }
 }

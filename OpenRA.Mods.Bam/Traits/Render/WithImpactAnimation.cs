@@ -1,8 +1,9 @@
 using System.Linq;
-using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Common.Traits.Render
+namespace OpenRA.Mods.Bam.Traits.Render
 {
     public class WithImpactAnimationInfo : ConditionalTraitInfo
     {

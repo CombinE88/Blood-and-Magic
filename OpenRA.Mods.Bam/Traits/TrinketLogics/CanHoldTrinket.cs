@@ -1,10 +1,8 @@
-using System.Drawing;
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Commands;
 using OpenRA.Mods.Common.Effects;
-using OpenRA.Mods.Common.SpriteLoaders;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;

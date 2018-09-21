@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Linq;
 using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -39,7 +38,7 @@ namespace OpenRA.Mods.Bam.Traits
         private SpawnHostileInfo info;
         private List<Player> players = new List<Player>();
         private Player currentPlayer;
-        private int startingCash;
+        private int startingCash = 8000;
 
         private HashSet<Actor> idles = new HashSet<Actor>();
 
@@ -55,10 +54,6 @@ namespace OpenRA.Mods.Bam.Traits
             players.Sort();
             currentPlayer = players[self.World.SharedRandom.Next(0, players.Count)];
             nextMaxCount = self.World.SharedRandom.Next(info.Delay, info.Delay + info.RandomExtraDelay);
-
-            var pr = currentPlayer.PlayerActor.Trait<PlayerResources>();
-
-            startingCash = info.InitialDelay + info.InitialDelay / ((pr.Cash + pr.Resources) / 100);
         }
 
         void CyclePlayers()

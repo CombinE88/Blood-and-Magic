@@ -1,6 +1,5 @@
 using System.Drawing;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets

@@ -12,6 +12,7 @@
 #endregion
 
 using OpenRA.Activities;
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;

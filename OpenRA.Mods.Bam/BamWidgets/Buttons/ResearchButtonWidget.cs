@@ -1,6 +1,7 @@
 using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Widgets;
@@ -21,11 +22,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private BamToolTipWidget tooltip;
         private Research research;
 
+
         private int poxMov;
-        private bool removing;
+        public bool Removing;
         private int waitTicks;
         private int undoTicks;
-        private int osXMaxMov;
+        private int posXMaxMov;
 
         public ResearchButtonWidget(
             ShowResearchButtonWidget showResearch,
@@ -49,7 +51,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             this.waitTicks = waitTicks;
             undoTicks = waitTicks;
             poxMov = outPos;
-            osXMaxMov = outPos;
+            posXMaxMov = outPos;
 
             AddChild(tooltip = new BamToolTipWidget(
                 this.showResearch.ActorActions,
@@ -73,32 +75,40 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             animation = new Animation(showResearch.ActorActions.BamUi.World, researchItem);
 
-            if (!removing && waitTicks-- <= 0 && poxMov >= 0)
-                poxMov -= 30;
+            HandlePosition();
 
             var x = pressed ? posx + poxMov + 1 : posx + poxMov;
             var y = pressed ? posy + 1 : posy;
 
             Bounds = new Rectangle(x, y, 75, 68);
+        }
 
-            if (!removing)
-                return;
-
-            if (undoTicks-- > 0)
-                return;
-
-            if (poxMov < osXMaxMov)
+        void HandlePosition()
+        {
+            if (!Removing && waitTicks > 0)
             {
-                poxMov += 30;
+                waitTicks--;
                 return;
             }
 
-            Removed();
-        }
+            if (!Removing && poxMov > 0)
+                poxMov -= 30;
 
-        public void StartRemoving()
-        {
-            removing = true;
+            if (!Removing)
+            {
+                return;
+            }
+
+            if (waitTicks < undoTicks)
+            {
+                waitTicks++;
+                return;
+            }
+
+            if (poxMov < posXMaxMov)
+            {
+                poxMov += 30;
+            }
         }
 
         public override void MouseEntered()
@@ -130,8 +140,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                     showResearch.ResearchItem = researchItem;
                     showResearch.MaxResearchTime = researchTime;
                     showResearch.Researching = true;
-                    showResearch.RemoveResearchMenu();
-                    showResearch.ShowResearch = false;
+                    showResearch.SwitchResearchMenue();
                     pressed = true;
                 }
                 else if (research.Researchable.Contains(researchItem) || showResearch.Researching)

@@ -1,12 +1,6 @@
 using System.Drawing;
-using System.Runtime.Remoting.Messaging;
-using OpenRA.Graphics;
-using OpenRA.Mods.Bam.SpriteLoaders;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Traits;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets

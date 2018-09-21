@@ -1,10 +1,6 @@
-using System;
 using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
-using OpenRA.Mods.Bam.Traits.RPGTraits;
-using OpenRA.Mods.Bam.Traits.World;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Widgets;

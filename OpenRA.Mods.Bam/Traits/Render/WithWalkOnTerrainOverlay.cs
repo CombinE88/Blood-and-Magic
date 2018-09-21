@@ -11,15 +11,13 @@
 
 #endregion
 
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using OpenRA.Activities;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Common.Traits.Render
+namespace OpenRA.Mods.Bam.Traits.Render
 {
     [Desc("Renders a decorative animation on units and buildings.")]
     public class WithWalkOnTerrainOverlayInfo : ITraitInfo, Requires<MobileInfo>

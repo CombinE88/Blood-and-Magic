@@ -1,11 +1,8 @@
 using System.Drawing;
 using OpenRA.Graphics;
-using OpenRA.Mods.Bam.BamWidgets;
-using OpenRA.Mods.Bam.Traits.UnitAbilities;
-using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Widgets;
 
-namespace OpenRA.Mods.Common.Warheads
+namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 {
     public class SecondAbilityButtonWidget : Widget
     {

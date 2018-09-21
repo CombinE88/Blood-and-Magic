@@ -1,5 +1,5 @@
-using System.Drawing;
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Effects;

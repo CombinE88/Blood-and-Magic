@@ -1,9 +1,6 @@
 using System.Drawing;
 using OpenRA.Graphics;
-using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Traits;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets

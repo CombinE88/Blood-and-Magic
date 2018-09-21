@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Bam.Traits.Activities
         public override Activity Tick(Actor self)
         {
             if (IsCanceled)
-                return this;
+                return NextActivity;
 
             var target = targets.Where(a => a != null && !a.IsDead && a.IsInWorld).ClosestTo(self);
             if (target == null)

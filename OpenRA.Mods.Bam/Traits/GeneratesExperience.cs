@@ -1,3 +1,4 @@
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 

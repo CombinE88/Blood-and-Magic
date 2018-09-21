@@ -2,7 +2,6 @@ using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits.UnitAbilities

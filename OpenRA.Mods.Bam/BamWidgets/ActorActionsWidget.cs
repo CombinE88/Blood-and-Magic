@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using OpenRA.Graphics;
 using OpenRA.Mods.Bam.BamWidgets.Buttons;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
@@ -10,7 +8,6 @@ using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Bam.Traits.UnitAbilities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Warheads;
-using OpenRA.Mods.Kknd.Widgets.Ingame;
 using OpenRA.Traits;
 using OpenRA.Widgets;
 
@@ -43,6 +40,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private ConvertToWallButtonWidget wallbutton;
         private KillSelfWidget terminate;
         private SecondAbilityButtonWidget secondabilityButton;
+        private BamRadarWidget radar;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
@@ -232,7 +230,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         }
 
         void RemoveSpawnmenu()
-
         {
             if (convertToButtons.Any())
                 foreach (var button in convertToButtons)
@@ -271,10 +268,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public void CreateBackground()
         {
-            // Background Minimap
-            var radar = new BamRadarWidget(BamUi);
-
-            AddChild(radar);
+            // Minimap
+            AddChild(radar = new BamRadarWidget(BamUi));
 
             // Background Health Frame
             AddChild(new SideBarBackgroundWidget(BamUi, 0, 200, 4, 734, 152, 17));

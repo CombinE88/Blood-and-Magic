@@ -2,59 +2,64 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
-using OpenRA.Mods.Bam.BamWidgets;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Widgets;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 using OpenRA.Widgets;
 
-namespace OpenRA.Mods.Kknd.Widgets.Ingame
+namespace OpenRA.Mods.Bam.BamWidgets
 {
-    public class BamRadarWidget : Widget
-    {
-        private readonly BamUIWidget ingameUi;
+	public class BamRadarWidget : Widget
+	{
+		private readonly BamUIWidget ingameUi;
 
-        private readonly Sheet radarSheet;
-        private readonly byte[] radarData;
-        private readonly Sprite terrainSprite;
-        private readonly Sprite shroudSprite;
+		private readonly Sheet radarSheet;
+		private readonly byte[] radarData;
+		private readonly Sprite terrainSprite;
+		private readonly Sprite shroudSprite;
 
-        private int Size = 3;
+		private int Size = 2;
+		private readonly Sheet radarsheet;
+		private readonly Sprite radarBG;
 
-        public Stance ShowStances { get; set; }
+		public Stance ShowStances { get; set; }
 
-        public BamRadarWidget(BamUIWidget ingameUi)
-        {
-            this.ingameUi = ingameUi;
+		public BamRadarWidget(BamUIWidget ingameUi)
+		{
+			this.ingameUi = ingameUi;
 
-            radarSheet = new Sheet(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
-            radarSheet.CreateBuffer();
-            radarData = radarSheet.GetData();
+			// RadarBG
+			radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
+			radarBG = new Sprite(radarsheet, new Rectangle(0, 0, 172, 150), TextureChannel.RGBA);
 
-            terrainSprite = new Sprite(radarSheet, new Rectangle(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
-            shroudSprite = new Sprite(radarSheet, new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
+			radarSheet = new Sheet(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
+			radarSheet.CreateBuffer();
+			radarData = radarSheet.GetData();
 
-            DrawTerrain();
+			terrainSprite = new Sprite(radarSheet, new Rectangle(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
+			shroudSprite = new Sprite(radarSheet, new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
 
-            Visible = true;
-        }
+			DrawTerrain();
 
-        private void DrawTerrain()
-        {
-            // TODO instead of using this colors, try a correct thumbnail variant.
-            for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
-            {
-                for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
-                {
-                    var type = ingameUi.World.Map.Rules.TileSet.GetTileInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
-                    radarData[(y * radarSheet.Size.Width + x) * 4] = type.LeftColor.B;
-                    radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.LeftColor.G;
-                    radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.LeftColor.R;
-                    radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
-                }
-            }
-        }
+			Visible = false;
+		}
+
+		private void DrawTerrain()
+		{
+			// TODO instead of using this colors, try a correct thumbnail variant.
+			for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
+			{
+				for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
+				{
+					var type = ingameUi.World.Map.Rules.TileSet.GetTileInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
+					radarData[(y * radarSheet.Size.Width + x) * 4] = type.LeftColor.B;
+					radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.LeftColor.G;
+					radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.LeftColor.R;
+					radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
+				}
+			}
+		}
 
         private void UpdateShroud()
         {
@@ -133,9 +138,6 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
             Bounds = new Rectangle(25, 35, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
             UpdateShroud();
 
-            // RadarBG
-            var radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
-            var radarBG = new Sprite(radarsheet, new Rectangle(0, 0, 172, 150), TextureChannel.RGBA);
             WidgetUtils.DrawRGBA(radarBG, new float2(RenderBounds.X + RenderBounds.Width / 2 - radarBG.Bounds.Width / 2, RenderBounds.Y + RenderBounds.Height / 2 - radarBG.Bounds.Height / 2));
 
             // WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);
