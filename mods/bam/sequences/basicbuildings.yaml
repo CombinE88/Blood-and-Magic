@@ -29,6 +29,37 @@ plattformb:
 		ZOffset: -2048
 	icon: plattform_icon.ani
 
+civproduction1:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 0
+	icon: mainbase_icon.ani
+civproduction2:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 1
+	icon: mainbase_icon.ani
+civproduction3:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 2
+	icon: mainbase_icon.ani
+civproduction4:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 3
+	icon: mainbase_icon.ani
+civproduction5:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 4
+	icon: mainbase_icon.ani
+
 statue1:
 	Defaults:
 		AddExtension: False

@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Linq;
-using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Commands;
@@ -122,7 +121,6 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 if (manaShotoer != null)
                     manaShotoer.ExtraModifier = 100;
             }
-
 
             if (newTrinket == null)
             {

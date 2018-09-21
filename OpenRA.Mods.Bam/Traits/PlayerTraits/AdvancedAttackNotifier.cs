@@ -3,7 +3,7 @@ using System.Drawing;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Bam.Traits.Player
+namespace OpenRA.Mods.Bam.Traits.PlayerTraits
 {
     [Desc("Plays an audio notification and shows a radar ping when an actor is attacked.",
         "Attach this to the player actor.")]

@@ -9,6 +9,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
 {
     public class BamUIWidget : Widget
     {
+        public readonly RadarPings RadarPings;
+
         private static int border = 26;
 
         public World World;
@@ -17,8 +19,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public SpriteFont FontRegular;
         public SpriteFont FontLarge;
         public PaletteReference Palette;
-
-        public readonly RadarPings RadarPings;
 
         public Sheet Sheet;
         private Sprite rightBar;

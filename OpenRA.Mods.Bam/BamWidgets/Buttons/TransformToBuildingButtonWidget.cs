@@ -15,7 +15,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private ActorActionsWidget actorActions;
         private bool pressed;
         private Animation animation;
-        public List<Actor> selectedValidActors = new List<Actor>();
+        public List<Actor> SelectedValidActors = new List<Actor>();
         private int posx;
         private int posy;
         private string animationString;
@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             this.posy = posy;
             this.animationString = animationString;
             this.transformToBuilding = transformToBuilding;
-            this.selectedValidActors = selectedValidActors.ToList();
+            this.SelectedValidActors = selectedValidActors.ToList();
         }
 
         public override void Tick()
@@ -63,11 +63,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 Visible = false;
                 actorActions.RemoveTransformmenu();
 
-                actorActions.BamUi.World.IssueOrder(new Order("TransformTo-" + animationString, selectedValidActors.Last(), false));
+                actorActions.BamUi.World.IssueOrder(new Order("TransformTo-" + animationString, SelectedValidActors.Last(), false));
 
                 for (int i = 0; i < 3; i++)
                 {
-                    actorActions.BamUi.World.IssueOrder(new Order("RemoveSelf", selectedValidActors[i], false));
+                    actorActions.BamUi.World.IssueOrder(new Order("RemoveSelf", SelectedValidActors[i], false));
                 }
 
                 pressed = true;

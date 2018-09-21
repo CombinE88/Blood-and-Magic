@@ -11,10 +11,7 @@
 
 #endregion
 
-using System.Linq;
 using OpenRA.Activities;
-using OpenRA.Mods.Bam.Traits;
-using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
@@ -23,7 +20,7 @@ using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Bam.Activities
+namespace OpenRA.Mods.Bam.Traits.Activities
 {
     public class AdvancedTransform : Activity
     {

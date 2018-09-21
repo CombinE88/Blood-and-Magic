@@ -3,7 +3,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using OpenRA.Activities;
 using OpenRA.Graphics;
-using OpenRA.Mods.Bam.Activities;
+using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Mods.Common;
@@ -49,7 +49,7 @@ namespace OpenRA.Mods.Bam.Traits
 
     public class ConvertAdjetant : ITick, IResolveOrder
     {
-        private ConvertAdjetantInfo Info;
+        private ConvertAdjetantInfo info;
         public bool AllowTransform;
         public Actor TransformEnabler;
 
@@ -58,7 +58,7 @@ namespace OpenRA.Mods.Bam.Traits
 
         public ConvertAdjetant(ActorInitializer init, ConvertAdjetantInfo info)
         {
-            Info = info;
+            this.info = info;
         }
 
         void ITick.Tick(Actor self)
@@ -85,10 +85,9 @@ namespace OpenRA.Mods.Bam.Traits
             if (!order.OrderString.Contains("Convert-") && order.OrderString != "QuickWall")
                 return;
 
-
             if (order.OrderString == "QuickWall" && !self.IsDead && self.IsInWorld)
             {
-                if (!Disabled && self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[Info.WallActor].TraitInfo<ValuedInfo>().Cost))
+                if (!Disabled && self.Owner.PlayerActor.Trait<PlayerResources>().TakeCash(self.World.Map.Rules.Actors[info.WallActor].TraitInfo<ValuedInfo>().Cost))
                 {
                     TurnIntoWall(self);
                 }
@@ -103,7 +102,7 @@ namespace OpenRA.Mods.Bam.Traits
             {
                 if (orderCut.Contains(actorname))
                 {
-                    DoTransform(self, Info.Capsule);
+                    DoTransform(self, info.Capsule);
                     break;
                 }
             }
@@ -132,16 +131,16 @@ namespace OpenRA.Mods.Bam.Traits
                     init.Add(new HealthInit(newHP));
                 }
 
-                var actor = w.CreateActor(Info.WallActor, init);
+                var actor = w.CreateActor(info.WallActor, init);
 
                 foreach (var cell in actor.Info.TraitInfo<BuildingInfo>().Tiles(actor.Location))
                 {
                     w.Add(new SpriteEffect(
                         actor.World.Map.CenterOfCell(cell),
                         w,
-                        Info.Image,
-                        Info.EffectSequence,
-                        Info.EffectPalette));
+                        info.Image,
+                        info.EffectSequence,
+                        info.EffectPalette));
                 }
             });
         }
@@ -167,12 +166,12 @@ namespace OpenRA.Mods.Bam.Traits
                         Time = self.World.Map.Rules.Actors[orderCut].TraitInfo<ResearchableInfo>().TransformTime * 25,
                         CapsuleInto = orderCut,
 
-                        Offset = Info.Offset,
-                        Facing = Info.Facing,
-                        Sounds = Info.TransformSounds,
-                        Notification = Info.TransformNotification,
+                        Offset = info.Offset,
+                        Facing = info.Facing,
+                        Sounds = info.TransformSounds,
+                        Notification = info.TransformNotification,
                         Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null,
-                        SelfSkipMakeAnims = Info.SkipSelfAnimation,
+                        SelfSkipMakeAnims = info.SkipSelfAnimation,
                         RallyPointActor = TransformEnabler,
                         UseRallyPoint = true
                     });

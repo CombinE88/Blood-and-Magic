@@ -80,6 +80,7 @@ CAPSULE:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7240.wav
+	AbortConvert:
 
 STONEGOLEM:
 	Inherits@1: ^Walker

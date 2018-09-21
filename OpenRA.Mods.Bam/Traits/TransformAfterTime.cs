@@ -1,4 +1,4 @@
-using OpenRA.Mods.Bam.Activities;
+using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;

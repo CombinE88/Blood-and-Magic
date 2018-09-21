@@ -35,7 +35,6 @@ namespace OpenRA.Mods.Common.Warheads
 
             var disabled = false;
 
-
             var fill = 0;
             var cost = 0;
 
@@ -52,7 +51,6 @@ namespace OpenRA.Mods.Common.Warheads
 
                 cost = healInfo.Ammount;
             }
-
             else if (steal != null)
             {
                 var stealInfo = actorActions.Actor.Info.TraitInfoOrDefault<StealEnemyAbilityInfo>();
@@ -64,7 +62,6 @@ namespace OpenRA.Mods.Common.Warheads
                 cost = stealInfo.Ammount;
             }
 
-
             anim.PlayFetchIndex(disabled ? "ui_Ability_button_disabled" : "ui_Ability_button", () => 0);
             WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
 
@@ -73,7 +70,7 @@ namespace OpenRA.Mods.Common.Warheads
 
             WidgetUtils.FillRectWithColor(rect, color);
 
-            actorActions.BamUi.Font.DrawTextWithShadow(text, new float2(RenderBounds.X + RenderBounds.Width / 4 - actorActions.BamUi.Font.Measure(text).X / 2, RenderBounds.Y - 2),
+            actorActions.BamUi.Font.DrawTextWithShadow(text, new float2(RenderBounds.X, RenderBounds.Y - 2),
                 Color.White, Color.Gray, 1);
 
             actorActions.BamUi.FontLarge.DrawTextWithShadow(cost.ToString(), new float2(RenderBounds.X + 5, RenderBounds.Y + 10),

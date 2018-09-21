@@ -15,7 +15,6 @@ namespace OpenRA.Mods.Bam.Traits
 
         public readonly string IntoBuilding = "barracks";
 
-
         public readonly string Image = "explosion";
         public readonly string EffectSequence = "smokecloud_effect";
         public readonly string EffectPalette = "bam11195";

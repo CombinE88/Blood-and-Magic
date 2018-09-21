@@ -1,15 +1,13 @@
-using Eluant;
 using OpenRA.Activities;
-using OpenRA.Graphics;
-using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Traits;
 
-namespace OpenRA.Mods.Bam.Activities
+namespace OpenRA.Mods.Bam.Traits.Activities
 {
     public class Obelisk : Activity
     {
+        readonly WithSpriteBody wsb;
+
         private int tick;
         private int overTick;
         public int CurrentStorage;
@@ -20,7 +18,6 @@ namespace OpenRA.Mods.Bam.Activities
         private ManaShooterInfo shooterInfo;
 
         private PlayerResources pr;
-        readonly WithSpriteBody wsb;
         private string normalSequence;
         private ManaShooter shooter;
 
@@ -38,7 +35,6 @@ namespace OpenRA.Mods.Bam.Activities
 
         public override Activity Tick(Actor self)
         {
-
             if (delivering)
                 return this;
 
@@ -121,7 +117,6 @@ namespace OpenRA.Mods.Bam.Activities
         private WithSpriteBody wsb;
         private string normalSequence;
         private ManaShooter shooter;
-
 
         public ToObelisk(Actor self, ManaShooterInfo shooterInfo, ManaShooter shooter, WithSpriteBody wsb)
         {

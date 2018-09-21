@@ -1,13 +1,8 @@
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
-using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.World;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets.Buttons
@@ -77,7 +72,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 disabled = true;
 
             animation = new Animation(showResearch.ActorActions.BamUi.World, researchItem);
-
 
             if (!removing && waitTicks-- <= 0 && poxMov >= 0)
                 poxMov -= 30;
@@ -164,7 +158,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             return true;
         }
-
 
         public override void MouseExited()
         {

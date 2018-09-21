@@ -38,8 +38,7 @@ namespace OpenRA.Mods.Common.Traits
     {
         readonly TileSet tileSet;
         private DamagedByTrapsInfo info;
-        private int _delay;
-
+        private int delay;
 
         public DamagedByTraps(ActorInitializer init, DamagedByTrapsInfo info)
         {
@@ -47,20 +46,19 @@ namespace OpenRA.Mods.Common.Traits
             tileSet = init.World.Map.Rules.TileSet;
         }
 
-
         void ITick.Tick(Actor self)
         {
             var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
 
             if (!info.TerrainTypes.Contains(ground))
             {
-                _delay = 0;
+                delay = 0;
                 return;
             }
 
-            if (_delay++ >= info.Delay)
+            if (delay++ >= info.Delay)
             {
-                _delay = 0;
+                delay = 0;
                 self.InflictDamage(self, new Damage(info.Damage, info.DamageTypes));
             }
         }

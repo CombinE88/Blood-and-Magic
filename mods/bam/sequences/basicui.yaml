@@ -35,6 +35,10 @@ basic_ui:
 	ui_terminate_empty: ui_terminate.ani
 		Start: 2
 
+	ui_convertbackground: ui_abort_transform.ani
+	ui_convertbackground_pressed: ui_abort_transform.ani
+		Start: 1
+
 explosion:
 	Defaults:
 		Length: *

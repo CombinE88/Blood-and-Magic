@@ -89,7 +89,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             Bounds = new Rectangle(x, y, 75, 68);
         }
 
-
         public override bool HandleMouseInput(MouseInput mi)
         {
             if (!EventBounds.Contains(mi.Location))

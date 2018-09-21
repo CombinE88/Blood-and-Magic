@@ -27,7 +27,7 @@ namespace OpenRA.Mods.Bam.Traits.World
             this.info = info;
         }
 
-        public void Created(Actor self)
+        void INotifyCreated.Created(Actor self)
         {
             foreach (var cell in self.World.Map.AllCells.Where(c => self.World.Map.GetTerrainInfo(c).Type == info.TerrainType))
             {

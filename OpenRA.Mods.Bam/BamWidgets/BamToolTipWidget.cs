@@ -46,68 +46,91 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             anim.PlayFetchIndex("ui_tooltipbar", () => 0);
             xWidth = anim.Image.Bounds.Width;
-            Bounds = new Rectangle(0 - xWidth, 0, xWidth, 10);
+            Bounds = new Rectangle(0 - 192 - 10, 0, 192, 86);
         }
 
         public override void Draw()
         {
-            anim.PlayFetchIndex("ui_tooltipbar", () => 0);
+            // Background Sheet Toolip
+            var radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
 
             var x = anim.Image.Bounds.Width;
             var y = anim.Image.Bounds.Height;
 
-            WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y), actorActions.BamUi.Palette);
-            WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y + y), actorActions.BamUi.Palette);
-            WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y + y * 2), actorActions.BamUi.Palette);
-
             if (showStats)
             {
-                anim.PlayFetchIndex("ui_tooltipbar", () => 0);
-                WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y + y * 3), actorActions.BamUi.Palette);
-                WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y + y * 4), actorActions.BamUi.Palette);
+                var radarBG = new Sprite(radarsheet, new Rectangle(0, 150, 192, 68), TextureChannel.RGBA);
+                WidgetUtils.DrawRGBA(radarBG, new float2(RenderBounds.X, RenderBounds.Y));
 
                 for (int i = 0; i < attack; i++)
                 {
                     anim.PlayFetchIndex("damage", () => 0);
-                    WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 5 + i * 12, RenderBounds.Y + y * 2), actorActions.BamUi.Palette);
+                    WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 48 + i * 12, RenderBounds.Y + 18), actorActions.BamUi.Palette);
+
+                    actorActions.BamUi.Font.DrawTextWithShadow(attack.ToString(), new float2(RenderBounds.X + 30, RenderBounds.Y + 18), Color.Azure, Color.DarkSlateGray, 1);
                 }
 
                 for (int i = 0; i < armor; i++)
                 {
                     anim.PlayFetchIndex("armor", () => 0);
-                    WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 5 + i * 12, RenderBounds.Y + y * 3), actorActions.BamUi.Palette);
+                    WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 48 + i * 12, RenderBounds.Y + 34), actorActions.BamUi.Palette);
+
+                    actorActions.BamUi.Font.DrawTextWithShadow(armor.ToString(), new float2(RenderBounds.X + 30, RenderBounds.Y + 34), Color.Azure, Color.DarkSlateGray, 1);
                 }
 
                 for (int i = 0; i < speed; i++)
                 {
                     anim.PlayFetchIndex("speed", () => 0);
-                    WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 5 + i * 12, RenderBounds.Y + y * 4), actorActions.BamUi.Palette);
+                    WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 48 + i * 12, RenderBounds.Y + 50), actorActions.BamUi.Palette);
+
+                    actorActions.BamUi.Font.DrawTextWithShadow(speed.ToString(), new float2(RenderBounds.X + 30, RenderBounds.Y + 50), Color.Azure, Color.DarkSlateGray, 1);
                 }
 
-                var text = cost.ToString();
-                actorActions.BamUi.Font.DrawTextWithShadow(text,
-                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(text).X - 2, RenderBounds.Y + 2),
+                var manaCost = cost.ToString();
+                var manaLabel = "Mana: ";
+
+                actorActions.BamUi.Font.DrawTextWithShadow(manaCost,
+                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(manaCost).X - 30, RenderBounds.Y),
+                    Color.Yellow, Color.Black, 2);
+
+                actorActions.BamUi.Font.DrawTextWithShadow(manaLabel,
+                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(manaCost).X - actorActions.BamUi.Font.Measure(manaLabel).X - 30,
+                        RenderBounds.Y),
                     Color.LawnGreen, Color.Black, 2);
             }
 
             if (showRes)
             {
-                anim.PlayFetchIndex("ui_tooltipbar", () => 0);
-                WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y + y * 3), actorActions.BamUi.Palette);
+                var radarBG = new Sprite(radarsheet, new Rectangle(0, 218, 192, 35), TextureChannel.RGBA);
+                WidgetUtils.DrawRGBA(radarBG, new float2(RenderBounds.X, RenderBounds.Y));
 
-                var text = researcost.ToString();
-                actorActions.BamUi.Font.DrawTextWithShadow(text,
-                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(text).X - 2, RenderBounds.Y + 2),
+                var expCost = researcost.ToString();
+                var expLabel = "EXP: ";
+
+                actorActions.BamUi.Font.DrawTextWithShadow(expCost,
+                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(expCost).X - 30, RenderBounds.Y),
+                    Color.Yellow, Color.Black, 2);
+
+                actorActions.BamUi.Font.DrawTextWithShadow(expLabel,
+                    new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(expCost).X - actorActions.BamUi.Font.Measure(expLabel).X - 30, RenderBounds.Y),
                     Color.LawnGreen, Color.Black, 2);
 
                 var text2 = researchtime / 25 + " Seconds";
                 actorActions.BamUi.Font.DrawTextWithShadow(text2,
-                    new float2(RenderBounds.X + RenderBounds.Width / 2 - actorActions.BamUi.Font.Measure(text2).X, RenderBounds.Y + y * 2),
+                    new float2(RenderBounds.X + 84, RenderBounds.Y + 17),
                     Color.LawnGreen, Color.Black, 2);
             }
 
-            actorActions.BamUi.FontLarge.DrawTextWithShadow(name, new float2(RenderBounds.X + 2, RenderBounds.Y + 2), Color.YellowGreen, Color.DarkSlateGray,
-                1);
+            if (!showRes && !showStats)
+            {
+                var top = new Sprite(radarsheet, new Rectangle(0, 150, 191, 16), TextureChannel.RGBA);
+                WidgetUtils.DrawRGBA(top, new float2(RenderBounds.X, RenderBounds.Y));
+                var bottom = new Sprite(radarsheet, new Rectangle(0, 215, 191, 3), TextureChannel.RGBA);
+                WidgetUtils.DrawRGBA(bottom, new float2(RenderBounds.X, RenderBounds.Y + 16));
+            }
+
+            actorActions.BamUi.Font.DrawTextWithShadow(name, new float2(RenderBounds.X + 26, RenderBounds.Y), Color.LawnGreen, Color.Black,
+                2);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace OpenRA.Mods.Common.Traits.Render
             self = init.Self;
         }
 
-        public void Created(Actor self)
+        void INotifyCreated.Created(Actor self)
         {
             var wsb = self.TraitsImplementing<WithSpriteBody>().Single(w => w.Info.Name == info.Body);
 

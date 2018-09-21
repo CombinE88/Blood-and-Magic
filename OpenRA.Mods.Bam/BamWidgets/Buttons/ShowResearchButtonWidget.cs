@@ -2,12 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using OpenRA.Activities;
 using OpenRA.Graphics;
-using OpenRA.Mods.Bam.Traits;
-using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.World;
-using OpenRA.Mods.Common.Traits;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets.Buttons

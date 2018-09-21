@@ -1,10 +1,7 @@
 using System.Drawing;
 using System.Linq;
-using OpenRA.Mods.Bam.Traits.Player;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
-using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -110,7 +107,7 @@ namespace OpenRA.Mods.Bam.Traits
             pr = self.Owner.PlayerActor.Trait<PlayerResources>();
         }
 
-        public void Tick(Actor self)
+        void ITick.Tick(Actor self)
         {
             if (tick++ < 25)
                 return;

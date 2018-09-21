@@ -12,7 +12,7 @@
 #endregion
 
 using System.Collections.Generic;
-using OpenRA.Mods.Bam.Activities;
+using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Bam.Traits.TrinketLogics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Orders;

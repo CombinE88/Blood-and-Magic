@@ -133,7 +133,6 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
             }
         }
 
-
         int IFirepowerModifier.GetFirepowerModifier()
         {
             return 100 * ModifiedDamage;

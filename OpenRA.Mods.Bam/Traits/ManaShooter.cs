@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using OpenRA.Activities;
-using OpenRA.Mods.Bam.Activities;
+using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
@@ -29,7 +29,6 @@ namespace OpenRA.Mods.Bam.Traits
         [SequenceReference] public readonly string ObeliskSequence = "transform_idle";
 
         [Desc("Which sprite body to modify.")] public readonly string Body = "body";
-
 
         public object Create(ActorInitializer init)
         {
@@ -69,14 +68,12 @@ namespace OpenRA.Mods.Bam.Traits
                 self.QueueActivity(new ToObelisk(self, info, this, wsb));
                 tick = 0;
             }
-
         }
 
         void INotifyCreated.Created(Actor self)
         {
             wsb = self.TraitsImplementing<WithSpriteBody>().Single(w => w.Info.Name == info.Body);
         }
-
 
         void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
@@ -96,7 +93,7 @@ namespace OpenRA.Mods.Bam.Traits
                     return;
             }
 
-            if( auto != null)
+            if (auto != null)
                 auto.ScanAndAttack(this.self, false);
         }
     }

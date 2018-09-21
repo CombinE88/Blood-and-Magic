@@ -38,6 +38,85 @@ PLATTFORMA:
 		Name: Building Plattform
 	AllowTransfrom:
 
+HOSTBLDGN1:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Hostile Buildings
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: civproduction1
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Town Hall
+	Health:
+		HP: 550
+	Targetable:
+		TargetTypes: Default
+	DropTrinketOnDeath:
+		Probability: 100
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+	SpawnHostile:
+		initialDelay: 3000
+		RandomExtraDelay: 500
+		Delay: 2000
+		SpawnActor: paesant
+
+HOSTBLDGN2:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction2
+	Tooltip:
+		Name: Fortress
+	SpawnHostile:
+		initialDelay: 8000
+		RandomExtraDelay: 1000
+		Delay: 5000
+		SpawnActor: paladin
+
+HOSTBLDGN3:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction3
+	Tooltip:
+		Name: Barracks
+	SpawnHostile:
+		initialDelay: 5000
+		RandomExtraDelay: 1000
+		Delay: 3000
+		SpawnActor: warrior
+
+HOSTBLDGN4:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction4
+	Tooltip:
+		Name: Tomb
+	SpawnHostile:
+		initialDelay: 5000
+		RandomExtraDelay: 1000
+		Delay: 3000
+		SpawnActor: zombie
+
+HOSTBLDGN5:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction5
+	Tooltip:
+		Name: Shooting Range
+	SpawnHostile:
+		initialDelay: 5000
+		RandomExtraDelay: 1000
+		Delay: 3000
+		SpawnActor: ranger
+
 PlayerWall:
 	Inherits@: ^CoreWall
 	RenderSprites:

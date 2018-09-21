@@ -70,13 +70,11 @@ namespace OpenRA.Mods.Common.Traits.Render
                 wsb.PlayCustomAnimation(self, Info.RangedSequence);
         }
 
-
         void PlayCloseAttackAnimation(Actor self)
         {
             if (!IsTraitDisabled && !wsb.IsTraitDisabled && !string.IsNullOrEmpty(Info.CloseCombatSequence))
                 wsb.PlayCustomAnimation(self, Info.CloseCombatSequence);
         }
-
 
         void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel)
         {

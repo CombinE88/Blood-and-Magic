@@ -86,6 +86,7 @@
     <Compile Include="BamWidgets\ActorActionsWidget.cs" />
     <Compile Include="BamWidgets\BamToolTipWidget.cs" />
     <Compile Include="BamWidgets\BamUIWidget.cs" />
+    <Compile Include="BamWidgets\Buttons\SecondAbilityButton.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\ConvertToWallButtonWidget.cs" />
     <Compile Include="BamWidgets\Buttons\KillSelf.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="SpriteLoaders\AniLoader.cs" />
     <Compile Include="SpriteLoaders\TlbLoader.cs" />
     <Compile Include="Traits\Activities\AdvancedTransform.cs" />
+    <Compile Include="Traits\Activities\HuntPlayer.cs" />
     <Compile Include="Traits\Activities\ManaShooterActivity.cs" />
     <Compile Include="Traits\AdvancedChangesTerrain.cs" />
     <Compile Include="Traits\AdvancedTransforms.cs" />
@@ -121,9 +123,9 @@
     <Compile Include="Traits\BuildingSpawnRubble.cs" />
     <Compile Include="Traits\ConvertAdjetant.cs" />
     <Compile Include="Traits\GeneratesExperience.cs" />
-    <Compile Include="Traits\Player\AdvancedAttackNotifier.cs" />
-    <Compile Include="Traits\Player\DungeonsAndDragonsExperience.cs" />
-    <Compile Include="Traits\Player\Research.cs" />
+    <Compile Include="Traits\PlayerTraits\AdvancedAttackNotifier.cs" />
+    <Compile Include="Traits\PlayerTraits\DungeonsAndDragonsExperience.cs" />
+    <Compile Include="Traits\PlayerTraits\Research.cs" />
     <Compile Include="Traits\Render\ChangeImageOnTheatre.cs" />
     <Compile Include="Traits\Render\WithImpactAnimation.cs" />
     <Compile Include="Traits\Render\WithAbilityAnimation.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Traits\Researched.cs" />
     <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
     <Compile Include="Traits\SimpleDeathSounds.cs" />
+    <Compile Include="Traits\SpawnHostile.cs" />
     <Compile Include="Traits\TileActivities\DamagedByTraps.cs" />
     <Compile Include="Traits\TileActivities\TileBridge.cs" />
     <Compile Include="Traits\TileActivities\TileButton.cs" />
@@ -147,6 +150,7 @@
     <Compile Include="Traits\UnitAbilities\GhoulLeechLive.cs" />
     <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
     <Compile Include="Traits\UnitAbilities\StealEnemyAbility.cs" />
+    <Compile Include="Traits\UnitAbilities\AbortConvert.cs" />
     <Compile Include="Traits\UnitAbilities\Terminate.cs" />
     <Compile Include="Traits\World\CreateManaSpots.cs" />
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />

@@ -1,7 +1,7 @@
 using OpenRA.Mods.Bam.Traits.World;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Bam.Traits.Player
+namespace OpenRA.Mods.Bam.Traits
 {
     public class DungeonsAndDragonsExperienceInfo : ITraitInfo
     {

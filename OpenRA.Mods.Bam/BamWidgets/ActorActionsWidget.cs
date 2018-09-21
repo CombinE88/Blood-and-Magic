@@ -42,6 +42,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private ShowResearchButtonWidget researchEnabler;
         private ConvertToWallButtonWidget wallbutton;
         private KillSelfWidget terminate;
+        private SecondAbilityButtonWidget secondabilityButton;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
@@ -57,7 +58,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AddChild(drawValueStatistics = new DrawValueStatisticsWidget(this) { Visible = false });
             AddChild(healthBarUI = new HealthBarUIWidget(this) { Visible = false });
             AddChild(selectionName = new SelectionNameWidget(this) { Visible = false });
+
             AddChild(abilityButton = new AbilityButtonWidget(this) { Visible = false });
+            AddChild(secondabilityButton = new SecondAbilityButtonWidget(this) { Visible = false });
 
             AddChild(researchEnabler = new ShowResearchButtonWidget(this) { Visible = true });
 
@@ -85,7 +88,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
             drawValueStatistics.Visible = false;
             healthBarUI.Visible = false;
             selectionName.Visible = false;
+
             abilityButton.Visible = false;
+            secondabilityButton.Visible = false;
 
             wallbutton.Visible = false;
 
@@ -98,9 +103,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (AllActor != null)
             {
                 DrawActorStatistics();
-                // Location = CPos.Zero;
-                // terrainstatistics.Visible = false;
-                // terrainIcon.Visible = false;
             }
 
             if (AllActor != null && AllActor.TraitOrDefault<CanHoldTrinket>() != null && AllActor.Trait<CanHoldTrinket>().HoldsTrinket != null)
@@ -121,6 +123,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
             {
                 trinketDropButton.Visible = true;
             }
+
+            if (Actor.TraitOrDefault<AbortConvert>() != null)
+                secondabilityButton.Visible = true;
 
             if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>() || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>())
                 abilityButton.Visible = true;
@@ -172,7 +177,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         var con = new TransformToBuildingButtonWidget(
                             this,
                             -30 - 76,
-                            50 + 68 + 68 * i,
+                            50 + 68 * i,
                             trait.Info.IntoBuilding,
                             trait,
                             selectedValidActors) { Visible = true };
@@ -195,8 +200,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
             {
                 RemoveTransformmenu();
             }
-
-
             else if (ca != null && !transformToButtons.Any())
             {
                 wallbutton.Visible = true;
@@ -306,6 +309,10 @@ namespace OpenRA.Mods.Bam.BamWidgets
             // Background SpawnAbility
             AddChild(new SideBarBackgroundWidget(BamUi, 100, 377, 0, 214, 76, 68));
 
+            for (int i = 0; i < 5; i++)
+            {
+                AddChild(new SideBarBackgroundWidget(BamUi, -30 - 16, 50 + 68 * i, 161, 734, 16, 68));
+            }
         }
     }
 }
