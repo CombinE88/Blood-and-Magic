@@ -77,7 +77,7 @@
 		Categories: Building
 	# Should not be auto attacked.
 	Targetable@NoAutoAttack:
-		TargetTypes: NoAutoAttack
+		TargetTypes: Default
 	AttackNotification:
 		Notifications: BuildingUnderAttack
 

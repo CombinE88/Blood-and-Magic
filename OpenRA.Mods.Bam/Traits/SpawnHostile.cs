@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using OpenRA.Mods.Bam.Traits.Activities;
 using OpenRA.Mods.Common;
@@ -54,7 +55,10 @@ namespace OpenRA.Mods.Bam.Traits
             players.Sort();
             currentPlayer = players[self.World.SharedRandom.Next(0, players.Count)];
             nextMaxCount = self.World.SharedRandom.Next(info.Delay, info.Delay + info.RandomExtraDelay);
-            startingCash = currentPlayer.PlayerActor.Trait<PlayerResources>().Cash;
+
+            var pr = currentPlayer.PlayerActor.Trait<PlayerResources>();
+
+            startingCash = info.InitialDelay + info.InitialDelay / ((pr.Cash + pr.Resources) / 100);
         }
 
         void CyclePlayers()
@@ -65,8 +69,8 @@ namespace OpenRA.Mods.Bam.Traits
         void SpawnActor(Actor self)
         {
             var validCell = self.World.Map.FindTilesInCircle(self.Location, 3, true).ToArray();
-            var cells = validCell.Where(c =>
-                self.World.Map.Rules.Actors[info.SpawnActor].TraitInfo<MobileInfo>().CanEnterCell(self.World, self, c));
+            var cells = validCell.Where(c => self.World.Map.Contains(c)
+                                             && self.World.Map.Rules.Actors[info.SpawnActor].TraitInfo<MobileInfo>().CanEnterCell(self.World, self, c));
 
             if (cells.Any())
                 self.World.AddFrameEndTask(w =>
@@ -96,9 +100,10 @@ namespace OpenRA.Mods.Bam.Traits
 
         void ITick.Tick(Actor self)
         {
-            if (initDelay < info.InitialDelay + info.InitialDelay  / (startingCash / 100))
+            if (initDelay < startingCash)
             {
                 initDelay++;
+                Game.AddChatLine(Color.Aqua, "test: ", startingCash - initDelay + "");
                 return;
             }
 

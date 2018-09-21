@@ -64,7 +64,7 @@ HOSTBLDGN1:
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 	SpawnHostile:
-		initialDelay: 3000
+		InitialDelay: 3000
 		RandomExtraDelay: 500
 		Delay: 2000
 		SpawnActor: paesant
@@ -76,7 +76,7 @@ HOSTBLDGN2:
 	Tooltip:
 		Name: Fortress
 	SpawnHostile:
-		initialDelay: 8000
+		InitialDelay: 8000
 		RandomExtraDelay: 1000
 		Delay: 5000
 		SpawnActor: paladin
@@ -88,7 +88,7 @@ HOSTBLDGN3:
 	Tooltip:
 		Name: Barracks
 	SpawnHostile:
-		initialDelay: 5000
+		InitialDelay: 5000
 		RandomExtraDelay: 1000
 		Delay: 3000
 		SpawnActor: warrior
@@ -100,7 +100,7 @@ HOSTBLDGN4:
 	Tooltip:
 		Name: Tomb
 	SpawnHostile:
-		initialDelay: 5000
+		InitialDelay: 5000
 		RandomExtraDelay: 1000
 		Delay: 3000
 		SpawnActor: zombie
@@ -112,7 +112,7 @@ HOSTBLDGN5:
 	Tooltip:
 		Name: Shooting Range
 	SpawnHostile:
-		initialDelay: 5000
+		InitialDelay: 5000
 		RandomExtraDelay: 1000
 		Delay: 3000
 		SpawnActor: ranger
