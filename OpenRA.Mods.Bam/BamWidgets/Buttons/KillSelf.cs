@@ -25,8 +25,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            var x = pressed ? 1 : 0;
-            var y = pressed ? 772 + 1 : 772;
+            var x = 0 - 58 - 30;
+            var y = 0;
             Bounds = new Rectangle(x, y, 58, 30);
         }
 

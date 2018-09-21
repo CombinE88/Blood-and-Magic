@@ -14,6 +14,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public World World;
         public WorldRenderer WorldRenderer;
         public SpriteFont Font;
+        public SpriteFont FontRegular;
         public SpriteFont FontLarge;
         public PaletteReference Palette;
 
@@ -22,6 +23,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public Sheet Sheet;
         private Sprite rightBar;
         public Sheet RightbarSheet;
+        private Sprite bottom;
 
         [ObjectCreator.UseCtor]
         public BamUIWidget(World world, WorldRenderer worldRenderer)
@@ -31,6 +33,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             RadarPings = world.WorldActor.Trait<RadarPings>();
 
             Game.Renderer.Fonts.TryGetValue("Small", out Font);
+            Game.Renderer.Fonts.TryGetValue("Regular", out FontRegular);
             Game.Renderer.Fonts.TryGetValue("MediumBold", out FontLarge);
             Palette = WorldRenderer.Palette("BamPlayer" + World.LocalPlayer.InternalName);
 
@@ -38,6 +41,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             RightbarSheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/mainbar.png"));
             rightBar = new Sprite(RightbarSheet, new Rectangle(0, 89, 200 + border, 249), TextureChannel.RGBA);
+            bottom = new Sprite(RightbarSheet, new Rectangle(0, 338, 256 + border, 9), TextureChannel.RGBA);
 
             AddChild(new ManaCounterWidget(this));
             AddChild(new ActorActionsWidget(this));
@@ -50,13 +54,15 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Tick()
         {
-            Bounds = new Rectangle(Game.Renderer.Resolution.Width - rightBar.Bounds.Width + border, 0, rightBar.Bounds.Width - border, Game.Renderer.Resolution.Height);
+            Bounds = new Rectangle(Game.Renderer.Resolution.Width - rightBar.Bounds.Width + border, 0, rightBar.Bounds.Width - border, 450);
         }
 
         public override void Draw()
         {
             for (var y = 0; y < RenderBounds.Height; y += rightBar.Bounds.Height)
                 WidgetUtils.DrawRGBA(rightBar, new float2(RenderBounds.X - border, y));
+
+            WidgetUtils.DrawRGBA(bottom, new float2(RenderBounds.X - border, 490));
         }
     }
 }

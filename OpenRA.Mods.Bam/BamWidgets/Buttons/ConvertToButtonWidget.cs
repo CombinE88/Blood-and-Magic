@@ -23,7 +23,12 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private string actorString;
         private BamToolTipWidget tooltip;
 
-        public ConvertToButtonWidget(ActorActionsWidget actorActions, int posx, int posy, string animationString, string actorString)
+        public ConvertToButtonWidget(
+            ActorActionsWidget actorActions,
+            int posx,
+            int posy,
+            string animationString,
+            string actorString)
         {
             this.actorActions = actorActions;
             this.posx = posx;
@@ -83,6 +88,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             var y = pressed ? posy + 1 : posy;
             Bounds = new Rectangle(x, y, 75, 68);
         }
+
 
         public override bool HandleMouseInput(MouseInput mi)
         {

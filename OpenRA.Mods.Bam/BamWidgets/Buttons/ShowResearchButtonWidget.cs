@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using OpenRA.Activities;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.Player;
@@ -47,9 +48,9 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             {
                 ShowResearch = !ShowResearch;
 
-                if (ShowResearch && !researchButtons.Any())
+                if (ShowResearch && !researchButtons.Any() && !Researching)
                     CreateResearchMenu();
-                else if (!ShowResearch && researchButtons.Any())
+                else if (!ShowResearch && researchButtons.Any() && !Researching)
                     RemoveResearchMenu();
 
                 pressed = true;
@@ -85,7 +86,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 }
             }
 
-            Bounds = new Rectangle(76, 466, 76, 24);
+            Bounds = new Rectangle(5, 451, 118, 18);
         }
 
         public override void Draw()
@@ -95,31 +96,25 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             animation.PlayFetchIndex(pressed ? "resbutton_pressed" : "resbutton", () => 0);
             WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y), ActorActions.BamUi.Palette);
 
-            animation.PlayFetchIndex("resbutton_pressed", () => 0);
-            WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X - 76, RenderBounds.Y), ActorActions.BamUi.Palette);
-
             var text = "Research";
             ActorActions.BamUi.Font.DrawTextWithShadow(text,
                 new float2(RenderBounds.X + RenderBounds.Width / 2 - ActorActions.BamUi.Font.Measure(text).X / 2,
                     RenderBounds.Y + RenderBounds.Height / 2 - ActorActions.BamUi.Font.Measure(text).Y / 2), Color.White, Color.DarkSlateGray, 1);
-
-            var text2 = ActorActions.BamUi.World.LocalPlayer.PlayerActor.Info.HasTraitInfo<DungeonsAndDragonsExperienceInfo>()
-                ? ActorActions.BamUi.World.LocalPlayer.PlayerActor.Trait<DungeonsAndDragonsExperience>().Experience.ToString()
-                : "0";
-
-            ActorActions.BamUi.Font.DrawTextWithShadow(text2,
-                new float2(RenderBounds.X - 76 + RenderBounds.Width / 2 - ActorActions.BamUi.Font.Measure(text2).X / 2,
-                    RenderBounds.Y + RenderBounds.Height / 2 - ActorActions.BamUi.Font.Measure(text2).Y / 2), Color.White, Color.DarkSlateGray, 1);
 
             if (Researching)
             {
                 var progress = Math.Min(6 * CurrentResearchTime / MaxResearchTime, 5);
 
                 animation.PlayFetchIndex("ui_research_bar", () => progress);
-                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X - 76 + 20, RenderBounds.Y + 316), ActorActions.BamUi.Palette);
+                WidgetUtils.DrawSHPCentered(animation.Image, new float2(RenderBounds.X, RenderBounds.Y + 20), ActorActions.BamUi.Palette);
 
                 // Game.AddChatLine(Color.White, currentResearchTime + "", "" + progress);
             }
+        }
+
+        public void RemoveSingleChild(Widget child)
+        {
+            RemoveChild(child);
         }
 
         public void CreateResearchMenu()
@@ -135,17 +130,36 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             var list = Research.Info.Researchable.ToList();
 
-            for (int i = 0; i < list.Count; i++)
-            {
-                var con = new ResearchButtonWidget(
-                    this,
-                    -76 + i % 2 * 75, 24 + 68 * (i / 2),
-                    list[i].Key,
-                    list[i].Value * Research.Info.TimePerCost,
-                    list[i].Value,
-                    Research);
-                researchButtons.Add(con);
-            }
+            if ((55 + ActorActions.Bounds.Y + Bounds.Y + list.Count * 68) < Game.Renderer.Resolution.Height)
+                for (int i = 0; i < list.Count; i++)
+                {
+                    var con = new ResearchButtonWidget(
+                        this,
+                        110,
+                        55 + 68 * i,
+                        list[i].Key,
+                        list[i].Value * Research.Info.TimePerCost,
+                        list[i].Value,
+                        Research,
+                        i * 2,
+                        100);
+                    researchButtons.Add(con);
+                }
+            else
+                for (int i = 0; i < list.Count; i++)
+                {
+                    var con = new ResearchButtonWidget(
+                        this,
+                        35 + i % 2 * 75,
+                        55 + 68 * (i / 2),
+                        list[i].Key,
+                        list[i].Value * Research.Info.TimePerCost,
+                        list[i].Value,
+                        Research,
+                        i * 2,
+                        200);
+                    researchButtons.Add(con);
+                }
 
             foreach (var button in researchButtons)
             {
@@ -158,8 +172,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (researchButtons.Any())
                 foreach (var button in researchButtons)
                 {
-                    RemoveChild(button);
-                    button.Removed();
+                    button.StartRemoving();
                 }
 
             researchButtons = new List<ResearchButtonWidget>();

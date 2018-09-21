@@ -40,7 +40,6 @@ namespace OpenRA.Mods.Bam.Traits.Player
                     break;
                 }
             }
-
         }
     }
 }

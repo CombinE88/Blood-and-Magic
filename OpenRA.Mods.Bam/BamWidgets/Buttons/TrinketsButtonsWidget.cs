@@ -26,7 +26,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            if (actorActions.AllActor == null || actorActions.AllActor.TraitOrDefault<CanHoldTrinket>() == null || actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
+            if (actorActions.AllActor == null || actorActions.AllActor.TraitOrDefault<CanHoldTrinket>() == null ||
+                actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
 
             string actorString = null;
@@ -41,8 +42,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
                 animation = new Animation(actorActions.BamUi.World, actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, seq, name));
 
-            var x = pressed ? 1 : 0;
-            var y = pressed ? 376 + 1 : 376;
+            var x = pressed ? 1 + 4 : 4;
+            var y = pressed ? 361 + 1 : 361;
             Bounds = new Rectangle(x, y, 76, 51);
         }
 
@@ -78,8 +79,8 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Draw()
         {
-
-            if (actorActions.AllActor == null || actorActions.AllActor.TraitOrDefault<CanHoldTrinket>() == null || actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
+            if (actorActions.AllActor == null || actorActions.AllActor.TraitOrDefault<CanHoldTrinket>() == null ||
+                actorActions.AllActor.Trait<CanHoldTrinket>().HoldsTrinket == null)
                 return;
 
             var trinket = actorActions.AllActor.TraitOrDefault<CanHoldTrinket>().HoldsTrinket;

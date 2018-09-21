@@ -64,7 +64,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AddChild(trinketButtons = new TrinketButtonsWidget(this) { Visible = false });
             AddChild(trinketDropButton = new TrinketDropButtonWidget(this) { Visible = false });
 
-            AddChild(wallbutton = new ConvertToWallButtonWidget(this, 0, 490) { Visible = false });
+            AddChild(wallbutton = new ConvertToWallButtonWidget(this, -30 - 76, 50) { Visible = false });
             AddChild(terminate = new KillSelfWidget(this) { Visible = false });
         }
 
@@ -107,7 +107,12 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 trinketButtons.Visible = true;
 
             if (Actor == null)
+            {
+                if (transformToButtons.Any())
+                    RemoveTransformmenu();
+
                 return;
+            }
 
             if (Actor.TraitOrDefault<Terminate>() != null)
                 terminate.Visible = true;
@@ -166,8 +171,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
                     {
                         var con = new TransformToBuildingButtonWidget(
                             this,
-                            i % 2 * 75,
-                            490 + 68 * (i / 2),
+                            -30 - 76,
+                            50 + 68 + 68 * i,
                             trait.Info.IntoBuilding,
                             trait,
                             selectedValidActors) { Visible = true };
@@ -209,8 +214,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             {
                 var con = new ConvertToButtonWidget(
                         this,
-                        i % 2 * 75,
-                        490 + 68 * (i / 2),
+                        -30 - 76,
+                        50 + 68 + 68 * i,
                         transformable[i],
                         transformable[i])
                     { Visible = false };
@@ -286,18 +291,21 @@ namespace OpenRA.Mods.Bam.BamWidgets
             // Background SecondButton
             AddChild(new SideBarBackgroundWidget(BamUi, 0, 338, 0, 316, 180, 34));
 
+            // Background TrinketFrame
+            AddChild(new SideBarBackgroundWidget(BamUi, 0, 357 + 17, 848, 0, 84, 74));
+
             // Background Trinket
-            AddChild(new SideBarBackgroundWidget(BamUi, 0, 392, 0, 350, 76, 51));
+            AddChild(new SideBarBackgroundWidget(BamUi, 4, 377, 0, 350, 76, 51));
 
             // Background Trinket Drop Button
-            AddChild(new SideBarBackgroundWidget(BamUi, 0, 443, 178, 774, 76, 17));
+            AddChild(new SideBarBackgroundWidget(BamUi, 4, 428, 178, 774, 76, 17));
 
-            // Background Convert Buttons
-            for (int i = 0; i < 4; i++)
-            {
-                AddChild(new SideBarBackgroundWidget(BamUi, 0, 490 + 68 * i, 0, 214, 75, 68));
-                AddChild(new SideBarBackgroundWidget(BamUi, 75, 490 + 68 * i, 0, 214, 75, 68));
-            }
+            // Background SpawnAbilityFrame
+            AddChild(new SideBarBackgroundWidget(BamUi, 96, 373, 848, 0, 84, 74));
+
+            // Background SpawnAbility
+            AddChild(new SideBarBackgroundWidget(BamUi, 100, 377, 0, 214, 76, 68));
+
         }
     }
 }

@@ -136,28 +136,28 @@ ChromeMetrics:
 
 Fonts:
 	Tiny:
-		Font: common|FreeSans.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 10
 	TinyBold:
-		Font: common|FreeSansBold.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 10
 	Small:
-		Font: common|FreeSans.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 12
 	Regular:
-		Font: common|FreeSans.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 14
 	Bold:
-		Font: common|FreeSansBold.ttf
-		Size: 14
+		Font: bam|IMMORTAL.ttf
+		Size: 16
 	MediumBold:
-		Font: common|FreeSansBold.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 18
 	BigBold:
-		Font: common|FreeSansBold.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 24
 	Title:
-		Font: common|FreeSans.ttf
+		Font: bam|IMMORTAL.ttf
 		Size: 48
 
 Missions:

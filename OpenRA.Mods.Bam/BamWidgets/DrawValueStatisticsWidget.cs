@@ -58,7 +58,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                     WidgetUtils.DrawSHPCentered(damage.Image, new float2(RenderBounds.X + 30 + i * 10, RenderBounds.Y + 2), actorActions.BamUi.Palette);
                 }
 
-                actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedDamage + "", new float2(RenderBounds.X + 4, RenderBounds.Y), Color.Azure, Color.DarkSlateGray, 1);
+                actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedDamage + "", new float2(RenderBounds.X + 8, RenderBounds.Y), Color.Azure, Color.DarkSlateGray, 1);
             }
             else
             {
@@ -91,7 +91,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                     WidgetUtils.DrawSHPCentered(armor.Image, new float2(RenderBounds.X + 30 + i * 10, RenderBounds.Y + 2 + 15), actorActions.BamUi.Palette);
                 }
 
-                actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedArmor + "", new float2(RenderBounds.X + 4, RenderBounds.Y + 16), Color.Azure, Color.DarkSlateGray, 1);
+                actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedArmor + "", new float2(RenderBounds.X + 8, RenderBounds.Y + 16), Color.Azure, Color.DarkSlateGray, 1);
             }
             else
             {
@@ -124,7 +124,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                     WidgetUtils.DrawSHPCentered(speed.Image, new float2(RenderBounds.X + 30 + i * 10, RenderBounds.Y + 4 + 30), actorActions.BamUi.Palette);
                 }
 
-                actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedSpeed + "", new float2(RenderBounds.X + 2, RenderBounds.Y + 32), Color.Azure, Color.DarkSlateGray, 1);
+                actorActions.BamUi.Font.DrawTextWithShadow(ddtrait.ModifiedSpeed + "", new float2(RenderBounds.X + 8, RenderBounds.Y + 32), Color.Azure, Color.DarkSlateGray, 1);
             }
             else
             {

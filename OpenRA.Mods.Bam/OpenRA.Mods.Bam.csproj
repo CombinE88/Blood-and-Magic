@@ -104,6 +104,7 @@
     <Compile Include="BamWidgets\RadarWidget.cs" />
     <Compile Include="BamWidgets\SelectionNameWidget.cs" />
     <Compile Include="BamWidgets\SideBarBackgroundWidget.cs" />
+    <Compile Include="BamWidgets\SideBarRadarBackgroundWidget.cs" />
     <Compile Include="FileFormats\AniAnimation.cs" />
     <Compile Include="FileFormats\PalPalette.cs" />
     <Compile Include="FileFormats\StfContainer.cs" />

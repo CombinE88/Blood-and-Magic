@@ -87,7 +87,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 var text = cost.ToString();
                 actorActions.BamUi.Font.DrawTextWithShadow(text,
                     new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(text).X - 2, RenderBounds.Y + 2),
-                    Color.YellowGreen, Color.DarkSlateGray, 1);
+                    Color.LawnGreen, Color.Black, 2);
             }
 
             if (showRes)
@@ -95,18 +95,15 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 anim.PlayFetchIndex("ui_tooltipbar", () => 0);
                 WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X, RenderBounds.Y + y * 3), actorActions.BamUi.Palette);
 
-                anim.PlayFetchIndex("ui_research_bar", () => 5);
-                WidgetUtils.DrawSHPCentered(anim.Image, new float2(RenderBounds.X + 5, RenderBounds.Y + y * 3 - 5), actorActions.BamUi.Palette);
-
                 var text = researcost.ToString();
                 actorActions.BamUi.Font.DrawTextWithShadow(text,
                     new float2(RenderBounds.X + RenderBounds.Width - actorActions.BamUi.Font.Measure(text).X - 2, RenderBounds.Y + 2),
-                    Color.YellowGreen, Color.DarkSlateGray, 1);
+                    Color.LawnGreen, Color.Black, 2);
 
                 var text2 = researchtime / 25 + " Seconds";
                 actorActions.BamUi.Font.DrawTextWithShadow(text2,
                     new float2(RenderBounds.X + RenderBounds.Width / 2 - actorActions.BamUi.Font.Measure(text2).X, RenderBounds.Y + y * 2),
-                    Color.YellowGreen, Color.DarkSlateGray, 1);
+                    Color.LawnGreen, Color.Black, 2);
             }
 
             actorActions.BamUi.FontLarge.DrawTextWithShadow(name, new float2(RenderBounds.X + 2, RenderBounds.Y + 2), Color.YellowGreen, Color.DarkSlateGray,

@@ -130,10 +130,15 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
         public override void Draw()
         {
-            Bounds = new Rectangle(5, 30, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
+            Bounds = new Rectangle(25, 35, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
             UpdateShroud();
 
-            WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);
+            // RadarBG
+            var radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
+            var radarBG = new Sprite(radarsheet, new Rectangle(0, 0, 172, 150), TextureChannel.RGBA);
+            WidgetUtils.DrawRGBA(radarBG, new float2(RenderBounds.X + RenderBounds.Width / 2 - radarBG.Bounds.Width / 2, RenderBounds.Y + RenderBounds.Height / 2 - radarBG.Bounds.Height / 2));
+
+            // WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);
 
             radarSheet.CommitBufferedData();
             Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
@@ -169,7 +174,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
             Game.Renderer.RgbaColorRenderer.DrawRect(
                 new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * Size,
-                new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * Size, Size,
+                new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * Size, 1,
                 Color.White
             );
 

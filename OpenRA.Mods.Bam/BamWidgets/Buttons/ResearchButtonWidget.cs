@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Bam.Traits.Player;
@@ -25,7 +26,22 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private BamToolTipWidget tooltip;
         private Research research;
 
-        public ResearchButtonWidget(ShowResearchButtonWidget showResearch, int posx, int posy, string researchItem, int researchTime, int researchCost, Research research)
+        private int poxMov;
+        private bool removing;
+        private int waitTicks;
+        private int undoTicks;
+        private int osXMaxMov;
+
+        public ResearchButtonWidget(
+            ShowResearchButtonWidget showResearch,
+            int posx,
+            int posy,
+            string researchItem,
+            int researchTime,
+            int researchCost,
+            Research research,
+            int waitTicks,
+            int outPos)
         {
             this.showResearch = showResearch;
             this.posx = posx;
@@ -34,6 +50,11 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             this.researchTime = researchTime;
             this.researchCost = researchCost;
             this.research = research;
+
+            this.waitTicks = waitTicks;
+            undoTicks = waitTicks;
+            poxMov = outPos;
+            osXMaxMov = outPos;
 
             AddChild(tooltip = new BamToolTipWidget(
                 this.showResearch.ActorActions,
@@ -57,9 +78,33 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             animation = new Animation(showResearch.ActorActions.BamUi.World, researchItem);
 
-            var x = pressed ? posx + 1 : posx;
+
+            if (!removing && waitTicks-- <= 0 && poxMov >= 0)
+                poxMov -= 30;
+
+            var x = pressed ? posx + poxMov + 1 : posx + poxMov;
             var y = pressed ? posy + 1 : posy;
+
             Bounds = new Rectangle(x, y, 75, 68);
+
+            if (!removing)
+                return;
+
+            if (undoTicks-- > 0)
+                return;
+
+            if (poxMov < osXMaxMov)
+            {
+                poxMov += 30;
+                return;
+            }
+
+            Removed();
+        }
+
+        public void StartRemoving()
+        {
+            removing = true;
         }
 
         public override void MouseEntered()
@@ -119,6 +164,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             return true;
         }
+
 
         public override void MouseExited()
         {

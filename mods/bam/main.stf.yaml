@@ -57,7 +57,7 @@ ui_health_bar: 132:0
 
 ui_research_bar: 98:0-5
 
-ui_research_button: 120:0-1
+ui_research_button: 101:0-1
 
 ui_tooltipbar: 116:5
 
@@ -81,7 +81,6 @@ landscape_platform: 2732:0
 landscape_walls: 2730:0
 
 ui_terminate: 122:0-2
-
 
 #Trinkets One ------------------------------------------
 
