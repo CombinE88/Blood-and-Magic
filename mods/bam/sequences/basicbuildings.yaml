@@ -14,6 +14,50 @@ nwall:
 		ZOffset: -1024
 	icon: wall_icon.ani
 
+induwall:
+	idle: bits/temperate.png
+		Frames: 158,169,179,208,159,151,198,221,189,209,191,158,199,221,221,221
+		Length: 16
+		ZOffset: -1024
+	icon: induwall_icon.ani
+
+bigbuilding1:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb_e.png
+		Frames: 0
+		ZOffset: -2048
+	icon: mainbase_icon.ani
+bigbuilding2:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb_b.png
+		Frames: 0
+		ZOffset: -2048
+	icon: mainbase_icon.ani
+bigbuilding3:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb_d.png
+		Frames: 0
+		ZOffset: -2048
+	icon: mainbase_icon.ani
+
+bigbuilding4:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb_f.png
+		Frames: 0
+		ZOffset: -2048
+	icon: mainbase_icon.ani
+bigbuilding5:
+	Defaults:
+		AddExtension: False
+	idle: bits/mainb_f.png
+		Frames: 0
+		ZOffset: -2048
+	icon: mainbase_icon.ani
+
 plattforma:
 	Defaults:
 		AddExtension: False
@@ -21,6 +65,7 @@ plattforma:
 		Frames: 25
 		ZOffset: -2048
 	icon: plattform_icon.ani
+
 plattformb:
 	Defaults:
 		AddExtension: False
@@ -58,6 +103,18 @@ civproduction5:
 		AddExtension: False
 	idle: bits/creepbuildings.png
 		Frames: 4
+	icon: mainbase_icon.ani
+civproduction6:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 5
+	icon: mainbase_icon.ani
+civproduction7:
+	Defaults:
+		AddExtension: False
+	idle: bits/creepbuildings.png
+		Frames: 6
 	icon: mainbase_icon.ani
 
 statue1:
@@ -678,38 +735,38 @@ bldgn.rubble1:
 		AddExtension: False
 	idle: bits/props.png
 		Frames: 36
-		ZOffset: -1024
+		ZOffset: -2048
 	rubble: bits/props.png
 		Frames: 36
-		ZOffset: -1024
+		ZOffset: -2048
 	icon: landscape_rubble.ani
 bldgn.rubble2:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
 		Frames: 37
-		ZOffset: -1024
+		ZOffset: -2048
 	rubble: bits/props.png
 		Frames: 37
-		ZOffset: -1024
+		ZOffset: -2048
 	icon: landscape_rubble.ani
 bldgn.rubble3:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
 		Frames: 38
-		ZOffset: -1024
+		ZOffset: -2048
 	rubble: bits/props.png
 		Frames: 38
-		ZOffset: -1024
+		ZOffset: -2048
 	icon: landscape_rubble.ani
 bldgn.rubble4:
 	Defaults:
 		AddExtension: False
 	idle: bits/props.png
 		Frames: 39
-		ZOffset: -1024
+		ZOffset: -2048
 	rubble: bits/props.png
 		Frames: 39
-		ZOffset: -1024
+		ZOffset: -2048
 	icon: landscape_rubble.ani

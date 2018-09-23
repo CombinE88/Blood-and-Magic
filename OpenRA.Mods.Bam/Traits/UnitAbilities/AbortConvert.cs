@@ -25,7 +25,6 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             if (order.OrderString != "AbortConvert")
                 return;
 
-            self.CancelActivity();
             AbortTransformation(self);
         }
 
@@ -39,6 +38,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                     "transform_reverse",
                     self.Info.TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
 
+            self.CancelActivity();
             self.QueueActivity(new AdvancedTransform(self, "acolyte")
             {
                 Trinket = self.Info.HasTraitInfo<CanHoldTrinketInfo>() ? self.Trait<CanHoldTrinket>().HoldsTrinket : null

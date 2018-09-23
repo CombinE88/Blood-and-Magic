@@ -59,31 +59,25 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 }
             }
 
-            self.World.AddFrameEndTask(w =>
+            var findPos = self.World.Map.FindTilesInCircle(self.Location, 3, false).ToArray();
+            var findEmpty = findPos.Where(c => !info.IgnoreTerrain.Contains(self.World.Map.GetTerrainInfo(c).Type)).ToArray();
+            var findEmptyActor = findEmpty.Where(c =>
+                !self.World.FindActorsInCircle(self.World.Map.CenterOfCell(c), new WDist(265)).Any(a => a.TraitOrDefault<IsTrinket>() != null)
+                && (self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == null || self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == self ||
+                    !self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c).Trait<Building>().Info.UnpathableTiles(c).Any())).ToArray();
+
+            var position = self.ClosestCell(findEmptyActor);
+
+            var td = new TypeDictionary
             {
-                var build = self.World.FindActorsInCircle(self.CenterPosition, new WDist(265))
-                    .FirstOrDefault(a => !a.Equals(self) && a.Trait<Building>() != null && a.Info.TraitInfo<BuildingInfo>().UnpathableTiles(self.Location).Any());
-                var newTrinket = self.World.FindActorsInCircle(self.CenterPosition, new WDist(125)).FirstOrDefault(a => a.Info.HasTraitInfo<IsTrinketInfo>());
+                new ParentActorInit(self),
+                new LocationInit(position),
+                new CenterPositionInit(self.World.Map.CenterOfCell(position)),
+                new OwnerInit(self.Owner)
+            };
 
-                var findPos = self.World.Map.FindTilesInCircle(self.Location, 2, false).ToArray();
-                var findEmpty = findPos.Where(c => info.IgnoreTerrain.Contains(self.World.Map.GetTerrainInfo(c).Type)).ToArray();
-                var findEmptyActor = findEmpty.Where(c =>
-                    self.World.FindActorsInCircle(self.World.Map.CenterOfCell(c), new WDist(265)).All(a => a.TraitOrDefault<IsTrinket>() == null)
-                    && self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == null).ToArray();
-
-                var position = build == null && newTrinket == null ? self.Location : self.ClosestCell(findEmptyActor);
-
-                var td = new TypeDictionary
-                {
-                    new ParentActorInit(self),
-                    new LocationInit(position),
-                    new CenterPositionInit(w.Map.CenterOfCell(position)),
-                    new OwnerInit(self.Owner)
-                };
-
-                if (itemToDrop != null && position != null)
-                    w.CreateActor(itemToDrop, td);
-            });
+            if (itemToDrop != null && position != null)
+                self.World.CreateActor(itemToDrop, td);
         }
     }
 }

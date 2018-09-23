@@ -184,7 +184,7 @@ namespace OpenRA.Mods.Bam.Traits.Activities
                 if (controlgroup.HasValue)
                     w.Selection.AddToControlGroup(a, controlgroup.Value);
 
-                if (UseRallyPoint && RallyPointActor.Trait<RallyPoint>() != null)
+                if (!RallyPointActor.IsDead && RallyPointActor.IsInWorld && UseRallyPoint && RallyPointActor.TraitOrDefault<RallyPoint>() != null)
                 {
                     a.QueueActivity(a.Trait<Mobile>().MoveTo(RallyPointActor.Trait<RallyPoint>().Location, 2));
                     var transOnTime = a.TraitOrDefault<TransformAfterTime>();

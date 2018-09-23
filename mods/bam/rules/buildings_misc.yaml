@@ -1,7 +1,7 @@
 PLATTFORMB:
 	Inherits@: ^CoreBuilding
 	EditorTilesetFilter:
-		Categories: Building
+		Categories: Building Platform
 	-Selectable:
 	Interactable:
 	Building:
@@ -15,13 +15,13 @@ PLATTFORMB:
 		Image: plattformb
 		Palette: bam11195
 	Tooltip:
-		Name: Building Plattform
+		Name: Building Platform
 	AllowTransfrom:
 
 PLATTFORMA:
 	Inherits@: ^CoreBuilding
 	EditorTilesetFilter:
-		Categories: Building
+		Categories: Building Platform
 	-Selectable:
 	Interactable:
 	Building:
@@ -35,7 +35,7 @@ PLATTFORMA:
 		Image: plattforma
 		Palette: bam11195
 	Tooltip:
-		Name: Building Plattform
+		Name: Building Platform
 	AllowTransfrom:
 
 HOSTBLDGN1:
@@ -61,12 +61,10 @@ HOSTBLDGN1:
 		TargetTypes: Default
 	DropTrinketOnDeath:
 		Probability: 100
-	BuildingSpawnRubble:
-		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 	SpawnHostile:
-		InitialDelay: 3000
-		RandomExtraDelay: 500
-		Delay: 2000
+		InitialDelay: 5000
+		RandomExtraDelay: 1000
+		Delay: 4000
 		SpawnActor: paesant
 
 HOSTBLDGN2:
@@ -76,9 +74,9 @@ HOSTBLDGN2:
 	Tooltip:
 		Name: Fortress
 	SpawnHostile:
-		InitialDelay: 8000
-		RandomExtraDelay: 1000
-		Delay: 5000
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 7000
 		SpawnActor: paladin
 
 HOSTBLDGN3:
@@ -88,9 +86,9 @@ HOSTBLDGN3:
 	Tooltip:
 		Name: Barracks
 	SpawnHostile:
-		InitialDelay: 5000
-		RandomExtraDelay: 1000
-		Delay: 3000
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
 		SpawnActor: warrior
 
 HOSTBLDGN4:
@@ -100,9 +98,9 @@ HOSTBLDGN4:
 	Tooltip:
 		Name: Tomb
 	SpawnHostile:
-		InitialDelay: 5000
-		RandomExtraDelay: 1000
-		Delay: 3000
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
 		SpawnActor: zombie
 
 HOSTBLDGN5:
@@ -112,10 +110,125 @@ HOSTBLDGN5:
 	Tooltip:
 		Name: Shooting Range
 	SpawnHostile:
-		InitialDelay: 5000
-		RandomExtraDelay: 1000
-		Delay: 3000
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
 		SpawnActor: ranger
+
+HOSTBLDGN6:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction6
+	Tooltip:
+		Name: Shooting Range
+	SpawnHostile:
+		InitialDelay: 12000
+		RandomExtraDelay: 2300
+		Delay: 6000
+		SpawnActor: wizard
+
+HOSTBLDGN7:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction7
+	Tooltip:
+		Name: Temple
+	SpawnHostile:
+		InitialDelay: 9000
+		RandomExtraDelay: 1800
+		Delay: 4000
+		SpawnActor: cleric
+
+BIGBUILDING1:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: bigbuilding1
+	Tooltip:
+		Name: Castle
+	Health:
+		HP: 9999
+	SpawnHostile:
+		InitialDelay: 20000
+		RandomExtraDelay: 0
+		Delay: 7000
+		SpawnActor: cleric
+	SpawnHostile@2:
+		InitialDelay: 20000
+		RandomExtraDelay: 0
+		Delay: 7000
+		SpawnActor: warrior
+	SpawnHostile@2:
+		InitialDelay: 20000
+		RandomExtraDelay: 0
+		Delay: 7000
+		SpawnActor: warrior
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4,4
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -2024, -2024
+			BottomRight: 2024, 2024
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+BIGBUILDING2:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: bigbuilding2
+	Tooltip:
+		Name: Temple
+	Health:
+		HP: 999
+	-SpawnHostile:
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+BIGBUILDING3:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: bigbuilding3
+	Tooltip:
+		Name: Monastery
+	-SpawnHostile:
+	Health:
+		HP: 999
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+BIGBUILDING4:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: bigbuilding4
+	Tooltip:
+		Name: Dome
+	Health:
+		HP: 999
+	-SpawnHostile:
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1512, -1512
+			BottomRight: 1512, 1512
+	BuildingSpawnRubble:
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 
 PlayerWall:
 	Inherits@: ^CoreWall
@@ -145,6 +258,14 @@ NeutralWall:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
+
+InduWallWall:
+	Inherits@: ^CoreWall
+	RenderSprites:
+		Image: induwall
+		Palette: bam11195
+	Tooltip:
+		Name: Indestructible Wall
 
 CIVBUILD1:
 	Inherits@: ^CivilianHouse

@@ -77,11 +77,11 @@
 	RenderSprites:
 		Palette: bam11195
 	DropTrinketOnDeath@first:
-		Probability: 33
+		Probability: 100
 	DropTrinketOnDeath@second:
-		Probability: 25
+		Probability: 100
 	DropTrinketOnDeath@third:
-		Probability: 20
+		Probability: 100
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 

@@ -40,7 +40,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private ConvertToWallButtonWidget wallbutton;
         private KillSelfWidget terminate;
         private SecondAbilityButtonWidget secondabilityButton;
-        private BamRadarWidget radar;
+        private SideBarRadarBackgroundWidget radar;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
@@ -269,7 +269,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public void CreateBackground()
         {
             // Minimap
-            AddChild(radar = new BamRadarWidget(BamUi));
+            AddChild(radar = new SideBarRadarBackgroundWidget(BamUi));
 
             // Background Health Frame
             AddChild(new SideBarBackgroundWidget(BamUi, 0, 200, 4, 734, 152, 17));

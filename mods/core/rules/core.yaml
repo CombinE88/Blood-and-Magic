@@ -49,9 +49,6 @@
 	# Add building specific logic to Constructions.
 	Building:
 		TerrainTypes: Clear, Road, Path # TODO implement final ones, when tilesets are added!
-	# Constructions can be targeted by anything which attacks ground.
-	Targetable:
-		TargetTypes: Ground
 	# In general all constructions can be selected.
 	Selectable:
 	# Constructions have sprites but do not use facing for them.
@@ -75,9 +72,6 @@
 	# Group all buildings in the map editor.
 	EditorTilesetFilter:
 		Categories: Building
-	# Should not be auto attacked.
-	Targetable@NoAutoAttack:
-		TargetTypes: Default
 	AttackNotification:
 		Notifications: BuildingUnderAttack
 
@@ -103,9 +97,6 @@
 		Categories: Walls
 	# Wall will use the standard unit healthbar.
 	SelectionDecorations:
-	# Should not be auto attacked.
-	Targetable@NoAutoAttack:
-		TargetTypes: Default
 
 # Base for all infantry.
 ^CoreInfantry:

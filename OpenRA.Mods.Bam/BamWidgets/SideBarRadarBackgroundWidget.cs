@@ -7,27 +7,31 @@ namespace OpenRA.Mods.Bam.BamWidgets
 {
     public class SideBarRadarBackgroundWidget : Widget
     {
-        private Sprite sheet;
 
         public int PosX = 0;
         public int PosY = 0;
+        private Sheet radarsheet;
+        private Sprite radarBG;
+        private BamUIWidget bamUi;
 
-        public SideBarRadarBackgroundWidget(Sprite sheet, int posX, int posy)
+        public SideBarRadarBackgroundWidget(BamUIWidget bamUi)
         {
-            this.sheet = sheet;
+            this.bamUi = bamUi;
 
-            PosX = posX;
-            PosY = posy;
+            // RadarBG
+            radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
+            radarBG = new Sprite(radarsheet, new Rectangle(0, 0, 172, 150), TextureChannel.RGBA);
         }
 
         public override void Tick()
         {
-            Bounds = new Rectangle(PosX, PosY, sheet.Bounds.Width, sheet.Bounds.Height);
+            Bounds = new Rectangle(5, 30, radarBG.Bounds.Width, radarBG.Bounds.Height);
         }
 
         public override void Draw()
         {
-            WidgetUtils.DrawRGBA(sheet, new float2(RenderBounds.X, RenderBounds.Y));
+            WidgetUtils.DrawRGBA(radarBG,
+                new float2(RenderBounds.X + RenderBounds.Width / 2 - radarBG.Bounds.Width / 2, RenderBounds.Y + RenderBounds.Height / 2 - radarBG.Bounds.Height / 2));
         }
     }
 }

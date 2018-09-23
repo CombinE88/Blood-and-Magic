@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -38,22 +39,12 @@ namespace OpenRA.Mods.Bam.Traits
         private SpawnHostileInfo info;
         private List<Player> players = new List<Player>();
         private Player currentPlayer;
-        private int startingCash = 8000;
 
         private HashSet<Actor> idles = new HashSet<Actor>();
 
         public SpawnHostile(Actor self, SpawnHostileInfo info)
         {
             this.info = info;
-            foreach (var player in self.World.Players)
-            {
-                if (player.PlayerReference.Playable && player.WinState == WinState.Undefined && !player.Spectating)
-                    players.Add(player);
-            }
-
-            players.Sort();
-            currentPlayer = players[self.World.SharedRandom.Next(0, players.Count)];
-            nextMaxCount = self.World.SharedRandom.Next(info.Delay, info.Delay + info.RandomExtraDelay);
         }
 
         void CyclePlayers()
@@ -95,10 +86,9 @@ namespace OpenRA.Mods.Bam.Traits
 
         void ITick.Tick(Actor self)
         {
-            if (initDelay < startingCash)
+            if (initDelay < info.InitialDelay)
             {
                 initDelay++;
-                Game.AddChatLine(Color.Aqua, "test: ", startingCash - initDelay + "");
                 return;
             }
 
@@ -119,6 +109,28 @@ namespace OpenRA.Mods.Bam.Traits
         {
             if (!self.Owner.PlayerActor.TraitOrDefault<ITechTreePrerequisite>().ProvidesPrerequisites.Contains("CreepHostile"))
                 self.Dispose();
+
+            foreach (var player in self.World.Players)
+            {
+                if (!player.IsBot && player.WinState == WinState.Undefined && !player.Spectating && !player.NonCombatant)
+                    players.Add(player);
+            }
+
+            var playCount = players.Count;
+            List<Player> newPlayers = new List<Player>();
+            for (int i = 0; i < playCount; i++)
+            {
+                var rnd = self.World.SharedRandom.Next(0, players.Count);
+                newPlayers.Add(players[rnd]);
+                players.Remove(players[rnd]);
+            }
+
+            foreach (var player in newPlayers)
+            {
+                players.Add(player);
+            }
+
+            currentPlayer = players[self.World.SharedRandom.Next(0, players.Count)];
         }
     }
 }

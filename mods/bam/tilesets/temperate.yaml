@@ -776,6 +776,88 @@ Templates:
 		Categories: Swamp
 		Tiles:
 			0: Swamp
+	Template@720:
+		Id: 720
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 260
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@721:
+		Id: 721
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 291
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@722:
+		Id: 722
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 261
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@723:
+		Id: 723
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 280
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@724:
+		Id: 724
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 64,65
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+			1: Swamp
+	Template@725:
+		Id: 725
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 281
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@726:
+		Id: 726
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 270
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@727:
+		Id: 727
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 290
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@728:
+		Id: 728
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 271
+		Categories: Swamp
+		Tiles:
+			0: Swamp
 	Template@73:
 		Id: 73
 		Images: bits/temperate.png
@@ -809,6 +891,42 @@ Templates:
 		Size: 1,1
 		PickAny: True
 		Frames: 95
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@760:
+		Id: 760
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 282
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@761:
+		Id: 761
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 283
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@762:
+		Id: 762
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 292
+		Categories: Swamp
+		Tiles:
+			0: Swamp
+	Template@763:
+		Id: 763
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 293
 		Categories: Swamp
 		Tiles:
 			0: Swamp
@@ -1037,7 +1155,7 @@ Templates:
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 210,230
+		Frames: 210,220
 		Categories: Foliage
 		Tiles:
 			0: Foliage
@@ -1087,6 +1205,88 @@ Templates:
 		Size: 1,1
 		PickAny: True
 		Frames: 233
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1061:
+		Id: 1061
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 264
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1062:
+		Id: 1062
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 295
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1063:
+		Id: 1063
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 265
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1064:
+		Id: 1064
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 284
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1065:
+		Id: 1065
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 48, 49
+		Categories: Foliage
+		Tiles:
+			0: RoughGround
+			1: RoughGround
+	Template@1066:
+		Id: 1066
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 285
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1067:
+		Id: 1067
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 274
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1068:
+		Id: 1068
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 294
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1069:
+		Id: 1069
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 275
 		Categories: Foliage
 		Tiles:
 			0: Foliage
@@ -1289,3 +1489,105 @@ Templates:
 		Categories: Foliage
 		Tiles:
 			0: Road
+	Template@1270:
+		Id: 1270
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 263
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@1271:
+		Id: 1271
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 262
+		Categories: Foliage
+		Tiles:
+			0: Road
+	Template@1272:
+		Id: 1272
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 258
+		Categories: Foliage
+		Tiles:
+			0: Road
+
+
+	Template@1273:
+		Id: 1273
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 241
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1274:
+		Id: 1274
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 242
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1275:
+		Id: 1275
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 251
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@1276:
+		Id: 1276
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 252
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+
+	Template@2277:
+		Id: 2277
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 218
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@2278:
+		Id: 2278
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 219
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@2279:
+		Id: 2279
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 238
+		Categories: Foliage
+		Tiles:
+			0: Foliage
+	Template@2280:
+		Id: 2280
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 239
+		Categories: Foliage
+		Tiles:
+			0: Foliage

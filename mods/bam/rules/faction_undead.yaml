@@ -56,6 +56,7 @@ HQ.EVIL:
 		Offset: 0, 3
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+	GeneratesExperience:
 
 CRYPT:
 	Inherits@: ^Building
@@ -85,6 +86,7 @@ CRYPT:
 		Offset: 0, 0
 	ChangeImageOnTheatre:
 	Terminate:
+	GeneratesExperience:
 
 ARBORLODGE:
 	Inherits@: ^Building
@@ -114,6 +116,7 @@ ARBORLODGE:
 		Offset: 0, 0
 	ChangeImageOnTheatre:
 	Terminate:
+	GeneratesExperience:
 
 ZOMBIE:
 	Inherits@1: ^Walker

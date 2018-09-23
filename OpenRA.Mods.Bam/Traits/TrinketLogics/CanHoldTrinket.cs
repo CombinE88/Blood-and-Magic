@@ -122,10 +122,17 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             if (newTrinket == null)
             {
+                if (HoldsTrinket != null)
+                {
+                    var trinketInfoOld = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
+                    if (trinketInfoOld != null && trinketInfoOld.ContiniusEffect && !info.CannotUse.Contains(trinketInfoOld.TrinketType))
+                        ContiniusEffect(trinketInfoOld);
+                }
+
                 return;
             }
 
-            if (newTrinket.Trait<IsTrinket>() != null && newTrinket.Info.TraitInfo<IsTrinketInfo>().EffectOnPickup)
+            if (newTrinket.TraitOrDefault<IsTrinket>() != null && newTrinket.Info.TraitInfo<IsTrinketInfo>().EffectOnPickup)
             {
                 EffectOnPickup(newTrinket.Info.TraitInfo<IsTrinketInfo>(), newTrinket);
                 return;
@@ -140,7 +147,6 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             self.World.Remove(newTrinket);
 
             var trinketInfo = HoldsTrinket.Info.TraitInfoOrDefault<IsTrinketInfo>();
-
             if (trinketInfo != null && trinketInfo.ContiniusEffect && !info.CannotUse.Contains(trinketInfo.TrinketType))
                 ContiniusEffect(trinketInfo);
         }

@@ -19,19 +19,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
 		private readonly Sprite terrainSprite;
 		private readonly Sprite shroudSprite;
 
-		private int Size = 2;
-		private readonly Sheet radarsheet;
-		private readonly Sprite radarBG;
+		private int Size = 3;
 
 		public Stance ShowStances { get; set; }
 
 		public BamRadarWidget(BamUIWidget ingameUi)
 		{
 			this.ingameUi = ingameUi;
-
-			// RadarBG
-			radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
-			radarBG = new Sprite(radarsheet, new Rectangle(0, 0, 172, 150), TextureChannel.RGBA);
 
 			radarSheet = new Sheet(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
 			radarSheet.CreateBuffer();
@@ -42,7 +36,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
 			DrawTerrain();
 
-			Visible = false;
+			Visible = true;
 		}
 
 		private void DrawTerrain()
@@ -135,10 +129,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            Bounds = new Rectangle(25, 35, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
+            Bounds = new Rectangle(0, 0, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
             UpdateShroud();
-
-            WidgetUtils.DrawRGBA(radarBG, new float2(RenderBounds.X + RenderBounds.Width / 2 - radarBG.Bounds.Width / 2, RenderBounds.Y + RenderBounds.Height / 2 - radarBG.Bounds.Height / 2));
 
             // WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);
 

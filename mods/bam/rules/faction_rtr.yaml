@@ -56,6 +56,7 @@ HQ.GOOD:
 		Offset: 0, 3
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+	GeneratesExperience:
 
 
 BARRACKS:
@@ -86,6 +87,7 @@ BARRACKS:
 		Offset: 0, 0
 	ChangeImageOnTheatre:
 	Terminate:
+	GeneratesExperience:
 
 RUNESTONE:
 	Inherits@: ^Building
@@ -115,6 +117,7 @@ RUNESTONE:
 		Offset: 0, 0
 	ChangeImageOnTheatre:
 	Terminate:
+	GeneratesExperience:
 
 WARRIOR:
 	Inherits@1: ^Walker

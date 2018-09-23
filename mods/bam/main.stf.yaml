@@ -32,6 +32,7 @@ building_icon: 2720:0
 trees_icon: 2686:0
 rocks_icon: 2684:0
 wall_icon: 2722:0
+induwall_icon: 2730:0
 
 transform_wall_icon: 2724:0-1
 

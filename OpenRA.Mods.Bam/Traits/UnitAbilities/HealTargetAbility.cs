@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Mods.Bam.Traits.PlayerTraits;
 using OpenRA.Mods.Bam.Traits.Render;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common.Effects;
@@ -84,6 +85,9 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             CurrentDelay = 0;
 
             target.InflictDamage(target, new Damage(-info.Ammount, new BitSet<DamageType>("Healing")));
+            var exp = target.Owner.PlayerActor.TraitOrDefault<DungeonsAndDragonsExperience>();
+            if (exp != null)
+                exp.Experience += info.Ammount;
 
             foreach (var trait in self.TraitsImplementing<WithAbilityAnimation>())
             {
@@ -128,7 +132,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && (a.Location - self.Location).Length < info.Range
                 && a.TraitOrDefault<Health>().HP < a.TraitOrDefault<Health>().MaxHP
                 && a.Owner.IsAlliedWith(self.Owner)
-                && pr.Cash + pr.Resources >= info.Ammount
+                && (pr.Cash + pr.Resources >= info.Ammount || self.Owner.PlayerName == "Creeps")
                 && a.TraitOrDefault<DungeonsAndDragonsStats>() != null
                 && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Alive"));
 
