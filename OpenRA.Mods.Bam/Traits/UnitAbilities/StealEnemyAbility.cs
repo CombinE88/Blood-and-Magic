@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using OpenRA.Mods.Bam.Traits.Render;
+using OpenRA.Mods.Bam.Traits.RPGTraits;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -129,7 +131,8 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || hp == null
                 || (target.Location - self.Location).Length > range
                 || target.Owner.IsAlliedWith(self.Owner)
-                || pr.Cash + pr.Resources < ammount)
+                || pr.Cash + pr.Resources < ammount
+                || (target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>() != null && target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Immune")))
                 return false;
 
             return true;

@@ -269,7 +269,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public void CreateBackground()
         {
             // Minimap
-            AddChild(radar = new SideBarRadarBackgroundWidget(BamUi));
+            AddChild(radar = new SideBarRadarBackgroundWidget(BamUi) { Parent = this });
 
             // Background Health Frame
             AddChild(new SideBarBackgroundWidget(BamUi, 0, 200, 4, 734, 152, 17));

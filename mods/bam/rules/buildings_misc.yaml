@@ -56,7 +56,7 @@ HOSTBLDGN1:
 	Tooltip:
 		Name: Town Hall
 	Health:
-		HP: 550
+		HP: 450
 	Targetable:
 		TargetTypes: Default
 	DropTrinketOnDeath:
@@ -76,9 +76,8 @@ HOSTBLDGN2:
 	SpawnHostile:
 		InitialDelay: 16000
 		RandomExtraDelay: 2000
-		Delay: 7000
+		Delay: 5000
 		SpawnActor: paladin
-
 HOSTBLDGN3:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
@@ -90,43 +89,39 @@ HOSTBLDGN3:
 		RandomExtraDelay: 2000
 		Delay: 5000
 		SpawnActor: warrior
-
 HOSTBLDGN4:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction4
 	Tooltip:
-		Name: Tomb
+		Name: Crypt
 	SpawnHostile:
 		InitialDelay: 10000
 		RandomExtraDelay: 2000
 		Delay: 5000
 		SpawnActor: zombie
-
 HOSTBLDGN5:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction5
 	Tooltip:
-		Name: Shooting Range
+		Name: Arbor Lodge
 	SpawnHostile:
 		InitialDelay: 10000
 		RandomExtraDelay: 2000
 		Delay: 5000
 		SpawnActor: ranger
-
 HOSTBLDGN6:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction6
 	Tooltip:
-		Name: Shooting Range
+		Name: Rune Stone
 	SpawnHostile:
-		InitialDelay: 12000
-		RandomExtraDelay: 2300
-		Delay: 6000
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
 		SpawnActor: wizard
-
 HOSTBLDGN7:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
@@ -134,34 +129,196 @@ HOSTBLDGN7:
 	Tooltip:
 		Name: Temple
 	SpawnHostile:
-		InitialDelay: 9000
-		RandomExtraDelay: 1800
-		Delay: 4000
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
 		SpawnActor: cleric
+HOSTBLDGN8:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction8
+	Tooltip:
+		Name: Rune Stone
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: wizard
+HOSTBLDGN9:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction9
+	Tooltip:
+		Name: Barracks
+	SpawnHostile:
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: warrior
+HOSTBLDGN10:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction10
+	Tooltip:
+		Name: Rune Stone
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: wizard
+HOSTBLDGN11:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction11
+	Tooltip:
+		Name: Crypt
+	SpawnHostile:
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: zombie
+HOSTBLDGN12:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction12
+	Tooltip:
+		Name: Rune Stone
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: wizard
+HOSTBLDGN13:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction13
+	Tooltip:
+		Name: Temple
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: cleric
+HOSTBLDGN14:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction14
+	Tooltip:
+		Name: Crypt
+	SpawnHostile:
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: ghoul
+HOSTBLDGN15:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction15
+	Tooltip:
+		Name: Crypt
+	SpawnHostile:
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: ghoul
+HOSTBLDGN16:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction16
+	Tooltip:
+		Name: Temple
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: cleric
+HOSTBLDGN17:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction17
+	Tooltip:
+		Name: Rune Stone
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: wizard
+HOSTBLDGN18:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction18
+	Tooltip:
+		Name: Rune Stone
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: wizard
+HOSTBLDGN19:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction19
+	Tooltip:
+		Name: Crypt
+	SpawnHostile:
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: zombie
+HOSTBLDGN20:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction20
+	Tooltip:
+		Name: Arbor Lodge
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: druid
+HOSTBLDGN21:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction21
+	Tooltip:
+		Name: Barracks
+	SpawnHostile:
+		InitialDelay: 10000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: warrior
+HOSTBLDGN22:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction22
+	Tooltip:
+		Name: Temple
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: cleric
+HOSTBLDGN23:
+	Inherits@: HOSTBLDGN1
+	RenderSprites:
+		Image: civproduction23
+	Tooltip:
+		Name: Arbor Lodge
+	SpawnHostile:
+		InitialDelay: 16000
+		RandomExtraDelay: 2000
+		Delay: 5000
+		SpawnActor: druid
 
 BIGBUILDING1:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding1
+	-SpawnHostile:
 	Tooltip:
 		Name: Castle
 	Health:
-		HP: 9999
-	SpawnHostile:
-		InitialDelay: 20000
-		RandomExtraDelay: 0
-		Delay: 7000
-		SpawnActor: cleric
-	SpawnHostile@2:
-		InitialDelay: 20000
-		RandomExtraDelay: 0
-		Delay: 7000
-		SpawnActor: warrior
-	SpawnHostile@2:
-		InitialDelay: 20000
-		RandomExtraDelay: 0
-		Delay: 7000
-		SpawnActor: warrior
+		HP: 999
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
@@ -171,16 +328,16 @@ BIGBUILDING1:
 			TopLeft: -2024, -2024
 			BottomRight: 2024, 2024
 	BuildingSpawnRubble:
-		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4, bldgn.rubble5, bldgn.rubble6
 BIGBUILDING2:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding2
+	-SpawnHostile:
 	Tooltip:
 		Name: Temple
 	Health:
 		HP: 999
-	-SpawnHostile:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -190,14 +347,14 @@ BIGBUILDING2:
 			TopLeft: -1512, -1512
 			BottomRight: 1512, 1512
 	BuildingSpawnRubble:
-		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4, bldgn.rubble5, bldgn.rubble6
 BIGBUILDING3:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding3
+	-SpawnHostile:
 	Tooltip:
 		Name: Monastery
-	-SpawnHostile:
 	Health:
 		HP: 999
 	Building:
@@ -209,16 +366,16 @@ BIGBUILDING3:
 			TopLeft: -1512, -1512
 			BottomRight: 1512, 1512
 	BuildingSpawnRubble:
-		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4, bldgn.rubble5, bldgn.rubble6
 BIGBUILDING4:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding4
+	-SpawnHostile:
 	Tooltip:
 		Name: Dome
 	Health:
 		HP: 999
-	-SpawnHostile:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -228,7 +385,7 @@ BIGBUILDING4:
 			TopLeft: -1512, -1512
 			BottomRight: 1512, 1512
 	BuildingSpawnRubble:
-		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
+		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4, bldgn.rubble5, bldgn.rubble6
 
 PlayerWall:
 	Inherits@: ^CoreWall
@@ -246,7 +403,11 @@ PlayerWall:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
-
+	Targetable:
+		TargetTypes: Default
+	WithWallSpriteBody:
+		Type: player
+		
 NeutralWall:
 	Inherits@: ^CoreWall
 	RenderSprites:
@@ -258,6 +419,26 @@ NeutralWall:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
+	Targetable:
+		TargetTypes: Default
+	WithWallSpriteBody:
+		Type: nature
+
+NeutralWall2:
+	Inherits@: ^CoreWall
+	RenderSprites:
+		Image: nwall2
+		Palette: bam11195
+	Health:
+		HP: 350
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+	Targetable:
+		TargetTypes: Default
+	WithWallSpriteBody:
+		Type: nature2
 
 InduWallWall:
 	Inherits@: ^CoreWall
@@ -266,6 +447,9 @@ InduWallWall:
 		Palette: bam11195
 	Tooltip:
 		Name: Indestructible Wall
+	WithWallSpriteBody:
+		Type: infinite
+
 
 CIVBUILD1:
 	Inherits@: ^CivilianHouse

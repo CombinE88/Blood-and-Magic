@@ -162,6 +162,9 @@
 		BasePalette: bam11195
 		BaseName: BamPlayer
 		RemapIndex: 192, 193, 194, 195, 196, 197, 198, 199
+	RotationPaletteEffect@water:
+		RotationBase: 235
+		RotationRange: 5
 	PaletteFromPal@banplayer:
 		Name: banplayer
 		Filename: 11195.pal

@@ -53,6 +53,9 @@ explosion:
 	electric_sphere_effect: electric_sphere_effect.ani
 	teleport_effect: teleport_effect.ani
 	blood_effect: blood_effect.ani
+	effect_fire: effect_fire.ani
+	effect_eternalfire: effect_eternalfire.ani
+	effect_eternalfire_explosion: effect_eternalfire_explosion.ani
 
 effects:
 	leaves: effect_leaves.ani

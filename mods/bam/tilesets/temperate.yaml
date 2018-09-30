@@ -245,11 +245,13 @@ Templates:
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 46,47
+		Frames: 46,47,48,49
 		Categories: Rough Ground
 		Tiles:
 			0: RoughGround
 			1: RoughGround
+			2: RoughGround
+			3: RoughGround
 	Template@16:
 		Id: 16
 		Images: bits/temperate.png
@@ -526,36 +528,37 @@ Templates:
 	Template@46:
 		Id: 46
 		Images: bits/temperate.png
-		Size: 1,1
-		PickAny: True
-		Frames: 3
+		Size: 1,2
+		Frames: 2,12
 		Categories: Framland
 		Tiles:
 			0: Farmland
+			1: Farmland
 	Template@47:
 		Id: 47
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 4
+		Frames: 3,4
 		Categories: Framland
 		Tiles:
 			0: Farmland
+			1: Farmland
 	Template@48:
 		Id: 48
 		Images: bits/temperate.png
-		Size: 1,1
-		PickAny: True
-		Frames: 5
+		Size: 1,2
+		Frames: 5,15
 		Categories: Framland
 		Tiles:
 			0: Farmland
+			1: Farmland
 	Template@49:
 		Id: 49
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 12, 22
+		Frames: 22, 32
 		Categories: Framland
 		Tiles:
 			0: Farmland
@@ -565,7 +568,7 @@ Templates:
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 13, 14
+		Frames: 23, 33
 		Categories: Framland
 		Tiles:
 			0: Farmland
@@ -575,7 +578,7 @@ Templates:
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 15,25
+		Frames: 25,35
 		Categories: Framland
 		Tiles:
 			0: Farmland
@@ -610,19 +613,18 @@ Templates:
 	Template@55:
 		Id: 55
 		Images: bits/temperate.png
-		Size: 1,1
-		PickAny: True
-		Frames: 152, 161
+		Size: 2,1
+		Frames: 152, 153
 		Categories: Framland
 		Tiles:
-			0: Farmland
+			0: Dirt
 			1: Farmland
 	Template@56:
 		Id: 56
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 153,154
+		Frames: 154,155
 		Categories: Framland
 		Tiles:
 			0: Farmland
@@ -630,13 +632,12 @@ Templates:
 	Template@57:
 		Id: 57
 		Images: bits/temperate.png
-		Size: 1,1
-		PickAny: True
-		Frames: 157, 168
+		Size: 2,1
+		Frames: 156, 157
 		Categories: Framland
 		Tiles:
 			0: Farmland
-			1: Farmland
+			1: Dirt
 	Template@58:
 		Id: 58
 		Images: bits/temperate.png
@@ -668,18 +669,18 @@ Templates:
 	Template@61:
 		Id: 61
 		Images: bits/temperate.png
-		Size: 1,1
-		PickAny: True
-		Frames: 192
+		Size: 2,1
+		Frames: 192, 193
 		Categories: Framland
 		Tiles:
-			0: Farmland
+			0: Dirt
+			1: Farmland
 	Template@62:
 		Id: 62
 		Images: bits/temperate.png
 		Size: 1,1
 		PickAny: True
-		Frames: 193,194
+		Frames: 194,195
 		Categories: Framland
 		Tiles:
 			0: Farmland
@@ -687,12 +688,12 @@ Templates:
 	Template@63:
 		Id: 63
 		Images: bits/temperate.png
-		Size: 1,1
-		PickAny: True
-		Frames: 197
+		Size: 2,1
+		Frames: 196,197
 		Categories: Framland
 		Tiles:
 			0: Farmland
+			1: Dirt
 
 	Template@64:
 		Id: 64

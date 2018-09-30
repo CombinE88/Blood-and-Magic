@@ -65,7 +65,7 @@ CAPSULE:
 		Damage: 0
 		Armor: 4
 		Speed: 0
-		Attributes: Alive
+		Attributes: Alive, Immune
 	WithImpactAnimation:
 	Mobile:
 		Speed: 1
@@ -108,7 +108,7 @@ STONEGOLEM:
 		Armor: 5
 		Speed: 1
 		CanbeModified: false
-		Attributes: Elemental
+		Attributes: Elemental, Immune
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 2
@@ -138,11 +138,11 @@ WOLF:
 		Image: wolf
 	Armament:
 		Weapon: CloseCombatClaw
-		Attributes: Alive, Animal
 	DungeonsAndDragonsStats:
 		Damage: 3
 		Armor: 1
 		Speed: 4
+		Attributes: Alive, Animal, Immune
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 3
@@ -152,6 +152,112 @@ WOLF:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7228.wav
+
+BANSHEE:
+	Inherits@1: ^Floater
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 15
+	Tooltip:
+		Name: Banshee
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: banshee
+	Armament:
+		Weapon: CloseCombatClaw
+	DungeonsAndDragonsStats:
+		Damage: 2
+		Armor: 2
+		Speed: 1
+		Attributes: Animal, Evil, Alive, Immune
+	WithImpactAnimation:
+	AttackWander:
+		WanderMoveRadius: 2
+		MinMoveDelay: 100
+		MaxMoveDelay: 400
+	-CanHoldTrinket:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7246.wav
+
+TROLL:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 15
+	Tooltip:
+		Name: Troll
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: troll
+	Armament:
+		Weapon: CloseCombatClub
+	DungeonsAndDragonsStats:
+		Damage: 5
+		Armor: 3
+		Speed: 2
+		CanbeModified: false
+		Attributes: Humanoid, Alive, Immune
+	WithImpactAnimation:
+	AttackWander:
+		WanderMoveRadius: 2
+		MinMoveDelay: 100
+		MaxMoveDelay: 400
+	-CanHoldTrinket:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7228.wav
+
+GUARDIAN:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 15
+	Tooltip:
+		Name: Guardian
+	Health:
+		HP: 50
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: guardian
+	Armament:
+		Weapon: RangedGuardianEternal
+	DungeonsAndDragonsStats:
+		Damage: 8
+		Armor: 5
+		Speed: 2
+		CanbeModified: false
+		Attributes: Humanoid, Alive, Immune
+	WithImpactAnimation:
+	-CanHoldTrinket:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7324.wav
 
 PAESANT:
 	Inherits@1: ^Walker
@@ -178,6 +284,7 @@ PAESANT:
 		Damage: 2
 		Armor: 1
 		Speed: 3
+		Attributes: Humanoid, Alive, Immune
 	WithImpactAnimation:
 	Wanders:
 		WanderMoveRadius: 7

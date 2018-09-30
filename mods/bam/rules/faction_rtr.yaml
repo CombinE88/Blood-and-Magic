@@ -144,6 +144,7 @@ WARRIOR:
 		Damage: 4
 		Armor: 2
 		Speed: 2
+		Attributes: Alive, Humanoid
 	WithImpactAnimation:
 	Researchable:
 		Class: paladin
@@ -178,6 +179,7 @@ RANGER:
 		Damage: 4
 		Armor: 2
 		Speed: 3
+		Attributes: Alive, Humanoid
 	Researchable:
 		Class: ranger
 		TransformTime: 35
@@ -288,7 +290,7 @@ GRIFFIN:
 		Damage: 5
 		Armor: 3
 		Speed: 2
-		Attributes: Alive, Flying
+		Attributes: Alive, Flying, Animal
 	Researchable:
 		Class: griffin
 		TransformTime: 45

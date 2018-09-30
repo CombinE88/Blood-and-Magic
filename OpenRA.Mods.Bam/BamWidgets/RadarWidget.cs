@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,50 +11,54 @@ using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets
 {
-	public class BamRadarWidget : Widget
-	{
-		private readonly BamUIWidget ingameUi;
+    public class BamRadarWidget : Widget
+    {
+        private readonly BamUIWidget ingameUi;
 
-		private readonly Sheet radarSheet;
-		private readonly byte[] radarData;
-		private readonly Sprite terrainSprite;
-		private readonly Sprite shroudSprite;
+        private readonly Sheet radarSheet;
+        private readonly byte[] radarData;
+        private readonly Sprite terrainSprite;
+        private readonly Sprite shroudSprite;
 
-		private int Size = 3;
+        private int Size = 1;
+        private SideBarRadarBackgroundWidget back;
 
-		public Stance ShowStances { get; set; }
+        public Stance ShowStances { get; set; }
 
-		public BamRadarWidget(BamUIWidget ingameUi)
-		{
-			this.ingameUi = ingameUi;
+        public BamRadarWidget(BamUIWidget ingameUi, SideBarRadarBackgroundWidget back)
+        {
+            this.ingameUi = ingameUi;
+            this.back = back;
 
-			radarSheet = new Sheet(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
-			radarSheet.CreateBuffer();
-			radarData = radarSheet.GetData();
+            radarSheet = new Sheet(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
+            radarSheet.CreateBuffer();
+            radarData = radarSheet.GetData();
 
-			terrainSprite = new Sprite(radarSheet, new Rectangle(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
-			shroudSprite = new Sprite(radarSheet, new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
+            terrainSprite = new Sprite(radarSheet, new Rectangle(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
+            shroudSprite = new Sprite(radarSheet, new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
 
-			DrawTerrain();
+            DrawTerrain();
 
-			Visible = true;
-		}
+            Visible = true;
 
-		private void DrawTerrain()
-		{
-			// TODO instead of using this colors, try a correct thumbnail variant.
-			for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
-			{
-				for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
-				{
-					var type = ingameUi.World.Map.Rules.TileSet.GetTileInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
-					radarData[(y * radarSheet.Size.Width + x) * 4] = type.LeftColor.B;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.LeftColor.G;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.LeftColor.R;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
-				}
-			}
-		}
+            Size = Math.Max(back.RenderBounds.Width, back.RenderBounds.Height) / Math.Max(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y);
+        }
+
+        private void DrawTerrain()
+        {
+            // TODO instead of using this colors, try a correct thumbnail variant.
+            for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
+            {
+                for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
+                {
+                    var type = ingameUi.World.Map.Rules.TileSet.GetTileInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
+                    radarData[(y * radarSheet.Size.Width + x) * 4] = type.LeftColor.B;
+                    radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.LeftColor.G;
+                    radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.LeftColor.R;
+                    radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
+                }
+            }
+        }
 
         private void UpdateShroud()
         {
@@ -129,7 +134,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            Bounds = new Rectangle(0, 0, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
+            Bounds = new Rectangle(back.RenderBounds.Width / 2 - ingameUi.World.Map.MapSize.X * Size / 2, back.RenderBounds.Height / 2 - ingameUi.World.Map.MapSize.Y * Size / 2, ingameUi.World.Map.MapSize.X * Size,
+                ingameUi.World.Map.MapSize.Y * Size);
             UpdateShroud();
 
             // WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);

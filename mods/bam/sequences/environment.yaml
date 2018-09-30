@@ -1,0 +1,416 @@
+
+statue1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 0
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 1
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue2:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 2
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 3
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue3:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 4
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 5
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue4:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 6
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 7
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue5:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 8
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 9
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue6:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 10
+		Offset: 0, -10
+	rubble: bits/1x1buildings.png
+		Frames: 11
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue7:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 10
+		Offset: 0, -10
+	rubble: bits/props.png
+		Frames: 25
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+statue8:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 15
+		Offset: 0, -10
+	rubble: bits/props.png
+		Frames: 24
+		ZOffset: -2048
+		Offset: 0, -10
+	icon: monument_icon.ani
+
+graveston1:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 16
+		Offset: 0, -10
+	icon: monument_icon.ani
+graveston2:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 17
+		Offset: 0, -10
+	icon: monument_icon.ani
+graveston3:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 18
+		Offset: 0, -10
+	icon: monument_icon.ani
+graveston4:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 19
+		Offset: 0, -10
+	icon: monument_icon.ani
+
+
+green01:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 11
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green02:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 12
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green03:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 13
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green04:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 14
+		Offset: 0, -10
+	icon: trees_icon.ani
+	rubble: bits/props.png
+		Frames: 26
+		ZOffset: -2048
+		Offset: 0, -10
+green05:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 3
+		Offset: 0, -10
+	icon: trees_icon.ani
+green06:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 4
+		Offset: 0, -10
+	icon: trees_icon.ani
+green07:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 9
+		Offset: 0, -10
+	icon: trees_icon.ani
+green08:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 19
+		Offset: 0, -10
+	icon: trees_icon.ani
+green09:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 29
+		Offset: 0, -10
+	icon: trees_icon.ani
+green10:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 39
+		Offset: 0, -10
+	icon: trees_icon.ani
+
+green11:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 15
+		Offset: 0, -10
+		ZOffset: -1024
+	icon: 2658.ani
+green12:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 16
+		ZOffset: -1024
+	icon: 2658.ani
+green13:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 17
+		ZOffset: -1024
+	icon: 2658.ani
+green14:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 27
+		ZOffset: -1024
+	icon: 2658.ani
+green15:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 0
+		Offset: 0, -10
+	icon: trees_icon.ani
+
+rock1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 5
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock2:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 18
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock3:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 25
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock4:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 26
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock5:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 28
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock6:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 38
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock7:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 23
+		Offset: 0, -10
+	icon: rocks_icon.ani
+rock8:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 24
+		Offset: 0, -10
+	icon: rocks_icon.ani
+
+barrels1:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 12
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels2:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 13
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels3:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 14
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels4:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1buildings.png
+		Frames: 15
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels5:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 34
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+barrels6:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 35
+	rubble: bits/1x1buildings.png
+		Frames: 16
+		ZOffset: -2048
+	icon: monument_icon.ani
+
+bldgn.rubble1:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 36
+		ZOffset: -2048
+	rubble: bits/props.png
+		Frames: 36
+		ZOffset: -2048
+	icon: landscape_rubble.ani
+bldgn.rubble2:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 37
+		ZOffset: -2048
+	rubble: bits/props.png
+		Frames: 37
+		ZOffset: -2048
+	icon: landscape_rubble.ani
+bldgn.rubble3:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 38
+		ZOffset: -2048
+	rubble: bits/props.png
+		Frames: 38
+		ZOffset: -2048
+	icon: landscape_rubble.ani
+bldgn.rubble4:
+	Defaults:
+		AddExtension: False
+	idle: bits/props.png
+		Frames: 39
+		ZOffset: -2048
+	rubble: bits/props.png
+		Frames: 39
+		ZOffset: -2048
+	icon: landscape_rubble.ani
+bldgn.rubble5:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 1
+		ZOffset: -2048
+	rubble: bits/1x1props.png
+		Frames: 1
+		ZOffset: -2048
+	icon: landscape_rubble.ani
+bldgn.rubble6:
+	Defaults:
+		AddExtension: False
+	idle: bits/1x1props.png
+		Frames: 2
+		ZOffset: -2048
+	rubble: bits/1x1props.png
+		Frames: 2
+		ZOffset: -2048
+	icon: landscape_rubble.ani

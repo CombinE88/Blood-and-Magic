@@ -212,6 +212,34 @@ BARRELS4.PROP:
 	Inherits@1: ^prop.rubble
 	RenderSprites:
 		Image: barrels4
+BARRELS5:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: BARRELS5.PROP
+	Health:
+		HP: 25
+	DropTrinketOnDeath:
+		Probability: 40
+	Tooltip:
+		Name: Goods
+BARRELS5.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: barrels5
+BARRELS6:
+	Inherits@1: ^prop
+	SpawnActorOnDeath: 
+		Actor: BARRELS6.PROP
+	Health:
+		HP: 25
+	DropTrinketOnDeath:
+		Probability: 40
+	Tooltip:
+		Name: Goods
+BARRELS6.PROP:
+	Inherits@1: ^prop.rubble
+	RenderSprites:
+		Image: barrels6
 
 
 GRAVESTON1:
@@ -402,34 +430,26 @@ BLDGN.RUBBLE1:
 	Inherits@1: ^prop.rubble
 	Tooltip:
 		Name: Destroyed Land
-	AdvancedChangesTerrain:
-		TerrainType: Rubble
-	EditorTilesetFilter:
-		Categories: Rubble
 BLDGN.RUBBLE2:
 	Inherits@1: ^prop.rubble
 	Tooltip:
 		Name: Destroyed Land
-	AdvancedChangesTerrain:
-		TerrainType: Rubble
-	EditorTilesetFilter:
-		Categories: Rubble
 BLDGN.RUBBLE3:
 	Inherits@1: ^prop.rubble
 	Tooltip:
 		Name: Destroyed Land
-	AdvancedChangesTerrain:
-		TerrainType: Rubble
-	EditorTilesetFilter:
-		Categories: Rubble
 BLDGN.RUBBLE4:
 	Inherits@1: ^prop.rubble
 	Tooltip:
 		Name: Destroyed Land
-	AdvancedChangesTerrain:
-		TerrainType: Rubble
-	EditorTilesetFilter:
-		Categories: Rubble
+BLDGN.RUBBLE5:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Destroyed Land
+BLDGN.RUBBLE6:
+	Inherits@1: ^prop.rubble
+	Tooltip:
+		Name: Destroyed Land
 
 ROCK1:
 	Inherits@1: ^prop
@@ -482,6 +502,26 @@ ROCK5:
 		DeathTypes: Death
 		Sound: 7248.wav
 ROCK6:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
+ROCK7:
+	Inherits@1: ^prop
+	Tooltip:
+		Name: Rock
+	Health:
+		HP: 75
+	-DropTrinketOnDeath:
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7248.wav
+ROCK8:
 	Inherits@1: ^prop
 	Tooltip:
 		Name: Rock

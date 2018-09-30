@@ -167,3 +167,55 @@ RangedCombatWizard:
 		ValidTargets: Default, Ground
 		Explosions: explode_fireball_effect
 		ExplosionPalette: bam11195
+
+RangedGuardianEternal:
+	ReloadDelay: 75
+	Range: 3c512
+	Report: 7318.wav
+	ValidTargets: Default
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 0
+		Speed: 0c125
+		Image: guardian.projectile
+		Palette: bam11195
+		HorizontalRateOfTurn: 15
+		Speed: 298
+		RangeLimit: 5c0
+	Warhead@1Dam: Special
+		ValidTargets: Default
+		Spread: 265
+		Falloff: 100, 0
+		Damage: 1
+		DamageTypes: Death
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: 7316.wav
+		ValidTargets: Default, Ground
+		Explosions: effect_eternalfire_explosion
+		ExplosionPalette: bam11195
+	Warhead@3Eff: CreateEffect
+		ValidTargets: Default, Ground
+		Explosions: effect_eternalfire
+		ExplosionPalette: bam11195
+	Warhead@Delay1: Special
+		ValidTargets: Default
+		Spread: 265
+		Falloff: 100, 0
+		Damage: 1
+		Delay: 100
+		DamageTypes: Death
+	Warhead@Delay3: Special
+		ValidTargets: Default
+		Spread: 265
+		Falloff: 100, 0
+		Damage: 1
+		Delay: 200
+		DamageTypes: Death
+	Warhead@Delay4: Special
+		ValidTargets: Default
+		Spread: 265
+		Falloff: 100, 0
+		Damage: 1
+		Delay: 300
+		DamageTypes: Death

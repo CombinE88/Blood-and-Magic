@@ -16,10 +16,18 @@ nwall:
 
 induwall:
 	idle: bits/temperate.png
-		Frames: 158,169,179,208,159,151,198,221,189,209,191,158,199,221,221,221
+		Frames: 158,169,179,208,159,151,198,222,189,209,191,158,199,222,222,222
 		Length: 16
 		ZOffset: -1024
 	icon: induwall_icon.ani
+
+
+nwall2:
+	idle: bits/1x1props.png
+		Frames: 10,10,10,32,12,22,12,12,10,32,11,32,12,12,12,12
+		Length: 16
+		ZOffset: -1024
+	icon: wall_icon.ani
 
 bigbuilding1:
 	Defaults:
@@ -116,331 +124,102 @@ civproduction7:
 	idle: bits/creepbuildings.png
 		Frames: 6
 	icon: mainbase_icon.ani
-
-statue1:
+civproduction8:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 0
-		Offset: 0, -10
-	rubble: bits/1x1buildings.png
-		Frames: 1
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue2:
+	idle: bits/buildingsbam.png
+		Frames: 30
+	icon: mainbase_icon.ani
+civproduction9:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 2
-		Offset: 0, -10
-	rubble: bits/1x1buildings.png
-		Frames: 3
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue3:
+	idle: bits/buildingsbam.png
+		Frames: 31
+	icon: mainbase_icon.ani
+civproduction10:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 4
-		Offset: 0, -10
-	rubble: bits/1x1buildings.png
-		Frames: 5
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue4:
+	idle: bits/buildingsbam.png
+		Frames: 32
+	icon: mainbase_icon.ani
+civproduction11:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 6
-		Offset: 0, -10
-	rubble: bits/1x1buildings.png
-		Frames: 7
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue5:
+	idle: bits/buildingsbam.png
+		Frames: 33
+	icon: mainbase_icon.ani
+civproduction12:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 8
-		Offset: 0, -10
-	rubble: bits/1x1buildings.png
-		Frames: 9
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue6:
+	idle: bits/buildingsbam.png
+		Frames: 34
+	icon: mainbase_icon.ani
+civproduction13:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 10
-		Offset: 0, -10
-	rubble: bits/1x1buildings.png
-		Frames: 11
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue7:
+	idle: bits/buildingsbam.png
+		Frames: 35
+	icon: mainbase_icon.ani
+civproduction14:
 	Defaults:
 		AddExtension: False
-	idle: bits/props.png
-		Frames: 10
-		Offset: 0, -10
-	rubble: bits/props.png
-		Frames: 25
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-statue8:
+	idle: bits/buildingsbam.png
+		Frames: 36
+	icon: mainbase_icon.ani
+civproduction15:
 	Defaults:
 		AddExtension: False
-	idle: bits/props.png
-		Frames: 15
-		Offset: 0, -10
-	rubble: bits/props.png
-		Frames: 24
-		ZOffset: -2048
-		Offset: 0, -10
-	icon: monument_icon.ani
-
-graveston1:
+	idle: bits/buildingsbam.png
+		Frames: 37
+	icon: mainbase_icon.ani
+civproduction16:
 	Defaults:
 		AddExtension: False
-	idle: bits/props.png
-		Frames: 16
-		Offset: 0, -10
-	icon: monument_icon.ani
-graveston2:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 17
-		Offset: 0, -10
-	icon: monument_icon.ani
-graveston3:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 18
-		Offset: 0, -10
-	icon: monument_icon.ani
-graveston4:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 19
-		Offset: 0, -10
-	icon: monument_icon.ani
-
-
-green01:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 11
-		Offset: 0, -10
-	icon: trees_icon.ani
-	rubble: bits/props.png
-		Frames: 26
-		ZOffset: -2048
-		Offset: 0, -10
-green02:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 12
-		Offset: 0, -10
-	icon: trees_icon.ani
-	rubble: bits/props.png
-		Frames: 26
-		ZOffset: -2048
-		Offset: 0, -10
-green03:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 13
-		Offset: 0, -10
-	icon: trees_icon.ani
-	rubble: bits/props.png
-		Frames: 26
-		ZOffset: -2048
-		Offset: 0, -10
-green04:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 14
-		Offset: 0, -10
-	icon: trees_icon.ani
-	rubble: bits/props.png
-		Frames: 26
-		ZOffset: -2048
-		Offset: 0, -10
-green05:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 3
-		Offset: 0, -10
-	icon: trees_icon.ani
-green06:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 4
-		Offset: 0, -10
-	icon: trees_icon.ani
-green07:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 9
-		Offset: 0, -10
-	icon: trees_icon.ani
-green08:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 19
-		Offset: 0, -10
-	icon: trees_icon.ani
-green09:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 29
-		Offset: 0, -10
-	icon: trees_icon.ani
-green10:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 39
-		Offset: 0, -10
-	icon: trees_icon.ani
-
-green11:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 15
-		Offset: 0, -10
-		ZOffset: -1024
-	icon: 2658.ani
-green12:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 16
-		ZOffset: -1024
-	icon: 2658.ani
-green13:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 17
-		ZOffset: -1024
-	icon: 2658.ani
-green14:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 27
-		ZOffset: -1024
-	icon: 2658.ani
-green15:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 0
-		Offset: 0, -10
-	icon: trees_icon.ani
-
-rock1:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 5
-		Offset: 0, -10
-	icon: rocks_icon.ani
-rock2:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 18
-		Offset: 0, -10
-	icon: rocks_icon.ani
-rock3:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 25
-		Offset: 0, -10
-	icon: rocks_icon.ani
-rock4:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 26
-		Offset: 0, -10
-	icon: rocks_icon.ani
-rock5:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
-		Frames: 28
-		Offset: 0, -10
-	icon: rocks_icon.ani
-rock6:
-	Defaults:
-		AddExtension: False
-	idle: bits/1x1props.png
+	idle: bits/buildingsbam.png
 		Frames: 38
-		Offset: 0, -10
-	icon: rocks_icon.ani
-
-barrels1:
+	icon: mainbase_icon.ani
+civproduction17:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 12
-	rubble: bits/1x1buildings.png
-		Frames: 16
-		ZOffset: -2048
-	icon: monument_icon.ani
-barrels2:
+	idle: bits/buildingsbam.png
+		Frames: 39
+	icon: mainbase_icon.ani
+civproduction18:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 13
-	rubble: bits/1x1buildings.png
-		Frames: 16
-		ZOffset: -2048
-	icon: monument_icon.ani
-barrels3:
+	idle: bits/buildingsbam.png
+		Frames: 42
+	icon: mainbase_icon.ani
+civproduction19:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 14
-	rubble: bits/1x1buildings.png
-		Frames: 16
-		ZOffset: -2048
-	icon: monument_icon.ani
-barrels1:
+	idle: bits/buildingsbam.png
+		Frames: 43
+	icon: mainbase_icon.ani
+civproduction20:
 	Defaults:
 		AddExtension: False
-	idle: bits/1x1buildings.png
-		Frames: 15
-	rubble: bits/1x1buildings.png
-		Frames: 16
-		ZOffset: -2048
-	icon: monument_icon.ani
-
-
+	idle: bits/buildingsbam.png
+		Frames: 44
+	icon: mainbase_icon.ani
+civproduction21:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 45
+	icon: mainbase_icon.ani
+civproduction22:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 46
+	icon: mainbase_icon.ani
+civproduction23:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 47
+	icon: mainbase_icon.ani
 civbuild1:
 	Defaults:
 		Offset: 0, -5
@@ -728,45 +507,3 @@ civbuild3x24:
 	idle: bits/bam2x3buildings.png
 		Frames: 3
 	icon: building_icon.ani
-
-
-bldgn.rubble1:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 36
-		ZOffset: -2048
-	rubble: bits/props.png
-		Frames: 36
-		ZOffset: -2048
-	icon: landscape_rubble.ani
-bldgn.rubble2:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 37
-		ZOffset: -2048
-	rubble: bits/props.png
-		Frames: 37
-		ZOffset: -2048
-	icon: landscape_rubble.ani
-bldgn.rubble3:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 38
-		ZOffset: -2048
-	rubble: bits/props.png
-		Frames: 38
-		ZOffset: -2048
-	icon: landscape_rubble.ani
-bldgn.rubble4:
-	Defaults:
-		AddExtension: False
-	idle: bits/props.png
-		Frames: 39
-		ZOffset: -2048
-	rubble: bits/props.png
-		Frames: 39
-		ZOffset: -2048
-	icon: landscape_rubble.ani

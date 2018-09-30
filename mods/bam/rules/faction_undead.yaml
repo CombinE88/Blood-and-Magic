@@ -364,7 +364,7 @@ GNOME:
 		Damage: 1
 		Armor: 2
 		Speed: 2
-		Attributes: Evil, Alive, Humanoid
+		Attributes: Evil, Alive, Humanoid, Immune
 	Researchable:
 		Class: gnome
 		TransformTime: 45

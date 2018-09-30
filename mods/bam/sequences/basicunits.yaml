@@ -145,6 +145,104 @@ peasant:
 		Length: 7
 	icon: peasant_icon.ani
 	disabled-icon: peasant_icon_disabled.ani
+
+guardian:
+	Inherits: ^default
+	stand: guardian_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: guardian_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	run: guardian_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: guardian_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: guardian_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: guardian_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: guardian_die.ani
+		Tick: 120
+		Length: 7
+	icon: guardian_icon.ani
+	disabled-icon: guardian_icon_disabled.ani
+
+guardian.projectile:
+	Inherits: ^default
+	idle: guardian_projectile.ani
+		Facings: 8
+
+
+troll:
+	Inherits: ^default
+	stand: troll_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: troll_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	run: troll_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: troll_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: troll_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: troll_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: troll_die.ani
+		Tick: 120
+		Length: 7
+	icon: troll_icon.ani
+	disabled-icon: troll_icon_disabled.ani
+
+banshee:
+	Inherits: ^default
+	stand: banshee_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: banshee_stand.ani
+		Tick: 120
+		Facings: 8
+	run: banshee_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: banshee_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: banshee_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: banshee_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: banshee_die.ani
+		Tick: 120
+		Length: 7
+	icon: banshee_icon.ani
+	disabled-icon: banshee_icon_disabled.ani
 	
 shroud:
 	shroud: bits/shroud.png
