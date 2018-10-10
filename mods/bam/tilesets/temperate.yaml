@@ -1,7 +1,7 @@
 General:
 	Name: Temperate
 	Id: TEMPERATE
-	EditorTemplateOrder: Terrain, Farmland, Road, Rough Ground, Swamp, Foliage, Canals, ManaSpots,
+	EditorTemplateOrder: Terrain, Farmland, Road, Rough Ground, Swamp, Foliage, Canals, ManaSpots, Walls
 	HeightDebugColors: 880000
 
 Terrain:
@@ -89,6 +89,10 @@ Terrain:
 		Type: HighFoliage
 		TargetTypes: Ground
 		Color: 072601 
+	TerrainType@Windwalls:
+		Type: Windwalls
+		TargetTypes: Ground
+		Color: 473e34
 
 Templates:
 	Template@0:
@@ -1592,3 +1596,112 @@ Templates:
 		Categories: Foliage
 		Tiles:
 			0: Foliage
+
+	Template@300:
+		Id: 300
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 158
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@301:
+		Id: 301
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 169
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@302:
+		Id: 302
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 179
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@303:
+		Id: 303
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 208
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@304:
+		Id: 304
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 159
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@305:
+		Id: 305
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 151
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@306:
+		Id: 306
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 198
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@307:
+		Id: 307
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 222
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@308:
+		Id: 308
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 189
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@309:
+		Id: 309
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 209
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@310:
+		Id: 310
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 191
+		Categories: Walls
+		Tiles:
+			0: Windwalls
+	Template@311:
+		Id: 311
+		Images: bits/temperate.png
+		Size: 1,1
+		PickAny: True
+		Frames: 199
+		Categories: Walls
+		Tiles:
+			0: Windwalls

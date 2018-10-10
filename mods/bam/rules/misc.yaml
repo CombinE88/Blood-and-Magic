@@ -10,8 +10,12 @@ ACOLYTE.COLOR:
 		Cost: 100
 	Tooltip:
 		Name: Acolyte
+	-Tooltip:
 	Health:
 		HP: 35
+	RenderSprites:
+		Image: acolyte
+		Palette: colorpicker
 		
 ^CoreWorld:
 	ShroudRenderer:

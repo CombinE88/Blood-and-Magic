@@ -131,6 +131,7 @@ World:
 	# Used to manage beacons.
 	RadarPings:
 	CreateManaSpots:
+	IngameNodeScriptSystem:
 
 # Map editor specific world setup.
 EditorWorld:
@@ -139,3 +140,6 @@ EditorWorld:
 	EditorActorLayer:
 	# Selecting, Copying, Pasting Support for map editor.
 	EditorSelectionLayer:
+	NodeSelectionLayer:
+	EditorNodeLayer:
+	LoadWidgetAtGameStart:

@@ -45,6 +45,7 @@ namespace OpenRA.Mods.Bam.Traits
         public SpawnHostile(Actor self, SpawnHostileInfo info)
         {
             this.info = info;
+            nextMaxCount = self.World.SharedRandom.Next(info.Delay, info.Delay + info.RandomExtraDelay);
         }
 
         void CyclePlayers()

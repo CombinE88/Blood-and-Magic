@@ -86,6 +86,9 @@ landscape_walls: 2730:0
 
 ui_terminate: 122:0-2
 
+editocopy: 400:0 400:1 400:2 400:4 400:5
+editorpaste: 322:0-3
+
 #Trinkets One ------------------------------------------
 
 healsalve_trinket_ilde: 2514:0

@@ -41,6 +41,7 @@
 		Sequence: leaves
 		TerrainTypes: Foliage, HighFoliage
 	Terminate:
+	Huntable:
 
 ^Building:
 	Inherits: ^CoreBuilding
@@ -53,6 +54,7 @@
 		Sound: 7210.wav
 	OwnerLostAction:
 		Action: Kill
+	Huntable:
 
 ^CivilianHouse:
 	Inherits@: ^Building
@@ -216,6 +218,7 @@
 		Action: ChangeOwner
 		Owner: Creeps
 	Terminate:
+	Huntable:
 
 ^Floater:
 	Inherits: ^CoreInfantry
@@ -247,6 +250,7 @@
 		Action: ChangeOwner
 		Owner: Creeps
 	Terminate:
+	Huntable:
 
 ^trinket:
 	Inherits: ^CoreUnit

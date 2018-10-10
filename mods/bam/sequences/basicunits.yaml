@@ -255,10 +255,12 @@ shroud:
 		Start: 1
 
 editor-overlay:
-	copy: bits/shroud.png
-		Start: 0
-	paste: bits/shroud.png
-		Start: 1
+	copy: editocopy.ani
+		Length: 5
+		Tick: 100  
+	paste: editorpaste.ani
+		Length: 4
+		Tick: 100  
 
 moveflsh:
 	idle: effect_moveorder.ani

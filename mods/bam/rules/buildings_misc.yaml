@@ -61,260 +61,144 @@ HOSTBLDGN1:
 		TargetTypes: Default
 	DropTrinketOnDeath:
 		Probability: 100
-	SpawnHostile:
-		InitialDelay: 5000
-		RandomExtraDelay: 1000
-		Delay: 4000
-		SpawnActor: paesant
 
 HOSTBLDGN2:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction2
 	Tooltip:
-		Name: Fortress
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: paladin
+		Name: Hostile Fortress
 HOSTBLDGN3:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction3
 	Tooltip:
-		Name: Barracks
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: warrior
+		Name: Hostile Barracks
 HOSTBLDGN4:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction4
 	Tooltip:
-		Name: Crypt
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: zombie
+		Name: Hostile Crypt
 HOSTBLDGN5:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction5
 	Tooltip:
 		Name: Arbor Lodge
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: ranger
 HOSTBLDGN6:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction6
 	Tooltip:
-		Name: Rune Stone
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: wizard
+		Name: Hostile Rune Stone
 HOSTBLDGN7:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction7
 	Tooltip:
-		Name: Temple
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: cleric
+		Name: Hostile Temple
 HOSTBLDGN8:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction8
 	Tooltip:
-		Name: Rune Stone
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: wizard
+		Name: Hostile Rune Stone
 HOSTBLDGN9:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction9
 	Tooltip:
-		Name: Barracks
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: warrior
+		Name: Hostile Barracks
 HOSTBLDGN10:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction10
 	Tooltip:
-		Name: Rune Stone
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: wizard
+		Name: Hostile Rune Stone
 HOSTBLDGN11:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction11
 	Tooltip:
-		Name: Crypt
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: zombie
+		Name: Hostile Crypt
 HOSTBLDGN12:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction12
 	Tooltip:
-		Name: Rune Stone
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: wizard
+		Name: Hostile Rune Stone
 HOSTBLDGN13:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction13
 	Tooltip:
-		Name: Temple
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: cleric
+		Name: Hostile Temple
 HOSTBLDGN14:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction14
 	Tooltip:
-		Name: Crypt
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: ghoul
+		Name: Hostile Crypt
 HOSTBLDGN15:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction15
 	Tooltip:
-		Name: Crypt
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: ghoul
+		Name: Hostile Crypt
 HOSTBLDGN16:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction16
 	Tooltip:
-		Name: Temple
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: cleric
+		Name: Hostile Temple
 HOSTBLDGN17:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction17
 	Tooltip:
-		Name: Rune Stone
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: wizard
+		Name: Hostile Rune Stone
 HOSTBLDGN18:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction18
 	Tooltip:
-		Name: Rune Stone
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: wizard
+		Name: Hostile Rune Stone
 HOSTBLDGN19:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction19
 	Tooltip:
-		Name: Crypt
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: zombie
+		Name: Hostile Crypt
 HOSTBLDGN20:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction20
 	Tooltip:
-		Name: Arbor Lodge
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: druid
+		Name: Hostile Arbor Lodge
 HOSTBLDGN21:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction21
 	Tooltip:
-		Name: Barracks
-	SpawnHostile:
-		InitialDelay: 10000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: warrior
+		Name: Hostile Barracks
 HOSTBLDGN22:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction22
 	Tooltip:
-		Name: Temple
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: cleric
+		Name: Hostile Temple
 HOSTBLDGN23:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: civproduction23
 	Tooltip:
-		Name: Arbor Lodge
-	SpawnHostile:
-		InitialDelay: 16000
-		RandomExtraDelay: 2000
-		Delay: 5000
-		SpawnActor: druid
+		Name: Hostile Arbor Lodge
 
 BIGBUILDING1:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding1
-	-SpawnHostile:
 	Tooltip:
 		Name: Castle
 	Health:
@@ -333,7 +217,6 @@ BIGBUILDING2:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding2
-	-SpawnHostile:
 	Tooltip:
 		Name: Temple
 	Health:
@@ -352,7 +235,6 @@ BIGBUILDING3:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding3
-	-SpawnHostile:
 	Tooltip:
 		Name: Monastery
 	Health:
@@ -371,7 +253,6 @@ BIGBUILDING4:
 	Inherits@: HOSTBLDGN1
 	RenderSprites:
 		Image: bigbuilding4
-	-SpawnHostile:
 	Tooltip:
 		Name: Dome
 	Health:
