@@ -62,17 +62,16 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
 
             var position = build == null && newTrinket == null ? self.Location : self.ClosestCell(findEmptyActor);
 
-            if (position != null)
-                self.World.AddFrameEndTask(w =>
+            self.World.AddFrameEndTask(w =>
+            {
+                IgnoreTrinket = w.CreateActor(trinketInfo, new TypeDictionary
                 {
-                    IgnoreTrinket = w.CreateActor(trinketInfo, new TypeDictionary
-                    {
-                        new LocationInit(position),
-                        new CenterPositionInit(self.World.Map.CenterOfCell(position)),
-                        new OwnerInit("Neutral"),
-                        new FacingInit(255)
-                    });
+                    new LocationInit(position),
+                    new CenterPositionInit(self.World.Map.CenterOfCell(position)),
+                    new OwnerInit("Neutral"),
+                    new FacingInit(255)
                 });
+            });
 
             HoldsTrinket.Dispose();
             HoldsTrinket = null;

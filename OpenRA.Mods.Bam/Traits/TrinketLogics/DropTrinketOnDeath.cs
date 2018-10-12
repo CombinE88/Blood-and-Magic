@@ -76,7 +76,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
                 new OwnerInit(self.Owner)
             };
 
-            if (itemToDrop != null && position != null)
+            if (itemToDrop != null)
                 self.World.CreateActor(itemToDrop, td);
         }
     }
