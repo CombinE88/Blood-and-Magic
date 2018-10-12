@@ -114,7 +114,6 @@
     <Compile Include="SpriteLoaders\AniLoader.cs" />
     <Compile Include="SpriteLoaders\TlbLoader.cs" />
     <Compile Include="Traits\Activities\AdvancedTransform.cs" />
-    <Compile Include="Traits\Activities\HuntPlayer.cs" />
     <Compile Include="Traits\Activities\ManaShooterActivity.cs" />
     <Compile Include="Traits\AdvancedChangesTerrain.cs" />
     <Compile Include="Traits\AdvancedTransforms.cs" />
@@ -134,7 +133,6 @@
     <Compile Include="Traits\Researched.cs" />
     <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
     <Compile Include="Traits\SimpleDeathSounds.cs" />
-    <Compile Include="Traits\SpawnHostile.cs" />
     <Compile Include="Traits\TileActivities\DamagedByTraps.cs" />
     <Compile Include="Traits\TileActivities\TileBridge.cs" />
     <Compile Include="Traits\TileActivities\TileButton.cs" />

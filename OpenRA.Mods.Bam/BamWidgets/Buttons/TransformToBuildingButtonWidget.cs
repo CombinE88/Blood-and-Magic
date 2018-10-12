@@ -17,17 +17,14 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private int posx;
         private int posy;
         private string animationString;
-        private TransformToBuilding transformToBuilding;
         private bool visibleText;
 
-        public TransformToBuildingButtonWidget(ActorActionsWidget actorActions, int posx, int posy, string animationString,
-            TransformToBuilding transformToBuilding, HashSet<Actor> selectedValidActors)
+        public TransformToBuildingButtonWidget(ActorActionsWidget actorActions, int posx, int posy, string animationString, HashSet<Actor> selectedValidActors)
         {
             this.actorActions = actorActions;
             this.posx = posx;
             this.posy = posy;
             this.animationString = animationString;
-            this.transformToBuilding = transformToBuilding;
             this.SelectedValidActors = selectedValidActors.ToList();
         }
 

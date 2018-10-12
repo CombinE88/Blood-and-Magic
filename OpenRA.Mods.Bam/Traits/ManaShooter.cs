@@ -42,17 +42,15 @@ namespace OpenRA.Mods.Bam.Traits
 
         public int ExtraModifier = 100;
 
-        private PlayerResources pr;
         WithSpriteBody wsb;
 
         public bool CanShoot = false;
-        public bool SendMana = false;
+        public bool SendMana;
 
         public ManaShooter(ActorInitializer init, ManaShooterInfo info)
         {
             self = init.Self;
             this.info = info;
-            pr = init.Self.Owner.PlayerActor.TraitOrDefault<PlayerResources>();
         }
 
         void ITick.Tick(Actor self)
@@ -62,7 +60,7 @@ namespace OpenRA.Mods.Bam.Traits
 
             if (tick++ >= 25)
             {
-                self.QueueActivity(new ToObelisk(self, info, this, wsb));
+                self.QueueActivity(new ToObelisk(self, info, wsb));
                 tick = 0;
             }
         }

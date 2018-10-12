@@ -36,14 +36,12 @@ namespace OpenRA.Mods.Bam.Traits.TileActivities
 
     public class DamagedByTraps : ITick
     {
-        readonly TileSet tileSet;
         private DamagedByTrapsInfo info;
         private int delay;
 
         public DamagedByTraps(ActorInitializer init, DamagedByTrapsInfo info)
         {
             this.info = info;
-            tileSet = init.World.Map.Rules.TileSet;
         }
 
         void ITick.Tick(Actor self)

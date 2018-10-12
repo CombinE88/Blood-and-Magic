@@ -22,7 +22,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         }
     }
 
-    public class CanHoldTrinket : IResolveOrder, ITick, INotifyKilled, INotifyCreated
+    public class CanHoldTrinket : IResolveOrder, ITick, INotifyKilled
     {
         public Actor HoldsTrinket;
         public Actor IgnoreTrinket;
@@ -31,17 +31,11 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
         public int ExtraArmor;
         public int ExtraSpeed;
         private CanHoldTrinketInfo info;
-        private WithSpriteBody wsb;
 
         public CanHoldTrinket(ActorInitializer init, CanHoldTrinketInfo info)
         {
             self = init.Self;
             this.info = info;
-        }
-
-        void INotifyCreated.Created(Actor self)
-        {
-            wsb = self.TraitsImplementing<WithSpriteBody>().First(w => w.Info.Name == info.Body);
         }
 
         public void DropTrinket(Actor self)

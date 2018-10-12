@@ -21,12 +21,10 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
     public class DropTrinketOnDeath : INotifyKilled
     {
         private DropTrinketOnDeathInfo info;
-        private Actor self;
 
         public DropTrinketOnDeath(ActorInitializer init, DropTrinketOnDeathInfo info)
         {
             this.info = info;
-            self = init.Self;
         }
 
         void INotifyKilled.Killed(Actor self, AttackInfo e)

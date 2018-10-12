@@ -26,12 +26,9 @@ namespace OpenRA.Mods.Bam.Traits.TileActivities
         private int random;
 
         private bool isBridge;
-        private TileBridgeInfo info;
 
         public TileBridge(ActorInitializer init, TileBridgeInfo info)
         {
-            this.info = info;
-
             var tileUshot = init.Self.World.Map.Rules.TileSet.Templates[init.Self.World.Map.Tiles[init.Self.Location].Type];
             if (tileUshot.Id == 47)
             {

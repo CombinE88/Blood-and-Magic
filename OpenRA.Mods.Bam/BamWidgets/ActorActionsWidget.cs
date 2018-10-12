@@ -36,11 +36,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private List<ConvertToButtonWidget> convertToButtons = new List<ConvertToButtonWidget>();
         private List<TransformToBuildingButtonWidget> transformToButtons = new List<TransformToBuildingButtonWidget>();
 
-        private ShowResearchButtonWidget researchEnabler;
         private ConvertToWallButtonWidget wallbutton;
         private KillSelfWidget terminate;
         private SecondAbilityButtonWidget secondabilityButton;
-        private SideBarRadarBackgroundWidget radar;
 
         public ActorActionsWidget(BamUIWidget bamUi)
         {
@@ -59,8 +57,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             AddChild(abilityButton = new AbilityButtonWidget(this) { Visible = false });
             AddChild(secondabilityButton = new SecondAbilityButtonWidget(this) { Visible = false });
-
-            AddChild(researchEnabler = new ShowResearchButtonWidget(this) { Visible = true });
 
             AddChild(trinketButtons = new TrinketButtonsWidget(this) { Visible = false });
             AddChild(trinketDropButton = new TrinketDropButtonWidget(this) { Visible = false });
@@ -177,7 +173,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
                             -30 - 76,
                             50 + 68 * i,
                             trait.Info.IntoBuilding,
-                            trait,
                             selectedValidActors) { Visible = true };
                         transformToButtons.Add(con);
 
@@ -269,7 +264,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         public void CreateBackground()
         {
             // Minimap
-            AddChild(radar = new SideBarRadarBackgroundWidget(BamUi) { Parent = this });
+            AddChild(new SideBarRadarBackgroundWidget(BamUi) { Parent = this });
 
             // Background Health Frame
             AddChild(new SideBarBackgroundWidget(BamUi, 0, 200, 4, 734, 152, 17));

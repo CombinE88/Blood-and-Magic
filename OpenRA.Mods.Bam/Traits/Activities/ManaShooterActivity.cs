@@ -12,8 +12,8 @@ namespace OpenRA.Mods.Bam.Traits.Activities
         private int overTick;
         public int CurrentStorage;
         private Actor self;
-        private bool delivering = false;
-        private bool complete = false;
+        private bool delivering;
+        private bool complete;
 
         private ManaShooterInfo shooterInfo;
 
@@ -110,20 +110,18 @@ namespace OpenRA.Mods.Bam.Traits.Activities
 
     public class ToObelisk : Activity
     {
-        private bool complete = false;
-        private bool completeAbort = false;
+        private bool complete;
+        private bool completeAbort;
         private Actor self;
         private ManaShooterInfo shooterInfo;
         private WithSpriteBody wsb;
         private string normalSequence;
-        private ManaShooter shooter;
 
-        public ToObelisk(Actor self, ManaShooterInfo shooterInfo, ManaShooter shooter, WithSpriteBody wsb)
+        public ToObelisk(Actor self, ManaShooterInfo shooterInfo, WithSpriteBody wsb)
         {
             this.self = self;
             this.shooterInfo = shooterInfo;
             this.wsb = wsb;
-            this.shooter = shooter;
 
             normalSequence = wsb.Info.Sequence;
             wsb.PlayCustomAnimation(self, shooterInfo.StartObeliskSequence, () =>

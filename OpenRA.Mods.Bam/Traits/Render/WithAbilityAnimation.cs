@@ -31,12 +31,10 @@ namespace OpenRA.Mods.Bam.Traits.Render
     {
         private WithSpriteBody wsb;
         private WithAbilityAnimationInfo info;
-        private Actor self;
 
         public WithAbilityAnimation(ActorInitializer init, WithAbilityAnimationInfo info) : base(info)
         {
             this.info = info;
-            self = init.Self;
         }
 
         public void PlayManaAnimation(Actor self)

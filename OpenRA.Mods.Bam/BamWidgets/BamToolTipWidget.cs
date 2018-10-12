@@ -17,8 +17,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private bool showRes;
         private bool showStats;
         private Animation anim;
-        private int xWidth;
-
         public BamToolTipWidget(
             ActorActionsWidget actorActions,
             string name = "",
@@ -45,7 +43,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
             anim = new Animation(actorActions.BamUi.World, "basic_ui");
 
             anim.PlayFetchIndex("ui_tooltipbar", () => 0);
-            xWidth = anim.Image.Bounds.Width;
             Bounds = new Rectangle(0 - 192 - 10, 0, 192, 86);
         }
 
@@ -53,9 +50,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
         {
             // Background Sheet Toolip
             var radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
-
-            var x = anim.Image.Bounds.Width;
-            var y = anim.Image.Bounds.Height;
 
             if (showStats)
             {
