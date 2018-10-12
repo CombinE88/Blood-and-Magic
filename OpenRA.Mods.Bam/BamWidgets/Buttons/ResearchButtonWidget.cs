@@ -22,7 +22,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private BamToolTipWidget tooltip;
         private Research research;
 
-
         private int poxMov;
         public bool Removing;
         private int waitTicks;

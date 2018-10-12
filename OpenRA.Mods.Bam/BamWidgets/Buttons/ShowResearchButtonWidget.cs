@@ -167,7 +167,6 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
             }
         }
 
-
         public void SwitchResearchMenue()
         {
             if (researchButtons.Any())

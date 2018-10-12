@@ -20,7 +20,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
         private readonly Sprite terrainSprite;
         private readonly Sprite shroudSprite;
 
-        private int Size = 1;
+        private int size = 1;
         private SideBarRadarBackgroundWidget back;
 
         public Stance ShowStances { get; set; }
@@ -41,7 +41,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             Visible = true;
 
-            Size = Math.Max(back.RenderBounds.Width, back.RenderBounds.Height) / Math.Max(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y);
+            size = Math.Max(back.RenderBounds.Width, back.RenderBounds.Height) / Math.Max(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y);
         }
 
         private void DrawTerrain()
@@ -89,7 +89,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override string GetCursor(int2 pos)
         {
-            var cell = new MPos((pos.X - RenderBounds.X) / Size, (pos.Y - RenderBounds.Y) / Size).ToCPos(ingameUi.World.Map);
+            var cell = new MPos((pos.X - RenderBounds.X) / size, (pos.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
             var worldPixel = ingameUi.WorldRenderer.ScreenPxPosition(ingameUi.World.Map.CenterOfCell(cell));
             var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(worldPixel);
 
@@ -106,7 +106,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override bool HandleMouseInput(MouseInput mi)
         {
-            var cell = new MPos((mi.Location.X - RenderBounds.X) / Size, (mi.Location.Y - RenderBounds.Y) / Size).ToCPos(ingameUi.World.Map);
+            var cell = new MPos((mi.Location.X - RenderBounds.X) / size, (mi.Location.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
             var pos = ingameUi.World.Map.CenterOfCell(cell);
 
             if ((mi.Event == MouseInputEvent.Down || mi.Event == MouseInputEvent.Move) && mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
@@ -134,11 +134,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public override void Draw()
         {
-            Bounds = new Rectangle(back.RenderBounds.Width / 2 - ingameUi.World.Map.MapSize.X * Size / 2, back.RenderBounds.Height / 2 - ingameUi.World.Map.MapSize.Y * Size / 2, ingameUi.World.Map.MapSize.X * Size,
-                ingameUi.World.Map.MapSize.Y * Size);
+            Bounds = new Rectangle(back.RenderBounds.Width / 2 - ingameUi.World.Map.MapSize.X * size / 2,
+                back.RenderBounds.Height / 2 - ingameUi.World.Map.MapSize.Y * size / 2,
+                ingameUi.World.Map.MapSize.X * size,
+                ingameUi.World.Map.MapSize.Y * size);
             UpdateShroud();
-
-            // WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);
 
             radarSheet.CommitBufferedData();
             Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
@@ -166,17 +166,16 @@ namespace OpenRA.Mods.Bam.BamWidgets
                         continue;
 
                     var pos = cell.First.ToMPos(ingameUi.World.Map.Grid.Type);
-                    WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * Size, RenderBounds.Y + pos.V * Size, Size, Size), e.Actor.Owner.Color.RGB);
+                    WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * size, RenderBounds.Y + pos.V * size, size, size), e.Actor.Owner.Color.RGB);
                 }
             }
 
             Game.Renderer.EnableScissor(RenderBounds);
 
             Game.Renderer.RgbaColorRenderer.DrawRect(
-                new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * Size,
-                new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * Size, 1,
-                Color.White
-            );
+                new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * size,
+                new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * size, 1,
+                Color.White);
 
             foreach (var ping in ingameUi.RadarPings.Pings)
             {
@@ -184,7 +183,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
                     continue;
 
                 var center = ingameUi.World.Map.CellContaining(ping.Position).ToMPos(ingameUi.World.Map.Grid.Type);
-                var points = ping.Points(new int2(RenderBounds.X + center.U * Size, RenderBounds.Y + center.V * Size)).ToArray();
+                var points = ping.Points(new int2(RenderBounds.X + center.U * size, RenderBounds.Y + center.V * size)).ToArray();
                 Game.Renderer.RgbaColorRenderer.DrawPolygon(points, 2, ping.Color);
             }
 
