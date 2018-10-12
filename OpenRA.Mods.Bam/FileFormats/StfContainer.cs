@@ -14,18 +14,18 @@ namespace OpenRA.Mods.Bam.FileFormats
             {
                 var fileId = stream.ReadUInt16();
 
-                var _compressionType = stream.ReadUInt32();
+                stream.ReadUInt32();
 
                 var compressedSize = stream.ReadUInt32();
-                var _uncompressedSize = stream.ReadUInt32();
+                stream.ReadUInt32();
 
                 var fileType = stream.ReadUInt16();
 
-                var _headerEntries = stream.ReadUInt16();
+                stream.ReadUInt16();
                 var headerSize = stream.ReadUInt32();
 
-                var _unk1 = stream.ReadUInt32(); // 0
-                var _unk3 = stream.ReadUInt16(); // 0xfefe
+                stream.ReadUInt32(); // 0
+                stream.ReadUInt16(); // 0xfefe
 
                 var size = headerSize + compressedSize;
 

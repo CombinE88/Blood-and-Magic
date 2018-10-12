@@ -38,7 +38,7 @@ namespace OpenRA.Mods.Bam.FileFormats
 
             Width = (ushort)(stream.ReadUInt16() * 2);
             Height = stream.ReadUInt16();
-            var _unk1 = stream.ReadUInt16(); // priority
+            stream.ReadUInt16(); // priority
             var frameOffset = stream.ReadUInt32();
 
             var position = stream.Position;
