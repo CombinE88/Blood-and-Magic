@@ -21,13 +21,6 @@ Player:
 		CheckboxDisplayOrder: 9
 	Shroud:
 		FogCheckboxDisplayOrder: 3
-	LobbyPrerequisiteCheckbox@CreepProduction:
-		ID: 8
-		CheckboxDisplayOrder: 8
-		Label: Hostile Map
-		Description: Neutral units are able to produce units and attack the player.
-		Enabled: true
-		Prerequisites: CreepHostile
 	FrozenActorLayer:
 	PlayerStatistics:
 	GrantConditionOnPrerequisiteManager:

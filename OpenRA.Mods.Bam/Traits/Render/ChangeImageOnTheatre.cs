@@ -17,12 +17,10 @@ namespace OpenRA.Mods.Bam.Traits.Render
     public class ChangeImageOnTheatre : INotifyCreated
     {
         private ChangeImageOnTheatreInfo info;
-        private Actor self;
 
         public ChangeImageOnTheatre(ActorInitializer init, ChangeImageOnTheatreInfo info)
         {
             this.info = info;
-            self = init.Self;
         }
 
         void INotifyCreated.Created(Actor self)
