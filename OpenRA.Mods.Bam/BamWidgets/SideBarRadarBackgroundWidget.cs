@@ -14,7 +14,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public SideBarRadarBackgroundWidget(BamUIWidget bamUi)
         {
-
             radarsheet = new Sheet(SheetType.BGRA, Game.ModData.DefaultFileSystem.Open("uibits/radarbg.png"));
             radarBG = new Sprite(radarsheet, new Rectangle(0, 0, 172, 150), TextureChannel.RGBA);
             Bounds = new Rectangle(5, 30, radarBG.Bounds.Width, radarBG.Bounds.Height);

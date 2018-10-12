@@ -6,7 +6,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 {
     public class SideBarBackgroundWidget : Widget
     {
-        private BamUIWidget bamUi;
         private Sprite background;
 
         public int PosX = 0;
@@ -19,8 +18,6 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
         public SideBarBackgroundWidget(BamUIWidget bamUi, int posX, int posy, int boundsx, int boundsy, int boundsxmax, int boundsymax)
         {
-            this.bamUi = bamUi;
-
             PosX = posX;
             PosY = posy;
             BoundsX = boundsx;
