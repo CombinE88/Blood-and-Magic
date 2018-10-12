@@ -109,13 +109,13 @@ STONEGOLEM:
 		Speed: 1
 		CanbeModified: false
 		Attributes: Elemental, Immune
+		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 2
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
 	-CanHoldTrinket:
-		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 
 WOLF:
 	Inherits@1: ^Walker
@@ -148,10 +148,10 @@ WOLF:
 		WanderMoveRadius: 3
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
-	-CanHoldTrinket:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7228.wav
+	-CanHoldTrinket:
 
 BANSHEE:
 	Inherits@1: ^Floater
@@ -184,10 +184,10 @@ BANSHEE:
 		WanderMoveRadius: 2
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
-	-CanHoldTrinket:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7246.wav
+	-CanHoldTrinket:
 
 TROLL:
 	Inherits@1: ^Walker
@@ -221,10 +221,10 @@ TROLL:
 		WanderMoveRadius: 2
 		MinMoveDelay: 100
 		MaxMoveDelay: 400
-	-CanHoldTrinket:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7228.wav
+	-CanHoldTrinket:
 
 GUARDIAN:
 	Inherits@1: ^Walker
@@ -254,10 +254,10 @@ GUARDIAN:
 		CanbeModified: false
 		Attributes: Humanoid, Alive, Immune
 	WithImpactAnimation:
-	-CanHoldTrinket:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7324.wav
+	-CanHoldTrinket:
 
 PAESANT:
 	Inherits@1: ^Walker

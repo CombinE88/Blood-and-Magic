@@ -3,32 +3,26 @@
 		Name: temperate
 		Tileset: TEMPERATE
 		Filename: 11195.pal
-		ShadowIndex: 253
 	PaletteFromPal@platformtiles:
 		Name: Platformtiles
 		Tileset: PLATFORM
 		Filename: 11195.pal 
-		ShadowIndex: 253
 	PaletteFromPal@terrain-temperate:
 		Name: terrain
 		Tileset: TEMPERATE
 		Filename: 11195.pal
-		ShadowIndex: 253
 	PaletteFromPal@terrain-platform:
 		Name: terrain
 		Tileset: PLATFORM
 		Filename: 11195.pal
-		ShadowIndex: 253
 	PaletteFromPal@staticterrain-platform:
 		Name: staticterrain
 		Tileset: PLATFORM
 		Filename: 11195.pal
-		ShadowIndex: 253
 	PaletteFromPal@staticterrain-temperate:
 		Name: staticterrain
 		Tileset: TEMPERATE
 		Filename: 11195.pal
-		ShadowIndex: 253
 	PaletteFromPal@bam32:
 		Name: bam32
 		Filename: 32.pal
@@ -157,6 +151,12 @@
 		Filename: 9999.pal
 	PaletteFromPal@bam11195:
 		Name: bam11195
+		Filename: 11195.pal
+	PaletteFromPal@effect:
+		Name: effect
+		Filename: 11195.pal
+	PaletteFromPal@player:
+		Name: player
 		Filename: 11195.pal
 	OverlayPlayerColorPalette@BamPlayer: # Used for all player-colored actors.
 		BasePalette: bam11195

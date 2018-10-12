@@ -29,7 +29,6 @@ Rules:
 	World:
 		-SpawnMPUnits:
 		-MPStartLocations:
-		-CrateSpawner:
 		MusicPlaylist:
 			BackgroundMusic: map1
 			DisableWorldSounds: true

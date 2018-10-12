@@ -97,6 +97,7 @@
 		Categories: Walls
 	# Wall will use the standard unit healthbar.
 	SelectionDecorations:
+	-Selectable:
 
 # Base for all infantry.
 ^CoreInfantry:
