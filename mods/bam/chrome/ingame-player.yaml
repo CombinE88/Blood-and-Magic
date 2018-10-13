@@ -32,6 +32,7 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 6
 									ImageCollection: order-icons
+									ImageName: options
 						Button@SELL_BUTTON:
 							X: 0
 							Width: 0
@@ -44,6 +45,7 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 6
 									ImageCollection: order-icons
+									ImageName: options
 						Button@POWER_BUTTON:
 							X: 0
 							Width: 0
@@ -56,6 +58,7 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 6
 									ImageCollection: order-icons
+									ImageName: options
 						Button@REPAIR_BUTTON:
 							X: 0
 							Width: 0
@@ -68,6 +71,7 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 6
 									ImageCollection: order-icons
+									ImageName: options
 						MenuButton@DEBUG_BUTTON:
 							X: 38
 							Width: 28

@@ -58,6 +58,9 @@ namespace OpenRA.Mods.Bam.BamWidgets
             AddChild(abilityButton = new AbilityButtonWidget(this) { Visible = false });
             AddChild(secondabilityButton = new SecondAbilityButtonWidget(this) { Visible = false });
 
+            AddChild(new ShowResearchButtonWidget(this) { Visible = true });
+
+
             AddChild(trinketButtons = new TrinketButtonsWidget(this) { Visible = false });
             AddChild(trinketDropButton = new TrinketDropButtonWidget(this) { Visible = false });
 
