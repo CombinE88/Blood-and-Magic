@@ -25,6 +25,16 @@ arborlodge:
 		Frames: 14
 	icon: arborlodge_icon.ani
 
+temple:
+	Inherits: ^default
+	idle: bits/buildingsbam.png
+		Frames: 38
+	platforms-idle: bits/buildingsbam.png
+		Frames: 38
+	temperate-idle: bits/buildingsbam.png
+		Frames: 38
+	icon: temple_icon.ani
+
 zombie:
 	Inherits: ^default
 	stand: zombie_idle.ani

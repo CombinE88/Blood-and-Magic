@@ -7,10 +7,6 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class TransformToBuildingInfo : ITraitInfo
     {
-        public readonly string[] Factions = { "good" };
-
-        public readonly string IntoBuilding = "barracks";
-
         public readonly string Image = "explosion";
         public readonly string EffectSequence = "smokecloud_effect";
         public readonly string EffectPalette = "bam11195";
@@ -46,7 +42,10 @@ namespace OpenRA.Mods.Bam.Traits
 
         void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "TransformTo-" + Info.IntoBuilding && order.OrderString != "RemoveSelf")
+            if (Buildingbelow == null)
+                return;
+
+            if (order.OrderString != "TransformTo-" + Buildingbelow.Info.TraitInfo<AllowTransfromInfo>().Building && order.OrderString != "RemoveSelf")
                 return;
 
             if (order.OrderString == "RemoveSelf")
@@ -54,7 +53,7 @@ namespace OpenRA.Mods.Bam.Traits
                 self.Dispose();
             }
 
-            if (order.OrderString.Contains("TransformTo-" + Info.IntoBuilding))
+            if (order.OrderString.Contains("TransformTo-" + Buildingbelow.Info.TraitInfo<AllowTransfromInfo>().Building))
             {
                 var location = Buildingbelow.Location;
                 var ownerSelf = self.Owner;
@@ -69,7 +68,7 @@ namespace OpenRA.Mods.Bam.Traits
                         new OwnerInit(ownerSelf)
                     };
 
-                    var actor = w.CreateActor(Info.IntoBuilding, init);
+                    var actor = w.CreateActor(Buildingbelow.Info.TraitInfo<AllowTransfromInfo>().Building, init);
 
                     foreach (var cell in actor.Info.TraitInfo<BuildingInfo>().Tiles(actor.Location))
                     {

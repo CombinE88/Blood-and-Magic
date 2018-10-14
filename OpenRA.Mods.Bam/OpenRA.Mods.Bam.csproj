@@ -145,8 +145,10 @@
     <Compile Include="Traits\TrinketLogics\CanHoldTrinket.cs" />
     <Compile Include="Traits\TrinketLogics\DropTrinketOnDeath.cs" />
     <Compile Include="Traits\TrinketLogics\IsTrinket.cs" />
+    <Compile Include="Traits\UnitAbilities\ChangeToRandomBuilding.cs" />
     <Compile Include="Traits\UnitAbilities\GhoulLeechLive.cs" />
     <Compile Include="Traits\UnitAbilities\HealTargetAbility.cs" />
+    <Compile Include="Traits\UnitAbilities\RepairTargetAbility.cs" />
     <Compile Include="Traits\UnitAbilities\StealEnemyAbility.cs" />
     <Compile Include="Traits\UnitAbilities\AbortConvert.cs" />
     <Compile Include="Traits\UnitAbilities\Terminate.cs" />

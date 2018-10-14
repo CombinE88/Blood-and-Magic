@@ -56,6 +56,7 @@ explosion:
 	effect_fire: effect_fire.ani
 	effect_eternalfire: effect_eternalfire.ani
 	effect_eternalfire_explosion: effect_eternalfire_explosion.ani
+	wyrm_explosion: wyrm_explosion.ani
 
 effects:
 	leaves: effect_leaves.ani

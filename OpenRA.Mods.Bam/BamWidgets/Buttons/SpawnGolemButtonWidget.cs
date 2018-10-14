@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits;
 using OpenRA.Mods.Common.Traits.Render;
@@ -12,6 +13,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
         private bool pressed;
         private Animation animation;
         private ActorInfo actorInfo;
+        public Actor Actor;
 
         public SpawnGolemWidget(ActorActionsWidget actorActions)
         {
@@ -20,18 +22,18 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Tick()
         {
-            if (actorActions.Actor == null)
+            if (Actor == null)
                 return;
 
             string actorString = null;
-            if (actorActions.Actor.Info.HasTraitInfo<SpawnsAcolytesInfo>())
-                actorString = actorActions.Actor.Info.TraitInfo<SpawnsAcolytesInfo>().Actor;
+            if (Actor.Info.HasTraitInfo<SpawnsAcolytesInfo>())
+                actorString = Actor.Info.TraitInfo<SpawnsAcolytesInfo>().Actor;
 
             actorInfo = actorActions.BamUi.World.Map.Rules.Actors[actorString];
 
             if (actorInfo != null && actorInfo.HasTraitInfo<RenderSpritesInfo>())
                 animation = new Animation(actorActions.BamUi.World,
-                    actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, actorActions.BamUi.World.Map.Rules.Sequences, actorActions.Actor.Owner.Faction.Name));
+                    actorInfo.TraitInfo<RenderSpritesInfo>().GetImage(actorInfo, actorActions.BamUi.World.Map.Rules.Sequences, Actor.Owner.Faction.Name));
 
             var x = pressed ? 1 + 100 : 100;
             var y = pressed ? 377 + 1 : 377;
@@ -40,6 +42,9 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override bool HandleMouseInput(MouseInput mi)
         {
+            if (Actor == null)
+                return false;
+
             if (!EventBounds.Contains(mi.Location))
                 return false;
 
@@ -48,7 +53,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             if (mi.Event == MouseInputEvent.Down)
             {
-                actorActions.Actor.World.IssueOrder(new Order("SpawnAcolyte", actorActions.Actor, false));
+                Actor.World.IssueOrder(new Order("SpawnAcolyte", Actor, false));
                 pressed = true;
             }
             else if (mi.Event == MouseInputEvent.Up)
@@ -64,7 +69,7 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
         public override void Draw()
         {
-            if (actorActions.Actor == null)
+            if (Actor == null)
                 return;
 
             if (animation != null)

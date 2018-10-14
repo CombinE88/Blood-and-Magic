@@ -1,4 +1,6 @@
+using System;
 using OpenRA.Activities;
+using OpenRA.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 
@@ -14,6 +16,7 @@ namespace OpenRA.Mods.Bam.Traits.Activities
         private Actor self;
         private bool delivering;
         private bool complete;
+        private bool transformStarted;
 
         private ManaShooterInfo shooterInfo;
 
@@ -45,10 +48,10 @@ namespace OpenRA.Mods.Bam.Traits.Activities
             {
                 var ground = self.World.Map.GetTerrainInfo(self.Location).Type;
                 var modifier = shooterInfo.Modifier.ContainsKey(ground) ? shooterInfo.Modifier[ground] : 100;
-                var modifier2 = self.Trait<ManaShooter>().ExtraModifier / 100;
+                var modifier2 = self.Trait<ManaShooter>().ExtraModifier;
                 var max = shooterInfo.Interval * modifier * modifier2;
 
-                if (tick++ >= max / 100)
+                if (tick++ >= max / 10000)
                 {
                     CurrentStorage++;
                     shooter.CurrentStorage = CurrentStorage;
@@ -71,13 +74,20 @@ namespace OpenRA.Mods.Bam.Traits.Activities
             if (complete)
                 return NextActivity;
 
-            if (wsb.DefaultAnimation.CurrentSequence.Name != shooterInfo.EndObeliskSequence)
+            if (!transformStarted)
             {
+                //// TODO: Hack, we want to end the activity even when the animation gets interrupted.
+
+                Action timer = () => { wsb.DefaultAnimation.ReplaceAnim(normalSequence); };
+                self.World.AddFrameEndTask(w => w.Add(new DelayedAction(25, timer)));
+
                 wsb.PlayCustomAnimationBackwards(self, shooterInfo.EndObeliskSequence, () =>
                 {
                     complete = true;
                     wsb.DefaultAnimation.ReplaceAnim(normalSequence);
                 });
+
+                transformStarted = true;
             }
 
             return this;
@@ -112,6 +122,7 @@ namespace OpenRA.Mods.Bam.Traits.Activities
     {
         private bool complete;
         private bool completeAbort;
+        private bool transformStarted;
         private Actor self;
         private ManaShooterInfo shooterInfo;
         private WithSpriteBody wsb;
@@ -141,13 +152,20 @@ namespace OpenRA.Mods.Bam.Traits.Activities
             if (!IsCanceled)
                 return this;
 
-            if (wsb.DefaultAnimation.CurrentSequence.Name != shooterInfo.EndObeliskSequence)
+            if (!transformStarted)
             {
+                //// TODO: Hack, we want to end the activity even when the animation gets interrupted.
+
+                Action timer = () => { completeAbort = true; };
+                self.World.AddFrameEndTask(w => w.Add(new DelayedAction(25, timer)));
+
                 wsb.PlayCustomAnimationBackwards(self, shooterInfo.EndObeliskSequence, () =>
                 {
                     completeAbort = true;
                     wsb.DefaultAnimation.ReplaceAnim(normalSequence);
                 });
+
+                transformStarted = true;
             }
 
             if (!completeAbort)

@@ -97,6 +97,13 @@ namespace OpenRA.Mods.Bam.BamWidgets
             Actor = ActorGroup.FirstOrDefault(a => !a.IsDead && a.IsInWorld && a.Owner == BamUi.World.LocalPlayer);
             AllActor = BamUi.World.Selection.Actors.FirstOrDefault(a => !a.IsDead && a.IsInWorld);
 
+            var actor = BamUi.World.Actors.FirstOrDefault(a => a.Owner == BamUi.World.LocalPlayer && a.TraitOrDefault<SpawnsAcolytes>() != null);
+            spawnGolem.Actor = actor;
+            if (actor != null)
+            {
+                spawnGolem.Visible = true;
+            }
+
             if (AllActor != null)
             {
                 DrawActorStatistics();
@@ -124,14 +131,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (Actor.TraitOrDefault<AbortConvert>() != null)
                 secondabilityButton.Visible = true;
 
-            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>() || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>())
+            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>() || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>() || Actor.Info.HasTraitInfo<RepairTargetAbilityInfo>() )
                 abilityButton.Visible = true;
 
             if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && Actor.Trait<ManaShooter>().CanShoot)
                 manaSend.Visible = true;
-
-            if (Actor.Info.HasTraitInfo<SpawnsAcolytesInfo>())
-                spawnGolem.Visible = true;
 
             var ca = Actor.TraitOrDefault<ConvertAdjetant>();
 
@@ -154,37 +158,32 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 wallbutton.Visible = true;
             }
 
-            var traits = Actor.TraitsImplementing<TransformToBuilding>().Where(t => t.StandsOnBuilding && t.Info.Factions.Contains(Actor.Owner.Faction.InternalName)).ToList();
+            var trait = Actor.TraitOrDefault<TransformToBuilding>();
 
-            if (traits.Any() && !transformToButtons.Any())
+            if (trait != null && !transformToButtons.Any())
             {
-                var i = 0;
+                var selectedValidActors = ActorGroup.Where(a => a.TraitOrDefault<TransformToBuilding>() != null && a.TraitOrDefault<TransformToBuilding>().StandsOnBuilding)
+                    .ToHashSet();
 
-                foreach (var trait in traits)
+                if (trait.StandsOnBuilding)
                 {
-                    if (!trait.Info.Factions.Contains(Actor.Owner.Faction.InternalName))
-                        continue;
+                    var tInfo = trait.Buildingbelow.Info.TraitInfoOrDefault<AllowTransfromInfo>();
 
-                    var selectedValidActors = ActorGroup
-                        .Where(a =>
-                            a.TraitsImplementing<TransformToBuilding>().FirstOrDefault(t => t.Buildingbelow == trait.Buildingbelow) != null).ToHashSet();
-
-                    if (selectedValidActors.Count >= 4)
+                    if (selectedValidActors.Count >= 4 && tInfo != null)
                     {
                         var con = new TransformToBuildingButtonWidget(
                             this,
                             -30 - 76,
-                            50 + 68 * i,
-                            trait.Info.IntoBuilding,
+                            50 + 68,
+                            tInfo.Building,
                             selectedValidActors) { Visible = true };
                         transformToButtons.Add(con);
 
                         AddChild(con);
-                        i += 1;
                     }
                 }
             }
-            else if (traits.Any() && transformToButtons.Any())
+            else if (trait != null && transformToButtons.Any())
             {
                 foreach (var widget in transformToButtons)
                 {

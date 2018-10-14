@@ -10,15 +10,20 @@ World:
 		Factions: evil
 Player:
 	Research@evil:
-		PreResearched: zombie, ghoul
+		PreResearched: zombie, warrior, cleric, wizard, druid
 		Faction: evil
 		Researchable:
-			zombie: 500
-			ghoul: 500
+			ranger: 1125
 			goblin: 1125
+			fury: 1125 
+			gnome2: 1275 
 			gargoyle: 1450
-			druid: 2560
+			griffin: 1800
+			stonegolem: 1800
+			ghoul: 2250
+			paladin: 3150
 			gnome: 3150
+			wyrm: 4200 
 		TimePerCost: 3
 
 HQ.EVIL:
@@ -57,67 +62,6 @@ HQ.EVIL:
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 	GeneratesExperience:
-
-CRYPT:
-	Inherits@: ^Building
-	EditorTilesetFilter:
-		Categories: Building
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -1024, -1024
-			BottomRight: 1024, 1024
-	RenderSprites:
-		Image: crypt
-		PlayerPalette: BamPlayer
-	Tooltip:
-		Name: Crypt
-	AllowConvert:
-		ConvertTo: zombie, goblin, gnome
-	Health:
-		HP: 300
-	Targetable:
-		TargetTypes: Default
-	RallyPoint:
-		Palette: BamPlayer
-		Offset: 0, 0
-	ChangeImageOnTheatre:
-	Terminate:
-	GeneratesExperience:
-
-ARBORLODGE:
-	Inherits@: ^Building
-	EditorTilesetFilter:
-		Categories: Building
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -1024, -1024
-			BottomRight: 1024, 1024
-	RenderSprites:
-		Image: arborlodge
-		PlayerPalette: BamPlayer
-	Tooltip:
-		Name: Arborlodge
-	AllowConvert:
-		ConvertTo: ghoul, gargoyle, druid
-	Health:
-		HP: 240
-	Targetable:
-		TargetTypes: Default
-	RallyPoint:
-		Palette: BamPlayer
-		Offset: 0, 0
-	ChangeImageOnTheatre:
-	Terminate:
-	GeneratesExperience:
-
 ZOMBIE:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf
@@ -215,7 +159,7 @@ GHOUL:
 	Tooltip:
 		Name: Ghoul
 	Health:
-		HP: 20
+		HP: 25
 	RevealsShroud:
 		Range: 3c0
 		Type: CenterPosition
@@ -295,11 +239,11 @@ DRUID:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf
 	Valued:
-		Cost: 35
+		Cost: 20
 	Tooltip:
 		Name: Druid
 	Health:
-		HP: 30
+		HP: 25
 	RevealsShroud:
 		Range: 5c0
 		Type: CenterPosition
@@ -314,7 +258,7 @@ DRUID:
 		Weapon: CloseCombatClaw
 	DungeonsAndDragonsStats:
 		Damage: 4
-		Armor: 4
+		Armor: 2
 		Speed: 3
 		Attributes: Evil, Alive, Humanoid, Nature
 		IgnoresNegativeTerrainEffects: Foliage, HighFoliage
@@ -345,7 +289,7 @@ GNOME:
 	Valued:
 		Cost: 35
 	Tooltip:
-		Name: Gnome
+		Name: Enchanter
 	Health:
 		HP: 20
 	RevealsShroud:

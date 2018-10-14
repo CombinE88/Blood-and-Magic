@@ -21,7 +21,6 @@ induwall:
 		ZOffset: -1024
 	icon: induwall_icon.ani
 
-
 nwall2:
 	idle: bits/1x1props.png
 		Frames: 10,10,10,32,12,22,12,12,10,32,11,32,12,12,12,12
@@ -65,6 +64,46 @@ bigbuilding5:
 		Frames: 0
 		ZOffset: -2048
 	icon: mainbase_icon.ani
+
+platformcrypt:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 26
+		ZOffset: -2048
+	icon: plattform_icon.ani
+
+platformbarracks:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 27
+		ZOffset: -2048
+	icon: plattform_icon.ani
+
+platformtemple:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 28
+		ZOffset: -2048
+	icon: plattform_icon.ani
+
+platformarbor:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 49
+		ZOffset: -2048
+	icon: plattform_icon.ani
+
+platformrune:
+	Defaults:
+		AddExtension: False
+	idle: bits/buildingsbam.png
+		Frames: 48
+		ZOffset: -2048
+	icon: plattform_icon.ani
 
 plattforma:
 	Defaults:

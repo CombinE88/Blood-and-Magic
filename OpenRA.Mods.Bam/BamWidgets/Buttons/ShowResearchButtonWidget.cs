@@ -124,19 +124,19 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
 
             var list = Research.Info.Researchable.ToList();
 
-            if ((55 + ActorActions.Bounds.Y + Bounds.Y + list.Count * 68) < Game.Renderer.Resolution.Height)
+            if ((55 + ActorActions.Bounds.Y + Bounds.Y + list.Count/3 * 68) < Game.Renderer.Resolution.Height)
                 for (int i = 0; i < list.Count; i++)
                 {
                     var con = new ResearchButtonWidget(
                         this,
-                        110,
-                        55 + 68 * i,
+                        35 + i % 3 * 75 - 100,
+                        55 + 68 * (i / 3),
                         list[i].Key,
                         list[i].Value * Research.Info.TimePerCost,
                         list[i].Value,
                         Research,
                         i * 2,
-                        100)
+                        300)
                     {
                         Visible = true
                     };
@@ -147,14 +147,14 @@ namespace OpenRA.Mods.Bam.BamWidgets.Buttons
                 {
                     var con = new ResearchButtonWidget(
                         this,
-                        35 + i % 2 * 75,
-                        55 + 68 * (i / 2),
+                        35 + i % 4 * 75 - 200,
+                        55 + 68 * (i / 4),
                         list[i].Key,
                         list[i].Value * Research.Info.TimePerCost,
                         list[i].Value,
                         Research,
                         i * 2,
-                        200)
+                        300)
                     {
                         Visible = true
                     };

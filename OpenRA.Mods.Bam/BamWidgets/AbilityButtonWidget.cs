@@ -1,6 +1,7 @@
 using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Bam.Traits.UnitAbilities;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Bam.BamWidgets
@@ -24,6 +25,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 text = actorActions.Actor.Info.TraitInfoOrDefault<HealTargetAbilityInfo>().AbilityString;
             else if (actorActions.Actor.TraitOrDefault<StealEnemyAbility>() != null)
                 text = actorActions.Actor.Info.TraitInfoOrDefault<StealEnemyAbilityInfo>().AbilityString;
+            else if (actorActions.Actor.TraitOrDefault<RepairTargetAbility>() != null)
+                text = actorActions.Actor.Info.TraitInfoOrDefault<RepairTargetAbilityInfo>().AbilityString;
         }
 
         public override void Draw()
@@ -38,6 +41,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             var heal = actorActions.Actor.TraitOrDefault<HealTargetAbility>();
             var steal = actorActions.Actor.TraitOrDefault<StealEnemyAbility>();
+            var repair = actorActions.Actor.TraitOrDefault<RepairTargetAbility>();
 
             if (heal != null)
             {
@@ -56,6 +60,16 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 disabled = !(steal.CurrentDelay >= stealInfo.Delay);
 
                 fill = 170 - 170 * steal.CurrentDelay / stealInfo.Delay;
+
+                cost = stealInfo.Ammount;
+            }
+            else if (repair != null)
+            {
+                var stealInfo = actorActions.Actor.Info.TraitInfoOrDefault<RepairTargetAbilityInfo>();
+
+                disabled = !(repair.CurrentDelay >= stealInfo.Delay);
+
+                fill = 170 - 170 * repair.CurrentDelay / stealInfo.Delay;
 
                 cost = stealInfo.Ammount;
             }

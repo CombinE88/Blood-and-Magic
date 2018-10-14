@@ -4,6 +4,8 @@ namespace OpenRA.Mods.Bam.Traits
 {
     public class AllowTransfromInfo : ITraitInfo
     {
+        public readonly string Building = "";
+
         public object Create(ActorInitializer init)
         {
             return new AllowTransfrom(init, this);

@@ -1,3 +1,153 @@
+TEMPLE:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: temple
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Temple
+	AllowConvert:
+		ConvertTo: cleric, fury, paladin, gnome
+	Health:
+		HP: 300
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
+	ChangeImageOnTheatre:
+	Terminate:
+	GeneratesExperience:
+
+CRYPT:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: crypt
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Crypt
+	AllowConvert:
+		ConvertTo: zombie, ghoul, goblin, gargoyle
+	Health:
+		HP: 300
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
+	ChangeImageOnTheatre:
+	Terminate:
+	GeneratesExperience:
+
+ARBORLODGE:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: arborlodge
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Arborlodge
+	AllowConvert:
+		ConvertTo: druid, ranger, griffin
+	Health:
+		HP: 240
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
+	ChangeImageOnTheatre:
+	Terminate:
+	GeneratesExperience:
+
+BARRACKS:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: barracks
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Barracks
+	AllowConvert:
+		ConvertTo: warrior, ranger, paladin
+	Health:
+		HP: 360
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
+	ChangeImageOnTheatre:
+	Terminate:
+	GeneratesExperience:
+
+RUNESTONE:
+	Inherits@: ^Building
+	EditorTilesetFilter:
+		Categories: Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: runestone
+		PlayerPalette: BamPlayer
+	Tooltip:
+		Name: Runestone
+	AllowConvert:
+		ConvertTo: wizard, gnome2, stonegolem, wyrm
+	Health:
+		HP: 300
+	Targetable:
+		TargetTypes: Default
+	RallyPoint:
+		Palette: BamPlayer
+		Offset: 0, 0
+	ChangeImageOnTheatre:
+	Terminate:
+	GeneratesExperience:
+
 PLATTFORMB:
 	Inherits@: ^CoreBuilding
 	EditorTilesetFilter:
@@ -15,8 +165,113 @@ PLATTFORMB:
 		Image: plattformb
 		Palette: bam11195
 	Tooltip:
-		Name: Building Platform
+		Name: Random Building Platform
+	ChangeToRandomBuilding:
+
+PLATFORMCRYPT:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building Platform
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: platformcrypt
+		Palette: bam11195
+	Tooltip:
+		Name: Crypt Platform
 	AllowTransfrom:
+		Building: crypt
+
+PLATFORMBARRACKS:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building Platform
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: platformbarracks
+		Palette: bam11195
+	Tooltip:
+		Name: Barracks Platform
+	AllowTransfrom:
+		Building: barracks
+
+PLATFORMTEMPLE:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building Platform
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: platformtemple
+		Palette: bam11195
+	Tooltip:
+		Name: Temple Platform
+	AllowTransfrom:
+		Building: temple
+
+PLATFORMARBOR:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building Platform
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: platformarbor
+		Palette: bam11195
+	Tooltip:
+		Name: Arbor Lodge Platform
+	AllowTransfrom:
+		Building: arborlodge
+
+PLATFORMRUNE:
+	Inherits@: ^CoreBuilding
+	EditorTilesetFilter:
+		Categories: Building Platform
+	-Selectable:
+	Interactable:
+	Building:
+		Footprint: == ==
+		Dimensions: 2,2
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+	RenderSprites:
+		Image: platformrune
+		Palette: bam11195
+	Tooltip:
+		Name: Runestone Platform
+	AllowTransfrom:
+		Building: runestone
 
 PLATTFORMA:
 	Inherits@: ^CoreBuilding
@@ -35,8 +290,8 @@ PLATTFORMA:
 		Image: plattforma
 		Palette: bam11195
 	Tooltip:
-		Name: Building Platform
-	AllowTransfrom:
+		Name: Random Building Platform
+	ChangeToRandomBuilding:
 
 HOSTBLDGN1:
 	Inherits@: ^Building

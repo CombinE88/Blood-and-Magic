@@ -10,15 +10,20 @@ World:
 		Factions: good
 Player:
 	Research@good:
-		PreResearched: warrior, cleric
+		PreResearched: zombie, warrior, cleric, wizard, druid
 		Faction: good
 		Researchable:
-			warrior: 500
-			cleric: 500
 			ranger: 1125
-			wizard: 1450
+			goblin: 1125
+			fury: 1125 
+			gnome2: 1275 
+			gargoyle: 1450
 			griffin: 1800
+			stonegolem: 1800
+			ghoul: 2250
 			paladin: 3150
+			gnome: 3150
+			wyrm: 4200 
 		TimePerCost: 3
 
 HQ.GOOD:
@@ -56,67 +61,6 @@ HQ.GOOD:
 		Offset: 0, 3
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
-	GeneratesExperience:
-
-
-BARRACKS:
-	Inherits@: ^Building
-	EditorTilesetFilter:
-		Categories: Building
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -1024, -1024
-			BottomRight: 1024, 1024
-	RenderSprites:
-		Image: barracks
-		PlayerPalette: BamPlayer
-	Tooltip:
-		Name: Barracks
-	AllowConvert:
-		ConvertTo: warrior, ranger, paladin
-	Health:
-		HP: 360
-	Targetable:
-		TargetTypes: Default
-	RallyPoint:
-		Palette: BamPlayer
-		Offset: 0, 0
-	ChangeImageOnTheatre:
-	Terminate:
-	GeneratesExperience:
-
-RUNESTONE:
-	Inherits@: ^Building
-	EditorTilesetFilter:
-		Categories: Building
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: true
-		Type: Rectangle
-			TopLeft: -1024, -1024
-			BottomRight: 1024, 1024
-	RenderSprites:
-		Image: runestone
-		PlayerPalette: BamPlayer
-	Tooltip:
-		Name: Runestone
-	AllowConvert:
-		ConvertTo: cleric, wizard, griffin
-	Health:
-		HP: 300
-	Targetable:
-		TargetTypes: Default
-	RallyPoint:
-		Palette: BamPlayer
-		Offset: 0, 0
-	ChangeImageOnTheatre:
-	Terminate:
 	GeneratesExperience:
 
 WARRIOR:
@@ -337,3 +281,122 @@ WIZARD:
 		TransformTime: 30
 	CanHoldTrinket:
 		CannotUse: trinketgauntlet, meat
+
+FURY:
+	Inherits@1: ^Flyer
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 25
+	Tooltip:
+		Name: Fury
+	Health:
+		HP: 40
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: fury
+	Armament:
+		Weapon: CloseCombatSword
+	DungeonsAndDragonsStats:
+		Damage: 6
+		Armor: 3
+		Speed: 4
+		Attributes: Alive, Flying, Humanoid
+	Researchable:
+		Class: fury
+		TransformTime: 45
+	WithShadow:
+		Offset: 0,0,-512
+	Selectable:
+		Bounds: 40,38,0,-20
+		DecorationBounds: 40,38,0,-20
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7314.wav
+	-CanHoldTrinket:
+
+WYRM:
+	Inherits@1: ^Flyer
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 35
+	Tooltip:
+		Name: Wyrm
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: wyrm
+	Armament:
+		Weapon: RangedWyrm
+		LocalOffset: 512,0,1536
+	DungeonsAndDragonsStats:
+		Damage: 4
+		Armor: 3
+		Speed: 2
+		Attributes: Alive, Flying, Dragon
+	Researchable:
+		Class: wyrm
+		TransformTime: 45
+	WithShadow:
+		Offset: 0,0,-512
+	Selectable:
+		Bounds: 40,38,0,-20
+		DecorationBounds: 40,38,0,-20
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7314.wav
+	-CanHoldTrinket:
+
+GNOME2:
+	Inherits@1: ^Walker
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 20
+	Tooltip:
+		Name: Gnome
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 4c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: gnome2
+	Armament:
+		Weapon: CloseCombatSword
+	DungeonsAndDragonsStats:
+		Damage: 3
+		Armor: 2
+		Speed: 3
+		Attributes: Alive, Humanoid
+	WithImpactAnimation:
+	Researchable:
+		Class: gnome2
+		TransformTime: 25
+	CanHoldTrinket:
+		CannotUse: meat
+	RepairTargetAbility:
+		AbilityString: Repair Target by 5
+		Ammount: 5
+		AutoTarget: true
+		Delay: 200
+	WithAbilityAnimation:
+		Sequence: attack

@@ -161,7 +161,7 @@
 	OverlayPlayerColorPalette@BamPlayer: # Used for all player-colored actors.
 		BasePalette: bam11195
 		BaseName: BamPlayer
-		RemapIndex: 192, 193, 194, 195, 196, 197, 198, 199
+		RemapIndex: 183,184,185,186,187,188,189,190,191,192, 193, 194, 195, 196, 197, 198, 199
 	RotationPaletteEffect@water:
 		RotationBase: 235
 		RotationRange: 5

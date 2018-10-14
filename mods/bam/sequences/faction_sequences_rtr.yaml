@@ -55,6 +55,36 @@ warrior:
 	icon: warrior_icon.ani
 	disabled-icon: warrior_icon_disabled.ani
 
+gnome2:
+	Inherits: ^default
+	stand: gnome2_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: gnome2_stand.ani
+		Tick: 120
+		Facings: 8
+	run: gnome2_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: gnome2_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: gnome2_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: gnome2_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: gnome2_die.ani
+		Tick: 120
+		Length: 7
+	icon: gnome2_icon.ani
+	disabled-icon: gnome2_icon_disabled.ani
+	
 ranger:
 	Inherits: ^default
 	stand: ranger_idle.ani
@@ -226,3 +256,83 @@ wizard_projectile:
 		Facings: 8
 		Length: 4
 		Tick: 100
+
+wyrm:
+	Inherits: ^default
+	stand: wyrm_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+		Offset: 0, -20
+	idle: wyrm_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+		Offset: 0, -20
+	run: wyrm_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+		Offset: 0, -20
+	attack: wyrm_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+		Offset: 0, -20
+	aim: wyrm_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: wyrm_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+		Offset: 0, -20
+	die: wyrm_die.ani
+		Tick: 120
+		Length: 8
+		Offset: 0, -20
+	icon: wyrm_icon.ani
+	disabled-icon: wyrm_icon_disabled.ani
+	
+wyrm_projectile:
+	idle: wyrm_projectile.ani
+		Facings: 8
+		Length: 4
+		Tick: 100
+
+fury:
+	Inherits: ^default
+	stand: fury_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+		Offset: 0, -20
+	idle: fury_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+		Offset: 0, -20
+	run: fury_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+		Offset: 0, -20
+	attack: fury_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+		Offset: 0, -20
+	aim: fury_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: fury_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+		Offset: 0, -20
+	die: fury_die.ani
+		Tick: 120
+		Length: 8
+		Offset: 0, -20
+	icon: fury_icon.ani
+	disabled-icon: fury_icon_disabled.ani

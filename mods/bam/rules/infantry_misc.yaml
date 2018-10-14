@@ -31,18 +31,7 @@ ACOLYTE:
 	SimpleDeathSounds:
 		DeathTypes: Death
 		Sound: 7220.wav
-	TransformToBuilding@barracks:
-		IntoBuilding: barracks
-		Factions: good
-	TransformToBuilding@runestone:
-		IntoBuilding: runestone
-		Factions: good
-	TransformToBuilding@evil:
-		IntoBuilding: crypt
-		Factions: evil
-	TransformToBuilding@arborlodge:
-		IntoBuilding: arborlodge
-		Factions: evil
+	TransformToBuilding:
 
 CAPSULE:
 	Inherits@1: ^Walker
@@ -111,11 +100,10 @@ STONEGOLEM:
 		Attributes: Elemental, Immune
 		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 	WithImpactAnimation:
-	AttackWander:
-		WanderMoveRadius: 2
-		MinMoveDelay: 100
-		MaxMoveDelay: 400
 	-CanHoldTrinket:
+	Researchable:
+		Class: stonegolem
+		TransformTime: 35
 
 WOLF:
 	Inherits@1: ^Walker
