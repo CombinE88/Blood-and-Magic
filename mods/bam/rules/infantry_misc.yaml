@@ -98,9 +98,12 @@ STONEGOLEM:
 		Speed: 1
 		CanbeModified: false
 		Attributes: Elemental, Immune
+		PartialReverted: true 
+		PartialProtection: Gnome
 		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 	WithImpactAnimation:
-	-CanHoldTrinket:
+	CanHoldTrinket:
+		CannotUse: meat, healsalve, water
 	Researchable:
 		Class: stonegolem
 		TransformTime: 35
@@ -167,6 +170,7 @@ BANSHEE:
 		Armor: 2
 		Speed: 1
 		Attributes: Animal, Evil, Alive, Immune
+		PartialProtection: Nature
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 2
@@ -204,6 +208,7 @@ TROLL:
 		Speed: 2
 		CanbeModified: false
 		Attributes: Humanoid, Alive, Immune
+		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 2
@@ -213,6 +218,12 @@ TROLL:
 		DeathTypes: Death
 		Sound: 7228.wav
 	-CanHoldTrinket:
+	SelfHealing:
+		Step: 1
+		Delay: 150
+		HealIfBelow: 101
+		DamageCooldown: 0
+		DamageTypes: Healing
 
 GUARDIAN:
 	Inherits@1: ^Walker
@@ -240,6 +251,7 @@ GUARDIAN:
 		Armor: 5
 		Speed: 2
 		CanbeModified: false
+		PartialReverted: true 
 		Attributes: Humanoid, Alive, Immune
 	WithImpactAnimation:
 	SimpleDeathSounds:

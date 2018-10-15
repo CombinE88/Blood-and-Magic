@@ -13,11 +13,11 @@ Player:
 		PreResearched: zombie, warrior, cleric, wizard, druid
 		Faction: evil
 		Researchable:
+			gargoyle: 975 
 			ranger: 1125
 			goblin: 1125
 			fury: 1125 
 			gnome2: 1275 
-			gargoyle: 1450
 			griffin: 1800
 			stonegolem: 1800
 			ghoul: 2250
@@ -62,6 +62,7 @@ HQ.EVIL:
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4
 	GeneratesExperience:
+
 ZOMBIE:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf
@@ -84,10 +85,12 @@ ZOMBIE:
 	Armament:
 		Weapon: CloseCombatSword
 	DungeonsAndDragonsStats:
-		Damage: 4
+		Damage: 5
 		Armor: 2
 		Speed: 2
 		Attributes: Evil
+		PartialReverted: true 
+		PartialProtection: Holy, Magical
 		IgnoresNegativeTerrainEffects: Swamp
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -133,7 +136,7 @@ GOBLIN:
 		Damage: 4
 		Armor: 3
 		Speed: 2
-		Attributes: Evil, Alive, Humanoid
+		Attributes: Alive, Humanoid
 		IgnoresNegativeTerrainEffects: Swamp, Foliage
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -222,6 +225,7 @@ GARGOYLE:
 		Armor: 2
 		Speed: 3
 		Attributes: Evil, Flying, Alive
+		Flying: true
 	Researchable:
 		Class: gargoyle
 		TransformTime: 45
@@ -261,6 +265,7 @@ DRUID:
 		Armor: 2
 		Speed: 3
 		Attributes: Evil, Alive, Humanoid, Nature
+		PartialProtection: Nature
 		IgnoresNegativeTerrainEffects: Foliage, HighFoliage
 		TerrainBonus@Foliage:
 			Tilename: Foliage
@@ -276,12 +281,6 @@ DRUID:
 	Researchable:
 		Class: druid
 		TransformTime: 35
-	SelfHealing:
-		Step: 1
-		Delay: 75
-		HealIfBelow: 100
-		DamageCooldown: 150
-		DamageTypes: Healing
 
 GNOME:
 	Inherits@1: ^Walker

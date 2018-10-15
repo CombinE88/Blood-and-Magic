@@ -139,7 +139,7 @@ namespace OpenRA.Mods.Bam.BamWidgets
 
             var ca = Actor.TraitOrDefault<ConvertAdjetant>();
 
-            if (Actor.Info.HasTraitInfo<ConvertAdjetantInfo>() && ca.AllowTransform && ca.TransformEnabler != null)
+            if (ca != null && ca.AllowTransform && ca.TransformEnabler != null)
                 if (!convertToButtons.Any())
                 {
                     CreateSpawnMenu();

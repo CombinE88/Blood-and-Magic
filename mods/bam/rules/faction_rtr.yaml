@@ -13,11 +13,11 @@ Player:
 		PreResearched: zombie, warrior, cleric, wizard, druid
 		Faction: good
 		Researchable:
+			gargoyle: 975 
 			ranger: 1125
 			goblin: 1125
 			fury: 1125 
 			gnome2: 1275 
-			gargoyle: 1450
 			griffin: 1800
 			stonegolem: 1800
 			ghoul: 2250
@@ -120,10 +120,26 @@ RANGER:
 		LocalOffset: 1024,0,555
 		FireDelay: 5
 	DungeonsAndDragonsStats:
+		IgnoresNegativeTerrainEffects: Foliage, RoughGround, Swamp
+		TerrainBonus@Swamp:
+			Tilename: Swamp
+			Damage: 0
+			Armor: -2
+			Speed: 0
+		TerrainBonus@RoughGround:
+			Tilename: RoughGround
+			Damage: 0
+			Armor: 1
+			Speed: 0
+		TerrainBonus@Foliage:
+			Tilename: Foliage
+			Damage: 0
+			Armor: 1
+			Speed: 0
 		Damage: 4
 		Armor: 2
 		Speed: 3
-		Attributes: Alive, Humanoid
+		Attributes: Alive, Humanoid, Nature
 	Researchable:
 		Class: ranger
 		TransformTime: 35
@@ -160,6 +176,7 @@ CLERIC:
 		Armor: 1
 		Speed: 3
 		Attributes: Alive, Humanoid, Holy
+		PartialProtection: Evil
 	Researchable:
 		Class: cleric
 		TransformTime: 35
@@ -200,6 +217,7 @@ PALADIN:
 		Armor: 4
 		Speed: 2
 		Attributes: Alive, Humanoid, Holy
+		PartialProtection: Evil
 	Researchable:
 		Class: paladin
 		TransformTime: 40
@@ -234,7 +252,8 @@ GRIFFIN:
 		Damage: 5
 		Armor: 3
 		Speed: 2
-		Attributes: Alive, Flying, Animal
+		Attributes: Alive, Flying, Animal, Nature
+		Flying: true
 	Researchable:
 		Class: griffin
 		TransformTime: 45
@@ -307,7 +326,8 @@ FURY:
 		Damage: 6
 		Armor: 3
 		Speed: 4
-		Attributes: Alive, Flying, Humanoid
+		Attributes: Alive, Flying, Humanoid, Magical
+		Flying: true
 	Researchable:
 		Class: fury
 		TransformTime: 45
@@ -320,6 +340,12 @@ FURY:
 		DeathTypes: Death
 		Sound: 7314.wav
 	-CanHoldTrinket:
+	SelfHealing:
+		Step: -1
+		Delay: 75
+		HealIfBelow: 101
+		DamageCooldown: 0
+		DamageTypes: Healing
 
 WYRM:
 	Inherits@1: ^Flyer
@@ -348,6 +374,7 @@ WYRM:
 		Armor: 3
 		Speed: 2
 		Attributes: Alive, Flying, Dragon
+		Flying: true
 	Researchable:
 		Class: wyrm
 		TransformTime: 45
@@ -386,7 +413,7 @@ GNOME2:
 		Damage: 3
 		Armor: 2
 		Speed: 3
-		Attributes: Alive, Humanoid
+		Attributes: Alive, Humanoid, Gnome
 	WithImpactAnimation:
 	Researchable:
 		Class: gnome2

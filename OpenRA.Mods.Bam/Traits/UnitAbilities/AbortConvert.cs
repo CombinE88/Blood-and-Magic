@@ -30,13 +30,17 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public void AbortTransformation(Actor self)
         {
+            var pos = self.CenterPosition;
+            var image = self.Info.TraitInfo<RenderSpritesInfo>().Image;
+            var palette = self.Info.TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName;
+
             self.World.AddFrameEndTask(w =>
                 w.Add(new SpriteEffect(
-                    self.CenterPosition,
+                    pos,
                     w,
-                    self.Info.TraitInfo<RenderSpritesInfo>().Image,
+                    image,
                     "transform_reverse",
-                    self.Info.TraitInfo<RenderSpritesInfo>().PlayerPalette + self.Owner.InternalName)));
+                    palette)));
 
             self.CancelActivity();
             self.QueueActivity(new AdvancedTransform(self, "acolyte")

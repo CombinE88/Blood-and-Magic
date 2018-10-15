@@ -81,19 +81,49 @@ namespace OpenRA.Mods.Bam.Warhead
             var armor = 0;
             var extra = 0;
 
-            if (victim != null && !victim.IsDead && victim.IsInWorld)
+            var victimTrait = victim.TraitOrDefault<DungeonsAndDragonsStats>();
+            var firedByTrait = firedBy.TraitOrDefault<DungeonsAndDragonsStats>();
+
+            if (!victim.IsDead && victim.IsInWorld)
             {
-                armor = victim.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>() ? victim.TraitOrDefault<DungeonsAndDragonsStats>().ModifiedArmor : 0;
+                armor = victimTrait != null ? victimTrait.ModifiedArmor : 0;
             }
 
-            if (firedBy != null && !firedBy.IsDead && firedBy.IsInWorld)
+            if (!firedBy.IsDead && firedBy.IsInWorld)
             {
-                extra = firedBy.Info.HasTraitInfo<DungeonsAndDragonsStatsInfo>() ? firedBy.TraitOrDefault<DungeonsAndDragonsStats>().ModifiedDamage : 1;
+                extra = firedByTrait != null ? firedByTrait.ModifiedDamage : 1;
             }
 
             extra = extra - armor > 0 ? extra - armor : 1;
 
-            victim.InflictDamage(firedBy, new Damage(extra, DamageTypes));
+            if (extra > 1 && victimTrait != null && firedByTrait != null && !victimTrait.Info.PartialReverted)
+                foreach (var type in victimTrait.Info.PartialProtection)
+                {
+                    if (firedByTrait.Info.Attributes.Contains(type))
+                    {
+                        extra = extra / 2;
+                        break;
+                    }
+                }
+            else if (extra > 1 && victimTrait != null && firedByTrait != null && victimTrait.Info.PartialReverted)
+            {
+                var found = true;
+
+                foreach (var type in victimTrait.Info.PartialProtection)
+                {
+                    if (firedByTrait.Info.Attributes.Contains(type))
+                    {
+                        found = false;
+                        break;
+                    }
+                }
+
+                extra = found ? extra / 2 : extra;
+            }
+
+            if (!victim.IsDead && victim.IsInWorld)
+
+                victim.InflictDamage(firedBy, new Damage(extra, DamageTypes));
         }
 
         int GetDamageFalloff(int distance)

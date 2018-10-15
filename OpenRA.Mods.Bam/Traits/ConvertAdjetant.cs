@@ -69,7 +69,7 @@ namespace OpenRA.Mods.Bam.Traits
             var sorrundingActors = self.World.FindActorsInCircle(self.World.Map.CenterOfCell(cellstandingOn), new WDist(2560))
                 .Where(a =>
                     a != null
-                    && a.Owner == self.Owner
+                    && a.Owner.IsAlliedWith(self.Owner)
                     && a.Info.HasTraitInfo<AllowConvertInfo>());
 
             AllowTransform = sorrundingActors.Any();

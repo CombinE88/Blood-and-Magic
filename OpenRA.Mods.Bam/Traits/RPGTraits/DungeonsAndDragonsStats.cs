@@ -27,10 +27,14 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         public readonly int Damage = 0;
         public readonly int Speed = 0;
 
+        public readonly string[] PartialProtection = {};
+        public readonly bool PartialReverted = false;
+
         [Desc("What is this. possibilities are: humanoid, alive, nature, holy, evil")]
         public readonly string[] Attributes = { "Alive", "Humanoid" };
 
         public readonly string[] IgnoresNegativeTerrainEffects = { "" };
+        public readonly bool Flying = false;
 
         [FieldLoader.LoadUsing("LoadTerrainBonus")]
         public readonly List<TerrainBonus> TerrainBonus = new List<TerrainBonus>();
@@ -62,7 +66,7 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         public int ModifiedArmor;
         public int ModifiedDamage;
         public int ModifiedSpeed;
-        private DungeonsAndDragonsStatsInfo info;
+        public DungeonsAndDragonsStatsInfo Info;
         private Actor self;
 
         public DungeonsAndDragonsStats(ActorInitializer init, DungeonsAndDragonsStatsInfo info)
@@ -74,13 +78,13 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
             ModifiedDamage = info.Damage;
             ModifiedSpeed = info.Speed;
 
-            this.info = info;
+            this.Info = info;
             this.self = init.Self;
         }
 
         void ITick.Tick(Actor self)
         {
-            if (!self.IsInWorld || self.IsDead || !info.CanbeModified)
+            if (!self.IsInWorld || self.IsDead || !Info.CanbeModified)
                 return;
 
             var getTileBelow = self.World.Map.GetTerrainInfo(self.Location).Type;
@@ -103,24 +107,27 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
 
         private void ModifyValues(TilesetInformations tileInfo, Actor self)
         {
-            ModifiedArmor = Armor + (this.info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
-                                ? Math.Max(tileInfo.Armor, 0)
-                                : tileInfo.Armor);
-
-            ModifiedDamage = Damage + (this.info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
-                                 ? Math.Max(tileInfo.Damage, 0)
-                                 : tileInfo.Damage);
-
-            ModifiedSpeed = Speed + (this.info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
-                                ? Math.Max(tileInfo.Speed, 0)
-                                : tileInfo.Speed);
-
-            var selfBonus = info.TerrainBonus.FirstOrDefault(t => t.Tilename == tileInfo.Tilename);
-            if (selfBonus != null)
+            if (!Info.Flying)
             {
-                ModifiedArmor += selfBonus.Armor;
-                ModifiedDamage += selfBonus.Damage;
-                ModifiedSpeed += selfBonus.Speed;
+                ModifiedArmor = Armor + (this.Info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
+                                    ? Math.Max(tileInfo.Armor, 0)
+                                    : tileInfo.Armor);
+
+                ModifiedDamage = Damage + (this.Info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
+                                     ? Math.Max(tileInfo.Damage, 0)
+                                     : tileInfo.Damage);
+
+                ModifiedSpeed = Speed + (this.Info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
+                                    ? Math.Max(tileInfo.Speed, 0)
+                                    : tileInfo.Speed);
+
+                var selfBonus = Info.TerrainBonus.FirstOrDefault(t => t.Tilename == tileInfo.Tilename);
+                if (selfBonus != null)
+                {
+                    ModifiedArmor += selfBonus.Armor;
+                    ModifiedDamage += selfBonus.Damage;
+                    ModifiedSpeed += selfBonus.Speed;
+                }
             }
 
             var trinketTrati = self.TraitOrDefault<CanHoldTrinket>();
