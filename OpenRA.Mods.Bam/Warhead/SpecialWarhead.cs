@@ -75,6 +75,9 @@ namespace OpenRA.Mods.Bam.Warhead
 
         public override void DoImpact(Actor victim, Actor firedBy, IEnumerable<int> damageModifiers)
         {
+            if (victim.IsDead || !firedBy.IsInWorld || firedBy.IsDead || !firedBy.IsInWorld)
+                return;
+
             if (!IsValidAgainst(victim, firedBy))
                 return;
 
@@ -95,6 +98,27 @@ namespace OpenRA.Mods.Bam.Warhead
             }
 
             extra = extra - armor > 0 ? extra - armor : 1;
+
+            if (victimTrait != null && firedByTrait != null && victimTrait.Info.FullProtection.Any())
+            {
+                var found = false;
+
+                foreach (var type in victimTrait.Info.FullProtection)
+                {
+                    if (firedByTrait.Info.Attributes.Contains(type))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    victim.InflictDamage(firedBy, new Damage(0, DamageTypes));
+                    return;
+                }
+
+            }
 
             if (extra > 1 && victimTrait != null && firedByTrait != null && !victimTrait.Info.PartialReverted)
                 foreach (var type in victimTrait.Info.PartialProtection)

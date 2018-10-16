@@ -25,6 +25,7 @@ ACOLYTE:
 		Damage: 2
 		Armor: 2
 		Speed: 2
+		Attributes: Civilized
 	WithImpactAnimation:
 	Armament:
 		Weapon: CloseCombatFist
@@ -54,7 +55,8 @@ CAPSULE:
 		Damage: 0
 		Armor: 4
 		Speed: 0
-		Attributes: Alive, Immune
+		Attributes: Capsule
+		IgnoresAbilites: Convert, Lure, Fear
 	WithImpactAnimation:
 	Mobile:
 		Speed: 1
@@ -97,9 +99,10 @@ STONEGOLEM:
 		Armor: 5
 		Speed: 1
 		CanbeModified: false
-		Attributes: Elemental, Immune
+		Attributes: Elemental
 		PartialReverted: true 
 		PartialProtection: Gnome
+		IgnoresAbilites: Heal, Net, Venom
 		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 	WithImpactAnimation:
 	CanHoldTrinket:
@@ -133,7 +136,7 @@ WOLF:
 		Damage: 3
 		Armor: 1
 		Speed: 4
-		Attributes: Alive, Animal, Immune
+		Attributes: Animal
 	WithImpactAnimation:
 	AttackWander:
 		WanderMoveRadius: 3
@@ -169,7 +172,7 @@ BANSHEE:
 		Damage: 2
 		Armor: 2
 		Speed: 1
-		Attributes: Animal, Evil, Alive, Immune
+		Attributes: Evil
 		PartialProtection: Nature
 	WithImpactAnimation:
 	AttackWander:
@@ -207,7 +210,7 @@ TROLL:
 		Armor: 3
 		Speed: 2
 		CanbeModified: false
-		Attributes: Humanoid, Alive, Immune
+		Attributes: Evil
 		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
 	WithImpactAnimation:
 	AttackWander:
@@ -284,7 +287,7 @@ PAESANT:
 		Damage: 2
 		Armor: 1
 		Speed: 3
-		Attributes: Humanoid, Alive, Immune
+		Attributes: Civilized
 	WithImpactAnimation:
 	Wanders:
 		WanderMoveRadius: 7

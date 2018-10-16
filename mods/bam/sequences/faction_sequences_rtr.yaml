@@ -336,3 +336,65 @@ fury:
 		Offset: 0, -20
 	icon: fury_icon.ani
 	disabled-icon: fury_icon_disabled.ani
+
+wraith:
+	Inherits: ^default
+	stand: wraith_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 8
+	idle: wraith_stand.ani
+		Tick: 120
+		Facings: 8
+		Length: 4
+	run: wraith_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: wraith_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: wraith_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: wraith_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: wraith_die.ani
+		Tick: 120
+		Length: 8
+	icon: wraith_icon.ani
+	disabled-icon: wraith_icon_disabled.ani
+
+nymph:
+	Inherits: ^default
+	stand: nymph_idle.ani
+		Tick: 120
+		Facings: 2
+		Length: 4
+	idle: nymph_stand.ani
+		Tick: 120
+		Facings: 4
+		Length: 4
+	run: nymph_run.ani
+		Tick: 120
+		Length: 4
+		Facings: 8
+	attack: nymph_attack.ani
+		Tick: 160
+		Length: 4
+		Facings: 8
+	aim: nymph_aim.ani
+		Tick: 160
+		Facings: 8
+	damage: nymph_damage.ani
+		Tick: 160
+		Length: 4
+		Facings: 4
+	die: nymph_die.ani
+		Tick: 120
+		Length: 8
+	icon: nymph_icon.ani
+	disabled-icon: nymph_icon_disabled.ani

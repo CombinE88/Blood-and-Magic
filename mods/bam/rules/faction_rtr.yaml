@@ -24,6 +24,8 @@ Player:
 			paladin: 3150
 			gnome: 3150
 			wyrm: 4200 
+			nymph: 4650 
+			wraith: 4650 
 		TimePerCost: 3
 
 HQ.GOOD:
@@ -88,7 +90,7 @@ WARRIOR:
 		Damage: 4
 		Armor: 2
 		Speed: 2
-		Attributes: Alive, Humanoid
+		Attributes: Civilized
 	WithImpactAnimation:
 	Researchable:
 		Class: paladin
@@ -139,7 +141,7 @@ RANGER:
 		Damage: 4
 		Armor: 2
 		Speed: 3
-		Attributes: Alive, Humanoid, Nature
+		Attributes: Civilized, Nature
 	Researchable:
 		Class: ranger
 		TransformTime: 35
@@ -175,7 +177,8 @@ CLERIC:
 		Damage: 2
 		Armor: 1
 		Speed: 3
-		Attributes: Alive, Humanoid, Holy
+		Attributes: Civilized, Holy
+		IgnoresAbilites: Fear
 		PartialProtection: Evil
 	Researchable:
 		Class: cleric
@@ -216,7 +219,8 @@ PALADIN:
 		Damage: 5
 		Armor: 4
 		Speed: 2
-		Attributes: Alive, Humanoid, Holy
+		Attributes: Civilized, Holy
+		IgnoresAbilites: Fear
 		PartialProtection: Evil
 	Researchable:
 		Class: paladin
@@ -252,7 +256,7 @@ GRIFFIN:
 		Damage: 5
 		Armor: 3
 		Speed: 2
-		Attributes: Alive, Flying, Animal, Nature
+		Attributes: Flying, Animal, Nature
 		Flying: true
 	Researchable:
 		Class: griffin
@@ -294,7 +298,7 @@ WIZARD:
 		Damage: 2
 		Armor: 2
 		Speed: 3
-		Attributes: Alive, Humanoid, Magical
+		Attributes: Civilized, Magical
 	Researchable:
 		Class: wizard
 		TransformTime: 30
@@ -326,7 +330,7 @@ FURY:
 		Damage: 6
 		Armor: 3
 		Speed: 4
-		Attributes: Alive, Flying, Humanoid, Magical
+		Attributes: Flying, Magical
 		Flying: true
 	Researchable:
 		Class: fury
@@ -343,8 +347,7 @@ FURY:
 	SelfHealing:
 		Step: -1
 		Delay: 75
-		HealIfBelow: 101
-		DamageCooldown: 0
+		HealIfBelow: 110
 		DamageTypes: Healing
 
 WYRM:
@@ -373,7 +376,7 @@ WYRM:
 		Damage: 4
 		Armor: 3
 		Speed: 2
-		Attributes: Alive, Flying, Dragon
+		Attributes: Flying, Dragon
 		Flying: true
 	Researchable:
 		Class: wyrm
@@ -413,7 +416,7 @@ GNOME2:
 		Damage: 3
 		Armor: 2
 		Speed: 3
-		Attributes: Alive, Humanoid, Gnome
+		Attributes: Civilized, Gnome
 	WithImpactAnimation:
 	Researchable:
 		Class: gnome2
@@ -426,4 +429,102 @@ GNOME2:
 		AutoTarget: true
 		Delay: 200
 	WithAbilityAnimation:
+		Sequence: attack
+
+WRAITH:
+	Inherits@1: ^Flyer
+	Inherits@2: ^CoreArmedSelf
+	Valued:
+		Cost: 35
+	Tooltip:
+		Name: Wraith
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: wraith
+	Armament:
+		Weapon: CloseCombatSword
+		LocalOffset: 512,0,1536
+	DungeonsAndDragonsStats:
+		Damage: 3
+		Armor: 1
+		Speed: 2
+		Attributes: Evil, Floating, Ghost
+		FullProtection: Holy, Magical
+		IgnoresAbilites: Heal
+		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Rubble, Trap, Button, StoneBridge, WoodBridge, Stairs
+	Researchable:
+		Class: wraith
+		TransformTime: 45
+	Selectable:
+		Bounds: 40,38,0,-10
+		DecorationBounds: 40,38,0,-10
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7252.wav
+	CanHoldTrinket:
+		CannotUse: meat, healsalve, water
+	FearAbility:
+
+NYMPH:
+	Inherits@1: ^Flyer
+	Valued:
+		Cost: 35
+	Tooltip:
+		Name: Nymph
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	WithMoveAnimation:
+		MoveSequence: run
+	WithFacingSpriteBody:
+	Living:
+		BoredSequence: stand
+	RenderSprites:
+		Image: nymph
+	DungeonsAndDragonsStats:
+		Damage: 1
+		Armor: 1
+		Speed: 3
+		IgnoresAbilites: Convert, Lure, Wail
+		Attributes: Civilized, Floating, Nature
+		IgnoresNegativeTerrainEffects: Foliage, Farmland, Swamp, RoughGround, Trap, Button, StoneBridge, WoodBridge, Stairs
+		TerrainBonus@Foliage:
+			Tilename: Foilage
+			Damage: 0
+			Armor: 1
+			Speed: 0
+		TerrainBonus@Swamp:
+			Tilename: Swamp
+			Damage: 0
+			Armor: 1
+			Speed: 0
+	Researchable:
+		Class: nymph
+		TransformTime: 45
+	Selectable:
+		Bounds: 40,38,0,-10
+		DecorationBounds: 40,38,0,-10
+	SimpleDeathSounds:
+		DeathTypes: Death
+		Sound: 7298.wav
+	LureAbility:
+	CanHoldTrinket:
+		CannotUse: meat
+	Armament:
+		Weapon: CloseCombatFist
+		LocalOffset: 0,0,0
+	AttackFrontal:
+		RequiresCondition: !NotLured
+	WithAttackAnimation:
 		Sequence: attack

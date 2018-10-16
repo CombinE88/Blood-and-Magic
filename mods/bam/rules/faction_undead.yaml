@@ -24,6 +24,8 @@ Player:
 			paladin: 3150
 			gnome: 3150
 			wyrm: 4200 
+			nymph: 4650 
+			wraith: 4650 
 		TimePerCost: 3
 
 HQ.EVIL:
@@ -88,9 +90,10 @@ ZOMBIE:
 		Damage: 5
 		Armor: 2
 		Speed: 2
-		Attributes: Evil
+		Attributes: Evil, Undead
 		PartialReverted: true 
 		PartialProtection: Holy, Magical
+		IgnoresAbilites: Heal
 		IgnoresNegativeTerrainEffects: Swamp
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -136,7 +139,7 @@ GOBLIN:
 		Damage: 4
 		Armor: 3
 		Speed: 2
-		Attributes: Alive, Humanoid
+		Attributes: Evil
 		IgnoresNegativeTerrainEffects: Swamp, Foliage
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -179,7 +182,8 @@ GHOUL:
 		Damage: 3
 		Armor: 2
 		Speed: 3
-		Attributes: Evil, Humanoid
+		Attributes: Evil, Undead
+		IgnoresAbilites: Heal
 		IgnoresNegativeTerrainEffects: Swamp, Foliage
 		TerrainBonus@Swamp:
 			Tilename: Swamp
@@ -224,7 +228,7 @@ GARGOYLE:
 		Damage: 4
 		Armor: 2
 		Speed: 3
-		Attributes: Evil, Flying, Alive
+		Attributes: Evil, Flying, Animal
 		Flying: true
 	Researchable:
 		Class: gargoyle
@@ -264,8 +268,9 @@ DRUID:
 		Damage: 4
 		Armor: 2
 		Speed: 3
-		Attributes: Evil, Alive, Humanoid, Nature
+		Attributes: Civilized, Nature
 		PartialProtection: Nature
+		IgnoresAbilites: Lure, Wail
 		IgnoresNegativeTerrainEffects: Foliage, HighFoliage
 		TerrainBonus@Foliage:
 			Tilename: Foliage
@@ -307,7 +312,8 @@ GNOME:
 		Damage: 1
 		Armor: 2
 		Speed: 2
-		Attributes: Evil, Alive, Humanoid, Immune
+		Attributes: Civilized
+		IgnoresAbilites: Convert, Lure, Fear
 	Researchable:
 		Class: gnome
 		TransformTime: 45

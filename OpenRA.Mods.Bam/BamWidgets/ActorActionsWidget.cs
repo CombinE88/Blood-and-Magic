@@ -131,7 +131,11 @@ namespace OpenRA.Mods.Bam.BamWidgets
             if (Actor.TraitOrDefault<AbortConvert>() != null)
                 secondabilityButton.Visible = true;
 
-            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>() || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>() || Actor.Info.HasTraitInfo<RepairTargetAbilityInfo>() )
+            if (Actor.Info.HasTraitInfo<HealTargetAbilityInfo>()
+                || Actor.Info.HasTraitInfo<StealEnemyAbilityInfo>()
+                || Actor.Info.HasTraitInfo<RepairTargetAbilityInfo>()
+                ||Actor.Info.HasTraitInfo<LureAbilityInfo>()
+                || Actor.Info.HasTraitInfo<FearAbilityInfo>())
                 abilityButton.Visible = true;
 
             if (Actor.Info.HasTraitInfo<ManaShooterInfo>() && Actor.Trait<ManaShooter>().CanShoot)

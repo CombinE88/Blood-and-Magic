@@ -27,6 +27,10 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 text = actorActions.Actor.Info.TraitInfoOrDefault<StealEnemyAbilityInfo>().AbilityString;
             else if (actorActions.Actor.TraitOrDefault<RepairTargetAbility>() != null)
                 text = actorActions.Actor.Info.TraitInfoOrDefault<RepairTargetAbilityInfo>().AbilityString;
+            else if (actorActions.Actor.TraitOrDefault<LureAbility>() != null)
+                text = actorActions.Actor.Info.TraitInfoOrDefault<LureAbilityInfo>().AbilityString;
+            else if (actorActions.Actor.TraitOrDefault<FearAbility>() != null)
+                text = actorActions.Actor.Info.TraitInfoOrDefault<FearAbilityInfo>().AbilityString;
         }
 
         public override void Draw()
@@ -42,6 +46,8 @@ namespace OpenRA.Mods.Bam.BamWidgets
             var heal = actorActions.Actor.TraitOrDefault<HealTargetAbility>();
             var steal = actorActions.Actor.TraitOrDefault<StealEnemyAbility>();
             var repair = actorActions.Actor.TraitOrDefault<RepairTargetAbility>();
+            var lure = actorActions.Actor.TraitOrDefault<LureAbility>();
+            var fear = actorActions.Actor.TraitOrDefault<FearAbility>();
 
             if (heal != null)
             {
@@ -72,6 +78,26 @@ namespace OpenRA.Mods.Bam.BamWidgets
                 fill = 170 - 170 * repair.CurrentDelay / stealInfo.Delay;
 
                 cost = stealInfo.Ammount;
+            }
+            else if (lure != null)
+            {
+                var lureInfo = actorActions.Actor.Info.TraitInfoOrDefault<LureAbilityInfo>();
+
+                disabled = !(lure.CurrentDelay >= lureInfo.Delay);
+
+                fill = 170 - 170 * lure.CurrentDelay / lureInfo.Delay;
+
+                cost = lureInfo.Ammount;
+            }
+            else if (fear != null)
+            {
+                var fearInfo = actorActions.Actor.Info.TraitInfoOrDefault<FearAbilityInfo>();
+
+                disabled = !(fear.CurrentDelay >= fearInfo.Delay);
+
+                fill = 170 - 170 * fear.CurrentDelay / fearInfo.Delay;
+
+                cost = fearInfo.Ammount;
             }
 
             anim.PlayFetchIndex(disabled ? "ui_Ability_button_disabled" : "ui_Ability_button", () => 0);

@@ -28,9 +28,11 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         public readonly int Speed = 0;
 
         public readonly string[] PartialProtection = {};
+        public readonly string[] FullProtection = {};
+        public readonly string[] IgnoresAbilites = {};
         public readonly bool PartialReverted = false;
 
-        [Desc("What is this. possibilities are: humanoid, alive, nature, holy, evil")]
+        [Desc("What is this. possibilities are: Humanoid, Alive, Nature, Holy, Evil")]
         public readonly string[] Attributes = { "Alive", "Humanoid" };
 
         public readonly string[] IgnoresNegativeTerrainEffects = { "" };
@@ -78,8 +80,8 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
             ModifiedDamage = info.Damage;
             ModifiedSpeed = info.Speed;
 
-            this.Info = info;
-            this.self = init.Self;
+            Info = info;
+            self = init.Self;
         }
 
         void ITick.Tick(Actor self)
@@ -109,15 +111,15 @@ namespace OpenRA.Mods.Bam.Traits.RPGTraits
         {
             if (!Info.Flying)
             {
-                ModifiedArmor = Armor + (this.Info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
+                ModifiedArmor = Armor + (Info.IgnoresNegativeTerrainEffects.Contains(tileInfo.Tilename)
                                     ? Math.Max(tileInfo.Armor, 0)
                                     : tileInfo.Armor);
 
-                ModifiedDamage = Damage + (this.Info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
+                ModifiedDamage = Damage + (Info.IgnoresNegativeTerrainEffects.Contains(tileInfo.Tilename)
                                      ? Math.Max(tileInfo.Damage, 0)
                                      : tileInfo.Damage);
 
-                ModifiedSpeed = Speed + (this.Info.IgnoresNegativeTerrainEffects.ToArray().Contains(tileInfo.Tilename)
+                ModifiedSpeed = Speed + (Info.IgnoresNegativeTerrainEffects.Contains(tileInfo.Tilename)
                                     ? Math.Max(tileInfo.Speed, 0)
                                     : tileInfo.Speed);
 

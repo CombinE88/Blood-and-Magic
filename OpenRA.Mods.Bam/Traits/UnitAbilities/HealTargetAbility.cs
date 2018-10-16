@@ -134,7 +134,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 && a.Owner.IsAlliedWith(self.Owner)
                 && (pr.Cash + pr.Resources >= info.Ammount || self.Owner.PlayerName == "Creeps")
                 && a.TraitOrDefault<DungeonsAndDragonsStats>() != null
-                && a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Alive"));
+                && !a.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().IgnoresAbilites.Contains("Heal"));
 
             if (allowed != null)
             {
@@ -151,7 +151,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         private int ammount;
 
         public HealTargetAbilityOrderTargeter(string cursor, int range, int ammount)
-            : base("HealTarget", 6, cursor, false, true)
+            : base("HealTarget", 5, cursor, false, true)
         {
             this.range = range;
             this.ammount = ammount;
@@ -163,8 +163,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             var hp = target.TraitOrDefault<Health>();
 
             // Obey force moving onto bridges
-            if (target == null
-                || !target.IsInWorld
+            if (!target.IsInWorld
                 || target.IsDead
                 || target.Info.HasTraitInfo<BuildingInfo>()
                 || hp == null
@@ -173,7 +172,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                 || !target.Owner.IsAlliedWith(self.Owner)
                 || pr.Cash + pr.Resources < ammount
                 || target.TraitOrDefault<DungeonsAndDragonsStats>() == null
-                || !target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Alive"))
+                || target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Heal"))
                 return false;
 
             return true;

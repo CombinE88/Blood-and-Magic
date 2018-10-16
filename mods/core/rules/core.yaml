@@ -103,6 +103,8 @@
 ^CoreInfantry:
 	Inherits: ^CoreUnit
 	# Applying "infantry"-damage to all actors based on this.
+	ConditionManager:
+	# ConditionManager.
 	Armor:
 		Type: infantry
 	# Vehicles can kill infantry by driving over them.
@@ -148,14 +150,17 @@
 ^CoreArmedSelf:
 	# Units without a turret have to stop and aim at a target to shoot.
 	AttackFrontal:
+		RequiresCondition: !NotLured && !feared
 	# Specify the sequence to use when shooting.
 	WithAttackAnimation:
 		Sequence: attack
 	# Specify the sequence to use when aiming.
 	AutoTarget:
 		AllowMovement: false
+		RequiresCondition: !NotLured && !feared
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Default
 		InvalidTargets: NoAutoTarget
+		RequiresCondition: !NotLured && !feared
 	WithAimAnimation:
 		Sequence: aim

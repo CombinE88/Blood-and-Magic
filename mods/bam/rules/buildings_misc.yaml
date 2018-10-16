@@ -46,7 +46,7 @@ CRYPT:
 	Tooltip:
 		Name: Crypt
 	AllowConvert:
-		ConvertTo: zombie, ghoul, goblin, gargoyle
+		ConvertTo: zombie, ghoul, goblin, gargoyle, wraith
 	Health:
 		HP: 300
 	Targetable:
@@ -76,7 +76,7 @@ ARBORLODGE:
 	Tooltip:
 		Name: Arborlodge
 	AllowConvert:
-		ConvertTo: druid, ranger, griffin
+		ConvertTo: druid, ranger, griffin, nymph
 	Health:
 		HP: 240
 	Targetable:

@@ -42,6 +42,13 @@
 		TerrainTypes: Foliage, HighFoliage
 	Terminate:
 	Huntable:
+	RejectsOrders:
+		RequiresCondition: NotLured || feared
+	ExternalCondition@Lure:
+		Condition: NotLured
+		TotalCap: 1
+	ExternalCondition@FEARS:
+		Condition: feared
 
 ^Building:
 	Inherits: ^CoreBuilding
@@ -219,6 +226,13 @@
 		Owner: Creeps
 	Terminate:
 	Huntable:
+	RejectsOrders:
+		RequiresCondition: NotLured || feared
+	ExternalCondition@Lure:
+		Condition: NotLured
+		TotalCap: 1
+	ExternalCondition@FEARS:
+		Condition: feared
 
 ^Floater:
 	Inherits: ^CoreInfantry

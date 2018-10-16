@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Bam.Traits.Render;
 using OpenRA.Mods.Bam.Traits.RPGTraits;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -10,48 +11,53 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 {
-    public class StealEnemyAbilityInfo : ITraitInfo
+    public class LureAbilityInfo : ITraitInfo, Requires<ConditionManagerInfo>
     {
-        public readonly int Range = 2;
+        public readonly int Range = 3;
 
         public readonly string Cursor = "ability";
 
-        public readonly string AbilityString = "Steal Target Unit";
+        public readonly string AbilityString = "Lure Target Unit";
 
-        public readonly int Ammount = 60;
+        public readonly int Ammount = 10;
 
         public readonly int Delay = 300;
+
+        public readonly string ConditionToGrant = "NotLured";
 
         public readonly string Image = "explosion";
         public readonly string EffectSequence = "electric_sphere_effect";
         public readonly string EffectPalette = "bam11195";
 
-        public readonly string Sound = "7244.wav";
+        public readonly string Sound = "7200.wav";
 
         public object Create(ActorInitializer init)
         {
-            return new StealEnemyAbility(this);
+            return new LureAbility(this);
         }
     }
 
-    public class StealEnemyAbility : IIssueOrder, IResolveOrder, ITick
+    public class LureAbility : IIssueOrder, IResolveOrder, ITick, INotifyKilled
     {
-        readonly StealEnemyAbilityInfo info;
+        readonly LureAbilityInfo info;
         public int CurrentDelay;
 
-        public StealEnemyAbility(StealEnemyAbilityInfo info)
+        private Actor lureTarget;
+        private int condition = ConditionManager.InvalidConditionToken;
+
+        public LureAbility(LureAbilityInfo info)
         {
             this.info = info;
         }
 
         public IEnumerable<IOrderTargeter> Orders
         {
-            get { yield return new StealEnemyAbilityOrderTargeter(info.Cursor, info.Range, info.Ammount); }
+            get { yield return new LureAbilityOrderTargeter(info.Cursor, info.Range, info.Ammount); }
         }
 
         public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
         {
-            if (order.OrderID != "StealTarget")
+            if (order.OrderID != "LureEnemyTarget")
                 return null;
 
             return new Order(order.OrderID, self, target, queued);
@@ -59,7 +65,7 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
 
         public void ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString != "StealTarget")
+            if (order.OrderString != "LureEnemyTarget")
                 return;
 
             if (CurrentDelay < info.Delay)
@@ -82,15 +88,19 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
                     trait.PlayManaAnimation(self);
             }
 
-            order.Target.Actor.InflictDamage(order.Target.Actor, new Damage(actor.Trait<Health>().HP / 2, new BitSet<DamageType>("Death")));
+            if (lureTarget != null)
+            {
+                condition = lureTarget.Trait<ConditionManager>().RevokeCondition(self, condition);
+            }
 
-            actor.ChangeOwner(self.Owner);
+            lureTarget = actor;
+            condition = lureTarget.Trait<ConditionManager>().GrantCondition(self, info.ConditionToGrant);
 
             Game.Sound.Play(SoundType.World, info.Sound, self.CenterPosition);
 
             self.World.AddFrameEndTask(w =>
                 w.Add(new SpriteEffect(
-                    order.Target.Actor.CenterPosition,
+                    actor.CenterPosition,
                     w,
                     info.Image,
                     info.EffectSequence,
@@ -103,16 +113,34 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
             {
                 CurrentDelay++;
             }
+
+            if (lureTarget != null && (lureTarget.IsDead || !lureTarget.IsInWorld))
+                lureTarget = null;
+
+            if (lureTarget != null)
+            {
+                if (lureTarget.IsIdle || (lureTarget.Location - self.Location).Length > 1)
+                    lureTarget.QueueActivity(new Follow(lureTarget, Target.FromActor(self), new WDist(1024), new WDist(1512)));
+            }
+        }
+
+        void INotifyKilled.Killed(Actor self, AttackInfo e)
+        {
+            if (lureTarget != null)
+            {
+                lureTarget.CancelActivity();
+                condition = lureTarget.Trait<ConditionManager>().RevokeCondition(self, condition);
+            }
         }
     }
 
-    class StealEnemyAbilityOrderTargeter : UnitOrderTargeter
+    class LureAbilityOrderTargeter : UnitOrderTargeter
     {
         private int range;
         private int ammount;
 
-        public StealEnemyAbilityOrderTargeter(string cursor, int range, int ammount)
-            : base("StealTarget", 6, cursor, true, false)
+        public LureAbilityOrderTargeter(string cursor, int range, int ammount)
+            : base("LureEnemyTarget", 7, cursor, true, false)
         {
             this.range = range;
             this.ammount = ammount;
@@ -121,17 +149,16 @@ namespace OpenRA.Mods.Bam.Traits.UnitAbilities
         public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
         {
             var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
-            var hp = target.TraitOrDefault<Health>();
 
             // Obey force moving onto bridges
             if (!target.IsInWorld
                 || target.IsDead
                 || target.Info.HasTraitInfo<BuildingInfo>()
-                || hp == null
                 || (target.Location - self.Location).Length > range
                 || target.Owner.IsAlliedWith(self.Owner)
                 || pr.Cash + pr.Resources < ammount
-                || (target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>() != null && target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().IgnoresAbilites.Contains("Convert")))
+                || target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().IgnoresAbilites.Contains("Lure")
+                || !target.Info.TraitInfo<DungeonsAndDragonsStatsInfo>().Attributes.Contains("Civilized"))
                 return false;
 
             return true;
