@@ -39,6 +39,18 @@ basic_ui:
 	ui_convertbackground_pressed: ui_abort_transform.ani
 		Start: 1
 
+soulfire:
+	idle: effect_eternalfire.ani
+		Length: *
+		ZOffset: -2047
+		Tick: 100
+
+justfire:
+	idle: effect_fire.ani
+		Length: *
+		ZOffset: -2047
+		Tick: 100
+
 explosion:
 	Defaults:
 		Length: *

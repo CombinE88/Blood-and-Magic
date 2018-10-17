@@ -181,6 +181,8 @@ guardian.projectile:
 	Inherits: ^default
 	idle: guardian_projectile.ani
 		Facings: 8
+		Length: 4
+		Tick: 100
 
 
 troll:

@@ -391,6 +391,13 @@ WYRM:
 		Sound: 7314.wav
 	-CanHoldTrinket:
 
+JUSTFIRE:
+	Inherits@: ^fire
+	RenderSprites:
+		Image: justfire
+	SoulFire:
+		Weapon: JustFire
+
 GNOME2:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf

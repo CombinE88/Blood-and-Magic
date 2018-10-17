@@ -529,7 +529,7 @@ PlayerWall:
 		Image: wall
 		PlayerPalette: BamPlayer
 	Health:
-		HP: 550
+		HP: 250
 	Valued:
 		Cost: 20
 	Tooltip:
@@ -540,7 +540,7 @@ PlayerWall:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
 	Targetable:
-		TargetTypes: Default
+		TargetTypes: Default, NoAutoTarget
 	WithWallSpriteBody:
 		Type: player
 		
@@ -550,13 +550,13 @@ NeutralWall:
 		Image: nwall
 		Palette: bam11195
 	Health:
-		HP: 550
+		HP: 250
 	Explodes:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
 	Targetable:
-		TargetTypes: Default
+		TargetTypes: Default, NoAutoTarget
 	WithWallSpriteBody:
 		Type: nature
 
@@ -566,13 +566,13 @@ NeutralWall2:
 		Image: nwall2
 		Palette: bam11195
 	Health:
-		HP: 350
+		HP: 150
 	Explodes:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
 	Targetable:
-		TargetTypes: Default
+		TargetTypes: Default, NoAutoTarget
 	WithWallSpriteBody:
 		Type: nature2
 

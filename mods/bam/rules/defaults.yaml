@@ -86,11 +86,11 @@
 	RenderSprites:
 		Palette: bam11195
 	DropTrinketOnDeath@first:
-		Probability: 100
+		Probability: 50
 	DropTrinketOnDeath@second:
-		Probability: 100
+		Probability: 37
 	DropTrinketOnDeath@third:
-		Probability: 100
+		Probability: 25
 	BuildingSpawnRubble:
 		Actors: bldgn.rubble1, bldgn.rubble2, bldgn.rubble3, bldgn.rubble4, bldgn.rubble5, bldgn.rubble6
 
@@ -283,6 +283,24 @@
 	IsTrinket:
 	Selectable:
 		Bounds: 20, 18, 0, 0
+	-MustBeDestroyed:
+
+^fire:
+	Inherits: ^CoreUnit
+	Tooltip:
+		Name: SoulFire
+	-WithFacingSpriteBody:
+	WithSpriteBody:
+	RenderSprites:
+	EditorTilesetFilter:
+		Categories:
+	Immobile:
+		OccupiesSpace: false
+	-AttackMove:
+	HiddenUnderFog:
+		Type: CenterPosition
+	-Selectable:
+	Interactable:
 	-MustBeDestroyed:
 
 ^prop:

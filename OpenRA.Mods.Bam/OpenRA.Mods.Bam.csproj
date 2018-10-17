@@ -133,6 +133,7 @@
     <Compile Include="Traits\Researched.cs" />
     <Compile Include="Traits\RPGTraits\DungeonsAndDragonsStats.cs" />
     <Compile Include="Traits\SimpleDeathSounds.cs" />
+    <Compile Include="Traits\SoulFire.cs" />
     <Compile Include="Traits\TileActivities\DamagedByTraps.cs" />
     <Compile Include="Traits\TileActivities\TileBridge.cs" />
     <Compile Include="Traits\TileActivities\TileButton.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
     <Compile Include="Traits\World\PaletteFromPal.cs" />
     <Compile Include="Traits\World\TilesetStatistics.cs" />
+    <Compile Include="Warhead\CreateSoulFireWarhead.cs" />
     <Compile Include="Warhead\SpecialWarhead.cs" />
     <Compile Include="Warhead\WzardSpecialWarhead.cs" />
   </ItemGroup>

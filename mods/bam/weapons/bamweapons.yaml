@@ -180,8 +180,9 @@ RangedGuardianEternal:
 		Speed: 0c125
 		Image: guardian.projectile
 		Palette: bam11195
-		HorizontalRateOfTurn: 15
-		Speed: 298
+		HorizontalRateOfTurn: 10
+		VerticalRateOfTurn: 10
+		Speed: 200
 		RangeLimit: 5c0
 	Warhead@1Dam: Special
 		ValidTargets: Default
@@ -190,34 +191,21 @@ RangedGuardianEternal:
 		Damage: 1
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
-		ImpactSounds: 7316.wav
+		ImpactSounds: 7308.wav
 		ValidTargets: Default, Ground
 		Explosions: effect_eternalfire_explosion
 		ExplosionPalette: bam11195
-	Warhead@3Eff: CreateEffect
+	Warhead@3Spawn: CreateSoulFire
 		ValidTargets: Default, Ground
-		Explosions: effect_eternalfire
-		ExplosionPalette: bam11195
-	Warhead@Delay1: Special
+		Actor: eternalfire
+
+EternalFire:
+	ReloadDelay: 0
+	Warhead@1Dam: Special
 		ValidTargets: Default
 		Spread: 265
 		Falloff: 100, 0
-		Damage: 1
-		Delay: 100
-		DamageTypes: Death
-	Warhead@Delay3: Special
-		ValidTargets: Default
-		Spread: 265
-		Falloff: 100, 0
-		Damage: 1
-		Delay: 200
-		DamageTypes: Death
-	Warhead@Delay4: Special
-		ValidTargets: Default
-		Spread: 265
-		Falloff: 100, 0
-		Damage: 1
-		Delay: 300
+		Damage: 2
 		DamageTypes: Death
 
 RangedWyrm:
@@ -232,8 +220,9 @@ RangedWyrm:
 		Speed: 0c125
 		Image: wyrm_projectile
 		Palette: bam11195
-		HorizontalRateOfTurn: 15
-		Speed: 298
+		HorizontalRateOfTurn: 10
+		VerticalRateOfTurn: 10
+		Speed: 200
 		RangeLimit: 5c0
 	Warhead@1Dam: Special
 		ValidTargets: Default
@@ -242,32 +231,20 @@ RangedWyrm:
 		Damage: 1
 		DamageTypes: Death
 	Warhead@2Eff: CreateEffect
-		ImpactSounds: 7316.wav
+		ImpactSounds: 7238.wav
 		ValidTargets: Default, Ground
 		Explosions: wyrm_explosion
 		ExplosionPalette: bam11195
-	Warhead@3Eff: CreateEffect
+	Warhead@3Spawn: CreateSoulFire
 		ValidTargets: Default, Ground
-		Explosions: effect_fire
-		ExplosionPalette: bam11195
-	Warhead@Delay1: Special
+		Actor: justfire
+
+
+JustFire:
+	ReloadDelay: 0
+	Warhead@1Dam: Special
 		ValidTargets: Default
 		Spread: 265
 		Falloff: 100, 0
 		Damage: 1
-		Delay: 100
-		DamageTypes: Death
-	Warhead@Delay3: Special
-		ValidTargets: Default
-		Spread: 265
-		Falloff: 100, 0
-		Damage: 1
-		Delay: 200
-		DamageTypes: Death
-	Warhead@Delay4: Special
-		ValidTargets: Default
-		Spread: 265
-		Falloff: 100, 0
-		Damage: 1
-		Delay: 300
 		DamageTypes: Death

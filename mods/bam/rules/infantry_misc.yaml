@@ -262,6 +262,13 @@ GUARDIAN:
 		Sound: 7324.wav
 	-CanHoldTrinket:
 
+ETERNALFIRE:
+	Inherits@: ^fire
+	RenderSprites:
+		Image: soulfire
+	SoulFire:
+		Weapon: EternalFire
+
 PAESANT:
 	Inherits@1: ^Walker
 	Inherits@2: ^CoreArmedSelf

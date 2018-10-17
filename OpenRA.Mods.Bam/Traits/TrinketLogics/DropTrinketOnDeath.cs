@@ -60,7 +60,7 @@ namespace OpenRA.Mods.Bam.Traits.TrinketLogics
             var findPos = self.World.Map.FindTilesInCircle(self.Location, 3, false).ToArray();
             var findEmpty = findPos.Where(c => !info.IgnoreTerrain.Contains(self.World.Map.GetTerrainInfo(c).Type)).ToArray();
             var findEmptyActor = findEmpty.Where(c =>
-                !self.World.FindActorsInCircle(self.World.Map.CenterOfCell(c), new WDist(265)).Any(a => a.TraitOrDefault<IsTrinket>() != null)
+                self.World.FindActorsInCircle(self.World.Map.CenterOfCell(c), new WDist(265)).Count(a => a.TraitOrDefault<IsTrinket>() != null) == 0
                 && (self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == null || self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c) == self ||
                     !self.World.WorldActor.Trait<BuildingInfluence>().GetBuildingAt(c).Trait<Building>().Info.UnpathableTiles(c).Any())).ToArray();
 
